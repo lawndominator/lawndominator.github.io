@@ -6,124 +6,385 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Lawn Dominators</title>
+    <title>Lawn Dominators | Dominate the Block</title>
     <meta
       name="description"
-      content="Lawn Dominators is a lawn care app for schedules, product tracking, diagnostics, weather-driven timing, and progress photos."
+      content="Lawn Dominators is the lawn care app for Bermuda, Zoysia, St. Augustine, and cool-season lawns. Diagnose faster, track every application, and run your lawn like a program."
     />
+    <meta
+      name="keywords"
+      content="lawn care app, bermuda grass app, zoysia lawn guide, st augustine lawn app, gdd tracker, soil temperature app, lawn treatment schedule"
+    />
+    <meta property="og:title" content="Lawn Dominators | Dominate the Block" />
+    <meta
+      property="og:description"
+      content="The lawn care app for people who are done guessing."
+    />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Lawn Dominators</p>
-          <h1>Practical lawn care, without the guesswork.</h1>
-          <p class="lede">
-            Lawn Dominators helps homeowners track applications, follow a
-            season-aware schedule, diagnose problems, and keep records that
-            actually make the next decision easier.
-          </p>
-          <div class="cta-row">
-            <a class="button button-primary" href="mailto:support@lawndominators.com">
-              Contact Support
-            </a>
-            <a class="button button-secondary" href="#features">
-              Explore Features
-            </a>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
           </div>
         </div>
-        <div class="hero-panel">
-          <div class="panel-card">
-            <p class="panel-label">Built for real-world use</p>
-            <ul class="panel-list">
-              <li>Seasonal task schedule by lawn profile</li>
-              <li>Application log and photo history</li>
-              <li>Weather, soil temperature, and timing tools</li>
-              <li>Problem diagnosis and product research</li>
-            </ul>
-          </div>
-        </div>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="#why">Why it hits</a>
+          <a href="#tools">Tools</a>
+          <a href="#proof">Proof</a>
+          <a href="#download">Download</a>
+        </nav>
+        <a class="pill-link" href="#download">Get the app</a>
       </header>
 
       <main>
-        <section class="section" id="features">
-          <div class="section-heading">
-            <p class="section-kicker">What the app does</p>
-            <h2>Everything points back to better timing and cleaner records.</h2>
+        <section class="hero">
+          <div class="hero__backdrop" aria-hidden="true">
+            <div class="hero__sun"></div>
+            <div class="hero__grid"></div>
+            <div class="hero__noise"></div>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Seasonal guidance</h3>
+
+          <div class="hero__copy reveal">
+            <p class="section-label">Built for Bermuda, Zoysia, St. Augustine, and cool-season lawns</p>
+            <h1>
+              Stop reacting to your lawn.
+              <span>Run it like a season.</span>
+            </h1>
+            <p class="hero__lede">
+              Lawn Dominators turns scattered products, random timing, and
+              second-guessing into a real program. Diagnose faster. Log every
+              application. Time treatments by weather. Stay ahead of the block.
+            </p>
+
+            <div class="hero__actions">
+              <a
+                class="store-call store-call--light"
+                href="https://apps.apple.com/us/app/lawn-dominators/id6741445963"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="store-call__tag">iPhone</span>
+                <span class="store-call__title">Download on the App Store</span>
+              </a>
+              <a
+                class="store-call store-call--dark"
+                href="https://play.google.com/store/apps/details?id=com.lawndominators"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="store-call__tag">Android</span>
+                <span class="store-call__title">Get it on Google Play</span>
+              </a>
+            </div>
+
+            <div class="hero__trust">
+              <div>
+                <strong>170+</strong>
+                <span>Products in the library</span>
+              </div>
+              <div>
+                <strong>4</strong>
+                <span>Major grass lanes supported</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>System for the whole season</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__stage reveal reveal--delay" data-parallax-stage>
+            <div class="phone-stack">
+              <article class="phone-card phone-card--primary" data-depth="16">
+                <div class="phone-card__chrome">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="phone-card__screen">
+                  <div class="screen-head">
+                    <p>April attack plan</p>
+                    <span>Zone 8a</span>
+                  </div>
+                  <div class="screen-band">
+                    <span>Soil 67°F</span>
+                    <span>GDD active</span>
+                    <span>3 jobs queued</span>
+                  </div>
+                  <div class="task-list">
+                    <div class="task-chip task-chip--done">
+                      <strong>Pre-emergent locked</strong>
+                      <span>Prodiamine applied at the right window</span>
+                    </div>
+                    <div class="task-chip">
+                      <strong>Fertilizer coming in hot</strong>
+                      <span>32-0-10 mapped to your lawn size</span>
+                    </div>
+                    <div class="task-chip">
+                      <strong>T-NEX reapply tracking</strong>
+                      <span>Heat-based timing, not calendar guessing</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="phone-card phone-card--secondary" data-depth="28">
+                <div class="phone-card__screen phone-card__screen--alt">
+                  <p class="mini-label">Diagnostic hit list</p>
+                  <div class="diagnostic-row">
+                    <span class="diagnostic-row__dot"></span>
+                    <div>
+                      <strong>Brown patch?</strong>
+                      <span>Spot it early. Treat with intent.</span>
+                    </div>
+                  </div>
+                  <div class="diagnostic-row">
+                    <span class="diagnostic-row__dot"></span>
+                    <div>
+                      <strong>Nutsedge?</strong>
+                      <span>Stop using the wrong chemistry.</span>
+                    </div>
+                  </div>
+                  <div class="diagnostic-row">
+                    <span class="diagnostic-row__dot"></span>
+                    <div>
+                      <strong>Thin bermuda?</strong>
+                      <span>Log cuts, feed windows, and rebound faster.</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="ticker" aria-label="Supported grasses and workflows">
+          <div class="ticker__track">
+            <span>Bermuda schedules</span>
+            <span>Zoysia guidance</span>
+            <span>St. Augustine support</span>
+            <span>Cool-season planning</span>
+            <span>Product logging</span>
+            <span>GDD tracking</span>
+            <span>Soil temperature timing</span>
+            <span>Lawn diagnostics</span>
+            <span>Tank mix planning</span>
+            <span>Bermuda schedules</span>
+            <span>Zoysia guidance</span>
+            <span>St. Augustine support</span>
+            <span>Cool-season planning</span>
+            <span>Product logging</span>
+            <span>GDD tracking</span>
+            <span>Soil temperature timing</span>
+            <span>Lawn diagnostics</span>
+            <span>Tank mix planning</span>
+          </div>
+        </section>
+
+        <section class="section split" id="why">
+          <div class="section__intro reveal">
+            <p class="section-label">Why it hits</p>
+            <h2>The app is built for people who care enough to notice the difference.</h2>
+          </div>
+          <div class="impact-grid">
+            <article class="impact-card reveal">
+              <p class="impact-card__kicker">Control</p>
+              <h3>You stop spraying blind.</h3>
               <p>
-                Follow lawn-care timing based on your grass type, location, and
-                hardiness zone instead of generic internet advice.
+                Seasonal timing, soil temp, weather, and actual product guidance
+                all land in one place so every move makes sense.
               </p>
             </article>
-            <article class="feature-card">
-              <h3>Application logging</h3>
+            <article class="impact-card reveal reveal--delay">
+              <p class="impact-card__kicker">Memory</p>
+              <h3>Your lawn finally keeps score.</h3>
               <p>
-                Track what was applied, when it went down, how much was used,
-                and what happened after.
+                Log every application, yard-work move, and photo so you know
+                what changed, when it changed, and what worked.
               </p>
             </article>
-            <article class="feature-card">
-              <h3>Weather-driven tools</h3>
+            <article class="impact-card reveal reveal--delay-2">
+              <p class="impact-card__kicker">Speed</p>
+              <h3>Problems get diagnosed faster.</h3>
               <p>
-                Use soil temperature, spray conditions, and heat accumulation to
-                make better timing decisions.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h3>Diagnostics and product research</h3>
-              <p>
-                Compare products, review active ingredients, and narrow down
-                likely lawn issues before spraying blindly.
+                Use the diagnostic guide and product library to narrow down
+                weeds, disease, pests, and deficiencies before damage spreads.
               </p>
             </article>
           </div>
         </section>
 
-        <section class="section section-accent">
-          <div class="split-layout">
-            <div>
-              <p class="section-kicker">Who it is for</p>
-              <h2>Homeowners who want a dependable system, not random tips.</h2>
+        <section class="section tools" id="tools">
+          <div class="section__intro reveal">
+            <p class="section-label">Core tools</p>
+            <h2>Everything that makes a good lawn feel repeatable.</h2>
+          </div>
+          <div class="tool-grid">
+            <article class="tool-panel reveal">
+              <p class="tool-panel__index">01</p>
+              <h3>Seasonal schedule</h3>
+              <p>
+                Personalized timing for your grass type and zone, instead of
+                random advice from five different Facebook groups.
+              </p>
+            </article>
+            <article class="tool-panel reveal reveal--delay">
+              <p class="tool-panel__index">02</p>
+              <h3>Application log</h3>
+              <p>
+                Track what went down, how much you used, when you sprayed, and
+                how your lawn responded.
+              </p>
+            </article>
+            <article class="tool-panel reveal reveal--delay-2">
+              <p class="tool-panel__index">03</p>
+              <h3>Diagnostic guide</h3>
+              <p>
+                Pests, fungus, weeds, nutrient issues, and turf damage all get
+                mapped into clearer next steps.
+              </p>
+            </article>
+            <article class="tool-panel reveal">
+              <p class="tool-panel__index">04</p>
+              <h3>170+ product library</h3>
+              <p>
+                Active ingredients, rates, timing, safety notes, and trust
+                signals so you can buy smarter and apply cleaner.
+              </p>
+            </article>
+            <article class="tool-panel reveal reveal--delay">
+              <p class="tool-panel__index">05</p>
+              <h3>GDD and soil temp tracking</h3>
+              <p>
+                Weather-driven timing that makes growth regulator and
+                pre-emergent decisions feel sharper.
+              </p>
+            </article>
+            <article class="tool-panel reveal reveal--delay-2">
+              <p class="tool-panel__index">06</p>
+              <h3>Tank mix planning</h3>
+              <p>
+                Build your spray stack, calculate amounts by lawn size, and log
+                the whole move in one flow.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section story">
+          <div class="story__rail reveal">
+            <p class="section-label">From chaos to control</p>
+            <h2>One season. Three moves.</h2>
+          </div>
+          <div class="story__steps">
+            <article class="story-step reveal">
+              <span class="story-step__num">A</span>
+              <div>
+                <h3>Diagnose what you are actually seeing</h3>
+                <p>
+                  Thin turf, weeds, disease pressure, bugs, off-color growth.
+                  Stop guessing and stop throwing down the wrong product.
+                </p>
+              </div>
+            </article>
+            <article class="story-step reveal reveal--delay">
+              <span class="story-step__num">B</span>
+              <div>
+                <h3>Pick the right product and rate</h3>
+                <p>
+                  Use the library, calculator, and trust notes to match the
+                  chemistry to the problem and the lawn size to the rate.
+                </p>
+              </div>
+            </article>
+            <article class="story-step reveal reveal--delay-2">
+              <span class="story-step__num">C</span>
+              <div>
+                <h3>Track results and tighten the program</h3>
+                <p>
+                  Log treatments, monitor weather-driven windows, and build a
+                  cleaner season the longer you use it.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section proof" id="proof">
+          <div class="proof__copy reveal">
+            <p class="section-label">What people remember</p>
+            <h2>It makes lawn care feel less random and a lot more dangerous for your neighbors.</h2>
+            <p>
+              The hook is not just information. It is momentum. The app feels
+              like a field manual, a treatment log, and a competitive edge all
+              at once.
+            </p>
+          </div>
+          <div class="proof__stats reveal reveal--delay">
+            <div class="proof-stat">
+              <strong>170+</strong>
+              <span>Products organized for actual use</span>
             </div>
-            <div class="body-copy">
-              <p>
-                Lawn Dominators is designed for people managing Bermuda,
-                Zoysia, and cool-season lawns who need consistent records,
-                straightforward guidance, and tools that tie into actual field
-                conditions.
-              </p>
-              <p>
-                It is especially useful if you are trying to stay organized
-                across pre-emergent timing, fertilizer programs, growth
-                regulator tracking, or recurring lawn issues.
-              </p>
+            <div class="proof-stat">
+              <strong>6</strong>
+              <span>Products in a tank mix plan</span>
+            </div>
+            <div class="proof-stat">
+              <strong>4</strong>
+              <span>Grass lanes with tailored guidance</span>
             </div>
           </div>
         </section>
 
-        <section class="section">
-          <div class="section-heading">
-            <p class="section-kicker">Support</p>
-            <h2>Need help with the app?</h2>
-          </div>
-          <div class="support-card">
+        <section class="section download" id="download">
+          <div class="download__panel reveal">
+            <p class="section-label">Download</p>
+            <h2>Ready to make the block look unfair?</h2>
             <p>
-              For support, product questions, or account issues, reach out at
-              <a href="mailto:support@lawndominators.com">support@lawndominators.com</a>.
+              Install Lawn Dominators and build a real lawn program in minutes.
             </p>
-            <p>
-              This site also hosts the app's public
-              <a href="./app-ads.txt">app-ads.txt</a> file for AdMob
-              verification.
-            </p>
+            <div class="hero__actions">
+              <a
+                class="store-call store-call--light"
+                href="https://apps.apple.com/us/app/lawn-dominators/id6741445963"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="store-call__tag">Apple</span>
+                <span class="store-call__title">Open the App Store</span>
+              </a>
+              <a
+                class="store-call store-call--dark"
+                href="https://play.google.com/store/apps/details?id=com.lawndominators"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="store-call__tag">Google</span>
+                <span class="store-call__title">Open Google Play</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
+
+      <footer class="footer">
+        <div class="footer__brand">
+          <span class="topbar__mark">LD</span>
+          <span>Lawn Dominators</span>
+        </div>
+        <div class="footer__links">
+          <a href="mailto:support@lawndominators.com">support@lawndominators.com</a>
+          <a href="./app-ads.txt">app-ads.txt</a>
+        </div>
+      </footer>
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
