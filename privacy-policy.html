@@ -1,187 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Privacy Policy — Lawn Dominators</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <style>
-    .legal-shell {
-      width: min(760px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 64px;
-    }
-    .legal-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      margin-bottom: 32px;
-    }
-    .legal-back:hover { text-decoration: underline; }
-    .legal-title {
-      font-family: Georgia, serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--text);
-      margin: 0 0 8px;
-    }
-    .legal-date {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin: 0 0 32px;
-    }
-    .legal-summary {
-      background: rgba(46, 111, 78, 0.08);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 12px 12px 0;
-      padding: 16px 20px;
-      margin-bottom: 36px;
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.65;
-    }
-    .legal-h2 {
-      font-family: Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      margin: 36px 0 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-    .legal-h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin: 22px 0 8px;
-    }
-    .legal-body {
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
-    .legal-list {
-      margin: 8px 0 14px;
-      padding-left: 22px;
-    }
-    .legal-list li {
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .legal-footer {
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .legal-footer a { color: var(--accent); text-decoration: none; }
-    .legal-footer a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <span class="nav-logo">🌿 Lawn Dominators</span>
-    </div>
-  </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Privacy Policy | Lawn Dominators</title>
+    <meta
+      name="description"
+      content="Privacy Policy for Lawn Dominators, including how location, photos, purchases, ads, and device-stored lawn data are handled."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .legal-hero,
+      .legal-section,
+      .legal-footer-wrap {
+        width: var(--max-width);
+        margin-inline: auto;
+      }
 
-  <div class="legal-shell">
-    <a class="legal-back" href="/">← Back to home</a>
+      .legal-hero {
+        position: relative;
+        padding: clamp(3.5rem, 9vw, 6rem) 0 1.25rem;
+      }
 
-    <h1 class="legal-title">Privacy Policy</h1>
-    <p class="legal-date">Last updated: April 18, 2026</p>
+      .legal-hero::before {
+        content: '';
+        position: absolute;
+        inset: -3rem -6vw auto;
+        height: 120%;
+        background:
+          radial-gradient(circle at 12% 8%, oklch(0.24 0.06 132 / 0.3), transparent 26%),
+          radial-gradient(circle at 82% 0%, oklch(0.32 0.1 75 / 0.16), transparent 24%);
+        z-index: -1;
+        pointer-events: none;
+      }
 
-    <div class="legal-summary">
-      <strong>Summary:</strong> Lawn Dominators uses a limited set of data and device permissions to provide lawn care recommendations, weather-based tools, photo logging, notifications, in-app purchases, and ads in the free version. We do not sell your personal information.
-    </div>
+      .legal-hero__panel,
+      .legal-card,
+      .legal-summary {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid oklch(0.42 0.03 118 / 0.35);
+        border-radius: 1.75rem;
+        box-shadow: var(--shadow-sm);
+      }
 
-    <h2 class="legal-h2">About Lawn Dominators</h2>
-    <p class="legal-body">Lawn Dominators is a lawn care app for homeowners. It helps users manage their lawns with personalized schedules, diagnostics, calculators, weather-based timing tools, product recommendations, and optional premium features.</p>
+      .legal-hero__panel {
+        display: grid;
+        gap: 1.25rem;
+        padding: clamp(1.5rem, 4vw, 2.4rem);
+        background:
+          radial-gradient(circle at top right, oklch(0.74 0.15 86 / 0.14), transparent 24%),
+          linear-gradient(180deg, oklch(0.2 0.04 121 / 0.92), oklch(0.15 0.03 118 / 0.96));
+      }
 
-    <h2 class="legal-h2">Information We Collect and Use</h2>
+      .legal-hero__crumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+        color: var(--ink-soft);
+        font-size: 0.84rem;
+      }
 
-    <h3 class="legal-h3">Location Data</h3>
-    <p class="legal-body">We may request access to your location to support app features such as:</p>
-    <ul class="legal-list">
-      <li>Hardiness zone resolution</li>
-      <li>Weather-based recommendations</li>
-      <li>Soil temperature lookups</li>
-      <li>Growing Degree Day (GDD) tracking</li>
-      <li>Spray condition checks</li>
-    </ul>
-    <p class="legal-body">Location is used only to support these features. We do not continuously track your location in the background.</p>
+      .legal-hero__crumbs a {
+        text-decoration: none;
+      }
 
-    <h3 class="legal-h3">Photos and Camera</h3>
-    <p class="legal-body">If you choose to use the photo log, the app may request access to your camera and photo library so you can take lawn photos, select existing photos, and save progress images.</p>
+      .legal-hero__crumbs a:hover,
+      .legal-copy a:hover,
+      .legal-footer__links a:hover {
+        color: var(--ink);
+      }
 
-    <h3 class="legal-h3">Application Logs and App Preferences</h3>
-    <p class="legal-body">The app stores information you enter — such as your lawn profile, grass type, zone, application logs, progress photos, and preferences. This information is stored locally on your device.</p>
+      .legal-hero__crumbs span:last-child {
+        color: var(--glow);
+      }
 
-    <h3 class="legal-h3">Notifications</h3>
-    <p class="legal-body">If you enable notifications, the app may send local reminders related to lawn care timing, pre-emergent windows, GDD tracking, and application reminders.</p>
+      .legal-hero h1 {
+        max-width: 11ch;
+        margin: 0;
+      }
 
-    <h3 class="legal-h3">Purchases</h3>
-    <p class="legal-body">If you choose to purchase premium features, in-app purchases are processed through Apple and RevenueCat. We do not receive or store your full payment card information.</p>
+      .legal-hero__lede,
+      .legal-copy,
+      .legal-card li {
+        color: var(--ink-soft);
+        font-size: 1rem;
+        line-height: 1.72;
+      }
 
-    <h3 class="legal-h3">Advertising</h3>
-    <p class="legal-body">The free version of the app may display ads using Google AdMob. The app is configured to request non-personalized ads by default. Ad providers may still process limited device or contextual data as part of ad delivery, fraud prevention, and measurement.</p>
+      .legal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
-    <h2 class="legal-h2">Third-Party Services</h2>
-    <p class="legal-body">The app relies on third-party services to function. Depending on the features you use, these may include:</p>
-    <ul class="legal-list">
-      <li>Weather and geocoding providers for forecasts, soil temperature, and location-based recommendations</li>
-      <li>Google AdMob for ads in the free version</li>
-      <li>RevenueCat and Apple for in-app purchase management</li>
-      <li>Barcode or product lookup services when barcode scanning is used</li>
-    </ul>
-    <p class="legal-body">These providers may process data as needed to deliver their services. Their handling of data is governed by their own privacy policies.</p>
+      .legal-meta__item {
+        min-width: 11rem;
+        padding: 0.95rem 1rem 1rem;
+        background: oklch(0.18 0.03 118 / 0.82);
+        border: 1px solid var(--line);
+        border-radius: 1.15rem;
+      }
 
-    <h2 class="legal-h2">What We Do Not Do</h2>
-    <ul class="legal-list">
-      <li>We do not sell your personal information.</li>
-      <li>We do not require you to create an account to use the app.</li>
-      <li>We do not intentionally collect more information than is needed to operate the app's features.</li>
-    </ul>
+      .legal-meta__label {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: var(--ink-soft);
+        font-size: 0.74rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
 
-    <h2 class="legal-h2">Data Retention</h2>
-    <p class="legal-body">Most user-entered data and preferences are stored locally on your device. If you remove the app or clear app data, that information may be deleted. Data handled by third-party services may be retained according to those providers' own policies.</p>
+      .legal-meta__value {
+        font-family: 'Archivo Expanded', sans-serif;
+        font-size: 1rem;
+        line-height: 1.2;
+      }
 
-    <h2 class="legal-h2">Children's Privacy</h2>
-    <p class="legal-body">Lawn Dominators is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+      .legal-section {
+        margin-top: 1.6rem;
+      }
 
-    <h2 class="legal-h2">Your Choices</h2>
-    <ul class="legal-list">
-      <li>You can deny or revoke location, camera, photo library, and notification permissions in your device settings.</li>
-      <li>You can remove the app at any time.</li>
-      <li>You can contact us with privacy questions using the email below.</li>
-    </ul>
+      .legal-summary {
+        padding: 1.3rem 1.4rem;
+        background: linear-gradient(180deg, oklch(0.24 0.05 138 / 0.88), oklch(0.18 0.03 118 / 0.92));
+      }
 
-    <h2 class="legal-h2">Changes to This Policy</h2>
-    <p class="legal-body">We may update this privacy policy from time to time. If we make material changes, we will update the date at the top of this page.</p>
+      .legal-summary strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--glow);
+      }
 
-    <h2 class="legal-h2">Contact</h2>
-    <p class="legal-body">If you have questions about this privacy policy, contact us at:<br>
-    <strong><a href="mailto:support@lawndominators.com">support@lawndominators.com</a></strong></p>
+      .legal-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
 
-    <div class="legal-footer">
-      <span>© 2026 Lawn Dominators</span>
-      <div style="display:flex; gap:16px;">
-        <a href="./terms.html">Terms of Use</a>
-        <a href="/">Home</a>
+      .legal-card {
+        padding: 1.4rem;
+        background: oklch(0.18 0.03 122 / 0.76);
+      }
+
+      .legal-card h2 {
+        max-width: none;
+        font-size: clamp(1.3rem, 2vw, 1.7rem);
+      }
+
+      .legal-copy {
+        margin-top: 0.95rem;
+      }
+
+      .legal-list {
+        margin: 0.9rem 0 0;
+        padding-left: 1.15rem;
+      }
+
+      .legal-list li + li {
+        margin-top: 0.55rem;
+      }
+
+      .legal-copy a,
+      .legal-footer__links a {
+        color: var(--glow);
+        text-decoration: none;
+      }
+
+      .legal-footer-wrap {
+        padding-bottom: 2rem;
+      }
+
+      .legal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.75rem;
+        padding-top: 0.25rem;
+        color: var(--ink-soft);
+      }
+
+      .legal-footer__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      @media (max-width: 760px) {
+        .legal-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
+          </div>
+        </div>
+        <nav class="topbar__nav" aria-label="Legal navigation">
+          <a href="./index.html">Home</a>
+          <a href="./privacy-policy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+        </nav>
+        <a
+          class="pill-link"
+          href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483"
+          target="_blank"
+          rel="noopener"
+          >Get the app</a
+        >
+      </header>
+
+      <main>
+        <section class="legal-hero">
+          <div class="legal-hero__panel reveal">
+            <div class="legal-hero__crumbs">
+              <a href="./index.html">Home</a>
+              <span>/</span>
+              <span>Privacy Policy</span>
+            </div>
+            <div>
+              <p class="section-label">Privacy</p>
+              <h1>How Lawn Dominators handles data.</h1>
+            </div>
+            <p class="legal-hero__lede">
+              Lawn Dominators uses a limited set of device permissions and
+              third-party services to power weather-based tools, lawn logging,
+              photos, reminders, purchases, and ads in the free version. We do
+              not sell your personal information.
+            </p>
+            <div class="legal-meta">
+              <div class="legal-meta__item">
+                <span class="legal-meta__label">Last updated</span>
+                <span class="legal-meta__value">April 18, 2026</span>
+              </div>
+              <div class="legal-meta__item">
+                <span class="legal-meta__label">Support</span>
+                <span class="legal-meta__value">support@lawndominators.com</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="legal-section reveal reveal--delay">
+          <div class="legal-summary">
+            <strong>Quick read</strong>
+            Most user-entered data stays on your device. The app may use
+            location, camera, notifications, weather providers, ads, and
+            purchase services only when those features are enabled or in use.
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <div class="legal-grid">
+            <article class="legal-card reveal">
+              <p class="section-label">What the app stores</p>
+              <h2>Device-stored lawn data</h2>
+              <p class="legal-copy">
+                Lawn Dominators stores your lawn profile, grass type, zone,
+                logs, progress photos, premium status, and feature preferences
+                on your device. Some features also use external services to
+                fetch weather or other reference data.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay">
+              <p class="section-label">Location</p>
+              <h2>Weather and timing tools</h2>
+              <p class="legal-copy">
+                If you allow location access, the app may use your coordinates
+                to estimate hardiness zone, local weather, soil temperature,
+                spray conditions, and similar location-based recommendations.
+                This data is used to power app features and is not required for
+                every screen.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay-2">
+              <p class="section-label">Photos and logs</p>
+              <h2>Progress tracking</h2>
+              <p class="legal-copy">
+                Photos you add and application logs you save are used to
+                document lawn history inside the app. If you intentionally
+                enable any shared publishing feature, selected data may also be
+                sent to the configured backend for display to other users.
+              </p>
+            </article>
+
+            <article class="legal-card reveal">
+              <p class="section-label">Ads and purchases</p>
+              <h2>Free and premium access</h2>
+              <p class="legal-copy">
+                Free builds may show ads. Premium purchase status may be checked
+                through the configured purchase provider so paid access can be
+                restored across installs or devices.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay">
+              <p class="section-label">Third-party services</p>
+              <h2>Services used to run features</h2>
+              <p class="legal-copy">
+                The app may rely on third-party services for weather, purchases,
+                diagnostics, geocoding, barcode lookups, and similar features.
+                Their systems and policies apply when those services are used.
+              </p>
+              <ul class="legal-list">
+                <li>
+                  Weather and geocoding providers for forecasts and
+                  location-based recommendations
+                </li>
+                <li>Google AdMob for ads in the free version</li>
+                <li>RevenueCat and Apple for in-app purchase handling</li>
+                <li>Other lookup providers when specific features call them</li>
+              </ul>
+            </article>
+
+            <article class="legal-card reveal reveal--delay-2">
+              <p class="section-label">Your choices</p>
+              <h2>Permissions and contact</h2>
+              <p class="legal-copy">
+                You can deny or revoke location, camera, photo library, and
+                notification permissions in your device settings. You can also
+                remove the app at any time. Questions about privacy can be sent
+                to
+                <a href="mailto:support@lawndominators.com"
+                  >support@lawndominators.com</a
+                >.
+              </p>
+            </article>
+
+            <article class="legal-card reveal">
+              <p class="section-label">Additional notes</p>
+              <h2>Retention, children, and updates</h2>
+              <p class="legal-copy">
+                Most user-entered data is retained locally on your device until
+                you remove the app or clear device data. Lawn Dominators is not
+                directed to children under 13, and we do not knowingly collect
+                personal information from children. We may update this policy
+                from time to time, and the date at the top of this page reflects
+                the latest revision.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div class="legal-footer-wrap">
+        <footer class="footer legal-footer">
+          <div class="footer__brand">
+            <span class="topbar__mark">LD</span>
+            <span>Lawn Dominators</span>
+          </div>
+          <div class="legal-footer__links">
+            <a href="./terms.html">Terms of Use</a>
+            <a href="mailto:support@lawndominators.com"
+              >support@lawndominators.com</a
+            >
+            <a href="./index.html">Home</a>
+          </div>
+        </footer>
       </div>
     </div>
-  </div>
-</body>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

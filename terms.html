@@ -1,54 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Use - Lawn Dominator</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; color: #333; line-height: 1.7; }
-    h1 { color: #2d6a2d; border-bottom: 3px solid #2d6a2d; padding-bottom: 12px; }
-    h2 { color: #2d6a2d; margin-top: 32px; }
-    .last-updated { color: #666; font-style: italic; margin-bottom: 32px; }
-    .highlight { background: #f0f7f0; border-left: 4px solid #2d6a2d; padding: 12px 16px; margin: 16px 0; border-radius: 0 4px 4px 0; }
-    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #ddd; color: #666; font-size: 0.9em; }
-    a { color: #2d6a2d; }
-  </style>
-</head>
-<body>
-  <h1>Terms of Use</h1>
-  <p class="last-updated">Last updated: April 14, 2026</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Terms of Use | Lawn Dominators</title>
+    <meta
+      name="description"
+      content="Terms of Use for Lawn Dominators, including user responsibility, safety, premium access, and third-party services."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .legal-hero,
+      .legal-section,
+      .legal-footer-wrap {
+        width: var(--max-width);
+        margin-inline: auto;
+      }
 
-  <div class="highlight">
-    <strong>Summary:</strong> Lawn Dominator is an informational lawn care tool. It does not replace product labels, professional advice, or your own judgment. You are responsible for how you apply any recommendations from the app.
-  </div>
+      .legal-hero {
+        position: relative;
+        padding: clamp(3.5rem, 9vw, 6rem) 0 1.25rem;
+      }
 
-  <h2>General Use</h2>
-  <p>This app is an informational lawn care tool. It does not replace product labels, site-specific agronomic judgment, or professional advice where safety or legal compliance matters.</p>
+      .legal-hero::before {
+        content: '';
+        position: absolute;
+        inset: -3rem -6vw auto;
+        height: 120%;
+        background:
+          radial-gradient(circle at 12% 8%, oklch(0.24 0.06 132 / 0.3), transparent 26%),
+          radial-gradient(circle at 82% 0%, oklch(0.32 0.1 75 / 0.16), transparent 24%);
+        z-index: -1;
+        pointer-events: none;
+      }
 
-  <h2>User Responsibility</h2>
-  <p>You are responsible for verifying product labels, turf tolerance, local regulations, re-entry intervals, mixing compatibility, and application timing before using any recommendation or calculator output from the app.</p>
+      .legal-hero__panel,
+      .legal-card,
+      .legal-summary {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid oklch(0.42 0.03 118 / 0.35);
+        border-radius: 1.75rem;
+        box-shadow: var(--shadow-sm);
+      }
 
-  <h2>No Guaranteed Outcome</h2>
-  <p>Lawn results depend on climate, grass type, soil conditions, irrigation, mowing, product selection, timing, and user execution. The app cannot guarantee outcomes or problem resolution.</p>
+      .legal-hero__panel {
+        display: grid;
+        gap: 1.25rem;
+        padding: clamp(1.5rem, 4vw, 2.4rem);
+        background:
+          radial-gradient(circle at top right, oklch(0.74 0.15 86 / 0.14), transparent 24%),
+          linear-gradient(180deg, oklch(0.2 0.04 121 / 0.92), oklch(0.15 0.03 118 / 0.96));
+      }
 
-  <h2>Premium and Content Access</h2>
-  <p>Premium features remove ads and are available as a one-time in-app purchase. Access depends on the purchase provider (RevenueCat / Apple) and the entitlements associated with your Apple ID. Premium features or content availability may change over time.</p>
+      .legal-hero__crumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+        color: var(--ink-soft);
+        font-size: 0.84rem;
+      }
 
-  <h2>Safety</h2>
-  <p>Always read and follow the full product label and safety documentation before using any lawn care product. Do not use this app as the sole source of truth for pesticide safety, personal protective equipment (PPE) requirements, or legally required use directions.</p>
+      .legal-hero__crumbs a {
+        text-decoration: none;
+      }
 
-  <h2>Third-Party Services</h2>
-  <p>The app uses third-party services including weather providers, Google AdMob (ads), and RevenueCat / Apple (purchases). Use of those services is subject to their respective terms and policies.</p>
+      .legal-hero__crumbs a:hover,
+      .legal-copy a:hover,
+      .legal-footer__links a:hover {
+        color: var(--ink);
+      }
 
-  <h2>Changes to These Terms</h2>
-  <p>We may update these terms from time to time. Continued use of the app after changes are posted constitutes acceptance of the updated terms.</p>
+      .legal-hero__crumbs span:last-child {
+        color: var(--glow);
+      }
 
-  <h2>Contact</h2>
-  <p>Questions about these terms? Contact us at:</p>
-  <p><strong>Email:</strong> <a href="mailto:lawngurubb@icloud.com">lawngurubb@icloud.com</a></p>
+      .legal-hero h1 {
+        max-width: 10ch;
+        margin: 0;
+      }
 
-  <footer>
-    <p>&copy; 2026 Lawn Dominator &nbsp;·&nbsp; <a href="index.html">Privacy Policy</a></p>
-  </footer>
-</body>
+      .legal-hero__lede,
+      .legal-copy,
+      .legal-card li {
+        color: var(--ink-soft);
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .legal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .legal-meta__item {
+        min-width: 11rem;
+        padding: 0.95rem 1rem 1rem;
+        background: oklch(0.18 0.03 118 / 0.82);
+        border: 1px solid var(--line);
+        border-radius: 1.15rem;
+      }
+
+      .legal-meta__label {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: var(--ink-soft);
+        font-size: 0.74rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .legal-meta__value {
+        font-family: 'Archivo Expanded', sans-serif;
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+
+      .legal-section {
+        margin-top: 1.6rem;
+      }
+
+      .legal-summary {
+        padding: 1.3rem 1.4rem;
+        background: linear-gradient(180deg, oklch(0.24 0.05 138 / 0.88), oklch(0.18 0.03 118 / 0.92));
+      }
+
+      .legal-summary strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--glow);
+      }
+
+      .legal-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .legal-card {
+        padding: 1.4rem;
+        background: oklch(0.18 0.03 122 / 0.76);
+      }
+
+      .legal-card h2 {
+        max-width: none;
+        font-size: clamp(1.3rem, 2vw, 1.7rem);
+      }
+
+      .legal-copy {
+        margin-top: 0.95rem;
+      }
+
+      .legal-list {
+        margin: 0.9rem 0 0;
+        padding-left: 1.15rem;
+      }
+
+      .legal-list li + li {
+        margin-top: 0.55rem;
+      }
+
+      .legal-copy a,
+      .legal-footer__links a {
+        color: var(--glow);
+        text-decoration: none;
+      }
+
+      .legal-footer-wrap {
+        padding-bottom: 2rem;
+      }
+
+      .legal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.75rem;
+        padding-top: 0.25rem;
+        color: var(--ink-soft);
+      }
+
+      .legal-footer__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      @media (max-width: 760px) {
+        .legal-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
+          </div>
+        </div>
+        <nav class="topbar__nav" aria-label="Legal navigation">
+          <a href="./index.html">Home</a>
+          <a href="./privacy-policy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+        </nav>
+        <a
+          class="pill-link"
+          href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483"
+          target="_blank"
+          rel="noopener"
+          >Get the app</a
+        >
+      </header>
+
+      <main>
+        <section class="legal-hero">
+          <div class="legal-hero__panel reveal">
+            <div class="legal-hero__crumbs">
+              <a href="./index.html">Home</a>
+              <span>/</span>
+              <span>Terms of Use</span>
+            </div>
+            <div>
+              <p class="section-label">Terms</p>
+              <h1>The rules around using the app.</h1>
+            </div>
+            <p class="legal-hero__lede">
+              Lawn Dominators is an informational lawn care tool. It does not
+              replace product labels, professional advice, or your own judgment.
+              You are responsible for how you use recommendations and outputs
+              from the app.
+            </p>
+            <div class="legal-meta">
+              <div class="legal-meta__item">
+                <span class="legal-meta__label">Last updated</span>
+                <span class="legal-meta__value">April 18, 2026</span>
+              </div>
+              <div class="legal-meta__item">
+                <span class="legal-meta__label">Support</span>
+                <span class="legal-meta__value">support@lawndominators.com</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="legal-section reveal reveal--delay">
+          <div class="legal-summary">
+            <strong>Quick read</strong>
+            Use the app as a lawn-care aid, not as a substitute for labels,
+            safety documentation, local law, or professional judgment where
+            compliance matters.
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <div class="legal-grid">
+            <article class="legal-card reveal">
+              <p class="section-label">General use</p>
+              <h2>An informational tool, not a final authority</h2>
+              <p class="legal-copy">
+                This app is an informational lawn-care tool. It does not replace
+                product labels, site-specific agronomic judgment, or
+                professional advice where safety or legal compliance matters.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay">
+              <p class="section-label">User responsibility</p>
+              <h2>You verify labels, timing, and legality</h2>
+              <p class="legal-copy">
+                You are responsible for verifying product labels, turf
+                tolerance, local regulations, re-entry intervals, mixing
+                compatibility, and application timing before using any
+                recommendation or calculator output from the app.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay-2">
+              <p class="section-label">No guaranteed outcome</p>
+              <h2>Lawn results still depend on execution</h2>
+              <p class="legal-copy">
+                Lawn results depend on climate, grass type, soil conditions,
+                irrigation, mowing, product selection, timing, and user
+                execution. The app cannot guarantee outcomes or problem
+                resolution.
+              </p>
+            </article>
+
+            <article class="legal-card reveal">
+              <p class="section-label">Premium and content access</p>
+              <h2>Availability can change over time</h2>
+              <p class="legal-copy">
+                Premium or paid features may change over time. Access depends on
+                the configured purchase provider and the entitlements associated
+                with your account or device.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay">
+              <p class="section-label">Safety</p>
+              <h2>Product labels still control</h2>
+              <p class="legal-copy">
+                Always read and follow the full product label and safety
+                documentation. Do not use the app as the sole source of truth
+                for pesticide safety, PPE, or legal use directions.
+              </p>
+            </article>
+
+            <article class="legal-card reveal reveal--delay-2">
+              <p class="section-label">Third-party services</p>
+              <h2>Other providers support core features</h2>
+              <p class="legal-copy">
+                The app may rely on third-party services for weather,
+                diagnostics, ads, purchases, geocoding, and similar features.
+                Use of those services is also subject to their own terms and
+                policies.
+              </p>
+            </article>
+
+            <article class="legal-card reveal">
+              <p class="section-label">Updates and contact</p>
+              <h2>Terms may change</h2>
+              <p class="legal-copy">
+                We may update these terms from time to time. Continued use of
+                the app after changes are posted constitutes acceptance of the
+                updated terms. Questions can be sent to
+                <a href="mailto:support@lawndominators.com"
+                  >support@lawndominators.com</a
+                >.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div class="legal-footer-wrap">
+        <footer class="footer legal-footer">
+          <div class="footer__brand">
+            <span class="topbar__mark">LD</span>
+            <span>Lawn Dominators</span>
+          </div>
+          <div class="legal-footer__links">
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <a href="mailto:support@lawndominators.com"
+              >support@lawndominators.com</a
+            >
+            <a href="./index.html">Home</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
