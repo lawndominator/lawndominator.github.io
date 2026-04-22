@@ -512,6 +512,26 @@ h3 {
   margin-top: 2rem;
 }
 
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.faq-item {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+  background: oklch(0.2 0.03 118 / 0.88);
+  border: 1px solid oklch(0.42 0.03 118 / 0.35);
+}
+
+.faq-item p {
+  margin-top: 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.72;
+}
+
 .impact-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
