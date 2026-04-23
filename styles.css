@@ -411,7 +411,8 @@ h3 {
 
 .phone-card--primary {
   z-index: 2;
-  transform: rotate(-5deg) translateX(0.6rem);
+  --card-transform: rotate(-5deg) translateX(0.6rem);
+  transform: var(--card-transform);
   background: linear-gradient(
     180deg,
     oklch(0.17 0.03 125),
@@ -421,7 +422,8 @@ h3 {
 
 .phone-card--secondary {
   z-index: 1;
-  transform: rotate(9deg) translate(6.5rem, 10rem);
+  --card-transform: rotate(9deg) translate(6.5rem, 10rem);
+  transform: var(--card-transform);
   width: min(82%, 18rem);
   background: linear-gradient(
     180deg,
@@ -802,7 +804,7 @@ h3 {
   }
 
   .phone-card--secondary {
-    transform: rotate(8deg) translate(4rem, 7.5rem);
+    --card-transform: rotate(8deg) translate(4rem, 7.5rem);
   }
 }
 
@@ -818,7 +820,7 @@ h3 {
   }
 
   .phone-card--secondary {
-    transform: rotate(8deg) translate(4rem, 7.5rem);
+    --card-transform: rotate(8deg) translate(4rem, 7.5rem);
   }
 
   .impact-grid {
@@ -856,7 +858,9 @@ h3 {
   }
 
   .hero {
-    padding-top: 3rem;
+    gap: 1.25rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
   }
 
   h1 {
@@ -878,13 +882,39 @@ h3 {
     min-width: 0;
   }
 
+  .hero__stage {
+    min-height: 0;
+    height: clamp(12rem, 42vw, 15rem);
+    margin-top: 0.25rem;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .phone-stack {
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .phone-card {
+    width: min(72vw, 16.5rem);
+  }
+
   .phone-card--primary {
-    transform: rotate(-3deg);
+    left: 50%;
+    top: 0.25rem;
+    --card-transform: translateX(-50%) rotate(-2deg);
   }
 
   .phone-card--secondary {
-    transform: rotate(7deg) translate(1.5rem, 10rem);
-    width: min(76%, 15rem);
+    display: none;
+  }
+
+  .shot-frame {
+    padding: 0.55rem;
+  }
+
+  .app-shot {
+    border-radius: 1rem;
   }
 
   .section {
