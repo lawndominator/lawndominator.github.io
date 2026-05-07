@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Soil Temperature Tracker for Lawn Care — Lawn Dominator</title>
+    <meta
+      name="description"
+      content="Check current soil temperature at surface, 2 inch, and 6 inch depth for your lawn. See a 7-day trend and what the temperature means for bermuda, zoysia, St. Augustine, and cool-season grass."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1d2a1c" />
+    <link rel="canonical" href="https://lawndominators.com/soil-temperature.html" />
+    <meta property="og:title" content="Soil Temperature Tracker for Lawn Care — Lawn Dominator" />
+    <meta property="og:description" content="Check current soil temperature for your lawn and see what it means for your grass program." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lawndominators.com/soil-temperature.html" />
+    <meta property="og:site_name" content="Lawn Dominator" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Soil Temperature Tracker",
+        "url": "https://lawndominators.com/soil-temperature.html",
+        "description": "Check current soil temperature at multiple depths for your lawn location. Get turf-specific guidance for bermuda, zoysia, St. Augustine, and cool-season grass.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
+          </div>
+        </div>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/#tools">Tools</a>
+          <a href="./soil-temperature.html">Soil Temp</a>
+          <a href="./gdd-tracker.html">GDD</a>
+        </nav>
+        <a class="pill-link" href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483" target="_blank" rel="noopener">Get the app</a>
+      </header>
+
+      <main>
+        <div class="tool-page">
+          <div class="tool-hero">
+            <h1>Soil Temperature Tracker</h1>
+            <p>Current soil temperature at surface, 2&Prime;, and 6&Prime; depth for your lawn &mdash; with turf-specific guidance on what it means for your program.</p>
+          </div>
+
+          <form class="location-bar" id="location-form" autocomplete="off">
+            <input
+              type="text"
+              id="location-input"
+              placeholder="Enter your address or city"
+              aria-label="Your location"
+            />
+            <button type="submit">Check</button>
+            <button type="button" class="btn-secondary" id="btn-geo">Use my location</button>
+          </form>
+
+          <p class="tool-error" id="location-error" hidden></p>
+          <p class="tool-loading" id="loading" hidden>Loading weather data&hellip;</p>
+
+          <div id="results" hidden>
+            <p class="location-label" id="location-label"></p>
+
+            <div id="soil-map" class="tool-map"></div>
+
+            <div class="depth-cards">
+              <div class="depth-card">
+                <p class="depth-card__label">Surface</p>
+                <p class="depth-card__temp" id="temp-surface">&mdash;</p>
+                <span class="depth-card__badge" id="badge-surface"></span>
+              </div>
+              <div class="depth-card">
+                <p class="depth-card__label">2&Prime; depth</p>
+                <p class="depth-card__temp" id="temp-2in">&mdash;</p>
+                <span class="depth-card__badge" id="badge-2in"></span>
+              </div>
+              <div class="depth-card">
+                <p class="depth-card__label">6&Prime; depth</p>
+                <p class="depth-card__temp" id="temp-6in">&mdash;</p>
+                <span class="depth-card__badge" id="badge-6in"></span>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="soil-chart"></canvas>
+            </div>
+
+            <div class="grass-pills" role="group" aria-label="Select your grass type">
+              <button class="grass-pill active" data-grass="bermuda">Bermuda</button>
+              <button class="grass-pill" data-grass="zoysia">Zoysia</button>
+              <button class="grass-pill" data-grass="st-augustine">St. Augustine</button>
+              <button class="grass-pill" data-grass="cool-season">Cool-season</button>
+            </div>
+
+            <div class="interpretation-card">
+              <p id="interpretation-text">Select your grass type above to see what this temperature means for your program.</p>
+            </div>
+          </div>
+
+          <div class="cta-strip">
+            <p>Track soil temperature alerts and trends through the full season in the app.</p>
+            <a
+              class="store-call store-call--light"
+              href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="store-call__tag">iPhone</span>
+              <span class="store-call__title">Download on the App Store</span>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__brand">
+          <span class="topbar__mark">LD</span>
+          <span>Lawn Dominators</span>
+        </div>
+        <div class="footer__links">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Use</a>
+          <a href="mailto:support@lawndominators.com">support@lawndominators.com</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="./tools.js"></script>
+    <script src="./soil-temperature.js"></script>
+  </body>
+</html>
