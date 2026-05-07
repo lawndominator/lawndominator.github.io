@@ -1380,3 +1380,167 @@ h3 {
   gap: var(--space-sm);
   flex-wrap: wrap;
 }
+
+/* ─── GDD from-date calculator ───────────────────────────────────────────── */
+
+.gdd-from-date {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.gdd-from-date__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-sm);
+}
+
+.gdd-from-date__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+input[type="date"].gdd-date-input {
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 200ms ease;
+}
+
+input[type="date"].gdd-date-input:focus {
+  border-color: var(--accent);
+}
+
+input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+.gdd-from-result {
+  font-family: 'Archivo Expanded', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.gdd-from-result--empty {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+/* ─── GDD 21-day list ────────────────────────────────────────────────────── */
+
+.gdd-daily-list {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.gdd-day-row {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem var(--space-lg);
+  border-bottom: 1px solid oklch(0.42 0.03 115 / 0.18);
+  position: relative;
+  gap: var(--space-md);
+}
+
+.gdd-day-row:last-child {
+  border-bottom: none;
+}
+
+.gdd-day-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: var(--bar, 0%);
+  background: oklch(0.55 0.14 135 / 0.12);
+}
+
+.gdd-day-row--today {
+  background: oklch(0.27 0.06 135 / 0.25);
+}
+
+.gdd-day-row__date {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--ink);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gdd-day-row__today-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(0.4 0.14 135 / 0.25);
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
+.gdd-day-row__val {
+  font-family: 'Archivo Expanded', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+  position: relative;
+  min-width: 60px;
+  text-align: right;
+}
+
+.gdd-day-row__val--warm { color: var(--accent); }
+.gdd-day-row__val--cool { color: var(--ink-soft); }
+
+/* ─── SEO content sections ───────────────────────────────────────────────── */
+
+.seo-content {
+  margin-top: var(--space-4xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--line);
+}
+
+.seo-content h2 {
+  font-family: 'Archivo Expanded', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 var(--space-md);
+}
+
+.seo-content h3 {
+  font-family: 'Archivo Expanded', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--space-xl) 0 var(--space-sm);
+}
+
+.seo-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-md);
+  max-width: 68ch;
+}

@@ -1,8 +1,7 @@
-// GDD calculator page logic — requires tools.js and Chart.js
+// GDD calculator page logic — requires tools.js
 
 var currentGrassType = 'bermuda';
 var currentTotal = 0;
-var gddChart = null;
 var currentDaily = null;
 
 var GRASS_MILESTONES = {
@@ -24,6 +23,9 @@ var GRASS_MILESTONES = {
   ]
 };
 
+// Max possible daily GDD (base 50, cap 86): (86+50)/2 - 50 = 18
+var MAX_DAILY_GDD = 18;
+
 async function fetchHistoricalData(lat, lon) {
   var year = new Date().getFullYear();
   var today = new Date().toISOString().slice(0, 10);
@@ -37,10 +39,10 @@ async function fetchHistoricalData(lat, lon) {
 }
 
 function calculateGDD(data) {
-  var times   = data.daily.time;
-  var maxArr  = data.daily.temperature_2m_max;
-  var minArr  = data.daily.temperature_2m_min;
-  var T_BASE  = 50;
+  var times  = data.daily.time;
+  var maxArr = data.daily.temperature_2m_max;
+  var minArr = data.daily.temperature_2m_min;
+  var T_BASE = 50;
   var cumulative = 0;
   var daily = [];
   for (var i = 0; i < times.length; i++) {
@@ -48,85 +50,92 @@ function calculateGDD(data) {
     var tMin = minArr[i] !== null ? Math.max(minArr[i], T_BASE) : T_BASE;
     var gdd  = Math.max(0, (tMax + tMin) / 2 - T_BASE);
     cumulative += gdd;
-    daily.push({ date: times[i], gdd: Math.round(gdd * 10) / 10, cumulative: Math.round(cumulative * 10) / 10 });
+    daily.push({
+      date: times[i],
+      gdd: Math.round(gdd * 10) / 10,
+      cumulative: Math.round(cumulative * 10) / 10
+    });
   }
   return { daily: daily, total: Math.round(cumulative) };
 }
 
 function renderMilestoneStatus(total, grassType) {
-  var milestones = GRASS_MILESTONES[grassType] || [];
   var el = document.getElementById('milestone-status');
   if (!el) return;
+  var milestones = GRASS_MILESTONES[grassType] || [];
   el.innerHTML = milestones.map(function(ms) {
     var passed = total >= ms.gdd;
-    var remaining = ms.gdd - total;
     return '<div class="milestone-chip milestone-chip--' + (passed ? 'passed' : 'pending') + '">' +
       '<span class="milestone-chip__label">' + ms.label + '</span>' +
       '<span class="milestone-chip__val">' +
-        (passed ? '✓ ' + ms.gdd + ' GDD reached' : remaining + ' GDD away') +
+        (passed ? '✓ ' + ms.gdd + ' GDD reached' : (ms.gdd - total) + ' GDD away') +
+      '</span></div>';
+  }).join('');
+}
+
+function formatDateLabel(dateStr, isToday, isYesterday) {
+  var dt = new Date(dateStr + 'T12:00:00');
+  var mmdd = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  if (isToday) return mmdd;
+  if (isYesterday) return mmdd;
+  return mmdd;
+}
+
+function renderDailyList(daily) {
+  var el = document.getElementById('gdd-daily-list');
+  if (!el) return;
+  var recent = daily.slice(-21).reverse(); // most recent first
+  var todayStr = new Date().toISOString().slice(0, 10);
+  var yesterStr = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+
+  el.innerHTML = recent.map(function(d) {
+    var isToday = d.date === todayStr;
+    var isYester = d.date === yesterStr;
+    var dt = new Date(d.date + 'T12:00:00');
+    var label = dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    var barPct = Math.min(100, Math.round(d.gdd / MAX_DAILY_GDD * 100));
+    var valClass = d.gdd >= 12 ? 'warm' : d.gdd >= 5 ? '' : 'cool';
+
+    return '<div class="gdd-day-row' + (isToday ? ' gdd-day-row--today' : '') + '" style="--bar:' + barPct + '%">' +
+      '<span class="gdd-day-row__date">' + label +
+        (isToday ? ' <span class="gdd-day-row__today-badge">today</span>' : '') +
+        (isYester ? ' <span class="gdd-day-row__today-badge" style="color:var(--ink-soft);background:transparent">yesterday</span>' : '') +
       '</span>' +
+      '<span class="gdd-day-row__val gdd-day-row__val--' + valClass + '">' + d.gdd + ' GDD</span>' +
     '</div>';
   }).join('');
 }
 
-function renderGDDChart(daily) {
-  var recent = daily.slice(-30);
-  var labels = recent.map(function(d) {
-    var dt = new Date(d.date + 'T12:00:00');
-    var day = dt.getDate();
-    if (day === 1) return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    if (day % 5 === 0) return String(day);
-    return '';
-  });
-  var barData = recent.map(function(d) { return d.gdd; });
-
-  if (gddChart) gddChart.destroy();
-
-  gddChart = new Chart(document.getElementById('gdd-chart'), {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Daily GDD',
-        data: barData,
-        backgroundColor: recent.map(function(d) {
-          return d.gdd >= 15 ? 'rgba(114, 196, 75, 0.75)' :
-                 d.gdd >= 8  ? 'rgba(196, 200, 75, 0.7)'  :
-                               'rgba(130, 150, 120, 0.45)';
-        }),
-        borderColor: 'transparent',
-        borderRadius: 3
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            title: function(ctx) { return recent[ctx[0].dataIndex] ? recent[ctx[0].dataIndex].date : ''; },
-            label: function(ctx) { return ctx.raw + ' GDD'; }
-          }
-        }
-      },
-      scales: {
-        x: {
-          ticks: {
-            autoSkip: false,
-            color: 'rgba(200, 210, 190, 0.6)',
-            font: { size: 11 },
-            maxRotation: 0
-          },
-          grid: { display: false }
-        },
-        y: {
-          ticks: { color: 'rgba(200, 210, 190, 0.6)', font: { size: 12 } },
-          grid: { color: 'rgba(120, 140, 100, 0.15)' }
-        }
-      }
+function updateFromDateResult() {
+  var input = document.getElementById('gdd-from-input');
+  var result = document.getElementById('gdd-from-result');
+  if (!input || !result || !currentDaily) return;
+  var val = input.value;
+  if (!val) {
+    result.textContent = 'Pick a date — useful for PGR and pre-emergent timing';
+    result.className = 'gdd-from-result gdd-from-result--empty';
+    return;
+  }
+  var sum = 0;
+  var found = false;
+  var days = 0;
+  var today = new Date().toISOString().slice(0, 10);
+  currentDaily.forEach(function(d) {
+    if (d.date >= val && d.date <= today) {
+      sum += d.gdd;
+      days++;
+      found = true;
     }
   });
+  if (!found || sum === 0 && days === 0) {
+    result.textContent = 'No data for that date range.';
+    result.className = 'gdd-from-result gdd-from-result--empty';
+    return;
+  }
+  var dt = new Date(val + 'T12:00:00');
+  var label = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  result.textContent = Math.round(sum) + ' GDD since ' + label + ' (' + days + ' day' + (days === 1 ? ')' : 's)');
+  result.className = 'gdd-from-result';
 }
 
 async function loadData(lat, lon, displayName) {
@@ -147,13 +156,23 @@ async function loadData(lat, lon, displayName) {
     resultsEl.hidden = false;
     loadEl.hidden    = true;
 
+    // Set date picker bounds
+    var year = new Date().getFullYear();
+    var today = new Date().toISOString().slice(0, 10);
+    var fromInput = document.getElementById('gdd-from-input');
+    if (fromInput) {
+      fromInput.min = year + '-01-01';
+      fromInput.max = today;
+    }
+
     document.getElementById('location-label').textContent = '📍 ' + displayName;
     document.getElementById('gdd-number').textContent = result.total.toLocaleString();
     document.getElementById('gdd-sublabel').textContent =
       'Base 50°F · ' + displayName + ' · Jan 1–today';
 
     renderMilestoneStatus(currentTotal, currentGrassType);
-    renderGDDChart(currentDaily);
+    renderDailyList(currentDaily);
+    updateFromDateResult();
   } catch (err) {
     loadEl.hidden = true;
     errEl.hidden  = false;
@@ -200,6 +219,8 @@ document.querySelectorAll('.grass-pill').forEach(function(btn) {
     if (currentDaily) renderMilestoneStatus(currentTotal, currentGrassType);
   });
 });
+
+document.getElementById('gdd-from-input').addEventListener('input', updateFromDateResult);
 
 initAutocomplete(
   document.getElementById('location-input'),
