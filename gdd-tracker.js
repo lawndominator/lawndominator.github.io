@@ -81,12 +81,21 @@ function formatDateLabel(dateStr, isToday, isYesterday) {
   return mmdd;
 }
 
-function renderDailyList(daily) {
+function renderDailyList(daily, fromDate) {
   var el = document.getElementById('gdd-daily-list');
   if (!el) return;
-  var recent = daily.slice(-21).reverse(); // most recent first
   var todayStr = new Date().toISOString().slice(0, 10);
   var yesterStr = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  var label = document.getElementById('gdd-list-label');
+
+  var recent;
+  if (fromDate) {
+    recent = daily.filter(function(d) { return d.date >= fromDate && d.date <= todayStr; }).reverse();
+    if (label) label.textContent = 'Daily GDD — ' + formatDateLabel(fromDate) + ' to Today (Base 50°F)';
+  } else {
+    recent = daily.slice(-21).reverse();
+    if (label) label.textContent = 'Daily GDD — Last 21 Days (Base 50°F)';
+  }
 
   el.innerHTML = recent.map(function(d) {
     var isToday = d.date === todayStr;
@@ -114,28 +123,26 @@ function updateFromDateResult() {
   if (!val) {
     result.textContent = 'Pick a date — useful for PGR and pre-emergent timing';
     result.className = 'gdd-from-result gdd-from-result--empty';
+    renderDailyList(currentDaily, null);
     return;
   }
   var sum = 0;
-  var found = false;
   var days = 0;
   var today = new Date().toISOString().slice(0, 10);
   currentDaily.forEach(function(d) {
-    if (d.date >= val && d.date <= today) {
-      sum += d.gdd;
-      days++;
-      found = true;
-    }
+    if (d.date >= val && d.date <= today) { sum += d.gdd; days++; }
   });
-  if (!found || sum === 0 && days === 0) {
+  if (days === 0) {
     result.textContent = 'No data for that date range.';
     result.className = 'gdd-from-result gdd-from-result--empty';
+    renderDailyList(currentDaily, null);
     return;
   }
   var dt = new Date(val + 'T12:00:00');
-  var label = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  result.textContent = Math.round(sum) + ' GDD since ' + label + ' (' + days + ' day' + (days === 1 ? ')' : 's)');
+  var dateLabel = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  result.textContent = Math.round(sum) + ' GDD since ' + dateLabel + ' (' + days + ' day' + (days === 1 ? ')' : 's)');
   result.className = 'gdd-from-result';
+  renderDailyList(currentDaily, val);
 }
 
 async function loadData(lat, lon, displayName) {
