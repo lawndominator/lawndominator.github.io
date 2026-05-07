@@ -47,7 +47,7 @@ function initAutocomplete(inputEl, onSelect) {
       lastFetched = q;
       try {
         var url = 'https://nominatim.openstreetmap.org/search?q=' +
-          encodeURIComponent(q) + '&format=json&limit=5';
+          encodeURIComponent(q) + '&format=json&limit=5&countrycodes=us';
         var res = await fetch(url);
         if (!res.ok) return;
         showSuggestions(await res.json());
@@ -66,7 +66,7 @@ function initAutocomplete(inputEl, onSelect) {
 
 async function geocodeAddress(query) {
   var url = 'https://nominatim.openstreetmap.org/search?q=' +
-    encodeURIComponent(query) + '&format=json&limit=1';
+    encodeURIComponent(query) + '&format=json&limit=1&countrycodes=us';
   var res = await fetch(url);
   if (!res.ok) throw new Error('Geocoding request failed. Check your connection.');
   var data = await res.json();
