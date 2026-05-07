@@ -1,25 +1,26 @@
 // GDD calculator page logic — requires tools.js and Chart.js
 
 var currentGrassType = 'bermuda';
+var currentTotal = 0;
 var gddChart = null;
 var currentDaily = null;
 
 var GRASS_MILESTONES = {
   bermuda: [
-    { gdd: 50,  label: 'Pre-emergent opens',  color: 'rgba(220, 200, 60, 0.9)' },
-    { gdd: 200, label: 'Greenup approaching', color: 'rgba(114, 196, 75, 0.9)' },
-    { gdd: 500, label: 'Full active growth',  color: 'rgba(80, 160, 220, 0.9)' }
+    { gdd: 50,  label: 'Pre-emergent opens' },
+    { gdd: 200, label: 'Greenup approaching' },
+    { gdd: 500, label: 'Full active growth' }
   ],
   zoysia: [
-    { gdd: 100, label: 'Pre-emergent window', color: 'rgba(220, 200, 60, 0.9)' },
-    { gdd: 300, label: 'Greenup approaching', color: 'rgba(114, 196, 75, 0.9)' }
+    { gdd: 100, label: 'Pre-emergent window' },
+    { gdd: 300, label: 'Greenup approaching' }
   ],
   'st-augustine': [
-    { gdd: 50,  label: 'Pre-emergent window', color: 'rgba(220, 200, 60, 0.9)' },
-    { gdd: 200, label: 'First green push',    color: 'rgba(114, 196, 75, 0.9)' }
+    { gdd: 50,  label: 'Pre-emergent window' },
+    { gdd: 200, label: 'First green push' }
   ],
   'cool-season': [
-    { gdd: 50, label: 'Spring pre-em window', color: 'rgba(220, 200, 60, 0.9)' }
+    { gdd: 50, label: 'Spring pre-em window' }
   ]
 };
 
@@ -47,92 +48,65 @@ function calculateGDD(data) {
     var tMin = minArr[i] !== null ? Math.max(minArr[i], T_BASE) : T_BASE;
     var gdd  = Math.max(0, (tMax + tMin) / 2 - T_BASE);
     cumulative += gdd;
-    daily.push({ date: times[i], gdd: gdd, cumulative: Math.round(cumulative * 10) / 10 });
+    daily.push({ date: times[i], gdd: Math.round(gdd * 10) / 10, cumulative: Math.round(cumulative * 10) / 10 });
   }
   return { daily: daily, total: Math.round(cumulative) };
 }
 
-// Inline Chart.js plugin: draws vertical dashed milestone lines
-var milestonePlugin = {
-  id: 'milestoneLines',
-  afterDatasetsDraw: function(chart, _args, options) {
-    var milestones = options.milestones;
-    if (!milestones || !milestones.length) return;
-    var ctx       = chart.ctx;
-    var chartArea = chart.chartArea;
-    var xScale    = chart.scales.x;
-    var cumData   = chart.data.datasets[0].data;
-
-    ctx.save();
-    for (var m = 0; m < milestones.length; m++) {
-      var ms  = milestones[m];
-      var idx = -1;
-      for (var j = 0; j < cumData.length; j++) {
-        if (cumData[j] >= ms.gdd) { idx = j; break; }
-      }
-      if (idx === -1) continue; // threshold not yet reached this season
-
-      var x = xScale.getPixelForIndex(idx);
-      ctx.setLineDash([4, 4]);
-      ctx.strokeStyle = ms.color;
-      ctx.lineWidth   = 1.5;
-      ctx.beginPath();
-      ctx.moveTo(x, chartArea.top);
-      ctx.lineTo(x, chartArea.bottom);
-      ctx.stroke();
-
-      ctx.setLineDash([]);
-      ctx.fillStyle = ms.color;
-      ctx.font      = '10px Manrope, system-ui, sans-serif';
-      ctx.textAlign = 'left';
-      var labelX = Math.min(x + 4, chartArea.right - 90);
-      ctx.fillText(ms.label, labelX, chartArea.top + 16);
-    }
-    ctx.restore();
-  }
-};
-
-function buildChartLabels(daily) {
-  return daily.map(function(d) {
-    var dt = new Date(d.date + 'T12:00:00');
-    return dt.getDate() === 1 ? dt.toLocaleDateString('en-US', { month: 'short' }) : '';
-  });
+function renderMilestoneStatus(total, grassType) {
+  var milestones = GRASS_MILESTONES[grassType] || [];
+  var el = document.getElementById('milestone-status');
+  if (!el) return;
+  el.innerHTML = milestones.map(function(ms) {
+    var passed = total >= ms.gdd;
+    var remaining = ms.gdd - total;
+    return '<div class="milestone-chip milestone-chip--' + (passed ? 'passed' : 'pending') + '">' +
+      '<span class="milestone-chip__label">' + ms.label + '</span>' +
+      '<span class="milestone-chip__val">' +
+        (passed ? '✓ ' + ms.gdd + ' GDD reached' : remaining + ' GDD away') +
+      '</span>' +
+    '</div>';
+  }).join('');
 }
 
-function renderGDDChart(daily, grassType) {
-  var labels = buildChartLabels(daily);
-  var cumData = daily.map(function(d) { return d.cumulative; });
+function renderGDDChart(daily) {
+  var recent = daily.slice(-30);
+  var labels = recent.map(function(d) {
+    var dt = new Date(d.date + 'T12:00:00');
+    var day = dt.getDate();
+    if (day === 1) return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    if (day % 5 === 0) return String(day);
+    return '';
+  });
+  var barData = recent.map(function(d) { return d.gdd; });
 
   if (gddChart) gddChart.destroy();
 
   gddChart = new Chart(document.getElementById('gdd-chart'), {
-    type: 'line',
-    plugins: [milestonePlugin],
+    type: 'bar',
     data: {
       labels: labels,
       datasets: [{
-        label: 'Cumulative GDD',
-        data: cumData,
-        borderColor: 'rgba(114, 196, 75, 0.95)',
-        backgroundColor: 'rgba(114, 196, 75, 0.08)',
-        borderWidth: 2.5,
-        tension: 0.3,
-        pointRadius: 0,
-        fill: true
+        label: 'Daily GDD',
+        data: barData,
+        backgroundColor: recent.map(function(d) {
+          return d.gdd >= 15 ? 'rgba(114, 196, 75, 0.75)' :
+                 d.gdd >= 8  ? 'rgba(196, 200, 75, 0.7)'  :
+                               'rgba(130, 150, 120, 0.45)';
+        }),
+        borderColor: 'transparent',
+        borderRadius: 3
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        milestoneLines: {
-          milestones: GRASS_MILESTONES[grassType] || []
-        },
         legend: { display: false },
         tooltip: {
           callbacks: {
-            title: function(ctx) { return daily[ctx[0].dataIndex] ? daily[ctx[0].dataIndex].date : ''; },
-            label: function(ctx) { return Math.round(ctx.raw) + ' GDD'; }
+            title: function(ctx) { return recent[ctx[0].dataIndex] ? recent[ctx[0].dataIndex].date : ''; },
+            label: function(ctx) { return ctx.raw + ' GDD'; }
           }
         }
       },
@@ -144,7 +118,7 @@ function renderGDDChart(daily, grassType) {
             font: { size: 11 },
             maxRotation: 0
           },
-          grid: { color: 'rgba(120, 140, 100, 0.15)' }
+          grid: { display: false }
         },
         y: {
           ticks: { color: 'rgba(200, 210, 190, 0.6)', font: { size: 12 } },
@@ -168,6 +142,7 @@ async function loadData(lat, lon, displayName) {
     var data   = await fetchHistoricalData(lat, lon);
     var result = calculateGDD(data);
     currentDaily = result.daily;
+    currentTotal = result.total;
 
     resultsEl.hidden = false;
     loadEl.hidden    = true;
@@ -177,7 +152,8 @@ async function loadData(lat, lon, displayName) {
     document.getElementById('gdd-sublabel').textContent =
       'Base 50°F · ' + displayName + ' · Jan 1–today';
 
-    renderGDDChart(currentDaily, currentGrassType);
+    renderMilestoneStatus(currentTotal, currentGrassType);
+    renderGDDChart(currentDaily);
   } catch (err) {
     loadEl.hidden = true;
     errEl.hidden  = false;
@@ -221,9 +197,11 @@ document.querySelectorAll('.grass-pill').forEach(function(btn) {
     document.querySelectorAll('.grass-pill').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     currentGrassType = btn.dataset.grass;
-    if (gddChart && currentDaily) {
-      gddChart.options.plugins.milestoneLines.milestones = GRASS_MILESTONES[currentGrassType] || [];
-      gddChart.update();
-    }
+    if (currentDaily) renderMilestoneStatus(currentTotal, currentGrassType);
   });
 });
+
+initAutocomplete(
+  document.getElementById('location-input'),
+  function(lat, lon, displayName) { loadData(lat, lon, displayName); }
+);

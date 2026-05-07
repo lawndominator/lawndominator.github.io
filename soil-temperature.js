@@ -282,3 +282,8 @@ document.querySelectorAll('.grass-pill').forEach(function(btn) {
     updateInterpretation();
   });
 });
+
+initAutocomplete(
+  document.getElementById('location-input'),
+  function(lat, lon, displayName) { loadData(lat, lon, displayName); }
+);

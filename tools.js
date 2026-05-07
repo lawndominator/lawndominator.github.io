@@ -1,5 +1,69 @@
 // Shared utilities for Lawn Dominator tool pages
 
+function initAutocomplete(inputEl, onSelect) {
+  var timeout = null;
+  var lastFetched = '';
+
+  var wrapper = document.createElement('div');
+  wrapper.className = 'location-input-wrap';
+  inputEl.parentNode.insertBefore(wrapper, inputEl);
+  wrapper.appendChild(inputEl);
+
+  var dropdown = document.createElement('ul');
+  dropdown.className = 'autocomplete-dropdown';
+  dropdown.hidden = true;
+  wrapper.appendChild(dropdown);
+
+  function closeDropdown() {
+    dropdown.hidden = true;
+    dropdown.innerHTML = '';
+  }
+
+  function showSuggestions(results) {
+    dropdown.innerHTML = '';
+    if (!results.length) { dropdown.hidden = true; return; }
+    results.forEach(function(item) {
+      var li = document.createElement('li');
+      var parts = item.display_name.split(', ');
+      li.textContent = parts.slice(0, 4).join(', ');
+      li.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        var shortName = parts.slice(0, 3).join(', ');
+        inputEl.value = shortName;
+        closeDropdown();
+        onSelect(parseFloat(item.lat), parseFloat(item.lon), shortName);
+      });
+      dropdown.appendChild(li);
+    });
+    dropdown.hidden = false;
+  }
+
+  inputEl.addEventListener('input', function() {
+    var q = inputEl.value.trim();
+    clearTimeout(timeout);
+    if (q.length < 2) { closeDropdown(); return; }
+    if (q === lastFetched) return;
+    timeout = setTimeout(async function() {
+      lastFetched = q;
+      try {
+        var url = 'https://nominatim.openstreetmap.org/search?q=' +
+          encodeURIComponent(q) + '&format=json&limit=5';
+        var res = await fetch(url);
+        if (!res.ok) return;
+        showSuggestions(await res.json());
+      } catch(e) { /* ignore network errors during autocomplete */ }
+    }, 300);
+  });
+
+  inputEl.addEventListener('blur', function() {
+    setTimeout(closeDropdown, 150);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDropdown();
+  });
+}
+
 async function geocodeAddress(query) {
   var url = 'https://nominatim.openstreetmap.org/search?q=' +
     encodeURIComponent(query) + '&format=json&limit=1';

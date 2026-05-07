@@ -1278,3 +1278,105 @@ h3 {
     text-align: center;
   }
 }
+
+/* ─── Autocomplete dropdown ───────────────────────────────────────────────── */
+
+.location-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.location-input-wrap input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;
+  z-index: 200;
+  box-shadow: 0 8px 24px oklch(0 0 0 / 0.35);
+}
+
+.autocomplete-dropdown li {
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--ink);
+  transition: background 120ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.autocomplete-dropdown li:hover {
+  background: var(--panel-soft);
+}
+
+/* ─── GDD milestone chips ────────────────────────────────────────────────── */
+
+.milestone-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.milestone-chip {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  flex: 1;
+  min-width: 130px;
+}
+
+.milestone-chip--passed {
+  border-color: var(--accent);
+}
+
+.milestone-chip__label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.3rem;
+}
+
+.milestone-chip__val {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.milestone-chip--passed .milestone-chip__val {
+  color: var(--accent);
+}
+
+.chart-section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-sm);
+}
+
+.cta-strip__buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
