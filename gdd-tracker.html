@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator</title>
+    <meta
+      name="description"
+      content="Calculate growing degree days (GDD) accumulated since January 1 for your lawn location. See pre-emergent timing windows and greenup milestones for bermuda, zoysia, St. Augustine, and cool-season grass."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1d2a1c" />
+    <link rel="canonical" href="https://lawndominators.com/gdd-tracker.html" />
+    <meta property="og:title" content="GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator" />
+    <meta property="og:description" content="Calculate growing degree days for your lawn. See pre-emergent timing windows and greenup milestones for your grass type." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lawndominators.com/gdd-tracker.html" />
+    <meta property="og:site_name" content="Lawn Dominator" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GDD Calculator for Lawns",
+        "url": "https://lawndominators.com/gdd-tracker.html",
+        "description": "Calculate growing degree days accumulated since January 1 for your lawn location with pre-emergent timing windows and greenup milestones.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
+          </div>
+        </div>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/#tools">Tools</a>
+          <a href="./soil-temperature.html">Soil Temp</a>
+          <a href="./gdd-tracker.html">GDD</a>
+        </nav>
+        <a class="pill-link" href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483" target="_blank" rel="noopener">Get the app</a>
+      </header>
+
+      <main>
+        <div class="tool-page">
+          <div class="tool-hero">
+            <h1>GDD Calculator for Lawns</h1>
+            <p>See how many growing degree days have accumulated at your location since January&nbsp;1 &mdash; with pre-emergent timing windows and greenup milestones for your grass type.</p>
+          </div>
+
+          <form class="location-bar" id="location-form" autocomplete="off">
+            <input
+              type="text"
+              id="location-input"
+              placeholder="Enter your address or city"
+              aria-label="Your location"
+            />
+            <button type="submit">Calculate</button>
+            <button type="button" class="btn-secondary" id="btn-geo">Use my location</button>
+          </form>
+
+          <p class="tool-error" id="location-error" hidden></p>
+          <p class="tool-loading" id="loading" hidden>Fetching seasonal weather data&hellip;</p>
+
+          <div id="results" hidden>
+            <p class="location-label" id="location-label"></p>
+
+            <div class="gdd-stat">
+              <p class="gdd-stat__number" id="gdd-number">0</p>
+              <p class="gdd-stat__label" id="gdd-sublabel">Base 50&deg;F &middot; Jan 1&ndash;today</p>
+            </div>
+
+            <div class="grass-pills" role="group" aria-label="Select your grass type">
+              <button class="grass-pill active" data-grass="bermuda">Bermuda</button>
+              <button class="grass-pill" data-grass="zoysia">Zoysia</button>
+              <button class="grass-pill" data-grass="st-augustine">St. Augustine</button>
+              <button class="grass-pill" data-grass="cool-season">Cool-season</button>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="gdd-chart"></canvas>
+            </div>
+
+            <div class="pgr-section">
+              <h2>PGR Reapplication Reference</h2>
+              <p>These windows are from your application date, not from January 1. Use the app to track your personal countdown.</p>
+              <table class="pgr-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Active Ingredient</th>
+                    <th>Base Temp</th>
+                    <th>Reapply At</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Primo Maxx / T-Nex</td>
+                    <td>Trinexapac-ethyl</td>
+                    <td>32&deg;F</td>
+                    <td>~200 GDD</td>
+                  </tr>
+                  <tr>
+                    <td>Anuew</td>
+                    <td>Prohexadione Calcium</td>
+                    <td>32&deg;F</td>
+                    <td>~2&ndash;3 weeks (shorter residual)</td>
+                  </tr>
+                  <tr>
+                    <td>Trimmit / Pillar (Paclobutrazol)</td>
+                    <td>Paclobutrazol</td>
+                    <td>&mdash;</td>
+                    <td>6&ndash;8 weeks (soil absorbed)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="pgr-note">GDD reapplication thresholds vary by application rate and conditions. Always confirm with the product label. The values above reflect commonly cited benchmarks from university extension guidance.</p>
+            </div>
+          </div>
+
+          <div class="cta-strip">
+            <p>Track your PGR reapplication countdown from your exact application date in the app.</p>
+            <a
+              class="store-call store-call--light"
+              href="https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="store-call__tag">iPhone</span>
+              <span class="store-call__title">Download on the App Store</span>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__brand">
+          <span class="topbar__mark">LD</span>
+          <span>Lawn Dominators</span>
+        </div>
+        <div class="footer__links">
+          <a href="./privacy-policy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Use</a>
+          <a href="mailto:support@lawndominators.com">support@lawndominators.com</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="./tools.js"></script>
+    <script src="./gdd-tracker.js"></script>
+  </body>
+</html>
