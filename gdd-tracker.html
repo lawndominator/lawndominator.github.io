@@ -12,10 +12,15 @@
     <meta name="theme-color" content="#1d2a1c" />
     <link rel="canonical" href="https://lawndominators.com/gdd-tracker.html" />
     <meta property="og:title" content="GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator" />
-    <meta property="og:description" content="Calculate growing degree days for your lawn. See pre-emergent timing windows and greenup milestones for bermuda, zoysia, St. Augustine, and cool-season grass." />
+    <meta property="og:description" content="Free GDD calculator for lawn care. Track growing degree days from January 1, calculate GDD from any date for PGR timing, and see pre-emergent and greenup milestones for your grass type." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/gdd-tracker.html" />
     <meta property="og:site_name" content="Lawn Dominator" />
+    <meta property="og:image" content="https://lawndominators.com/dashboard.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator" />
+    <meta name="twitter:description" content="Free GDD calculator for lawn care. Track seasonal accumulation and calculate GDD from any date for PGR reapplication timing." />
+    <meta name="twitter:image" content="https://lawndominators.com/dashboard.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
@@ -70,6 +75,30 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Calculate GDD for PGR Reapplication Timing",
+        "description": "Use the GDD date picker to find how many growing degree days have accumulated since your last Primo Maxx or T-Nex application, then compare to the reapplication threshold.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Enter your location", "text": "Type your city or zip code and click Calculate to load seasonal GDD data for your area from January 1 to today." },
+          { "@type": "HowToStep", "position": 2, "name": "Enter your application date", "text": "In the 'GDD from a specific date' section, pick the date you last applied your PGR product such as Primo Maxx or T-Nex." },
+          { "@type": "HowToStep", "position": 3, "name": "Read the GDD total", "text": "The calculator instantly shows total GDD accumulated from your application date to today using your local weather data. No re-fetch required." },
+          { "@type": "HowToStep", "position": 4, "name": "Compare to reapplication threshold", "text": "Check the PGR reference table below — Primo Maxx and T-Nex typically need reapplication at 150–200 GDD from the application date. If you are at or past that threshold, it is time to reapply." }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Lawn Dominator", "item": "https://lawndominators.com/" },
+          { "@type": "ListItem", "position": 2, "name": "GDD Calculator", "item": "https://lawndominators.com/gdd-tracker.html" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="site-shell">
@@ -92,6 +121,12 @@
 
       <main>
         <div class="tool-page">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Lawn Dominator</a>
+            <span class="breadcrumb__sep">›</span>
+            <span>GDD Calculator</span>
+          </nav>
+
           <div class="tool-hero">
             <h1>GDD Calculator for Lawns</h1>
             <p>Track growing degree days at your location — see seasonal accumulation since January&nbsp;1, calculate GDD from any date, and check pre-emergent and greenup milestones for your grass type.</p>
@@ -212,7 +247,27 @@
             <p>Bermuda grass typically shows visible green shoots between 200–300 GDD from January 1. Zoysia breaks later — expect greenup around 300–400 GDD. Full active growth with complete canopy cover generally occurs around 500 GDD for bermuda. Use the milestone chips above to see how your current season compares to these thresholds.</p>
 
             <h3>PGR Reapplication Windows</h3>
-            <p>Primo Maxx (trinexapac-ethyl) and similar PGR products wear off based on heat accumulation from the application date, not elapsed calendar days. The standard reapplication interval is 150–200 GDD from your last application using a base of 32°F. Use the date picker above to calculate GDD from any past date — then compare to the PGR reference table to judge whether it is time to reapply.</p>
+            <p>Primo Maxx (trinexapac-ethyl) and similar PGR products wear off based on heat accumulation from the application date, not elapsed calendar days. The standard reapplication interval is 150–200 GDD from your last application using a base of 32°F. Use the date picker above to calculate GDD from any past date — then compare to the PGR reference table to judge whether it is time to reapply. For soil temperature data at your location, see the <a href="./soil-temperature.html">Soil Temperature Tracker</a>.</p>
+
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>What are growing degree days for lawn care?</summary>
+                <p>Growing degree days (GDD) measure accumulated heat above a base temperature — typically 50°F for warm-season turf. Each day contributes GDD based on the average temperature above that base. Lawn professionals use GDD to time pre-emergent herbicide applications, track greenup, and schedule PGR reapplication windows.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How many GDD before bermuda grass greens up?</summary>
+                <p>Bermuda grass typically shows visible greenup between 200–300 GDD from January 1 (base 50°F). The pre-emergent window opens around 50 GDD, and full active growth with complete canopy coverage usually occurs around 500 GDD. Timing varies by location and cultivar.</p>
+              </details>
+              <details class="faq-item">
+                <summary>When do I reapply Primo Maxx based on GDD?</summary>
+                <p>Primo Maxx (trinexapac-ethyl) is typically reapplied every 150–200 GDD from the previous application, using a base of 32°F. Higher application rates extend the interval. Use the date picker on this page to calculate exactly how many GDD have passed since your last application, then compare to the threshold in the reference table above.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What base temperature is used for GDD in lawn care?</summary>
+                <p>Seasonal GDD calculations for pre-emergent and greenup timing use a base of 50°F. PGR products like Primo Maxx and Anuew use a base of 32°F from the application date. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation — the modified GDD method used by most university turfgrass extension programs.</p>
+              </details>
+            </div>
           </section>
         </div>
       </main>

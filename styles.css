@@ -1544,3 +1544,69 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   margin: 0 0 var(--space-md);
   max-width: 68ch;
 }
+
+/* ─── Breadcrumb nav ─────────────────────────────────────────────────────── */
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  padding: var(--space-sm) 0 0;
+  margin-bottom: calc(-1 * var(--space-lg));
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover { color: var(--ink); }
+
+.breadcrumb__sep {
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}
+
+/* ─── FAQ accordion ──────────────────────────────────────────────────────── */
+
+.faq-list {
+  margin: var(--space-md) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-md) 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after { content: '−'; }
+
+.faq-item p {
+  margin: 0 0 var(--space-md);
+  font-size: 0.92rem;
+  line-height: 1.72;
+  color: var(--ink-soft);
+  max-width: 68ch;
+}

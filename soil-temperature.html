@@ -12,10 +12,15 @@
     <meta name="theme-color" content="#1d2a1c" />
     <link rel="canonical" href="https://lawndominators.com/soil-temperature.html" />
     <meta property="og:title" content="Soil Temperature Tracker for Lawn Care — Lawn Dominator" />
-    <meta property="og:description" content="Check current soil temperature for your lawn and see what it means for your grass program." />
+    <meta property="og:description" content="Free soil temperature tracker for lawn care. Check current soil temp at surface, 2 inch, and 6 inch depth. Pre-emergent timing and grass program guidance for bermuda, zoysia, and St. Augustine." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/soil-temperature.html" />
     <meta property="og:site_name" content="Lawn Dominator" />
+    <meta property="og:image" content="https://lawndominators.com/dashboard.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Soil Temperature Tracker for Lawn Care — Lawn Dominator" />
+    <meta name="twitter:description" content="Free soil temperature tracker for lawn care. Pre-emergent timing and grass program guidance at your location." />
+    <meta name="twitter:image" content="https://lawndominators.com/dashboard.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
@@ -71,6 +76,30 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Time Pre-Emergent Using Soil Temperature",
+        "description": "Use the 2-inch soil temperature reading to determine the ideal window for pre-emergent herbicide application on bermuda, zoysia, or St. Augustine lawns.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Enter your location", "text": "Type your city or zip code and click Check to load current soil temperature data for your lawn area." },
+          { "@type": "HowToStep", "position": 2, "name": "Check the 2-inch depth reading", "text": "Focus on the 2-inch depth card — this is the most relevant zone for pre-emergent germination and warm-season grass root activity." },
+          { "@type": "HowToStep", "position": 3, "name": "Apply pre-emergent at 50–55°F", "text": "Apply crabgrass pre-emergent when 2-inch soil temperature reaches 50–55°F for at least 3 consecutive days. Above 55°F the crabgrass germination window is open and pre-emergent effectiveness drops significantly." },
+          { "@type": "HowToStep", "position": 4, "name": "Select your grass type for program guidance", "text": "Use the grass type selector below the chart to get specific fertilizer, PGR, and herbicide timing guidance based on the current soil temperature reading at your location." }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Lawn Dominator", "item": "https://lawndominators.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Soil Temperature Tracker", "item": "https://lawndominators.com/soil-temperature.html" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="site-shell">
@@ -93,6 +122,12 @@
 
       <main>
         <div class="tool-page">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Lawn Dominator</a>
+            <span class="breadcrumb__sep">›</span>
+            <span>Soil Temperature Tracker</span>
+          </nav>
+
           <div class="tool-hero">
             <h1>Soil Temperature Tracker</h1>
             <p>Current soil temperature at surface, 2&Prime;, and 6&Prime; depth for your lawn &mdash; with turf-specific guidance on what it means for your program.</p>
@@ -177,20 +212,40 @@
 
           <section class="seo-content">
             <h2>Soil Temperature Guide for Lawn Care</h2>
-            <p>Soil temperature is the most reliable indicator for timing lawn care applications. Unlike air temperature or calendar date, soil temperature tells you exactly what is happening at the root zone where it matters — pre-emergent germination, root activity, and grass growth are all driven by soil temperature, not the forecast high.</p>
-            <p>This tracker shows current soil temperature at three depths: surface (0 cm), approximately 2 inches (6 cm), and approximately 6 inches (18 cm). The 2-inch reading is the most relevant for most lawn care decisions — it reflects the rooting zone of warm-season grasses and the germination zone of most annual weeds.</p>
+            <p>Soil temperature is the most reliable indicator for timing lawn care applications. Unlike air temperature or calendar date, soil temperature tells you exactly what is happening at the root zone — pre-emergent germination, root activity, and grass growth are all driven by soil temperature, not the forecast high.</p>
+            <p>This tracker shows current readings at three depths: surface (0 cm), approximately 2 inches (6 cm), and approximately 6 inches (18 cm). The 2-inch reading is most relevant for lawn care decisions — it reflects the rooting zone of warm-season grasses and the germination zone of most annual weeds. If you also want to track heat accumulation over the season, see the <a href="./gdd-tracker.html">GDD Calculator</a>.</p>
 
             <h3>Bermuda Grass Soil Temperature Windows</h3>
-            <p>Bermuda grass (Cynodon dactylon) is dormant below 50°F soil temperature. The pre-emergent crabgrass window opens when 2-inch soil reaches 50–55°F. Light nitrogen can be applied at first visible greenup around 55–65°F. A full fertilizer, herbicide, and PGR program is appropriate above 65°F with confirmed canopy coverage. Above 80°F, avoid elemental sulfur and drought-stress-inducing applications.</p>
+            <p>Bermuda grass (Cynodon dactylon) is dormant below 50°F. The pre-emergent crabgrass window opens at 50–55°F. Light nitrogen is appropriate at first visible greenup (55–65°F). A full fertilizer, herbicide, and PGR program is appropriate above 65°F with confirmed canopy coverage. Above 80°F, avoid elemental sulfur and drought-stress applications.</p>
 
             <h3>Zoysia Grass Soil Temperature</h3>
-            <p>Zoysia breaks dormancy later than bermuda. Hold all inputs until 2-inch soil consistently exceeds 55°F. The pre-emergent window closes around 65°F. Confirm visual greenup before applying nitrogen — zoysia frequently shows low soil temperature but is not yet visibly green. Full program including PGR is appropriate above 65°F with confirmed growth.</p>
+            <p>Zoysia breaks dormancy later than bermuda. Hold all inputs until 2-inch soil consistently exceeds 55°F. The pre-emergent window closes around 65°F. Confirm visual greenup before applying nitrogen — zoysia frequently shows adequate soil temperature before visibly breaking green. Full program including PGR is appropriate above 65°F with confirmed growth.</p>
 
             <h3>St. Augustine Soil Temperature</h3>
-            <p>St. Augustine requires soil above 60°F before nitrogen applications. The pre-emergent window is active through 70°F. St. Augustine is more sensitive to cold damage than bermuda — be conservative when soil temperatures are borderline. Most St. Augustine programs do not include PGR. Watch for chinch bug pressure as soil temperatures climb past 75°F.</p>
+            <p>St. Augustine requires soil above 60°F before nitrogen applications. The pre-emergent window is active through 70°F. St. Augustine is more sensitive to cold damage than bermuda — be conservative at borderline temperatures. Most St. Augustine programs do not include PGR. Watch for chinch bug pressure as soil temperatures climb past 75°F.</p>
 
             <h3>Cool-Season Grass Soil Temperature</h3>
-            <p>Cool-season grasses (tall fescue, Kentucky bluegrass, perennial ryegrass) thrive when soil is between 50–65°F. This is the ideal window for fertilization and overseeding. Above 75°F, cool-season grasses enter summer stress. Above 80°F, most cool-season varieties are dormant or declining. The best growth window is spring and fall when soil temperatures are in the 50–65°F range.</p>
+            <p>Cool-season grasses (tall fescue, Kentucky bluegrass, perennial ryegrass) thrive when soil is 50–65°F — the ideal window for fertilization and overseeding. Above 75°F, cool-season grasses enter summer stress. Above 80°F most varieties are dormant or declining. The best growth window is spring and fall.</p>
+
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>What soil temperature does bermuda grass need to break dormancy?</summary>
+                <p>Bermuda grass begins breaking dormancy when 2-inch soil temperature consistently reaches 50°F. Visible greenup typically begins between 55–65°F. You can resume light nitrogen once you see green shoots, and a full fertilizer and PGR program is appropriate above 65°F.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What soil temperature should I use for pre-emergent timing?</summary>
+                <p>Apply crabgrass pre-emergent when 2-inch soil temperature reaches 50–55°F for 3–5 consecutive days. Applying after soil consistently exceeds 55°F risks missing the window for summer annual weeds like crabgrass and goosegrass.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What is the ideal soil temperature for zoysia grass?</summary>
+                <p>Zoysia breaks dormancy when 2-inch soil reaches 55–65°F, slightly later than bermuda. Apply pre-emergent before soil hits 65°F. Confirm visual greenup before applying nitrogen — zoysia often shows adequate soil temp before the canopy is visibly green.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What soil temperature is too hot for lawn applications?</summary>
+                <p>Above 80°F, avoid elemental sulfur (burn risk increases significantly) and high-rate nitrogen applications under drought conditions. St. Augustine is heat-sensitive above 85°F. Cool-season grasses are typically stressed or dormant above 75°F soil temperature.</p>
+              </details>
+            </div>
           </section>
         </div>
       </main>
