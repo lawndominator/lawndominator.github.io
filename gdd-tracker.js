@@ -3,6 +3,7 @@
 var currentGrassType = 'bermuda';
 var currentTotal = 0;
 var currentDaily = null;
+var currentPgrDaily = null;
 
 var GRASS_MILESTONES = {
   bermuda: [
@@ -26,9 +27,26 @@ var GRASS_MILESTONES = {
 // Max possible daily GDD (base 50, cap 86): (86+50)/2 - 50 = 18
 var MAX_DAILY_GDD = 18;
 
+function getLocalDateString() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = String(now.getMonth() + 1).padStart(2, '0');
+  var day = String(now.getDate()).padStart(2, '0');
+  return year + '-' + month + '-' + day;
+}
+
+function getPreviousDateString(dateStr) {
+  var dt = new Date(dateStr + 'T12:00:00');
+  dt.setDate(dt.getDate() - 1);
+  var year = dt.getFullYear();
+  var month = String(dt.getMonth() + 1).padStart(2, '0');
+  var day = String(dt.getDate()).padStart(2, '0');
+  return year + '-' + month + '-' + day;
+}
+
 async function fetchHistoricalData(lat, lon) {
   var year = new Date().getFullYear();
-  var today = new Date().toISOString().slice(0, 10);
+  var today = getLocalDateString();
   var url = 'https://archive-api.open-meteo.com/v1/archive' +
     '?latitude=' + lat + '&longitude=' + lon +
     '&start_date=' + year + '-01-01&end_date=' + today +
@@ -38,17 +56,21 @@ async function fetchHistoricalData(lat, lon) {
   return res.json();
 }
 
-function calculateGDD(data) {
+function calculateGDD(data, options) {
+  options = options || {};
   var times  = data.daily.time;
   var maxArr = data.daily.temperature_2m_max;
   var minArr = data.daily.temperature_2m_min;
-  var T_BASE = 50;
+  var tBase = options.baseTemp || 50;
+  var maxCap = options.maxCap;
   var cumulative = 0;
   var daily = [];
   for (var i = 0; i < times.length; i++) {
-    var tMax = maxArr[i] !== null ? Math.min(maxArr[i], 86) : T_BASE;
-    var tMin = minArr[i] !== null ? Math.max(minArr[i], T_BASE) : T_BASE;
-    var gdd  = Math.max(0, (tMax + tMin) / 2 - T_BASE);
+    var tMax = maxArr[i] !== null ? maxArr[i] : tBase;
+    var tMin = minArr[i] !== null ? minArr[i] : tBase;
+    if (typeof maxCap === 'number') tMax = Math.min(tMax, maxCap);
+    tMin = Math.max(tMin, tBase);
+    var gdd  = Math.max(0, (tMax + tMin) / 2 - tBase);
     cumulative += gdd;
     daily.push({
       date: times[i],
@@ -84,8 +106,8 @@ function formatDateLabel(dateStr, isToday, isYesterday) {
 function renderDailyList(daily, fromDate) {
   var el = document.getElementById('gdd-daily-list');
   if (!el) return;
-  var todayStr = new Date().toISOString().slice(0, 10);
-  var yesterStr = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  var todayStr = daily.length ? daily[daily.length - 1].date : getLocalDateString();
+  var yesterStr = getPreviousDateString(todayStr);
   var label = document.getElementById('gdd-list-label');
 
   var recent;
@@ -118,19 +140,23 @@ function renderDailyList(daily, fromDate) {
 function updateFromDateResult() {
   var input = document.getElementById('gdd-from-input');
   var result = document.getElementById('gdd-from-result');
-  if (!input || !result || !currentDaily) return;
+  if (!input || !result || !currentDaily || !currentPgrDaily) return;
   var val = input.value;
   if (!val) {
-    result.textContent = 'Pick a date — useful for PGR and pre-emergent timing';
+    result.textContent = 'Pick a date — shows PGR GDD at base 32°F and turf GDD at base 50°F';
     result.className = 'gdd-from-result gdd-from-result--empty';
     renderDailyList(currentDaily, null);
     return;
   }
-  var sum = 0;
+  var turfSum = 0;
+  var pgrSum = 0;
   var days = 0;
-  var today = new Date().toISOString().slice(0, 10);
+  var today = currentDaily.length ? currentDaily[currentDaily.length - 1].date : getLocalDateString();
   currentDaily.forEach(function(d) {
-    if (d.date >= val && d.date <= today) { sum += d.gdd; days++; }
+    if (d.date >= val && d.date <= today) { turfSum += d.gdd; days++; }
+  });
+  currentPgrDaily.forEach(function(d) {
+    if (d.date >= val && d.date <= today) { pgrSum += d.gdd; }
   });
   if (days === 0) {
     result.textContent = 'No data for that date range.';
@@ -140,7 +166,9 @@ function updateFromDateResult() {
   }
   var dt = new Date(val + 'T12:00:00');
   var dateLabel = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  result.textContent = Math.round(sum) + ' GDD since ' + dateLabel + ' (' + days + ' day' + (days === 1 ? ')' : 's)');
+  result.textContent = Math.round(pgrSum) + ' PGR GDD (base 32°F) · ' +
+    Math.round(turfSum) + ' turf GDD (base 50°F) since ' + dateLabel +
+    ' (' + days + ' day' + (days === 1 ? ')' : 's)');
   result.className = 'gdd-from-result';
   renderDailyList(currentDaily, val);
 }
@@ -156,8 +184,10 @@ async function loadData(lat, lon, displayName) {
 
   try {
     var data   = await fetchHistoricalData(lat, lon);
-    var result = calculateGDD(data);
+    var result = calculateGDD(data, { baseTemp: 50, maxCap: 86 });
+    var pgrResult = calculateGDD(data, { baseTemp: 32 });
     currentDaily = result.daily;
+    currentPgrDaily = pgrResult.daily;
     currentTotal = result.total;
 
     resultsEl.hidden = false;
@@ -165,7 +195,7 @@ async function loadData(lat, lon, displayName) {
 
     // Set date picker bounds
     var year = new Date().getFullYear();
-    var today = new Date().toISOString().slice(0, 10);
+    var today = currentDaily.length ? currentDaily[currentDaily.length - 1].date : getLocalDateString();
     var fromInput = document.getElementById('gdd-from-input');
     if (fromInput) {
       fromInput.min = year + '-01-01';

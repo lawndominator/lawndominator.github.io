@@ -11,16 +11,23 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#1d2a1c" />
     <link rel="canonical" href="https://lawndominators.com/gdd-tracker.html" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator" />
     <meta property="og:description" content="Free GDD calculator for lawn care. Track growing degree days from January 1, calculate GDD from any date for PGR timing, and see pre-emergent and greenup milestones for your grass type." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/gdd-tracker.html" />
     <meta property="og:site_name" content="Lawn Dominator" />
-    <meta property="og:image" content="https://lawndominators.com/dashboard.webp" />
+    <meta property="og:image" content="https://lawndominators.com/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lawn Dominator GDD calculator preview for lawn care timing." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="GDD Calculator for Lawns — Growing Degree Days Tracker — Lawn Dominator" />
     <meta name="twitter:description" content="Free GDD calculator for lawn care. Track seasonal accumulation and calculate GDD from any date for PGR reapplication timing." />
-    <meta name="twitter:image" content="https://lawndominators.com/dashboard.webp" />
+    <meta name="twitter:image" content="https://lawndominators.com/social-preview.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
@@ -84,7 +91,7 @@
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Enter your location", "text": "Type your city or zip code and click Calculate to load seasonal GDD data for your area from January 1 to today." },
           { "@type": "HowToStep", "position": 2, "name": "Enter your application date", "text": "In the 'GDD from a specific date' section, pick the date you last applied your PGR product such as Primo Maxx or T-Nex." },
-          { "@type": "HowToStep", "position": 3, "name": "Read the GDD total", "text": "The calculator instantly shows total GDD accumulated from your application date to today using your local weather data. No re-fetch required." },
+          { "@type": "HowToStep", "position": 3, "name": "Read the GDD totals", "text": "The calculator shows PGR GDD accumulated from your application date using base 32°F and turf GDD using base 50°F." },
           { "@type": "HowToStep", "position": 4, "name": "Compare to reapplication threshold", "text": "Check the PGR reference table below — Primo Maxx and T-Nex typically need reapplication at 150–200 GDD from the application date. If you are at or past that threshold, it is time to reapply." }
         ]
       }
@@ -167,7 +174,7 @@
               <p class="gdd-from-date__label">GDD from a specific date</p>
               <div class="gdd-from-date__row">
                 <input type="date" id="gdd-from-input" class="gdd-date-input" aria-label="Calculate GDD from this date" />
-                <p class="gdd-from-result gdd-from-result--empty" id="gdd-from-result">Pick a date — useful for PGR and pre-emergent timing</p>
+                <p class="gdd-from-result gdd-from-result--empty" id="gdd-from-result">Pick a date — shows PGR GDD at base 32°F and turf GDD at base 50°F</p>
               </div>
             </div>
 

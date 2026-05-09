@@ -51,6 +51,15 @@ function getBadge(temp) {
 
 function round1(v) { return Math.round(v * 10) / 10; }
 
+function getLocalHourString() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = String(now.getMonth() + 1).padStart(2, '0');
+  var day = String(now.getDate()).padStart(2, '0');
+  var hour = String(now.getHours()).padStart(2, '0');
+  return year + '-' + month + '-' + day + 'T' + hour;
+}
+
 async function fetchSoilData(lat, lon) {
   var url = 'https://api.open-meteo.com/v1/forecast' +
     '?latitude=' + lat + '&longitude=' + lon +
@@ -62,7 +71,7 @@ async function fetchSoilData(lat, lon) {
 }
 
 function getLatestValue(times, values) {
-  var nowStr = new Date().toISOString().slice(0, 13);
+  var nowStr = getLocalHourString();
   var latest = null;
   for (var i = 0; i < times.length; i++) {
     if (times[i].slice(0, 13) <= nowStr && values[i] !== null) {
