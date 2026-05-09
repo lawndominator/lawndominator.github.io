@@ -1680,3 +1680,153 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
 .tool-panel__web-link:hover {
   text-decoration: underline;
 }
+
+/* ─── Research guide pages ──────────────────────────────────────────────── */
+
+.guide-page {
+  width: var(--max-width);
+  margin-inline: auto;
+  padding-block: var(--space-3xl) var(--space-4xl);
+}
+
+.guide-hero {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 860px;
+  margin-bottom: var(--space-2xl);
+}
+
+.guide-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+}
+
+.guide-hero p,
+.guide-copy p,
+.guide-copy li {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.36fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.guide-copy,
+.guide-aside {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.guide-card,
+.guide-note,
+.guide-source-list {
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: oklch(0.2 0.03 118 / 0.86);
+  padding: var(--space-xl);
+}
+
+.guide-card h2,
+.guide-note h2,
+.guide-source-list h2 {
+  max-width: none;
+  font-size: clamp(1.25rem, 2vw, 1.85rem);
+  margin-bottom: var(--space-md);
+}
+
+.guide-card h3 {
+  max-width: none;
+  font-size: 1rem;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.guide-card p,
+.guide-card ul,
+.guide-source-list ol,
+.guide-source-list p,
+.guide-note p {
+  margin: 0;
+}
+
+.guide-card ul,
+.guide-source-list ol {
+  padding-left: 1.25rem;
+}
+
+.guide-source-list li + li {
+  margin-top: var(--space-sm);
+}
+
+.guide-source-list a,
+.guide-copy a,
+.guide-note a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.guide-aside {
+  position: sticky;
+  top: 6rem;
+}
+
+.guide-note {
+  background:
+    radial-gradient(circle at top right, oklch(0.74 0.15 86 / 0.13), transparent 30%),
+    oklch(0.2 0.03 118 / 0.9);
+}
+
+.guide-note .store-call {
+  margin-top: var(--space-md);
+  min-width: 0;
+}
+
+.guide-kicker {
+  margin: 0;
+  color: var(--glow);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.guide-links {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.guide-links a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.guide-links a:hover {
+  text-decoration: underline;
+}
+
+.research-guides {
+  padding-block: var(--space-3xl);
+}
+
+.research-guides__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 860px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-aside {
+    position: static;
+  }
+}
