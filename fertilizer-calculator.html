@@ -15,12 +15,13 @@
   </head>
   <body>
     <div class="site-shell">
-      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Fertilizer calculator</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="./lawn-care-calendar.html">Calendars</a><a href="./soil-temperature.html">Soil Temp</a><a href="./gdd-tracker.html">GDD</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
+      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Fertilizer calculator</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="/#free-tools">Free Tools</a><a href="/#calculators">Calculators</a><a href="/#calendars">Calendars</a><a href="/#guides">Guides</a><a href="/#download">Download</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
       <main class="guide-page">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Lawn Dominator</a><span class="breadcrumb__sep">›</span><span>Fertilizer calculator</span></nav>
         <section class="guide-hero"><p class="guide-kicker">Reviewed May 9, 2026</p><h1>Lawn fertilizer calculator guide</h1><p>Fertilizer math should start with target nutrient rate, product analysis, and lawn square footage. The app keeps the math and the record in the same place.</p></section>
         <div class="guide-grid">
           <article class="guide-copy">
+            <section class="guide-card tool-card"><h2>Calculate fertilizer amount</h2><form id="fertilizer-form" class="tool-form"><label>Lawn area, sq ft<input id="fert-area" type="number" min="1" step="1" value="5000" required /></label><label>Target nitrogen, lb N / 1,000 sq ft<input id="fert-rate" type="number" min="0" step="0.01" value="0.5" required /></label><label>Bag nitrogen percentage<input id="fert-n" type="number" min="0.1" step="0.1" value="16" required /></label><label>Bag weight, lb optional<input id="fert-bag" type="number" min="0" step="0.1" value="40" /></label><button type="submit">Calculate fertilizer</button></form><div id="fertilizer-result" class="tool-result">Enter your lawn size, target rate, and bag analysis.</div></section>
             <section class="guide-card"><h2>The core fertilizer formula</h2><p>Purdue Turfgrass explains the basic two-step math: divide the desired pounds of nutrient per 1,000 square feet by the nutrient percentage, then multiply by the treated area. For example, a 0.75 lb nitrogen target with a 16% nitrogen product needs 0.75 ÷ 0.16 = 4.69 lb of product per 1,000 square feet.</p></section>
             <section class="guide-card"><h2>Why a calculator beats guessing</h2><ul><li>It separates actual nitrogen from product weight.</li><li>It scales the rate to your real lawn square footage.</li><li>It helps avoid accidental over-application when switching products.</li><li>It creates a log so you know what was applied and when.</li></ul></section>
             <section class="guide-card"><h2>Use Lawn Dominator</h2><p>Use Lawn Dominator to calculate treatment amounts, save the product, log the date and rate, and compare results with photos over the season.</p></section>
@@ -30,5 +31,6 @@
         </div>
       </main>
     </div>
+    <script src="./lawn-tools.js"></script>
   </body>
 </html>

@@ -1681,6 +1681,241 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   text-decoration: underline;
 }
 
+/* ─── Browser tool forms and funnel blocks ──────────────────────────────── */
+
+.hero__quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero__quicklinks a,
+.workflow-card,
+.tool-result,
+.treatment-item,
+.calendar-checklist label {
+  border: 1px solid var(--line);
+  background: oklch(0.2 0.03 118 / 0.78);
+}
+
+.hero__quicklinks a {
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.62rem 0.85rem;
+  text-decoration: none;
+}
+
+.hero__quicklinks a:hover {
+  border-color: oklch(0.82 0.16 86 / 0.7);
+  color: var(--accent);
+}
+
+.workflow-hub,
+.app-tools {
+  padding-block: var(--space-3xl);
+}
+
+.workflow-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.workflow-card {
+  border-radius: 1.2rem;
+  color: var(--ink);
+  display: grid;
+  gap: var(--space-sm);
+  min-height: 220px;
+  padding: var(--space-xl);
+  text-decoration: none;
+}
+
+.workflow-card span {
+  color: var(--glow);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.workflow-card h3 {
+  max-width: none;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+}
+
+.workflow-card p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.workflow-card:hover {
+  border-color: oklch(0.82 0.16 86 / 0.72);
+  transform: translateY(-2px);
+}
+
+.tool-card {
+  background:
+    radial-gradient(circle at top right, oklch(0.74 0.15 86 / 0.14), transparent 34%),
+    oklch(0.19 0.035 118 / 0.92);
+}
+
+.tool-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.tool-form label {
+  color: var(--ink-soft);
+  display: grid;
+  gap: var(--space-xs);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.tool-form input,
+.tool-form select,
+.tool-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: oklch(0.14 0.02 118);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.82rem 0.9rem;
+}
+
+.tool-form textarea {
+  resize: vertical;
+}
+
+.tool-form button,
+.calendar-actions button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: oklch(0.12 0.02 118);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0.85rem 1rem;
+}
+
+.tool-form .btn-secondary,
+.calendar-actions .btn-secondary {
+  border: 1px solid var(--line);
+  background: oklch(0.18 0.025 118);
+  color: var(--ink);
+}
+
+.tool-wide,
+.tool-repeat,
+.tool-result,
+.treatment-list {
+  grid-column: 1 / -1;
+}
+
+.tool-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 0.45fr) auto;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.tool-result {
+  border-radius: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+}
+
+.tool-result ul {
+  margin: var(--space-sm) 0 0;
+}
+
+.tool-result--warn {
+  border-color: oklch(0.7 0.17 45 / 0.8);
+}
+
+.tool-muted {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.treatment-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.treatment-item {
+  border-radius: 0.95rem;
+  padding: var(--space-md);
+  position: relative;
+}
+
+.treatment-item h3 {
+  font-size: 1rem;
+  max-width: none;
+  padding-right: 5rem;
+}
+
+.treatment-item p {
+  margin-top: var(--space-xs);
+}
+
+.treatment-delete {
+  position: absolute;
+  right: var(--space-md);
+  top: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.55rem;
+}
+
+.calendar-checklist {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.calendar-checklist label {
+  align-items: flex-start;
+  border-radius: 0.95rem;
+  color: var(--ink-soft);
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: auto 1fr;
+  line-height: 1.55;
+  padding: var(--space-md);
+}
+
+.calendar-checklist input {
+  margin-top: 0.25rem;
+}
+
+.calendar-checklist strong {
+  color: var(--ink);
+}
+
+.calendar-actions {
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 720px) {
+  .tool-form,
+  .tool-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Research guide pages ──────────────────────────────────────────────── */
 
 .guide-page {

@@ -15,12 +15,13 @@
   </head>
   <body>
     <div class="site-shell">
-      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Spray log app</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="./tank-mix-calculator.html">Tank Mix</a><a href="./soil-temperature.html">Soil Temp</a><a href="./gdd-tracker.html">GDD</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
+      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Spray log app</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="/#free-tools">Free Tools</a><a href="/#calculators">Calculators</a><a href="/#calendars">Calendars</a><a href="/#guides">Guides</a><a href="/#download">Download</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
       <main class="guide-page">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Lawn Dominator</a><span class="breadcrumb__sep">›</span><span>Spray log app</span></nav>
         <section class="guide-hero"><p class="guide-kicker">App workflow</p><h1>Spray log app for lawn care</h1><p>A good spray log records more than the product name. It captures rate, lawn size, water volume, weather, timing signal, and what happened afterward.</p></section>
         <div class="guide-grid">
           <article class="guide-copy">
+            <section class="guide-card tool-card"><h2>Save a spray log in this browser</h2><form id="treatment-form" class="tool-form"><label>Date<input id="treatment-date" type="date" required /></label><label>Type<select id="treatment-type"><option>Herbicide</option><option>Fungicide</option><option>Insecticide</option><option>PGR</option><option>Fertilizer</option><option>Other</option></select></label><label>Product<input id="treatment-product" type="text" placeholder="Product or tank mix name" /></label><label>Rate<input id="treatment-rate" type="text" placeholder="Example: 0.5 oz / 1,000" /></label><label class="tool-wide">Notes<textarea id="treatment-notes" rows="4" placeholder="Weather, soil temp, GDD, water-in, target weeds, follow-up notes"></textarea></label><button type="submit">Save treatment</button><button type="button" class="btn-secondary" id="treatment-export">Export CSV</button></form><div id="treatment-list" class="treatment-list"></div></section>
             <section class="guide-card"><h2>What to log</h2><ul><li>Product, active ingredient, rate, and treated area.</li><li>Carrier volume, nozzle/sprayer notes, and tank mix order.</li><li>Weather, soil temperature, GDD, and stress conditions.</li><li>Photos and follow-up notes 7 to 21 days later.</li></ul></section>
             <section class="guide-card"><h2>Why it matters</h2><p>Turf response depends on timing, weather, product fit, and stress. Without a spray log, you lose the context needed to repeat good applications and avoid bad ones.</p></section>
             <section class="guide-card"><h2>Related tools</h2><p>Pair the spray log with the <a href="./tank-mix-calculator.html">tank mix calculator guide</a>, <a href="./soil-temperature.html">soil temperature tracker</a>, and <a href="./gdd-tracker.html">GDD calculator</a>.</p></section>
@@ -29,5 +30,6 @@
         </div>
       </main>
     </div>
+    <script src="./lawn-tools.js"></script>
   </body>
 </html>

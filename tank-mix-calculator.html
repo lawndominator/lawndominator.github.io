@@ -15,12 +15,13 @@
   </head>
   <body>
     <div class="site-shell">
-      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Tank mix calculator</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="./spray-log-app.html">Spray Log</a><a href="./soil-temperature.html">Soil Temp</a><a href="./gdd-tracker.html">GDD</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
+      <header class="topbar"><div class="topbar__brand"><span class="topbar__mark">LD</span><div><p class="topbar__eyebrow">Lawn Dominators</p><p class="topbar__sub">Tank mix calculator</p></div></div><nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="/#free-tools">Free Tools</a><a href="/#calculators">Calculators</a><a href="/#calendars">Calendars</a><a href="/#guides">Guides</a><a href="/#download">Download</a></nav><a class="pill-link" href="/#download">Get the app</a></header>
       <main class="guide-page">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Lawn Dominator</a><span class="breadcrumb__sep">›</span><span>Tank mix calculator</span></nav>
         <section class="guide-hero"><p class="guide-kicker">Reviewed May 9, 2026</p><h1>Tank mix calculator for lawn care</h1><p>A tank mix plan should calculate amounts, respect labels, check compatibility, and leave a record of what went into the sprayer.</p></section>
         <div class="guide-grid">
           <article class="guide-copy">
+            <section class="guide-card tool-card"><h2>Calculate tank mix amounts</h2><form id="tank-form" class="tool-form"><label>Treated area, sq ft<input id="tank-area" type="number" min="1" step="1" value="5000" required /></label><label>Total spray volume, gallons<input id="tank-gallons" type="number" min="0.1" step="0.1" value="4" required /></label><div id="tank-products" class="tool-repeat"></div><button type="button" class="btn-secondary" id="tank-add-row">Add product</button><button type="submit">Calculate mix</button></form><div id="tank-result" class="tool-result">Enter product rates per 1,000 sq ft. Units can be oz, fl oz, lb, or mL as long as each rate uses the same unit you want in the result.</div></section>
             <section class="guide-card"><h2>Start with the label</h2><p>Extension pesticide safety guidance is consistent: the label controls use. If the label prohibits a mixture, rate, turf species, site, or condition, the calculator does not make it safe.</p></section>
             <section class="guide-card"><h2>Compatibility matters</h2><p>Montana State Extension and Nebraska Extension both describe jar tests as a way to check physical compatibility before mixing pesticides at tank scale. This is especially important when labels do not provide clear tank-mix instructions or when water quality may affect the mix.</p></section>
             <section class="guide-card"><h2>What Lawn Dominator helps track</h2><ul><li>Products and rates by lawn size.</li><li>Carrier volume and spray notes.</li><li>Weather and timing conditions.</li><li>Application history for follow-up decisions.</li></ul></section>
@@ -30,5 +31,6 @@
         </div>
       </main>
     </div>
+    <script src="./lawn-tools.js"></script>
   </body>
 </html>
