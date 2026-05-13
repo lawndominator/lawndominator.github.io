@@ -36,7 +36,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # ── Affiliate / API credentials from environment ──────────────────────────────
-AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominators-20")
+AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominator-20")
 AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY", "")
 AMAZON_SECRET_KEY = os.getenv("AMAZON_SECRET_KEY", "")
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
