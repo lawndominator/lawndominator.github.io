@@ -1,6 +1,1261 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-13T00:00:00Z",
-  "product_count": 0,
-  "products": []
+  "generated_at": "2026-05-13T23:22:52.155283+00:00",
+  "product_count": 66,
+  "products": [
+    {
+      "id": 1,
+      "slug": "prodiamine-65wdg",
+      "name": "Prodiamine 65WDG",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Prodiamine+65WDG+pre-emergent&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:02:33.233836+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:02:33.234005+00:00"
+    },
+    {
+      "id": 2,
+      "slug": "dimension-2ew",
+      "name": "Dimension 2EW (Dithiopyr)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Dimension+2EW+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:02:53.356986+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:02:53.357124+00:00"
+    },
+    {
+      "id": 3,
+      "slug": "ronstar-g",
+      "name": "Ronstar G (Oxadiazon 2G)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Ronstar+G+pre-emergent&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:03:10.540096+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:03:10.540243+00:00"
+    },
+    {
+      "id": 4,
+      "slug": "spectacle-flo",
+      "name": "Spectacle Flo (Indaziflam)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Spectacle+Flo+indaziflam&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:03:25.503985+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:03:25.504119+00:00"
+    },
+    {
+      "id": 5,
+      "slug": "pendulum-2g",
+      "name": "Pendulum 2G (Pendimethalin)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Pendulum+2G+pre-emergent+granule&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:03:45.519864+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:03:45.520004+00:00"
+    },
+    {
+      "id": 6,
+      "slug": "gallery-75df",
+      "name": "Gallery 75 DF (Isoxaben)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Gallery+75+DF+broadleaf+pre-emergent&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:04:05.290819+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:04:05.290989+00:00"
+    },
+    {
+      "id": 7,
+      "slug": "specticle-g",
+      "name": "Specticle G (Indaziflam)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Specticle+G+pre-emergent+granule&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:04:23.068807+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:04:23.068938+00:00"
+    },
+    {
+      "id": 8,
+      "slug": "atrazine-4l",
+      "name": "Atrazine 4L",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Atrazine+4L+weed+killer&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:04:40.512273+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:04:40.512409+00:00"
+    },
+    {
+      "id": 9,
+      "slug": "pendulum-aquacap",
+      "name": "Pendulum AquaCap (Pendimethalin 38.7%)",
+      "category": "pre-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Pendulum+AquaCap+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:04:57.957661+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:04:57.957780+00:00"
+    },
+    {
+      "id": 15,
+      "slug": "celsius-wg",
+      "name": "Celsius WG",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Celsius+WG+turf+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:05:12.908383+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:05:12.908515+00:00"
+    },
+    {
+      "id": 16,
+      "slug": "certainty-wdg",
+      "name": "Certainty WDG (Sulfosulfuron)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Certainty+herbicide+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:05:30.447645+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:05:30.447782+00:00"
+    },
+    {
+      "id": 17,
+      "slug": "drive-xlr8",
+      "name": "Drive XLR8 (Quinclorac)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Drive+XLR8+crabgrass+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:05:50.116247+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:05:50.116395+00:00"
+    },
+    {
+      "id": 18,
+      "slug": "sedgehammer-plus",
+      "name": "SedgeHammer+ (Halosulfuron)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Sedgehammer+nutsedge+killer&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:06:10.104282+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:06:10.104424+00:00"
+    },
+    {
+      "id": 19,
+      "slug": "speedzone-southern",
+      "name": "SpeedZone Southern EW",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=SpeedZone+Southern+lawn+weed+killer&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:06:27.696263+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:06:27.696397+00:00"
+    },
+    {
+      "id": 20,
+      "slug": "manor-60df",
+      "name": "Manor 60DF (Metsulfuron-Methyl)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Manor+60DF+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:06:45.120747+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:06:45.120873+00:00"
+    },
+    {
+      "id": 21,
+      "slug": "tenacity",
+      "name": "Tenacity Turf Herbicide (Mesotrione)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Tenacity+turf+herbicide+mesotrione&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:07:05.492640+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:07:05.492781+00:00"
+    },
+    {
+      "id": 22,
+      "slug": "turflon-ester",
+      "name": "Turflon Ester (Triclopyr)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Turflon+Ester+lawn+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:07:22.988275+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:07:22.988414+00:00"
+    },
+    {
+      "id": 23,
+      "slug": "dismiss",
+      "name": "Dismiss Turf Herbicide (Sulfentrazone)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Dismiss+turf+herbicide+sulfentrazone&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:07:43.086968+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:07:43.087101+00:00"
+    },
+    {
+      "id": 24,
+      "slug": "pylex",
+      "name": "Pylex Turf Herbicide (Topramezone)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Pylex+herbicide+topramezone&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:08:11.695693+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:08:11.695827+00:00"
+    },
+    {
+      "id": 25,
+      "slug": "msma-target-6",
+      "name": "MSMA Target 6 Plus",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=MSMA+Target+6+Plus+lawn+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:08:28.953467+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:08:28.953642+00:00"
+    },
+    {
+      "id": 26,
+      "slug": "q4-plus",
+      "name": "Q4 Plus Turf Herbicide",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Q4+Plus+turf+herbicide+broadleaf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:08:46.185252+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:08:46.185399+00:00"
+    },
+    {
+      "id": 27,
+      "slug": "trimec",
+      "name": "Trimec Classic Broadleaf Herbicide",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Trimec+Classic+lawn+herbicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:09:06.134315+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:09:06.134441+00:00"
+    },
+    {
+      "id": 28,
+      "slug": "revolver",
+      "name": "Revolver Herbicide (Foramsulfuron)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Revolver+herbicide+foramsulfuron&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:09:26.664664+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:09:26.664807+00:00"
+    },
+    {
+      "id": 29,
+      "slug": "katana",
+      "name": "Katana Turf Herbicide (Flazasulfuron)",
+      "category": "post-emergent",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Katana+turf+herbicide+flazasulfuron&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:09:46.636248+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:09:46.636392+00:00"
+    },
+    {
+      "id": 35,
+      "slug": "primo-maxx",
+      "name": "Primo Maxx (Trinexapac-ethyl)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Primo+Maxx+PGR+trinexapac&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:10:06.826220+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:10:06.826363+00:00"
+    },
+    {
+      "id": 36,
+      "slug": "t-nex-1as",
+      "name": "T-Nex 1AS (Trinexapac-ethyl)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=T-Nex+1AS+PGR+trinexapac&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:10:26.617826+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:10:26.617952+00:00"
+    },
+    {
+      "id": 37,
+      "slug": "anuew",
+      "name": "Anuew (Prohexadione Calcium)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Anuew+plant+growth+regulator&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:10:46.590937+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:10:46.591064+00:00"
+    },
+    {
+      "id": 38,
+      "slug": "trimmit-2sc",
+      "name": "Trimmit 2SC (Paclobutrazol)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Trimmit+2SC+PGR+paclobutrazol&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:11:06.555511+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:11:06.555672+00:00"
+    },
+    {
+      "id": 39,
+      "slug": "cutless",
+      "name": "Cutless (Flurprimidol)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Cutless+0.33G+plant+growth+regulator&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:11:26.373591+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:11:26.373774+00:00"
+    },
+    {
+      "id": 40,
+      "slug": "proxy-embark",
+      "name": "Proxy / Embark (Mefluidide)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Proxy+PGR+mefluidide+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:11:46.279503+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:11:46.279676+00:00"
+    },
+    {
+      "id": 41,
+      "slug": "pramaxis-mec",
+      "name": "Pramaxis MEC (Trinexapac-ethyl)",
+      "category": "pgr",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Pramaxis+MEC+PGR+trinexapac&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:12:03.604556+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:12:03.604728+00:00"
+    },
+    {
+      "id": 50,
+      "slug": "propiconazole-14-3",
+      "name": "Propiconazole 14.3 (Banner Maxx)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Propiconazole+14.3+fungicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:12:23.494588+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:12:23.494760+00:00"
+    },
+    {
+      "id": 51,
+      "slug": "heritage-g",
+      "name": "Heritage G (Azoxystrobin)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Heritage+azoxystrobin+fungicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:12:43.497381+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:12:43.497528+00:00"
+    },
+    {
+      "id": 52,
+      "slug": "headway-g",
+      "name": "Headway G Fungicide",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Headway+G+fungicide+granule&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:13:00.978629+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:13:00.978768+00:00"
+    },
+    {
+      "id": 53,
+      "slug": "armada-50-wdg",
+      "name": "Armada 50 WDG",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Armada+50+WDG+fungicide+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:13:15.946328+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:13:15.946465+00:00"
+    },
+    {
+      "id": 54,
+      "slug": "pillar-sc",
+      "name": "Pillar SC Intrinsic Fungicide",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Pillar+SC+Intrinsic+fungicide+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:13:33.356471+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:13:33.356633+00:00"
+    },
+    {
+      "id": 55,
+      "slug": "clearys-3336-f",
+      "name": "Clearys 3336 F (Thiophanate-Methyl)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Clearys+3336+F+fungicide+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:13:53.371511+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:13:53.371669+00:00"
+    },
+    {
+      "id": 56,
+      "slug": "eagle-20ew",
+      "name": "Eagle 20EW (Myclobutanil)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Eagle+20EW+fungicide+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:14:13.480177+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:14:13.480320+00:00"
+    },
+    {
+      "id": 57,
+      "slug": "daconil",
+      "name": "Daconil (Chlorothalonil)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Daconil+fungicide+chlorothalonil&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:14:33.212523+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:14:33.212706+00:00"
+    },
+    {
+      "id": 58,
+      "slug": "emerald",
+      "name": "Emerald Fungicide (Boscalid)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Emerald+fungicide+boscalid+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:14:53.079606+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:14:53.079784+00:00"
+    },
+    {
+      "id": 59,
+      "slug": "medallion-wdg",
+      "name": "Medallion WDG (Fludioxonil)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Medallion+WDG+fungicide+fludioxonil&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:15:12.779783+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:15:12.779927+00:00"
+    },
+    {
+      "id": 60,
+      "slug": "subdue-maxx",
+      "name": "Subdue Maxx (Mefenoxam)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Subdue+Maxx+mefenoxam+lawn+fungicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:15:32.871246+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:15:32.871390+00:00"
+    },
+    {
+      "id": 61,
+      "slug": "velista",
+      "name": "Velista (Penthiopyrad)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Velista+fungicide+penthiopyrad&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:15:52.937355+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:15:52.937492+00:00"
+    },
+    {
+      "id": 62,
+      "slug": "encartis",
+      "name": "Encartis (Lumiderm / Isoclast)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Encartis+turf+fungicide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:16:10.111482+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:16:10.111656+00:00"
+    },
+    {
+      "id": 63,
+      "slug": "densicor",
+      "name": "Densicor Fungicide (Cyprodinil + Fludioxonil)",
+      "category": "fungicide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Densicor+fungicide+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:16:27.551987+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:16:27.552126+00:00"
+    },
+    {
+      "id": 70,
+      "slug": "acelepryn-sc",
+      "name": "Acelepryn SC (Chlorantraniliprole)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Acelepryn+SC+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:16:47.436863+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:16:47.436993+00:00"
+    },
+    {
+      "id": 71,
+      "slug": "acelepryn-gr",
+      "name": "Acelepryn GR (Chlorantraniliprole 0.2%)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Acelepryn+GR+granule+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:17:07.469377+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:17:07.469517+00:00"
+    },
+    {
+      "id": 72,
+      "slug": "merit-0-5g",
+      "name": "Merit 0.5G (Imidacloprid)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Merit+0.5G+imidacloprid+grub&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:17:27.501556+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:17:27.501702+00:00"
+    },
+    {
+      "id": 73,
+      "slug": "dylox-6-2g",
+      "name": "Dylox 6.2G (Trichlorfon)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Dylox+6.2G+grub+killer+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:17:47.525133+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:17:47.525257+00:00"
+    },
+    {
+      "id": 74,
+      "slug": "bifen-it",
+      "name": "Bifen IT (Bifenthrin 7.9%)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Bifen+IT+bifenthrin+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:18:07.304033+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:18:07.304153+00:00"
+    },
+    {
+      "id": 75,
+      "slug": "talstar-pl",
+      "name": "Talstar PL Granules (Bifenthrin 0.2%)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Talstar+PL+Granules+bifenthrin&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:18:27.016786+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:18:27.016904+00:00"
+    },
+    {
+      "id": 76,
+      "slug": "meridian-0-33g",
+      "name": "Meridian 0.33G (Thiamethoxam)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Meridian+0.33G+insecticide+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:18:47.051426+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:18:47.051541+00:00"
+    },
+    {
+      "id": 77,
+      "slug": "arena-0-25g",
+      "name": "Arena 0.25G (Clothianidin)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Arena+0.25G+clothianidin+grub&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:19:07.320613+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:19:07.320727+00:00"
+    },
+    {
+      "id": 78,
+      "slug": "demand-cs",
+      "name": "Demand CS (Lambda-Cyhalothrin)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Demand+CS+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:19:26.937522+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:19:26.937664+00:00"
+    },
+    {
+      "id": 79,
+      "slug": "zylam-liquid",
+      "name": "Zylam Liquid Systemic (Dinotefuran)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Zylam+liquid+systemic+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:19:47.141208+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:19:47.141322+00:00"
+    },
+    {
+      "id": 80,
+      "slug": "avid-0-15ec",
+      "name": "Avid 0.15EC (Abamectin)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Avid+0.15EC+abamectin+miticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:20:07.376276+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:20:07.376390+00:00"
+    },
+    {
+      "id": 81,
+      "slug": "movento-240sc",
+      "name": "Movento 240SC (Spirotetramat)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Movento+240SC+insecticide+spirotetramat&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:20:27.349703+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:20:27.349817+00:00"
+    },
+    {
+      "id": 82,
+      "slug": "mainspring-gnl",
+      "name": "Mainspring GNL (Cyantraniliprole)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Mainspring+GNL+insecticide+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:20:47.187080+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:20:47.187203+00:00"
+    },
+    {
+      "id": 83,
+      "slug": "forbid-4f",
+      "name": "Forbid 4F (Spiromesifen)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Forbid+4F+spiromesifen+miticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:21:06.961274+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:21:06.961385+00:00"
+    },
+    {
+      "id": 84,
+      "slug": "tetrasan-5wdg",
+      "name": "TetraSan 5WDG (Etoxazole)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=TetraSan+5WDG+etoxazole+miticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:21:26.657017+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:21:26.657129+00:00"
+    },
+    {
+      "id": 85,
+      "slug": "kontos-sc",
+      "name": "Kontos SC (Spirotetramat 22.4%)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Kontos+SC+insecticide+spirotetramat&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:21:46.259462+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:21:46.259574+00:00"
+    },
+    {
+      "id": 86,
+      "slug": "tristar-8-5sl",
+      "name": "Tristar 8.5 SL (Acetamiprid)",
+      "category": "insecticide",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Tristar+8.5+SL+insecticide&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:22:06.141953+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:22:06.142086+00:00"
+    },
+    {
+      "id": 115,
+      "slug": "hydretain",
+      "name": "Hydretain Root Zone Moisture Manager",
+      "category": "soil-amendment",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Hydretain+root+zone+moisture+manager&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:22:17.979215+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:22:17.979348+00:00"
+    },
+    {
+      "id": 116,
+      "slug": "revolution-surfactant",
+      "name": "Revolution Soil Surfactant",
+      "category": "soil-amendment",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Revolution+soil+surfactant+turf&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:22:28.583702+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:22:28.583842+00:00"
+    },
+    {
+      "id": 117,
+      "slug": "mycoapply",
+      "name": "MycoApply Mycorrhizal Inoculant",
+      "category": "soil-amendment",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=MycoApply+Mycorrhizal+Inoculant+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:22:40.347857+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:22:40.347967+00:00"
+    },
+    {
+      "id": 118,
+      "slug": "feature-6-0-0",
+      "name": "Feature 6-0-0 Iron Fertilizer",
+      "category": "soil-amendment",
+      "offers": [
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/s?k=Feature+6-0-0+iron+fertilizer+lawn&tag=lawndominator-20",
+          "in_stock": null,
+          "note": "Live price shown on Amazon",
+          "last_checked": "2026-05-13T23:22:52.155165+00:00"
+        }
+      ],
+      "best_price": null,
+      "updated_at": "2026-05-13T23:22:52.155275+00:00"
+    }
+  ]
 }
