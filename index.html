@@ -53,6 +53,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="preload" as="image" href="./dashboard.webp" fetchpriority="high" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:image:alt" content="Lawn Dominator lawn tracker app preview with soil temperature, GDD, spray logs, and treatment planning." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://lawndominators.com/#website",
+        "url": "https://lawndominators.com/",
+        "name": "Lawn Dominator",
+        "description": "Free lawn care tools and a lawn tracker app for serious DIY lawn care — soil temperature, GDD, spray logs, fertilizer calculator, and tank mix planning.",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://lawndominators.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lawndominators.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -245,6 +271,7 @@
                     class="app-shot"
                     src="./dashboard.webp"
                     alt="Lawn Dominators dashboard screen showing GDD, soil temperature, spray conditions, diagnostics, tank mix, and April tasks."
+                    fetchpriority="high"
                   />
                 </div>
               </article>
@@ -255,6 +282,7 @@
                     class="app-shot"
                     src="./diagnostic.webp"
                     alt="Lawn Dominators diagnostic screen showing pest identification cards for grubs, chinch bugs, armyworms, mole crickets, fire ants, and billbugs."
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -650,6 +678,25 @@
                 reapplication windows, and other seasonal lawn decisions.
               </p>
             </article>
+            <article class="faq-item reveal">
+              <h3>Is there a free soil temperature tracker for lawn care?</h3>
+              <p>
+                Yes. Lawn Dominator offers a free browser-based soil temperature tracker at
+                <a href="./soil-temperature.html">lawndominators.com/soil-temperature.html</a> — no account or app download required.
+                It shows current soil temperature at surface, 2-inch, and 6-inch depth with a 7-day trend and
+                pre-emergent timing guidance for bermuda, zoysia, St. Augustine, and cool-season grass.
+              </p>
+            </article>
+            <article class="faq-item reveal reveal--delay">
+              <h3>Is there a free GDD calculator for lawns?</h3>
+              <p>
+                Yes. Lawn Dominator offers a free growing degree day (GDD) calculator at
+                <a href="./gdd-tracker.html">lawndominators.com/gdd-tracker.html</a> — no account required.
+                It shows seasonal GDD accumulation from January 1, lets you calculate GDD from any date for
+                PGR reapplication timing, and shows pre-emergent and greenup milestones for bermuda, zoysia,
+                St. Augustine, and cool-season grass.
+              </p>
+            </article>
           </div>
         </section>
       </main>
@@ -671,6 +718,6 @@
       </footer>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </body>
 </html>
