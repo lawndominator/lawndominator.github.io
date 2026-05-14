@@ -122,16 +122,49 @@ def now_iso() -> str:
 # ── DoMyOwn scraper ───────────────────────────────────────────────────────────
 
 def scrape_domyown(product: dict) -> Optional[dict]:
-    # Try primary query first, then fall back through active_ingredient and alt_names
-    queries = search_variants(product, base_key="domyown_query")
+    # If a direct product URL is known, hit it first — more reliable than search
+    direct_url = product.get("domyown_url")
+    if direct_url:
+        result = _domyown_product_page(product, direct_url)
+        if result:
+            return result
 
+    # Fall through to search
+    queries = search_variants(product, base_key="domyown_query")
     for query in queries:
         result = _domyown_search(product, query)
         if result:
             return result
-        time.sleep(1.0)  # brief pause between fallback attempts
+        time.sleep(1.0)
 
     return None
+
+
+def _domyown_product_page(product: dict, url: str) -> Optional[dict]:
+    url = append_affiliate(url, "domyown")
+    resp = safe_get(url)
+    if not resp:
+        return None
+    soup = BeautifulSoup(resp.text, "lxml")
+    price_elem = (
+        soup.select_one(".productPrice")
+        or soup.select_one("[itemprop='price']")
+        or soup.select_one(".price")
+        or soup.select_one("[class*='price']")
+    )
+    if not price_elem:
+        return None
+    price = parse_price(price_elem.get_text(strip=True))
+    if not price:
+        return None
+    return {
+        "retailer": "domyown",
+        "retailer_name": "DoMyOwn",
+        "price": price,
+        "url": url,
+        "in_stock": True,
+        "last_checked": now_iso(),
+    }
 
 
 def _domyown_search(product: dict, query: str) -> Optional[dict]:
