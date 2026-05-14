@@ -19,6 +19,7 @@ Requirements: pip install requests beautifulsoup4 lxml playwright
 
 import argparse
 import json
+import os
 import re
 import time
 import urllib.parse
@@ -426,6 +427,40 @@ def save_sources(path: Path, data: dict):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def find_brave_executable() -> str | None:
+    candidates = [
+        os.environ.get("BRAVE_PATH", ""),
+        r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe",
+        r"C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application\brave.exe",
+        str(Path.home() / r"AppData\Local\BraveSoftware\Brave-Browser\Application\brave.exe"),
+    ]
+    for candidate in candidates:
+        if candidate and Path(candidate).exists():
+            return candidate
+    return None
+
+
+def launch_browser_context(pw, root: Path, profile_dir: str):
+    common = {
+        "user_data_dir": str(root / profile_dir),
+        "headless": False,
+        "args": ["--no-sandbox", "--disable-blink-features=AutomationControlled"],
+        "user_agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0.0.0 Safari/537.36"
+        ),
+        "viewport": {"width": 1280, "height": 900},
+    }
+    brave = find_brave_executable()
+    if brave:
+        print(f"Using Brave: {brave}")
+        return pw.chromium.launch_persistent_context(executable_path=brave, **common)
+
+    print("Brave not found. Falling back to Playwright Chromium.")
+    return pw.chromium.launch_persistent_context(**common)
+
+
 def _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx):
     total = len(products)
     retailers_count = len(RETAILERS) + (1 if domyown_ctx else 0)
@@ -464,7 +499,7 @@ def main():
     parser.add_argument("--refind",     action="store_true", help="Re-discover even if verified sources exist")
     parser.add_argument("--no-domyown", action="store_true", help="Skip DoMyOwn (skip Chrome setup)")
     parser.add_argument("--debug-domyown", action="store_true", help="Accepted for compatibility; DoMyOwn search logging is always enabled")
-    parser.add_argument("--profile-dir", default="scraper/browser-profile", help="Persistent Chrome profile dir for solved DoMyOwn challenges")
+    parser.add_argument("--profile-dir", default="scraper/browser-profile", help="Persistent browser profile dir for solved DoMyOwn challenges")
     args = parser.parse_args()
 
     root          = Path(__file__).parent.parent
@@ -504,18 +539,7 @@ def main():
 
     print("\nOpening browser for DoMyOwn...")
     with sync_playwright() as pw:
-        ctx = pw.chromium.launch_persistent_context(
-            user_data_dir=str(root / args.profile_dir),
-            headless=False,
-            channel="chrome",
-            args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/124.0.0.0 Safari/537.36"
-            ),
-            viewport={"width": 1280, "height": 900},
-        )
+        ctx = launch_browser_context(pw, root, args.profile_dir)
         page = ctx.new_page()
         page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         page.goto("https://www.domyown.com", wait_until="networkidle", timeout=30000)
