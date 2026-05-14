@@ -49,6 +49,8 @@ SHOPPING_RESULT_LIMIT = int(os.getenv("SHOPPING_RESULT_LIMIT", "10"))
 ORGANIC_RESULT_LIMIT = int(os.getenv("ORGANIC_RESULT_LIMIT", "3"))
 ENABLE_ORGANIC_DISCOVERY = os.getenv("ENABLE_ORGANIC_DISCOVERY", "1") != "0"
 REQUIRE_WEB_DISCOVERY = os.getenv("REQUIRE_WEB_DISCOVERY", "0") == "1"
+ENABLE_DIRECT_RETAILER_SEARCH = os.getenv("ENABLE_DIRECT_RETAILER_SEARCH", "0") == "1"
+ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -411,7 +413,7 @@ def scrape_discovered_web_pages(product: dict) -> list[dict]:
             continue
 
         time.sleep(RATE_LIMIT)
-        html = browser_fetch(url)
+        html = browser_fetch(url, timeout=ORGANIC_FETCH_TIMEOUT)
         if not html:
             continue
         retailer = retailer_key(url)
@@ -488,10 +490,9 @@ def scrape_solutions(product: dict) -> Optional[dict]:
 
 def _solutions_search(query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-    # solutionspestcontrol.com is the correct domain for Solutions Pest & Lawn
     for url in [
-        f"https://www.solutionspestcontrol.com/search?q={encoded}&type=product",
-        f"https://www.solutionspestcontrol.com/search?q={encoded}",
+        f"https://www.solutionsstores.com/search?q={encoded}&type=product",
+        f"https://www.solutionsstores.com/search?q={encoded}",
     ]:
         html = browser_fetch(url)
         if not html:
@@ -502,7 +503,7 @@ def _solutions_search(query: str) -> Optional[dict]:
             log.info(f"  Solutions: got empty title, skipping")
             time.sleep(1.0)
             continue
-        result = _extract_from_soup(soup, "https://www.solutionspestcontrol.com", "solutions", "Solutions Pest & Lawn")
+        result = _extract_from_soup(soup, "https://www.solutionsstores.com", "solutions", "Solutions Pest & Lawn")
         if result:
             return result
         log.info(f"  Solutions: page '{title[:60]}' loaded but no price found")
@@ -635,22 +636,26 @@ def run():
             offers = []
 
             # DoMyOwn — all specialty categories
-            if cat != "fertilizer-consumer":
+            if ENABLE_DIRECT_RETAILER_SEARCH and cat != "fertilizer-consumer":
                 time.sleep(RATE_LIMIT)
                 r = scrape_domyown(product)
                 if add_offer(offers, r):
                     log.info(f"  DoMyOwn  ${r['price']:.2f}")
                 else:
                     log.info(f"  DoMyOwn  no result")
+            elif not ENABLE_DIRECT_RETAILER_SEARCH:
+                log.info("  DoMyOwn  skipped (direct retailer search disabled)")
 
             # Solutions Pest & Lawn — herbicides, fungicides, insecticides, PGRs
-            if cat in ("fungicide", "insecticide", "pre-emergent", "post-emergent", "pgr"):
+            if ENABLE_DIRECT_RETAILER_SEARCH and cat in ("fungicide", "insecticide", "pre-emergent", "post-emergent", "pgr"):
                 time.sleep(RATE_LIMIT)
                 r = scrape_solutions(product)
                 if add_offer(offers, r):
                     log.info(f"  Solutions ${r['price']:.2f}")
                 else:
                     log.info(f"  Solutions no result")
+            elif not ENABLE_DIRECT_RETAILER_SEARCH:
+                log.info("  Solutions skipped (direct retailer search disabled)")
 
             # Web discovery via Google Shopping/search API for broader price coverage.
             web_offers = scrape_web_discovery(product)
