@@ -75,6 +75,7 @@ jobs:
           MIN_CHEMICAL_PRICE: "10"
           MIN_SOIL_AMENDMENT_PRICE: "5"
           REPEATED_PRICE_PRODUCT_LIMIT: "8"
+          MIN_ALERT_DROP_PERCENT: "5"
         run: python scraper/scraper.py
 
       - name: Commit updated prices.json
@@ -82,7 +83,7 @@ jobs:
           git config user.name  "price-bot[bot]"
           git config user.email "price-bot@lawndominators.com"
           git pull --rebase --autostash origin main
-          git add prices.json product_sources.json
+          git add prices.json price-alerts.json product_sources.json
           # Only commit if prices.json actually changed
           git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
           git push

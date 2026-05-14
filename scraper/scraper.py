@@ -60,6 +60,7 @@ MAX_SAVED_SOURCES_PER_PRODUCT = int(os.getenv("MAX_SAVED_SOURCES_PER_PRODUCT", "
 MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
+MIN_ALERT_DROP_PERCENT = float(os.getenv("MIN_ALERT_DROP_PERCENT", "5"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -271,6 +272,110 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _offer_price(offer: Optional[dict]) -> Optional[float]:
+    if not offer or offer.get("price") is None:
+        return None
+    try:
+        return float(offer["price"])
+    except (TypeError, ValueError):
+        return None
+
+
+def _drop_percent(old_price: float, new_price: float) -> float:
+    if old_price <= 0 or new_price >= old_price:
+        return 0.0
+    return ((old_price - new_price) / old_price) * 100
+
+
+def _alert_id(product_slug: str, alert_type: str, old_offer: Optional[dict], new_offer: dict) -> str:
+    old_price = _offer_price(old_offer)
+    new_price = _offer_price(new_offer)
+    retailer = new_offer.get("retailer") or "retailer"
+    return ":".join([
+        product_slug,
+        alert_type,
+        retailer,
+        f"{old_price:.2f}" if old_price is not None else "none",
+        f"{new_price:.2f}" if new_price is not None else "none",
+    ])
+
+
+def _alert_payload(
+    product: dict,
+    alert_type: str,
+    old_offer: Optional[dict],
+    new_offer: dict,
+    generated_at: str,
+    drop_percent: float = 0.0,
+) -> dict:
+    old_price = _offer_price(old_offer)
+    new_price = _offer_price(new_offer)
+    return {
+        "id": _alert_id(product["slug"], alert_type, old_offer, new_offer),
+        "type": alert_type,
+        "product_id": product["id"],
+        "product_slug": product["slug"],
+        "product_name": product["name"],
+        "category": product.get("category"),
+        "old_price": round(old_price, 2) if old_price is not None else None,
+        "new_price": round(new_price, 2) if new_price is not None else None,
+        "drop_percent": round(drop_percent, 1),
+        "old_retailer": old_offer.get("retailer_name") if old_offer else None,
+        "new_retailer": new_offer.get("retailer_name"),
+        "url": new_offer.get("url"),
+        "in_stock": new_offer.get("in_stock"),
+        "created_at": generated_at,
+    }
+
+
+def build_price_alerts(previous_products: dict, current_products: list[dict], generated_at: str) -> dict:
+    alerts = []
+    previous_by_slug = {
+        product.get("slug"): product
+        for product in previous_products.values()
+        if product.get("slug")
+    }
+
+    for product in current_products:
+        old_product = previous_by_slug.get(product.get("slug")) or previous_products.get(product.get("id"))
+        if not old_product:
+            continue
+
+        old_best = old_product.get("best_price")
+        new_best = product.get("best_price")
+        old_price = _offer_price(old_best)
+        new_price = _offer_price(new_best)
+        if not new_best or new_price is None:
+            continue
+
+        if old_price is not None:
+            drop = _drop_percent(old_price, new_price)
+            if drop >= MIN_ALERT_DROP_PERCENT:
+                alerts.append(_alert_payload(product, "best_price_drop", old_best, new_best, generated_at, drop))
+                if drop >= 10:
+                    alerts.append(_alert_payload(product, "major_price_drop", old_best, new_best, generated_at, drop))
+
+            old_retailer = old_best.get("retailer") if old_best else None
+            new_retailer = new_best.get("retailer")
+            if new_retailer and old_retailer and new_retailer != old_retailer and new_price < old_price:
+                alerts.append(_alert_payload(product, "new_lowest_retailer", old_best, new_best, generated_at, drop))
+
+        if old_best and old_best.get("in_stock") is False and new_best.get("in_stock") is True:
+            alerts.append(_alert_payload(product, "back_in_stock", old_best, new_best, generated_at, 0.0))
+
+    unique_alerts = {}
+    for alert in alerts:
+        unique_alerts[alert["id"]] = alert
+
+    return {
+        "schema_version": "1.0",
+        "generated_at": generated_at,
+        "min_drop_percent": MIN_ALERT_DROP_PERCENT,
+        "alert_count": len(unique_alerts),
+        "alerts": list(unique_alerts.values()),
+    }
 
 
 def _absolute_url(base_url: str, href: str) -> str:
@@ -953,6 +1058,7 @@ def run():
     repo_root     = os.path.dirname(script_dir)
     products_path = os.path.join(repo_root, "products.json")
     prices_path   = os.path.join(repo_root, "prices.json")
+    alerts_path   = os.path.join(repo_root, "price-alerts.json")
     sources_path  = os.path.join(repo_root, "product_sources.json")
 
     with open(products_path) as f:
@@ -964,6 +1070,7 @@ def run():
             existing_data = json.load(f)
         stale_map = {p["id"]: p for p in existing_data.get("products", [])}
     except FileNotFoundError:
+        existing_data = {"products": []}
         stale_map = {}
 
     results = []
@@ -1059,21 +1166,26 @@ def run():
     apply_offer_quality_filters(results)
     source_map = update_product_sources(source_map, results)
 
+    generated_at = now_iso()
     output = {
         "schema_version": "1.0",
-        "generated_at":   now_iso(),
+        "generated_at":   generated_at,
         "product_count":  len(results),
         "products":       results,
     }
+    alerts_output = build_price_alerts(stale_map, results, generated_at)
 
     with open(prices_path, "w") as f:
         json.dump(output, f, indent=2)
+    with open(alerts_path, "w") as f:
+        json.dump(alerts_output, f, indent=2)
     with open(sources_path, "w") as f:
         json.dump(source_map, f, indent=2)
 
     found = sum(1 for p in results if p.get("best_price"))
     log.info(f"\nDone. {found}/{len(results)} products have a best price.")
     log.info(f"Written to {prices_path}")
+    log.info(f"Written to {alerts_path} ({alerts_output['alert_count']} alerts)")
     log.info(f"Written to {sources_path}")
 
     min_priced = int(os.getenv("MIN_PRICED_PRODUCTS", "1"))

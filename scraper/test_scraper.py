@@ -223,6 +223,100 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(updated["products"]["1"][0]["url"], "https://merchant.example/prodiamine")
         self.assertEqual(updated["products"]["1"][0]["retailer_name"], "Merchant")
 
+    def test_build_price_alerts_detects_best_price_drop(self):
+        previous = {
+            1: {
+                "id": 1,
+                "slug": "prodiamine-65wdg",
+                "name": "Prodiamine 65WDG",
+                "best_price": {
+                    "retailer": "old-store",
+                    "retailer_name": "Old Store",
+                    "price": 100.0,
+                    "url": "https://old.example/product",
+                    "in_stock": True,
+                },
+            }
+        }
+        current = [{
+            "id": 1,
+            "slug": "prodiamine-65wdg",
+            "name": "Prodiamine 65WDG",
+            "category": "pre-emergent",
+            "best_price": {
+                "retailer": "new-store",
+                "retailer_name": "New Store",
+                "price": 89.0,
+                "url": "https://new.example/product",
+                "in_stock": True,
+            },
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 3)
+        alert_types = {alert["type"] for alert in output["alerts"]}
+        self.assertEqual(alert_types, {"best_price_drop", "major_price_drop", "new_lowest_retailer"})
+        drop_alert = next(alert for alert in output["alerts"] if alert["type"] == "best_price_drop")
+        self.assertEqual(drop_alert["product_slug"], "prodiamine-65wdg")
+        self.assertEqual(drop_alert["old_price"], 100.0)
+        self.assertEqual(drop_alert["new_price"], 89.0)
+        self.assertEqual(drop_alert["drop_percent"], 11.0)
+
+    def test_build_price_alerts_ignores_small_drop(self):
+        previous = {
+            1: {
+                "id": 1,
+                "slug": "prodiamine-65wdg",
+                "name": "Prodiamine 65WDG",
+                "best_price": {"retailer": "store", "retailer_name": "Store", "price": 100.0},
+            }
+        }
+        current = [{
+            "id": 1,
+            "slug": "prodiamine-65wdg",
+            "name": "Prodiamine 65WDG",
+            "category": "pre-emergent",
+            "best_price": {"retailer": "store", "retailer_name": "Store", "price": 96.0},
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 0)
+
+    def test_build_price_alerts_detects_back_in_stock(self):
+        previous = {
+            1: {
+                "id": 1,
+                "slug": "prodiamine-65wdg",
+                "name": "Prodiamine 65WDG",
+                "best_price": {
+                    "retailer": "store",
+                    "retailer_name": "Store",
+                    "price": 100.0,
+                    "in_stock": False,
+                },
+            }
+        }
+        current = [{
+            "id": 1,
+            "slug": "prodiamine-65wdg",
+            "name": "Prodiamine 65WDG",
+            "category": "pre-emergent",
+            "best_price": {
+                "retailer": "store",
+                "retailer_name": "Store",
+                "price": 100.0,
+                "url": "https://store.example/product",
+                "in_stock": True,
+            },
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 1)
+        self.assertEqual(output["alerts"][0]["type"], "back_in_stock")
+
 
 if __name__ == "__main__":
     unittest.main()
