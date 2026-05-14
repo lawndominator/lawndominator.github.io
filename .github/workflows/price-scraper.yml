@@ -62,7 +62,7 @@ jobs:
           MIN_PRICED_PRODUCTS:  "1"
           REQUIRE_WEB_DISCOVERY: "0"
           ENABLE_SERPAPI_DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '1' || '0' }}
-          ENABLE_KNOWN_RETAILER_SEARCH: "1"
+          ENABLE_KNOWN_RETAILER_SEARCH: "0"
           KNOWN_RETAILER_LIMIT: "8"
           ENABLE_DIRECT_RETAILER_SEARCH: "0"
           ENABLE_ORGANIC_DISCOVERY: "0"
