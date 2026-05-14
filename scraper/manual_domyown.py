@@ -3,8 +3,9 @@
 Manual DoMyOwn source recorder.
 
 Opens Brave with a small overlay. For each product, click to the right DoMyOwn
-product page, then press "Record URL". The script saves that product URL to
-product_sources.json so GitHub Actions can refresh the price later.
+product page, then press "Record URL". The script saves those URLs to a separate
+domyown_sources.json file so it can run while broad discovery writes
+product_sources.json.
 """
 
 import argparse
@@ -135,11 +136,12 @@ def main():
     parser.add_argument("--ids", help="Comma-separated product IDs")
     parser.add_argument("--refind", action="store_true", help="Replace existing DoMyOwn sources for selected products")
     parser.add_argument("--profile-dir", default="scraper/domyown-manual-profile")
+    parser.add_argument("--output", default="domyown_sources.json", help="Output file for manual DoMyOwn sources")
     args = parser.parse_args()
 
     root = Path(__file__).parent.parent
     products_path = root / "products.json"
-    sources_path = root / "product_sources.json"
+    sources_path = root / args.output
     catalog = json.loads(products_path.read_text())
     sources_data = load_sources(sources_path)
 
@@ -180,6 +182,10 @@ def main():
                     break
 
         ctx.close()
+
+    print(f"\nSaved manual DoMyOwn sources to {sources_path}")
+    print("Merge this into product_sources.json after broad discovery finishes:")
+    print("  python scraper\\merge_sources.py domyown_sources.json product_sources.json")
 
 
 if __name__ == "__main__":
