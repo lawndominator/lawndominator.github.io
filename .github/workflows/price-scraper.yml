@@ -1,9 +1,9 @@
-name: Nightly Price Scraper
+name: Price Scraper
 
 on:
   schedule:
-    # 6 AM UTC = 1-2 AM Eastern — runs while users are asleep
-    - cron: "0 6 * * *"
+    # Every 4 hours — keeps prices fresh for app premium users
+    - cron: "0 */4 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
 
