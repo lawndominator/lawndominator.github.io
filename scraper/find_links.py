@@ -111,15 +111,46 @@ def ddg_search(query: str, domain: str = "", max_results: int = 5, delay: float 
         return []
 
 
+def _search_queries(product: dict) -> list[str]:
+    """Return search terms from most specific to least specific."""
+    seen, queries = set(), []
+
+    def add(q):
+        q = q.strip()
+        if q and q.lower() not in seen:
+            seen.add(q.lower())
+            queries.append(q)
+
+    add(product.get("search_query") or product["name"])
+
+    # Simplified name: strip parenthetical like "(Pendimethalin)" and version numbers
+    simplified = re.sub(r"\s*\([^)]*\)", "", product["name"]).strip()
+    simplified = re.sub(r"\s+\d+\s*(wdg|wg|ec|sc|sl|df|g|l|plus)\b.*", "", simplified, flags=re.I).strip()
+    add(simplified)
+
+    # Active ingredient (first part before +)
+    if ai := product.get("active_ingredient"):
+        add(ai.split("+")[0].strip())
+
+    for alt in product.get("alt_names", []):
+        add(alt)
+
+    return queries
+
+
 def discover_product(product: dict) -> list[dict]:
-    name  = product["name"]
-    query = product.get("search_query") or name
+    name    = product["name"]
+    queries = _search_queries(product)
     sources = []
     seen_urls = set()
 
-    # Per-retailer site-specific search
+    # Per-retailer site-specific search — try each query until we get results
     for retailer in RETAILERS:
-        urls = ddg_search(query, domain=retailer["domain"], max_results=3)
+        urls = []
+        for q in queries:
+            urls = ddg_search(q, domain=retailer["domain"], max_results=3)
+            if urls:
+                break
         for url in urls:
             if url not in seen_urls:
                 seen_urls.add(url)
