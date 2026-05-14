@@ -26,11 +26,19 @@ jobs:
           cache: pip
           cache-dependency-path: scraper/requirements.txt
 
-      - name: Install dependencies
+      - name: Install system dependencies for Chromium
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            libgbm1 libnss3 libatk-bridge2.0-0 libatk1.0-0 \
+            libcups2 libxkbcommon0 libasound2t64 libx11-6 \
+            libxcomposite1 libxdamage1 libxext6 libxfixes3 \
+            libxrandr2 libxshmfence1 fonts-liberation
+
+      - name: Install Python dependencies and Playwright browser
         run: |
           pip install -r scraper/requirements.txt
           playwright install chromium
-          sudo $(which playwright) install-deps chromium
 
       - name: Run price scraper
         env:
