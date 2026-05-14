@@ -32,7 +32,6 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-DOMYOWN_DEBUG_PORT = 9222
 
 # ── Retailers (plain HTTP requests work from a home IP) ───────────────────────
 RETAILERS = [
@@ -234,43 +233,54 @@ def verify(url: str, base_query: str):
         return None, str(e)[:50], False
 
 
-# ── DoMyOwn via your real Chrome browser ─────────────────────────────────────
+# ── DoMyOwn via a single persistent Playwright browser ────────────────────────
 
-def _launch_chrome_with_debug():
-    """Tell the user how to relaunch Chrome with remote debugging."""
-    print()
-    print("  DoMyOwn needs your real Chrome browser (to skip Cloudflare).")
-    print()
-    print("  Step 1 — close ALL Chrome windows.")
-    print("  Step 2 — paste this into Run (Win+R) and press Enter:")
-    print()
-    print('    chrome.exe --remote-debugging-port=9222 --user-data-dir="%LOCALAPPDATA%\\Google\\Chrome\\User Data"')
-    print()
-    print("  Step 3 — navigate to domyown.com in Chrome (log in if needed).")
-    print("  Step 4 — come back here and press Enter.")
-    print()
-    input("  Press Enter when Chrome is open and you can browse DoMyOwn... ")
-
-
-def _connect_to_chrome():
-    """Connect Playwright to the already-running Chrome debug instance."""
+def setup_domyown_browser():
+    """
+    Launch one visible browser window, open DoMyOwn, wait for you to confirm
+    the page loaded (solve any CAPTCHA if shown). Returns the browser context
+    which is reused for all 66 product searches — no new CAPTCHA per search.
+    """
     try:
         from playwright.sync_api import sync_playwright
-        pw = sync_playwright().start()
-        browser = pw.chromium.connect_over_cdp(f"http://localhost:{DOMYOWN_DEBUG_PORT}")
-        return pw, browser
-    except Exception as e:
-        return None, None
+    except ImportError:
+        print("  playwright not installed — skipping DoMyOwn.")
+        print("  Run: pip install playwright && playwright install chromium")
+        return None, None, None
+
+    print("\n  Opening browser for DoMyOwn...")
+    pw = sync_playwright().start()
+    browser = pw.chromium.launch(
+        headless=False,
+        args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
+    )
+    ctx = browser.new_context(
+        user_agent=(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0.0.0 Safari/537.36"
+        ),
+        viewport={"width": 1280, "height": 900},
+    )
+    page = ctx.new_page()
+    # Remove webdriver flag that triggers bot detection
+    page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    page.goto("https://www.domyown.com", wait_until="networkidle", timeout=30000)
+
+    print("  Browser open. If you see a CAPTCHA, solve it now.")
+    input("  Press Enter when you can see DoMyOwn products normally... ")
+    page.close()
+
+    return pw, browser, ctx
 
 
-def search_domyown(query: str, pw_browser) -> list[str]:
-    """Search DoMyOwn using the connected real Chrome browser."""
-    if pw_browser is None:
+def search_domyown(query: str, ctx) -> list[str]:
+    """Search DoMyOwn reusing the existing browser context (no new CAPTCHA)."""
+    if ctx is None:
         return []
-    pw, browser = pw_browser
     try:
-        ctx  = browser.contexts[0] if browser.contexts else browser.new_context()
         page = ctx.new_page()
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         encoded = urllib.parse.quote_plus(query)
         page.goto(f"https://www.domyown.com/search?q={encoded}", wait_until="networkidle", timeout=20000)
         html = page.content()
@@ -278,22 +288,22 @@ def search_domyown(query: str, pw_browser) -> list[str]:
         soup = BeautifulSoup(html, "lxml")
         return _product_links(soup, "https://www.domyown.com")
     except Exception as e:
-        print(f"    DoMyOwn browser error: {e.__class__.__name__}")
+        print(f"    DoMyOwn error: {e.__class__.__name__}: {str(e)[:60]}")
         return []
 
 
 # ── Discover one product ──────────────────────────────────────────────────────
 
-def discover_product(product: dict, pw_browser=None) -> list[dict]:
+def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
     name  = product["name"]
     query = _base_query(product)
     sources = []
 
     print(f'  query: "{query}"')
 
-    # DoMyOwn via connected Chrome
-    if pw_browser is not None:
-        urls = search_domyown(query, pw_browser)
+    # DoMyOwn via persistent browser context
+    if domyown_ctx is not None:
+        urls = search_domyown(query, domyown_ctx)
         for url in urls:
             price, title, ok = verify(url, query)
             short = url.replace("https://", "").replace("www.", "")
@@ -393,23 +403,12 @@ def main():
     existing     = sources_data.setdefault("products", {})
     total        = len(products)
 
-    # Set up DoMyOwn via your real Chrome browser
-    pw_browser = None
+    # Set up DoMyOwn browser (one window, one CAPTCHA solve if needed)
+    domyown_ctx = None
     if not args.no_domyown:
-        pw, browser = _connect_to_chrome()
-        if browser:
-            print("  Chrome connected — DoMyOwn will use your real browser session.\n")
-            pw_browser = (pw, browser)
-        else:
-            _launch_chrome_with_debug()
-            pw, browser = _connect_to_chrome()
-            if browser:
-                pw_browser = (pw, browser)
-                print("  Chrome connected.\n")
-            else:
-                print("  Could not connect to Chrome — skipping DoMyOwn.\n")
+        pw, browser, domyown_ctx = setup_domyown_browser()
 
-    retailers_count = len(RETAILERS) + (1 if pw_browser else 0)
+    retailers_count = len(RETAILERS) + (1 if domyown_ctx else 0)
     print(f"Lawn Dominator — Link Discovery  ({total} products, {retailers_count} retailers)\n")
 
     for i, product in enumerate(products, 1):
@@ -423,7 +422,7 @@ def main():
             continue
 
         print(f"[{i}/{total}] {name}")
-        sources = discover_product(product, pw_browser=pw_browser)
+        sources = discover_product(product, domyown_ctx=domyown_ctx)
         existing[pid] = sources
         save_sources(sources_path, sources_data)
 
