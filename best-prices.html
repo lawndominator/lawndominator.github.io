@@ -361,7 +361,7 @@
 
       function buildCard(p) {
         const catLabel = CATEGORY_LABELS[p.category] || p.category;
-        const offers   = p.offers || [];
+        const offers   = (p.offers || []).filter(o => !o.excluded && !isGoogleUrl(o.url));
         const best     = p.best_price;
         const hasData  = offers.length > 0;
 
@@ -394,6 +394,14 @@
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;");
+      }
+
+      function isGoogleUrl(url) {
+        try {
+          return new URL(url).hostname.endsWith("google.com");
+        } catch {
+          return false;
+        }
       }
 
       function timeSince(isoString) {

@@ -383,9 +383,17 @@
 
       function topOffers(product) {
         return (product.offers || [])
-          .filter(offer => offer.price != null && !offer.excluded)
+          .filter(offer => offer.price != null && !offer.excluded && !isGoogleUrl(offer.url))
           .sort((a, b) => Number(a.price) - Number(b.price))
           .slice(0, 3);
+      }
+
+      function isGoogleUrl(url) {
+        try {
+          return new URL(url).hostname.endsWith("google.com");
+        } catch {
+          return false;
+        }
       }
 
       function productImage(product, offers) {

@@ -46,11 +46,15 @@ DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
 
 RATE_LIMIT = 2.0   # seconds between Playwright page loads
 SHOPPING_RESULT_LIMIT = int(os.getenv("SHOPPING_RESULT_LIMIT", "10"))
+SHOPPING_DETAIL_RESULT_LIMIT = int(os.getenv("SHOPPING_DETAIL_RESULT_LIMIT", "0"))
 ORGANIC_RESULT_LIMIT = int(os.getenv("ORGANIC_RESULT_LIMIT", "3"))
+ENABLE_SERPAPI_DISCOVERY = os.getenv("ENABLE_SERPAPI_DISCOVERY", "0") == "1"
 ENABLE_ORGANIC_DISCOVERY = os.getenv("ENABLE_ORGANIC_DISCOVERY", "1") != "0"
 REQUIRE_WEB_DISCOVERY = os.getenv("REQUIRE_WEB_DISCOVERY", "0") == "1"
 ENABLE_DIRECT_RETAILER_SEARCH = os.getenv("ENABLE_DIRECT_RETAILER_SEARCH", "0") == "1"
+ENABLE_KNOWN_RETAILER_SEARCH = os.getenv("ENABLE_KNOWN_RETAILER_SEARCH", "1") == "1"
 ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
+KNOWN_RETAILER_LIMIT = int(os.getenv("KNOWN_RETAILER_LIMIT", "8"))
 MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
@@ -165,6 +169,11 @@ def retailer_name_from_url(url: str) -> str:
     return host.split(".")[0].replace("-", " ").title()
 
 
+def is_google_url(url: str) -> bool:
+    host = urllib.parse.urlparse(url).netloc.lower()
+    return host == "google.com" or host.endswith(".google.com")
+
+
 def offer_key(offer: dict) -> tuple:
     normalized_url = urllib.parse.urldefrag(offer.get("url", ""))[0].rstrip("/")
     return (offer.get("retailer"), normalized_url, offer.get("price"))
@@ -190,6 +199,7 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         o for o in offers
         if o.get("price") is not None
         and not o.get("excluded")
+        and not is_google_url(o.get("url", ""))
         and float(o["price"]) >= min_price_for_product(product)
     ]
     priced.sort(key=lambda o: o["price"])
@@ -218,7 +228,10 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
 
             price = round(float(offer["price"]), 2)
             key = (offer.get("retailer"), price)
-            if price < floor:
+            if is_google_url(offer.get("url", "")):
+                offer["excluded"] = True
+                offer["exclude_reason"] = "Google Shopping intermediary URL, merchant link not resolved"
+            elif price < floor:
                 offer["excluded"] = True
                 offer["exclude_reason"] = f"below ${floor:.2f} minimum for this category"
             elif key in repeated_bad:
@@ -344,6 +357,7 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
             "price":         price,
             "url":           product_url,
             "in_stock":      in_stock,
+            "title":         link_elem.get_text(" ", strip=True) if link_elem else "",
             "last_checked":  now_iso(),
         }
     return None
@@ -425,6 +439,58 @@ def _shopping_offer(product: dict, item: dict) -> Optional[dict]:
     }
 
 
+def _shopping_store_offer(product: dict, item: dict, store: dict) -> Optional[dict]:
+    title = store.get("title") or item.get("title") or ""
+    source = store.get("name") or item.get("source") or item.get("seller") or ""
+    if not _matches_product(product, title, source):
+        return None
+
+    price = store.get("extracted_price") or store.get("extracted_total")
+    if price is None:
+        price = parse_price(str(store.get("price") or store.get("total") or ""))
+    if price is None:
+        return None
+
+    url = store.get("direct_link") or store.get("link")
+    if not url or is_google_url(url):
+        return None
+
+    retailer = retailer_key(source or url)
+    return {
+        "retailer": retailer,
+        "retailer_name": source or retailer_name_from_url(url),
+        "price": float(price),
+        "url": append_affiliate(url, retailer),
+        "in_stock": None,
+        "source": "google_shopping_store",
+        "title": title,
+        "image": item.get("thumbnail") or item.get("serpapi_thumbnail"),
+        "last_checked": now_iso(),
+    }
+
+
+def _shopping_detail_offers(product: dict, item: dict) -> list[dict]:
+    token = item.get("immersive_product_page_token")
+    if not token:
+        return []
+
+    payload = _serpapi_search({
+        "engine": "google_immersive_product",
+        "page_token": token,
+        "more_stores": "1",
+        "gl": "us",
+        "hl": "en",
+    })
+    if not payload:
+        return []
+
+    stores = payload.get("product_results", {}).get("stores", [])
+    offers = []
+    for store in stores:
+        add_offer(offers, _shopping_store_offer(product, item, store))
+    return offers
+
+
 def scrape_google_shopping(product: dict) -> list[dict]:
     query = product.get("shopping_query") or product.get("search_query") or product["name"]
     payload = _serpapi_search({
@@ -438,8 +504,17 @@ def scrape_google_shopping(product: dict) -> list[dict]:
         return []
 
     offers = []
-    for item in payload.get("shopping_results", [])[:SHOPPING_RESULT_LIMIT]:
-        add_offer(offers, _shopping_offer(product, item))
+    shopping_results = payload.get("shopping_results", [])[:SHOPPING_RESULT_LIMIT]
+    for item in shopping_results[:SHOPPING_DETAIL_RESULT_LIMIT]:
+        for offer in _shopping_detail_offers(product, item):
+            add_offer(offers, offer)
+
+    for item in shopping_results:
+        offer = _shopping_offer(product, item)
+        if offer and is_google_url(offer.get("url", "")):
+            offer["excluded"] = True
+            offer["exclude_reason"] = "Google Shopping intermediary URL, merchant link not resolved"
+        add_offer(offers, offer)
     return offers
 
 
@@ -483,6 +558,8 @@ def scrape_discovered_web_pages(product: dict) -> list[dict]:
 
 
 def scrape_web_discovery(product: dict) -> list[dict]:
+    if not ENABLE_SERPAPI_DISCOVERY:
+        return []
     if not SERPAPI_API_KEY:
         return []
 
@@ -491,6 +568,95 @@ def scrape_web_discovery(product: dict) -> list[dict]:
         add_offer(offers, offer)
     for offer in scrape_discovered_web_pages(product):
         add_offer(offers, offer)
+    return offers
+
+
+KNOWN_RETAILERS = [
+    {
+        "key": "solutions",
+        "name": "Solutions Pest & Lawn",
+        "base": "https://www.solutionsstores.com",
+        "search": "https://www.solutionsstores.com/search?q={query}",
+    },
+    {
+        "key": "domyown",
+        "name": "DoMyOwn",
+        "base": "https://www.domyown.com",
+        "search": "https://www.domyown.com/search?w={query}",
+    },
+    {
+        "key": "seed-world",
+        "name": "Seed World",
+        "base": "https://www.seedworldusa.com",
+        "search": "https://www.seedworldusa.com/search?q={query}",
+    },
+    {
+        "key": "seed-barn",
+        "name": "Seed Barn",
+        "base": "https://seedbarn.com",
+        "search": "https://seedbarn.com/search?q={query}",
+    },
+    {
+        "key": "forestry-distributing",
+        "name": "Forestry Distributing",
+        "base": "https://www.forestrydistributing.com",
+        "search": "https://www.forestrydistributing.com/search?search={query}",
+    },
+    {
+        "key": "pestrong",
+        "name": "Pestrong",
+        "base": "https://pestrong.com",
+        "search": "https://pestrong.com/?s={query}&post_type=product",
+    },
+    {
+        "key": "reinders",
+        "name": "Reinders",
+        "base": "https://www.reinders.com",
+        "search": "https://www.reinders.com/search?query={query}",
+    },
+    {
+        "key": "yard-mastery",
+        "name": "Yard Mastery",
+        "base": "https://yardmastery.com",
+        "search": "https://yardmastery.com/search?q={query}",
+    },
+    {
+        "key": "gci-turf-academy",
+        "name": "GCI Turf Academy",
+        "base": "https://gciturfacademy.com",
+        "search": "https://gciturfacademy.com/search?q={query}",
+    },
+    {
+        "key": "lawn-synergy",
+        "name": "Lawn Synergy",
+        "base": "https://lawnsynergy.com",
+        "search": "https://lawnsynergy.com/search?q={query}",
+    },
+]
+
+
+def scrape_known_retailers(product: dict) -> list[dict]:
+    if not ENABLE_KNOWN_RETAILER_SEARCH:
+        return []
+
+    offers = []
+    query = product.get("search_query") or product["name"]
+    encoded = urllib.parse.quote_plus(query)
+    for retailer in KNOWN_RETAILERS[:KNOWN_RETAILER_LIMIT]:
+        url = retailer["search"].format(query=encoded)
+        html = browser_fetch(url, timeout=ORGANIC_FETCH_TIMEOUT)
+        if not html:
+            continue
+        offer = _extract_from_soup(
+            BeautifulSoup(html, "lxml"),
+            retailer["base"],
+            retailer["key"],
+            retailer["name"],
+        )
+        if offer and _matches_product(product, offer.get("title", ""), retailer["name"]):
+            offer["source"] = "known_retailer_search"
+            add_offer(offers, offer)
+        time.sleep(0.5)
     return offers
 
 
@@ -651,7 +817,7 @@ def _amazon_paapi(product: dict) -> dict:
 def run():
     global _browser
 
-    if REQUIRE_WEB_DISCOVERY and not SERPAPI_API_KEY:
+    if REQUIRE_WEB_DISCOVERY and ENABLE_SERPAPI_DISCOVERY and not SERPAPI_API_KEY:
         log.error("SERPAPI_API_KEY is required for broad web price discovery.")
         sys.exit(1)
 
@@ -710,14 +876,19 @@ def run():
             elif not ENABLE_DIRECT_RETAILER_SEARCH:
                 log.info("  Solutions skipped (direct retailer search disabled)")
 
+            known_offers = scrape_known_retailers(product)
+            for offer in known_offers:
+                add_offer(offers, offer)
+            log.info(f"  Known    {len(known_offers)} direct retailer offers")
+
             # Web discovery via Google Shopping/search API for broader price coverage.
             web_offers = scrape_web_discovery(product)
             for offer in web_offers:
                 add_offer(offers, offer)
-            if SERPAPI_API_KEY:
+            if ENABLE_SERPAPI_DISCOVERY and SERPAPI_API_KEY:
                 log.info(f"  Web      {len(web_offers)} priced offers")
             else:
-                log.info("  Web      skipped (SERPAPI_API_KEY not set)")
+                log.info("  Web      skipped (SerpApi discovery disabled)")
 
             # Amazon — all products
             time.sleep(RATE_LIMIT)

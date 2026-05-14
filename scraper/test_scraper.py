@@ -95,6 +95,47 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(offer["source"], "google_shopping")
         self.assertEqual(offer["image"], "https://example.com/prodiamine.webp")
 
+    def test_normalizes_google_shopping_store_offer_with_direct_link(self):
+        product = {
+            "name": "Prodiamine 65WDG",
+            "search_query": "Prodiamine 65WDG",
+            "alt_names": [],
+            "active_ingredient": "prodiamine",
+        }
+        item = {
+            "title": "Prodiamine 65 WDG",
+            "thumbnail": "https://example.com/prodiamine.webp",
+        }
+        store = {
+            "name": "Solutions Pest & Lawn",
+            "title": "Prodiamine 65 WDG",
+            "extracted_price": 75.49,
+            "link": "https://www.solutionsstores.com/prodiamine-65-wdg",
+        }
+
+        offer = scraper._shopping_store_offer(product, item, store)
+
+        self.assertIsNotNone(offer)
+        self.assertEqual(offer["retailer"], "solutions-pest-lawn")
+        self.assertEqual(offer["url"], "https://www.solutionsstores.com/prodiamine-65-wdg")
+        self.assertEqual(offer["source"], "google_shopping_store")
+
+    def test_rejects_google_intermediary_store_links(self):
+        product = {
+            "name": "Prodiamine 65WDG",
+            "search_query": "Prodiamine 65WDG",
+            "alt_names": [],
+            "active_ingredient": "prodiamine",
+        }
+        store = {
+            "name": "Google Store",
+            "title": "Prodiamine 65 WDG",
+            "extracted_price": 75.49,
+            "link": "https://www.google.com/search?ibp=oshop",
+        }
+
+        self.assertIsNone(scraper._shopping_store_offer(product, {}, store))
+
     def test_rejects_unrelated_google_shopping_offer(self):
         product = {
             "name": "Prodiamine 65WDG",
@@ -110,6 +151,17 @@ class ScraperExtractionTests(unittest.TestCase):
         }
 
         self.assertIsNone(scraper._shopping_offer(product, item))
+
+    def test_best_offer_ignores_google_intermediary_urls(self):
+        product = {"id": 1, "category": "post-emergent"}
+        offers = [
+            {"retailer": "google", "retailer_name": "Google", "price": 12.0, "url": "https://www.google.com/search?ibp=oshop"},
+            {"retailer": "merchant", "retailer_name": "Merchant", "price": 19.98, "url": "https://merchant.example/product"},
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "merchant")
 
     def test_select_best_ignores_below_category_floor(self):
         product = {"id": 1, "category": "post-emergent"}
