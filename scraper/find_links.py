@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 Lawn Dominator — Link Discovery Tool
-Uses DuckDuckGo plain-HTML search to find direct product page URLs.
-No browser, no CAPTCHA — just HTTP requests.
+Uses DuckDuckGo to find product URLs, then fetches each one to verify
+a price exists and show you exactly what was found before saving.
 
 Usage:
-  python scraper/find_links.py               # discover all products
+  python scraper/find_links.py               # discover + verify all products
   python scraper/find_links.py --ids 1,2,3   # specific product IDs only
-  python scraper/find_links.py --refind      # re-run even if sources exist
+  python scraper/find_links.py --refind      # redo even if sources exist
+  python scraper/find_links.py --no-verify   # skip price-check (faster, blind)
 
 Requirements (already in requirements.txt):
   pip install requests beautifulsoup4 lxml
@@ -37,14 +38,13 @@ RETAILERS = [
     {"key": "reinders",              "name": "Reinders",               "domain": "reinders.com"},
 ]
 
-# Domains we never want as sources
 BLOCKLIST = {
     "amazon.com", "walmart.com", "homedepot.com", "lowes.com", "ebay.com",
     "google.com", "bing.com", "duckduckgo.com", "youtube.com", "reddit.com",
     "pinterest.com", "facebook.com", "instagram.com",
 }
 
-DDG_HEADERS = {
+HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -59,115 +59,203 @@ def now_iso():
     return datetime.now(timezone.utc).isoformat()
 
 
+# ── Price extraction (same logic as scraper.py) ───────────────────────────────
+
+def _parse_price(text: str):
+    text = text.replace(",", "")
+    m = re.search(r"(?:\$|USD\s*)\s*(\d+(?:\.\d{1,2})?)", text, re.I)
+    if not m:
+        m = re.search(r"\b(\d+\.\d{2})\b", text)
+    if m:
+        try:
+            return float(m.group(1))
+        except ValueError:
+            pass
+    return None
+
+
+def _extract_price_and_title(html: str, base_url: str):
+    """Return (price, page_title) or (None, page_title) from a product page."""
+    soup = BeautifulSoup(html, "lxml")
+    page_title = soup.title.string.strip() if soup.title and soup.title.string else ""
+
+    # 1. JSON-LD (most reliable)
+    for script in soup.select("script[type='application/ld+json']"):
+        if not script.string:
+            continue
+        try:
+            data = json.loads(script.string)
+        except json.JSONDecodeError:
+            continue
+        for obj in ([data] if isinstance(data, dict) else data if isinstance(data, list) else []):
+            if str(obj.get("@type", "")).lower() != "product":
+                continue
+            offers = obj.get("offers")
+            if isinstance(offers, list):
+                offers = offers[0] if offers else None
+            if isinstance(offers, dict):
+                price = _parse_price(str(offers.get("price") or offers.get("lowPrice") or ""))
+                if price:
+                    return price, page_title
+
+    # 2. CSS selectors
+    price_selectors = [
+        "[class*='sale-price']", "[class*='price--sale']", ".price--withoutTax",
+        "[itemprop='price']", "[data-price]", "[class*='price']",
+        "meta[itemprop='price']", "meta[property='product:price:amount']",
+    ]
+    for sel in price_selectors:
+        elem = soup.select_one(sel)
+        if not elem:
+            continue
+        raw = elem.get("content") or elem.get("data-price") or elem.get_text(" ", strip=True)
+        price = _parse_price(raw)
+        if price and price >= 5:
+            return price, page_title
+
+    return None, page_title
+
+
+def verify_url(url: str):
+    """Fetch a product page and return (price, page_title, ok)."""
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
+        if r.status_code != 200:
+            return None, f"HTTP {r.status_code}", False
+        price, title = _extract_price_and_title(r.text, url)
+        return price, title, price is not None
+    except Exception as e:
+        return None, str(e)[:60], False
+
+
+# ── DuckDuckGo search ─────────────────────────────────────────────────────────
+
 def _extract_ddg_urls(html: str, domain_filter: str = "") -> list[str]:
-    """Pull real URLs out of a DuckDuckGo HTML results page."""
     soup = BeautifulSoup(html, "lxml")
     urls = []
-
     for a in soup.select("a.result__url, a.result__a"):
         href = a.get("href", "")
-
-        # DDG wraps outbound links — decode uddg param
         if "duckduckgo.com/l/" in href:
             qs = urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
             href = urllib.parse.unquote((qs.get("uddg") or [""])[0])
-
         if not href.startswith("http"):
             continue
-
-        parsed = urllib.parse.urlparse(href)
-        host = parsed.netloc.lower().lstrip("www.")
-
-        if any(blocked in host for blocked in BLOCKLIST):
+        host = urllib.parse.urlparse(href).netloc.lower().lstrip("www.")
+        if any(b in host for b in BLOCKLIST):
             continue
         if domain_filter and domain_filter not in host:
             continue
-
-        # Prefer product pages over category/search pages
-        path = parsed.path.lower()
-        if any(skip in path for skip in ["/search", "/category", "/collections/all"]):
+        path = urllib.parse.urlparse(href).path.lower()
+        if any(s in path for s in ["/search", "/category", "/collections/all"]):
             continue
-
         if href not in urls:
             urls.append(href)
-
     return urls
 
 
-def ddg_search(query: str, domain: str = "", max_results: int = 5, delay: float = 1.5) -> list[str]:
-    """Search DuckDuckGo HTML and return up to max_results URLs."""
+def ddg_search(query: str, domain: str = "", max_results: int = 3) -> list[str]:
     q = f'"{query}" site:{domain}' if domain else query
-    params = urllib.parse.urlencode({"q": q})
-    url = f"https://html.duckduckgo.com/html/?{params}"
-
+    url = f"https://html.duckduckgo.com/html/?{urllib.parse.urlencode({'q': q})}"
     try:
-        r = requests.get(url, headers=DDG_HEADERS, timeout=15)
-        time.sleep(delay)  # be polite to DDG
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        time.sleep(1.5)
         if r.status_code != 200:
             return []
         return _extract_ddg_urls(r.text, domain)[:max_results]
-    except Exception as e:
-        print(f"      DDG error: {e}")
+    except Exception:
         return []
 
 
 def _base_query(product: dict) -> str:
-    """Strip to the core product word — 'Prodiamine', 'Dimension', 'Tenacity', etc."""
     name = product["name"]
-    # Drop parenthetical (e.g. "(Pendimethalin)"), formulation codes, percentages
     name = re.sub(r"\s*\([^)]*\)", "", name)
     name = re.sub(r"\s+\d[\d.]*\s*(wdg|wg|ec|sc|sl|df|g|l|ew|flo|plus|pro|gnl)\b.*", "", name, flags=re.I)
     name = re.sub(r"\s+\d[\d.]*(%|g|l)\b.*", "", name, flags=re.I)
     return name.strip()
 
 
-def discover_product(product: dict) -> list[dict]:
+# ── Discovery ─────────────────────────────────────────────────────────────────
+
+def discover_product(product: dict, do_verify: bool = True) -> list[dict]:
     name  = product["name"]
     query = _base_query(product)
     sources = []
     seen_urls = set()
 
-    print(f"  search term: \"{query}\"")
+    print(f'  searching: "{query}"')
 
-    # Per-retailer site-specific search
     for retailer in RETAILERS:
-        urls = ddg_search(query, domain=retailer["domain"], max_results=3)
-        for url in urls:
-            if url not in seen_urls:
-                seen_urls.add(url)
-                sources.append({
-                    "url": url,
-                    "retailer": retailer["key"],
-                    "retailer_name": retailer["name"],
-                    "title": name,
-                    "image": None,
-                    "last_seen": now_iso(),
-                })
-        status = f"  {len(urls)} link(s)" if urls else "  –"
-        print(f"    {retailer['name']:<28} {status}")
+        urls = ddg_search(query, domain=retailer["domain"])
+        if not urls:
+            print(f"    {retailer['name']:<28} –")
+            continue
 
-    # Broad search to catch any other specialty stores
-    broad_query = f"{query} buy herbicide lawn specialty"
-    broad_urls  = ddg_search(broad_query, domain="", max_results=10, delay=2.0)
-    added = 0
-    for url in broad_urls:
-        if url not in seen_urls:
+        for url in urls:
+            if url in seen_urls:
+                continue
             seen_urls.add(url)
-            host = urllib.parse.urlparse(url).netloc.lower().lstrip("www.").split(".")[0]
+
+            if do_verify:
+                price, title, ok = verify_url(url)
+                short_url = url.replace("https://", "").replace("www.", "")
+                if ok:
+                    print(f"    {retailer['name']:<28} ✓  ${price:<8.2f}  {title[:50]}")
+                    print(f"    {'':28}    {short_url[:70]}")
+                else:
+                    print(f"    {retailer['name']:<28} ✗  no price  {title[:40]}")
+                    print(f"    {'':28}    {short_url[:70]}")
+            else:
+                ok = True
+                price = None
+                title = name
+                print(f"    {retailer['name']:<28} {url[:60]}")
+
             sources.append({
                 "url": url,
-                "retailer": re.sub(r"[^a-z0-9]+", "-", host),
-                "retailer_name": host.replace("-", " ").title(),
-                "title": name,
+                "retailer": retailer["key"],
+                "retailer_name": retailer["name"],
+                "title": title or name,
+                "price_verified": price,
+                "verified": ok,
                 "image": None,
                 "last_seen": now_iso(),
             })
-            added += 1
-    if added:
-        print(f"    Broad search                     +{added} more")
 
+    # Broad DDG search for any retailer not in our list
+    broad = ddg_search(f"{query} buy lawn specialty", max_results=8)
+    added = 0
+    for url in broad:
+        if url in seen_urls:
+            continue
+        seen_urls.add(url)
+        host = urllib.parse.urlparse(url).netloc.lower().lstrip("www.").split(".")[0]
+
+        if do_verify:
+            price, title, ok = verify_url(url)
+            if not ok:
+                continue
+            print(f"    {'(broad) ' + host:<28} ✓  ${price:<8.2f}  {title[:50]}")
+        else:
+            price, title, ok = None, name, True
+
+        sources.append({
+            "url": url,
+            "retailer": re.sub(r"[^a-z0-9]+", "-", host),
+            "retailer_name": host.replace("-", " ").title(),
+            "title": title or name,
+            "price_verified": price,
+            "verified": ok,
+            "image": None,
+            "last_seen": now_iso(),
+        })
+        added += 1
+
+    verified = sum(1 for s in sources if s.get("verified"))
+    print(f"  → {verified} verified source(s), {len(sources)} total\n")
     return sources
 
+
+# ── File I/O ──────────────────────────────────────────────────────────────────
 
 def load_sources(path: Path) -> dict:
     if path.exists():
@@ -182,10 +270,13 @@ def save_sources(path: Path, data: dict):
         json.dump(data, f, indent=2)
 
 
+# ── Main ──────────────────────────────────────────────────────────────────────
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ids",    help="Comma-separated product IDs (default: all)")
-    parser.add_argument("--refind", action="store_true", help="Re-discover even if sources exist")
+    parser.add_argument("--ids",       help="Comma-separated product IDs (default: all)")
+    parser.add_argument("--refind",    action="store_true", help="Re-discover even if sources exist")
+    parser.add_argument("--no-verify", action="store_true", help="Skip price verification (faster)")
     args = parser.parse_args()
 
     root          = Path(__file__).parent.parent
@@ -202,9 +293,11 @@ def main():
 
     sources_data = load_sources(sources_path)
     existing     = sources_data.setdefault("products", {})
+    do_verify    = not args.no_verify
 
     total = len(products)
-    print(f"\nLawn Dominator — Link Discovery  ({total} products, {len(RETAILERS)} retailers)\n")
+    print(f"\nLawn Dominator — Link Discovery  ({total} products)")
+    print(f"Verification: {'ON — will show price + title for each link' if do_verify else 'OFF'}\n")
 
     for i, product in enumerate(products, 1):
         pid  = str(product["id"])
@@ -215,19 +308,18 @@ def main():
             continue
 
         print(f"[{i}/{total}] {name}")
-        sources = discover_product(product)
+        sources = discover_product(product, do_verify=do_verify)
         existing[pid] = sources
         save_sources(sources_path, sources_data)
 
-        total_found = len(sources)
-        print(f"  → {total_found} URL(s) saved\n")
-
-    # Final summary
     with_sources = sum(1 for v in existing.values() if v)
     total_urls   = sum(len(v) for v in existing.values())
-    print(f"Done.  {with_sources}/{len(catalog['products'])} products have sources  ({total_urls} total URLs)")
+    verified     = sum(1 for v in existing.values() for s in v if s.get("verified"))
+    print(f"{'='*60}")
+    print(f"Done.  {with_sources}/{len(catalog['products'])} products have sources")
+    print(f"       {verified} verified (price found)  /  {total_urls} total URLs")
     print(f"File:  {sources_path}")
-    print(f"\nCommit and push product_sources.json, then the scraper will use direct URLs.")
+    print(f"\nNext: git add product_sources.json && git commit -m 'feat: product sources' && git push")
 
 
 if __name__ == "__main__":
