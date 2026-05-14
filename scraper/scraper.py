@@ -48,6 +48,7 @@ RATE_LIMIT = 2.0   # seconds between Playwright page loads
 SHOPPING_RESULT_LIMIT = int(os.getenv("SHOPPING_RESULT_LIMIT", "10"))
 ORGANIC_RESULT_LIMIT = int(os.getenv("ORGANIC_RESULT_LIMIT", "3"))
 ENABLE_ORGANIC_DISCOVERY = os.getenv("ENABLE_ORGANIC_DISCOVERY", "1") != "0"
+REQUIRE_WEB_DISCOVERY = os.getenv("REQUIRE_WEB_DISCOVERY", "0") == "1"
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -595,6 +596,10 @@ def _amazon_paapi(product: dict) -> dict:
 
 def run():
     global _browser
+
+    if REQUIRE_WEB_DISCOVERY and not SERPAPI_API_KEY:
+        log.error("SERPAPI_API_KEY is required for broad web price discovery.")
+        sys.exit(1)
 
     script_dir    = os.path.dirname(os.path.abspath(__file__))
     repo_root     = os.path.dirname(script_dir)
