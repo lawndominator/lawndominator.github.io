@@ -97,6 +97,19 @@ def browser_fetch(url: str, wait: str = "networkidle", timeout: int = 30000) -> 
         return None
 
 
+def fetch_saved_source(url: str) -> Optional[str]:
+    """Fetch a known product URL quickly; saved pages do not need search-style waits."""
+    html = browser_fetch(url, wait="domcontentloaded", timeout=ORGANIC_FETCH_TIMEOUT)
+    if html:
+        return html
+
+    response = safe_get(url, timeout=max(8, ORGANIC_FETCH_TIMEOUT // 1000))
+    if response:
+        log.info(f"  Requests fallback OK {url[:90]}")
+        return response.text
+    return None
+
+
 # ── Simple requests session for Amazon (no Cloudflare) ───────────────────────
 _session = requests.Session()
 _session.headers.update({
@@ -696,7 +709,7 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
         url = source.get("url")
         if not url or is_google_url(url):
             continue
-        html = browser_fetch(url, timeout=ORGANIC_FETCH_TIMEOUT)
+        html = fetch_saved_source(url)
         if not html:
             continue
 
