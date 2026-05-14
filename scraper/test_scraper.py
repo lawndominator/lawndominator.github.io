@@ -83,6 +83,7 @@ class ScraperExtractionTests(unittest.TestCase):
             "source": "Example Lawn Supply",
             "extracted_price": 79.98,
             "link": "https://example.com/prodiamine-65-wdg",
+            "thumbnail": "https://example.com/prodiamine.webp",
         }
 
         offer = scraper._shopping_offer(product, item)
@@ -92,6 +93,7 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(offer["retailer_name"], "Example Lawn Supply")
         self.assertEqual(offer["price"], 79.98)
         self.assertEqual(offer["source"], "google_shopping")
+        self.assertEqual(offer["image"], "https://example.com/prodiamine.webp")
 
     def test_rejects_unrelated_google_shopping_offer(self):
         product = {
@@ -108,6 +110,37 @@ class ScraperExtractionTests(unittest.TestCase):
         }
 
         self.assertIsNone(scraper._shopping_offer(product, item))
+
+    def test_select_best_ignores_below_category_floor(self):
+        product = {"id": 1, "category": "post-emergent"}
+        offers = [
+            {"retailer": "cheap", "retailer_name": "Cheap", "price": 5.55},
+            {"retailer": "real", "retailer_name": "Real", "price": 19.98},
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "real")
+
+    def test_quality_filter_excludes_repeated_flat_prices(self):
+        results = []
+        for i in range(scraper.REPEATED_PRICE_PRODUCT_LIMIT):
+            results.append({
+                "id": i,
+                "category": "fungicide",
+                "offers": [
+                    {"retailer": "flat-price-store", "retailer_name": "Flat Price Store", "price": 12.34},
+                    {"retailer": "real-store", "retailer_name": "Real Store", "price": 50 + i},
+                ],
+                "best_price": None,
+            })
+
+        scraper.apply_offer_quality_filters(results)
+
+        for product in results:
+            flat_offer = product["offers"][0]
+            self.assertTrue(flat_offer["excluded"])
+            self.assertEqual(product["best_price"]["retailer"], "real-store")
 
 
 if __name__ == "__main__":

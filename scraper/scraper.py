@@ -51,6 +51,9 @@ ENABLE_ORGANIC_DISCOVERY = os.getenv("ENABLE_ORGANIC_DISCOVERY", "1") != "0"
 REQUIRE_WEB_DISCOVERY = os.getenv("REQUIRE_WEB_DISCOVERY", "0") == "1"
 ENABLE_DIRECT_RETAILER_SEARCH = os.getenv("ENABLE_DIRECT_RETAILER_SEARCH", "0") == "1"
 ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
+MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
+MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
+REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -174,6 +177,55 @@ def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
         return False
     offers.append(offer)
     return True
+
+
+def min_price_for_product(product: dict) -> float:
+    if product.get("category") == "soil-amendment":
+        return MIN_SOIL_AMENDMENT_PRICE
+    return MIN_CHEMICAL_PRICE
+
+
+def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
+    priced = [
+        o for o in offers
+        if o.get("price") is not None
+        and not o.get("excluded")
+        and float(o["price"]) >= min_price_for_product(product)
+    ]
+    priced.sort(key=lambda o: o["price"])
+    return priced[0] if priced else None
+
+
+def apply_offer_quality_filters(results: list[dict]) -> None:
+    repeated_prices: dict[tuple, set] = {}
+    for product in results:
+        for offer in product.get("offers", []):
+            if offer.get("price") is None:
+                continue
+            key = (offer.get("retailer"), round(float(offer["price"]), 2))
+            repeated_prices.setdefault(key, set()).add(product["id"])
+
+    repeated_bad = {
+        key for key, product_ids in repeated_prices.items()
+        if len(product_ids) >= REPEATED_PRICE_PRODUCT_LIMIT
+    }
+
+    for product in results:
+        floor = min_price_for_product(product)
+        for offer in product.get("offers", []):
+            if offer.get("price") is None:
+                continue
+
+            price = round(float(offer["price"]), 2)
+            key = (offer.get("retailer"), price)
+            if price < floor:
+                offer["excluded"] = True
+                offer["exclude_reason"] = f"below ${floor:.2f} minimum for this category"
+            elif key in repeated_bad:
+                offer["excluded"] = True
+                offer["exclude_reason"] = "same retailer/price repeated across many unrelated products"
+
+        product["best_price"] = select_best_offer(product, product.get("offers", []))
 
 
 def now_iso() -> str:
@@ -368,6 +420,7 @@ def _shopping_offer(product: dict, item: dict) -> Optional[dict]:
         "in_stock": None,
         "source": "google_shopping",
         "title": title,
+        "image": item.get("thumbnail") or item.get("serpapi_thumbnail"),
         "last_checked": now_iso(),
     }
 
@@ -673,9 +726,7 @@ def run():
                 price_str = f"${r['price']:.2f}" if r.get("price") else "(link only)"
                 log.info(f"  Amazon   {price_str}")
 
-            priced = [o for o in offers if o.get("price") is not None]
-            priced.sort(key=lambda o: o["price"])
-            best   = priced[0] if priced else None
+            best = select_best_offer(product, offers)
 
             if not offers and pid in stale_map:
                 entry = stale_map[pid].copy()
@@ -697,6 +748,8 @@ def run():
             })
 
         _browser.close()
+
+    apply_offer_quality_filters(results)
 
     output = {
         "schema_version": "1.0",

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Live Price Board | Lawn Dominator</title>
+    <meta name="description" content="Live best-price board for professional lawn care products, showing the current top three sellers per product from the Lawn Dominator price feed." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lawndominators.com/price-board.html" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .board-shell {
+        width: var(--max-width);
+        margin-inline: auto;
+        padding: clamp(2rem, 5vw, 4rem) 0 5rem;
+      }
+
+      .board-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 2rem;
+        align-items: end;
+        margin-bottom: 1.5rem;
+      }
+
+      .board-hero h1 {
+        max-width: 12ch;
+        margin: 0.35rem 0 0;
+        font-size: clamp(2.25rem, 7vw, 5rem);
+        line-height: 0.92;
+      }
+
+      .board-hero p {
+        max-width: 62ch;
+        color: var(--ink-soft);
+      }
+
+      .board-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(8rem, 1fr));
+        gap: 0.65rem;
+        min-width: min(100%, 30rem);
+      }
+
+      .board-stat {
+        border: 1px solid var(--line);
+        border-radius: 0.65rem;
+        background: oklch(0.18 0.025 120 / 0.82);
+        padding: 0.8rem 0.9rem;
+      }
+
+      .board-stat strong {
+        display: block;
+        font-size: 1.35rem;
+        line-height: 1;
+      }
+
+      .board-stat span {
+        display: block;
+        margin-top: 0.28rem;
+        color: var(--ink-soft);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .board-controls {
+        display: grid;
+        grid-template-columns: minmax(16rem, 1fr) minmax(12rem, 18rem);
+        gap: 0.8rem;
+        align-items: center;
+        margin: 1.25rem 0 1rem;
+      }
+
+      .board-input,
+      .board-select {
+        width: 100%;
+        min-height: 2.85rem;
+        border: 1px solid var(--line);
+        border-radius: 0.55rem;
+        background: oklch(0.16 0.025 120);
+        color: var(--ink);
+        padding: 0.75rem 0.9rem;
+        font: inherit;
+      }
+
+      .board-meta {
+        color: var(--ink-soft);
+        font-size: 0.86rem;
+        margin: 0 0 1.2rem;
+      }
+
+      .board-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 0.9rem;
+      }
+
+      .price-tile {
+        display: grid;
+        grid-template-columns: 5.5rem minmax(0, 1fr);
+        gap: 0.9rem;
+        min-height: 13.5rem;
+        border: 1px solid oklch(0.38 0.035 118 / 0.72);
+        border-radius: 0.7rem;
+        background: linear-gradient(180deg, oklch(0.19 0.028 120 / 0.95), oklch(0.15 0.022 120 / 0.98));
+        padding: 0.85rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .product-media {
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 0.55rem;
+        overflow: hidden;
+        border: 1px solid oklch(0.44 0.04 118 / 0.48);
+        background:
+          linear-gradient(145deg, oklch(0.28 0.05 124), oklch(0.16 0.025 120));
+      }
+
+      .product-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-fallback {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        color: var(--glow);
+        font-family: 'Archivo Expanded', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .tile-body {
+        min-width: 0;
+      }
+
+      .tile-kicker {
+        margin: 0;
+        color: var(--glow);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .tile-title {
+        min-height: 2.75rem;
+        margin: 0.25rem 0 0.6rem;
+        font-size: 1rem;
+        line-height: 1.32;
+      }
+
+      .offer-stack {
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .top-offer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.75rem;
+        align-items: center;
+        min-height: 2.25rem;
+        border: 1px solid oklch(0.33 0.035 118 / 0.55);
+        border-radius: 0.45rem;
+        background: oklch(0.13 0.02 120 / 0.62);
+        padding: 0.45rem 0.55rem;
+        text-decoration: none;
+      }
+
+      .top-offer:first-child {
+        border-color: oklch(0.68 0.14 132 / 0.75);
+        background: oklch(0.22 0.05 128 / 0.72);
+      }
+
+      .top-offer span {
+        overflow: hidden;
+        color: var(--ink-soft);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .top-offer strong {
+        color: var(--ink);
+        font-size: 0.88rem;
+        white-space: nowrap;
+      }
+
+      .empty-offers {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+      }
+
+      .no-board-results,
+      .board-status {
+        grid-column: 1 / -1;
+        padding: 3rem 1rem;
+        color: var(--ink-soft);
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        .board-hero,
+        .board-controls {
+          grid-template-columns: 1fr;
+        }
+
+        .board-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 460px) {
+        .price-tile {
+          grid-template-columns: 1fr;
+        }
+
+        .product-media {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16 / 9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="topbar__brand" href="/" aria-label="Lawn Dominator home">
+          <span class="topbar__mark">LD</span>
+          <div>
+            <p class="topbar__eyebrow">Lawn Dominators</p>
+            <p class="topbar__sub">Seasonal control for serious lawns</p>
+          </div>
+        </a>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/best-prices.html">Prices</a>
+          <a href="/price-board.html">Price Board</a>
+          <a href="/#download">Download</a>
+        </nav>
+        <a class="pill-link" href="/#download">Get the app</a>
+      </header>
+
+      <main class="board-shell">
+        <section class="board-hero">
+          <div>
+            <p class="section-label">App trial feed</p>
+            <h1>Live price board</h1>
+            <p>Current best-price candidates for professional lawn products, ranked from the scraper feed used by the premium app experience.</p>
+          </div>
+          <div class="board-stats" aria-label="Price board stats">
+            <div class="board-stat"><strong id="stat-products">--</strong><span>Products</span></div>
+            <div class="board-stat"><strong id="stat-stores">--</strong><span>Stores</span></div>
+            <div class="board-stat"><strong id="stat-offers">--</strong><span>Offers</span></div>
+          </div>
+        </section>
+
+        <div class="board-controls">
+          <input class="board-input" id="board-search" type="search" placeholder="Search products, active ingredients, stores" aria-label="Search price board" />
+          <select class="board-select" id="board-category" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="pre-emergent">Pre-emergent</option>
+            <option value="post-emergent">Herbicides</option>
+            <option value="pgr">PGRs</option>
+            <option value="fungicide">Fungicides</option>
+            <option value="insecticide">Insecticides</option>
+            <option value="soil-amendment">Soil and specialty</option>
+          </select>
+        </div>
+
+        <p class="board-meta" id="board-meta">Loading current price feed.</p>
+        <section class="board-grid" id="board-grid" aria-live="polite">
+          <p class="board-status">Loading price board.</p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const CATEGORY_LABELS = {
+        "pre-emergent": "Pre-emergent",
+        "post-emergent": "Herbicide",
+        pgr: "PGR",
+        fungicide: "Fungicide",
+        insecticide: "Insecticide",
+        "soil-amendment": "Soil amendment",
+      };
+
+      let products = [];
+      let query = "";
+      let category = "all";
+
+      loadBoard();
+
+      async function loadBoard() {
+        try {
+          const response = await fetch("./prices.json?v=" + Date.now());
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          const data = await response.json();
+          products = data.products || [];
+          updateStats(data);
+          document.getElementById("board-meta").textContent =
+            `${products.length} products refreshed ${timeSince(data.generated_at)}. Showing the top three eligible priced offers per product.`;
+          renderBoard();
+        } catch (error) {
+          document.getElementById("board-grid").innerHTML = `<p class="board-status">Price feed unavailable. Refresh in a moment.</p>`;
+          console.error(error);
+        }
+      }
+
+      function updateStats(data) {
+        const pricedOffers = products.flatMap(p => p.offers || []).filter(o => o.price != null && !o.excluded);
+        const stores = new Set(pricedOffers.map(o => o.retailer_name || o.retailer).filter(Boolean));
+        document.getElementById("stat-products").textContent = data.product_count || products.length;
+        document.getElementById("stat-stores").textContent = stores.size;
+        document.getElementById("stat-offers").textContent = pricedOffers.length;
+      }
+
+      function renderBoard() {
+        const grid = document.getElementById("board-grid");
+        const visible = products.filter(product => {
+          const top = topOffers(product);
+          const text = [
+            product.name,
+            product.category,
+            product.active_ingredient,
+            ...(product.alt_names || []),
+            ...top.map(offer => offer.retailer_name),
+          ].join(" ").toLowerCase();
+          return (category === "all" || product.category === category) && (!query || text.includes(query));
+        });
+
+        if (!visible.length) {
+          grid.innerHTML = `<p class="no-board-results">No products match the current filters.</p>`;
+          return;
+        }
+
+        grid.innerHTML = visible.map(renderProduct).join("");
+      }
+
+      function renderProduct(product) {
+        const offers = topOffers(product);
+        const image = productImage(product, offers);
+        const media = image
+          ? `<img src="${escAttr(image)}" alt="${escAttr(product.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(fallbackMedia('${escAttr(initials(product.name))}'))" />`
+          : `<span class="product-fallback">${escHtml(initials(product.name))}</span>`;
+        const offerHtml = offers.length
+          ? offers.map((offer, index) => `
+              <a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
+                <span>${index + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
+                <strong>$${Number(offer.price).toFixed(2)}</strong>
+              </a>
+            `).join("")
+          : `<p class="empty-offers">No eligible price yet.</p>`;
+
+        return `
+          <article class="price-tile">
+            <div class="product-media">${media}</div>
+            <div class="tile-body">
+              <p class="tile-kicker">${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
+              <h2 class="tile-title">${escHtml(product.name)}</h2>
+              <div class="offer-stack">${offerHtml}</div>
+            </div>
+          </article>
+        `;
+      }
+
+      function topOffers(product) {
+        return (product.offers || [])
+          .filter(offer => offer.price != null && !offer.excluded)
+          .sort((a, b) => Number(a.price) - Number(b.price))
+          .slice(0, 3);
+      }
+
+      function productImage(product, offers) {
+        const imageOffer = offers.find(offer => offer.image) || (product.offers || []).find(offer => offer.image);
+        return imageOffer ? imageOffer.image : "";
+      }
+
+      function fallbackMedia(text) {
+        const span = document.createElement("span");
+        span.className = "product-fallback";
+        span.textContent = text;
+        return span;
+      }
+
+      function initials(name) {
+        return String(name)
+          .replace(/\([^)]*\)/g, "")
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .map(part => part[0])
+          .join("")
+          .toUpperCase();
+      }
+
+      function timeSince(isoString) {
+        const ms = Date.now() - new Date(isoString).getTime();
+        const hrs = Math.floor(ms / 3600000);
+        const mins = Math.max(0, Math.floor((ms % 3600000) / 60000));
+        if (hrs >= 24) return `${Math.floor(hrs / 24)}d ago`;
+        if (hrs > 0) return `${hrs}h ago`;
+        return `${mins}m ago`;
+      }
+
+      function escHtml(value) {
+        return String(value ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function escAttr(value) {
+        return escHtml(value).replace(/'/g, "&#39;");
+      }
+
+      document.getElementById("board-search").addEventListener("input", event => {
+        query = event.target.value.trim().toLowerCase();
+        renderBoard();
+      });
+
+      document.getElementById("board-category").addEventListener("change", event => {
+        category = event.target.value;
+        renderBoard();
+      });
+    </script>
+  </body>
+</html>

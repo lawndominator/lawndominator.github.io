@@ -53,9 +53,13 @@ jobs:
           MIN_PRICED_PRODUCTS:  "1"
           REQUIRE_WEB_DISCOVERY: "1"
           ENABLE_DIRECT_RETAILER_SEARCH: "0"
+          ENABLE_ORGANIC_DISCOVERY: "0"
           SHOPPING_RESULT_LIMIT: "10"
           ORGANIC_RESULT_LIMIT:  "1"
           ORGANIC_FETCH_TIMEOUT: "12000"
+          MIN_CHEMICAL_PRICE: "10"
+          MIN_SOIL_AMENDMENT_PRICE: "5"
+          REPEATED_PRICE_PRODUCT_LIMIT: "8"
         run: python scraper/scraper.py
 
       - name: Commit updated prices.json
