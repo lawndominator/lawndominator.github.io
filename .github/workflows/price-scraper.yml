@@ -40,12 +40,16 @@ jobs:
           pip install -r scraper/requirements.txt
           playwright install chromium
 
+      - name: Run scraper parser tests
+        run: python -m unittest discover -s scraper -p "test_*.py"
+
       - name: Run price scraper
         env:
           AMAZON_AFFILIATE_TAG: ${{ secrets.AMAZON_AFFILIATE_TAG }}
           AMAZON_ACCESS_KEY:    ${{ secrets.AMAZON_ACCESS_KEY }}
           AMAZON_SECRET_KEY:    ${{ secrets.AMAZON_SECRET_KEY }}
           DOMYOWN_AFFILIATE_ID: ${{ secrets.DOMYOWN_AFFILIATE_ID }}
+          MIN_PRICED_PRODUCTS:  "1"
         run: python scraper/scraper.py
 
       - name: Commit updated prices.json
