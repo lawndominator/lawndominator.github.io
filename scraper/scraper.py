@@ -192,6 +192,7 @@ def is_google_url(url: str) -> bool:
 
 def is_bad_product_url(url: str) -> bool:
     parsed = urllib.parse.urlparse(url)
+    host = parsed.netloc.lower()
     path = parsed.path.lower()
     query = parsed.query.lower()
     bad_path_parts = (
@@ -199,6 +200,10 @@ def is_bad_product_url(url: str) -> bool:
         "/category/", "/categories/", "/catalogsearch/", "/wishlist",
     )
     if any(part in path for part in bad_path_parts):
+        return True
+    if ("amazon.com" in host or host.endswith("amzn.to")) and path.rstrip("/") == "/s":
+        return True
+    if "search" in query or query.startswith("k="):
         return True
     return "notify" in path or "notify" in query
 
@@ -229,6 +234,8 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         if o.get("price") is not None
         and not o.get("excluded")
         and not is_google_url(o.get("url", ""))
+        and not is_bad_product_url(o.get("url", ""))
+        and o.get("in_stock") is not False
         and float(o["price"]) >= min_price_for_product(product)
     ]
     priced.sort(key=lambda o: o["price"])
@@ -260,6 +267,9 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
             if is_google_url(offer.get("url", "")):
                 offer["excluded"] = True
                 offer["exclude_reason"] = "Google Shopping intermediary URL, merchant link not resolved"
+            elif is_bad_product_url(offer.get("url", "")):
+                offer["excluded"] = True
+                offer["exclude_reason"] = "cart/search/notify URL, not a product purchase page"
             elif price < floor:
                 offer["excluded"] = True
                 offer["exclude_reason"] = f"below ${floor:.2f} minimum for this category"
@@ -268,6 +278,22 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
                 offer["exclude_reason"] = "same retailer/price repeated across many unrelated products"
 
         product["best_price"] = select_best_offer(product, product.get("offers", []))
+
+
+def preserve_last_good_products(results: list[dict], previous_products: dict) -> list[dict]:
+    preserved = []
+    for product in results:
+        previous = previous_products.get(product["id"])
+        if product.get("best_price") or not previous or not previous.get("best_price"):
+            preserved.append(product)
+            continue
+
+        entry = previous.copy()
+        entry["stale"] = True
+        entry["stale_reason"] = "latest run had no valid priced purchase URL"
+        preserved.append(entry)
+        log.warning(f"  Preserved last-good data for {product.get('name')}")
+    return preserved
 
 
 def now_iso() -> str:
@@ -852,6 +878,10 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             if not source.get("manual_verified") and not _matches_product(product, match_title, url):
                 log.info(f"  Saved source mismatch skipped: {match_title[:70]} @ {url[:80]}")
                 continue
+            if is_bad_product_url(offer.get("url", "")) and not is_bad_product_url(url):
+                offer["url"] = append_affiliate(url, retailer)
+                if source.get("title"):
+                    offer["title"] = source["title"]
             offer["source"] = "saved_product_source"
             offer["image"] = source.get("image") or offer.get("image")
             add_offer(offers, offer)
@@ -1165,6 +1195,7 @@ def run():
         _browser.close()
 
     apply_offer_quality_filters(results)
+    results = preserve_last_good_products(results, stale_map)
     source_map = update_product_sources(source_map, results)
 
     generated_at = now_iso()

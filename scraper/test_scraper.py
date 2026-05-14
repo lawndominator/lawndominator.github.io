@@ -163,6 +163,43 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(best["retailer"], "merchant")
 
+    def test_best_offer_ignores_cart_notify_and_out_of_stock_urls(self):
+        product = {"id": 1, "category": "soil-amendment"}
+        offers = [
+            {
+                "retailer": "amazon",
+                "retailer_name": "Amazon",
+                "price": 21.99,
+                "url": "https://www.amazon.com/gp/cart/view.html?tag=lawndominator-20",
+                "in_stock": True,
+            },
+            {
+                "retailer": "domyown",
+                "retailer_name": "DoMyOwn",
+                "price": 26.17,
+                "url": "https://www.domyown.com/products/26683/notify",
+                "in_stock": False,
+            },
+            {
+                "retailer": "merchant",
+                "retailer_name": "Merchant",
+                "price": 31.0,
+                "url": "https://merchant.example/feature-6-0-0",
+                "in_stock": True,
+            },
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "merchant")
+
+    def test_bad_product_url_rejects_amazon_search(self):
+        self.assertTrue(
+            scraper.is_bad_product_url(
+                "https://www.amazon.com/s?k=Feature+6-0-0+iron+fertilizer+lawn&tag=lawndominator-20"
+            )
+        )
+
     def test_select_best_ignores_below_category_floor(self):
         product = {"id": 1, "category": "post-emergent"}
         offers = [
@@ -193,6 +230,84 @@ class ScraperExtractionTests(unittest.TestCase):
             flat_offer = product["offers"][0]
             self.assertTrue(flat_offer["excluded"])
             self.assertEqual(product["best_price"]["retailer"], "real-store")
+
+    def test_quality_filter_excludes_cart_and_notify_urls(self):
+        results = [{
+            "id": 118,
+            "name": "Feature 6-0-0 Iron Fertilizer",
+            "category": "soil-amendment",
+            "offers": [
+                {
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                    "price": 21.99,
+                    "url": "https://www.amazon.com/gp/cart/view.html?tag=lawndominator-20",
+                    "in_stock": True,
+                },
+                {
+                    "retailer": "domyown",
+                    "retailer_name": "DoMyOwn",
+                    "price": 26.17,
+                    "url": "https://www.domyown.com/products/26683/notify",
+                    "in_stock": False,
+                },
+            ],
+            "best_price": None,
+        }]
+
+        scraper.apply_offer_quality_filters(results)
+
+        self.assertTrue(results[0]["offers"][0]["excluded"])
+        self.assertTrue(results[0]["offers"][1]["excluded"])
+        self.assertIsNone(results[0]["best_price"])
+
+    def test_preserves_last_good_product_when_current_run_has_no_valid_best(self):
+        current = [{
+            "id": 118,
+            "slug": "feature-6-0-0",
+            "name": "Feature 6-0-0 Iron Fertilizer",
+            "category": "soil-amendment",
+            "offers": [
+                {
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                    "price": 21.99,
+                    "url": "https://www.amazon.com/gp/cart/view.html?tag=lawndominator-20",
+                    "in_stock": True,
+                    "excluded": True,
+                },
+            ],
+            "best_price": None,
+        }]
+        previous = {
+            118: {
+                "id": 118,
+                "slug": "feature-6-0-0",
+                "name": "Feature 6-0-0 Iron Fertilizer",
+                "category": "soil-amendment",
+                "offers": [
+                    {
+                        "retailer": "domyown",
+                        "retailer_name": "DoMyOwn",
+                        "price": 26.17,
+                        "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
+                        "in_stock": True,
+                    },
+                ],
+                "best_price": {
+                    "retailer": "domyown",
+                    "retailer_name": "DoMyOwn",
+                    "price": 26.17,
+                    "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
+                    "in_stock": True,
+                },
+            }
+        }
+
+        preserved = scraper.preserve_last_good_products(current, previous)
+
+        self.assertTrue(preserved[0]["stale"])
+        self.assertEqual(preserved[0]["best_price"]["retailer"], "domyown")
 
     def test_update_product_sources_saves_only_real_merchant_urls(self):
         source_map = {"schema_version": "1.0", "products": {}}
