@@ -78,6 +78,20 @@ jobs:
           MIN_ALERT_DROP_PERCENT: "5"
         run: python scraper/scraper.py
 
+      - name: Send premium price alerts
+        env:
+          PRICE_ALERT_WEBHOOK_URL: ${{ secrets.PRICE_ALERT_WEBHOOK_URL }}
+          PRICE_ALERT_WEBHOOK_SECRET: ${{ secrets.PRICE_ALERT_WEBHOOK_SECRET }}
+        run: |
+          if [ -z "$PRICE_ALERT_WEBHOOK_URL" ] || [ -z "$PRICE_ALERT_WEBHOOK_SECRET" ]; then
+            echo "Price alert webhook not configured; skipping."
+            exit 0
+          fi
+          curl -sS -X POST "$PRICE_ALERT_WEBHOOK_URL" \
+            -H "Authorization: Bearer $PRICE_ALERT_WEBHOOK_SECRET" \
+            -H "Content-Type: application/json" \
+            --data @price-alerts.json
+
       - name: Commit updated prices.json
         run: |
           git config user.name  "price-bot[bot]"

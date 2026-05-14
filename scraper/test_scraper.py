@@ -254,10 +254,10 @@ class ScraperExtractionTests(unittest.TestCase):
 
         output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
 
-        self.assertEqual(output["alert_count"], 3)
+        self.assertEqual(output["alert_count"], 2)
         alert_types = {alert["type"] for alert in output["alerts"]}
-        self.assertEqual(alert_types, {"best_price_drop", "major_price_drop", "new_lowest_retailer"})
-        drop_alert = next(alert for alert in output["alerts"] if alert["type"] == "best_price_drop")
+        self.assertEqual(alert_types, {"major_price_drop", "new_lowest_retailer"})
+        drop_alert = next(alert for alert in output["alerts"] if alert["type"] == "major_price_drop")
         self.assertEqual(drop_alert["product_slug"], "prodiamine-65wdg")
         self.assertEqual(drop_alert["old_price"], 100.0)
         self.assertEqual(drop_alert["new_price"], 89.0)

@@ -353,9 +353,10 @@ def build_price_alerts(previous_products: dict, current_products: list[dict], ge
         if old_price is not None:
             drop = _drop_percent(old_price, new_price)
             if drop >= MIN_ALERT_DROP_PERCENT:
-                alerts.append(_alert_payload(product, "best_price_drop", old_best, new_best, generated_at, drop))
                 if drop >= 10:
                     alerts.append(_alert_payload(product, "major_price_drop", old_best, new_best, generated_at, drop))
+                else:
+                    alerts.append(_alert_payload(product, "best_price_drop", old_best, new_best, generated_at, drop))
 
             old_retailer = old_best.get("retailer") if old_best else None
             new_retailer = new_best.get("retailer")
