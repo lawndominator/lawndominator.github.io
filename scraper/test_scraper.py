@@ -194,6 +194,35 @@ class ScraperExtractionTests(unittest.TestCase):
             self.assertTrue(flat_offer["excluded"])
             self.assertEqual(product["best_price"]["retailer"], "real-store")
 
+    def test_update_product_sources_saves_only_real_merchant_urls(self):
+        source_map = {"schema_version": "1.0", "products": {}}
+        results = [{
+            "id": 1,
+            "name": "Prodiamine 65WDG",
+            "offers": [
+                {
+                    "retailer": "google",
+                    "retailer_name": "Google",
+                    "price": 12.0,
+                    "url": "https://www.google.com/search?ibp=oshop",
+                },
+                {
+                    "retailer": "merchant",
+                    "retailer_name": "Merchant",
+                    "price": 75.49,
+                    "url": "https://merchant.example/prodiamine#reviews",
+                    "title": "Prodiamine 65 WDG",
+                    "image": "https://merchant.example/prodiamine.webp",
+                },
+            ],
+        }]
+
+        updated = scraper.update_product_sources(source_map, results)
+
+        self.assertEqual(len(updated["products"]["1"]), 1)
+        self.assertEqual(updated["products"]["1"][0]["url"], "https://merchant.example/prodiamine")
+        self.assertEqual(updated["products"]["1"][0]["retailer_name"], "Merchant")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -55,6 +55,7 @@ ENABLE_DIRECT_RETAILER_SEARCH = os.getenv("ENABLE_DIRECT_RETAILER_SEARCH", "0") 
 ENABLE_KNOWN_RETAILER_SEARCH = os.getenv("ENABLE_KNOWN_RETAILER_SEARCH", "1") == "1"
 ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
 KNOWN_RETAILER_LIMIT = int(os.getenv("KNOWN_RETAILER_LIMIT", "8"))
+SAVED_SOURCE_LIMIT = int(os.getenv("SAVED_SOURCE_LIMIT", "12"))
 MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
@@ -660,6 +661,78 @@ def scrape_known_retailers(product: dict) -> list[dict]:
     return offers
 
 
+def load_product_sources(path: str) -> dict:
+    try:
+        with open(path) as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        return {"schema_version": "1.0", "updated_at": None, "products": {}}
+
+    if "products" not in data:
+        data["products"] = {}
+    return data
+
+
+def _source_entries(source_map: dict, product_id: int) -> list[dict]:
+    return source_map.get("products", {}).get(str(product_id), [])[:SAVED_SOURCE_LIMIT]
+
+
+def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
+    offers = []
+    for source in _source_entries(source_map, product["id"]):
+        url = source.get("url")
+        if not url or is_google_url(url):
+            continue
+        html = browser_fetch(url, timeout=ORGANIC_FETCH_TIMEOUT)
+        if not html:
+            continue
+
+        retailer = source.get("retailer") or retailer_key(url)
+        retailer_name = source.get("retailer_name") or retailer_name_from_url(url)
+        offer = _extract_from_soup(
+            BeautifulSoup(html, "lxml"),
+            url,
+            retailer,
+            retailer_name,
+        )
+        if offer:
+            offer["source"] = "saved_product_source"
+            offer["image"] = source.get("image") or offer.get("image")
+            add_offer(offers, offer)
+        time.sleep(0.5)
+    return offers
+
+
+def update_product_sources(source_map: dict, results: list[dict]) -> dict:
+    products = source_map.setdefault("products", {})
+    for product in results:
+        product_id = str(product["id"])
+        existing = {
+            urllib.parse.urldefrag(src.get("url", ""))[0].rstrip("/"): src
+            for src in products.get(product_id, [])
+            if src.get("url") and not is_google_url(src.get("url", ""))
+        }
+
+        for offer in product.get("offers", []):
+            url = offer.get("url", "")
+            if not url or is_google_url(url) or offer.get("excluded"):
+                continue
+            normalized = urllib.parse.urldefrag(url)[0].rstrip("/")
+            existing[normalized] = {
+                "url": normalized,
+                "retailer": offer.get("retailer") or retailer_key(url),
+                "retailer_name": offer.get("retailer_name") or retailer_name_from_url(url),
+                "title": offer.get("title") or product.get("name"),
+                "image": offer.get("image"),
+                "last_seen": now_iso(),
+            }
+
+        products[product_id] = list(existing.values())[:SAVED_SOURCE_LIMIT]
+
+    source_map["updated_at"] = now_iso()
+    return source_map
+
+
 def scrape_domyown(product: dict) -> Optional[dict]:
     queries = search_variants(product, base_key="domyown_query")
     for query in queries:
@@ -825,9 +898,11 @@ def run():
     repo_root     = os.path.dirname(script_dir)
     products_path = os.path.join(repo_root, "products.json")
     prices_path   = os.path.join(repo_root, "prices.json")
+    sources_path  = os.path.join(repo_root, "product_sources.json")
 
     with open(products_path) as f:
         catalog = json.load(f)
+    source_map = load_product_sources(sources_path)
 
     try:
         with open(prices_path) as f:
@@ -853,6 +928,11 @@ def run():
             log.info(f"[{i}/{total}] {name}")
 
             offers = []
+
+            saved_offers = scrape_saved_sources(product, source_map)
+            for offer in saved_offers:
+                add_offer(offers, offer)
+            log.info(f"  Saved    {len(saved_offers)} cached merchant offers")
 
             # DoMyOwn — all specialty categories
             if ENABLE_DIRECT_RETAILER_SEARCH and cat != "fertilizer-consumer":
@@ -921,6 +1001,7 @@ def run():
         _browser.close()
 
     apply_offer_quality_filters(results)
+    source_map = update_product_sources(source_map, results)
 
     output = {
         "schema_version": "1.0",
@@ -931,10 +1012,13 @@ def run():
 
     with open(prices_path, "w") as f:
         json.dump(output, f, indent=2)
+    with open(sources_path, "w") as f:
+        json.dump(source_map, f, indent=2)
 
     found = sum(1 for p in results if p.get("best_price"))
     log.info(f"\nDone. {found}/{len(results)} products have a best price.")
     log.info(f"Written to {prices_path}")
+    log.info(f"Written to {sources_path}")
 
     min_priced = int(os.getenv("MIN_PRICED_PRODUCTS", "1"))
     if found < min_priced:

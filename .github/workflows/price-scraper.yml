@@ -6,6 +6,15 @@ on:
     - cron: "0 */4 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
+    inputs:
+      enable_discovery:
+        description: "Use SerpApi once to discover merchant URLs and update product_sources.json"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write  # needed to commit prices.json back to the repo
@@ -52,13 +61,13 @@ jobs:
           DOMYOWN_AFFILIATE_ID: ${{ secrets.DOMYOWN_AFFILIATE_ID }}
           MIN_PRICED_PRODUCTS:  "1"
           REQUIRE_WEB_DISCOVERY: "0"
-          ENABLE_SERPAPI_DISCOVERY: "0"
+          ENABLE_SERPAPI_DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '1' || '0' }}
           ENABLE_KNOWN_RETAILER_SEARCH: "1"
           KNOWN_RETAILER_LIMIT: "8"
           ENABLE_DIRECT_RETAILER_SEARCH: "0"
           ENABLE_ORGANIC_DISCOVERY: "0"
           SHOPPING_RESULT_LIMIT: "10"
-          SHOPPING_DETAIL_RESULT_LIMIT: "0"
+          SHOPPING_DETAIL_RESULT_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '3' || '0' }}
           ORGANIC_RESULT_LIMIT:  "1"
           ORGANIC_FETCH_TIMEOUT: "12000"
           MIN_CHEMICAL_PRICE: "10"
@@ -71,7 +80,7 @@ jobs:
           git config user.name  "price-bot[bot]"
           git config user.email "price-bot@lawndominators.com"
           git pull --rebase --autostash origin main
-          git add prices.json
+          git add prices.json product_sources.json
           # Only commit if prices.json actually changed
           git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
           git push
