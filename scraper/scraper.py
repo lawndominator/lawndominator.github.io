@@ -674,7 +674,20 @@ def load_product_sources(path: str) -> dict:
 
 
 def _source_entries(source_map: dict, product_id: int) -> list[dict]:
-    return source_map.get("products", {}).get(str(product_id), [])[:SAVED_SOURCE_LIMIT]
+    entries = []
+    for source in source_map.get("products", {}).get(str(product_id), []):
+        url = source.get("url", "")
+        if not url or is_google_url(url):
+            continue
+        if source.get("verified") is False:
+            continue
+        source_type = source.get("source_type", "product")
+        if source_type != "product":
+            continue
+        entries.append(source)
+        if len(entries) >= SAVED_SOURCE_LIMIT:
+            break
+    return entries
 
 
 def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:

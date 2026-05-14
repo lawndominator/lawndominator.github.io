@@ -33,6 +33,12 @@ from bs4 import BeautifulSoup
 # ── Retailers (plain HTTP requests work from a home IP) ───────────────────────
 RETAILERS = [
     {
+        "key":    "solutions",
+        "name":   "Solutions Pest & Lawn",
+        "base":   "https://www.solutionsstores.com",
+        "search": "https://www.solutionsstores.com/search?q={query}",
+    },
+    {
         "key":    "gci-turf",
         "name":   "GCI Turf Academy",
         "base":   "https://gciturfacademy.com",
@@ -56,6 +62,69 @@ RETAILERS = [
         "base":   "https://pestrong.com",
         "search": "https://pestrong.com/?s={query}&post_type=product",
     },
+    {
+        "key":    "keystone-pest-solutions",
+        "name":   "Keystone Pest Solutions",
+        "base":   "https://www.keystonepestsolutions.com",
+        "search": "https://www.keystonepestsolutions.com/index.php?keyword={query}&main_page=advanced_search_result",
+    },
+    {
+        "key":    "diypestwarehouse",
+        "name":   "DIY Pest Warehouse",
+        "base":   "https://www.diypestwarehouse.com",
+        "search": "https://www.diypestwarehouse.com/search?q={query}&type=product",
+    },
+    {
+        "key":    "seed-world",
+        "name":   "Seed World",
+        "base":   "https://www.seedworldusa.com",
+        "search": "https://www.seedworldusa.com/search?q={query}",
+    },
+    {
+        "key":    "seed-barn",
+        "name":   "Seed Barn",
+        "base":   "https://seedbarn.com",
+        "search": "https://seedbarn.com/search?q={query}",
+    },
+    {
+        "key":    "reinders",
+        "name":   "Reinders",
+        "base":   "https://www.reinders.com",
+        "search": "https://www.reinders.com/search?query={query}",
+    },
+    {
+        "key":    "sunspot-supply",
+        "name":   "Sunspot Supply",
+        "base":   "https://www.sunspotsupply.com",
+        "search": "https://www.sunspotsupply.com/search?q={query}",
+    },
+    {
+        "key":    "lawn-care-nut",
+        "name":   "Lawn Care Nut",
+        "base":   "https://thelawncarenut.com",
+        "search": "https://thelawncarenut.com/search?q={query}&type=product",
+    },
+    {
+        "key":    "walmart",
+        "name":   "Walmart",
+        "base":   "https://www.walmart.com",
+        "search": "https://www.walmart.com/search?q={query}",
+        "marketplace": True,
+    },
+    {
+        "key":    "amazon",
+        "name":   "Amazon",
+        "base":   "https://www.amazon.com",
+        "search": "https://www.amazon.com/s?k={query}&tag=lawndominator-20",
+        "marketplace": True,
+    },
+    {
+        "key":    "ebay",
+        "name":   "eBay",
+        "base":   "https://www.ebay.com",
+        "search": "https://www.ebay.com/sch/i.html?_nkw={query}",
+        "marketplace": True,
+    },
 ]
 
 HEADERS = {
@@ -75,6 +144,7 @@ DOMYOWN_HINTS = {
         "https://www.domyown.com/barricade-65-wg-herbicide-p-1498.html",
     ],
 }
+_DOMYOWN_SPECIAL_LINKS: list[str] | None = None
 
 
 def now_iso():
@@ -88,6 +158,37 @@ def _base_query(product: dict) -> str:
     name = re.sub(r"\s+\d[\d.]*\s*(wdg|wg|ec|sc|sl|df|g|l|ew|flo|plus|pro|gnl)\b.*", "", name, flags=re.I)
     name = re.sub(r"\s+\d[\d.]*(%|g|l)\b.*", "", name, flags=re.I)
     return name.strip()
+
+
+def _split_active_ingredients(value: str) -> list[str]:
+    if not value:
+        return []
+    parts = re.split(r"\s*(?:\+|/|,| and )\s*", value, flags=re.I)
+    return [p.strip() for p in parts if len(p.strip()) > 3]
+
+
+def _product_queries(product: dict) -> list[str]:
+    """Search brand names, generic active ingredients, and known alternate names."""
+    candidates = [
+        product.get("search_query", ""),
+        product.get("name", ""),
+        _base_query(product),
+        product.get("active_ingredient", ""),
+        *_split_active_ingredients(product.get("active_ingredient", "")),
+        *product.get("alt_names", []),
+        product.get("amazon_query", ""),
+    ]
+    seen, queries = set(), []
+    for candidate in candidates:
+        candidate = re.sub(r"\s+", " ", str(candidate)).strip()
+        if not candidate:
+            continue
+        key = candidate.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        queries.append(candidate)
+    return queries[:10]
 
 
 # ── Price extraction ──────────────────────────────────────────────────────────
@@ -153,22 +254,76 @@ def _title_matches(title: str, base_query: str) -> bool:
 
 # ── Retailer search ───────────────────────────────────────────────────────────
 
-def _product_links(soup: BeautifulSoup, base: str, limit: int = 5) -> list[str]:
+def _normalize_product_url(href: str, base: str, retailer_key: str) -> str | None:
+    if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+        return None
+
+    href = urllib.parse.urljoin(base.rstrip("/") + "/", href)
+    parsed = urllib.parse.urlparse(href)
+    base_host = urllib.parse.urlparse(base).netloc.lower().removeprefix("www.")
+    host = parsed.netloc.lower().removeprefix("www.")
+    if host != base_host:
+        return None
+
+    path = parsed.path
+    lower_path = path.lower()
+
+    if retailer_key == "amazon":
+        if "/sspa/" in lower_path:
+            target = urllib.parse.parse_qs(parsed.query).get("url", [""])[0]
+            if target:
+                return _normalize_product_url(target, base, retailer_key)
+        match = re.search(r"/(?:[^/]+/)?dp/([A-Z0-9]{10})", path, re.I)
+        if not match:
+            return None
+        return f"https://www.amazon.com/dp/{match.group(1)}?tag=lawndominator-20"
+
+    if retailer_key == "ebay":
+        match = re.search(r"/itm/(?:[^/]+/)?(\d+)", path, re.I)
+        if not match:
+            return None
+        return f"https://www.ebay.com/itm/{match.group(1)}"
+
+    if retailer_key == "walmart":
+        if "/ip/" not in lower_path:
+            return None
+        return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path, "", "", ""))
+
+    product_patterns = [
+        r"/products/[^/?#]+",
+        r"/product/[^/?#]+",
+        r"/[^/?#]+-p-\d+\.html",
+        r"/[^/?#]+/p/\d+",
+    ]
+    if not any(re.search(pattern, lower_path, re.I) for pattern in product_patterns):
+        return None
+
+    return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path.rstrip("/"), "", "", ""))
+
+
+def _product_links(soup: BeautifulSoup, base: str, retailer_key: str = "", limit: int = 8) -> list[str]:
     """Extract unique product page URLs from search result cards only (not nav)."""
     seen, links = set(), []
 
     # Target actual search result cards — Shopify uses these containers.
     # Skipping nav/header links which pollute results with unrelated products.
     card_selectors = [
-        ".card-product a[href*='/products/']",
-        ".product-item a[href*='/products/']",
-        ".grid__item a[href*='/products/']",
-        ".product-card a[href*='/products/']",
-        ".productGrid a[href*='/products/']",
-        "[data-product-id] a[href*='/products/']",
+        ".card-product a[href]",
+        ".product-item a[href]",
+        ".grid__item a[href]",
+        ".product-card a[href]",
+        ".productGrid a[href]",
+        "[data-product-id] a[href]",
         # WooCommerce
         "ul.products li.product a[href]",
+        ".woocommerce-loop-product__title a[href]",
         ".woocommerce-loop-product__title[href]",
+        # Marketplaces
+        "[data-component-type='s-search-result'] a[href]",
+        ".s-result-item a[href]",
+        ".s-item a[href]",
+        "[data-testid='item-stack'] a[href]",
+        "[data-item-id] a[href]",
     ]
 
     candidates = []
@@ -177,10 +332,11 @@ def _product_links(soup: BeautifulSoup, base: str, limit: int = 5) -> list[str]:
         if candidates:
             break
 
-    # Last resort: any /products/ link that isn't inside a nav/header element
+    # Last resort: any product-looking link that isn't inside a nav/header element.
     if not candidates:
         for a in soup.find_all("a", href=True):
-            if "/products/" not in a["href"]:
+            href = a["href"]
+            if not _normalize_product_url(href, base, retailer_key):
                 continue
             if a.find_parent(["nav", "header"]):
                 continue
@@ -189,15 +345,9 @@ def _product_links(soup: BeautifulSoup, base: str, limit: int = 5) -> list[str]:
             candidates.append(a)
 
     for a in candidates:
-        href = a.get("href", "")
+        href = _normalize_product_url(a.get("href", ""), base, retailer_key)
         if not href:
             continue
-        slug = href.split("/products/")[-1].split("?")[0].strip("/")
-        if len(slug) < 3:
-            continue
-        if href.startswith("/"):
-            href = base.rstrip("/") + href
-        href = href.split("?")[0]
         if href not in seen:
             seen.add(href)
             links.append(href)
@@ -206,17 +356,45 @@ def _product_links(soup: BeautifulSoup, base: str, limit: int = 5) -> list[str]:
     return links
 
 
-def search_retailer(retailer: dict, query: str) -> list[str]:
+def _fetch_with_browser(ctx, url: str) -> str | None:
+    page = ctx.new_page()
+    try:
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+        page.goto(url, wait_until="domcontentloaded", timeout=15000)
+        page.wait_for_timeout(1200)
+        return page.content()
+    except Exception:
+        return None
+    finally:
+        try:
+            page.close()
+        except Exception:
+            pass
+
+
+def search_retailer(retailer: dict, query: str, ctx=None) -> list[str]:
     encoded = urllib.parse.quote_plus(query)
     url = retailer["search"].format(query=encoded)
     try:
-        r = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
-        if r.status_code != 200:
-            return []
-        soup = BeautifulSoup(r.text, "lxml")
-        return _product_links(soup, retailer["base"])
+        if ctx is not None:
+            html = _fetch_with_browser(ctx, url)
+            if not html:
+                return []
+        else:
+            r = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
+            if r.status_code != 200:
+                return []
+            html = r.text
+        soup = BeautifulSoup(html, "lxml")
+        return _product_links(soup, retailer["base"], retailer["key"])
     except Exception:
         return []
+
+
+def verify_retailer_url(retailer: dict, url: str, query: str, ctx=None):
+    if ctx is not None:
+        return verify_browser(ctx, url, query)
+    return verify(url, query)
 
 
 # ── Verify a product URL ──────────────────────────────────────────────────────
@@ -281,6 +459,44 @@ def _domyown_product_links(soup: BeautifulSoup, limit: int = 5) -> list[str]:
     return links
 
 
+def _query_terms(query: str) -> list[str]:
+    return [w.lower() for w in re.findall(r"[a-z0-9]+", query.lower()) if len(w) > 3]
+
+
+def _link_text_matches(a, query: str) -> bool:
+    terms = _query_terms(query)
+    if not terms:
+        return False
+    text = a.get_text(" ", strip=True).lower()
+    href = a.get("href", "").lower()
+    haystack = f"{text} {href}"
+    return any(term in haystack for term in terms)
+
+
+def _domyown_special_product_links(soup: BeautifulSoup, query: str, limit: int = 8) -> list[str]:
+    seen, links = set(), []
+    pattern = re.compile(r"-p-\d+\.html$", re.I)
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if not pattern.search(href):
+            continue
+        if a.find_parent(["nav", "header"]):
+            continue
+        if a.find_parent(class_=re.compile(r"nav|header|menu", re.I)):
+            continue
+        if not _link_text_matches(a, query):
+            continue
+        if href.startswith("/"):
+            href = "https://www.domyown.com" + href
+        href = href.split("?")[0]
+        if href not in seen:
+            seen.add(href)
+            links.append(href)
+        if len(links) >= limit:
+            break
+    return links
+
+
 def _domyown_links_from_text(text: str, limit: int = 5) -> list[str]:
     seen, links = set(), []
     for match in DOMYOWN_PRODUCT_RE.finditer(text):
@@ -291,6 +507,51 @@ def _domyown_links_from_text(text: str, limit: int = 5) -> list[str]:
         if len(links) >= limit:
             break
     return links
+
+
+def search_domyown_specials(query: str, ctx, limit: int = 8) -> list[str]:
+    """Use DoMyOwn's sale catalog, which exposes real product links and sale prices."""
+    global _DOMYOWN_SPECIAL_LINKS
+    if ctx is None:
+        return []
+    try:
+        if _DOMYOWN_SPECIAL_LINKS is None:
+            page = ctx.new_page()
+            page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            page.goto("https://www.domyown.com/specials?page=all", wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(1500)
+            soup = BeautifulSoup(page.content(), "lxml")
+            page.close()
+
+            seen, links = set(), []
+            for a in soup.find_all("a", href=True):
+                href = a["href"]
+                if not re.search(r"-p-\d+\.html$", href, re.I):
+                    continue
+                if a.find_parent(["nav", "header"]):
+                    continue
+                if a.find_parent(class_=re.compile(r"nav|header|menu", re.I)):
+                    continue
+                if href.startswith("/"):
+                    href = "https://www.domyown.com" + href
+                href = href.split("?")[0]
+                if href not in seen:
+                    seen.add(href)
+                    links.append(href)
+            _DOMYOWN_SPECIAL_LINKS = links
+
+        terms = _query_terms(query)
+        matches = []
+        for url in _DOMYOWN_SPECIAL_LINKS:
+            slug = urllib.parse.urlparse(url).path.lower()
+            if any(term in slug for term in terms):
+                matches.append(url)
+            if len(matches) >= limit:
+                break
+        return matches
+    except Exception as e:
+        print(f"    DoMyOwn specials error: {e.__class__.__name__}: {str(e)[:60]}")
+        return []
 
 
 def search_domyown_web(query: str, ctx, limit: int = 5) -> list[str]:
@@ -364,7 +625,11 @@ def search_domyown(query: str, ctx) -> list[str]:
     links = search_domyown_hints(query)
     if links:
         return links
-    print("    DoMyOwn: no known hint, trying Bing site search")
+    print("    DoMyOwn: no known hint, trying specials page")
+    links = search_domyown_specials(query, ctx)
+    if links:
+        return links
+    print("    DoMyOwn: no specials match, trying Bing site search")
     return search_domyown_web(query, ctx)
 
 
@@ -403,10 +668,10 @@ def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
             print(f"    {'DoMyOwn':<24} –")
 
     for retailer in RETAILERS:
-        urls = search_retailer(retailer, query)
+        urls = search_retailer(retailer, query, ctx=domyown_ctx)
         found = False
         for url in urls:
-            price, title, ok = verify(url, query)
+            price, title, ok = verify_retailer_url(retailer, url, query, ctx=domyown_ctx)
             if ok:
                 short = url.replace("https://", "").replace("www.", "")
                 print(f"    {retailer['name']:<24} ✓  ${price:<7.2f}  {title[:45]}")
@@ -430,6 +695,74 @@ def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
 
 
 # ── File helpers ──────────────────────────────────────────────────────────────
+
+def discover_product_multi(product: dict, domyown_ctx=None) -> list[dict]:
+    queries = _product_queries(product)
+    sources = []
+    seen_urls = set()
+
+    print(f'  queries: {", ".join(repr(q) for q in queries[:6])}')
+
+    if domyown_ctx is not None:
+        found = False
+        for query in queries:
+            for url in search_domyown(query, domyown_ctx):
+                if url in seen_urls:
+                    continue
+                price, title, ok = verify_browser(domyown_ctx, url, query)
+                if ok:
+                    seen_urls.add(url)
+                    short = url.replace("https://", "").replace("www.", "")
+                    print(f"    {'DoMyOwn':<24} OK ${price:<7.2f}  {title[:45]}")
+                    print(f"    {'':24}    {short[:65]}")
+                    sources.append({
+                        "url":           url,
+                        "retailer":      "domyown",
+                        "retailer_name": "DoMyOwn",
+                        "title":         title,
+                        "price_verified": price,
+                        "verified":      True,
+                        "image":         None,
+                        "last_seen":     now_iso(),
+                    })
+                    found = True
+                time.sleep(0.3)
+            if found:
+                break
+        if not found:
+            print(f"    {'DoMyOwn':<24} -")
+
+    for retailer in RETAILERS:
+        found = False
+        for query in queries[:6]:
+            for url in search_retailer(retailer, query, ctx=domyown_ctx):
+                if url in seen_urls:
+                    continue
+                price, title, ok = verify_retailer_url(retailer, url, query, ctx=domyown_ctx)
+                if ok:
+                    seen_urls.add(url)
+                    short = url.replace("https://", "").replace("www.", "")
+                    print(f"    {retailer['name']:<24} OK ${price:<7.2f}  {title[:45]}")
+                    print(f"    {'':24}    {short[:65]}")
+                    sources.append({
+                        "url":          url,
+                        "retailer":     retailer["key"],
+                        "retailer_name": retailer["name"],
+                        "title":        title,
+                        "price_verified": price,
+                        "verified":     True,
+                        "image":        None,
+                        "last_seen":    now_iso(),
+                    })
+                    found = True
+                time.sleep(0.3)
+            if found:
+                break
+        if not found:
+            print(f"    {retailer['name']:<24} -")
+
+    return sources
+
 
 def load_sources(path: Path) -> dict:
     if path.exists():
@@ -495,7 +828,7 @@ def _run_discovery(products, catalog, existing, sources_path, sources_data, domy
             continue
 
         print(f"[{i}/{total}] {name}")
-        sources = discover_product(product, domyown_ctx=domyown_ctx)
+        sources = discover_product_multi(product, domyown_ctx=domyown_ctx)
         existing[pid] = sources
         save_sources(sources_path, sources_data)
         print(f"  → {len(sources)} verified source(s) saved\n")
