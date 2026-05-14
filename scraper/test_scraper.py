@@ -71,6 +71,44 @@ class ScraperExtractionTests(unittest.TestCase):
             "https://www.domyown.com/prodiamine-65-wdg-generic-barricade-p-2495.html",
         )
 
+    def test_normalizes_google_shopping_offer(self):
+        product = {
+            "name": "Prodiamine 65WDG",
+            "search_query": "Prodiamine 65WDG",
+            "alt_names": ["Quali-Pro Prodiamine 65WDG"],
+            "active_ingredient": "prodiamine",
+        }
+        item = {
+            "title": "Quali-Pro Prodiamine 65 WDG Herbicide",
+            "source": "Example Lawn Supply",
+            "extracted_price": 79.98,
+            "link": "https://example.com/prodiamine-65-wdg",
+        }
+
+        offer = scraper._shopping_offer(product, item)
+
+        self.assertIsNotNone(offer)
+        self.assertEqual(offer["retailer"], "example-lawn-supply")
+        self.assertEqual(offer["retailer_name"], "Example Lawn Supply")
+        self.assertEqual(offer["price"], 79.98)
+        self.assertEqual(offer["source"], "google_shopping")
+
+    def test_rejects_unrelated_google_shopping_offer(self):
+        product = {
+            "name": "Prodiamine 65WDG",
+            "search_query": "Prodiamine 65WDG",
+            "alt_names": [],
+            "active_ingredient": "prodiamine",
+        }
+        item = {
+            "title": "Generic Lawn Sprayer",
+            "source": "Example Store",
+            "price": "$19.99",
+            "link": "https://example.com/sprayer",
+        }
+
+        self.assertIsNone(scraper._shopping_offer(product, item))
+
 
 if __name__ == "__main__":
     unittest.main()
