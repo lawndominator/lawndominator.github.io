@@ -1,21 +1,29 @@
 #!/usr/bin/env python3
 """
 Lawn Dominator — Link Discovery Tool
-Searches specialty retailers directly (no browser, no CAPTCHA).
-Fetches each found URL to verify it has a real price and matches the product.
+Searches specialty retailers directly. Specialty Shopify stores work with plain
+requests. DoMyOwn blocks bots, so it connects to YOUR already-open Chrome so it
+inherits your session/cookies and skips any CAPTCHA.
 
 Usage:
   python scraper/find_links.py               # discover all products
   python scraper/find_links.py --ids 1,2,3   # specific product IDs
   python scraper/find_links.py --reset       # wipe product_sources.json and start over
   python scraper/find_links.py --refind      # re-discover even if sources exist
+  python scraper/find_links.py --no-domyown  # skip DoMyOwn (if Chrome step is inconvenient)
 
-Requirements: pip install requests beautifulsoup4 lxml
+For DoMyOwn, the tool will prompt you to relaunch Chrome with remote debugging
+enabled (one-time setup). After that it connects silently.
+
+Requirements: pip install requests beautifulsoup4 lxml playwright
+              playwright install chromium
 """
 
 import argparse
 import json
 import re
+import subprocess
+import sys
 import time
 import urllib.parse
 from datetime import datetime, timezone
@@ -23,6 +31,8 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+
+DOMYOWN_DEBUG_PORT = 9222
 
 # ── Retailers (plain HTTP requests work from a home IP) ───────────────────────
 RETAILERS = [
@@ -194,14 +204,88 @@ def verify(url: str, base_query: str):
         return None, str(e)[:50], False
 
 
+# ── DoMyOwn via your real Chrome browser ─────────────────────────────────────
+
+def _launch_chrome_with_debug():
+    """Tell the user how to relaunch Chrome with remote debugging."""
+    print()
+    print("  DoMyOwn needs your real Chrome browser (to skip Cloudflare).")
+    print()
+    print("  Step 1 — close ALL Chrome windows.")
+    print("  Step 2 — paste this into Run (Win+R) and press Enter:")
+    print()
+    print('    chrome.exe --remote-debugging-port=9222 --user-data-dir="%LOCALAPPDATA%\\Google\\Chrome\\User Data"')
+    print()
+    print("  Step 3 — navigate to domyown.com in Chrome (log in if needed).")
+    print("  Step 4 — come back here and press Enter.")
+    print()
+    input("  Press Enter when Chrome is open and you can browse DoMyOwn... ")
+
+
+def _connect_to_chrome():
+    """Connect Playwright to the already-running Chrome debug instance."""
+    try:
+        from playwright.sync_api import sync_playwright
+        pw = sync_playwright().start()
+        browser = pw.chromium.connect_over_cdp(f"http://localhost:{DOMYOWN_DEBUG_PORT}")
+        return pw, browser
+    except Exception as e:
+        return None, None
+
+
+def search_domyown(query: str, pw_browser) -> list[str]:
+    """Search DoMyOwn using the connected real Chrome browser."""
+    if pw_browser is None:
+        return []
+    pw, browser = pw_browser
+    try:
+        ctx  = browser.contexts[0] if browser.contexts else browser.new_context()
+        page = ctx.new_page()
+        encoded = urllib.parse.quote_plus(query)
+        page.goto(f"https://www.domyown.com/search?q={encoded}", wait_until="networkidle", timeout=20000)
+        html = page.content()
+        page.close()
+        soup = BeautifulSoup(html, "lxml")
+        return _product_links(soup, "https://www.domyown.com")
+    except Exception as e:
+        print(f"    DoMyOwn browser error: {e.__class__.__name__}")
+        return []
+
+
 # ── Discover one product ──────────────────────────────────────────────────────
 
-def discover_product(product: dict) -> list[dict]:
+def discover_product(product: dict, pw_browser=None) -> list[dict]:
     name  = product["name"]
     query = _base_query(product)
     sources = []
 
     print(f'  query: "{query}"')
+
+    # DoMyOwn via connected Chrome
+    if pw_browser is not None:
+        urls = search_domyown(query, pw_browser)
+        for url in urls:
+            price, title, ok = verify(url, query)
+            short = url.replace("https://", "").replace("www.", "")
+            if ok:
+                print(f"    {'DoMyOwn':<24} ✓  ${price:<7.2f}  {title[:45]}")
+                print(f"    {'':24}    {short[:65]}")
+                sources.append({
+                    "url":           url,
+                    "retailer":      "domyown",
+                    "retailer_name": "DoMyOwn",
+                    "title":         title,
+                    "price_verified": price,
+                    "verified":      True,
+                    "image":         None,
+                    "last_seen":     now_iso(),
+                })
+            else:
+                reason = "wrong product" if price else "no price"
+                print(f"    {'DoMyOwn':<24} ✗  ({reason})  {title[:40]}")
+            time.sleep(0.3)
+        if not urls:
+            print(f"    {'DoMyOwn':<24} –")
 
     for retailer in RETAILERS:
         urls = search_retailer(retailer, query)
@@ -253,9 +337,10 @@ def save_sources(path: Path, data: dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ids",    help="Comma-separated product IDs")
-    parser.add_argument("--reset",  action="store_true", help="Clear product_sources.json and start fresh")
-    parser.add_argument("--refind", action="store_true", help="Re-discover even if verified sources exist")
+    parser.add_argument("--ids",        help="Comma-separated product IDs")
+    parser.add_argument("--reset",      action="store_true", help="Clear product_sources.json and start fresh")
+    parser.add_argument("--refind",     action="store_true", help="Re-discover even if verified sources exist")
+    parser.add_argument("--no-domyown", action="store_true", help="Skip DoMyOwn (skip Chrome setup)")
     args = parser.parse_args()
 
     root          = Path(__file__).parent.parent
@@ -278,7 +363,24 @@ def main():
     existing     = sources_data.setdefault("products", {})
     total        = len(products)
 
-    print(f"Lawn Dominator — Link Discovery  ({total} products, {len(RETAILERS)} retailers)\n")
+    # Set up DoMyOwn via your real Chrome browser
+    pw_browser = None
+    if not args.no_domyown:
+        pw, browser = _connect_to_chrome()
+        if browser:
+            print("  Chrome connected — DoMyOwn will use your real browser session.\n")
+            pw_browser = (pw, browser)
+        else:
+            _launch_chrome_with_debug()
+            pw, browser = _connect_to_chrome()
+            if browser:
+                pw_browser = (pw, browser)
+                print("  Chrome connected.\n")
+            else:
+                print("  Could not connect to Chrome — skipping DoMyOwn.\n")
+
+    retailers_count = len(RETAILERS) + (1 if pw_browser else 0)
+    print(f"Lawn Dominator — Link Discovery  ({total} products, {retailers_count} retailers)\n")
 
     for i, product in enumerate(products, 1):
         pid  = str(product["id"])
@@ -291,7 +393,7 @@ def main():
             continue
 
         print(f"[{i}/{total}] {name}")
-        sources = discover_product(product)
+        sources = discover_product(product, pw_browser=pw_browser)
         existing[pid] = sources
         save_sources(sources_path, sources_data)
 
