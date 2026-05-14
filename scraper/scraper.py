@@ -136,21 +136,37 @@ def scrape_domyown(product: dict) -> Optional[dict]:
 
 def _domyown_search(product: dict, query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-    search_url = f"https://www.domyown.com/do-my-own-search.aspx?searchtext={encoded}"
 
-    resp = safe_get(search_url)
+    # Try current and legacy search URL patterns
+    candidate_urls = [
+        f"https://www.domyown.com/search?q={encoded}",
+        f"https://www.domyown.com/search?searchterm={encoded}",
+        f"https://www.domyown.com/search?searchtext={encoded}",
+        f"https://www.domyown.com/do-my-own-search.aspx?searchtext={encoded}",
+    ]
+
+    resp = None
+    search_url = candidate_urls[0]
+    for url in candidate_urls:
+        resp = safe_get(url)
+        if resp:
+            search_url = url
+            break
+
     if not resp:
         return None
 
     soup = BeautifulSoup(resp.text, "lxml")
 
-    # Try multiple selector patterns — DoMyOwn has updated their markup over time
+    # Try multiple selector patterns
     selectors = [
         ".productResultsItem",
         ".product-results-item",
         ".search-product-item",
         "[data-product-id]",
         ".product-item",
+        ".product-card",
+        "li.product",
     ]
     item = None
     for sel in selectors:
@@ -159,10 +175,9 @@ def _domyown_search(product: dict, query: str) -> Optional[dict]:
             break
 
     if not item:
-        # Last resort: find any price on the page
         price_tags = soup.select(".price, .product-price, [class*='price']")
         if not price_tags:
-            log.info(f"  DoMyOwn: no results for '{query}' (body len={len(resp.text)})")
+            log.info(f"  DoMyOwn: no results for '{query}' (url={search_url.split('?')[0]} body={len(resp.text)}b)")
             return None
         price = parse_price(price_tags[0].get_text(strip=True))
         if not price:
@@ -208,20 +223,20 @@ def _domyown_search(product: dict, query: str) -> Optional[dict]:
     }
 
 
-# ── PestMall scraper ──────────────────────────────────────────────────────────
+# ── Solutions Pest & Lawn scraper ─────────────────────────────────────────────
 
-def scrape_pestmall(product: dict) -> Optional[dict]:
+def scrape_solutions(product: dict) -> Optional[dict]:
     for query in search_variants(product):
-        result = _pestmall_search(product, query)
+        result = _solutions_search(product, query)
         if result:
             return result
         time.sleep(1.0)
     return None
 
 
-def _pestmall_search(product: dict, query: str) -> Optional[dict]:
+def _solutions_search(product: dict, query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-    url = f"https://www.pestmall.com/search.php?search_query={encoded}"
+    url = f"https://www.solutionsstores.com/search?q={encoded}"
 
     resp = safe_get(url)
     if not resp:
@@ -230,23 +245,25 @@ def _pestmall_search(product: dict, query: str) -> Optional[dict]:
     soup = BeautifulSoup(resp.text, "lxml")
 
     item = (
-        soup.select_one(".listItem")
-        or soup.select_one(".product-item--grid")
-        or soup.select_one(".productGrid .product")
+        soup.select_one(".product-item")
+        or soup.select_one(".product-card")
         or soup.select_one("[data-product-id]")
+        or soup.select_one(".grid-product")
+        or soup.select_one("li.product")
     )
     if not item:
         return None
 
     price_elem = (
-        item.select_one(".price--withoutTax")
-        or item.select_one(".price")
-        or item.select_one("[data-product-price]")
+        item.select_one(".price")
+        or item.select_one(".product-price")
+        or item.select_one("[class*='price']")
     )
     link_elem = (
-        item.select_one("a.card-title")
-        or item.select_one(".product-title a")
-        or item.select_one("h4 a, h3 a")
+        item.select_one("a.product-card__title")
+        or item.select_one("a.product-item__title")
+        or item.select_one("h3 a, h4 a, h2 a")
+        or item.select_one("a[href]")
     )
 
     if not price_elem or not link_elem:
@@ -257,11 +274,11 @@ def _pestmall_search(product: dict, query: str) -> Optional[dict]:
         return None
 
     href = link_elem.get("href", "")
-    product_url = href if href.startswith("http") else "https://www.pestmall.com" + href
+    product_url = href if href.startswith("http") else "https://www.solutionsstores.com" + href
 
     return {
-        "retailer": "pestmall",
-        "retailer_name": "PestMall",
+        "retailer": "solutions",
+        "retailer_name": "Solutions Pest & Lawn",
         "price": price,
         "url": product_url,
         "in_stock": True,
@@ -410,15 +427,15 @@ def run():
             else:
                 log.debug(f"  DoMyOwn  no result")
 
-        # --- PestMall (fungicides, insecticides, herbicides only) ---
+        # --- Solutions Pest & Lawn (fungicides, insecticides, herbicides only) ---
         if cat in ("fungicide", "insecticide", "pre-emergent", "post-emergent", "pgr"):
             time.sleep(RATE_LIMIT)
-            result = scrape_pestmall(product)
+            result = scrape_solutions(product)
             if result:
                 offers.append(result)
-                log.info(f"  PestMall ${result['price']:.2f}")
+                log.info(f"  Solutions ${result['price']:.2f}")
             else:
-                log.debug(f"  PestMall no result")
+                log.info(f"  Solutions no result")
 
         # --- Amazon (all products) ---
         time.sleep(RATE_LIMIT)
