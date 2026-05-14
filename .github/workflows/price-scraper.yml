@@ -29,7 +29,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r scraper/requirements.txt
-          playwright install chromium --with-deps
+          playwright install chromium
+          sudo playwright install-deps chromium
 
       - name: Run price scraper
         env:
