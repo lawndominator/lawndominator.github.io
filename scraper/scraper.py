@@ -25,7 +25,7 @@ import urllib.parse
 from datetime import datetime, timezone
 from typing import Optional
 
-import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 
 logging.basicConfig(
@@ -41,34 +41,25 @@ AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY", "")
 AMAZON_SECRET_KEY = os.getenv("AMAZON_SECRET_KEY", "")
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
 
-RATE_LIMIT = 2.5  # seconds between requests per domain
+RATE_LIMIT = 3.0  # seconds between requests per domain
 
-# ── HTTP session with browser-like headers ────────────────────────────────────
-session = requests.Session()
-session.headers.update({
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-})
+# ── cloudscraper session — handles Cloudflare JS challenges automatically ─────
+session = cloudscraper.create_scraper(
+    browser={"browser": "chrome", "platform": "windows", "mobile": False}
+)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def safe_get(url: str, timeout: int = 15) -> Optional[requests.Response]:
+def safe_get(url: str, timeout: int = 20) -> Optional[cloudscraper.requests.Response]:
     try:
         resp = session.get(url, timeout=timeout)
-        resp.raise_for_status()
+        if resp.status_code != 200:
+            log.info(f"  HTTP {resp.status_code} — {url[:80]}")
+            return None
         return resp
-    except requests.exceptions.HTTPError as e:
-        log.debug(f"HTTP {e.response.status_code} — {url}")
     except Exception as e:
-        log.debug(f"Request failed — {url} — {e}")
+        log.info(f"  Request failed — {e.__class__.__name__}: {e}"[:120])
     return None
 
 
@@ -171,7 +162,7 @@ def _domyown_search(product: dict, query: str) -> Optional[dict]:
         # Last resort: find any price on the page
         price_tags = soup.select(".price, .product-price, [class*='price']")
         if not price_tags:
-            log.debug(f"DoMyOwn: no results for '{query}'")
+            log.info(f"  DoMyOwn: no results for '{query}' (body len={len(resp.text)})")
             return None
         price = parse_price(price_tags[0].get_text(strip=True))
         if not price:
