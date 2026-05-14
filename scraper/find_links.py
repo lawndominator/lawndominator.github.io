@@ -252,6 +252,69 @@ def _title_matches(title: str, base_query: str) -> bool:
     return any(w in title_lower for w in words)
 
 
+FORMULATION_ALIASES = {
+    "65wdg": ["65wdg", "65 wdg", "65wg", "65 wg"],
+    "65wg": ["65wg", "65 wg", "65wdg", "65 wdg"],
+    "75df": ["75df", "75 df"],
+    "60df": ["60df", "60 df"],
+    "50wdg": ["50wdg", "50 wdg"],
+    "20ew": ["20ew", "20 ew"],
+    "2ew": ["2ew", "2 ew"],
+    "2sc": ["2sc", "2 sc"],
+    "4l": ["4l", "4 l"],
+    "4fl": ["4fl", "4 fl"],
+    "g": ["granular", "granule", "0.2g", "0.5g", "2g", "6.2g"],
+}
+
+FORMULATION_RE = re.compile(
+    r"\b(?:\d+(?:\.\d+)?\s*(?:wdg|wg|df|ew|sc|sl|ec|fl|l|g)|"
+    r"wdg|wg|df|ew|sc|sl|ec|flo|granular|granule)\b",
+    re.I,
+)
+
+
+def _tokens(text: str) -> set[str]:
+    original = text.lower()
+    compact = re.sub(r"[^a-z0-9]+", " ", text.lower())
+    joined = compact.replace(" ", "")
+    tokens = set(compact.split())
+    tokens.add(joined)
+    for m in re.finditer(r"\b(\d+(?:\.\d+)?)\s*([a-z]+)\b", original):
+        tokens.add((m.group(1) + m.group(2)).replace(".", ""))
+    return tokens
+
+
+def _required_formulations(product: dict) -> list[str]:
+    values = [product.get("name", ""), product.get("search_query", "")]
+    found = []
+    for value in values:
+        for match in FORMULATION_RE.findall(value):
+            token = re.sub(r"\s+", "", match.lower())
+            if token and token not in found:
+                found.append(token)
+    return found
+
+
+def _has_required_formulation(product: dict, title: str, url: str) -> bool:
+    required = _required_formulations(product)
+    if not required:
+        return True
+    haystack = f"{title} {url}"
+    title_tokens = _tokens(haystack)
+    for token in required:
+        aliases = FORMULATION_ALIASES.get(token, [token])
+        alias_tokens = {re.sub(r"[^a-z0-9]+", "", a.lower()) for a in aliases}
+        if title_tokens & alias_tokens:
+            return True
+    return False
+
+
+def _matches_product(product: dict, title: str, url: str = "", query: str = "") -> bool:
+    if not _title_matches(title, query or product.get("search_query", "")):
+        return False
+    return _has_required_formulation(product, title, url)
+
+
 # ── Retailer search ───────────────────────────────────────────────────────────
 
 def _normalize_product_url(href: str, base: str, retailer_key: str) -> str | None:
@@ -390,12 +453,15 @@ def search_retailer(retailer: dict, query: str, ctx=None) -> list[str]:
         return []
 
 
-def verify_retailer_url(retailer: dict, url: str, query: str, ctx=None):
+def verify_retailer_url(retailer: dict, url: str, query: str, ctx=None, product: dict | None = None):
     if ctx is not None:
         price, title, ok = verify_browser(ctx, url, query)
-        if ok:
-            return price, title, ok
-    return verify(url, query)
+        if ok and (product is None or _matches_product(product, title, url, query)):
+            return price, title, True
+    price, title, ok = verify(url, query)
+    if ok and (product is None or _matches_product(product, title, url, query)):
+        return price, title, True
+    return price, title, False
 
 
 # ── Verify a product URL ──────────────────────────────────────────────────────
@@ -711,6 +777,7 @@ def discover_product_multi(product: dict, domyown_ctx=None) -> list[dict]:
                 if url in seen_urls:
                     continue
                 price, title, ok = verify_browser(domyown_ctx, url, query)
+                ok = ok and _matches_product(product, title, url, query)
                 if ok:
                     seen_urls.add(url)
                     short = url.replace("https://", "").replace("www.", "")
@@ -739,7 +806,7 @@ def discover_product_multi(product: dict, domyown_ctx=None) -> list[dict]:
             for url in search_retailer(retailer, query, ctx=domyown_ctx):
                 if url in seen_urls:
                     continue
-                price, title, ok = verify_retailer_url(retailer, url, query, ctx=domyown_ctx)
+                price, title, ok = verify_retailer_url(retailer, url, query, ctx=domyown_ctx, product=product)
                 if ok:
                     seen_urls.add(url)
                     short = url.replace("https://", "").replace("www.", "")
