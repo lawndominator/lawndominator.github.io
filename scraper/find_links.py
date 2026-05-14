@@ -69,6 +69,12 @@ HEADERS = {
 }
 
 DOMYOWN_PRODUCT_RE = re.compile(r"https?://(?:www\.)?domyown\.com/[^\"'<>\s]+-p-\d+\.html", re.I)
+DOMYOWN_HINTS = {
+    "prodiamine": [
+        "https://www.domyown.com/prodiamine-65-wdg-generic-barricade-p-2495.html",
+        "https://www.domyown.com/barricade-65-wg-herbicide-p-1498.html",
+    ],
+}
 
 
 def now_iso():
@@ -315,6 +321,15 @@ def search_domyown_web(query: str, ctx, limit: int = 5) -> list[str]:
             page.close()
 
 
+def search_domyown_hints(query: str, limit: int = 5) -> list[str]:
+    normalized = query.lower().strip()
+    links = []
+    for key, urls in DOMYOWN_HINTS.items():
+        if key in normalized:
+            links.extend(urls)
+    return links[:limit]
+
+
 def search_domyown(query: str, ctx) -> list[str]:
     """Search DoMyOwn reusing the existing browser context (no new CAPTCHA)."""
     if ctx is None:
@@ -345,7 +360,11 @@ def search_domyown(query: str, ctx) -> list[str]:
                 return links
         except Exception as e:
             print(f"    DoMyOwn error: {e.__class__.__name__}: {str(e)[:60]}")
-    print("    DoMyOwn: site search found no product links, trying Bing site search")
+    print("    DoMyOwn: site search found no product links, trying known product hints")
+    links = search_domyown_hints(query)
+    if links:
+        return links
+    print("    DoMyOwn: no known hint, trying Bing site search")
     return search_domyown_web(query, ctx)
 
 
