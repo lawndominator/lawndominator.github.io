@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://lawndominators.com/best-prices.html" />
     <meta property="og:title" content="Best Prices on Lawn Care Products — Lawn Dominator" />
-    <meta property="og:description" content="Daily price comparison for 155+ professional lawn chemicals. Find the cheapest deal on pre-emergents, fungicides, PGRs, fertilizers, and more." />
+    <meta property="og:description" content="Price comparison for premium professional lawn chemicals. Prodiamine, Primo Maxx, Acelepryn, Celsius, and 60+ more — updated every 4 hours from DoMyOwn, Amazon, and Solutions Pest &amp; Lawn." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/best-prices.html" />
     <meta property="og:image" content="https://lawndominators.com/social-preview.png" />
@@ -228,7 +228,7 @@
 
       <main>
         <div class="price-hero">
-          <p class="section-label">Updated daily</p>
+          <p class="section-label">Updated every 4 hours</p>
           <h1>Best prices on lawn care products</h1>
           <p>Premium professional lawn chemicals — Prodiamine, Primo Maxx, Acelepryn, Celsius, Avid, and more. Prices scraped every 4 hours from DoMyOwn, Solutions Pest &amp; Lawn, and Amazon.</p>
         </div>
@@ -344,7 +344,9 @@
           const matchCat    = activeCategory === "all" || p.category === activeCategory;
           const matchSearch = !searchQuery ||
             p.name.toLowerCase().includes(searchQuery) ||
-            (p.category || "").toLowerCase().includes(searchQuery);
+            (p.category || "").toLowerCase().includes(searchQuery) ||
+            (p.active_ingredient || "").toLowerCase().includes(searchQuery) ||
+            (p.alt_names || []).some(a => a.toLowerCase().includes(searchQuery));
           return matchCat && matchSearch;
         });
 

@@ -457,13 +457,15 @@ def run():
             continue
 
         results.append({
-            "id":         pid,
-            "slug":       product["slug"],
-            "name":       name,
-            "category":   cat,
-            "offers":     offers,
-            "best_price": best,
-            "updated_at": now_iso(),
+            "id":                pid,
+            "slug":              product["slug"],
+            "name":              name,
+            "category":          cat,
+            "active_ingredient": product.get("active_ingredient", ""),
+            "alt_names":         product.get("alt_names", []),
+            "offers":            offers,
+            "best_price":        best,
+            "updated_at":        now_iso(),
         })
 
     output = {
