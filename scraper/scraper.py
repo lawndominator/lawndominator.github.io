@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
 Lawn Dominator Price Scraper
-Runs nightly via GitHub Actions. Finds best prices across retailers
+Runs every 4 hours via GitHub Actions. Finds best prices across retailers
 and writes prices.json, which is served as a static file by GitHub Pages.
 
 Retailers:
-  - DoMyOwn.com  (specialty lawn chemical retailer)
-  - PestMall.com (specialty retailer)
-  - Amazon       (PA API if credentials set, otherwise affiliate search link)
+  - DoMyOwn.com           (specialty lawn chemical retailer — Playwright)
+  - Solutions Pest & Lawn (specialty retailer — Playwright)
+  - Amazon                (PA API if credentials set, otherwise affiliate link)
 
-Set these as GitHub Secrets to enable full functionality:
-  AMAZON_AFFILIATE_TAG   - your Amazon Associates tag (e.g. lawndominators-20)
+GitHub Secrets:
+  AMAZON_AFFILIATE_TAG   - your Amazon Associates tag
   AMAZON_ACCESS_KEY      - PA API access key (optional, enables real prices)
   AMAZON_SECRET_KEY      - PA API secret key (optional)
-  DOMYOWN_AFFILIATE_ID   - DoMyOwn affiliate ID (optional, appended to links)
+  DOMYOWN_AFFILIATE_ID   - DoMyOwn affiliate ID (optional)
 """
 
 import json
@@ -25,8 +25,9 @@ import urllib.parse
 from datetime import datetime, timezone
 from typing import Optional
 
-import cloudscraper
+import requests
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright, Browser
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,54 +36,79 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ── Affiliate / API credentials from environment ──────────────────────────────
+# ── Credentials ───────────────────────────────────────────────────────────────
 AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominator-20")
 AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY", "")
 AMAZON_SECRET_KEY = os.getenv("AMAZON_SECRET_KEY", "")
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
 
-RATE_LIMIT = 3.0  # seconds between requests per domain
+RATE_LIMIT = 2.0   # seconds between Playwright page loads
 
-# ── cloudscraper session — handles Cloudflare JS challenges automatically ─────
-session = cloudscraper.create_scraper(
-    browser={"browser": "chrome", "platform": "windows", "mobile": False}
-)
+# Global browser instance — shared across all scrape calls
+_browser: Optional[Browser] = None
+
+
+def get_browser() -> Browser:
+    return _browser
+
+
+def browser_fetch(url: str, wait: str = "domcontentloaded", timeout: int = 25000) -> Optional[str]:
+    """Load URL in headless Chromium, return rendered HTML. Handles JS challenges."""
+    try:
+        ctx = get_browser().new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            )
+        )
+        page = ctx.new_page()
+        resp = page.goto(url, wait_until=wait, timeout=timeout)
+        if resp and resp.status != 200:
+            log.info(f"  Browser HTTP {resp.status} — {url[:80]}")
+            page.close()
+            ctx.close()
+            return None
+        html = page.content()
+        page.close()
+        ctx.close()
+        return html
+    except Exception as e:
+        log.info(f"  Browser fetch failed: {e.__class__.__name__}: {str(e)[:80]}")
+        return None
+
+
+# ── Simple requests session for Amazon (no Cloudflare) ───────────────────────
+_session = requests.Session()
+_session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+})
+
+
+def safe_get(url: str, timeout: int = 15) -> Optional[requests.Response]:
+    try:
+        r = _session.get(url, timeout=timeout)
+        return r if r.status_code == 200 else None
+    except Exception:
+        return None
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def safe_get(url: str, timeout: int = 20) -> Optional[cloudscraper.requests.Response]:
-    try:
-        resp = session.get(url, timeout=timeout)
-        if resp.status_code != 200:
-            log.info(f"  HTTP {resp.status_code} — {url[:80]}")
-            return None
-        return resp
-    except Exception as e:
-        log.info(f"  Request failed — {e.__class__.__name__}: {e}"[:120])
-    return None
-
-
 def parse_price(text: str) -> Optional[float]:
-    """Extract first dollar amount from a string."""
     text = text.replace(",", "")
-    match = re.search(r"\$?\s*([\d]+\.[\d]{1,2})", text)
-    if match:
+    m = re.search(r"\$?\s*(\d+\.\d{1,2})", text)
+    if m:
         try:
-            return float(match.group(1))
+            return float(m.group(1))
         except ValueError:
             pass
     return None
 
 
 def search_variants(product: dict, base_key: str = "search_query") -> list[str]:
-    """
-    Build an ordered list of search terms to try for a product.
-    Uses the primary search_query first, then active_ingredient, then alt_names.
-    This ensures we find the right product even when retailers spell names differently.
-    """
-    seen = set()
-    variants = []
+    seen, variants = set(), []
 
     def add(term):
         t = term.strip()
@@ -91,27 +117,18 @@ def search_variants(product: dict, base_key: str = "search_query") -> list[str]:
             variants.append(t)
 
     add(product.get(base_key, product.get("search_query", "")))
-
-    # Active ingredient is the most reliable fallback — it's on every label
-    ai = product.get("active_ingredient")
-    if ai:
+    if ai := product.get("active_ingredient"):
         add(ai)
-
-    # Alternate spellings / brand names
     for alt in product.get("alt_names", []):
         add(alt)
-
     return variants
 
 
 def append_affiliate(url: str, retailer: str) -> str:
-    """Append affiliate tracking parameters where applicable."""
     if retailer == "amazon" and AMAZON_TAG and "tag=" not in url:
-        sep = "&" if "?" in url else "?"
-        url += f"{sep}tag={AMAZON_TAG}"
+        url += ("&" if "?" in url else "?") + f"tag={AMAZON_TAG}"
     if retailer == "domyown" and DOMYOWN_AFFID and "affid=" not in url:
-        sep = "&" if "?" in url else "?"
-        url += f"{sep}affid={DOMYOWN_AFFID}"
+        url += ("&" if "?" in url else "?") + f"affid={DOMYOWN_AFFID}"
     return url
 
 
@@ -119,259 +136,139 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retailer_name: str) -> Optional[dict]:
+    """Generic price + link extractor from parsed HTML."""
+    card_selectors = [
+        "[data-product-id]", ".product-item", ".product-card",
+        ".productCard", ".card", "li.product", "article.product",
+        ".grid-product", ".search-result-item", ".product",
+    ]
+    card = None
+    for sel in card_selectors:
+        card = soup.select_one(sel)
+        if card:
+            break
+
+    search_root = card or soup
+
+    price_elem = (
+        search_root.select_one("[class*='sale-price']")
+        or search_root.select_one("[class*='price--sale']")
+        or search_root.select_one(".price--withoutTax")
+        or search_root.select_one("[itemprop='price']")
+        or search_root.select_one("[class*='price']")
+    )
+    link_elem = (
+        search_root.select_one("a[href*='/products/']")
+        or search_root.select_one("a[href*='.html']")
+        or search_root.select_one("h2 a, h3 a, h4 a")
+        or search_root.select_one("a[href]")
+    )
+
+    if not price_elem:
+        return None
+
+    price = parse_price(price_elem.get("content") or price_elem.get_text(strip=True))
+    if not price:
+        return None
+
+    href = link_elem.get("href", base_url) if link_elem else base_url
+    product_url = href if href.startswith("http") else base_url.rstrip("/").rsplit("/", 2)[0] + href
+    product_url = append_affiliate(product_url, retailer)
+
+    return {
+        "retailer":      retailer,
+        "retailer_name": retailer_name,
+        "price":         price,
+        "url":           product_url,
+        "in_stock":      True,
+        "last_checked":  now_iso(),
+    }
+
+
 # ── DoMyOwn scraper ───────────────────────────────────────────────────────────
 
 def scrape_domyown(product: dict) -> Optional[dict]:
-    # If a direct product URL is known, hit it first — more reliable than search
-    direct_url = product.get("domyown_url")
-    if direct_url:
-        result = _domyown_product_page(product, direct_url)
-        if result:
-            return result
-
-    # Fall through to search
     queries = search_variants(product, base_key="domyown_query")
     for query in queries:
-        result = _domyown_search(product, query)
+        result = _domyown_search(query)
         if result:
             return result
         time.sleep(1.0)
-
     return None
 
 
-def _domyown_product_page(product: dict, url: str) -> Optional[dict]:
-    url = append_affiliate(url, "domyown")
-    resp = safe_get(url)
-    if not resp:
-        return None
-    soup = BeautifulSoup(resp.text, "lxml")
-    price_elem = (
-        soup.select_one(".productPrice")
-        or soup.select_one("[itemprop='price']")
-        or soup.select_one(".price")
-        or soup.select_one("[class*='price']")
-    )
-    if not price_elem:
-        return None
-    price = parse_price(price_elem.get_text(strip=True))
-    if not price:
-        return None
-    return {
-        "retailer": "domyown",
-        "retailer_name": "DoMyOwn",
-        "price": price,
-        "url": url,
-        "in_stock": True,
-        "last_checked": now_iso(),
-    }
-
-
-def _domyown_search(product: dict, query: str) -> Optional[dict]:
+def _domyown_search(query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-
-    # Try current and legacy search URL patterns
-    candidate_urls = [
+    for url in [
         f"https://www.domyown.com/search?q={encoded}",
         f"https://www.domyown.com/search?searchterm={encoded}",
-        f"https://www.domyown.com/search?searchtext={encoded}",
-        f"https://www.domyown.com/do-my-own-search.aspx?searchtext={encoded}",
-    ]
-
-    resp = None
-    search_url = candidate_urls[0]
-    for url in candidate_urls:
-        resp = safe_get(url)
-        if resp:
-            search_url = url
-            break
-
-    if not resp:
-        return None
-
-    soup = BeautifulSoup(resp.text, "lxml")
-
-    # DEBUG: log HTML snippet once so we can identify correct selectors
-    if query == list(search_variants({"search_query": query}, "search_query"))[0]:
-        body_snip = resp.text[:3000].replace("\n", " ")
-        log.info(f"  DoMyOwn HTML[0:3000]: {body_snip}")
-
-    # Try multiple selector patterns
-    selectors = [
-        ".productResultsItem",
-        ".product-results-item",
-        ".search-product-item",
-        "[data-product-id]",
-        ".product-item",
-        ".product-card",
-        "li.product",
-        ".card-body",
-        "article",
-        ".grid-item",
-    ]
-    item = None
-    for sel in selectors:
-        item = soup.select_one(sel)
-        if item:
-            log.info(f"  DoMyOwn matched selector: {sel}")
-            break
-
-    if not item:
-        price_tags = soup.select(".price, .product-price, [class*='price']")
-        if not price_tags:
-            log.info(f"  DoMyOwn: no results for '{query}' (url={search_url.split('?')[0]} body={len(resp.text)}b)")
-            return None
-        price = parse_price(price_tags[0].get_text(strip=True))
-        if not price:
-            return None
-        link = soup.select_one("a[href*='/p-']") or soup.select_one("h2 a, h3 a, .product-title a")
-        href = link["href"] if link else search_url
-        product_url = href if href.startswith("http") else "https://www.domyown.com" + href
-        product_url = append_affiliate(product_url, "domyown")
-        return {
-            "retailer": "domyown",
-            "retailer_name": "DoMyOwn",
-            "price": price,
-            "url": product_url,
-            "in_stock": True,
-            "last_checked": now_iso(),
-        }
-
-    price_elem = (
-        item.select_one(".price")
-        or item.select_one(".product-price")
-        or item.select_one("[class*='price']")
-    )
-    link_elem = item.select_one("a[href]")
-
-    if not price_elem or not link_elem:
-        return None
-
-    price = parse_price(price_elem.get_text(strip=True))
-    if not price:
-        return None
-
-    href = link_elem.get("href", "")
-    product_url = href if href.startswith("http") else "https://www.domyown.com" + href
-    product_url = append_affiliate(product_url, "domyown")
-
-    return {
-        "retailer": "domyown",
-        "retailer_name": "DoMyOwn",
-        "price": price,
-        "url": product_url,
-        "in_stock": True,
-        "last_checked": now_iso(),
-    }
+    ]:
+        html = browser_fetch(url)
+        if not html:
+            continue
+        soup = BeautifulSoup(html, "lxml")
+        result = _extract_from_soup(soup, "https://www.domyown.com", "domyown", "DoMyOwn")
+        if result:
+            return result
+        time.sleep(1.0)
+    return None
 
 
 # ── Solutions Pest & Lawn scraper ─────────────────────────────────────────────
 
 def scrape_solutions(product: dict) -> Optional[dict]:
-    for query in search_variants(product):
-        result = _solutions_search(product, query)
+    queries = search_variants(product)
+    for query in queries:
+        result = _solutions_search(query)
         if result:
             return result
         time.sleep(1.0)
     return None
 
 
-def _solutions_search(product: dict, query: str) -> Optional[dict]:
+def _solutions_search(query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-
-    candidate_urls = [
+    for url in [
         f"https://www.solutionsstores.com/search?q={encoded}&type=product",
         f"https://www.solutionsstores.com/search?q={encoded}",
-        f"https://www.solutionspestcontrol.com/search?q={encoded}",
-    ]
-    resp = None
-    for url in candidate_urls:
-        resp = safe_get(url)
-        if resp:
-            break
-
-    if not resp:
-        return None
-
-    soup = BeautifulSoup(resp.text, "lxml")
-
-    item = (
-        soup.select_one(".product-item")
-        or soup.select_one(".product-card")
-        or soup.select_one("[data-product-id]")
-        or soup.select_one(".grid-product")
-        or soup.select_one("li.product")
-    )
-    if not item:
-        return None
-
-    price_elem = (
-        item.select_one(".price")
-        or item.select_one(".product-price")
-        or item.select_one("[class*='price']")
-    )
-    link_elem = (
-        item.select_one("a.product-card__title")
-        or item.select_one("a.product-item__title")
-        or item.select_one("h3 a, h4 a, h2 a")
-        or item.select_one("a[href]")
-    )
-
-    if not price_elem or not link_elem:
-        return None
-
-    price = parse_price(price_elem.get_text(strip=True))
-    if not price:
-        return None
-
-    href = link_elem.get("href", "")
-    product_url = href if href.startswith("http") else "https://www.solutionsstores.com" + href
-
-    return {
-        "retailer": "solutions",
-        "retailer_name": "Solutions Pest & Lawn",
-        "price": price,
-        "url": product_url,
-        "in_stock": True,
-        "last_checked": now_iso(),
-    }
+    ]:
+        html = browser_fetch(url)
+        if not html:
+            continue
+        soup = BeautifulSoup(html, "lxml")
+        result = _extract_from_soup(soup, "https://www.solutionsstores.com", "solutions", "Solutions Pest & Lawn")
+        if result:
+            return result
+        time.sleep(1.0)
+    return None
 
 
 # ── Amazon ────────────────────────────────────────────────────────────────────
 
 def amazon_result(product: dict) -> Optional[dict]:
-    """
-    Returns real price via PA API if credentials are set,
-    otherwise returns an affiliate search link (price shown live on Amazon).
-    """
     if AMAZON_ACCESS_KEY and AMAZON_SECRET_KEY:
         return _amazon_paapi(product)
     return _amazon_affiliate_link(product)
 
 
 def _amazon_affiliate_link(product: dict) -> dict:
-    query = product.get("amazon_query") or product["search_query"]
+    query   = product.get("amazon_query") or product["search_query"]
     encoded = urllib.parse.quote_plus(query)
-    url = f"https://www.amazon.com/s?k={encoded}&tag={AMAZON_TAG}"
+    url     = f"https://www.amazon.com/s?k={encoded}&tag={AMAZON_TAG}"
     return {
-        "retailer": "amazon",
+        "retailer":      "amazon",
         "retailer_name": "Amazon",
-        "price": None,
-        "url": url,
-        "in_stock": None,
-        "note": "Live price shown on Amazon",
-        "last_checked": now_iso(),
+        "price":         None,
+        "url":           url,
+        "in_stock":      None,
+        "note":          "Live price shown on Amazon",
+        "last_checked":  now_iso(),
     }
 
 
 def _amazon_paapi(product: dict) -> dict:
-    """
-    Uses Amazon PA API 5.0.
-    Install: pip install paapi5-python-sdk
-    Docs: https://webservices.amazon.com/paapi5/documentation/
-    """
     try:
-        import paapi5_python_sdk as paapi
         from paapi5_python_sdk.api.default_api import DefaultApi
         from paapi5_python_sdk.models.search_items_request import SearchItemsRequest
         from paapi5_python_sdk.models.search_items_resource import SearchItemsResource
@@ -379,14 +276,13 @@ def _amazon_paapi(product: dict) -> dict:
         from paapi5_python_sdk.configuration import Configuration
         from paapi5_python_sdk.api_client import ApiClient
 
-        config = Configuration()
-        config.access_key = AMAZON_ACCESS_KEY
-        config.secret_key = AMAZON_SECRET_KEY
-        config.host = "webservices.amazon.com"
-        config.region = "us-east-1"
-
-        client = DefaultApi(ApiClient(config))
-        query = product.get("amazon_query") or product["search_query"]
+        config             = Configuration()
+        config.access_key  = AMAZON_ACCESS_KEY
+        config.secret_key  = AMAZON_SECRET_KEY
+        config.host        = "webservices.amazon.com"
+        config.region      = "us-east-1"
+        client             = DefaultApi(ApiClient(config))
+        query              = product.get("amazon_query") or product["search_query"]
 
         req = SearchItemsRequest(
             partner_tag=AMAZON_TAG,
@@ -400,16 +296,13 @@ def _amazon_paapi(product: dict) -> dict:
                 SearchItemsResource.OFFERS_LISTINGS_AVAILABILITY_MESSAGE,
             ],
         )
-
         response = client.search_items(req)
-
         if not response.search_result or not response.search_result.items:
             return _amazon_affiliate_link(product)
 
-        item = response.search_result.items[0]
-        price = None
+        item     = response.search_result.items[0]
+        price    = None
         in_stock = None
-
         if item.offers and item.offers.listings:
             listing = item.offers.listings[0]
             if listing.price:
@@ -418,38 +311,34 @@ def _amazon_paapi(product: dict) -> dict:
                 in_stock = "In Stock" in listing.availability.message
 
         url = item.detail_page_url or _amazon_affiliate_link(product)["url"]
-        url = append_affiliate(url, "amazon")
-
         return {
-            "retailer": "amazon",
+            "retailer":      "amazon",
             "retailer_name": "Amazon",
-            "price": price,
-            "url": url,
-            "in_stock": in_stock,
-            "last_checked": now_iso(),
+            "price":         price,
+            "url":           append_affiliate(url, "amazon"),
+            "in_stock":      in_stock,
+            "last_checked":  now_iso(),
         }
-
     except ImportError:
-        log.warning("paapi5-python-sdk not installed — using affiliate link")
         return _amazon_affiliate_link(product)
     except Exception as e:
-        log.warning(f"Amazon PA API error for '{product['name']}': {e}")
+        log.warning(f"Amazon PA API error: {e}")
         return _amazon_affiliate_link(product)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    repo_root = os.path.dirname(script_dir)
+    global _browser
 
+    script_dir    = os.path.dirname(os.path.abspath(__file__))
+    repo_root     = os.path.dirname(script_dir)
     products_path = os.path.join(repo_root, "products.json")
     prices_path   = os.path.join(repo_root, "prices.json")
 
     with open(products_path) as f:
         catalog = json.load(f)
 
-    # Load existing prices so stale data can be preserved on failures
     try:
         with open(prices_path) as f:
             existing_data = json.load(f)
@@ -458,66 +347,74 @@ def run():
         stale_map = {}
 
     results = []
-    total = len(catalog["products"])
+    total   = len(catalog["products"])
 
-    for i, product in enumerate(catalog["products"], 1):
-        pid   = product["id"]
-        name  = product["name"]
-        cat   = product["category"]
-        log.info(f"[{i}/{total}] {name}")
+    with sync_playwright() as pw:
+        _browser = pw.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-dev-shm-usage"],
+        )
+        log.info("Playwright browser launched")
 
-        offers = []
+        for i, product in enumerate(catalog["products"], 1):
+            pid  = product["id"]
+            name = product["name"]
+            cat  = product["category"]
+            log.info(f"[{i}/{total}] {name}")
 
-        # --- DoMyOwn (all pro + specialty categories) ---
-        if cat not in ("fertilizer-consumer",):
+            offers = []
+
+            # DoMyOwn — all specialty categories
+            if cat != "fertilizer-consumer":
+                time.sleep(RATE_LIMIT)
+                r = scrape_domyown(product)
+                if r:
+                    offers.append(r)
+                    log.info(f"  DoMyOwn  ${r['price']:.2f}")
+                else:
+                    log.info(f"  DoMyOwn  no result")
+
+            # Solutions Pest & Lawn — herbicides, fungicides, insecticides, PGRs
+            if cat in ("fungicide", "insecticide", "pre-emergent", "post-emergent", "pgr"):
+                time.sleep(RATE_LIMIT)
+                r = scrape_solutions(product)
+                if r:
+                    offers.append(r)
+                    log.info(f"  Solutions ${r['price']:.2f}")
+                else:
+                    log.info(f"  Solutions no result")
+
+            # Amazon — all products
             time.sleep(RATE_LIMIT)
-            result = scrape_domyown(product)
-            if result:
-                offers.append(result)
-                log.info(f"  DoMyOwn  ${result['price']:.2f}")
-            else:
-                log.debug(f"  DoMyOwn  no result")
+            r = amazon_result(product)
+            if r:
+                offers.append(r)
+                price_str = f"${r['price']:.2f}" if r.get("price") else "(link only)"
+                log.info(f"  Amazon   {price_str}")
 
-        # --- Solutions Pest & Lawn (fungicides, insecticides, herbicides only) ---
-        if cat in ("fungicide", "insecticide", "pre-emergent", "post-emergent", "pgr"):
-            time.sleep(RATE_LIMIT)
-            result = scrape_solutions(product)
-            if result:
-                offers.append(result)
-                log.info(f"  Solutions ${result['price']:.2f}")
-            else:
-                log.info(f"  Solutions no result")
+            priced = [o for o in offers if o.get("price") is not None]
+            best   = min(priced, key=lambda o: o["price"]) if priced else None
 
-        # --- Amazon (all products) ---
-        time.sleep(RATE_LIMIT)
-        result = amazon_result(product)
-        if result:
-            offers.append(result)
-            price_str = f"${result['price']:.2f}" if result.get("price") else "(link only)"
-            log.info(f"  Amazon   {price_str}")
+            if not offers and pid in stale_map:
+                entry = stale_map[pid].copy()
+                entry["stale"] = True
+                results.append(entry)
+                log.warning(f"  Using stale data")
+                continue
 
-        # Determine best price among offers that have a real price
-        priced_offers = [o for o in offers if o.get("price") is not None]
-        best = min(priced_offers, key=lambda o: o["price"]) if priced_offers else None
+            results.append({
+                "id":                pid,
+                "slug":              product["slug"],
+                "name":              name,
+                "category":          cat,
+                "active_ingredient": product.get("active_ingredient", ""),
+                "alt_names":         product.get("alt_names", []),
+                "offers":            offers,
+                "best_price":        best,
+                "updated_at":        now_iso(),
+            })
 
-        if not offers and pid in stale_map:
-            entry = stale_map[pid].copy()
-            entry["stale"] = True
-            results.append(entry)
-            log.warning(f"  Using stale data")
-            continue
-
-        results.append({
-            "id":                pid,
-            "slug":              product["slug"],
-            "name":              name,
-            "category":          cat,
-            "active_ingredient": product.get("active_ingredient", ""),
-            "alt_names":         product.get("alt_names", []),
-            "offers":            offers,
-            "best_price":        best,
-            "updated_at":        now_iso(),
-        })
+        _browser.close()
 
     output = {
         "schema_version": "1.0",
