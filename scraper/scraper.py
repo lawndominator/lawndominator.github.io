@@ -57,7 +57,7 @@ def get_browser() -> Browser:
     return _browser
 
 
-def browser_fetch(url: str, wait: str = "domcontentloaded", timeout: int = 25000) -> Optional[str]:
+def browser_fetch(url: str, wait: str = "networkidle", timeout: int = 30000) -> Optional[str]:
     """Load URL in headless Chromium, return rendered HTML. Handles JS challenges."""
     try:
         ctx = get_browser().new_context(
@@ -74,6 +74,9 @@ def browser_fetch(url: str, wait: str = "domcontentloaded", timeout: int = 25000
             page.close()
             ctx.close()
             return None
+        title = page.title()
+        final_url = page.url
+        log.info(f"  Page: '{title[:70]}' @ {final_url[:90]}")
         html = page.content()
         page.close()
         ctx.close()
@@ -450,14 +453,22 @@ def _domyown_search(query: str) -> Optional[dict]:
     for url in [
         f"https://www.domyown.com/search?q={encoded}",
         f"https://www.domyown.com/search?searchterm={encoded}",
+        f"https://www.domyown.com/catalogsearch/result/?q={encoded}",
     ]:
         html = browser_fetch(url)
         if not html:
             continue
         soup = BeautifulSoup(html, "lxml")
+        title = (soup.title.string or "") if soup.title else ""
+        # If we landed on the home page the URL didn't work — skip it
+        if "do it yourself" in title.lower() or "pest control products" in title.lower():
+            log.info(f"  DoMyOwn: search URL redirected to home page, skipping")
+            time.sleep(1.0)
+            continue
         result = _extract_from_soup(soup, "https://www.domyown.com", "domyown", "DoMyOwn")
         if result:
             return result
+        log.info(f"  DoMyOwn: page loaded but no price found in HTML")
         time.sleep(1.0)
     return None
 
@@ -476,17 +487,24 @@ def scrape_solutions(product: dict) -> Optional[dict]:
 
 def _solutions_search(query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
+    # solutionspestcontrol.com is the correct domain for Solutions Pest & Lawn
     for url in [
-        f"https://www.solutionsstores.com/search?q={encoded}&type=product",
-        f"https://www.solutionsstores.com/search?q={encoded}",
+        f"https://www.solutionspestcontrol.com/search?q={encoded}&type=product",
+        f"https://www.solutionspestcontrol.com/search?q={encoded}",
     ]:
         html = browser_fetch(url)
         if not html:
             continue
         soup = BeautifulSoup(html, "lxml")
-        result = _extract_from_soup(soup, "https://www.solutionsstores.com", "solutions", "Solutions Pest & Lawn")
+        title = (soup.title.string or "") if soup.title else ""
+        if not title:
+            log.info(f"  Solutions: got empty title, skipping")
+            time.sleep(1.0)
+            continue
+        result = _extract_from_soup(soup, "https://www.solutionspestcontrol.com", "solutions", "Solutions Pest & Lawn")
         if result:
             return result
+        log.info(f"  Solutions: page '{title[:60]}' loaded but no price found")
         time.sleep(1.0)
     return None
 
