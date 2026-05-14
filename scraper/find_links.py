@@ -2,18 +2,16 @@
 """
 Lawn Dominator — Link Discovery Tool
 Searches specialty retailers directly. Specialty Shopify stores work with plain
-requests. DoMyOwn blocks bots, so it connects to YOUR already-open Chrome so it
-inherits your session/cookies and skips any CAPTCHA.
+requests. DoMyOwn blocks bots, so Playwright launches a visible browser window —
+solve the CAPTCHA once and the same session is reused for all products.
 
 Usage:
   python scraper/find_links.py               # discover all products
   python scraper/find_links.py --ids 1,2,3   # specific product IDs
   python scraper/find_links.py --reset       # wipe product_sources.json and start over
   python scraper/find_links.py --refind      # re-discover even if sources exist
-  python scraper/find_links.py --no-domyown  # skip DoMyOwn (if Chrome step is inconvenient)
-
-For DoMyOwn, the tool will prompt you to relaunch Chrome with remote debugging
-enabled (one-time setup). After that it connects silently.
+  python scraper/find_links.py --no-domyown  # skip DoMyOwn
+  python scraper/find_links.py --debug-domyown --ids 1
 
 Requirements: pip install requests beautifulsoup4 lxml playwright
               playwright install chromium
@@ -22,8 +20,6 @@ Requirements: pip install requests beautifulsoup4 lxml playwright
 import argparse
 import json
 import re
-import subprocess
-import sys
 import time
 import urllib.parse
 from datetime import datetime, timezone
@@ -70,6 +66,8 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
+
+DOMYOWN_PRODUCT_RE = re.compile(r"https?://(?:www\.)?domyown\.com/[^\"'<>\s]+-p-\d+\.html", re.I)
 
 
 def now_iso():
@@ -235,61 +233,119 @@ def verify(url: str, base_query: str):
 
 # ── DoMyOwn via a single persistent Playwright browser ────────────────────────
 
-def setup_domyown_browser():
-    """
-    Launch one visible browser window, open DoMyOwn, wait for you to confirm
-    the page loaded (solve any CAPTCHA if shown). Returns the browser context
-    which is reused for all 66 product searches — no new CAPTCHA per search.
-    """
+def verify_browser(ctx, url: str, base_query: str):
+    """Verify a URL in the visible browser session, useful for WAF-protected sites."""
+    page = None
     try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        print("  playwright not installed — skipping DoMyOwn.")
-        print("  Run: pip install playwright && playwright install chromium")
-        return None, None, None
+        page = ctx.new_page()
+        page.goto(url, wait_until="domcontentloaded", timeout=25000)
+        page.wait_for_timeout(1200)
+        html = page.content()
+        price, title = _get_price_and_title(html)
+        title = title or page.title()
+        return price, title, price is not None and _title_matches(title, base_query)
+    except Exception as e:
+        return None, str(e)[:50], False
+    finally:
+        if page:
+            page.close()
 
-    print("\n  Opening browser for DoMyOwn...")
-    pw = sync_playwright().start()
-    browser = pw.chromium.launch(
-        headless=False,
-        args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
-    )
-    ctx = browser.new_context(
-        user_agent=(
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/124.0.0.0 Safari/537.36"
-        ),
-        viewport={"width": 1280, "height": 900},
-    )
-    page = ctx.new_page()
-    # Remove webdriver flag that triggers bot detection
-    page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-    page.goto("https://www.domyown.com", wait_until="networkidle", timeout=30000)
 
-    print("  Browser open. If you see a CAPTCHA, solve it now.")
-    input("  Press Enter when you can see DoMyOwn products normally... ")
-    page.close()
+def _domyown_product_links(soup: BeautifulSoup, limit: int = 5) -> list[str]:
+    """Extract DoMyOwn product URLs — format is /slug-p-12345.html, not /products/."""
+    seen, links = set(), []
+    pattern = re.compile(r"-p-\d+\.html$", re.I)
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if not pattern.search(href):
+            continue
+        if a.find_parent(["nav", "header"]):
+            continue
+        if a.find_parent(class_=re.compile(r"nav|header|menu", re.I)):
+            continue
+        if href.startswith("/"):
+            href = "https://www.domyown.com" + href
+        href = href.split("?")[0]
+        if href not in seen:
+            seen.add(href)
+            links.append(href)
+        if len(links) >= limit:
+            break
+    return links
 
-    return pw, browser, ctx
+
+def _domyown_links_from_text(text: str, limit: int = 5) -> list[str]:
+    seen, links = set(), []
+    for match in DOMYOWN_PRODUCT_RE.finditer(text):
+        url = match.group(0).split("?")[0]
+        if url not in seen:
+            seen.add(url)
+            links.append(url)
+        if len(links) >= limit:
+            break
+    return links
+
+
+def search_domyown_web(query: str, ctx, limit: int = 5) -> list[str]:
+    """Fallback to public search results for DoMyOwn product pages."""
+    page = None
+    try:
+        page = ctx.new_page()
+        encoded = urllib.parse.quote_plus(f'site:domyown.com "{query}"')
+        page.goto(f"https://www.bing.com/search?q={encoded}", wait_until="domcontentloaded", timeout=25000)
+        page.wait_for_timeout(1500)
+        html = page.content()
+        links = _domyown_links_from_text(html, limit=limit)
+        if links:
+            return links
+
+        soup = BeautifulSoup(html, "lxml")
+        candidates = []
+        for a in soup.select("a[href*='domyown.com/']"):
+            href = a.get("href", "").split("?")[0]
+            if re.search(r"-p-\d+\.html$", href, re.I):
+                candidates.append(href)
+        return list(dict.fromkeys(candidates))[:limit]
+    except Exception as e:
+        print(f"    DoMyOwn web-search error: {e.__class__.__name__}: {str(e)[:60]}")
+        return []
+    finally:
+        if page:
+            page.close()
 
 
 def search_domyown(query: str, ctx) -> list[str]:
     """Search DoMyOwn reusing the existing browser context (no new CAPTCHA)."""
     if ctx is None:
         return []
-    try:
-        page = ctx.new_page()
-        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-        encoded = urllib.parse.quote_plus(query)
-        page.goto(f"https://www.domyown.com/search?q={encoded}", wait_until="networkidle", timeout=20000)
-        html = page.content()
-        page.close()
-        soup = BeautifulSoup(html, "lxml")
-        return _product_links(soup, "https://www.domyown.com")
-    except Exception as e:
-        print(f"    DoMyOwn error: {e.__class__.__name__}: {str(e)[:60]}")
-        return []
+    encoded = urllib.parse.quote_plus(query)
+    search_urls = [
+        f"https://www.domyown.com/search?w={encoded}",
+        f"https://www.domyown.com/search?q={encoded}",
+        f"https://www.domyown.com/search?searchterm={encoded}",
+    ]
+    for search_url in search_urls:
+        try:
+            page = ctx.new_page()
+            page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            page.goto(search_url, wait_until="networkidle", timeout=20000)
+            html = page.content()
+            final_url = page.url
+            page.close()
+            soup = BeautifulSoup(html, "lxml")
+            title = (soup.title.string or "").strip() if soup.title else ""
+            # Detect home page redirect
+            if "do it yourself" in title.lower() or "pest control products" in title.lower() or final_url == "https://www.domyown.com/":
+                print(f"    DoMyOwn: {search_url.split('?')[1]} → home page redirect, trying next")
+                continue
+            links = _domyown_product_links(soup)
+            print(f"    DoMyOwn: {search_url.split('?')[1]} → \"{title[:50]}\" ({len(links)} links)")
+            if links:
+                return links
+        except Exception as e:
+            print(f"    DoMyOwn error: {e.__class__.__name__}: {str(e)[:60]}")
+    print("    DoMyOwn: site search found no product links, trying Bing site search")
+    return search_domyown_web(query, ctx)
 
 
 # ── Discover one product ──────────────────────────────────────────────────────
@@ -304,10 +360,11 @@ def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
     # DoMyOwn via persistent browser context
     if domyown_ctx is not None:
         urls = search_domyown(query, domyown_ctx)
+        found = False
         for url in urls:
-            price, title, ok = verify(url, query)
-            short = url.replace("https://", "").replace("www.", "")
+            price, title, ok = verify_browser(domyown_ctx, url, query)
             if ok:
+                short = url.replace("https://", "").replace("www.", "")
                 print(f"    {'DoMyOwn':<24} ✓  ${price:<7.2f}  {title[:45]}")
                 print(f"    {'':24}    {short[:65]}")
                 sources.append({
@@ -320,24 +377,18 @@ def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
                     "image":         None,
                     "last_seen":     now_iso(),
                 })
-            else:
-                reason = "wrong product" if price else "no price"
-                print(f"    {'DoMyOwn':<24} ✗  ({reason})  {title[:40]}")
+                found = True
             time.sleep(0.3)
-        if not urls:
+        if not found:
             print(f"    {'DoMyOwn':<24} –")
 
     for retailer in RETAILERS:
         urls = search_retailer(retailer, query)
-        if not urls:
-            print(f"    {retailer['name']:<24} –")
-            continue
-
+        found = False
         for url in urls:
             price, title, ok = verify(url, query)
-            short = url.replace("https://", "").replace("www.", "")
-
             if ok:
+                short = url.replace("https://", "").replace("www.", "")
                 print(f"    {retailer['name']:<24} ✓  ${price:<7.2f}  {title[:45]}")
                 print(f"    {'':24}    {short[:65]}")
                 sources.append({
@@ -350,10 +401,10 @@ def discover_product(product: dict, domyown_ctx=None) -> list[dict]:
                     "image":        None,
                     "last_seen":    now_iso(),
                 })
-            else:
-                reason = "wrong product" if price else "no price"
-                print(f"    {retailer['name']:<24} ✗  ({reason})  {title[:40]}")
+                found = True
             time.sleep(0.3)
+        if not found:
+            print(f"    {retailer['name']:<24} –")
 
     return sources
 
@@ -375,12 +426,45 @@ def save_sources(path: Path, data: dict):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx):
+    total = len(products)
+    retailers_count = len(RETAILERS) + (1 if domyown_ctx else 0)
+    print(f"Lawn Dominator — Link Discovery  ({total} products, {retailers_count} retailers)\n")
+
+    for i, product in enumerate(products, 1):
+        pid  = str(product["id"])
+        name = product["name"]
+
+        already_verified = sum(1 for s in existing.get(pid, []) if s.get("verified"))
+        if already_verified > 0:
+            print(f"[{i}/{total}] {name} — skipped ({already_verified} verified)")
+            continue
+
+        print(f"[{i}/{total}] {name}")
+        sources = discover_product(product, domyown_ctx=domyown_ctx)
+        existing[pid] = sources
+        save_sources(sources_path, sources_data)
+        print(f"  → {len(sources)} verified source(s) saved\n")
+
+    with_sources = sum(1 for v in existing.values() if any(s.get("verified") for s in v))
+    total_urls   = sum(len(v) for v in existing.values())
+    print(f"{'='*55}")
+    print(f"Done.  {with_sources}/{len(catalog['products'])} products have verified sources")
+    print(f"       {total_urls} total URLs in {sources_path.name}")
+    print(f"\nNext step:")
+    print(f"  git add product_sources.json")
+    print(f"  git commit -m 'feat: product sources'")
+    print(f"  git push")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--ids",        help="Comma-separated product IDs")
     parser.add_argument("--reset",      action="store_true", help="Clear product_sources.json and start fresh")
     parser.add_argument("--refind",     action="store_true", help="Re-discover even if verified sources exist")
     parser.add_argument("--no-domyown", action="store_true", help="Skip DoMyOwn (skip Chrome setup)")
+    parser.add_argument("--debug-domyown", action="store_true", help="Accepted for compatibility; DoMyOwn search logging is always enabled")
+    parser.add_argument("--profile-dir", default="scraper/browser-profile", help="Persistent Chrome profile dir for solved DoMyOwn challenges")
     args = parser.parse_args()
 
     root          = Path(__file__).parent.parent
@@ -399,45 +483,48 @@ def main():
         id_set   = {int(i.strip()) for i in args.ids.split(",")}
         products = [p for p in products if p["id"] in id_set]
 
-    sources_data = load_sources(sources_path)
-    existing     = sources_data.setdefault("products", {})
-    total        = len(products)
+    if args.refind:
+        # Clear verified flag so _run_discovery won't skip anything
+        sources_data = {"schema_version": "1.0", "updated_at": None, "products": {}}
+    else:
+        sources_data = load_sources(sources_path)
+    existing = sources_data.setdefault("products", {})
 
-    # Set up DoMyOwn browser (one window, one CAPTCHA solve if needed)
-    domyown_ctx = None
-    if not args.no_domyown:
-        pw, browser, domyown_ctx = setup_domyown_browser()
+    if args.no_domyown:
+        _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx=None)
+        return
 
-    retailers_count = len(RETAILERS) + (1 if domyown_ctx else 0)
-    print(f"Lawn Dominator — Link Discovery  ({total} products, {retailers_count} retailers)\n")
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("playwright not installed — skipping DoMyOwn.")
+        print("Run: pip install playwright && playwright install chromium")
+        _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx=None)
+        return
 
-    for i, product in enumerate(products, 1):
-        pid  = str(product["id"])
-        name = product["name"]
+    print("\nOpening browser for DoMyOwn...")
+    with sync_playwright() as pw:
+        ctx = pw.chromium.launch_persistent_context(
+            user_data_dir=str(root / args.profile_dir),
+            headless=False,
+            channel="chrome",
+            args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1280, "height": 900},
+        )
+        page = ctx.new_page()
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+        page.goto("https://www.domyown.com", wait_until="networkidle", timeout=30000)
+        print("Browser open. If you see a CAPTCHA, solve it now.")
+        input("Press Enter when DoMyOwn products are visible... ")
+        page.close()
 
-        # Only skip if we already have at least one VERIFIED source
-        already_verified = sum(1 for s in existing.get(pid, []) if s.get("verified"))
-        if not args.refind and already_verified > 0:
-            print(f"[{i}/{total}] {name} — skipped ({already_verified} verified)")
-            continue
-
-        print(f"[{i}/{total}] {name}")
-        sources = discover_product(product, domyown_ctx=domyown_ctx)
-        existing[pid] = sources
-        save_sources(sources_path, sources_data)
-
-        print(f"  → {len(sources)} verified source(s) saved\n")
-
-    # Summary
-    with_sources = sum(1 for v in existing.values() if any(s.get("verified") for s in v))
-    total_urls   = sum(len(v) for v in existing.values())
-    print(f"{'='*55}")
-    print(f"Done.  {with_sources}/{len(catalog['products'])} products have verified sources")
-    print(f"       {total_urls} total URLs in {sources_path.name}")
-    print(f"\nNext step:")
-    print(f"  git add product_sources.json")
-    print(f"  git commit -m 'feat: product sources'")
-    print(f"  git push")
+        _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx=ctx)
+        ctx.close()
 
 
 if __name__ == "__main__":
