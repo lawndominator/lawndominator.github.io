@@ -150,20 +150,50 @@ def _title_matches(title: str, base_query: str) -> bool:
 # ── Retailer search ───────────────────────────────────────────────────────────
 
 def _product_links(soup: BeautifulSoup, base: str, limit: int = 5) -> list[str]:
-    """Extract unique product page URLs from a search results page."""
+    """Extract unique product page URLs from search result cards only (not nav)."""
     seen, links = set(), []
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if "/products/" not in href:
+
+    # Target actual search result cards — Shopify uses these containers.
+    # Skipping nav/header links which pollute results with unrelated products.
+    card_selectors = [
+        ".card-product a[href*='/products/']",
+        ".product-item a[href*='/products/']",
+        ".grid__item a[href*='/products/']",
+        ".product-card a[href*='/products/']",
+        ".productGrid a[href*='/products/']",
+        "[data-product-id] a[href*='/products/']",
+        # WooCommerce
+        "ul.products li.product a[href]",
+        ".woocommerce-loop-product__title[href]",
+    ]
+
+    candidates = []
+    for sel in card_selectors:
+        candidates = soup.select(sel)
+        if candidates:
+            break
+
+    # Last resort: any /products/ link that isn't inside a nav/header element
+    if not candidates:
+        for a in soup.find_all("a", href=True):
+            if "/products/" not in a["href"]:
+                continue
+            if a.find_parent(["nav", "header"]):
+                continue
+            if a.find_parent(class_=re.compile(r"nav|header|menu|site-nav", re.I)):
+                continue
+            candidates.append(a)
+
+    for a in candidates:
+        href = a.get("href", "")
+        if not href:
             continue
-        # Skip links that just go to /products/ (collection root)
         slug = href.split("/products/")[-1].split("?")[0].strip("/")
         if len(slug) < 3:
             continue
-        # Make absolute
         if href.startswith("/"):
             href = base.rstrip("/") + href
-        href = href.split("?")[0]  # strip tracking params
+        href = href.split("?")[0]
         if href not in seen:
             seen.add(href)
             links.append(href)
