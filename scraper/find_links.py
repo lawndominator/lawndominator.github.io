@@ -696,8 +696,11 @@ def search_domyown(query: str, ctx) -> list[str]:
     links = search_domyown_specials(query, ctx)
     if links:
         return links
-    print("    DoMyOwn: no specials match, trying Bing site search")
-    return search_domyown_web(query, ctx)
+    if os.getenv("DOMYOWN_ENABLE_BING", "0") == "1":
+        print("    DoMyOwn: no specials match, trying Bing site search")
+        return search_domyown_web(query, ctx)
+    print("    DoMyOwn: no specials match")
+    return []
 
 
 # ── Discover one product ──────────────────────────────────────────────────────
