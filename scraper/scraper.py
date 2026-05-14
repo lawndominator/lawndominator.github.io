@@ -56,6 +56,7 @@ ENABLE_KNOWN_RETAILER_SEARCH = os.getenv("ENABLE_KNOWN_RETAILER_SEARCH", "0") ==
 ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
 KNOWN_RETAILER_LIMIT = int(os.getenv("KNOWN_RETAILER_LIMIT", "8"))
 SAVED_SOURCE_LIMIT = int(os.getenv("SAVED_SOURCE_LIMIT", "12"))
+MAX_SAVED_SOURCES_PER_PRODUCT = int(os.getenv("MAX_SAVED_SOURCES_PER_PRODUCT", "50"))
 MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
@@ -186,6 +187,19 @@ def retailer_name_from_url(url: str) -> str:
 def is_google_url(url: str) -> bool:
     host = urllib.parse.urlparse(url).netloc.lower()
     return host == "google.com" or host.endswith(".google.com")
+
+
+def is_bad_product_url(url: str) -> bool:
+    parsed = urllib.parse.urlparse(url)
+    path = parsed.path.lower()
+    query = parsed.query.lower()
+    bad_path_parts = (
+        "/cart", "/checkout", "/account", "/login", "/search", "/collections/",
+        "/category/", "/categories/", "/catalogsearch/", "/wishlist",
+    )
+    if any(part in path for part in bad_path_parts):
+        return True
+    return "notify" in path or "notify" in query
 
 
 def offer_key(offer: dict) -> tuple:
@@ -690,7 +704,7 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
     entries = []
     for source in source_map.get("products", {}).get(str(product_id), []):
         url = source.get("url", "")
-        if not url or is_google_url(url):
+        if not url or is_google_url(url) or is_bad_product_url(url):
             continue
         if source.get("verified") is False:
             continue
@@ -698,9 +712,15 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
         if source_type != "product":
             continue
         entries.append(source)
-        if len(entries) >= SAVED_SOURCE_LIMIT:
-            break
-    return entries
+
+    if not entries or SAVED_SOURCE_LIMIT <= 0 or len(entries) <= SAVED_SOURCE_LIMIT:
+        return entries
+
+    cursors = source_map.setdefault("refresh_cursors", {})
+    start = int(cursors.get(str(product_id), 0)) % len(entries)
+    selected = [entries[(start + offset) % len(entries)] for offset in range(SAVED_SOURCE_LIMIT)]
+    cursors[str(product_id)] = (start + SAVED_SOURCE_LIMIT) % len(entries)
+    return selected
 
 
 def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
@@ -722,6 +742,10 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             retailer_name,
         )
         if offer:
+            match_title = offer.get("title") or source.get("title") or ""
+            if not source.get("manual_verified") and not _matches_product(product, match_title, url):
+                log.info(f"  Saved source mismatch skipped: {match_title[:70]} @ {url[:80]}")
+                continue
             offer["source"] = "saved_product_source"
             offer["image"] = source.get("image") or offer.get("image")
             add_offer(offers, offer)
@@ -744,7 +768,8 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
             if not url or is_google_url(url) or offer.get("excluded"):
                 continue
             normalized = urllib.parse.urldefrag(url)[0].rstrip("/")
-            existing[normalized] = {
+            previous_source = existing.get(normalized, {})
+            updated_source = {
                 "url": normalized,
                 "retailer": offer.get("retailer") or retailer_key(url),
                 "retailer_name": offer.get("retailer_name") or retailer_name_from_url(url),
@@ -752,8 +777,12 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
                 "image": offer.get("image"),
                 "last_seen": now_iso(),
             }
+            for key in ("verified", "manual_verified", "price_verified", "source_type"):
+                if key in previous_source:
+                    updated_source[key] = previous_source[key]
+            existing[normalized] = updated_source
 
-        products[product_id] = list(existing.values())[:SAVED_SOURCE_LIMIT]
+        products[product_id] = list(existing.values())[:MAX_SAVED_SOURCES_PER_PRODUCT]
 
     source_map["updated_at"] = now_iso()
     return source_map
@@ -1005,9 +1034,10 @@ def run():
 
             best = select_best_offer(product, offers)
 
-            if not offers and pid in stale_map:
+            if (not offers or best is None) and pid in stale_map and stale_map[pid].get("best_price"):
                 entry = stale_map[pid].copy()
                 entry["stale"] = True
+                entry["stale_reason"] = "no eligible priced best offer in latest run"
                 results.append(entry)
                 log.warning(f"  Using stale data")
                 continue
