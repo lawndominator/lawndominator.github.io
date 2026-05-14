@@ -576,8 +576,8 @@ KNOWN_RETAILERS = [
     {
         "key": "solutions",
         "name": "Solutions Pest & Lawn",
-        "base": "https://www.solutionsstores.com",
-        "search": "https://www.solutionsstores.com/search?q={query}",
+        "base": "https://www.solutionspestcontrol.com",
+        "search": "https://www.solutionspestcontrol.com/search?q={query}&type=product",
     },
     {
         "key": "domyown",
@@ -783,8 +783,8 @@ def scrape_solutions(product: dict) -> Optional[dict]:
 def _solutions_search(query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
     for url in [
-        f"https://www.solutionsstores.com/search?q={encoded}&type=product",
-        f"https://www.solutionsstores.com/search?q={encoded}",
+        f"https://www.solutionspestcontrol.com/search?q={encoded}&type=product",
+        f"https://www.solutionspestcontrol.com/search?q={encoded}",
     ]:
         html = browser_fetch(url)
         if not html:
@@ -795,7 +795,7 @@ def _solutions_search(query: str) -> Optional[dict]:
             log.info(f"  Solutions: got empty title, skipping")
             time.sleep(1.0)
             continue
-        result = _extract_from_soup(soup, "https://www.solutionsstores.com", "solutions", "Solutions Pest & Lawn")
+        result = _extract_from_soup(soup, "https://www.solutionspestcontrol.com", "solutions", "Solutions Pest & Lawn")
         if result:
             return result
         log.info(f"  Solutions: page '{title[:60]}' loaded but no price found")
