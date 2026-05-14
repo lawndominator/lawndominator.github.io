@@ -191,6 +191,11 @@ def _domyown_search(product: dict, query: str) -> Optional[dict]:
 
     soup = BeautifulSoup(resp.text, "lxml")
 
+    # DEBUG: log HTML snippet once so we can identify correct selectors
+    if query == list(search_variants({"search_query": query}, "search_query"))[0]:
+        body_snip = resp.text[:3000].replace("\n", " ")
+        log.info(f"  DoMyOwn HTML[0:3000]: {body_snip}")
+
     # Try multiple selector patterns
     selectors = [
         ".productResultsItem",
@@ -200,11 +205,15 @@ def _domyown_search(product: dict, query: str) -> Optional[dict]:
         ".product-item",
         ".product-card",
         "li.product",
+        ".card-body",
+        "article",
+        ".grid-item",
     ]
     item = None
     for sel in selectors:
         item = soup.select_one(sel)
         if item:
+            log.info(f"  DoMyOwn matched selector: {sel}")
             break
 
     if not item:
@@ -269,9 +278,18 @@ def scrape_solutions(product: dict) -> Optional[dict]:
 
 def _solutions_search(product: dict, query: str) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
-    url = f"https://www.solutionsstores.com/search?q={encoded}"
 
-    resp = safe_get(url)
+    candidate_urls = [
+        f"https://www.solutionsstores.com/search?q={encoded}&type=product",
+        f"https://www.solutionsstores.com/search?q={encoded}",
+        f"https://www.solutionspestcontrol.com/search?q={encoded}",
+    ]
+    resp = None
+    for url in candidate_urls:
+        resp = safe_get(url)
+        if resp:
+            break
+
     if not resp:
         return None
 
