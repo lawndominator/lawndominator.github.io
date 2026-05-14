@@ -376,11 +376,10 @@ def search_retailer(retailer: dict, query: str, ctx=None) -> list[str]:
     encoded = urllib.parse.quote_plus(query)
     url = retailer["search"].format(query=encoded)
     try:
+        html = None
         if ctx is not None:
             html = _fetch_with_browser(ctx, url)
-            if not html:
-                return []
-        else:
+        if not html:
             r = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
             if r.status_code != 200:
                 return []
@@ -393,7 +392,9 @@ def search_retailer(retailer: dict, query: str, ctx=None) -> list[str]:
 
 def verify_retailer_url(retailer: dict, url: str, query: str, ctx=None):
     if ctx is not None:
-        return verify_browser(ctx, url, query)
+        price, title, ok = verify_browser(ctx, url, query)
+        if ok:
+            return price, title, ok
     return verify(url, query)
 
 
@@ -897,9 +898,9 @@ def main():
         page.goto("https://www.domyown.com", wait_until="networkidle", timeout=30000)
         print("Browser open. If you see a CAPTCHA, solve it now.")
         input("Press Enter when DoMyOwn products are visible... ")
-        page.close()
 
         _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx=ctx)
+        page.close()
         ctx.close()
 
 
