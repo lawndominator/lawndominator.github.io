@@ -200,6 +200,29 @@ class ScraperExtractionTests(unittest.TestCase):
             )
         )
 
+    def test_best_offer_allows_out_of_stock_product_page_for_display(self):
+        product = {"id": 1, "category": "soil-amendment"}
+        offers = [
+            {
+                "retailer": "domyown",
+                "retailer_name": "DoMyOwn",
+                "price": 26.17,
+                "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
+                "in_stock": False,
+            },
+            {
+                "retailer": "amazon",
+                "retailer_name": "Amazon",
+                "price": 69.24,
+                "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z?tag=lawndominator-20",
+                "in_stock": True,
+            },
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "domyown")
+
     def test_select_best_ignores_below_category_floor(self):
         product = {"id": 1, "category": "post-emergent"}
         offers = [
@@ -393,6 +416,32 @@ class ScraperExtractionTests(unittest.TestCase):
             "name": "Prodiamine 65WDG",
             "category": "pre-emergent",
             "best_price": {"retailer": "store", "retailer_name": "Store", "price": 96.0},
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 0)
+
+    def test_build_price_alerts_ignores_out_of_stock_drop(self):
+        previous = {
+            1: {
+                "id": 1,
+                "slug": "feature-6-0-0",
+                "name": "Feature 6-0-0 Iron Fertilizer",
+                "best_price": {"retailer": "store", "retailer_name": "Store", "price": 100.0},
+            }
+        }
+        current = [{
+            "id": 1,
+            "slug": "feature-6-0-0",
+            "name": "Feature 6-0-0 Iron Fertilizer",
+            "category": "soil-amendment",
+            "best_price": {
+                "retailer": "store",
+                "retailer_name": "Store",
+                "price": 50.0,
+                "in_stock": False,
+            },
         }]
 
         output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")

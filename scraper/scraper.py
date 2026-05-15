@@ -235,7 +235,6 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         and not o.get("excluded")
         and not is_google_url(o.get("url", ""))
         and not is_bad_product_url(o.get("url", ""))
-        and o.get("in_stock") is not False
         and float(o["price"]) >= min_price_for_product(product)
     ]
     priced.sort(key=lambda o: o["price"])
@@ -376,7 +375,7 @@ def build_price_alerts(previous_products: dict, current_products: list[dict], ge
         if not new_best or new_price is None:
             continue
 
-        if old_price is not None:
+        if old_price is not None and new_best.get("in_stock") is not False:
             drop = _drop_percent(old_price, new_price)
             if drop >= MIN_ALERT_DROP_PERCENT:
                 if drop >= 10:
