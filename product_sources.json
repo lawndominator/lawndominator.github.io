@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-05-16T02:20:11.549307+00:00",
+  "updated_at": "2026-05-16T02:36:14.685777+00:00",
   "products": {
     "1": [
       {
@@ -53,7 +53,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Prodiamine 65WDG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697504+00:00"
+        "last_seen": "2026-05-16T02:36:14.680195+00:00"
       },
       {
         "url": "https://yardmastery.com/products/prodiamine-65-wdg",
@@ -73,7 +73,7 @@
         "retailer_name": "Pestrong",
         "title": "Prodiamine 65WDG",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.319695+00:00"
+        "last_seen": "2026-05-16T02:36:14.680267+00:00"
       },
       {
         "url": "https://pestrong.com/product/prodiamine-65-wdg-generic-barricade-5-lbs",
@@ -81,7 +81,7 @@
         "retailer_name": "Pestrong",
         "title": "Prodiamine 65WDG",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.319707+00:00"
+        "last_seen": "2026-05-16T02:36:14.680278+00:00"
       },
       {
         "url": "https://yardmastery.com/products/prodiamine-65-wdg?variant=31755335565364",
@@ -89,7 +89,15 @@
         "retailer_name": "Yard Mastery",
         "title": "Prodiamine 65WDG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697469+00:00"
+        "last_seen": "2026-05-16T02:36:14.680285+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Prodiamine+65WDG+pre-emergent&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Prodiamine 65WDG",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680297+00:00"
       }
     ],
     "2": [
@@ -157,21 +165,21 @@
         "url": "https://diypestcontrol.com/dimension-2ew-herbicide",
         "retailer": "diypestcontrol",
         "retailer_name": "Diypestcontrol",
-        "title": "Dimension 2EW Herbicide | Do It Yourself Pest Control | Free Shipping",
-        "price_verified": 159.14,
+        "title": "Dimension 2EW (Dithiopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680407+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T01:54:04.466490+00:00"
+        "price_verified": 159.14,
+        "source_type": "product"
       },
       {
         "url": "https://www.domyown.com/dimension-2ew-herbicide-p-1494.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Dimension 2EW Herbicide (Dithiopyr) \u2013 Professional Crabgrass Pre-Emergent - DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-16T01:54:04.355281+00:00",
+        "last_seen": "2026-05-16T02:36:14.680414+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 155.0,
@@ -183,7 +191,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Dimension 2EW (Dithiopyr)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697661+00:00"
+        "last_seen": "2026-05-16T02:36:14.680420+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/dimension-2ew-crabgrass-herbicide",
@@ -191,7 +199,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Dimension 2EW Crabgrass Herbicide Regular price $750.00 Sale price $709.50",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697671+00:00"
+        "last_seen": "2026-05-16T02:36:14.680425+00:00"
       },
       {
         "url": "https://pestrong.com/product/dimension-2ew-dithiopyr-64-oz-2-5-gallon",
@@ -218,6 +226,22 @@
         "title": "Dimension 2EW (Dithiopyr)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.697637+00:00"
+      },
+      {
+        "url": "https://chemicalwarehouse.com/products/dithiopyr-2-ew?variant=41276310028351",
+        "retailer": "chemicalwarehouse",
+        "retailer_name": "Chemicalwarehouse",
+        "title": "Dimension 2EW (Dithiopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680400+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Dimension+2EW+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Dimension 2EW (Dithiopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680436+00:00"
       }
     ],
     "3": [
@@ -227,7 +251,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Ronstar G (Oxadiazon 2G)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697750+00:00"
+        "last_seen": "2026-05-16T02:36:14.680483+00:00"
       },
       {
         "url": "https://seedbarn.com/products/oxadiazon-2g-pre-emergent-herbicide-ronstar-alternative-50lbs",
@@ -255,7 +279,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Ronstar G (Oxadiazon 2G)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697764+00:00"
+        "last_seen": "2026-05-16T02:36:14.680495+00:00"
       },
       {
         "url": "https://seedbarn.com/products/oxadiazon-2g-pre-emergent-herbicide-ronstar-alternative-50lbs?variant=32204335251591",
@@ -263,7 +287,15 @@
         "retailer_name": "Seed Barn",
         "title": "Ronstar G (Oxadiazon 2G)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697757+00:00"
+        "last_seen": "2026-05-16T02:36:14.680489+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Ronstar+G+pre-emergent&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Ronstar G (Oxadiazon 2G)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680505+00:00"
       }
     ],
     "4": [
@@ -273,7 +305,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Spectacle Flo (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.319986+00:00"
+        "last_seen": "2026-05-16T02:36:14.680571+00:00"
       },
       {
         "url": "https://seedbarn.com/products/specticle-flo-herbicide-18-ounces",
@@ -321,7 +353,7 @@
         "retailer_name": "Seed Barn",
         "title": "Spectacle Flo (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697860+00:00"
+        "last_seen": "2026-05-16T02:36:14.680577+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/specticle-flo-18oz?variant=43994447577274",
@@ -329,7 +361,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Spectacle Flo (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697865+00:00"
+        "last_seen": "2026-05-16T02:36:14.680582+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon?variant=43994447610042",
@@ -337,7 +369,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Spectacle Flo (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697853+00:00"
+        "last_seen": "2026-05-16T02:36:14.680594+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Spectacle+Flo+indaziflam&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Spectacle Flo (Indaziflam)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680604+00:00"
       }
     ],
     "5": [
@@ -345,9 +385,9 @@
         "url": "https://www.domyown.com/pendulum-2g-granular-herbicide-p-1498.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Pendulum 2G Herbicide - Granular Pre-Emergent Herbicide | DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320089+00:00",
+        "last_seen": "2026-05-16T02:36:14.680667+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 112.0
@@ -358,7 +398,7 @@
         "retailer_name": "Pestrong",
         "title": "Pendulum 2G (Pendimethalin)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320099+00:00"
+        "last_seen": "2026-05-16T02:36:14.680677+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pendulum-2g-herbicide-20-lbs",
@@ -396,7 +436,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pendulum 2G (Pendimethalin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697965+00:00"
+        "last_seen": "2026-05-16T02:36:14.680682+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pendulum-2g-herbicide-40-lbs?variant=12539707490404",
@@ -404,7 +444,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pendulum 2G (Pendimethalin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697952+00:00"
+        "last_seen": "2026-05-16T02:36:14.680688+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/pendulum-2g-granular-herbicide?variant=43994279706810",
@@ -412,7 +452,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Pendulum 2G (Pendimethalin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.697959+00:00"
+        "last_seen": "2026-05-16T02:36:14.680693+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Pendulum+2G+pre-emergent+granule&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Pendulum 2G (Pendimethalin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680703+00:00"
       }
     ],
     "6": [
@@ -444,13 +492,13 @@
         "url": "https://diypestcontrol.com/gallery-75df-herbicide",
         "retailer": "diypestcontrol",
         "retailer_name": "Diypestcontrol",
-        "title": "Gallery 75 DF Herbicide | Do It Yourself Pest Control | Free Shipping",
-        "price_verified": 153.95,
+        "title": "Gallery 75 DF (Isoxaben)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680775+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T01:58:05.293396+00:00"
+        "price_verified": 153.95,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B004JX6QO8",
@@ -470,7 +518,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Gallery 75 DF (Isoxaben)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698016+00:00"
+        "last_seen": "2026-05-16T02:36:14.680780+00:00"
       },
       {
         "url": "https://pestrong.com/product/gallery-75df-pre-emergent-herbicide-1-lb",
@@ -497,6 +545,22 @@
         "title": "Gallery 75 DF (Isoxaben)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.698022+00:00"
+      },
+      {
+        "url": "https://www.pedchem.com/products/gallery-75-df-specialty-herbicide?variant=10703459123243",
+        "retailer": "pedchem",
+        "retailer_name": "Pedchem",
+        "title": "Gallery 75 DF (Isoxaben)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680769+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Gallery+75+DF+broadleaf+pre-emergent&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Gallery 75 DF (Isoxaben)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680790+00:00"
       }
     ],
     "7": [
@@ -506,7 +570,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Specticle G (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698093+00:00"
+        "last_seen": "2026-05-16T02:36:14.680856+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/specticle-g-herbicide",
@@ -524,7 +588,7 @@
         "retailer_name": "Pestrong",
         "title": "Specticle G (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320245+00:00"
+        "last_seen": "2026-05-16T02:36:14.680865+00:00"
       },
       {
         "url": "https://pestrong.com/product/specticle-flo-pre-emergent-herbicide-18-oz-gallon",
@@ -550,7 +614,7 @@
         "retailer_name": "Lawn Synergy",
         "title": "Specticle G (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698099+00:00"
+        "last_seen": "2026-05-16T02:36:14.680845+00:00"
       },
       {
         "url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs?variant=12543660425316",
@@ -558,7 +622,15 @@
         "retailer_name": "Seed Barn",
         "title": "Specticle G (Indaziflam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698104+00:00"
+        "last_seen": "2026-05-16T02:36:14.680851+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Specticle+G+pre-emergent+granule&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Specticle G (Indaziflam)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680875+00:00"
       }
     ],
     "8": [
@@ -566,13 +638,13 @@
         "url": "https://www.solutionsstores.com/southern-ag-atrazine-st-augustine-weed-killer",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Southern Ag Atrazine St. Augustine Weed Killer",
-        "price_verified": 32.21,
+        "title": "Atrazine 4L",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680903+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T01:59:23.281288+00:00"
+        "price_verified": 32.21,
+        "source_type": "product"
       },
       {
         "url": "https://www.keystonepestsolutions.com/index.php",
@@ -590,12 +662,20 @@
         "url": "https://www.domyown.com/hiyield-atrazine-weed-killer-p-2023.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Hi-Yield Atrazine Weed Killer",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698140+00:00",
+        "last_seen": "2026-05-16T02:36:14.680909+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 24.48
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Atrazine+4L+weed+killer&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Atrazine 4L",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680918+00:00"
       }
     ],
     "9": [
@@ -651,13 +731,13 @@
         "url": "https://www.solutionsstores.com/pendulum-aquacap",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Pendulum AquaCap",
-        "price_verified": 135.45,
+        "title": "Pendulum AquaCap (Pendimethalin 38.7%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681010+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:00:11.256636+00:00"
+        "price_verified": 135.45,
+        "source_type": "product"
       },
       {
         "url": "https://www.seedworldusa.com/products/pendulum-aquacap-herbicide-2-5-gallons",
@@ -702,6 +782,38 @@
         "title": "Pendulum AquaCap (Pendimethalin 38.7%)",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320350+00:00"
+      },
+      {
+        "url": "https://chemicalwarehouse.com/products/pendulum-aquacap?variant=31631835693119",
+        "retailer": "chemicalwarehouse",
+        "retailer_name": "Chemicalwarehouse",
+        "title": "Pendulum AquaCap (Pendimethalin 38.7%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680986+00:00"
+      },
+      {
+        "url": "https://www.intermountainturf.com/products/pendulum-aquacap-herbicide-jug-15-gal?variant=45348258283658",
+        "retailer": "intermountainturf",
+        "retailer_name": "Intermountainturf",
+        "title": "Pendulum AquaCap (Pendimethalin 38.7%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.680995+00:00"
+      },
+      {
+        "url": "https://arborchem.com/topic/privacy",
+        "retailer": "arborchem",
+        "retailer_name": "Arborchem",
+        "title": "Privacy Policy",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681005+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Pendulum+AquaCap+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Pendulum AquaCap (Pendimethalin 38.7%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681022+00:00"
       }
     ],
     "15": [
@@ -769,21 +881,21 @@
         "url": "https://www.solutionsstores.com/celsius-wg",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Celsius WG Herbicide | Powerful Celsius Weed Killer for Lawn Care",
-        "price_verified": 10.71,
+        "title": "Celsius WG",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681130+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:01:48.821236+00:00"
+        "price_verified": 10.71,
+        "source_type": "product"
       },
       {
         "url": "https://www.domyown.com/celsius-wg-herbicide-p-1923.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Celsius WG Herbicide - Fast, Free Shipping | DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698314+00:00",
+        "last_seen": "2026-05-16T02:36:14.681136+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 133.82
@@ -828,11 +940,11 @@
       },
       {
         "url": "https://lawnsynergy.com/products/celsius-wg-herbicide?variant=42981567594634",
-        "retailer": "lawn-synergy",
-        "retailer_name": "Lawn Synergy",
+        "retailer": "lawnsynergy",
+        "retailer_name": "Lawnsynergy",
         "title": "Celsius WG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698308+00:00",
+        "last_seen": "2026-05-16T02:36:14.681119+00:00",
         "verified": true,
         "manual_verified": true
       },
@@ -843,6 +955,14 @@
         "title": "Lawn Academy",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320434+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Celsius+WG+turf+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Celsius WG",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681147+00:00"
       }
     ],
     "16": [
@@ -850,25 +970,25 @@
         "url": "https://chemicalwarehouse.com/products/certainty-herbicide",
         "retailer": "chemicalwarehouse",
         "retailer_name": "Chemicalwarehouse",
-        "title": "Certainty Herbicide | Sulfosulfuron | 1.25 Ounce Size \u2014 Chemical Warehouse",
-        "price_verified": 129.0,
+        "title": "Sold out",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681238+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:02:35.708396+00:00"
+        "price_verified": 129.0,
+        "source_type": "product"
       },
       {
         "url": "https://www.solutionsstores.com/certainty-turf-herbicide",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Certainty Turf Herbicide | Certainty Selective Post-Emergent Herbicide",
-        "price_verified": 109.62,
+        "title": "Certainty WDG (Sulfosulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681246+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:02:35.604378+00:00"
+        "price_verified": 109.62,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B004RVNFY6",
@@ -941,6 +1061,14 @@
         "verified": true,
         "manual_verified": true,
         "source_type": "product"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Certainty+herbicide+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Certainty WDG (Sulfosulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681257+00:00"
       }
     ],
     "17": [
@@ -1059,6 +1187,30 @@
         "title": "Drive XLR8 (Quinclorac)",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320581+00:00"
+      },
+      {
+        "url": "https://www.intermountainturf.com/products/drive-xlr8-64-ounces?variant=45346754330762",
+        "retailer": "intermountainturf",
+        "retailer_name": "Intermountainturf",
+        "title": "Drive XLR8 (Quinclorac)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681342+00:00"
+      },
+      {
+        "url": "https://www.forestrydistributing.com/register",
+        "retailer": "forestrydistributing",
+        "retailer_name": "Forestrydistributing",
+        "title": "Register",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681351+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Drive+XLR8+crabgrass+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Drive XLR8 (Quinclorac)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681361+00:00"
       }
     ],
     "18": [
@@ -1102,9 +1254,9 @@
         "url": "https://www.domyown.com/sedgehammer-herbicide-p-1348.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Sedgehammer Plus / Sedgehammer + Herbicide - Nutsedge Control | Fast, Free Shipping - DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698456+00:00",
+        "last_seen": "2026-05-16T02:36:14.681424+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 18.9
@@ -1115,7 +1267,7 @@
         "retailer_name": "Pestrong",
         "title": "SedgeHammer+ (Halosulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320647+00:00"
+        "last_seen": "2026-05-16T02:36:14.681434+00:00"
       },
       {
         "url": "https://pestrong.com/product/sedgehammer-turf-herbicide-prosedge-1-33-oz",
@@ -1134,6 +1286,22 @@
         "verified": true,
         "image": null,
         "last_seen": "2026-05-14T12:05:39.843920+00:00"
+      },
+      {
+        "url": "https://golfcourselawn.store/products/sedgehammer%C2%AE-herbicide-nutsedge-weed-killer?variant=44424761245945",
+        "retailer": "golfcourselawn",
+        "retailer_name": "Golfcourselawn",
+        "title": "SedgeHammer+ (Halosulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681418+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Sedgehammer+nutsedge+killer&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "SedgeHammer+ (Halosulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681443+00:00"
       }
     ],
     "19": [
@@ -1165,13 +1333,13 @@
         "url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "SpeedZone Southern EW Broadleaf Herbicide",
-        "price_verified": 87.5,
+        "title": "SpeedZone Southern EW",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681508+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:05:23.683680+00:00"
+        "price_verified": 87.5,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B006LBBHE0",
@@ -1189,13 +1357,13 @@
         "url": "https://diypestcontrol.com/speed-zone-red-herbicide",
         "retailer": "diypestcontrol",
         "retailer_name": "Diypestcontrol",
-        "title": "SpeedZone EW Herbicide & Weed Killer - DIY Pest Control",
-        "price_verified": 44.91,
+        "title": "SpeedZone Southern EW",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681514+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:05:23.279571+00:00"
+        "price_verified": 44.91,
+        "source_type": "product"
       },
       {
         "url": "https://www.domyown.com/speedzone-southern-herbicide-ew-p-1915.html",
@@ -1216,6 +1384,22 @@
         "title": "SpeedZone Southern EW",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320702+00:00"
+      },
+      {
+        "url": "https://www.lawnandpestcontrolsupply.com",
+        "retailer": "lawnandpestcontrolsupply",
+        "retailer_name": "Lawnandpestcontrolsupply",
+        "title": "Home",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681503+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=SpeedZone+Southern+lawn+weed+killer&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "SpeedZone Southern EW",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681525+00:00"
       }
     ],
     "20": [
@@ -1235,13 +1419,13 @@
         "url": "https://www.solutionsstores.com/msm-turf-herbicide-manor",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "MSM Turf Herbicide | Generic Manor Herbicide | Metsulfuron Methyl | Quali-Pro |",
-        "price_verified": 59.08,
+        "title": "Manor 60DF (Metsulfuron-Methyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681559+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:06:17.027724+00:00"
+        "price_verified": 59.08,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B0CB96F141",
@@ -1261,7 +1445,15 @@
         "retailer_name": "DoMyOwn",
         "title": "Manor 60DF (Metsulfuron-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698520+00:00"
+        "last_seen": "2026-05-16T02:36:14.681566+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Manor+60DF+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Manor 60DF (Metsulfuron-Methyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681578+00:00"
       }
     ],
     "21": [
@@ -1317,9 +1509,9 @@
         "url": "https://www.domyown.com/tenacity-herbicide-p-1877.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Tenacity Herbicide | Turfgrass Herbicide & Weed Killer - Free Shipping",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698575+00:00",
+        "last_seen": "2026-05-16T02:36:14.681662+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 66.64
@@ -1347,6 +1539,30 @@
         "title": "Tenacity Turf Herbicide (Mesotrione)",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320813+00:00"
+      },
+      {
+        "url": "https://homeandgardensupply.com/products/tenacity-herbicide-broadleaf-weed-grass-control?variant=39692034015319",
+        "retailer": "homeandgardensupply",
+        "retailer_name": "Homeandgardensupply",
+        "title": "Tenacity Turf Herbicide (Mesotrione)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681646+00:00"
+      },
+      {
+        "url": "https://golfcourselawn.store/products/tenacity-herbicide?variant=44424749842681",
+        "retailer": "golfcourselawn",
+        "retailer_name": "Golfcourselawn",
+        "title": "Tenacity Turf Herbicide (Mesotrione)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681657+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Tenacity+turf+herbicide+mesotrione&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Tenacity Turf Herbicide (Mesotrione)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681673+00:00"
       }
     ],
     "22": [
@@ -1366,25 +1582,25 @@
         "url": "https://www.solutionsstores.com/hi-yield-triclopyr-ester",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Hi-Yield Triclopyr Ester Herbicide",
-        "price_verified": 19.68,
+        "title": "Turflon Ester (Triclopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681714+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:08:35.269886+00:00"
+        "price_verified": 19.68,
+        "source_type": "product"
       },
       {
         "url": "https://diypestcontrol.com/turflon-ester",
         "retailer": "diypestcontrol",
         "retailer_name": "Diypestcontrol",
-        "title": "Turflon Ester",
-        "price_verified": 43.28,
+        "title": "Turflon Ester (Triclopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681720+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:08:35.156136+00:00"
+        "price_verified": 43.28,
+        "source_type": "product"
       },
       {
         "url": "https://www.domyown.com/hiyield-triclopyr-ester-p-4543.html",
@@ -1392,7 +1608,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Turflon Ester (Triclopyr)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698611+00:00"
+        "last_seen": "2026-05-16T02:36:14.681726+00:00"
       },
       {
         "url": "https://pestrong.com/product/turflon-ester-ultra-specialty-herbicide-gal",
@@ -1400,7 +1616,15 @@
         "retailer_name": "Pestrong",
         "title": "Turflon Ester (Triclopyr)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320857+00:00"
+        "last_seen": "2026-05-16T02:36:14.681735+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Turflon+Ester+lawn+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Turflon Ester (Triclopyr)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681745+00:00"
       }
     ],
     "23": [
@@ -1444,13 +1668,13 @@
         "url": "https://www.solutionsstores.com/dismiss-herbicide",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Dismiss Herbicide",
-        "price_verified": 262.11,
+        "title": "Dismiss Turf Herbicide (Sulfentrazone)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681844+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:09:14.472742+00:00"
+        "price_verified": 262.11,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B06XG4Q715",
@@ -1522,6 +1746,30 @@
         "title": "Dismiss Turf Herbicide (Sulfentrazone)",
         "image": null,
         "last_seen": "2026-05-15T17:40:07.320941+00:00"
+      },
+      {
+        "url": "https://www.ourprosolutions.com/product/brash-herbicide-for-pasture-right-of-way-and-rangeland-2-5-gallon",
+        "retailer": "ourprosolutions",
+        "retailer_name": "Ourprosolutions",
+        "title": "Brash Herbicide for Pasture, Right of Way and Rangeland 2.5 Gallon $ 131.49",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681829+00:00"
+      },
+      {
+        "url": "https://www.seedworldusa.com/products/alyce-clover-seed",
+        "retailer": "seedworldusa",
+        "retailer_name": "Seedworldusa",
+        "title": "Alyce Clover",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681839+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Dismiss+turf+herbicide+sulfentrazone&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Dismiss Turf Herbicide (Sulfentrazone)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681855+00:00"
       }
     ],
     "24": [
@@ -1529,9 +1777,9 @@
         "url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Pylex Herbicide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698707+00:00",
+        "last_seen": "2026-05-16T02:36:14.681875+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 416.0
@@ -1542,7 +1790,15 @@
         "retailer_name": "Pestrong",
         "title": "Pylex Turf Herbicide (Topramezone)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.320992+00:00"
+        "last_seen": "2026-05-16T02:36:14.681885+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Pylex+herbicide+topramezone&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Pylex Turf Herbicide (Topramezone)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681895+00:00"
       }
     ],
     "25": [
@@ -1637,6 +1893,38 @@
         "verified": true,
         "manual_verified": true,
         "source_type": "product"
+      },
+      {
+        "url": "https://www.ourprosolutions.com/product/24-d-lv4-2-5-gallon",
+        "retailer": "ourprosolutions",
+        "retailer_name": "Ourprosolutions",
+        "title": "2,4-D LV4 2.5 Gallon $ 122.49",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681959+00:00"
+      },
+      {
+        "url": "https://steveregan.com/cdn/shop/products/IMG_1039-removebg-preview_1024x1024.png?v=1678375095",
+        "retailer": "steveregan",
+        "retailer_name": "Steveregan",
+        "title": "MSMA Target 6 Plus",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681969+00:00"
+      },
+      {
+        "url": "https://chemicalwarehouse.com/products/msma-6-plus-herbicide?variant=7365300355135",
+        "retailer": "chemicalwarehouse",
+        "retailer_name": "Chemicalwarehouse",
+        "title": "MSMA Target 6 Plus",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681979+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=MSMA+Target+6+Plus+lawn+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "MSMA Target 6 Plus",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.681990+00:00"
       }
     ],
     "26": [
@@ -1646,7 +1934,15 @@
         "retailer_name": "DoMyOwn",
         "title": "Q4 Plus Turf Herbicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698771+00:00"
+        "last_seen": "2026-05-16T02:36:14.682004+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Q4+Plus+turf+herbicide+broadleaf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Q4 Plus Turf Herbicide",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682014+00:00"
       }
     ],
     "27": [
@@ -1654,9 +1950,9 @@
         "url": "https://www.domyown.com/gordons-trimec-classic-broadleaf-herbicide-p-10321.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Gordons Trimec Classic Broadleaf Herbicide | Fast, Free Shipping - DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698850+00:00",
+        "last_seen": "2026-05-16T02:36:14.682082+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 88.3
@@ -1677,7 +1973,7 @@
         "retailer_name": "Pestrong",
         "title": "Trimec Classic Broadleaf Herbicide",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321145+00:00"
+        "last_seen": "2026-05-16T02:36:14.682093+00:00"
       },
       {
         "url": "https://pestrong.com/product/trimec-encore-tri-power-broadleaf-herbicide-2-5-gal",
@@ -1703,7 +1999,7 @@
         "retailer_name": "Lawn Synergy",
         "title": "Trimec Classic Broadleaf Herbicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698856+00:00"
+        "last_seen": "2026-05-16T02:36:14.682070+00:00"
       },
       {
         "url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons?variant=47621611094234",
@@ -1711,7 +2007,15 @@
         "retailer_name": "Seed Barn",
         "title": "Trimec Classic Broadleaf Herbicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698862+00:00"
+        "last_seen": "2026-05-16T02:36:14.682076+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Trimec+Classic+lawn+herbicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Trimec Classic Broadleaf Herbicide",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682104+00:00"
       }
     ],
     "28": [
@@ -1721,7 +2025,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Revolver Herbicide (Foramsulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698932+00:00"
+        "last_seen": "2026-05-16T02:36:14.682164+00:00"
       },
       {
         "url": "https://pestrong.com/product/revolver-herbicide-qt-87-oz",
@@ -1729,7 +2033,7 @@
         "retailer_name": "Pestrong",
         "title": "Revolver Herbicide (Foramsulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321239+00:00"
+        "last_seen": "2026-05-16T02:36:14.682173+00:00"
       },
       {
         "url": "https://seedbarn.com/products/revolver-herbicide-1-quart",
@@ -1757,7 +2061,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Revolver Herbicide (Foramsulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698937+00:00"
+        "last_seen": "2026-05-16T02:36:14.682153+00:00"
       },
       {
         "url": "https://seedbarn.com/products/revolver-herbicide-1-quart?variant=12542001512548",
@@ -1765,7 +2069,15 @@
         "retailer_name": "Seed Barn",
         "title": "Revolver Herbicide (Foramsulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698926+00:00"
+        "last_seen": "2026-05-16T02:36:14.682159+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Revolver+herbicide+foramsulfuron&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Revolver Herbicide (Foramsulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682183+00:00"
       }
     ],
     "29": [
@@ -1775,7 +2087,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Katana Turf Herbicide (Flazasulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.698994+00:00"
+        "last_seen": "2026-05-16T02:36:14.682251+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/katana-turf-herbicide-5-ounce",
@@ -1783,7 +2095,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Katana Turf Herbicide (Flazasulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699000+00:00"
+        "last_seen": "2026-05-16T02:36:14.682257+00:00"
       },
       {
         "url": "https://pestrong.com/product/katana-turf-fastacting-herbicide-5-oz",
@@ -1791,7 +2103,7 @@
         "retailer_name": "Pestrong",
         "title": "Katana Turf Herbicide (Flazasulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321323+00:00"
+        "last_seen": "2026-05-16T02:36:14.682266+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/katana-turf-herbicide-bottle-5-oz",
@@ -1809,7 +2121,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Katana Turf Herbicide (Flazasulfuron)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699006+00:00"
+        "last_seen": "2026-05-16T02:36:14.682272+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Katana+turf+herbicide+flazasulfuron&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Katana Turf Herbicide (Flazasulfuron)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682282+00:00"
       }
     ],
     "35": [
@@ -1877,9 +2197,9 @@
         "url": "https://www.domyown.com/primo-maxx-plant-growth-regulator-p-2320.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Primo MAXX Plant Growth Regulator",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699084+00:00",
+        "last_seen": "2026-05-16T02:36:14.682370+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 330.98
@@ -1890,7 +2210,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Primo Maxx (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699090+00:00"
+        "last_seen": "2026-05-16T02:36:14.682376+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator",
@@ -1910,7 +2230,7 @@
         "retailer_name": "Pestrong",
         "title": "Primo Maxx (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321414+00:00"
+        "last_seen": "2026-05-16T02:36:14.682392+00:00"
       },
       {
         "url": "https://seedbarn.com/products/primo-maxx-plant-growth-regulator-1-gallon",
@@ -1924,11 +2244,11 @@
       },
       {
         "url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator?variant=42990895628426",
-        "retailer": "lawn-synergy",
-        "retailer_name": "Lawn Synergy",
+        "retailer": "lawnsynergy",
+        "retailer_name": "Lawnsynergy",
         "title": "Primo Maxx (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699096+00:00"
+        "last_seen": "2026-05-16T02:36:14.682382+00:00"
       },
       {
         "url": "https://seedbarn.com/products/primo-maxx-plant-growth-regulator-1-gallon?variant=12540937109604",
@@ -1936,7 +2256,15 @@
         "retailer_name": "Seed Barn",
         "title": "Primo Maxx (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699101+00:00"
+        "last_seen": "2026-05-16T02:36:14.682397+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Primo+Maxx+PGR+trinexapac&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Primo Maxx (Trinexapac-ethyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682407+00:00"
       }
     ],
     "36": [
@@ -2004,13 +2332,13 @@
         "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "T-Nex Plant Growth Regulator",
-        "price_verified": 302.45,
+        "title": "T-Nex 1AS (Trinexapac-ethyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682509+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:11:57.355216+00:00"
+        "price_verified": 302.45,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B07FS56D66",
@@ -2030,7 +2358,7 @@
         "retailer_name": "DoMyOwn",
         "title": "T-Nex 1AS (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699173+00:00"
+        "last_seen": "2026-05-16T02:36:14.682515+00:00"
       },
       {
         "url": "https://seedbarn.com/products/t-nex-plant-growth-regulator-2-5-gallon",
@@ -2066,11 +2394,11 @@
       },
       {
         "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-gallon?variant=43994323091642",
-        "retailer": "sunspot-supply",
-        "retailer_name": "Sunspot Supply",
+        "retailer": "sunspotsupply",
+        "retailer_name": "Sunspotsupply",
         "title": "T-Nex 1AS (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699185+00:00"
+        "last_seen": "2026-05-16T02:36:14.682526+00:00"
       },
       {
         "url": "https://seedbarn.com/products/t-nex-plant-growth-regulator-2-5-gallon?variant=46657366065370",
@@ -2078,7 +2406,7 @@
         "retailer_name": "Seed Barn",
         "title": "T-Nex 1AS (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699179+00:00"
+        "last_seen": "2026-05-16T02:36:14.682521+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-2-5-gallons?variant=43994323157178",
@@ -2087,6 +2415,14 @@
         "title": "T-Nex 1AS (Trinexapac-ethyl)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.699190+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=T-Nex+1AS+PGR+trinexapac&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "T-Nex 1AS (Trinexapac-ethyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682535+00:00"
       }
     ],
     "37": [
@@ -2096,7 +2432,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Anuew (Prohexadione Calcium)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321634+00:00"
+        "last_seen": "2026-05-16T02:36:14.682596+00:00"
       },
       {
         "url": "https://pestrong.com/product/anuew-plant-growth-regulator-tgr-1-5-lb",
@@ -2104,7 +2440,7 @@
         "retailer_name": "Pestrong",
         "title": "Anuew (Prohexadione Calcium)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.321644+00:00"
+        "last_seen": "2026-05-16T02:36:14.682605+00:00"
       },
       {
         "url": "https://seedbarn.com/products/anuew-plant-growth-regulator-1-5-lbs",
@@ -2142,7 +2478,7 @@
         "retailer_name": "Seed Barn",
         "title": "Anuew (Prohexadione Calcium)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699316+00:00"
+        "last_seen": "2026-05-16T02:36:14.682611+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-64?variant=43994501120186",
@@ -2150,7 +2486,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Anuew (Prohexadione Calcium)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699302+00:00"
+        "last_seen": "2026-05-16T02:36:14.682616+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25?variant=43994501152954",
@@ -2158,7 +2494,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Anuew (Prohexadione Calcium)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699310+00:00"
+        "last_seen": "2026-05-16T02:36:14.682622+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Anuew+plant+growth+regulator&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Anuew (Prohexadione Calcium)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682631+00:00"
       }
     ],
     "38": [
@@ -2166,9 +2510,9 @@
         "url": "https://www.domyown.com/trimmit-2sc-plant-growth-regulator-p-23967.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Trimmit 2SC Plant Growth Regulator",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699398+00:00",
+        "last_seen": "2026-05-16T02:36:14.682696+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 579.0
@@ -2179,7 +2523,7 @@
         "retailer_name": "Pestrong",
         "title": "Trimmit 2SC (Paclobutrazol)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.416283+00:00"
+        "last_seen": "2026-05-16T02:36:14.682705+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons",
@@ -2217,7 +2561,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Trimmit 2SC (Paclobutrazol)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699405+00:00"
+        "last_seen": "2026-05-16T02:36:14.682685+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon?variant=43994303594682",
@@ -2225,7 +2569,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Trimmit 2SC (Paclobutrazol)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699411+00:00"
+        "last_seen": "2026-05-16T02:36:14.682691+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Trimmit+2SC+PGR+paclobutrazol&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Trimmit 2SC (Paclobutrazol)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682715+00:00"
       }
     ],
     "39": [
@@ -2235,7 +2587,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Cutless (Flurprimidol)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699491+00:00"
+        "last_seen": "2026-05-16T02:36:14.682781+00:00"
       },
       {
         "url": "https://pestrong.com/product/cutless-0-33g-granule-pgr-21-40-lb",
@@ -2243,7 +2595,7 @@
         "retailer_name": "Pestrong",
         "title": "Cutless (Flurprimidol)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.416374+00:00"
+        "last_seen": "2026-05-16T02:36:14.682790+00:00"
       },
       {
         "url": "https://seedbarn.com/products/cutless-0-33g-landscape-growth-regulator-40-lbs",
@@ -2281,7 +2633,7 @@
         "retailer_name": "Seed Barn",
         "title": "Cutless (Flurprimidol)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699497+00:00"
+        "last_seen": "2026-05-16T02:36:14.682770+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator-gallon-128-oz?variant=43994369982650",
@@ -2289,7 +2641,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Cutless (Flurprimidol)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699509+00:00"
+        "last_seen": "2026-05-16T02:36:14.682775+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Cutless+0.33G+plant+growth+regulator&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Cutless (Flurprimidol)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682800+00:00"
       }
     ],
     "40": [
@@ -2299,7 +2659,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Proxy / Embark (Mefluidide)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699553+00:00"
+        "last_seen": "2026-05-16T02:36:14.682828+00:00"
       },
       {
         "url": "https://seedbarn.com/products/trin-pac-select-pgr-plant-growth-regulator-1-gal",
@@ -2317,7 +2677,15 @@
         "retailer_name": "Seed Barn",
         "title": "Proxy / Embark (Mefluidide)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699559+00:00"
+        "last_seen": "2026-05-16T02:36:14.682834+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Proxy+PGR+mefluidide+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Proxy / Embark (Mefluidide)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682843+00:00"
       }
     ],
     "41": [
@@ -2385,9 +2753,9 @@
         "url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-p-23245.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Pramaxis Plant Growth Regulator (PGR) - Generic Primo Maxx | DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-16T02:13:13.921111+00:00",
+        "last_seen": "2026-05-16T02:36:14.682944+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 44.0,
@@ -2439,7 +2807,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pramaxis MEC (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699661+00:00"
+        "last_seen": "2026-05-16T02:36:14.682949+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pbi-gordons-pasture-pro-32-oz?variant=12534973136996",
@@ -2447,7 +2815,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pramaxis MEC (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699667+00:00"
+        "last_seen": "2026-05-16T02:36:14.682954+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pbi-gordons-pasture-pro-herbicide-1-gal?variant=12534975266916",
@@ -2455,7 +2823,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pramaxis MEC (Trinexapac-ethyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699672+00:00"
+        "last_seen": "2026-05-16T02:36:14.682959+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pbi-gordons-pasture-pro-herbicide-2-5-gal?variant=12534979723364",
@@ -2464,6 +2832,14 @@
         "title": "Pramaxis MEC (Trinexapac-ethyl)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.699649+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Pramaxis+MEC+PGR+trinexapac&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Pramaxis MEC (Trinexapac-ethyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.682969+00:00"
       }
     ],
     "50": [
@@ -2484,7 +2860,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Propiconazole 14.3 (Banner Maxx)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699748+00:00"
+        "last_seen": "2026-05-16T02:36:14.683035+00:00"
       },
       {
         "url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide",
@@ -2518,7 +2894,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Be the first.",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699742+00:00"
+        "last_seen": "2026-05-16T02:36:14.683030+00:00"
       },
       {
         "url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide?variant=33097543843892",
@@ -2526,7 +2902,15 @@
         "retailer_name": "Yard Mastery",
         "title": "Propiconazole 14.3 (Banner Maxx)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699754+00:00"
+        "last_seen": "2026-05-16T02:36:14.683024+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Propiconazole+14.3+fungicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Propiconazole 14.3 (Banner Maxx)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683045+00:00"
       }
     ],
     "51": [
@@ -2534,9 +2918,9 @@
         "url": "https://www.domyown.com/heritage-fungicide-p-1343.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Heritage G Fungicide | Free Shipping | DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699829+00:00",
+        "last_seen": "2026-05-16T02:36:14.683107+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 79.87
@@ -2547,7 +2931,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Heritage G (Azoxystrobin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699835+00:00"
+        "last_seen": "2026-05-16T02:36:14.683113+00:00"
       },
       {
         "url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex",
@@ -2573,7 +2957,7 @@
         "retailer_name": "Pestrong",
         "title": "Heritage G (Azoxystrobin)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322163+00:00"
+        "last_seen": "2026-05-16T02:36:14.683096+00:00"
       },
       {
         "url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex?variant=33101565231156",
@@ -2581,7 +2965,15 @@
         "retailer_name": "Yard Mastery",
         "title": "Heritage G (Azoxystrobin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699823+00:00"
+        "last_seen": "2026-05-16T02:36:14.683101+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Heritage+azoxystrobin+fungicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Heritage G (Azoxystrobin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683123+00:00"
       }
     ],
     "52": [
@@ -2589,9 +2981,9 @@
         "url": "https://www.domyown.com/headway-fungicide-granules-p-2312.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Headway G Fungicide Granules",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699909+00:00",
+        "last_seen": "2026-05-16T02:36:14.683184+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 79.98
@@ -2602,7 +2994,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Headway G Granular Fungicide - 30 Pound 4 reviews (4) $85.00",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699915+00:00"
+        "last_seen": "2026-05-16T02:36:14.683189+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/headway-g-fungicide",
@@ -2628,7 +3020,7 @@
         "retailer_name": "Pestrong",
         "title": "Headway G Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322262+00:00"
+        "last_seen": "2026-05-16T02:36:14.683173+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/headway-g-fungicide?variant=46295278420106",
@@ -2636,7 +3028,15 @@
         "retailer_name": "Lawn Synergy",
         "title": "Headway G Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699903+00:00"
+        "last_seen": "2026-05-16T02:36:14.683178+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Headway+G+fungicide+granule&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Headway G Fungicide",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683199+00:00"
       }
     ],
     "53": [
@@ -2646,7 +3046,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Armada 50 WDG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699985+00:00"
+        "last_seen": "2026-05-16T02:36:14.683281+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/armada-50-wdg-fungicide-1-jug-2-lb",
@@ -2654,7 +3054,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Armada 50 WDG Fungicide - 1 jug (2 lb.) 1 reviews (1) $162.00",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699991+00:00"
+        "last_seen": "2026-05-16T02:36:14.683286+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/armada-50-wdg-fungicide",
@@ -2690,7 +3090,7 @@
         "retailer_name": "Lawn Synergy",
         "title": "Armada 50 WDG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.699997+00:00"
+        "last_seen": "2026-05-16T02:36:14.683270+00:00"
       },
       {
         "url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836",
@@ -2698,7 +3098,15 @@
         "retailer_name": "Seed Barn",
         "title": "Armada 50 WDG",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700002+00:00"
+        "last_seen": "2026-05-16T02:36:14.683276+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Armada+50+WDG+fungicide+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Armada 50 WDG",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683296+00:00"
       }
     ],
     "54": [
@@ -2708,7 +3116,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Pillar SC Intrinsic Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322433+00:00"
+        "last_seen": "2026-05-16T02:36:14.683358+00:00"
       },
       {
         "url": "https://seedbarn.com/products/pillar-sc-fungicide-43-5-fl-oz",
@@ -2756,7 +3164,7 @@
         "retailer_name": "Seed Barn",
         "title": "Pillar SC Intrinsic Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700091+00:00"
+        "last_seen": "2026-05-16T02:36:14.683363+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-25?variant=43994448953530",
@@ -2764,7 +3172,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Pillar SC Intrinsic Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700079+00:00"
+        "last_seen": "2026-05-16T02:36:14.683375+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-2?variant=43994448920762",
@@ -2772,7 +3180,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Pillar SC Intrinsic Fungicide",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700085+00:00"
+        "last_seen": "2026-05-16T02:36:14.683380+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Pillar+SC+Intrinsic+fungicide+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Pillar SC Intrinsic Fungicide",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683390+00:00"
       }
     ],
     "55": [
@@ -2782,7 +3198,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Clearys 3336 F (Thiophanate-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700147+00:00"
+        "last_seen": "2026-05-16T02:36:14.683430+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/cleary-dg-lite-granular-fungicide-30-pounds",
@@ -2790,7 +3206,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Clearys 3336 F (Thiophanate-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700153+00:00"
+        "last_seen": "2026-05-16T02:36:14.683436+00:00"
       },
       {
         "url": "https://pestrong.com/product/transom-50-wsb-cleary-3336-fungicide-4-x-8-oz-2-lb",
@@ -2798,7 +3214,7 @@
         "retailer_name": "Pestrong",
         "title": "Clearys 3336 F (Thiophanate-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322553+00:00"
+        "last_seen": "2026-05-16T02:36:14.683445+00:00"
       },
       {
         "url": "https://pestrong.com/product/ohp-6672-50-wp-cleary-3336-fungicide-2-lb-4-x-8-oz",
@@ -2806,7 +3222,7 @@
         "retailer_name": "Pestrong",
         "title": "Clearys 3336 F (Thiophanate-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322562+00:00"
+        "last_seen": "2026-05-16T02:36:14.683454+00:00"
       },
       {
         "url": "https://pestrong.com/product/cleary-3336-dg-lite-granular-fungicide-30-lb",
@@ -2814,7 +3230,15 @@
         "retailer_name": "Pestrong",
         "title": "Clearys 3336 F (Thiophanate-Methyl)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322572+00:00"
+        "last_seen": "2026-05-16T02:36:14.683463+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Clearys+3336+F+fungicide+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Clearys 3336 F (Thiophanate-Methyl)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683472+00:00"
       }
     ],
     "56": [
@@ -2824,7 +3248,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Eagle 20EW (Myclobutanil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322661+00:00"
+        "last_seen": "2026-05-16T02:36:14.683533+00:00"
       },
       {
         "url": "https://pestrong.com/product/eagle-20ew-fungicide-pt-gallon",
@@ -2832,7 +3256,7 @@
         "retailer_name": "Pestrong",
         "title": "Eagle 20EW (Myclobutanil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322670+00:00"
+        "last_seen": "2026-05-16T02:36:14.683543+00:00"
       },
       {
         "url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-pint",
@@ -2870,7 +3294,7 @@
         "retailer_name": "Seed Barn",
         "title": "Eagle 20EW (Myclobutanil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700243+00:00"
+        "last_seen": "2026-05-16T02:36:14.683548+00:00"
       },
       {
         "url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-gallon?variant=12533522563172",
@@ -2878,7 +3302,7 @@
         "retailer_name": "Seed Barn",
         "title": "Eagle 20EW (Myclobutanil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700231+00:00"
+        "last_seen": "2026-05-16T02:36:14.683554+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/eagle-20ew-fungicide-pint?variant=43994299728058",
@@ -2886,7 +3310,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Eagle 20EW (Myclobutanil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700236+00:00"
+        "last_seen": "2026-05-16T02:36:14.683559+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Eagle+20EW+fungicide+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Eagle 20EW (Myclobutanil)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683569+00:00"
       }
     ],
     "57": [
@@ -2894,9 +3326,9 @@
         "url": "https://www.domyown.com/garden-tech-daconil-fungicide-concentrate-p-8930.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Garden Tech Daconil Fungicide Concentrate",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700337+00:00",
+        "last_seen": "2026-05-16T02:36:14.683610+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 28.69
@@ -2907,7 +3339,7 @@
         "retailer_name": "Pestrong",
         "title": "Daconil (Chlorothalonil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322747+00:00"
+        "last_seen": "2026-05-16T02:36:14.683620+00:00"
       },
       {
         "url": "https://pestrong.com/product/chlorothalonil-5g-fungicide-andersons-daconil-fungicide-40-lb",
@@ -2915,7 +3347,7 @@
         "retailer_name": "Pestrong",
         "title": "Daconil (Chlorothalonil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322756+00:00"
+        "last_seen": "2026-05-16T02:36:14.683629+00:00"
       },
       {
         "url": "https://pestrong.com/product/echo-ultimate-docket-df-generic-daconil-fungicide-5-lb",
@@ -2923,7 +3355,7 @@
         "retailer_name": "Pestrong",
         "title": "Daconil (Chlorothalonil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322766+00:00"
+        "last_seen": "2026-05-16T02:36:14.683638+00:00"
       },
       {
         "url": "https://pestrong.com/product/daconil-action-fungicide-2-5-gallons",
@@ -2931,7 +3363,15 @@
         "retailer_name": "Pestrong",
         "title": "Daconil (Chlorothalonil)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322775+00:00"
+        "last_seen": "2026-05-16T02:36:14.683647+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Daconil+fungicide+chlorothalonil&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Daconil (Chlorothalonil)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683657+00:00"
       }
     ],
     "58": [
@@ -2941,7 +3381,7 @@
         "retailer_name": "Pestrong",
         "title": "Emerald Fungicide (Boscalid)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322834+00:00"
+        "last_seen": "2026-05-16T02:36:14.683701+00:00"
       },
       {
         "url": "https://seedbarn.com/products/emerald-fungicide-0-49-lb",
@@ -2969,7 +3409,7 @@
         "retailer_name": "Seed Barn",
         "title": "Emerald Fungicide (Boscalid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700396+00:00"
+        "last_seen": "2026-05-16T02:36:14.683707+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/packet-49-lb?variant=43994343309498",
@@ -2977,7 +3417,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Emerald Fungicide (Boscalid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700401+00:00"
+        "last_seen": "2026-05-16T02:36:14.683713+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Emerald+fungicide+boscalid+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Emerald Fungicide (Boscalid)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683722+00:00"
       }
     ],
     "59": [
@@ -2985,9 +3433,9 @@
         "url": "https://www.domyown.com/medallion-wdg-fungicide-p-2316.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Medallion WDG Fungicide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322927+00:00",
+        "last_seen": "2026-05-16T02:36:14.683771+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 210.0
@@ -2998,7 +3446,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Armada 50 WDG Fungicide - 1 jug (2 lb.) 1 reviews (1) $162.00",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.322933+00:00"
+        "last_seen": "2026-05-16T02:36:14.683777+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/armada-50-wdg-fungicide",
@@ -3036,7 +3484,7 @@
         "retailer_name": "Lawn Synergy",
         "title": "Medallion WDG (Fludioxonil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700487+00:00"
+        "last_seen": "2026-05-16T02:36:14.683782+00:00"
       },
       {
         "url": "https://seedbarn.com/products/medallion-wdg-fungicide-8-oz?variant=12537998442596",
@@ -3044,7 +3492,7 @@
         "retailer_name": "Seed Barn",
         "title": "Medallion WDG (Fludioxonil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700475+00:00"
+        "last_seen": "2026-05-16T02:36:14.683787+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/medallion-wdg-fungicide-8oz?variant=43994445938874",
@@ -3052,7 +3500,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Medallion WDG (Fludioxonil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700481+00:00"
+        "last_seen": "2026-05-16T02:36:14.683792+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Medallion+WDG+fungicide+fludioxonil&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Medallion WDG (Fludioxonil)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683801+00:00"
       }
     ],
     "60": [
@@ -3060,9 +3516,9 @@
         "url": "https://www.domyown.com/subdue-maxx-fungicide-p-2321.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Subdue Maxx Fungicide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700563+00:00",
+        "last_seen": "2026-05-16T02:36:14.683853+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 638.0
@@ -3073,7 +3529,7 @@
         "retailer_name": "Pestrong",
         "title": "Subdue Maxx (Mefenoxam)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323016+00:00"
+        "last_seen": "2026-05-16T02:36:14.683861+00:00"
       },
       {
         "url": "https://pestrong.com/product/subdue-gr-granular-fungicide-subdue-maxx-25-lb",
@@ -3081,7 +3537,7 @@
         "retailer_name": "Pestrong",
         "title": "Subdue Maxx (Mefenoxam)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323025+00:00"
+        "last_seen": "2026-05-16T02:36:14.683870+00:00"
       },
       {
         "url": "https://pestrong.com/product/subdue-maxx-superior-fungicide-qt-gal",
@@ -3107,7 +3563,15 @@
         "retailer_name": "Seed Barn",
         "title": "Subdue Maxx (Mefenoxam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700557+00:00"
+        "last_seen": "2026-05-16T02:36:14.683847+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Subdue+Maxx+mefenoxam+lawn+fungicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Subdue Maxx (Mefenoxam)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683880+00:00"
       }
     ],
     "61": [
@@ -3115,9 +3579,9 @@
         "url": "https://www.domyown.com/velista-fungicide-p-16940.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Velista Fungicide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700626+00:00",
+        "last_seen": "2026-05-16T02:36:14.683919+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 313.7
@@ -3148,7 +3612,7 @@
         "retailer_name": "Seed Barn",
         "title": "Velista (Penthiopyrad)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700633+00:00"
+        "last_seen": "2026-05-16T02:36:14.683925+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/velista?variant=43994329448634",
@@ -3156,7 +3620,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Velista (Penthiopyrad)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700638+00:00"
+        "last_seen": "2026-05-16T02:36:14.683930+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Velista+fungicide+penthiopyrad&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Velista (Penthiopyrad)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683939+00:00"
       }
     ],
     "62": [
@@ -3176,7 +3648,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Encartis (Lumiderm / Isoclast)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700673+00:00"
+        "last_seen": "2026-05-16T02:36:14.683960+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Encartis+turf+fungicide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Encartis (Lumiderm / Isoclast)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.683970+00:00"
       }
     ],
     "63": [
@@ -3196,7 +3676,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Densicor Fungicide (Cyprodinil + Fludioxonil)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700708+00:00"
+        "last_seen": "2026-05-16T02:36:14.683990+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Densicor+fungicide+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Densicor Fungicide (Cyprodinil + Fludioxonil)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684000+00:00"
       }
     ],
     "70": [
@@ -3216,13 +3704,13 @@
         "url": "https://www.solutionsstores.com/acelepryn-insecticide",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Acelepryn Insecticide",
-        "price_verified": 61.23,
+        "title": "Acelepryn SC (Chlorantraniliprole)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684086+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:15:02.761521+00:00"
+        "price_verified": 61.23,
+        "source_type": "product"
       },
       {
         "url": "https://www.ebay.com/itm/334772691433",
@@ -3252,13 +3740,13 @@
         "url": "https://chemicalwarehouse.com/products/acelepryn",
         "retailer": "chemicalwarehouse",
         "retailer_name": "Chemicalwarehouse",
-        "title": "Acelepryn | Chlorantraniliprole | 4 Ounces and 64 Ounces \u2014 Chemical Warehouse",
-        "price_verified": 969.0,
+        "title": "Sale Sale",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684093+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:15:02.099598+00:00"
+        "price_verified": 969.0,
+        "source_type": "product"
       },
       {
         "url": "https://www.amazon.com/dp/B096W9RJH2",
@@ -3310,6 +3798,22 @@
         "title": "GCI Turf Ryegrass 3 reviews (3) from $64.95",
         "image": null,
         "last_seen": "2026-05-14T15:05:41.163633+00:00"
+      },
+      {
+        "url": "https://www.sunspotsupply.com/products/acelepryn-insecticide-4-oz-bottle?variant=43994330431674",
+        "retailer": "sunspotsupply",
+        "retailer_name": "Sunspotsupply",
+        "title": "Acelepryn SC (Chlorantraniliprole)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684081+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Acelepryn+SC+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Acelepryn SC (Chlorantraniliprole)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684104+00:00"
       }
     ],
     "71": [
@@ -3378,7 +3882,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Acelepryn GR (Chlorantraniliprole 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700827+00:00"
+        "last_seen": "2026-05-16T02:36:14.684167+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/acelepryn-sc-insecticide",
@@ -3386,18 +3890,18 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Acelepryn SC Insecticide 2 reviews (2) from $96.00",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700832+00:00"
+        "last_seen": "2026-05-16T02:36:14.684173+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/acelepryn-g-insecticide",
         "retailer": "lawnsynergy",
         "retailer_name": "Lawnsynergy",
-        "title": "Acelepryn G Granular Insecticide - Season-Long Grub Preventer",
+        "title": "Acelepryn G Granular Insecticide",
         "image": null,
-        "last_seen": "2026-05-16T02:15:39.243056+00:00",
-        "price_verified": 125.0,
+        "last_seen": "2026-05-16T02:36:14.684179+00:00",
         "verified": true,
         "manual_verified": true,
+        "price_verified": 125.0,
         "source_type": "product"
       },
       {
@@ -3406,7 +3910,23 @@
         "retailer_name": "Pestrong",
         "title": "Acelepryn GR (Chlorantraniliprole 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323326+00:00"
+        "last_seen": "2026-05-16T02:36:14.684188+00:00"
+      },
+      {
+        "url": "https://www.sunspotsupply.com/products/acelepryn-granular-insecticide?variant=43994278133946",
+        "retailer": "sunspotsupply",
+        "retailer_name": "Sunspotsupply",
+        "title": "Acelepryn GR (Chlorantraniliprole 0.2%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684198+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Acelepryn+GR+granule+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Acelepryn GR (Chlorantraniliprole 0.2%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684227+00:00"
       }
     ],
     "72": [
@@ -3414,9 +3934,9 @@
         "url": "https://www.domyown.com/merit-05-insecticide-granules-p-301.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Merit 0.5 G Granular Insecticide for Grub Control | Free Shipping",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700914+00:00",
+        "last_seen": "2026-05-16T02:36:14.684300+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 59.98
@@ -3427,7 +3947,7 @@
         "retailer_name": "Pestrong",
         "title": "Merit 0.5G (Imidacloprid)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.418012+00:00"
+        "last_seen": "2026-05-16T02:36:14.684310+00:00"
       },
       {
         "url": "https://seedbarn.com/products/quali-pro-imidacloprid-insecticide-0-5g-30-lb",
@@ -3465,7 +3985,7 @@
         "retailer_name": "Seed Barn",
         "title": "Merit 0.5G (Imidacloprid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700920+00:00"
+        "last_seen": "2026-05-16T02:36:14.684289+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/merit-0-5g-insecticide?variant=43994286522554",
@@ -3473,7 +3993,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Merit 0.5G (Imidacloprid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700926+00:00"
+        "last_seen": "2026-05-16T02:36:14.684295+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Merit+0.5G+imidacloprid+grub&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Merit 0.5G (Imidacloprid)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684319+00:00"
       }
     ],
     "73": [
@@ -3481,9 +4009,9 @@
         "url": "https://www.domyown.com/dylox-62-granules-p-1454.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Dylox 6.2 Granular Insecticide - 30 lb bag",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.700973+00:00",
+        "last_seen": "2026-05-16T02:36:14.684339+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 96.8
@@ -3494,7 +4022,15 @@
         "retailer_name": "Pestrong",
         "title": "Dylox 6.2G (Trichlorfon)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323498+00:00"
+        "last_seen": "2026-05-16T02:36:14.684348+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Dylox+6.2G+grub+killer+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Dylox 6.2G (Trichlorfon)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684358+00:00"
       }
     ],
     "74": [
@@ -3562,12 +4098,12 @@
         "url": "https://www.domyown.com/bifen-it-p-226.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Bifen IT | Bifenthrin 7.9% Insecticide | Fast, Free Shipping",
+        "title": "Bifen IT (Bifenthrin 7.9%)",
         "image": null,
-        "last_seen": "2026-05-16T02:16:21.495629+00:00",
-        "price_verified": 29.97,
+        "last_seen": "2026-05-16T02:36:14.684439+00:00",
         "verified": true,
         "manual_verified": true,
+        "price_verified": 29.97,
         "source_type": "product"
       },
       {
@@ -3576,7 +4112,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Bifen IT (Bifenthrin 7.9%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701047+00:00"
+        "last_seen": "2026-05-16T02:36:14.684444+00:00"
       },
       {
         "url": "https://yardmastery.com/products/bifenthrin-7-9f-select",
@@ -3594,7 +4130,7 @@
         "retailer_name": "Pestrong",
         "title": "Bifen IT (Bifenthrin 7.9%)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323582+00:00"
+        "last_seen": "2026-05-16T02:36:14.684458+00:00"
       },
       {
         "url": "https://pestrong.com/product/bifen-it-insecticide-generic-talstar-qt-3-4-1-gallon",
@@ -3610,7 +4146,15 @@
         "retailer_name": "Yard Mastery",
         "title": "Bifen IT (Bifenthrin 7.9%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701036+00:00"
+        "last_seen": "2026-05-16T02:36:14.684449+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Bifen+IT+bifenthrin+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Bifen IT (Bifenthrin 7.9%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684468+00:00"
       }
     ],
     "75": [
@@ -3620,7 +4164,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Talstar PL Granules (Bifenthrin 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701105+00:00"
+        "last_seen": "2026-05-16T02:36:14.684522+00:00"
       },
       {
         "url": "https://gciturfacademy.com/products/bifen-7-9f-select",
@@ -3628,7 +4172,7 @@
         "retailer_name": "GCI Turf Academy",
         "title": "Talstar PL Granules (Bifenthrin 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701110+00:00"
+        "last_seen": "2026-05-16T02:36:14.684528+00:00"
       },
       {
         "url": "https://yardmastery.com/products/bifenthrin-7-9f-select",
@@ -3662,7 +4206,7 @@
         "retailer_name": "Yard Mastery",
         "title": "Talstar PL Granules (Bifenthrin 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701116+00:00"
+        "last_seen": "2026-05-16T02:36:14.684512+00:00"
       },
       {
         "url": "https://lawnsynergy.com/products/talstar-pl-granular-insecticide?variant=47138761474186",
@@ -3670,7 +4214,15 @@
         "retailer_name": "Lawn Synergy",
         "title": "Talstar PL Granules (Bifenthrin 0.2%)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701121+00:00"
+        "last_seen": "2026-05-16T02:36:14.684517+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Talstar+PL+Granules+bifenthrin&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Talstar PL Granules (Bifenthrin 0.2%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684537+00:00"
       }
     ],
     "76": [
@@ -3680,7 +4232,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Meridian 0.33G (Thiamethoxam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701189+00:00"
+        "last_seen": "2026-05-16T02:36:14.684596+00:00"
       },
       {
         "url": "https://pestrong.com/product/meridian-0-33g-granules-lawn-insecticide-40-lb",
@@ -3688,7 +4240,7 @@
         "retailer_name": "Pestrong",
         "title": "Meridian 0.33G (Thiamethoxam)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323734+00:00"
+        "last_seen": "2026-05-16T02:36:14.684605+00:00"
       },
       {
         "url": "https://seedbarn.com/products/meridian-0-33g-insecticide-40-lbs",
@@ -3716,7 +4268,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Meridian 0.33G (Thiamethoxam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701194+00:00"
+        "last_seen": "2026-05-16T02:36:14.684586+00:00"
       },
       {
         "url": "https://seedbarn.com/products/meridian-0-33g-insecticide-40-lbs?variant=12538019020900",
@@ -3724,7 +4276,15 @@
         "retailer_name": "Seed Barn",
         "title": "Meridian 0.33G (Thiamethoxam)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701183+00:00"
+        "last_seen": "2026-05-16T02:36:14.684591+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Meridian+0.33G+insecticide+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Meridian 0.33G (Thiamethoxam)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684615+00:00"
       }
     ],
     "77": [
@@ -3732,9 +4292,9 @@
         "url": "https://www.domyown.com/arena-25-granules-p-1926.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Arena .25 Granules",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701354+00:00",
+        "last_seen": "2026-05-16T02:36:14.684674+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 142.17
@@ -3745,7 +4305,7 @@
         "retailer_name": "Pestrong",
         "title": "Arena 0.25G (Clothianidin)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.323822+00:00"
+        "last_seen": "2026-05-16T02:36:14.684683+00:00"
       },
       {
         "url": "https://seedbarn.com/products/arena-0-25g-insecticide-30-lbs",
@@ -3773,7 +4333,7 @@
         "retailer_name": "Seed Barn",
         "title": "Arena 0.25G (Clothianidin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701361+00:00"
+        "last_seen": "2026-05-16T02:36:14.684663+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs?variant=43994456490170",
@@ -3781,7 +4341,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Arena 0.25G (Clothianidin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701339+00:00"
+        "last_seen": "2026-05-16T02:36:14.684668+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Arena+0.25G+clothianidin+grub&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Arena 0.25G (Clothianidin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684693+00:00"
       }
     ],
     "78": [
@@ -3789,9 +4357,9 @@
         "url": "https://www.domyown.com/demand-cs-p-46.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Demand CS Insecticide - Long-Lasting Pest Control for Over 30 Insects - DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701448+00:00",
+        "last_seen": "2026-05-16T02:36:14.684758+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 41.5
@@ -3802,7 +4370,7 @@
         "retailer_name": "Pestrong",
         "title": "Demand CS (Lambda-Cyhalothrin)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.418522+00:00"
+        "last_seen": "2026-05-16T02:36:14.684767+00:00"
       },
       {
         "url": "https://seedbarn.com/products/demand-cs-insecticide-8-oz",
@@ -3840,7 +4408,7 @@
         "retailer_name": "Seed Barn",
         "title": "Demand CS (Lambda-Cyhalothrin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701455+00:00"
+        "last_seen": "2026-05-16T02:36:14.684747+00:00"
       },
       {
         "url": "https://seedbarn.com/products/warrior-ii-lambda-cyhalothrin-insecticide-demand-cs-1-gal?variant=31258736590983",
@@ -3848,7 +4416,15 @@
         "retailer_name": "Seed Barn",
         "title": "Demand CS (Lambda-Cyhalothrin)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701461+00:00"
+        "last_seen": "2026-05-16T02:36:14.684753+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Demand+CS+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Demand CS (Lambda-Cyhalothrin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684776+00:00"
       }
     ],
     "79": [
@@ -3856,9 +4432,9 @@
         "url": "https://www.domyown.com/zylam-liquid-systemic-insecticide-p-3868.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Zylam Liquid Systemic Insecticide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701549+00:00",
+        "last_seen": "2026-05-16T02:36:14.684843+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 196.4
@@ -3869,7 +4445,7 @@
         "retailer_name": "Pestrong",
         "title": "Zylam Liquid Systemic (Dinotefuran)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.418627+00:00"
+        "last_seen": "2026-05-16T02:36:14.684852+00:00"
       },
       {
         "url": "https://seedbarn.com/products/zylam-20sg-systemic-turf-insecticide-2-7-lbs",
@@ -3907,7 +4483,7 @@
         "retailer_name": "Seed Barn",
         "title": "Zylam Liquid Systemic (Dinotefuran)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701555+00:00"
+        "last_seen": "2026-05-16T02:36:14.684832+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart?variant=43994286293178",
@@ -3915,7 +4491,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Zylam Liquid Systemic (Dinotefuran)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701561+00:00"
+        "last_seen": "2026-05-16T02:36:14.684837+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Zylam+liquid+systemic+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Zylam Liquid Systemic (Dinotefuran)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684862+00:00"
       }
     ],
     "80": [
@@ -4019,9 +4603,9 @@
         "url": "https://www.domyown.com/avid-015-ec-miticide-insecticide-p-2330.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Avid 0.15 EC Miticide Insecticide | DIY Mite Control - Free Shipping",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701646+00:00",
+        "last_seen": "2026-05-16T02:36:14.684990+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 91.48
@@ -4032,7 +4616,7 @@
         "retailer_name": "Pestrong",
         "title": "Avid 0.15EC (Abamectin)",
         "image": null,
-        "last_seen": "2026-05-15T14:19:45.418730+00:00"
+        "last_seen": "2026-05-16T02:36:14.684999+00:00"
       },
       {
         "url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-gallon",
@@ -4079,6 +4663,30 @@
         "title": "Avid 0.15EC (Abamectin)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.701658+00:00"
+      },
+      {
+        "url": "https://www.forestrydistributing.com/ardent-015-ec-miticide-insecticide-syngenta",
+        "retailer": "forestrydistributing",
+        "retailer_name": "Forestrydistributing",
+        "title": "Ardent 0.15 EC Miticide Insecticide (Avid), Syngenta",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684975+00:00"
+      },
+      {
+        "url": "https://homeandgardensupply.com/products/avid-0-15ec?variant=12690266062935",
+        "retailer": "homeandgardensupply",
+        "retailer_name": "Homeandgardensupply",
+        "title": "Avid 0.15EC (Abamectin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.684984+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Avid+0.15EC+abamectin+miticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Avid 0.15EC (Abamectin)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685008+00:00"
       }
     ],
     "81": [
@@ -4149,6 +4757,46 @@
         "title": "Movento 240SC (Spirotetramat)",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.701693+00:00"
+      },
+      {
+        "url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart?variant=43994441416890",
+        "retailer": "sunspotsupply",
+        "retailer_name": "Sunspotsupply",
+        "title": "Movento 240SC (Spirotetramat)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685059+00:00"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0888/0216/4920/files/Movento.pdf?v=1749037948",
+        "retailer": "maguires",
+        "retailer_name": "Maguires",
+        "title": "Product Label",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685069+00:00"
+      },
+      {
+        "url": "https://doubleavineyards.com/products/movento-spirotetramat-insecticide?variant=41706685431921",
+        "retailer": "doubleavineyards",
+        "retailer_name": "Doubleavineyards",
+        "title": "Movento 240SC (Spirotetramat)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685078+00:00"
+      },
+      {
+        "url": "https://chemicalwarehouse.com/products/movento?variant=32848877649983",
+        "retailer": "chemicalwarehouse",
+        "retailer_name": "Chemicalwarehouse",
+        "title": "Movento 240SC (Spirotetramat)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685088+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Movento+240SC+insecticide+spirotetramat&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Movento 240SC (Spirotetramat)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685098+00:00"
       }
     ],
     "82": [
@@ -4158,7 +4806,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Mainspring GNL (Cyantraniliprole)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701743+00:00"
+        "last_seen": "2026-05-16T02:36:14.685132+00:00"
       },
       {
         "url": "https://pestrong.com/product/mainspring-gnl-insecticide-cyantraniliprole-pt",
@@ -4166,7 +4814,7 @@
         "retailer_name": "Pestrong",
         "title": "Mainspring GNL (Cyantraniliprole)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324177+00:00"
+        "last_seen": "2026-05-16T02:36:14.685142+00:00"
       },
       {
         "url": "https://seedbarn.com/products/mainspring-gnl-insecticide",
@@ -4184,7 +4832,15 @@
         "retailer_name": "Seed Barn",
         "title": "Mainspring GNL (Cyantraniliprole)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701748+00:00"
+        "last_seen": "2026-05-16T02:36:14.685147+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Mainspring+GNL+insecticide+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Mainspring GNL (Cyantraniliprole)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685157+00:00"
       }
     ],
     "83": [
@@ -4192,9 +4848,9 @@
         "url": "https://www.domyown.com/forbid-4f-ornamental-insecticide-miticide-p-2332.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Forbid 4F Ornamental Insecticide Miticide | DIY Mite Control - Free Shipping",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701826+00:00",
+        "last_seen": "2026-05-16T02:36:14.685241+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 312.0
@@ -4205,7 +4861,7 @@
         "retailer_name": "Pestrong",
         "title": "Forbid 4F (Spiromesifen)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324260+00:00"
+        "last_seen": "2026-05-16T02:36:14.685251+00:00"
       },
       {
         "url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz",
@@ -4233,7 +4889,7 @@
         "retailer_name": "Seed Barn",
         "title": "Forbid 4F (Spiromesifen)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701832+00:00"
+        "last_seen": "2026-05-16T02:36:14.685228+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -4241,7 +4897,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Forbid 4F (Spiromesifen)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701820+00:00"
+        "last_seen": "2026-05-16T02:36:14.685235+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Forbid+4F+spiromesifen+miticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Forbid 4F (Spiromesifen)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685260+00:00"
       }
     ],
     "84": [
@@ -4249,9 +4913,9 @@
         "url": "https://www.domyown.com/tetrasan-wdg-miticide-ovicide-p-10239.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Valent TetraSan 5 WDG Miticide Ovicide",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324365+00:00",
+        "last_seen": "2026-05-16T02:36:14.685322+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 189.9
@@ -4262,7 +4926,7 @@
         "retailer_name": "Pestrong",
         "title": "TetraSan 5WDG (Etoxazole)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324375+00:00"
+        "last_seen": "2026-05-16T02:36:14.685332+00:00"
       },
       {
         "url": "https://www.seedworldusa.com/products/tetrasan-5-wdg-miticide-ovicide-1-lb-8x2-oz",
@@ -4300,7 +4964,7 @@
         "retailer_name": "Seed World",
         "title": "Alyce Clover",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324380+00:00"
+        "last_seen": "2026-05-16T02:36:14.685337+00:00"
       },
       {
         "url": "https://seedbarn.com/products/tetrasan-5-wdg-miticide-ovicide-1-lb-8x2-oz?variant=12545139572836",
@@ -4308,7 +4972,7 @@
         "retailer_name": "Seed Barn",
         "title": "TetraSan 5WDG (Etoxazole)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701915+00:00"
+        "last_seen": "2026-05-16T02:36:14.685342+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/tetrasan-5-wdg-miticide?variant=43994274201786",
@@ -4316,7 +4980,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "TetraSan 5WDG (Etoxazole)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.701921+00:00"
+        "last_seen": "2026-05-16T02:36:14.685347+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=TetraSan+5WDG+etoxazole+miticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "TetraSan 5WDG (Etoxazole)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685357+00:00"
       }
     ],
     "85": [
@@ -4348,13 +5020,13 @@
         "url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide",
         "retailer": "solutions",
         "retailer_name": "Solutions Pest & Lawn",
-        "title": "Kontos Greenhouse And Nursery Insecticide/Miticide",
-        "price_verified": 236.9,
+        "title": "Kontos SC (Spirotetramat 22.4%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685404+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:19:23.709909+00:00"
+        "price_verified": 236.9,
+        "source_type": "product"
       },
       {
         "url": "https://www.ebay.com/itm/336502144793",
@@ -4372,13 +5044,29 @@
         "url": "https://www.domyown.com/bayer-kontos-insecticide-p-21398.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Kontos Insecticide",
+        "title": "Kontos SC (Spirotetramat 22.4%)",
         "image": null,
-        "last_seen": "2026-05-16T02:19:23.854356+00:00",
-        "price_verified": 228.48,
+        "last_seen": "2026-05-16T02:36:14.685410+00:00",
         "verified": true,
         "manual_verified": true,
+        "price_verified": 228.48,
         "source_type": "product"
+      },
+      {
+        "url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402",
+        "retailer": "intermountainturf",
+        "retailer_name": "Intermountainturf",
+        "title": "Kontos SC (Spirotetramat 22.4%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685398+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Kontos+SC+insecticide+spirotetramat&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Kontos SC (Spirotetramat 22.4%)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685420+00:00"
       }
     ],
     "86": [
@@ -4388,7 +5076,7 @@
         "retailer_name": "DoMyOwn",
         "title": "Tristar 8.5 SL (Acetamiprid)",
         "image": null,
-        "last_seen": "2026-05-15T17:40:07.324523+00:00"
+        "last_seen": "2026-05-16T02:36:14.685481+00:00"
       },
       {
         "url": "https://seedbarn.com/products/tristar-8-5-sl-insecticide-1-gallon",
@@ -4436,7 +5124,7 @@
         "retailer_name": "Seed Barn",
         "title": "Tristar 8.5 SL (Acetamiprid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702033+00:00"
+        "last_seen": "2026-05-16T02:36:14.685487+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-gallon?variant=43994303561914",
@@ -4444,7 +5132,7 @@
         "retailer_name": "Sunspot Supply",
         "title": "Tristar 8.5 SL (Acetamiprid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702022+00:00"
+        "last_seen": "2026-05-16T02:36:14.685499+00:00"
       },
       {
         "url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-quart?variant=43994303529146",
@@ -4452,7 +5140,15 @@
         "retailer_name": "Sunspot Supply",
         "title": "Tristar 8.5 SL (Acetamiprid)",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702028+00:00"
+        "last_seen": "2026-05-16T02:36:14.685505+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Tristar+8.5+SL+insecticide&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Tristar 8.5 SL (Acetamiprid)",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685514+00:00"
       }
     ],
     "115": [
@@ -4472,13 +5168,13 @@
         "url": "https://www.greenthumbnurseryshop.com/products/hydretain-root-zone-moisture-manager-ready-to-spray-1-qt",
         "retailer": "greenthumbnurseryshop",
         "retailer_name": "Greenthumbnurseryshop",
-        "title": "Hydretain Root Zone Moisture Manager (Ready to Spray 1 Qt) \u2013 Green Thumb Nursery",
-        "price_verified": 29.99,
+        "title": "Hydretain Root Zone Moisture Manager",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685629+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
-        "image": null,
-        "last_seen": "2026-05-16T02:20:11.459022+00:00"
+        "price_verified": 29.99,
+        "source_type": "product"
       },
       {
         "url": "https://www.arbico-organics.com/product/hydretain-root-zone-moisture-manager/organic-soil-conditioners",
@@ -4601,6 +5297,38 @@
         "title": "Hydretain Root Zone Moisture Manager",
         "image": null,
         "last_seen": "2026-05-15T21:28:38.702118+00:00"
+      },
+      {
+        "url": "https://johnsonsgarden.com/products/hydretain-granular-root-zone-moisture-manager-3-lbs?variant=49150364221719",
+        "retailer": "johnsonsgarden",
+        "retailer_name": "Johnsonsgarden",
+        "title": "Hydretain Root Zone Moisture Manager",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685622+00:00"
+      },
+      {
+        "url": "https://cdn.commercev3.net/cdn.arbico-organics.com/images/uploads/2000640_hydretain_600x600.jpg",
+        "retailer": "arbico-organics",
+        "retailer_name": "Arbico Organics",
+        "title": "Hydretain Root Zone Moisture Manager",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685639+00:00"
+      },
+      {
+        "url": "https://www.treehelp.com/products/hydretain-root-zone-moisture-manager?variant=42716364964008",
+        "retailer": "treehelp",
+        "retailer_name": "Treehelp",
+        "title": "Hydretain Root Zone Moisture Manager",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685649+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Hydretain+root+zone+moisture+manager&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Hydretain Root Zone Moisture Manager",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685659+00:00"
       }
     ],
     "116": [
@@ -4608,9 +5336,9 @@
         "url": "https://www.domyown.com/aquatrols-revolution-soil-surfactant-p-10332.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Aquatrols Revolution Soil Surfactant",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702178+00:00",
+        "last_seen": "2026-05-16T02:36:14.685686+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 457.5
@@ -4631,7 +5359,15 @@
         "retailer_name": "Yard Mastery",
         "title": "Revolution Soil Surfactant",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702185+00:00"
+        "last_seen": "2026-05-16T02:36:14.685692+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Revolution+soil+surfactant+turf&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Revolution Soil Surfactant",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685701+00:00"
       }
     ],
     "117": [
@@ -4651,13 +5387,29 @@
         "url": "https://www.hummert.com/mycoapply-ultrafine-endo-3-ecto-20lbs-02106500",
         "retailer": "hummert",
         "retailer_name": "Hummert International",
-        "title": "MycoApply Ultrafine Endo/Ecto, 20lbs",
-        "price_verified": 390.0,
+        "title": "MycoApply Mycorrhizal Inoculant",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685733+00:00",
         "verified": true,
         "manual_verified": true,
-        "source_type": "product",
+        "price_verified": 390.0,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.mycorrhizalonline.com",
+        "retailer": "mycorrhizalonline",
+        "retailer_name": "Mycorrhizalonline",
+        "title": "Mycorrhizalonline.com",
         "image": null,
-        "last_seen": "2026-05-16T02:22:38.055532+00:00"
+        "last_seen": "2026-05-16T02:36:14.685728+00:00"
+      },
+      {
+        "url": "https://www.amazon.com/s?k=MycoApply+Mycorrhizal+Inoculant+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "MycoApply Mycorrhizal Inoculant",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685743+00:00"
       }
     ],
     "118": [
@@ -4665,9 +5417,9 @@
         "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "FeATURE 6-0-0 Water Soluble Micronutrients Fertilizer | DoMyOwn.com",
+        "title": "Email Me When in Stock",
         "image": null,
-        "last_seen": "2026-05-15T21:28:38.702288+00:00",
+        "last_seen": "2026-05-16T02:36:14.685764+00:00",
         "verified": true,
         "manual_verified": true,
         "price_verified": 26.17
@@ -4681,50 +5433,69 @@
         "last_seen": "2026-05-15T10:49:26.094999+00:00",
         "verified": true,
         "manual_verified": true
+      },
+      {
+        "url": "https://www.amazon.com/s?k=Feature+6-0-0+iron+fertilizer+lawn&tag=lawndominator-20",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Feature 6-0-0 Iron Fertilizer",
+        "image": null,
+        "last_seen": "2026-05-16T02:36:14.685773+00:00"
       }
     ]
   },
   "refresh_cursors": {
-    "1": 4,
-    "2": 4,
+    "1": 0,
+    "2": 9,
     "3": 5,
-    "4": 0,
-    "5": 0,
-    "7": 5,
-    "27": 5,
-    "28": 4,
+    "4": 5,
+    "5": 5,
+    "7": 3,
+    "27": 3,
+    "28": 3,
     "29": 5,
-    "35": 5,
-    "36": 5,
-    "37": 0,
-    "38": 5,
-    "39": 5,
-    "41": 4,
-    "50": 5,
-    "51": 4,
-    "52": 4,
-    "53": 5,
-    "54": 0,
+    "35": 10,
+    "36": 10,
+    "37": 5,
+    "38": 3,
+    "39": 3,
+    "41": 9,
+    "50": 3,
+    "51": 3,
+    "52": 3,
+    "53": 3,
+    "54": 5,
     "55": 5,
-    "56": 0,
+    "56": 5,
     "57": 5,
     "58": 5,
-    "59": 0,
-    "60": 4,
+    "59": 5,
+    "60": 3,
     "61": 5,
-    "71": 5,
-    "72": 5,
-    "74": 4,
-    "75": 5,
-    "76": 4,
-    "77": 4,
-    "78": 5,
-    "79": 5,
-    "80": 5,
-    "83": 4,
-    "84": 0,
-    "86": 0,
-    "115": 0,
-    "15": 2
+    "71": 1,
+    "72": 3,
+    "74": 9,
+    "75": 3,
+    "76": 3,
+    "77": 3,
+    "78": 3,
+    "79": 3,
+    "80": 10,
+    "83": 3,
+    "84": 5,
+    "86": 5,
+    "115": 5,
+    "15": 7,
+    "6": 5,
+    "9": 5,
+    "16": 5,
+    "17": 5,
+    "18": 5,
+    "19": 5,
+    "21": 5,
+    "23": 5,
+    "25": 5,
+    "70": 5,
+    "81": 5
   }
 }
