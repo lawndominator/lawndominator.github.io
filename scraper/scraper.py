@@ -205,6 +205,8 @@ def is_bad_product_url(url: str) -> bool:
         return True
     if "search" in query or query.startswith("k="):
         return True
+    if "ebay." in host and path.startswith("/sch"):
+        return True
     return "notify" in path or "notify" in query
 
 
@@ -408,6 +410,16 @@ def _absolute_url(base_url: str, href: str) -> str:
     return urllib.parse.urljoin(base_url.rstrip("/") + "/", href)
 
 
+def _offer_product_url(base_url: str, href: str, retailer: str) -> Optional[str]:
+    """Resolve an offer link without letting cart/search URLs replace the product page."""
+    resolved = _absolute_url(base_url, href or base_url)
+    if is_google_url(resolved) or is_bad_product_url(resolved):
+        resolved = urllib.parse.urldefrag(base_url)[0].rstrip("/")
+    if is_google_url(resolved) or is_bad_product_url(resolved):
+        return None
+    return append_affiliate(resolved, retailer)
+
+
 def _iter_jsonld_objects(value):
     if isinstance(value, list):
         for item in value:
@@ -447,11 +459,14 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
                 continue
 
             href = offers.get("url") or obj.get("url") or base_url
+            product_url = _offer_product_url(base_url, href, retailer)
+            if not product_url:
+                continue
             return {
                 "retailer": retailer,
                 "retailer_name": retailer_name,
                 "price": price,
-                "url": append_affiliate(_absolute_url(base_url, href), retailer),
+                "url": product_url,
                 "in_stock": "outofstock" not in str(offers.get("availability", "")).lower(),
                 "last_checked": now_iso(),
             }
@@ -505,7 +520,9 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
             or search_root.select_one("a[href]")
         )
         href = link_elem.get("href", base_url) if link_elem else base_url
-        product_url = append_affiliate(_absolute_url(base_url, href), retailer)
+        product_url = _offer_product_url(base_url, href, retailer)
+        if not product_url:
+            continue
 
         text = search_root.get_text(" ", strip=True).lower()
         in_stock = "out of stock" not in text and "currently unavailable" not in text

@@ -187,6 +187,13 @@ class ScraperExtractionTests(unittest.TestCase):
                 "url": "https://merchant.example/feature-6-0-0",
                 "in_stock": True,
             },
+            {
+                "retailer": "amazon",
+                "retailer_name": "Amazon",
+                "price": 19.99,
+                "url": "https://www.amazon.com/s?k=Celsius+WG",
+                "in_stock": True,
+            },
         ]
 
         best = scraper.select_best_offer(product, offers)
@@ -197,6 +204,11 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertTrue(
             scraper.is_bad_product_url(
                 "https://www.amazon.com/s?k=Feature+6-0-0+iron+fertilizer+lawn&tag=lawndominator-20"
+            )
+        )
+        self.assertTrue(
+            scraper.is_bad_product_url(
+                "https://www.ebay.com/sch/i.html?_nkw=Celsius+WG"
             )
         )
 
@@ -222,6 +234,27 @@ class ScraperExtractionTests(unittest.TestCase):
         best = scraper.select_best_offer(product, offers)
 
         self.assertEqual(best["retailer"], "domyown")
+
+    def test_extract_uses_product_page_when_offer_link_is_cart(self):
+        soup = BeautifulSoup(
+            """
+            <div class="product">
+              <a href="/gp/cart/view.html">Cart</a>
+              <span class="price">$42.88</span>
+            </div>
+            """,
+            "lxml",
+        )
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://www.amazon.com/dp/B0BTN1DPMD",
+            "amazon",
+            "Amazon",
+        )
+
+        self.assertIsNotNone(result)
+        self.assertEqual(result["url"], "https://www.amazon.com/dp/B0BTN1DPMD?tag=lawndominator-20")
 
     def test_select_best_ignores_below_category_floor(self):
         product = {"id": 1, "category": "post-emergent"}
