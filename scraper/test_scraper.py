@@ -400,6 +400,23 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(updated["products"]["1"][0]["url"], "https://merchant.example/prodiamine")
         self.assertEqual(updated["products"]["1"][0]["retailer_name"], "Merchant")
 
+    def test_update_product_sources_drops_existing_search_urls(self):
+        source_map = {
+            "schema_version": "1.0",
+            "products": {
+                "1": [{
+                    "url": "https://www.amazon.com/s?k=Prodiamine+65WDG&tag=lawndominator-20",
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                }]
+            },
+        }
+        results = [{"id": 1, "name": "Prodiamine 65WDG", "offers": []}]
+
+        updated = scraper.update_product_sources(source_map, results)
+
+        self.assertEqual(updated["products"]["1"], [])
+
     def test_verified_source_becomes_priced_offer(self):
         offer = scraper._offer_from_verified_source({
             "url": "https://www.amazon.com/dp/B0BTKTVN76",

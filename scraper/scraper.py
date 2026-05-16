@@ -945,7 +945,9 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
         existing = {
             urllib.parse.urldefrag(src.get("url", ""))[0].rstrip("/"): src
             for src in products.get(product_id, [])
-            if src.get("url") and not is_google_url(src.get("url", ""))
+            if src.get("url")
+            and not is_google_url(src.get("url", ""))
+            and not is_bad_product_url(src.get("url", ""))
         }
 
         for offer in product.get("offers", []):
