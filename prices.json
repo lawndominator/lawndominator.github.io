@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-16T18:03:20.824882+00:00",
+  "generated_at": "2026-05-16T18:12:24.477867+00:00",
   "product_count": 66,
   "products": [
     {
@@ -4225,20 +4225,31 @@
           "last_checked": "2026-05-16T18:03:17.652609+00:00",
           "source": "saved_product_source",
           "image": null
+        },
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": 13.74,
+          "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z?tag=lawndominator-20",
+          "in_stock": true,
+          "title": "Feature 6-0-0 - 1 Bag",
+          "last_checked": "2026-05-16T18:12:24.477867+00:00",
+          "source": "manual_verified_source",
+          "image": null
         }
       ],
       "best_price": {
-        "retailer": "domyown",
-        "retailer_name": "DoMyOwn",
-        "price": 26.17,
-        "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
-        "in_stock": false,
-        "title": "Email Me When in Stock",
-        "last_checked": "2026-05-16T18:03:17.652609+00:00",
-        "source": "saved_product_source",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "price": 13.74,
+        "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z?tag=lawndominator-20",
+        "in_stock": true,
+        "title": "Feature 6-0-0 - 1 Bag",
+        "last_checked": "2026-05-16T18:12:24.477867+00:00",
+        "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-05-16T18:03:20.778178+00:00"
+      "updated_at": "2026-05-16T18:12:24.477867+00:00"
     }
   ]
 }

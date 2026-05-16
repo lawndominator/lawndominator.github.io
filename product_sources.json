@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-05-16T18:03:20.824879+00:00",
+  "updated_at": "2026-05-16T18:12:24.477867+00:00",
   "products": {
     "1": [
       {
@@ -5118,6 +5118,18 @@
     ],
     "118": [
       {
+        "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Feature 6-0-0 - 1 Bag",
+        "price_verified": 13.74,
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "image": null,
+        "last_seen": "2026-05-16T18:12:24.477867+00:00"
+      },
+      {
         "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
@@ -5127,16 +5139,6 @@
         "verified": true,
         "manual_verified": true,
         "price_verified": 26.17
-      },
-      {
-        "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z",
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "title": "Feature 6-0-0 - 1 Bag",
-        "image": null,
-        "last_seen": "2026-05-15T10:49:26.094999+00:00",
-        "verified": true,
-        "manual_verified": true
       }
     ]
   },

@@ -442,6 +442,32 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertIsNone(offer)
 
+    def test_source_entries_always_include_priced_sources(self):
+        previous_limit = scraper.SAVED_SOURCE_LIMIT
+        scraper.SAVED_SOURCE_LIMIT = 2
+        try:
+            source_map = {
+                "products": {
+                    "118": [
+                        {"url": "https://store.example/one", "source_type": "product"},
+                        {"url": "https://store.example/two", "source_type": "product"},
+                        {
+                            "url": "https://www.amazon.com/dp/B076TFPB1Z",
+                            "retailer": "amazon",
+                            "price_verified": 13.74,
+                            "source_type": "product",
+                        },
+                    ]
+                }
+            }
+
+            entries = scraper._source_entries(source_map, 118)
+
+            self.assertEqual(len(entries), 2)
+            self.assertTrue(any(entry.get("retailer") == "amazon" for entry in entries))
+        finally:
+            scraper.SAVED_SOURCE_LIMIT = previous_limit
+
     def test_build_price_alerts_detects_best_price_drop(self):
         previous = {
             1: {

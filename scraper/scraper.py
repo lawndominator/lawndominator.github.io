@@ -865,14 +865,26 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
             continue
         entries.append(source)
 
-    if not entries or SAVED_SOURCE_LIMIT <= 0 or len(entries) <= SAVED_SOURCE_LIMIT:
+    priced_entries = [entry for entry in entries if entry.get("price_verified") is not None]
+    unpriced_entries = [entry for entry in entries if entry.get("price_verified") is None]
+
+    if not entries or SAVED_SOURCE_LIMIT <= 0:
+        return entries
+    if len(entries) <= SAVED_SOURCE_LIMIT:
         return entries
 
     cursors = source_map.setdefault("refresh_cursors", {})
-    start = int(cursors.get(str(product_id), 0)) % len(entries)
-    selected = [entries[(start + offset) % len(entries)] for offset in range(SAVED_SOURCE_LIMIT)]
-    cursors[str(product_id)] = (start + SAVED_SOURCE_LIMIT) % len(entries)
-    return selected
+    remaining = max(0, SAVED_SOURCE_LIMIT - len(priced_entries))
+    if remaining <= 0 or not unpriced_entries:
+        return priced_entries
+
+    start = int(cursors.get(str(product_id), 0)) % len(unpriced_entries)
+    selected_unpriced = [
+        unpriced_entries[(start + offset) % len(unpriced_entries)]
+        for offset in range(min(remaining, len(unpriced_entries)))
+    ]
+    cursors[str(product_id)] = (start + len(selected_unpriced)) % len(unpriced_entries)
+    return priced_entries + selected_unpriced
 
 
 def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
