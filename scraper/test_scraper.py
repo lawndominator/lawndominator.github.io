@@ -9,7 +9,15 @@ class ScraperExtractionTests(unittest.TestCase):
     def test_append_affiliate_replaces_existing_amazon_tag(self):
         self.assertEqual(
             scraper.append_affiliate("https://www.amazon.com/dp/B0BTN1DPMD?tag=wrong-20&psc=1", "amazon"),
-            "https://www.amazon.com/dp/B0BTN1DPMD?psc=1&tag=lawndominator-20",
+            "https://www.amazon.com/dp/B0BTN1DPMD?tag=lawndominator-20",
+        )
+
+    def test_canonical_product_url_normalizes_amazon_refs(self):
+        self.assertEqual(
+            scraper.canonical_product_url(
+                "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z/ref=sr_1_1?sr=8-1&tag=wrong"
+            ),
+            "https://www.amazon.com/dp/B076TFPB1Z",
         )
 
     def test_parse_price_requires_price_like_text(self):
@@ -416,6 +424,35 @@ class ScraperExtractionTests(unittest.TestCase):
         updated = scraper.update_product_sources(source_map, results)
 
         self.assertEqual(updated["products"]["1"], [])
+
+    def test_update_product_sources_dedupes_amazon_affiliate_variants(self):
+        source_map = {
+            "schema_version": "1.0",
+            "products": {
+                "118": [{
+                    "url": "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z",
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                    "price_verified": 13.74,
+                }]
+            },
+        }
+        results = [{
+            "id": 118,
+            "name": "Feature 6-0-0",
+            "offers": [{
+                "retailer": "amazon",
+                "retailer_name": "Amazon",
+                "price": 13.74,
+                "url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20",
+            }],
+        }]
+
+        updated = scraper.update_product_sources(source_map, results)
+
+        self.assertEqual(len(updated["products"]["118"]), 1)
+        self.assertEqual(updated["products"]["118"][0]["url"], "https://www.amazon.com/dp/B076TFPB1Z")
+        self.assertEqual(updated["products"]["118"][0]["price_verified"], 13.74)
 
     def test_verified_source_becomes_priced_offer(self):
         offer = scraper._offer_from_verified_source({

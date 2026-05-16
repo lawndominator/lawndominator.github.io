@@ -162,6 +162,7 @@ def search_variants(product: dict, base_key: str = "search_query") -> list[str]:
 
 def append_affiliate(url: str, retailer: str) -> str:
     if retailer == "amazon" and AMAZON_TAG:
+        url = canonical_product_url(url)
         parsed = urllib.parse.urlparse(url)
         query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
         query = [(key, value) for key, value in query if key.lower() != "tag"]
@@ -194,6 +195,16 @@ def is_google_url(url: str) -> bool:
     return host == "google.com" or host.endswith(".google.com")
 
 
+def canonical_product_url(url: str) -> str:
+    parsed = urllib.parse.urlparse(url)
+    host = parsed.netloc.lower()
+    path = parsed.path
+    amazon = re.search(r"/(?:[^/]+/)?(?:dp|gp/product)/([A-Z0-9]{10})", path, re.I)
+    if ("amazon." in host or host.endswith("amzn.to")) and amazon:
+        return f"https://www.amazon.com/dp/{amazon.group(1).upper()}"
+    return urllib.parse.urldefrag(url)[0].rstrip("/")
+
+
 def is_bad_product_url(url: str) -> bool:
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
@@ -215,7 +226,7 @@ def is_bad_product_url(url: str) -> bool:
 
 
 def offer_key(offer: dict) -> tuple:
-    normalized_url = urllib.parse.urldefrag(offer.get("url", ""))[0].rstrip("/")
+    normalized_url = canonical_product_url(offer.get("url", ""))
     return (offer.get("retailer"), normalized_url, offer.get("price"))
 
 
@@ -421,6 +432,7 @@ def _offer_product_url(base_url: str, href: str, retailer: str) -> Optional[str]
         resolved = urllib.parse.urldefrag(base_url)[0].rstrip("/")
     if is_google_url(resolved) or is_bad_product_url(resolved):
         return None
+    resolved = canonical_product_url(resolved)
     return append_affiliate(resolved, retailer)
 
 
@@ -955,7 +967,7 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
     for product in results:
         product_id = str(product["id"])
         existing = {
-            urllib.parse.urldefrag(src.get("url", ""))[0].rstrip("/"): src
+            canonical_product_url(src.get("url", "")): src
             for src in products.get(product_id, [])
             if src.get("url")
             and not is_google_url(src.get("url", ""))
@@ -966,7 +978,9 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
             url = offer.get("url", "")
             if not url or is_google_url(url) or offer.get("excluded"):
                 continue
-            normalized = urllib.parse.urldefrag(url)[0].rstrip("/")
+            normalized = canonical_product_url(url)
+            if is_bad_product_url(normalized):
+                continue
             previous_source = existing.get(normalized, {})
             updated_source = {
                 "url": normalized,
