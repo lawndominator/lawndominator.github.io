@@ -6,6 +6,12 @@ import scraper
 
 
 class ScraperExtractionTests(unittest.TestCase):
+    def test_append_affiliate_replaces_existing_amazon_tag(self):
+        self.assertEqual(
+            scraper.append_affiliate("https://www.amazon.com/dp/B0BTN1DPMD?tag=wrong-20&psc=1", "amazon"),
+            "https://www.amazon.com/dp/B0BTN1DPMD?psc=1&tag=lawndominator-20",
+        )
+
     def test_parse_price_requires_price_like_text(self):
         self.assertEqual(scraper.parse_price("$79.98"), 79.98)
         self.assertEqual(scraper.parse_price("As low as $81"), 81.0)

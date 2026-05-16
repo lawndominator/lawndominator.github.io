@@ -161,8 +161,12 @@ def search_variants(product: dict, base_key: str = "search_query") -> list[str]:
 
 
 def append_affiliate(url: str, retailer: str) -> str:
-    if retailer == "amazon" and AMAZON_TAG and "tag=" not in url:
-        url += ("&" if "?" in url else "?") + f"tag={AMAZON_TAG}"
+    if retailer == "amazon" and AMAZON_TAG:
+        parsed = urllib.parse.urlparse(url)
+        query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+        query = [(key, value) for key, value in query if key.lower() != "tag"]
+        query.append(("tag", AMAZON_TAG))
+        return urllib.parse.urlunparse(parsed._replace(query=urllib.parse.urlencode(query)))
     if retailer == "domyown" and DOMYOWN_AFFID and "affid=" not in url:
         url += ("&" if "?" in url else "?") + f"affid={DOMYOWN_AFFID}"
     return url
