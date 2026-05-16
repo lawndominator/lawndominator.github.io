@@ -881,8 +881,10 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
         url = source.get("url")
         if not url or is_google_url(url):
             continue
+        fallback_offer = _offer_from_verified_source(source)
         html = fetch_saved_source(url)
         if not html:
+            add_offer(offers, fallback_offer)
             continue
 
         retailer = source.get("retailer") or retailer_key(url)
@@ -905,8 +907,35 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             offer["source"] = "saved_product_source"
             offer["image"] = source.get("image") or offer.get("image")
             add_offer(offers, offer)
+        else:
+            add_offer(offers, fallback_offer)
         time.sleep(0.5)
     return offers
+
+
+def _offer_from_verified_source(source: dict) -> Optional[dict]:
+    price = source.get("price_verified")
+    if price is None:
+        return None
+    url = source.get("url", "")
+    if not url or is_google_url(url) or is_bad_product_url(url):
+        return None
+    retailer = source.get("retailer") or retailer_key(url)
+    try:
+        price = float(price)
+    except (TypeError, ValueError):
+        return None
+    return {
+        "retailer": retailer,
+        "retailer_name": source.get("retailer_name") or retailer_name_from_url(url),
+        "price": price,
+        "url": append_affiliate(url, retailer),
+        "in_stock": True,
+        "title": source.get("title", ""),
+        "last_checked": source.get("last_seen") or now_iso(),
+        "source": "manual_verified_source",
+        "image": source.get("image"),
+    }
 
 
 def update_product_sources(source_map: dict, results: list[dict]) -> dict:
@@ -1186,7 +1215,10 @@ def run():
             # Amazon — all products
             time.sleep(RATE_LIMIT)
             r = amazon_result(product)
-            if add_offer(offers, r):
+            is_usable_amazon = r and (
+                r.get("price") is not None or not is_bad_product_url(r.get("url", ""))
+            )
+            if is_usable_amazon and add_offer(offers, r):
                 price_str = f"${r['price']:.2f}" if r.get("price") else "(link only)"
                 log.info(f"  Amazon   {price_str}")
 
