@@ -1563,7 +1563,7 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   font-size: 0.8rem;
   color: var(--ink-soft);
   padding: var(--space-sm) 0 0;
-  margin-bottom: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-sm);
 }
 
 .breadcrumb a {

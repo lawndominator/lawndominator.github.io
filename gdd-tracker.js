@@ -5,22 +5,25 @@ var currentTotal = 0;
 var currentDaily = null;
 var currentPgrDaily = null;
 
+// GDD milestone labels are approximate trend indicators only.
+// Pre-emergent timing should be confirmed with 2-inch soil temperature (50-55°F per UMN/Penn State).
+// Greenup timing should be confirmed with soil temperature and visual observation (TAMU: 65°F for bermuda).
 var GRASS_MILESTONES = {
   bermuda: [
-    { gdd: 50,  label: 'Pre-emergent opens' },
-    { gdd: 200, label: 'Greenup approaching' },
-    { gdd: 500, label: 'Full active growth' }
+    { gdd: 50,  label: 'Watch soil temp — pre-emergent window may be near' },
+    { gdd: 200, label: 'Spring heat accumulating — check soil temp and visual greenup' },
+    { gdd: 500, label: 'Full growth season likely underway' }
   ],
   zoysia: [
-    { gdd: 100, label: 'Pre-emergent window' },
-    { gdd: 300, label: 'Greenup approaching' }
+    { gdd: 100, label: 'Watch soil temp — pre-emergent window may be near' },
+    { gdd: 300, label: 'Spring heat accumulating — confirm visual greenup' }
   ],
   'st-augustine': [
-    { gdd: 50,  label: 'Pre-emergent window' },
-    { gdd: 200, label: 'First green push' }
+    { gdd: 50,  label: 'Watch soil temp — pre-emergent window may be near' },
+    { gdd: 200, label: 'Spring heat accumulating — confirm visual greenup' }
   ],
   'cool-season': [
-    { gdd: 50, label: 'Spring pre-em window' }
+    { gdd: 50, label: 'Watch soil temp — spring pre-emergent window' }
   ]
 };
 
