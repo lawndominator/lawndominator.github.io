@@ -114,6 +114,27 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(result["image"], "https://example.com/images/prodiamine.jpg")
 
+    def test_rejects_placeholder_product_image(self):
+        soup = BeautifulSoup(
+            """
+            <meta property="og:image" content="/media/catalog/product/placeholder/default/missing-image-base.png" />
+            <div class="product-item">
+              <a class="product-item-link" href="/prodiamine-65-wdg">Prodiamine 65 WDG</a>
+              <span class="price">$79.98</span>
+            </div>
+            """,
+            "lxml",
+        )
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://example.com/products/prodiamine-65-wdg",
+            "example",
+            "Example",
+        )
+
+        self.assertIsNone(result["image"])
+
     def test_normalizes_google_shopping_offer(self):
         product = {
             "name": "Prodiamine 65WDG",

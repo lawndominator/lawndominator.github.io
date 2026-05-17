@@ -442,7 +442,24 @@ def _absolute_image_url(base_url: str, src: str) -> Optional[str]:
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme not in ("http", "https") or not parsed.netloc:
         return None
+    if _is_bad_image_url(url):
+        return None
     return url
+
+
+def _is_bad_image_url(url: str) -> bool:
+    lower = url.lower()
+    bad_parts = (
+        "placeholder",
+        "missing-image",
+        "no-image",
+        "noimage",
+        "default-image",
+        "favicon",
+        "logo",
+        "sprite",
+    )
+    return any(part in lower for part in bad_parts)
 
 
 def _offer_product_url(base_url: str, href: str, retailer: str) -> Optional[str]:
