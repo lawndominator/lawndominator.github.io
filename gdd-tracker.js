@@ -93,7 +93,7 @@ function renderMilestoneStatus(total, grassType) {
     return '<div class="milestone-chip milestone-chip--' + (passed ? 'passed' : 'pending') + '">' +
       '<span class="milestone-chip__label">' + ms.label + '</span>' +
       '<span class="milestone-chip__val">' +
-        (passed ? '✓ ' + ms.gdd + ' GDD reached' : (ms.gdd - total) + ' GDD away') +
+        (passed ? '✓ Threshold passed' : 'Not yet reached') +
       '</span></div>';
   }).join('');
 }
@@ -129,6 +129,7 @@ function renderDailyList(daily, fromDate) {
     var label = dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
     var barPct = Math.min(100, Math.round(d.gdd / MAX_DAILY_GDD * 100));
     var valClass = d.gdd >= 12 ? 'warm' : d.gdd >= 5 ? '' : 'cool';
+
 
     return '<div class="gdd-day-row' + (isToday ? ' gdd-day-row--today' : '') + '" style="--bar:' + barPct + '%">' +
       '<span class="gdd-day-row__date">' + label +
