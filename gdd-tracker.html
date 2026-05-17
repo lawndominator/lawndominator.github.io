@@ -57,10 +57,10 @@
           },
           {
             "@type": "Question",
-            "name": "How many GDD before bermuda grass greens up?",
+            "name": "When does bermuda grass green up based on GDD?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Bermuda grass typically shows visible greenup between 200–300 GDD accumulated from January 1 (base 50°F). The pre-emergent window opens around 50 GDD, and full active growth with complete green coverage usually occurs around 500 GDD, though timing varies by location and cultivar."
+              "text": "No universally sourced GDD threshold has been established for bermuda greenup in peer-reviewed extension literature. Texas A&M AgriLife Extension identifies 65°F soil temperature (at depth, with consistent nighttime temps above 60°F) as the threshold for active bermuda growth and recovery — which is the most reliable signal to track. GDD accumulation can serve as a secondary trend indicator alongside soil temperature and visual green-up, but specific GDD numbers for bermuda greenup vary significantly by cultivar, location, and winter injury."
             }
           },
           {
@@ -76,7 +76,7 @@
             "name": "What base temperature is used for GDD in lawn care?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most turfgrass GDD calculations use a base of 50°F for seasonal accumulation and pre-emergent timing. PGR products like Primo Maxx and Anuew typically use a base of 32°F from the application date to calculate reapplication windows. This tool uses base 50°F with a max temperature cap of 86°F — the modified GDD method standard for turfgrass extension guidance."
+              "text": "Seasonal GDD accumulation for pre-emergent and greenup timing uses a base of 50°F (10°C), which is the minimum metabolic temperature for warm-season (C4) grasses like bermuda and zoysia. For PGR reapplication timing, the base temperature depends on grass type: research on cool-season grasses (bentgrass, bluegrass) uses 32°F because C3 plants metabolize products even at lower temperatures — Cornell Turfgrass Program uses this base for trinexapac-ethyl on cool-season turf. Reasor et al. 2018 (Crop Science) used base 50°F when modeling PGR timing on ultradwarf bermuda. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation."
             }
           }
         ]
@@ -185,31 +185,40 @@
                     <th>Product</th>
                     <th>Active Ingredient</th>
                     <th>Base Temp</th>
-                    <th>Reapply At</th>
+                    <th>Reapplication Interval</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Primo Maxx / T-Nex</td>
                     <td>Trinexapac-ethyl</td>
-                    <td>32&deg;F</td>
-                    <td>~200 GDD</td>
+                    <td>32&deg;F cool-season &middot; 50&deg;F warm-season</td>
+                    <td>~200 GDD on cool-season grasses (Cornell); ~216&ndash;230 GDD on ultradwarf bermuda (Reasor et al. 2018, Crop Science)</td>
                   </tr>
                   <tr>
                     <td>Anuew</td>
-                    <td>Prohexadione Calcium</td>
-                    <td>32&deg;F</td>
-                    <td>~2&ndash;3 weeks (shorter residual)</td>
+                    <td>Prohexadione calcium</td>
+                    <td>32&deg;F cool-season &middot; 50&deg;F warm-season</td>
+                    <td>Shorter residual than trinexapac-ethyl; ~120&ndash;130 GDD on ultradwarf bermuda (Reasor et al. 2018); shorter interval documented on annual bluegrass (Husiny et al. 2023)</td>
                   </tr>
                   <tr>
-                    <td>Trimmit / Pillar (Paclobutrazol)</td>
+                    <td>Trimmit / Pillar</td>
                     <td>Paclobutrazol</td>
-                    <td>&mdash;</td>
-                    <td>6&ndash;8 weeks (soil absorbed)</td>
+                    <td>32&deg;F</td>
+                    <td>~270&ndash;300 GDD on bentgrass (Kreuser 2018, Crop Science); soil absorption makes interval more variable than foliar PGRs</td>
                   </tr>
                 </tbody>
               </table>
-              <p class="pgr-note">Thresholds vary by application rate and conditions. Always confirm with the product label. Values above reflect commonly cited benchmarks from university extension guidance.</p>
+              <p class="pgr-note">The base temperature used for PGR GDD should match the grass type: 32&deg;F (0&deg;C) for cool-season (C3) grasses, 50&deg;F (10&deg;C) for warm-season (C4) grasses, reflecting each type's minimum metabolic temperature. Most published GDD research for PGRs was conducted on bentgrass putting greens &mdash; apply these as tracking benchmarks on warm-season turf and calibrate with your own mowing response data. Always confirm with the product label.</p>
+              <div class="guide-source-list" style="margin-top:1rem">
+                <p style="font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:0.4rem">PGR research sources</p>
+                <ol style="font-size:0.85rem;color:var(--ink-soft);padding-left:1.15rem;line-height:1.6">
+                  <li><a href="https://turf.cals.cornell.edu/pests-and-weeds/plant-growth-regulators/" rel="noopener">Cornell Turfgrass Program: Plant Growth Regulators &mdash; GDD timing for trinexapac-ethyl on cool-season turf</a></li>
+                  <li><a href="https://acsess.onlinelibrary.wiley.com/doi/full/10.2135/cropsci2018.01.0077" rel="noopener">Reasor et al. 2018, Crop Science &mdash; GDD models for PGR applications on ultradwarf bermudagrass (base 50&deg;F)</a></li>
+                  <li><a href="https://acsess.onlinelibrary.wiley.com/doi/10.2135/cropsci2017.06.0395" rel="noopener">Kreuser 2018, Crop Science &mdash; GDD models for paclobutrazol on creeping bentgrass</a></li>
+                  <li><a href="https://acsess.onlinelibrary.wiley.com/doi/10.1002/cft2.20224" rel="noopener">Husiny et al. 2023, Crop Forage &amp; Turfgrass Management &mdash; Prohexadione calcium residual and rebound on annual bluegrass and bentgrass</a></li>
+                </ol>
+              </div>
               <div class="interpretation-card" style="margin-top:1.25rem">
                 <p><strong>Want a notification when it's time to reapply?</strong> The web calculator shows your current GDD, but it won't alert you. Download Lawn Dominator to set a PGR countdown from your exact application date and get a notification when you hit your threshold.</p>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.85rem">
@@ -251,10 +260,10 @@
             <p>This calculator uses a base of 50°F with a maximum temperature cap of 86°F — the modified GDD method used by most university turfgrass extension programs. Accumulation starts January 1 each year.</p>
 
             <h3>Pre-Emergent Timing with GDD</h3>
-            <p>Crabgrass and other summer annual weeds germinate when soil temperature reaches 50–55°F for several consecutive days. Because GDD tracks the heat accumulation leading to that point, the 50 GDD mark is commonly cited as the opening of the pre-emergent window for bermuda and St. Augustine lawns. Zoysia opens slightly later, around 100 GDD. Apply pre-emergent before soil temperature is consistently above 55°F or you will miss the window.</p>
+            <p>Crabgrass and other summer annual weeds germinate when soil temperature reaches 50–55°F for several consecutive days — University of Minnesota Extension and Penn State Extension both cite this range. GDD accumulation is correlated with warming soil, so tracking seasonal GDD gives you a secondary heat-trend signal alongside the soil temperature reading. Apply pre-emergent before soil temperature is consistently above 55°F or you will miss the window. The most reliable trigger is the soil temperature reading itself, not a fixed GDD number.</p>
 
             <h3>Bermuda and Zoysia Greenup</h3>
-            <p>Bermuda grass typically shows visible green shoots between 200–300 GDD from January 1. Zoysia breaks later — expect greenup around 300–400 GDD. Full active growth with complete canopy cover generally occurs around 500 GDD for bermuda. Use the milestone chips above to see how your current season compares to these thresholds.</p>
+            <p>GDD is a useful trending tool for comparing spring heat accumulation across years, but university extension sources do not establish a single confirmed GDD threshold for bermuda or zoysia greenup. Texas A&M AgriLife Extension identifies 65°F soil temperature as the active growth threshold for bermuda. Track GDD alongside soil temperature and visual greenup at your own location over multiple seasons to build a personal baseline — this combination is more reliable than any single number.</p>
 
             <h3>PGR Reapplication Windows</h3>
             <p>Primo Maxx (trinexapac-ethyl) and similar PGR products wear off based on heat accumulation from the application date, not elapsed calendar days. The standard reapplication interval is 150–200 GDD from your last application using a base of 32°F. Use the date picker above to calculate GDD from any past date — then compare to the PGR reference table to judge whether it is time to reapply. For soil temperature data at your location, see the <a href="./soil-temperature.html">Soil Temperature Tracker</a>.</p>
@@ -266,8 +275,8 @@
                 <p>Growing degree days (GDD) measure accumulated heat above a base temperature — typically 50°F for warm-season turf. Each day contributes GDD based on the average temperature above that base. Lawn professionals use GDD to time pre-emergent herbicide applications, track greenup, and schedule PGR reapplication windows.</p>
               </details>
               <details class="faq-item">
-                <summary>How many GDD before bermuda grass greens up?</summary>
-                <p>Bermuda grass typically shows visible greenup between 200–300 GDD from January 1 (base 50°F). The pre-emergent window opens around 50 GDD, and full active growth with complete canopy coverage usually occurs around 500 GDD. Timing varies by location and cultivar.</p>
+                <summary>When does bermuda grass green up based on GDD?</summary>
+                <p>University extension literature does not establish a confirmed GDD threshold for bermuda greenup. Texas A&M AgriLife Extension identifies 65°F soil temperature at depth — with consistent nighttime temperatures above 60°F — as the signal for active bermuda growth and recovery. GDD is most useful as a year-over-year trend comparison at your own location, used alongside soil temperature and visual observation.</p>
               </details>
               <details class="faq-item">
                 <summary>When do I reapply Primo Maxx based on GDD?</summary>
@@ -275,7 +284,7 @@
               </details>
               <details class="faq-item">
                 <summary>What base temperature is used for GDD in lawn care?</summary>
-                <p>Seasonal GDD calculations for pre-emergent and greenup timing use a base of 50°F. PGR products like Primo Maxx and Anuew use a base of 32°F from the application date. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation — the modified GDD method used by most university turfgrass extension programs.</p>
+                <p>Seasonal GDD for warm-season turf uses base 50°F (10°C) — the minimum metabolic temperature for C4 plants like bermuda and zoysia. For PGR reapplication, the base temperature depends on grass type: Cornell Turfgrass Program uses base 32°F for trinexapac-ethyl on cool-season grasses; Reasor et al. 2018 (Crop Science) used base 50°F for PGR timing on ultradwarf bermuda. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation, consistent with the modified GDD method used by university turfgrass extension programs.</p>
               </details>
             </div>
           </section>
