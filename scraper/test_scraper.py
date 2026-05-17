@@ -20,6 +20,12 @@ class ScraperExtractionTests(unittest.TestCase):
             "https://www.amazon.com/dp/B076TFPB1Z",
         )
 
+    def test_amazon_asin_from_url(self):
+        self.assertEqual(
+            scraper.amazon_asin_from_url("https://www.amazon.com/gp/product/B076TFPB1Z?psc=1"),
+            "B076TFPB1Z",
+        )
+
     def test_parse_price_requires_price_like_text(self):
         self.assertEqual(scraper.parse_price("$79.98"), 79.98)
         self.assertEqual(scraper.parse_price("As low as $81"), 81.0)
@@ -452,7 +458,7 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(len(updated["products"]["118"]), 1)
         self.assertEqual(updated["products"]["118"][0]["url"], "https://www.amazon.com/dp/B076TFPB1Z")
-        self.assertEqual(updated["products"]["118"][0]["price_verified"], 13.74)
+        self.assertNotIn("price_verified", updated["products"]["118"][0])
 
     def test_verified_source_becomes_priced_offer(self):
         offer = scraper._offer_from_verified_source({
@@ -479,6 +485,11 @@ class ScraperExtractionTests(unittest.TestCase):
         })
 
         self.assertIsNone(offer)
+
+    def test_keepa_current_price_uses_lowest_current_offer(self):
+        product = {"stats": {"current": [3099, 3299, -1, -1, -1, -1, -1, -1, -1, -1, 3199]}}
+
+        self.assertEqual(scraper._keepa_current_price(product), 30.99)
 
     def test_verified_source_rejects_unpriced_amazon_search(self):
         offer = scraper._offer_from_verified_source({

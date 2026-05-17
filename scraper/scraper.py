@@ -13,6 +13,7 @@ GitHub Secrets:
   AMAZON_AFFILIATE_TAG   - your Amazon Associates tag
   AMAZON_ACCESS_KEY      - PA API access key (optional, enables real prices)
   AMAZON_SECRET_KEY      - PA API secret key (optional)
+  KEEPA_API_KEY          - Keepa API key (optional, enables Amazon prices)
   DOMYOWN_AFFILIATE_ID   - DoMyOwn affiliate ID (optional)
 """
 
@@ -42,6 +43,8 @@ SERPAPI_API_KEY   = os.getenv("SERPAPI_API_KEY", "")
 AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominator-20")
 AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY", "")
 AMAZON_SECRET_KEY = os.getenv("AMAZON_SECRET_KEY", "")
+KEEPA_API_KEY     = os.getenv("KEEPA_API_KEY", "")
+KEEPA_DOMAIN      = int(os.getenv("KEEPA_DOMAIN", "1"))  # 1 = amazon.com
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
 
 RATE_LIMIT = 2.0   # seconds between Playwright page loads
@@ -199,10 +202,16 @@ def canonical_product_url(url: str) -> str:
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
     path = parsed.path
-    amazon = re.search(r"/(?:[^/]+/)?(?:dp|gp/product)/([A-Z0-9]{10})", path, re.I)
-    if ("amazon." in host or host.endswith("amzn.to")) and amazon:
-        return f"https://www.amazon.com/dp/{amazon.group(1).upper()}"
+    asin = amazon_asin_from_url(url)
+    if ("amazon." in host or host.endswith("amzn.to")) and asin:
+        return f"https://www.amazon.com/dp/{asin}"
     return urllib.parse.urldefrag(url)[0].rstrip("/")
+
+
+def amazon_asin_from_url(url: str) -> Optional[str]:
+    path = urllib.parse.urlparse(url).path
+    match = re.search(r"/(?:[^/]+/)?(?:dp|gp/product)/([A-Z0-9]{10})", path, re.I)
+    return match.group(1).upper() if match else None
 
 
 def is_bad_product_url(url: str) -> bool:
@@ -994,6 +1003,8 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
                 "last_seen": now_iso(),
             }
             for key in ("verified", "manual_verified", "price_verified", "source_type"):
+                if key == "price_verified" and updated_source["retailer"] == "amazon":
+                    continue
                 if key in previous_source:
                     updated_source[key] = previous_source[key]
             existing[normalized] = updated_source
@@ -1076,10 +1087,88 @@ def _solutions_search(query: str) -> Optional[dict]:
 
 # ── Amazon ────────────────────────────────────────────────────────────────────
 
-def amazon_result(product: dict) -> Optional[dict]:
+def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[dict]:
+    keepa = _amazon_keepa(product, source_map or {})
+    if keepa:
+        return keepa
     if AMAZON_ACCESS_KEY and AMAZON_SECRET_KEY:
         return _amazon_paapi(product)
     return _amazon_affiliate_link(product)
+
+
+def _amazon_asins_for_product(product: dict, source_map: dict) -> list[str]:
+    asins = []
+
+    def add(value):
+        value = str(value or "").upper()
+        if re.fullmatch(r"[A-Z0-9]{10}", value) and value not in asins:
+            asins.append(value)
+
+    add(product.get("asin"))
+    for source in source_map.get("products", {}).get(str(product["id"]), []):
+        if source.get("retailer") == "amazon" or "amazon.com" in source.get("url", ""):
+            add(amazon_asin_from_url(source.get("url", "")))
+    return asins
+
+
+def _keepa_current_price(product_data: dict) -> Optional[float]:
+    stats = product_data.get("stats") or {}
+    current = stats.get("current") or []
+    candidate_indexes = (0, 1, 10, 18)
+    candidates = []
+    for index in candidate_indexes:
+        if index >= len(current):
+            continue
+        value = current[index]
+        if isinstance(value, (int, float)) and value > 0:
+            candidates.append(float(value) / 100)
+    return min(candidates) if candidates else None
+
+
+def _amazon_keepa(product: dict, source_map: dict) -> Optional[dict]:
+    if not KEEPA_API_KEY:
+        return None
+
+    for asin in _amazon_asins_for_product(product, source_map):
+        try:
+            response = _session.get(
+                "https://api.keepa.com/product",
+                params={
+                    "key": KEEPA_API_KEY,
+                    "domain": KEEPA_DOMAIN,
+                    "asin": asin,
+                    "stats": 1,
+                },
+                timeout=20,
+            )
+            if response.status_code != 200:
+                log.info(f"  Keepa HTTP {response.status_code} for {asin}: {response.text[:100]}")
+                continue
+            payload = response.json()
+        except Exception as e:
+            log.info(f"  Keepa failed for {asin}: {e.__class__.__name__}: {str(e)[:100]}")
+            continue
+
+        products = payload.get("products") or []
+        if not products:
+            continue
+        item = products[0]
+        price = _keepa_current_price(item)
+        if price is None:
+            log.info(f"  Keepa no current price for {asin}")
+            continue
+        return {
+            "retailer": "amazon",
+            "retailer_name": "Amazon",
+            "price": price,
+            "url": append_affiliate(f"https://www.amazon.com/dp/{asin}", "amazon"),
+            "in_stock": True,
+            "title": item.get("title") or product.get("name", ""),
+            "last_checked": now_iso(),
+            "source": "keepa",
+        }
+
+    return None
 
 
 def _amazon_affiliate_link(product: dict) -> dict:
@@ -1245,7 +1334,7 @@ def run():
 
             # Amazon — all products
             time.sleep(RATE_LIMIT)
-            r = amazon_result(product)
+            r = amazon_result(product, source_map)
             is_usable_amazon = r and (
                 r.get("price") is not None or not is_bad_product_url(r.get("url", ""))
             )

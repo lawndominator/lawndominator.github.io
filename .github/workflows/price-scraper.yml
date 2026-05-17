@@ -58,6 +58,7 @@ jobs:
           AMAZON_AFFILIATE_TAG: ${{ secrets.AMAZON_AFFILIATE_TAG }}
           AMAZON_ACCESS_KEY:    ${{ secrets.AMAZON_ACCESS_KEY }}
           AMAZON_SECRET_KEY:    ${{ secrets.AMAZON_SECRET_KEY }}
+          KEEPA_API_KEY:        ${{ secrets.KEEPA_API_KEY }}
           DOMYOWN_AFFILIATE_ID: ${{ secrets.DOMYOWN_AFFILIATE_ID }}
           MIN_PRICED_PRODUCTS:  "1"
           REQUIRE_WEB_DISCOVERY: "0"
