@@ -434,6 +434,17 @@ def _absolute_url(base_url: str, href: str) -> str:
     return urllib.parse.urljoin(base_url.rstrip("/") + "/", href)
 
 
+def _absolute_image_url(base_url: str, src: str) -> Optional[str]:
+    src = str(src or "").strip()
+    if not src or src.startswith(("data:", "blob:")):
+        return None
+    url = urllib.parse.urljoin(base_url.rstrip("/") + "/", src)
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        return None
+    return url
+
+
 def _offer_product_url(base_url: str, href: str, retailer: str) -> Optional[str]:
     """Resolve an offer link without letting cart/search URLs replace the product page."""
     resolved = _absolute_url(base_url, href or base_url)
@@ -487,15 +498,26 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
             product_url = _offer_product_url(base_url, href, retailer)
             if not product_url:
                 continue
+            image = _jsonld_image_url(obj, base_url)
             return {
                 "retailer": retailer,
                 "retailer_name": retailer_name,
                 "price": price,
                 "url": product_url,
                 "in_stock": "outofstock" not in str(offers.get("availability", "")).lower(),
+                "image": image,
                 "last_checked": now_iso(),
             }
     return None
+
+
+def _jsonld_image_url(obj: dict, base_url: str) -> Optional[str]:
+    image = obj.get("image")
+    if isinstance(image, list):
+        image = image[0] if image else None
+    if isinstance(image, dict):
+        image = image.get("url") or image.get("contentUrl")
+    return _absolute_image_url(base_url, image or "")
 
 
 def _price_from_node(node) -> Optional[float]:
@@ -513,6 +535,37 @@ def _price_from_node(node) -> Optional[float]:
         if price is not None:
             return price
     return parse_price(node.get_text(" ", strip=True))
+
+
+def _image_from_node(node, base_url: str) -> Optional[str]:
+    selectors = [
+        "meta[property='og:image']",
+        "meta[name='twitter:image']",
+        "meta[itemprop='image']",
+        "img[itemprop='image']",
+        ".productView-image img",
+        ".product-single__photo img",
+        ".product__media img",
+        ".product-gallery img",
+        ".product-image img",
+        ".product img",
+        "img",
+    ]
+    for sel in selectors:
+        elem = node.select_one(sel)
+        if not elem:
+            continue
+        src = (
+            elem.get("content")
+            or elem.get("data-src")
+            or elem.get("data-original")
+            or elem.get("src")
+            or elem.get("srcset", "").split(",")[0].strip().split(" ")[0]
+        )
+        image = _absolute_image_url(base_url, src or "")
+        if image:
+            return image
+    return None
 
 
 def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retailer_name: str) -> Optional[dict]:
@@ -559,6 +612,7 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
             "url":           product_url,
             "in_stock":      in_stock,
             "title":         link_elem.get_text(" ", strip=True) if link_elem else "",
+            "image":         _image_from_node(search_root, base_url) or _image_from_node(soup, base_url),
             "last_checked":  now_iso(),
         }
     return None
@@ -1126,6 +1180,13 @@ def _keepa_current_price(product_data: dict) -> Optional[float]:
 
 
 def _keepa_image_url(product_data: dict) -> Optional[str]:
+    image_entries = product_data.get("images") or []
+    if image_entries:
+        first = image_entries[0] or {}
+        filename = first.get("l") or first.get("m")
+        if filename:
+            return f"https://m.media-amazon.com/images/I/{filename}"
+
     images = product_data.get("imagesCSV") or ""
     if not images:
         return None

@@ -66,6 +66,7 @@ class ScraperExtractionTests(unittest.TestCase):
             {
               "@type": "Product",
               "url": "/prodiamine-65-wdg-generic-barricade-p-2495.html",
+              "image": "https://www.domyown.com/images/prodiamine.jpg",
               "offers": {
                 "@type": "Offer",
                 "price": "79.98",
@@ -90,6 +91,28 @@ class ScraperExtractionTests(unittest.TestCase):
             result["url"],
             "https://www.domyown.com/prodiamine-65-wdg-generic-barricade-p-2495.html",
         )
+        self.assertEqual(result["image"], "https://www.domyown.com/images/prodiamine.jpg")
+
+    def test_extracts_meta_product_image(self):
+        soup = BeautifulSoup(
+            """
+            <meta property="og:image" content="/images/prodiamine.jpg" />
+            <div class="product-item">
+              <a class="product-item-link" href="/prodiamine-65-wdg">Prodiamine 65 WDG</a>
+              <span class="price">$79.98</span>
+            </div>
+            """,
+            "lxml",
+        )
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://example.com/products/prodiamine-65-wdg",
+            "example",
+            "Example",
+        )
+
+        self.assertEqual(result["image"], "https://example.com/images/prodiamine.jpg")
 
     def test_normalizes_google_shopping_offer(self):
         product = {
@@ -503,6 +526,14 @@ class ScraperExtractionTests(unittest.TestCase):
         product = {"imagesCSV": "https://example.com/product.jpg"}
 
         self.assertEqual(scraper._keepa_image_url(product), "https://example.com/product.jpg")
+
+    def test_keepa_image_url_uses_new_images_field(self):
+        product = {"images": [{"l": "91large.jpg", "m": "81medium.jpg"}]}
+
+        self.assertEqual(
+            scraper._keepa_image_url(product),
+            "https://m.media-amazon.com/images/I/91large.jpg",
+        )
 
     def test_verified_source_rejects_unpriced_amazon_search(self):
         offer = scraper._offer_from_verified_source({
