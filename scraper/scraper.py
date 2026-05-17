@@ -938,13 +938,16 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
 
 
 def _offer_from_verified_source(source: dict) -> Optional[dict]:
+    url = source.get("url", "")
+    retailer = source.get("retailer") or retailer_key(url)
+    if retailer == "amazon":
+        return None
+
     price = source.get("price_verified")
     if price is None:
         return None
-    url = source.get("url", "")
     if not url or is_google_url(url) or is_bad_product_url(url):
         return None
-    retailer = source.get("retailer") or retailer_key(url)
     try:
         price = float(price)
     except (TypeError, ValueError):

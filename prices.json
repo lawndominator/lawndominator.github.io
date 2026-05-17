@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-17T10:02:30.345467+00:00",
+  "generated_at": "2026-05-17T12:52:31.262290+00:00",
   "product_count": 66,
   "products": [
     {
@@ -66,7 +66,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:48:01.007383+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 2,
@@ -165,7 +165,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:48:23.511808+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 3,
@@ -219,7 +219,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:48:35.374147+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 4,
@@ -285,7 +285,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:48:48.257953+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 5,
@@ -351,7 +351,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:49:00.438837+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 6,
@@ -427,7 +427,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:49:17.590143+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 7,
@@ -491,7 +491,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:49:29.836397+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 8,
@@ -537,7 +537,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:49:35.948994+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 9,
@@ -623,7 +623,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:49:48.376396+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 15,
@@ -664,17 +664,6 @@
           "in_stock": true,
           "last_checked": "2026-05-17T09:49:54.253064+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 13.79,
-          "url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Prime Source Celsius WG - 0.226 oz Easy Mix Packet-Post Emerge Weed Control : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.757795+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -722,7 +711,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:50:04.258066+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 16,
@@ -754,17 +743,6 @@
           "in_stock": true,
           "last_checked": "2026-05-17T09:50:08.306831+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 92.99,
-          "url": "https://www.amazon.com/dp/B004RVNFY6?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Certainty Herbicide for Turf and Lawns 1.25 oz : Home And Garden Products : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.757990+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -830,7 +808,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:50:20.243044+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 17,
@@ -877,17 +855,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 55.99,
-          "url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T06:59:30.758288+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "price": 80.2,
@@ -920,7 +887,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:50:38.787157+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 18,
@@ -934,17 +901,6 @@
         "halosulfuron nutsedge"
       ],
       "offers": [
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 13.99,
-          "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Sedgehammer Plus Turf Herbicide - 1 Pack of 13.5 Gram Pack of USA-Made Purple & Yellow Nutsedge Killer for Lawns with Pre-Mixed Surfactant - Lawn & Pet Safe Weed Killer Mix for Residential Use : Home Pest Repellents : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.758421+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
         {
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
@@ -978,17 +934,16 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 13.99,
-        "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
+        "retailer": "pestrong",
+        "retailer_name": "Pestrong",
+        "price": 14.95,
+        "url": "https://pestrong.com/product/sedgehammer-plus-herbicide-prosedge-0-5-oz-13-5-grams",
         "in_stock": true,
-        "title": "Amazon.com : Sedgehammer Plus Turf Herbicide - 1 Pack of 13.5 Gram Pack of USA-Made Purple & Yellow Nutsedge Killer for Lawns with Pre-Mixed Surfactant - Lawn & Pet Safe Weed Killer Mix for Residential Use : Home Pest Repellents : Patio, Lawn & Garden",
-        "last_checked": "2026-05-17T06:59:30.758421+00:00",
-        "source": "manual_verified_source",
+        "last_checked": "2026-05-17T09:50:45.986743+00:00",
+        "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:50:48.487641+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 19,
@@ -1035,17 +990,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 38.69,
-          "url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : PBI Gordon SpeedZone Southern EW Herbicide -128oz : Weed Killers : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.758637+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "diypestcontrol",
           "retailer_name": "Diypestcontrol",
           "price": 44.91,
@@ -1067,17 +1011,16 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 38.69,
-        "url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20",
+        "retailer": "diypestcontrol",
+        "retailer_name": "Diypestcontrol",
+        "price": 44.91,
+        "url": "https://diypestcontrol.com/speed-zone-red-herbicide",
         "in_stock": true,
-        "title": "Amazon.com : PBI Gordon SpeedZone Southern EW Herbicide -128oz : Weed Killers : Patio, Lawn & Garden",
-        "last_checked": "2026-05-17T06:59:30.758637+00:00",
-        "source": "manual_verified_source",
+        "last_checked": "2026-05-17T09:50:54.426245+00:00",
+        "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:50:58.390841+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 20,
@@ -1112,17 +1055,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 48.58,
-          "url": "https://www.amazon.com/dp/B0CB96F141?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : MSM 60 DF (8 oz.) - Compare to Manor/Blade/Escort, Metsulfuron Methyl 60% : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.758754+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "price": 79.99,
@@ -1144,7 +1076,7 @@
         "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:51:13.429484+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 21,
@@ -1190,17 +1122,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 63.46,
-          "url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T09:51:29.423293+00:00",
-          "source": "saved_product_source",
-          "image": null
-        },
-        {
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "price": 66.64,
@@ -1223,7 +1144,7 @@
         "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:51:33.842804+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 22,
@@ -1298,7 +1219,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:51:43.589077+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 23,
@@ -1312,17 +1233,6 @@
         "sulfentrazone turf"
       ],
       "offers": [
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 47.2,
-          "url": "https://www.amazon.com/dp/B0FHJX5MKP?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Dismiss Herbicide (Sulfentrazone 39.6%) Yellow Nutsedge Control - 64 fl. oz. : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.759323+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
         {
           "retailer": "ourprosolutions",
           "retailer_name": "Ourprosolutions",
@@ -1353,17 +1263,6 @@
           "in_stock": true,
           "last_checked": "2026-05-17T09:51:49.631668+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 55.34,
-          "url": "https://www.amazon.com/dp/B06XG4Q715?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T06:59:30.759374+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -1400,17 +1299,17 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 47.2,
-        "url": "https://www.amazon.com/dp/B0FHJX5MKP?tag=lawndominator-20",
-        "in_stock": true,
-        "title": "Amazon.com : Dismiss Herbicide (Sulfentrazone 39.6%) Yellow Nutsedge Control - 64 fl. oz. : Patio, Lawn & Garden",
-        "last_checked": "2026-05-17T06:59:30.759323+00:00",
-        "source": "manual_verified_source",
+        "retailer": "domyown",
+        "retailer_name": "DoMyOwn",
+        "price": 60.48,
+        "url": "https://www.domyown.com/sulfentrazone-4l-select-p-17100.html",
+        "in_stock": false,
+        "title": "Email Me When in Stock",
+        "last_checked": "2026-05-17T09:51:51.902385+00:00",
+        "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:51:59.417702+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 24,
@@ -1457,7 +1356,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:52:05.129288+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 25,
@@ -1479,17 +1378,6 @@
           "title": "2,4-D Amine 4 Herbicide 2.5 Gallon $ 104.49",
           "last_checked": "2026-05-17T09:52:06.614175+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 135.29,
-          "url": "https://www.amazon.com/dp/B00EDQ1DCQ?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T06:59:30.759689+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -1556,7 +1444,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:52:27.186946+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 26,
@@ -1590,7 +1478,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:52:30.659277+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 27,
@@ -1646,7 +1534,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:52:43.642970+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 28,
@@ -1701,7 +1589,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:52:56.814581+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 29,
@@ -1766,7 +1654,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:53:06.597988+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 35,
@@ -1798,17 +1686,6 @@
           "in_stock": true,
           "title": "Primo Maxx Turf Growth Regulator bottle (4 oz) | eBay",
           "last_checked": "2026-05-17T06:59:30.760360+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 52.99,
-          "url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Primo Maxx Plant Growth Regulator : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.760376+00:00",
           "source": "manual_verified_source",
           "image": null
         },
@@ -1876,7 +1753,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:53:31.377606+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 36,
@@ -1944,17 +1821,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 52.99,
-          "url": "https://www.amazon.com/dp/B07FS56D66?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Quali-Pro T-Nex Plant Growth Regulator (Primo Maxx) - Manage Growth, Improve Quality and Color, Helps Produce Healthy, Durable Blades in Turf Grass (2.5 Gallons) : Pat",
-          "last_checked": "2026-05-17T06:59:30.760726+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "price": 334.95,
@@ -1986,17 +1852,17 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 52.99,
-        "url": "https://www.amazon.com/dp/B07FS56D66?tag=lawndominator-20",
+        "retailer": "walmart",
+        "retailer_name": "Walmart",
+        "price": 127.13,
+        "url": "https://www.walmart.com/ip/5081584180",
         "in_stock": true,
-        "title": "Amazon.com : Quali-Pro T-Nex Plant Growth Regulator (Primo Maxx) - Manage Growth, Improve Quality and Color, Helps Produce Healthy, Durable Blades in Turf Grass (2.5 Gallons) : Pat",
-        "last_checked": "2026-05-17T06:59:30.760726+00:00",
+        "title": "Quali-Pro T-Nex Plant Growth Regulator, Reduces Growth of Seasonal Grasses, 128 fl oz - Walmart.com",
+        "last_checked": "2026-05-17T06:59:30.760664+00:00",
         "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:53:56.233943+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 37,
@@ -2061,7 +1927,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:54:10.183582+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 38,
@@ -2139,7 +2005,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:54:21.322108+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 39,
@@ -2196,7 +2062,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:54:35.648928+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 40,
@@ -2241,7 +2107,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:54:44.537502+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 41,
@@ -2293,17 +2159,6 @@
           "in_stock": true,
           "title": "Pramaxis MEC Turf Growth Regulator bottle (8 oz) | eBay",
           "last_checked": "2026-05-17T06:59:30.761516+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 52.99,
-          "url": "https://www.amazon.com/dp/B0BJ3662N7?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Atticus Pramaxis MEC Plant Growth Regulator for Lawn (8 oz) \u2013 Improve Turfgrass Quality and Control Growth - Trinexapac-Ethyl 11.3% : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.761531+00:00",
           "source": "manual_verified_source",
           "image": null
         },
@@ -2369,7 +2224,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:55:13.276482+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 50,
@@ -2435,7 +2290,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:55:27.406629+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 51,
@@ -2502,7 +2357,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:55:40.817767+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 52,
@@ -2568,7 +2423,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:55:52.372624+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 53,
@@ -2633,7 +2488,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:56:05.385908+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 54,
@@ -2699,7 +2554,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:56:17.912634+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 55,
@@ -2774,7 +2629,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:56:28.411601+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 56,
@@ -2839,7 +2694,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:56:41.079756+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 57,
@@ -2916,7 +2771,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:56:50.958357+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 58,
@@ -2971,7 +2826,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:02.961692+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 59,
@@ -3037,7 +2892,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:16.418962+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 60,
@@ -3103,7 +2958,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:27.290838+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 61,
@@ -3160,7 +3015,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:40.124369+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 62,
@@ -3194,7 +3049,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:46.715529+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 63,
@@ -3228,7 +3083,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:57:53.207150+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 70,
@@ -3286,17 +3141,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 69.25,
-          "url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T09:58:11.249826+00:00",
-          "source": "saved_product_source",
-          "image": null
-        },
-        {
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "price": 124.99,
@@ -3329,7 +3173,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:58:17.377931+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 71,
@@ -3361,17 +3205,6 @@
           "in_stock": true,
           "last_checked": "2026-05-17T09:58:21.008706+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 69.25,
-          "url": "https://www.amazon.com/dp/B01BZLG0PQ?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "0 Cart",
-          "last_checked": "2026-05-17T06:59:30.763719+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -3408,17 +3241,16 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 69.25,
-        "url": "https://www.amazon.com/dp/B01BZLG0PQ?tag=lawndominator-20",
+        "retailer": "diypestcontrol",
+        "retailer_name": "Diypestcontrol",
+        "price": 70.03,
+        "url": "https://diypestcontrol.com/acelepryn-4oz",
         "in_stock": true,
-        "title": "0 Cart",
-        "last_checked": "2026-05-17T06:59:30.763719+00:00",
-        "source": "manual_verified_source",
+        "last_checked": "2026-05-17T09:58:21.008706+00:00",
+        "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:58:30.219281+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 72,
@@ -3496,7 +3328,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:58:41.942638+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 73,
@@ -3543,7 +3375,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:58:47.222299+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 74,
@@ -3589,17 +3421,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 43.99,
-          "url": "https://www.amazon.com/dp/B00DGUY2LO?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Bifenthrin I/T 7.9 F for Insects, (1 Gallon) : Insect Repellents : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.764180+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "price": 29.97,
@@ -3630,7 +3451,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:59:00.154148+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 75,
@@ -3705,7 +3526,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:59:12.861575+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 76,
@@ -3760,7 +3581,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:59:24.998525+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 77,
@@ -3816,7 +3637,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:59:37.293335+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 78,
@@ -3895,7 +3716,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T09:59:49.991906+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 79,
@@ -3973,7 +3794,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:00:01.901329+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 80,
@@ -4051,17 +3872,6 @@
           "image": null
         },
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 72.99,
-          "url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com: Syngenta - 25837 - Avid 0.15EC - Miticide/Insecticide - 8 oz : Patio, Lawn & Garden",
-          "last_checked": "2026-05-17T06:59:30.765194+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "price": 91.48,
@@ -4115,7 +3925,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:00:24.197046+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 81,
@@ -4182,7 +3992,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:00:34.563619+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 82,
@@ -4237,7 +4047,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:00:44.173403+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 83,
@@ -4293,7 +4103,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:00:56.334113+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 84,
@@ -4361,7 +4171,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:01:08.163684+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 85,
@@ -4439,7 +4249,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:01:33.163965+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 86,
@@ -4506,7 +4316,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:01:46.214497+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 115,
@@ -4549,17 +4359,6 @@
           "in_stock": true,
           "last_checked": "2026-05-17T10:01:51.536395+00:00",
           "source": "saved_product_source",
-          "image": null
-        },
-        {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 59.39,
-          "url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Amazon.com : Hydretain Root Zone Moisture Manager \u2014 Converts Soil Moisture to Plant-Usable Water for Drought Protection \u2014 Reduce Watering 50%, 3-Month Residual, 5,000 Sq Ft Coverag",
-          "last_checked": "2026-05-17T06:59:30.766426+00:00",
-          "source": "manual_verified_source",
           "image": null
         },
         {
@@ -4625,7 +4424,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:02:05.380993+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 116,
@@ -4670,7 +4469,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:02:15.274288+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 117,
@@ -4717,7 +4516,7 @@
         "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:02:25.981467+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     },
     {
       "id": 118,
@@ -4732,17 +4531,6 @@
       ],
       "offers": [
         {
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "price": 13.74,
-          "url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20",
-          "in_stock": true,
-          "title": "Feature 6-0-0 - 1 Bag",
-          "last_checked": "2026-05-17T06:59:30.766684+00:00",
-          "source": "manual_verified_source",
-          "image": null
-        },
-        {
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "price": 26.17,
@@ -4755,17 +4543,17 @@
         }
       ],
       "best_price": {
-        "retailer": "amazon",
-        "retailer_name": "Amazon",
-        "price": 13.74,
-        "url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20",
-        "in_stock": true,
-        "title": "Feature 6-0-0 - 1 Bag",
-        "last_checked": "2026-05-17T06:59:30.766684+00:00",
-        "source": "manual_verified_source",
+        "retailer": "domyown",
+        "retailer_name": "DoMyOwn",
+        "price": 26.17,
+        "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
+        "in_stock": false,
+        "title": "Email Me When in Stock",
+        "last_checked": "2026-05-17T10:02:27.791512+00:00",
+        "source": "saved_product_source",
         "image": null
       },
-      "updated_at": "2026-05-17T10:02:30.292324+00:00"
+      "updated_at": "2026-05-17T12:52:31.262290+00:00"
     }
   ]
 }

@@ -456,9 +456,9 @@ class ScraperExtractionTests(unittest.TestCase):
 
     def test_verified_source_becomes_priced_offer(self):
         offer = scraper._offer_from_verified_source({
-            "url": "https://www.amazon.com/dp/B0BTKTVN76",
-            "retailer": "amazon",
-            "retailer_name": "Amazon",
+            "url": "https://store.example/celsius-wg",
+            "retailer": "example-store",
+            "retailer_name": "Example Store",
             "title": "Celsius WG",
             "price_verified": 13.79,
             "last_seen": "2026-05-16T01:52:11+00:00",
@@ -467,7 +467,18 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertIsNotNone(offer)
         self.assertEqual(offer["price"], 13.79)
         self.assertEqual(offer["source"], "manual_verified_source")
-        self.assertEqual(offer["url"], "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20")
+        self.assertEqual(offer["url"], "https://store.example/celsius-wg")
+
+    def test_verified_source_does_not_use_stored_amazon_price(self):
+        offer = scraper._offer_from_verified_source({
+            "url": "https://www.amazon.com/dp/B076TFPB1Z",
+            "retailer": "amazon",
+            "retailer_name": "Amazon",
+            "title": "Feature 6-0-0",
+            "price_verified": 13.74,
+        })
+
+        self.assertIsNone(offer)
 
     def test_verified_source_rejects_unpriced_amazon_search(self):
         offer = scraper._offer_from_verified_source({
