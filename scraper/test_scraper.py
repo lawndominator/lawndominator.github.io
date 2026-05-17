@@ -519,6 +519,18 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(offer["source"], "manual_verified_source")
         self.assertEqual(offer["url"], "https://store.example/celsius-wg")
 
+    def test_verified_source_drops_placeholder_image(self):
+        offer = scraper._offer_from_verified_source({
+            "url": "https://store.example/celsius-wg",
+            "retailer": "example-store",
+            "retailer_name": "Example Store",
+            "title": "Celsius WG",
+            "price_verified": 13.79,
+            "image": "https://store.example/placeholder/default/missing-image-base.png",
+        })
+
+        self.assertIsNone(offer["image"])
+
     def test_verified_source_does_not_use_stored_amazon_price(self):
         offer = scraper._offer_from_verified_source({
             "url": "https://www.amazon.com/dp/B076TFPB1Z",

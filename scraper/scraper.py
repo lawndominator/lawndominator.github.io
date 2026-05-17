@@ -462,6 +462,12 @@ def _is_bad_image_url(url: str) -> bool:
     return any(part in lower for part in bad_parts)
 
 
+def _stored_image_url(url: str) -> Optional[str]:
+    if not url or _is_bad_image_url(url):
+        return None
+    return str(url)
+
+
 def _offer_product_url(base_url: str, href: str, retailer: str) -> Optional[str]:
     """Resolve an offer link without letting cart/search URLs replace the product page."""
     resolved = _absolute_url(base_url, href or base_url)
@@ -1009,7 +1015,7 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
                 if source.get("title"):
                     offer["title"] = source["title"]
             offer["source"] = "saved_product_source"
-            offer["image"] = source.get("image") or offer.get("image")
+            offer["image"] = _stored_image_url(source.get("image")) or offer.get("image")
             add_offer(offers, offer)
         else:
             add_offer(offers, fallback_offer)
@@ -1041,7 +1047,7 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
         "title": source.get("title", ""),
         "last_checked": source.get("last_seen") or now_iso(),
         "source": "manual_verified_source",
-        "image": source.get("image"),
+        "image": _stored_image_url(source.get("image")),
     }
 
 
