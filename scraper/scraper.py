@@ -1125,6 +1125,18 @@ def _keepa_current_price(product_data: dict) -> Optional[float]:
     return min(candidates) if candidates else None
 
 
+def _keepa_image_url(product_data: dict) -> Optional[str]:
+    images = product_data.get("imagesCSV") or ""
+    if not images:
+        return None
+    filename = str(images).split(",")[0].strip()
+    if not filename:
+        return None
+    if filename.startswith(("http://", "https://")):
+        return filename
+    return f"https://m.media-amazon.com/images/I/{filename}"
+
+
 def _amazon_keepa(product: dict, source_map: dict) -> Optional[dict]:
     if not KEEPA_API_KEY:
         return None
@@ -1164,6 +1176,7 @@ def _amazon_keepa(product: dict, source_map: dict) -> Optional[dict]:
             "url": append_affiliate(f"https://www.amazon.com/dp/{asin}", "amazon"),
             "in_stock": True,
             "title": item.get("title") or product.get("name", ""),
+            "image": _keepa_image_url(item),
             "last_checked": now_iso(),
             "source": "keepa",
         }

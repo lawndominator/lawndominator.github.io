@@ -491,6 +491,19 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(scraper._keepa_current_price(product), 30.99)
 
+    def test_keepa_image_url_uses_first_image_filename(self):
+        product = {"imagesCSV": "81abc123.jpg,71def456.jpg"}
+
+        self.assertEqual(
+            scraper._keepa_image_url(product),
+            "https://m.media-amazon.com/images/I/81abc123.jpg",
+        )
+
+    def test_keepa_image_url_allows_absolute_url(self):
+        product = {"imagesCSV": "https://example.com/product.jpg"}
+
+        self.assertEqual(scraper._keepa_image_url(product), "https://example.com/product.jpg")
+
     def test_verified_source_rejects_unpriced_amazon_search(self):
         offer = scraper._offer_from_verified_source({
             "url": "https://www.amazon.com/s?k=Celsius+WG&tag=lawndominator-20",
