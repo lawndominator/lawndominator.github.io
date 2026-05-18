@@ -499,6 +499,58 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertTrue(scraper.is_known_wrong_product_source(17, "https://www.forestrydistributing.com/register", "Register"))
         self.assertTrue(scraper.is_known_wrong_product_source(25, "https://www.ourprosolutions.com/product/gallery-75-df-specialty-herbicide-isoxaben-75", "Gallery 75 DF Specialty Herbicide Isoxaben 75% $ 159.49"))
 
+    def test_known_wrong_cross_product_sources_are_rejected(self):
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                2,
+                "https://sodsolutions.com/shop/weed-control/speedzone-broadleaf-herbicide-for-turf",
+                "(2 Reviews)",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                59,
+                "https://lawnsynergy.com/products/headway-g-fungicide",
+                "It's Time To Apply Fungicide",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                116,
+                "https://yardmastery.com/products/hydr8-liquicuretm-soil-surfactant-wetting-agent",
+                "Hydr8 Liquicure",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                81,
+                "https://www.domyown.com/bayer-kontos-insecticide-p-21398.html",
+                "Kontos SC",
+            )
+        )
+
+    def test_manual_remaining_product_sizes_are_sized(self):
+        cases = [
+            (8, "domyown", "Hi-Yield Atrazine Weed Killer", "https://www.domyown.com/hiyield-atrazine-weed-killer-p-2023.html", 24.48, "32 fl oz"),
+            (16, "solutions", "Certainty WDG (Sulfosulfuron)", "https://www.solutionsstores.com/certainty-turf-herbicide", 110.77, "1.25 fl oz"),
+            (18, "amazon", "Sedgehammer Plus Turf Herbicide - 1 Pack of 13.5 Gram", "https://www.amazon.com/dp/B007PHMAYK", 13.99, "13.5 g"),
+            (27, "pestrong", "Trimec Classic Broadleaf Herbicide", "https://pestrong.com/product/trimec-classic-broadleaf-herbicide-2-5", 204.95, "2.5 gal"),
+            (52, "lawn-synergy", "Headway G Granular Fungicide", "https://lawnsynergy.com/products/headway-g-fungicide", 79.99, "30 lb"),
+            (58, "pestrong", "Emerald Fungicide", "https://pestrong.com/product/emerald-fungicide-for-golf-course-0-49-lbs", 159.95, "0.49 lb"),
+            (71, "domyown", "Acelepryn G Insecticide", "https://www.domyown.com/acelepryn-insecticide-p-15739.html", 125.0, "25 lb"),
+            (79, "sunspot-supply", "Zylam Liquid Systemic Insecticide", "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart", 149.75, "32 fl oz"),
+            (116, "domyown", "Revolution Soil Surfactant", "https://www.domyown.com/aquatrols-revolution-soil-surfactant-p-10332.html", 457.50, "2.5 gal"),
+            (118, "amazon", "Feature, 1 Bag", "https://www.amazon.com/dp/B076TFPB1Z", 30.00, "2.5 lb"),
+        ]
+
+        for product_id, retailer, title, url, price, expected in cases:
+            with self.subTest(product_id=product_id, retailer=retailer):
+                package = scraper.infer_package_size(
+                    {"id": product_id},
+                    {"retailer": retailer, "title": title, "url": url, "price": price},
+                )
+                self.assertEqual(package["package_label"], expected)
+
     def test_apply_offer_package_metadata_adds_price_per_unit(self):
         results = [{
             "id": 5,

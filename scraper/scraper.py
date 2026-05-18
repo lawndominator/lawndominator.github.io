@@ -221,7 +221,7 @@ def is_bad_product_url(url: str) -> bool:
     query = parsed.query.lower()
     bad_path_parts = (
         "/cart", "/checkout", "/account", "/login", "/search", "/collections/",
-        "/category/", "/categories/", "/catalogsearch/", "/wishlist",
+        "/category/", "/categories/", "/catalogsearch/", "/wishlist", "/write-review",
     )
     if any(part in path for part in bad_path_parts):
         return True
@@ -338,6 +338,14 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     if product_id == 7 and ("specticle-g" in url or "specticle g" in title):
         return _package(50.0, "lb")
 
+    if product_id == 4 and ("specticle-flo" in url or "specticle flo" in title or "spectacle flo" in title):
+        if "gallon" in text or "1-gal" in url:
+            return _package(128.0, "fl oz")
+        return _package(18.0, "fl oz")
+
+    if product_id == 8 and ("atrazine" in text or "st-augustine-weed-killer" in url):
+        return _package(32.0, "fl oz")
+
     if product_id == 9 and ("pendulum-aquacap" in url or "pendulum aquacap" in title or "pendulum aqua cap" in title):
         if "15-gal" in url or "15 gal" in title:
             return _package(1920.0, "fl oz")
@@ -352,6 +360,12 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
 
     if product_id == 17 and ("drive-xlr8" in url or "drive xlr8" in title):
         return _package(64.0, "fl oz")
+
+    if product_id == 16 and ("certainty" in text or "sulfosulfuron" in text or "empero" in text or "sertay" in text):
+        return _package(1.25, "fl oz")
+
+    if product_id == 18 and ("sedgehammer" in text or "halosulfuron" in text):
+        return _package(13.5, "g")
 
     if product_id == 19 and ("speedzone" in text or "speed-zone" in url):
         if retailer in {"diypestcontrol"} or (offer.get("price") is not None and float(offer["price"]) < 70):
@@ -372,6 +386,11 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
             return _package(64.0, "fl oz")
         return _package(8.0, "fl oz")
 
+    if product_id == 22 and ("turflon" in text or "triclopyr" in text):
+        if "gal" in text or (offer.get("price") is not None and float(offer["price"]) > 120):
+            return _package(128.0, "fl oz")
+        return _package(8.0, "fl oz")
+
     if product_id == 23 and ("dismiss" in text or "sulfentrazone" in text):
         if "64" in text or (offer.get("price") is not None and float(offer["price"]) > 150):
             return _package(64.0, "fl oz")
@@ -381,6 +400,14 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
 
     if product_id == 24 and ("pylex" in text or "topramezone" in text):
         return _package(4.0, "fl oz")
+
+    if product_id == 26 and "q4" in text:
+        return _package(32.0, "fl oz")
+
+    if product_id == 27 and ("trimec" in text or "2-5" in url):
+        if "2-5" in url or "2.5" in text:
+            return _package(320.0, "fl oz")
+        return _package(128.0, "fl oz")
 
     if product_id == 25 and ("msma" in text or "target-6-plus" in url):
         if "5 gallons" in title or "5 gallon" in title:
@@ -413,6 +440,168 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         if "1.5" in text or "seed-barn" in url:
             return _package(1.5, "lb")
         return _package(64.0, "fl oz")
+
+    if product_id == 38 and ("trimmit" in text or "paclobutrazol" in text):
+        if "2.5" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
+            return _package(320.0, "fl oz")
+        return _package(128.0, "fl oz")
+
+    if product_id == 39 and ("cutless" in text or "flurprimidol" in text):
+        if "40 lb" in text or "40-lb" in url:
+            return _package(40.0, "lb")
+        return _package(128.0, "fl oz")
+
+    if product_id == 40 and ("proxy" in text or "embark" in text or "mefluidide" in text):
+        return _package(128.0, "fl oz")
+
+    if product_id == 41 and ("pramaxis" in text or "trinexapac" in text):
+        if "2.5" in text or (offer.get("price") is not None and float(offer["price"]) > 250):
+            return _package(320.0, "fl oz")
+        if "gal" in text or (offer.get("price") is not None and float(offer["price"]) > 100):
+            return _package(128.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 50 and ("propiconazole" in text or "banner" in text or "ppz" in text):
+        price = float(offer["price"]) if offer.get("price") is not None else 0
+        if "2-5" in url or "2.5" in text or price > 250:
+            return _package(320.0, "fl oz")
+        if price < 40:
+            return _package(16.0, "fl oz")
+        return _package(32.0, "fl oz")
+
+    if product_id == 51 and ("heritage" in text or "azoxystrobin" in text or "azoxy" in text):
+        if "lb" in text or "heritage-action" in url:
+            return _package(1.0, "lb")
+        if "32" in text or "2sc" in text:
+            return _package(32.0, "fl oz")
+        return _package(4.0, "fl oz")
+
+    if product_id == 52 and ("headway" in text):
+        if "gal" in text:
+            return _package(128.0, "fl oz")
+        return _package(30.0, "lb")
+
+    if product_id == 53 and "armada" in text:
+        return _package(2.0, "lb")
+
+    if product_id == 54 and "pillar" in text:
+        return _package(43.5, "fl oz")
+
+    if product_id == 55 and ("cleary" in text or "3336" in text or "thiophanate" in text):
+        if "30" in text and ("lb" in text or "pound" in text):
+            return _package(30.0, "lb")
+        if "8" in text and "oz" in text:
+            return _package(8.0, "fl oz")
+        return _package(32.0, "fl oz")
+
+    if product_id == 56 and ("eagle" in text or "myclobutanil" in text):
+        if "gallon" in text or "1-gal" in url:
+            return _package(128.0, "fl oz")
+        return _package(16.0, "fl oz")
+
+    if product_id == 57 and ("daconil" in text or "chlorothalonil" in text or "echo" in text):
+        if "40-lb" in url or "40 lb" in title:
+            return _package(40.0, "lb")
+        if "5-lb" in url or "5 lb" in title:
+            return _package(5.0, "lb")
+        if "2-5" in url or "2.5" in text:
+            return _package(320.0, "fl oz")
+        return _package(16.0, "fl oz")
+
+    if product_id == 58 and "emerald" in text:
+        return _package(0.49, "lb")
+
+    if product_id == 59 and ("medallion" in text or "fludioxonil" in text):
+        return _package(8.0, "fl oz")
+
+    if product_id == 60 and ("subdue" in text or "mefenoxam" in text):
+        if "25 lb" in text or "25-lb" in url:
+            return _package(25.0, "lb")
+        return _package(128.0, "fl oz")
+
+    if product_id == 61 and ("velista" in text or "penthiopyrad" in text):
+        return _package(22.0, "fl oz")
+
+    if product_id == 70 and "acelepryn" in text:
+        if offer.get("price") is not None and float(offer["price"]) > 500:
+            return _package(128.0, "fl oz")
+        return _package(4.0, "fl oz")
+
+    if product_id == 71 and "acelepryn" in text:
+        return _package(25.0, "lb")
+
+    if product_id == 72 and ("merit" in text or "imidacloprid" in text):
+        return _package(30.0, "lb")
+
+    if product_id == 73 and ("dylox" in text or "trichlorfon" in text):
+        return _package(30.0, "lb")
+
+    if product_id == 74 and ("bifen" in text or "bifenthrin" in text):
+        if offer.get("price") is not None and float(offer["price"]) < 35:
+            return _package(32.0, "fl oz")
+        return _package(128.0, "fl oz")
+
+    if product_id == 75 and ("talstar" in text or "bifenthrin 0.2" in text):
+        return _package(25.0, "lb")
+
+    if product_id == 76 and "meridian" in text:
+        return _package(40.0, "lb")
+
+    if product_id == 77 and "arena" in text:
+        return _package(30.0, "lb")
+
+    if product_id == 78 and ("demand" in text or "lambda" in text):
+        if "gal" in text:
+            return _package(128.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 79 and "zylam" in text:
+        return _package(32.0, "fl oz")
+
+    if product_id == 80 and ("avid" in text or "abamectin" in text or "ardent" in text):
+        if "gallon" in text or "1 gal" in text or (offer.get("price") is not None and float(offer["price"]) > 300):
+            return _package(128.0, "fl oz")
+        if "quart" in text or "1 qt" in text:
+            return _package(32.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 81 and "movento" in text:
+        return _package(32.0, "fl oz")
+
+    if product_id == 82 and "mainspring" in text:
+        return _package(16.0, "fl oz")
+
+    if product_id == 83 and "forbid" in text:
+        return _package(8.0, "fl oz")
+
+    if product_id == 84 and "tetrasan" in text:
+        return _package(1.0, "lb")
+
+    if product_id == 85 and "kontos" in text:
+        if "32" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
+            return _package(32.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 86 and "tristar" in text:
+        if "quart" in text:
+            return _package(32.0, "fl oz")
+        if "gallon" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
+            return _package(128.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 115 and "hydretain" in text:
+        if "granular" in text or "3-lb" in url or "3 lbs" in text:
+            return _package(3.0, "lb")
+        return _package(32.0, "fl oz")
+
+    if product_id == 116 and "revolution" in text:
+        return _package(320.0, "fl oz")
+
+    if product_id == 117 and ("mycoapply" in text or "mycorrhizal" in text):
+        return _package(20.0, "lb")
+
+    if product_id == 118 and "feature" in text:
+        return _package(2.5, "lb")
 
     return None
 
@@ -462,6 +651,24 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
     if "/topic/privacy" in text or "privacy policy" == title.strip().lower():
         return True
     if "/register" in text or title.strip().lower() in {"register", "home"}:
+        return True
+    if ".pdf" in urllib.parse.urlparse(url).path.lower() or title.strip().lower() == "product label":
+        return True
+    if "headway-g-fungicide" in text and product_id != 52:
+        return True
+    if "speedzone-broadleaf" in text and product_id != 19:
+        return True
+    if product_id == 75 and "bifenthrin-7-9f-select" in text:
+        return True
+    if product_id == 79 and ("2.7 lbs" in text or "2-7-lbs" in text or "venom-insecticide" in text):
+        return True
+    if product_id == 81 and "kontos" in text:
+        return True
+    if product_id == 116 and "hydr8" in text:
+        return True
+    if product_id == 71 and "acelepryn-4oz" in text:
+        return True
+    if product_id != 53 and "armada-50-wdg" in text:
         return True
     if product_id != 6 and ("gallery-75" in text or "gallery 75" in text or "isoxaben 75" in text):
         return True
