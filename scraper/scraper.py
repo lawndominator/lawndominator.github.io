@@ -271,17 +271,74 @@ def _offer_size_text(offer: dict) -> str:
     return " ".join(str(offer.get(key) or "") for key in ("title", "url")).lower()
 
 
+def _package(quantity: float, unit: str) -> dict:
+    if unit == "fl oz":
+        if quantity == 64:
+            label = "64 fl oz"
+        elif quantity % 128 == 0:
+            label = f"{quantity / 128:g} gal"
+        elif quantity > 128:
+            label = f"{quantity / 128:g} gal"
+        elif quantity == 32:
+            label = "32 fl oz"
+        else:
+            label = f"{quantity:g} fl oz"
+    else:
+        label = f"{quantity:g} {unit}"
+    return {
+        "package_quantity": quantity,
+        "package_unit": unit,
+        "package_label": label,
+    }
+
+
+def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
+    url = str(offer.get("url") or "").lower()
+    title = str(offer.get("title") or "").lower()
+    retailer = str(offer.get("retailer") or "").lower()
+    product_id = product.get("id")
+
+    prodiamine_text = f"{title} {url}"
+    if product_id == 1 and ("prodiamine" in prodiamine_text or "csi83013356" in url):
+        if retailer in {
+            "solutions",
+            "pestmanagementsupply",
+            "yardmastery",
+            "gci-turf",
+            "domyown",
+            "amazon",
+            "pestrong",
+        }:
+            return _package(5.0, "lb")
+
+    if product_id == 2:
+        if "dithiopyr-2l" in url:
+            return _package(128.0, "fl oz")
+        if "dithiopyr-2-ew" in url:
+            return _package(320.0, "fl oz")
+        if (
+            "dimension-2ew-herbicide" in url
+            or "dimension-2ew" in url
+            or "p-1494" in url
+            or "b0051gxxpw" in url
+        ):
+            return _package(64.0, "fl oz")
+
+    return None
+
+
 def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
+    manual = manual_package_size(product, offer)
+    if manual:
+        return manual
+
     text = _offer_size_text(offer)
     if not text:
         return None
 
     if re.search(r"\b(?:half|1/2)\s*-?\s*(?:gal|gallon)\b", text):
-        return {
-            "package_quantity": 64.0,
-            "package_unit": "fl oz",
-            "package_label": "0.5 gal",
-        }
+        return _package(64.0, "fl oz")
+
     liquid_match = re.search(
         r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(?:fl\.?\s*)?(oz|ounce|ounces|gal|gallon|gallons|qt|quart|quarts)\b",
         text,
@@ -291,36 +348,28 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
         unit = liquid_match.group(2)
         if unit.startswith("gal"):
             quantity = value * 128
-            label = f"{value:g} gal"
         elif unit.startswith("qt") or unit.startswith("quart"):
             quantity = value * 32
-            label = f"{value:g} qt"
         else:
             quantity = value
-            label = f"{value:g} fl oz"
-        return {
-            "package_quantity": quantity,
-            "package_unit": "fl oz",
-            "package_label": label,
-        }
+        return _package(quantity, "fl oz")
 
     if re.search(r"\b(?:gal|gallon)\b", text):
-        return {
-            "package_quantity": 128.0,
-            "package_unit": "fl oz",
-            "package_label": "1 gal",
-        }
+        return _package(128.0, "fl oz")
 
     dry_match = re.search(r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(lb|lbs|pound|pounds)\b", text)
     if dry_match:
         quantity = float(dry_match.group(1))
-        return {
-            "package_quantity": quantity,
-            "package_unit": "lb",
-            "package_label": f"{quantity:g} lb",
-        }
+        return _package(quantity, "lb")
 
     return None
+
+
+def is_known_wrong_product_source(product_id: int, url: str, title: str = "") -> bool:
+    text = f"{url} {title}".lower()
+    if product_id == 2 and ("alyce-clover" in text or "crabgrass-control-plus" in text):
+        return True
+    return False
 
 
 def apply_offer_package_metadata(results: list[dict]) -> None:
@@ -356,7 +405,10 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
 
             price = round(float(offer["price"]), 2)
             key = (offer.get("retailer"), price)
-            if is_google_url(offer.get("url", "")):
+            if is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", "")):
+                offer["excluded"] = True
+                offer["exclude_reason"] = "known wrong product source for this product"
+            elif is_google_url(offer.get("url", "")):
                 offer["excluded"] = True
                 offer["exclude_reason"] = "Google Shopping intermediary URL, merchant link not resolved"
             elif is_bad_product_url(offer.get("url", "")):
@@ -1023,6 +1075,8 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
         url = source.get("url", "")
         if not url or is_google_url(url) or is_bad_product_url(url):
             continue
+        if is_known_wrong_product_source(product_id, url, source.get("title", "")):
+            continue
         if source.get("verified") is False:
             continue
         source_type = source.get("source_type", "product")
@@ -1058,6 +1112,8 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
         url = source.get("url")
         if not url or is_google_url(url):
             continue
+        if is_known_wrong_product_source(product["id"], url, source.get("title", "")):
+            continue
         fallback_offer = _offer_from_verified_source(source)
         html = fetch_saved_source(url)
         if not html:
@@ -1073,6 +1129,9 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             retailer_name,
         )
         if offer:
+            if is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", "")):
+                log.info(f"  Saved source wrong product skipped: {(offer.get('title') or '')[:70]} @ {(offer.get('url') or '')[:80]}")
+                continue
             match_title = offer.get("title") or source.get("title") or ""
             if not source.get("manual_verified") and not _matches_product(product, match_title, url):
                 log.info(f"  Saved source mismatch skipped: {match_title[:70]} @ {url[:80]}")
@@ -1130,6 +1189,7 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
             if src.get("url")
             and not is_google_url(src.get("url", ""))
             and not is_bad_product_url(src.get("url", ""))
+            and not is_known_wrong_product_source(product["id"], src.get("url", ""), src.get("title", ""))
         }
 
         for offer in product.get("offers", []):
@@ -1138,6 +1198,8 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
                 continue
             normalized = canonical_product_url(url)
             if is_bad_product_url(normalized):
+                continue
+            if is_known_wrong_product_source(product["id"], normalized, offer.get("title", "")):
                 continue
             previous_source = existing.get(normalized, {})
             updated_source = {
@@ -1148,6 +1210,9 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
                 "image": offer.get("image"),
                 "last_seen": now_iso(),
             }
+            for key in ("package_quantity", "package_unit", "package_label", "price_per_unit"):
+                if key in offer:
+                    updated_source[key] = offer[key]
             for key in ("verified", "manual_verified", "price_verified", "source_type"):
                 if key == "price_verified" and updated_source["retailer"] == "amazon":
                     continue

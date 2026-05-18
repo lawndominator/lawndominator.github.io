@@ -346,7 +346,7 @@ class ScraperExtractionTests(unittest.TestCase):
             "price": 142.58,
         })
 
-        self.assertEqual(package["package_label"], "0.5 gal")
+        self.assertEqual(package["package_label"], "64 fl oz")
         self.assertEqual(package["package_quantity"], 64.0)
 
     def test_infers_decimal_gallon_package_size(self):
@@ -366,6 +366,74 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(package["package_label"], "1 gal")
         self.assertEqual(package["package_quantity"], 128.0)
+
+    def test_manual_prodiamine_pages_are_five_pounds(self):
+        package = scraper.infer_package_size(
+            {"id": 1},
+            {
+                "retailer": "solutions",
+                "title": "Prodiamine 65WDG",
+                "url": "https://www.solutionsstores.com/prodiamine-65-wdg-barricade-herbicide",
+            },
+        )
+
+        self.assertEqual(package["package_label"], "5 lb")
+        self.assertEqual(package["package_quantity"], 5.0)
+
+    def test_manual_prodiamine_sku_page_is_five_pounds(self):
+        package = scraper.infer_package_size(
+            {"id": 1},
+            {
+                "retailer": "pestmanagementsupply",
+                "title": "",
+                "url": "https://www.pestmanagementsupply.com/csi83013356.html",
+            },
+        )
+
+        self.assertEqual(package["package_label"], "5 lb")
+
+    def test_known_wrong_dimension_sources_are_rejected(self):
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                2,
+                "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/crabgrass-control-plus-0-0-7-with-0-37-prodiamine-herbicide",
+                "(4 Reviews)",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                2,
+                "https://www.seedworldusa.com/products/alyce-clover-seed",
+                "Alyce Clover",
+            )
+        )
+
+    def test_manual_dimension_urls_are_sized(self):
+        one_gal = scraper.infer_package_size(
+            {"id": 2},
+            {
+                "retailer": "chemicalwarehouse",
+                "url": "https://chemicalwarehouse.com/products/dithiopyr-2l?variant=39630369128511",
+            },
+        )
+        two_half_gal = scraper.infer_package_size(
+            {"id": 2},
+            {
+                "retailer": "chemicalwarehouse",
+                "url": "https://chemicalwarehouse.com/products/dithiopyr-2-ew?variant=41276310028351",
+            },
+        )
+        half_gal = scraper.infer_package_size(
+            {"id": 2},
+            {
+                "retailer": "domyown",
+                "url": "https://www.domyown.com/dimension-2ew-herbicide-p-1494.html",
+            },
+        )
+
+        self.assertEqual(one_gal["package_label"], "1 gal")
+        self.assertEqual(two_half_gal["package_label"], "2.5 gal")
+        self.assertEqual(half_gal["package_label"], "64 fl oz")
 
     def test_apply_offer_package_metadata_adds_price_per_unit(self):
         results = [{
