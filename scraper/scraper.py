@@ -297,9 +297,9 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     title = str(offer.get("title") or "").lower()
     retailer = str(offer.get("retailer") or "").lower()
     product_id = product.get("id")
+    text = f"{title} {url}"
 
-    prodiamine_text = f"{title} {url}"
-    if product_id == 1 and ("prodiamine" in prodiamine_text or "csi83013356" in url):
+    if product_id == 1 and ("prodiamine" in text or "csi83013356" in url):
         if retailer in {
             "solutions",
             "pestmanagementsupply",
@@ -323,6 +323,96 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
             or "b0051gxxpw" in url
         ):
             return _package(64.0, "fl oz")
+
+    if product_id == 3 and ("ronstar" in text or "oxadiazon-2g" in url or "oxadiazon 2g" in title):
+        return _package(50.0, "lb")
+
+    if product_id == 5 and "pendulum-2g" in url:
+        if "20-lbs" in url or "20 lb" in title or "20 lbs" in title:
+            return _package(20.0, "lb")
+        return _package(40.0, "lb")
+
+    if product_id == 6 and ("gallery" in text or "isoxaben" in text or "b004jx6qo8" in url):
+        return _package(1.0, "lb")
+
+    if product_id == 7 and ("specticle-g" in url or "specticle g" in title):
+        return _package(50.0, "lb")
+
+    if product_id == 9 and ("pendulum-aquacap" in url or "pendulum aquacap" in title or "pendulum aqua cap" in title):
+        if "15-gal" in url or "15 gal" in title:
+            return _package(1920.0, "fl oz")
+        return _package(320.0, "fl oz")
+
+    if product_id == 15 and "celsius" in text:
+        if "10oz" in text or "10 oz" in text or "10 ounce" in text:
+            return _package(10.0, "fl oz")
+        if retailer == "domyown" and (offer.get("price") or 0) and float(offer["price"]) > 100:
+            return _package(10.0, "fl oz")
+        return _package(0.226, "fl oz")
+
+    if product_id == 17 and ("drive-xlr8" in url or "drive xlr8" in title):
+        return _package(64.0, "fl oz")
+
+    if product_id == 19 and ("speedzone" in text or "speed-zone" in url):
+        if retailer in {"diypestcontrol"} or (offer.get("price") is not None and float(offer["price"]) < 70):
+            return _package(32.0, "fl oz")
+        return _package(128.0, "fl oz")
+
+    if product_id == 20 and (
+        "manor" in text
+        or "msm-turf" in url
+        or "msm turf" in title
+        or "amtide-msm" in url
+        or "b0cb96f141" in url
+    ):
+        return _package(8.0, "fl oz")
+
+    if product_id == 21 and ("tenacity" in text or "mesotrione" in text):
+        if "0-5-gallon" in url:
+            return _package(64.0, "fl oz")
+        return _package(8.0, "fl oz")
+
+    if product_id == 23 and ("dismiss" in text or "sulfentrazone" in text):
+        if "64" in text or (offer.get("price") is not None and float(offer["price"]) > 150):
+            return _package(64.0, "fl oz")
+        if "sulfentrazone-4l-select" in url or (offer.get("price") is not None and float(offer["price"]) < 75):
+            return _package(6.0, "fl oz")
+        return _package(6.0, "fl oz")
+
+    if product_id == 24 and ("pylex" in text or "topramezone" in text):
+        return _package(4.0, "fl oz")
+
+    if product_id == 25 and ("msma" in text or "target-6-plus" in url):
+        if "5 gallons" in title or "5 gallon" in title:
+            return _package(640.0, "fl oz")
+        return _package(320.0, "fl oz")
+
+    if product_id == 28 and ("revolver" in text or "foramsulfuron" in text):
+        if "87-oz" in url or "87 oz" in title:
+            return _package(87.0, "fl oz")
+        return _package(32.0, "fl oz")
+
+    if product_id == 29 and ("katana" in text or "flazasulfuron" in text):
+        return _package(5.0, "fl oz")
+
+    if product_id == 35 and ("primo" in text or "trinexapac" in text):
+        if "1-gallon" in url or "1 gallon" in title:
+            return _package(128.0, "fl oz")
+        if retailer == "domyown" and (offer.get("price") or 0) and float(offer["price"]) > 200:
+            return _package(128.0, "fl oz")
+        return _package(4.0, "fl oz")
+
+    if product_id == 36 and ("t-nex" in text or "tnex" in text or "trinexapac" in text):
+        if "2-5-gallon" in url or "2.5 gallon" in title or (offer.get("price") is not None and float(offer["price"]) > 250):
+            return _package(320.0, "fl oz")
+        return _package(128.0, "fl oz")
+
+    if product_id == 37 and ("anuew" in text or "prohexadione" in text):
+        if "2.5" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
+            return _package(320.0, "fl oz")
+        if "1.5" in text or "seed-barn" in url:
+            return _package(1.5, "lb")
+        return _package(64.0, "fl oz")
 
     return None
 
@@ -368,6 +458,12 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
 def is_known_wrong_product_source(product_id: int, url: str, title: str = "") -> bool:
     text = f"{url} {title}".lower()
     if "alyce-clover" in text:
+        return True
+    if "/topic/privacy" in text or "privacy policy" == title.strip().lower():
+        return True
+    if "/register" in text or title.strip().lower() in {"register", "home"}:
+        return True
+    if product_id != 6 and ("gallery-75" in text or "gallery 75" in text or "isoxaben 75" in text):
         return True
     if product_id == 2 and "crabgrass-control-plus" in text:
         return True

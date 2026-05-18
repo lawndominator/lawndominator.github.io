@@ -444,6 +444,61 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(two_half_gal["package_label"], "2.5 gal")
         self.assertEqual(half_gal["package_label"], "64 fl oz")
 
+    def test_manual_granular_pre_emergent_sizes_are_sized(self):
+        cases = [
+            (3, "domyown", "Ronstar G (Oxadiazon 2G)", "https://www.domyown.com/ronstar-herbicide-p-1496.html", "50 lb"),
+            (5, "domyown", "Pendulum 2G", "https://www.domyown.com/pendulum-2g-granular-herbicide-p-1498.html", "40 lb"),
+            (6, "amazon", "Gallery 75 DF Specialty Herbicide", "https://www.amazon.com/dp/B004JX6QO8", "1 lb"),
+            (7, "domyown", "Specticle G (Indaziflam)", "https://www.domyown.com/specticle-herbicide-p-4519.html", "50 lb"),
+        ]
+
+        for product_id, retailer, title, url, expected in cases:
+            with self.subTest(product_id=product_id, retailer=retailer):
+                package = scraper.infer_package_size(
+                    {"id": product_id},
+                    {"retailer": retailer, "title": title, "url": url},
+                )
+                self.assertEqual(package["package_label"], expected)
+
+    def test_manual_post_emergent_sizes_are_sized(self):
+        cases = [
+            (15, "lawnsynergy", "Celsius WG Herbicide", "https://lawnsynergy.com/products/celsius-wg-herbicide", 14.86, "0.226 fl oz"),
+            (17, "golfcourselawn", "Drive XLR8 Herbicide", "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer", 84.99, "64 fl oz"),
+            (20, "amazon", "0 Cart", "https://www.amazon.com/dp/B0CB96F141", 37.70, "8 fl oz"),
+            (21, "domyown", "Tenacity Turf Herbicide", "https://www.domyown.com/tenacity-herbicide-p-1877.html", 66.64, "8 fl oz"),
+            (23, "domyown", "Sulfentrazone 4L Select", "https://www.domyown.com/sulfentrazone-4l-select-p-17100.html", 60.48, "6 fl oz"),
+            (24, "domyown", "Pylex Herbicide", "https://www.domyown.com/pylex-herbicide-oz-p-23029.html", 416.00, "4 fl oz"),
+            (29, "domyown", "Katana Turf Herbicide", "https://www.domyown.com/katana-turf-herbicide-p-10316.html", 300.89, "5 fl oz"),
+        ]
+
+        for product_id, retailer, title, url, price, expected in cases:
+            with self.subTest(product_id=product_id, retailer=retailer):
+                package = scraper.infer_package_size(
+                    {"id": product_id},
+                    {"retailer": retailer, "title": title, "url": url, "price": price},
+                )
+                self.assertEqual(package["package_label"], expected)
+
+    def test_manual_pgr_sizes_are_sized(self):
+        cases = [
+            (35, "chemicalwarehouse", "Primo Maxx", "https://chemicalwarehouse.com/products/primo-maxx", 32.00, "4 fl oz"),
+            (36, "sunspot-supply", "T-Nex Plant Growth Regulator", "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-2-5-gallons", 362.00, "2.5 gal"),
+            (37, "sunspot-supply", "Anuew EZ", "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25", 813.96, "2.5 gal"),
+        ]
+
+        for product_id, retailer, title, url, price, expected in cases:
+            with self.subTest(product_id=product_id, retailer=retailer):
+                package = scraper.infer_package_size(
+                    {"id": product_id},
+                    {"retailer": retailer, "title": title, "url": url, "price": price},
+                )
+                self.assertEqual(package["package_label"], expected)
+
+    def test_known_wrong_non_product_pages_are_rejected(self):
+        self.assertTrue(scraper.is_known_wrong_product_source(9, "https://arborchem.com/topic/privacy", "Privacy Policy"))
+        self.assertTrue(scraper.is_known_wrong_product_source(17, "https://www.forestrydistributing.com/register", "Register"))
+        self.assertTrue(scraper.is_known_wrong_product_source(25, "https://www.ourprosolutions.com/product/gallery-75-df-specialty-herbicide-isoxaben-75", "Gallery 75 DF Specialty Herbicide Isoxaben 75% $ 159.49"))
+
     def test_apply_offer_package_metadata_adds_price_per_unit(self):
         results = [{
             "id": 5,
