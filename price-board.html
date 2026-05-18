@@ -215,6 +215,56 @@
         text-align: center;
       }
 
+      .tile-size {
+        margin: 0.12rem 0 0.3rem;
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .offer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.08rem;
+        flex-shrink: 0;
+      }
+
+      .ppu {
+        font-size: 0.63rem;
+        font-weight: 700;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+
+      .size-pills {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin: 0.75rem 0 0;
+      }
+
+      .size-pill {
+        padding: 0.3rem 0.8rem;
+        border: 1px solid var(--line);
+        border-radius: 2rem;
+        background: transparent;
+        color: var(--ink-soft);
+        font: inherit;
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: border-color 0.13s, color 0.13s, background 0.13s;
+      }
+
+      .size-pill.active,
+      .size-pill:hover {
+        border-color: var(--glow);
+        color: var(--glow);
+        background: oklch(0.2 0.05 130 / 0.28);
+      }
+
       @media (max-width: 760px) {
         .board-hero,
         .board-controls {
@@ -284,6 +334,12 @@
           </select>
         </div>
 
+        <div class="size-pills" role="group" aria-label="Filter by size">
+          <button class="size-pill active" data-tier="all">All sizes</button>
+          <button class="size-pill" data-tier="consumer">Consumer</button>
+          <button class="size-pill" data-tier="bulk">Bulk / Pro</button>
+        </div>
+
         <p class="board-meta" id="board-meta">Loading current price feed.</p>
         <section class="board-grid" id="board-grid" aria-live="polite">
           <p class="board-status">Loading price board.</p>
@@ -301,9 +357,12 @@
         "soil-amendment": "Soil amendment",
       };
 
+      const UNIT_DISPLAY = { lb: "lb", oz: "oz", fl_oz: "fl oz", gal: "gal", qt: "qt" };
+
       let products = [];
       let query = "";
       let category = "all";
+      let sizeTier = "all";
 
       loadBoard();
 
@@ -315,7 +374,7 @@
           products = data.products || [];
           updateStats(data);
           document.getElementById("board-meta").textContent =
-            `${products.length} products refreshed ${timeSince(data.generated_at)}. Showing the top three eligible priced offers per product.`;
+            `${products.length} products refreshed ${timeSince(data.generated_at)}. Showing top three offers per size.`;
           renderBoard();
         } catch (error) {
           document.getElementById("board-grid").innerHTML = `<p class="board-status">Price feed unavailable. Refresh in a moment.</p>`;
@@ -331,72 +390,117 @@
         document.getElementById("stat-offers").textContent = pricedOffers.length;
       }
 
+      function productVariants(product) {
+        const groups = {};
+        for (const offer of product.offers || []) {
+          if (offer.price == null || offer.excluded || isGoogleUrl(offer.url)) continue;
+          const key = offer.quantity != null && offer.unit
+            ? `${offer.quantity}_${offer.unit}`
+            : "__unknown__";
+          if (!groups[key]) groups[key] = { quantity: offer.quantity ?? null, unit: offer.unit ?? null, offers: [] };
+          groups[key].offers.push(offer);
+        }
+        return Object.values(groups);
+      }
+
+      function matchesSizeTier(variant, tier) {
+        if (tier === "all") return true;
+        const { quantity, unit } = variant;
+        if (!quantity || !unit) return true;
+        const isConsumer =
+          (unit === "lb" && quantity <= 10) ||
+          (unit === "fl_oz" && quantity <= 32) ||
+          (unit === "oz" && quantity <= 16);
+        return tier === "consumer" ? isConsumer : !isConsumer;
+      }
+
+      function variantMatchesQuery(product, variant, q) {
+        const sizeStr = variant.quantity != null && variant.unit ? formatSize(variant.quantity, variant.unit) : "";
+        const text = [
+          product.name,
+          product.active_ingredient,
+          ...(product.alt_names || []),
+          sizeStr,
+          ...variant.offers.map(o => o.retailer_name || o.retailer),
+        ].join(" ").toLowerCase();
+        return text.includes(q);
+      }
+
+      function formatSize(quantity, unit) {
+        if (unit === "fl_oz") {
+          if (quantity >= 320) return "2.5 gal";
+          if (quantity >= 256) return "2 gal";
+          if (quantity >= 128) return "1 gal";
+          if (quantity >= 64) return "½ gal";
+          if (quantity >= 32) return "1 qt";
+          return quantity + " fl oz";
+        }
+        return quantity + " " + (UNIT_DISPLAY[unit] || unit);
+      }
+
+      function pricePerUnit(price, quantity, unit) {
+        if (!quantity || !unit) return null;
+        return "$" + (price / quantity).toFixed(2) + "/" + (UNIT_DISPLAY[unit] || unit);
+      }
+
       function renderBoard() {
         const grid = document.getElementById("board-grid");
-        const visible = products.filter(product => {
-          const top = topOffers(product);
-          const text = [
-            product.name,
-            product.category,
-            product.active_ingredient,
-            ...(product.alt_names || []),
-            ...top.map(offer => offer.retailer_name),
-          ].join(" ").toLowerCase();
-          return (category === "all" || product.category === category) && (!query || text.includes(query));
-        });
+        const allVariants = [];
 
-        if (!visible.length) {
+        for (const product of products) {
+          if (category !== "all" && product.category !== category) continue;
+          for (const variant of productVariants(product)) {
+            if (!matchesSizeTier(variant, sizeTier)) continue;
+            if (query && !variantMatchesQuery(product, variant, query)) continue;
+            allVariants.push({ product, variant });
+          }
+        }
+
+        if (!allVariants.length) {
           grid.innerHTML = `<p class="no-board-results">No products match the current filters.</p>`;
           return;
         }
 
-        grid.innerHTML = visible.map(renderProduct).join("");
+        grid.innerHTML = allVariants.map(({ product, variant }) => renderVariant(product, variant)).join("");
       }
 
-      function renderProduct(product) {
-        const offers = topOffers(product);
+      function renderVariant(product, variant) {
+        const offers = variant.offers.slice().sort((a, b) => Number(a.price) - Number(b.price)).slice(0, 3);
+        const hasSize = variant.quantity != null && variant.unit;
+        const sizeLabel = hasSize ? formatSize(variant.quantity, variant.unit) : null;
         const image = productImage(product, offers);
         const media = image
           ? `<img src="${escAttr(image)}" alt="${escAttr(product.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(fallbackMedia('${escAttr(initials(product.name))}'))" />`
           : `<span class="product-fallback">${escHtml(initials(product.name))}</span>`;
+
         const offerHtml = offers.length
-          ? offers.map((offer, index) => `
-              <a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
-                <span>${index + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
-                <strong>$${Number(offer.price).toFixed(2)}</strong>
-              </a>
-            `).join("")
+          ? offers.map((offer, i) => {
+              const ppu = hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
+              return `<a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
+                <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
+                <span class="offer-right"><strong>$${Number(offer.price).toFixed(2)}</strong>${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
+              </a>`;
+            }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;
 
-        return `
-          <article class="price-tile">
-            <div class="product-media">${media}</div>
-            <div class="tile-body">
-              <p class="tile-kicker">${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
-              <h2 class="tile-title">${escHtml(product.name)}</h2>
-              <div class="offer-stack">${offerHtml}</div>
-            </div>
-          </article>
-        `;
-      }
-
-      function topOffers(product) {
-        return (product.offers || [])
-          .filter(offer => offer.price != null && !offer.excluded && !isGoogleUrl(offer.url))
-          .sort((a, b) => Number(a.price) - Number(b.price))
-          .slice(0, 3);
+        return `<article class="price-tile">
+          <div class="product-media">${media}</div>
+          <div class="tile-body">
+            <p class="tile-kicker">${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
+            ${sizeLabel ? `<p class="tile-size">${escHtml(sizeLabel)}</p>` : ""}
+            <h2 class="tile-title">${escHtml(product.name)}</h2>
+            <div class="offer-stack">${offerHtml}</div>
+          </div>
+        </article>`;
       }
 
       function isGoogleUrl(url) {
-        try {
-          return new URL(url).hostname.endsWith("google.com");
-        } catch {
-          return false;
-        }
+        try { return new URL(url).hostname.endsWith("google.com"); }
+        catch { return false; }
       }
 
       function productImage(product, offers) {
-        const imageOffer = offers.find(offer => offer.image) || (product.offers || []).find(offer => offer.image);
+        const imageOffer = offers.find(o => o.image) || (product.offers || []).find(o => o.image);
         return imageOffer ? imageOffer.image : "";
       }
 
@@ -413,7 +517,7 @@
           .split(/\s+/)
           .filter(Boolean)
           .slice(0, 2)
-          .map(part => part[0])
+          .map(p => p[0])
           .join("")
           .toUpperCase();
       }
@@ -427,26 +531,29 @@
         return `${mins}m ago`;
       }
 
-      function escHtml(value) {
-        return String(value ?? "")
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
+      function escHtml(v) {
+        return String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
       }
 
-      function escAttr(value) {
-        return escHtml(value).replace(/'/g, "&#39;");
-      }
+      function escAttr(v) { return escHtml(v).replace(/'/g, "&#39;"); }
 
-      document.getElementById("board-search").addEventListener("input", event => {
-        query = event.target.value.trim().toLowerCase();
+      document.getElementById("board-search").addEventListener("input", e => {
+        query = e.target.value.trim().toLowerCase();
         renderBoard();
       });
 
-      document.getElementById("board-category").addEventListener("change", event => {
-        category = event.target.value;
+      document.getElementById("board-category").addEventListener("change", e => {
+        category = e.target.value;
         renderBoard();
+      });
+
+      document.querySelectorAll(".size-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".size-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          sizeTier = btn.dataset.tier;
+          renderBoard();
+        });
       });
     </script>
   </body>
