@@ -267,6 +267,73 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
     return priced[0] if priced else None
 
 
+def _offer_size_text(offer: dict) -> str:
+    return " ".join(str(offer.get(key) or "") for key in ("title", "url")).lower()
+
+
+def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
+    text = _offer_size_text(offer)
+    if not text:
+        return None
+
+    if re.search(r"\b(?:half|1/2)\s*-?\s*(?:gal|gallon)\b", text):
+        return {
+            "package_quantity": 64.0,
+            "package_unit": "fl oz",
+            "package_label": "0.5 gal",
+        }
+    liquid_match = re.search(
+        r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(?:fl\.?\s*)?(oz|ounce|ounces|gal|gallon|gallons|qt|quart|quarts)\b",
+        text,
+    )
+    if liquid_match:
+        value = float(liquid_match.group(1))
+        unit = liquid_match.group(2)
+        if unit.startswith("gal"):
+            quantity = value * 128
+            label = f"{value:g} gal"
+        elif unit.startswith("qt") or unit.startswith("quart"):
+            quantity = value * 32
+            label = f"{value:g} qt"
+        else:
+            quantity = value
+            label = f"{value:g} fl oz"
+        return {
+            "package_quantity": quantity,
+            "package_unit": "fl oz",
+            "package_label": label,
+        }
+
+    if re.search(r"\b(?:gal|gallon)\b", text):
+        return {
+            "package_quantity": 128.0,
+            "package_unit": "fl oz",
+            "package_label": "1 gal",
+        }
+
+    dry_match = re.search(r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(lb|lbs|pound|pounds)\b", text)
+    if dry_match:
+        quantity = float(dry_match.group(1))
+        return {
+            "package_quantity": quantity,
+            "package_unit": "lb",
+            "package_label": f"{quantity:g} lb",
+        }
+
+    return None
+
+
+def apply_offer_package_metadata(results: list[dict]) -> None:
+    for product in results:
+        for offer in product.get("offers", []):
+            package = infer_package_size(product, offer)
+            if not package:
+                continue
+            offer.update(package)
+            if offer.get("price") is not None and package["package_quantity"]:
+                offer["price_per_unit"] = round(float(offer["price"]) / float(package["package_quantity"]), 2)
+
+
 def apply_offer_quality_filters(results: list[dict]) -> None:
     repeated_prices: dict[tuple, set] = {}
     for product in results:
@@ -1014,6 +1081,8 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
                 offer["url"] = append_affiliate(url, retailer)
                 if source.get("title"):
                     offer["title"] = source["title"]
+            elif source.get("title") and not offer.get("title"):
+                offer["title"] = source["title"]
             offer["source"] = "saved_product_source"
             offer["image"] = _stored_image_url(source.get("image")) or offer.get("image")
             add_offer(offers, offer)
@@ -1463,6 +1532,7 @@ def run():
 
         _browser.close()
 
+    apply_offer_package_metadata(results)
     apply_offer_quality_filters(results)
     results = preserve_last_good_products(results, stale_map)
     source_map = update_product_sources(source_map, results)

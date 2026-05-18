@@ -331,6 +331,58 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(best["retailer"], "real")
 
+    def test_infers_dry_package_size_from_offer_url(self):
+        package = scraper.infer_package_size({}, {
+            "url": "https://seedbarn.com/products/pendulum-2g-herbicide-40-lbs",
+            "price": 115.95,
+        })
+
+        self.assertEqual(package["package_label"], "40 lb")
+        self.assertEqual(package["package_unit"], "lb")
+
+    def test_infers_liquid_package_size_from_offer_title(self):
+        package = scraper.infer_package_size({}, {
+            "title": "Dimension 2EW Herbicide - 0.5 Half Gallon (64 ounces)",
+            "price": 142.58,
+        })
+
+        self.assertEqual(package["package_label"], "0.5 gal")
+        self.assertEqual(package["package_quantity"], 64.0)
+
+    def test_infers_decimal_gallon_package_size(self):
+        package = scraper.infer_package_size({}, {
+            "title": "Dimension 2EW Dithiopyr 2.5 Gallon Size",
+            "price": 509.95,
+        })
+
+        self.assertEqual(package["package_label"], "2.5 gal")
+        self.assertEqual(package["package_quantity"], 320.0)
+
+    def test_infers_single_gallon_package_size_without_number(self):
+        package = scraper.infer_package_size({}, {
+            "url": "https://store.example/products/specticle-flo-herbicide-gallon",
+            "price": 2151.50,
+        })
+
+        self.assertEqual(package["package_label"], "1 gal")
+        self.assertEqual(package["package_quantity"], 128.0)
+
+    def test_apply_offer_package_metadata_adds_price_per_unit(self):
+        results = [{
+            "id": 5,
+            "offers": [{
+                "title": "Pendulum 2G Herbicide - 20 Lbs.",
+                "price": 75.75,
+                "url": "https://store.example/pendulum-2g-20-lbs",
+            }],
+        }]
+
+        scraper.apply_offer_package_metadata(results)
+
+        offer = results[0]["offers"][0]
+        self.assertEqual(offer["package_label"], "20 lb")
+        self.assertEqual(offer["price_per_unit"], 3.79)
+
     def test_quality_filter_excludes_repeated_flat_prices(self):
         results = []
         for i in range(scraper.REPEATED_PRICE_PRODUCT_LIMIT):
