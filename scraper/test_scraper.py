@@ -528,6 +528,13 @@ class ScraperExtractionTests(unittest.TestCase):
                 "Kontos SC",
             )
         )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                23,
+                "https://www.ourprosolutions.com/product/basagran-t-o-herbicide-1-gallon",
+                "Basagran T/O Herbicide. 1 Gallon $ 98.99",
+            )
+        )
 
     def test_manual_remaining_product_sizes_are_sized(self):
         cases = [

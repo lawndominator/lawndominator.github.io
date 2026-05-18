@@ -658,6 +658,8 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
         return True
     if "speedzone-broadleaf" in text and product_id != 19:
         return True
+    if "basagran" in text:
+        return True
     if product_id == 75 and "bifenthrin-7-9f-select" in text:
         return True
     if product_id == 79 and ("2.7 lbs" in text or "2-7-lbs" in text or "venom-insecticide" in text):
