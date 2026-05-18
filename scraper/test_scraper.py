@@ -408,6 +408,15 @@ class ScraperExtractionTests(unittest.TestCase):
             )
         )
 
+    def test_alyce_clover_source_is_globally_rejected(self):
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                8,
+                "https://www.seedworldusa.com/products/alyce-clover-seed",
+                "Alyce Clover",
+            )
+        )
+
     def test_manual_dimension_urls_are_sized(self):
         one_gal = scraper.infer_package_size(
             {"id": 2},

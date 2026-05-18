@@ -367,7 +367,9 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
 
 def is_known_wrong_product_source(product_id: int, url: str, title: str = "") -> bool:
     text = f"{url} {title}".lower()
-    if product_id == 2 and ("alyce-clover" in text or "crabgrass-control-plus" in text):
+    if "alyce-clover" in text:
+        return True
+    if product_id == 2 and "crabgrass-control-plus" in text:
         return True
     return False
 
