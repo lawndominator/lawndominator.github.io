@@ -269,9 +269,9 @@ h3 {
 
 h1 {
   margin-top: 1rem;
-  max-width: 13ch;
-  font-size: clamp(2.75rem, 4.2vw, 4.4rem);
-  line-height: 1.04;
+  max-width: 15ch;
+  font-size: clamp(2.45rem, 3.35vw, 3.65rem);
+  line-height: 1.06;
 }
 
 h1 span {
@@ -865,8 +865,8 @@ h3 {
   }
 
   h1 {
-    max-width: 11ch;
-    font-size: clamp(2.25rem, 10.5vw, 3.25rem);
+    max-width: 12ch;
+    font-size: clamp(2rem, 8.8vw, 2.85rem);
   }
 
   .hero__actions,
