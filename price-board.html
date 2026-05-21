@@ -125,6 +125,24 @@
         margin: 0 0 1.2rem;
       }
 
+      .affiliate-note {
+        border: 1px solid oklch(0.36 0.035 118 / 0.62);
+        border-radius: 0.65rem;
+        background: oklch(0.14 0.022 120 / 0.72);
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+        line-height: 1.55;
+        margin: 0 0 1.2rem;
+        padding: 0.8rem 0.95rem;
+      }
+
+      .affiliate-note a {
+        color: var(--glow);
+        font-weight: 850;
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+
       .board-grid {
         display: grid;
         gap: 1.1rem;
@@ -447,6 +465,10 @@
         </div>
 
         <p class="board-meta" id="board-meta">Loading current price feed.</p>
+        <p class="affiliate-note">
+          As an Amazon Associate I earn from qualifying purchases. Some price-board links are affiliate links, including this
+          <a href="https://www.amazon.com/dp/B015BSNZP2?tag=lawndominator-20" target="_blank" rel="nofollow sponsored noopener">Amazon product link</a>.
+        </p>
         <section class="board-grid" id="board-grid" aria-live="polite">
           <p class="board-status">Loading price board.</p>
         </section>
