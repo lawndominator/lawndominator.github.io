@@ -18,6 +18,7 @@ GitHub Secrets:
 """
 
 import json
+import copy
 import os
 import re
 import sys
@@ -1533,6 +1534,148 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
     return source_map
 
 
+def _valid_source_reason(product: dict, source: dict) -> Optional[str]:
+    url = source.get("url", "")
+    if not url:
+        return "missing_url"
+    if is_google_url(url):
+        return "google_or_search_url"
+    if is_bad_product_url(url):
+        return "not_product_purchase_page"
+    if is_known_wrong_product_source(product["id"], url, source.get("title", "")):
+        return "known_wrong_product"
+    if source.get("verified") is False:
+        return "source_marked_unverified"
+    if source.get("source_type", "product") != "product":
+        return "not_product_source"
+    return None
+
+
+def _offer_health_reason(product: dict, offer: dict) -> str:
+    if offer.get("excluded"):
+        return offer.get("exclude_reason") or "excluded"
+    if offer.get("price") is None:
+        return "no_price"
+    if is_google_url(offer.get("url", "")):
+        return "google_or_search_url"
+    if is_bad_product_url(offer.get("url", "")):
+        return "not_product_purchase_page"
+    try:
+        if float(offer["price"]) < min_price_for_product(product):
+            return f"below ${min_price_for_product(product):.2f} minimum for this category"
+    except (TypeError, ValueError):
+        return "invalid_price"
+    return "included"
+
+
+def build_source_health(catalog_products: list[dict], source_map: dict, results: list[dict], generated_at: str) -> dict:
+    result_by_id = {str(product["id"]): product for product in results}
+    source_map_for_selection = copy.deepcopy(source_map)
+    product_reports = []
+    totals = {
+        "sources": 0,
+        "manual_verified_sources": 0,
+        "included_sources": 0,
+        "not_included_sources": 0,
+        "invalid_sources": 0,
+    }
+    reason_counts: dict[str, int] = {}
+
+    for product in catalog_products:
+        product_id = str(product["id"])
+        result = result_by_id.get(product_id, {})
+        selected_urls = {
+            canonical_product_url(source.get("url", ""))
+            for source in _source_entries(source_map_for_selection, product["id"])
+            if source.get("url")
+        }
+
+        offers_by_url: dict[str, list[dict]] = {}
+        for offer in result.get("offers", []):
+            url = offer.get("url", "")
+            if not url:
+                continue
+            offers_by_url.setdefault(canonical_product_url(url), []).append(offer)
+
+        source_reports = []
+        product_totals = {
+            "sources": 0,
+            "included_sources": 0,
+            "not_included_sources": 0,
+            "invalid_sources": 0,
+        }
+
+        for source in source_map.get("products", {}).get(product_id, []):
+            totals["sources"] += 1
+            product_totals["sources"] += 1
+            if source.get("manual_verified"):
+                totals["manual_verified_sources"] += 1
+
+            url = source.get("url", "")
+            normalized_url = canonical_product_url(url) if url else ""
+            invalid_reason = _valid_source_reason(product, source)
+            matched_offers = offers_by_url.get(normalized_url, [])
+
+            if invalid_reason:
+                status = "invalid"
+                reason = invalid_reason
+                offer = None
+                totals["invalid_sources"] += 1
+                product_totals["invalid_sources"] += 1
+            elif matched_offers:
+                offer = min(
+                    matched_offers,
+                    key=lambda item: float(item["price"]) if item.get("price") is not None else float("inf"),
+                )
+                reason = _offer_health_reason(product, offer)
+                status = "included" if reason == "included" else "not_included"
+            elif normalized_url not in selected_urls:
+                status = "not_included"
+                reason = "not_checked_saved_source_limit"
+                offer = None
+            else:
+                status = "not_included"
+                reason = "no_extracted_offer"
+                offer = None
+
+            if status == "included":
+                totals["included_sources"] += 1
+                product_totals["included_sources"] += 1
+            elif status != "invalid":
+                totals["not_included_sources"] += 1
+                product_totals["not_included_sources"] += 1
+
+            reason_counts[reason] = reason_counts.get(reason, 0) + 1
+            source_reports.append({
+                "url": url,
+                "retailer": source.get("retailer") or retailer_key(url),
+                "retailer_name": source.get("retailer_name") or retailer_name_from_url(url),
+                "manual_verified": bool(source.get("manual_verified")),
+                "status": status,
+                "reason": reason,
+                "price": offer.get("price") if offer else None,
+                "offer_url": offer.get("url") if offer else None,
+            })
+
+        product_reports.append({
+            "id": product["id"],
+            "slug": product.get("slug"),
+            "name": product.get("name"),
+            "category": product.get("category"),
+            **product_totals,
+            "sources": source_reports,
+        })
+
+    return {
+        "schema_version": "1.0",
+        "generated_at": generated_at,
+        "saved_source_limit": SAVED_SOURCE_LIMIT,
+        "totals": totals,
+        "reason_counts": dict(sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))),
+        "products": product_reports,
+    }
+
+
 def scrape_domyown(product: dict) -> Optional[dict]:
     queries = search_variants(product, base_key="domyown_query")
     for query in queries:
@@ -1797,6 +1940,7 @@ def run():
     products_path = os.path.join(repo_root, "products.json")
     prices_path   = os.path.join(repo_root, "prices.json")
     alerts_path   = os.path.join(repo_root, "price-alerts.json")
+    health_path   = os.path.join(repo_root, "source-health.json")
     sources_path  = os.path.join(repo_root, "product_sources.json")
 
     with open(products_path) as f:
@@ -1917,11 +2061,14 @@ def run():
         "products":       results,
     }
     alerts_output = build_price_alerts(stale_map, results, generated_at)
+    health_output = build_source_health(catalog["products"], source_map, results, generated_at)
 
     with open(prices_path, "w") as f:
         json.dump(output, f, indent=2)
     with open(alerts_path, "w") as f:
         json.dump(alerts_output, f, indent=2)
+    with open(health_path, "w") as f:
+        json.dump(health_output, f, indent=2)
     with open(sources_path, "w") as f:
         json.dump(source_map, f, indent=2)
 
@@ -1929,6 +2076,7 @@ def run():
     log.info(f"\nDone. {found}/{len(results)} products have a best price.")
     log.info(f"Written to {prices_path}")
     log.info(f"Written to {alerts_path} ({alerts_output['alert_count']} alerts)")
+    log.info(f"Written to {health_path}")
     log.info(f"Written to {sources_path}")
 
     min_priced = int(os.getenv("MIN_PRICED_PRODUCTS", "1"))

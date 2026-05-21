@@ -785,6 +785,54 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertIsNone(offer)
 
+    def test_build_source_health_reports_source_statuses(self):
+        previous_limit = scraper.SAVED_SOURCE_LIMIT
+        scraper.SAVED_SOURCE_LIMIT = 1
+        try:
+            catalog = [{
+                "id": 1,
+                "slug": "prodiamine-65wdg",
+                "name": "Prodiamine 65WDG",
+                "category": "pre-emergent",
+            }]
+            source_map = {
+                "products": {
+                    "1": [
+                        {
+                            "url": "https://merchant.example/prodiamine",
+                            "retailer": "merchant",
+                            "retailer_name": "Merchant",
+                            "manual_verified": True,
+                        },
+                        {
+                            "url": "https://other.example/prodiamine",
+                            "retailer": "other",
+                            "retailer_name": "Other",
+                            "manual_verified": True,
+                        },
+                    ]
+                }
+            }
+            results = [{
+                "id": 1,
+                "offers": [{
+                    "url": "https://merchant.example/prodiamine",
+                    "retailer": "merchant",
+                    "retailer_name": "Merchant",
+                    "price": 64.99,
+                }],
+            }]
+
+            health = scraper.build_source_health(catalog, source_map, results, "2026-05-21T00:00:00+00:00")
+
+            self.assertEqual(health["totals"]["sources"], 2)
+            self.assertEqual(health["totals"]["included_sources"], 1)
+            self.assertEqual(health["totals"]["not_included_sources"], 1)
+            self.assertEqual(health["reason_counts"]["included"], 1)
+            self.assertEqual(health["reason_counts"]["not_checked_saved_source_limit"], 1)
+        finally:
+            scraper.SAVED_SOURCE_LIMIT = previous_limit
+
     def test_keepa_current_price_uses_lowest_current_offer(self):
         product = {"stats": {"current": [3099, 3299, -1, -1, -1, -1, -1, -1, -1, -1, 3199]}}
 

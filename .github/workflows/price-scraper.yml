@@ -98,7 +98,7 @@ jobs:
           git config user.name  "price-bot[bot]"
           git config user.email "price-bot@lawndominators.com"
           git pull --rebase --autostash origin main
-          git add prices.json price-alerts.json product_sources.json
+          git add prices.json price-alerts.json source-health.json product_sources.json
           # Only commit if prices.json actually changed
           git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
           git push
