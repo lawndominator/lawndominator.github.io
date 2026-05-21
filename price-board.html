@@ -73,10 +73,38 @@
 
       .board-controls {
         display: grid;
-        grid-template-columns: minmax(16rem, 1fr) minmax(12rem, 18rem);
+        grid-template-columns: minmax(16rem, 1fr) minmax(12rem, 18rem) minmax(12rem, 18rem);
         gap: 0.8rem;
         align-items: center;
         margin: 1.25rem 0 1rem;
+      }
+
+      .board-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.35rem 0 0.35rem;
+      }
+
+      .board-tab {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: oklch(0.14 0.025 120 / 0.78);
+        color: var(--ink-soft);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.86rem;
+        font-weight: 850;
+        min-height: 2.5rem;
+        padding: 0 1rem;
+        transition: background 0.14s, border-color 0.14s, color 0.14s;
+      }
+
+      .board-tab.active,
+      .board-tab:hover {
+        border-color: oklch(0.68 0.14 132 / 0.75);
+        background: oklch(0.22 0.055 128 / 0.78);
+        color: var(--ink);
       }
 
       .board-input,
@@ -99,8 +127,45 @@
 
       .board-grid {
         display: grid;
+        gap: 1.1rem;
+      }
+
+      .product-group {
+        border: 1px solid oklch(0.36 0.035 118 / 0.62);
+        border-radius: 0.85rem;
+        background: oklch(0.13 0.018 120 / 0.52);
+        overflow: hidden;
+      }
+
+      .product-group__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid oklch(0.34 0.03 118 / 0.5);
+        padding: 0.85rem 1rem;
+      }
+
+      .product-group__header h2 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+
+      .product-group__header span {
+        color: var(--ink-soft);
+        font-size: 0.74rem;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .product-group__grid {
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        gap: 0.9rem;
+        gap: 0.75rem;
+        padding: 0.75rem;
       }
 
       .price-tile {
@@ -163,35 +228,35 @@
         line-height: 1.32;
       }
 
+      .product-link {
+        border: 1px solid oklch(0.42 0.045 118 / 0.7);
+        border-radius: 999px;
+        background: oklch(0.2 0.035 125 / 0.7);
+        color: var(--ink-soft);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.68rem;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.58rem;
+        padding: 0.28rem 0.55rem;
+        text-transform: uppercase;
+      }
+
+      .product-link:hover,
+      .product-link.copied {
+        border-color: var(--glow);
+        color: var(--glow);
+      }
+
+      .price-tile.is-target {
+        border-color: oklch(0.72 0.16 132 / 0.95);
+        box-shadow: 0 0 0 2px oklch(0.72 0.16 132 / 0.24), var(--shadow-sm);
+      }
+
       .offer-stack {
         display: grid;
         gap: 0.45rem;
-      }
-
-      .size-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-        gap: 0.55rem;
-      }
-
-      .size-panel {
-        display: grid;
-        align-content: start;
-        gap: 0.45rem;
-        min-width: 0;
-        border: 1px solid oklch(0.33 0.035 118 / 0.55);
-        border-radius: 0.55rem;
-        background: oklch(0.12 0.018 120 / 0.62);
-        padding: 0.55rem;
-      }
-
-      .size-heading {
-        display: block;
-        margin: 0;
-        color: var(--glow);
-        font-size: 0.72rem;
-        font-weight: 900;
-        text-transform: uppercase;
       }
 
       .top-offer {
@@ -227,18 +292,6 @@
         white-space: nowrap;
       }
 
-      .offer-price {
-        display: grid;
-        justify-items: end;
-        gap: 0.1rem;
-      }
-
-      .offer-unit {
-        color: var(--ink-soft);
-        font-size: 0.66rem;
-        font-weight: 700;
-      }
-
       .empty-offers {
         margin: 0;
         color: var(--ink-soft);
@@ -251,6 +304,56 @@
         padding: 3rem 1rem;
         color: var(--ink-soft);
         text-align: center;
+      }
+
+      .tile-size {
+        margin: 0.12rem 0 0.3rem;
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .offer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.08rem;
+        flex-shrink: 0;
+      }
+
+      .ppu {
+        font-size: 0.63rem;
+        font-weight: 700;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+
+      .size-pills {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin: 0.75rem 0 0;
+      }
+
+      .size-pill {
+        padding: 0.3rem 0.8rem;
+        border: 1px solid var(--line);
+        border-radius: 2rem;
+        background: transparent;
+        color: var(--ink-soft);
+        font: inherit;
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: border-color 0.13s, color 0.13s, background 0.13s;
+      }
+
+      .size-pill.active,
+      .size-pill:hover {
+        border-color: var(--glow);
+        color: var(--glow);
+        background: oklch(0.2 0.05 130 / 0.28);
       }
 
       @media (max-width: 760px) {
@@ -309,8 +412,14 @@
           </div>
         </section>
 
+        <div class="board-tabs" role="tablist" aria-label="Group price board">
+          <button class="board-tab active" type="button" data-view="category" role="tab" aria-selected="true">Product types</button>
+          <button class="board-tab" type="button" data-view="brand" role="tab" aria-selected="false">Brands</button>
+        </div>
+
         <div class="board-controls">
-          <input class="board-input" id="board-search" type="search" placeholder="Search products, active ingredients, stores" aria-label="Search price board" />
+          <input class="board-input" id="board-search" type="search" list="board-suggestions" placeholder="Search product, brand, ingredient, store" aria-label="Search price board" autocomplete="off" />
+          <datalist id="board-suggestions"></datalist>
           <select class="board-select" id="board-category" aria-label="Filter by category">
             <option value="all">All categories</option>
             <option value="pre-emergent">Pre-emergent</option>
@@ -318,8 +427,23 @@
             <option value="pgr">PGRs</option>
             <option value="fungicide">Fungicides</option>
             <option value="insecticide">Insecticides</option>
-            <option value="soil-amendment">Soil and specialty</option>
+            <option value="fertilizer">Fertilizers</option>
+            <option value="micronutrient">Micros / iron</option>
+            <option value="macronutrient">Macros</option>
+            <option value="biostimulant">Biostimulants</option>
+            <option value="soil-amendment">Soil amendments</option>
+            <option value="moisture-manager">Moisture managers</option>
+            <option value="surfactant">Surfactants</option>
           </select>
+          <select class="board-select" id="board-brand" aria-label="Filter by brand">
+            <option value="all">All brands</option>
+          </select>
+        </div>
+
+        <div class="size-pills" role="group" aria-label="Filter by size">
+          <button class="size-pill active" data-tier="all">All sizes</button>
+          <button class="size-pill" data-tier="consumer">Consumer</button>
+          <button class="size-pill" data-tier="bulk">Bulk / Pro</button>
         </div>
 
         <p class="board-meta" id="board-meta">Loading current price feed.</p>
@@ -336,159 +460,334 @@
         pgr: "PGR",
         fungicide: "Fungicide",
         insecticide: "Insecticide",
+        fertilizer: "Fertilizer",
+        micronutrient: "Micronutrient",
+        macronutrient: "Macronutrient",
+        biostimulant: "Biostimulant",
         "soil-amendment": "Soil amendment",
+        "moisture-manager": "Moisture manager",
+        surfactant: "Surfactant",
       };
+
+      const UNIT_DISPLAY = { lb: "lb", oz: "oz", fl_oz: "fl oz", gal: "gal", qt: "qt" };
+      const BRAND_RULES = [
+        ["The Andersons", ["andersons", "pgf", "humic dg", "humichar", "black gypsum", "foltec"]],
+        ["Yard Mastery", ["yard mastery", "flagship", "double dark", "stress blend", "freedom", "moisture max"]],
+        ["N-Ext", ["n-ext", "microgreene", "greene effect", "humic12", "air-8", "sea-k", "spoon juice", "floragreene"]],
+        ["Simple Lawn Solutions", ["simple lawn", "sls "]],
+        ["GS Plant Foods", ["gs plant foods", "root ruckus"]],
+        ["Hydretain", ["hydretain"]],
+        ["Syngenta", ["syngenta", "primo", "heritage", "headway", "subdue", "velista", "medallion", "acelepryn", "meridian", "demand", "mainspring"]],
+        ["Bayer", ["bayer", "celsius", "specticle", "spectacle", "revolver", "katana", "movento", "forbid", "kontos"]],
+        ["BASF", ["basf", "drive", "pylex", "pendulum", "emerald", "pillar"]],
+        ["PBI Gordon", ["pbi gordon", "speedzone", "q4", "trimec", "zylam", "pramaxis"]],
+        ["Quali-Pro", ["quali-pro", "prodiamine", "t-nex", "propiconazole"]],
+        ["FMC", ["fmc", "dismiss", "talstar"]],
+        ["Southern Ag", ["southern ag"]],
+        ["Wakefield", ["wakefield"]],
+        ["CarbonizPN", ["carbonizpn"]],
+        ["Southland Organics", ["southland"]],
+        ["LawnStar", ["lawnstar"]],
+        ["PetraTools", ["petratools", "petramax"]],
+        ["TurfGrassPro", ["turfgrasspro", "blade iron"]],
+        ["Ele-Max", ["ele-max", "elemax", "turf nectar"]],
+        ["Solu-Cal", ["solu-cal", "solucal"]],
+        ["Pennington", ["pennington"]],
+        ["Hi-Yield", ["hi-yield", "hi yield"]],
+        ["Lawnbox", ["lawnbox"]],
+      ];
 
       let products = [];
       let query = "";
       let category = "all";
+      let brand = "all";
+      let sizeTier = "all";
+      let viewMode = "category";
+      let productFilter = new URLSearchParams(window.location.search).get("product") || "";
 
       loadBoard();
 
       async function loadBoard() {
         try {
-          const response = await fetch("./prices.json?v=" + Date.now());
-          if (!response.ok) throw new Error("HTTP " + response.status);
-          const data = await response.json();
-          products = data.products || [];
+          const [priceResponse, catalogResponse] = await Promise.all([
+            fetch("./prices.json?v=" + Date.now()),
+            fetch("./products.json?v=" + Date.now()),
+          ]);
+          if (!priceResponse.ok) throw new Error("HTTP " + priceResponse.status);
+          const data = await priceResponse.json();
+          const catalog = catalogResponse.ok ? await catalogResponse.json() : { products: [] };
+          products = mergeCatalogProducts(catalog.products || [], data.products || []);
           updateStats(data);
+          populateBrandFilter();
+          populateSearchSuggestions();
+          applyProductDeepLink();
           document.getElementById("board-meta").textContent =
-            `${products.length} products refreshed ${timeSince(data.generated_at)}. Showing the top three eligible priced offers per product.`;
+            `${products.length} catalog products refreshed ${timeSince(data.generated_at)}. Showing top three offers per size where pricing is available.`;
           renderBoard();
+          focusDeepLinkedProduct();
         } catch (error) {
           document.getElementById("board-grid").innerHTML = `<p class="board-status">Price feed unavailable. Refresh in a moment.</p>`;
           console.error(error);
         }
       }
 
+      function mergeCatalogProducts(catalogProducts, pricedProducts) {
+        const pricedById = new Map(pricedProducts.map(product => [String(product.id), product]));
+        const merged = catalogProducts.map(product => ({
+          ...product,
+          ...(pricedById.get(String(product.id)) || {}),
+          offers: (pricedById.get(String(product.id)) || {}).offers || [],
+        }));
+        for (const product of pricedProducts) {
+          if (!merged.some(item => String(item.id) === String(product.id))) merged.push(product);
+        }
+        return merged;
+      }
+
       function updateStats(data) {
         const pricedOffers = products.flatMap(p => p.offers || []).filter(o => o.price != null && !o.excluded);
         const stores = new Set(pricedOffers.map(o => o.retailer_name || o.retailer).filter(Boolean));
-        document.getElementById("stat-products").textContent = data.product_count || products.length;
+        document.getElementById("stat-products").textContent = products.length;
         document.getElementById("stat-stores").textContent = stores.size;
         document.getElementById("stat-offers").textContent = pricedOffers.length;
       }
 
+      function productBrand(product) {
+        const text = [
+          product.name,
+          product.search_query,
+          product.amazon_query,
+          product.active_ingredient,
+          ...(product.alt_names || []),
+        ].join(" ").toLowerCase();
+        const match = BRAND_RULES.find(([, needles]) => needles.some(needle => text.includes(needle)));
+        return match ? match[0] : "Other";
+      }
+
+      function populateBrandFilter() {
+        const select = document.getElementById("board-brand");
+        const brands = [...new Set(products.map(productBrand))].sort((a, b) => a.localeCompare(b));
+        select.innerHTML = `<option value="all">All brands</option>` + brands.map(name => (
+          `<option value="${escAttr(name)}">${escHtml(name)}</option>`
+        )).join("");
+      }
+
+      function populateSearchSuggestions() {
+        const suggestions = new Set();
+        for (const product of products) {
+          suggestions.add(product.name);
+          suggestions.add(productBrand(product));
+          suggestions.add(CATEGORY_LABELS[product.category] || product.category);
+          if (product.active_ingredient) suggestions.add(product.active_ingredient);
+          for (const alt of product.alt_names || []) suggestions.add(alt);
+          for (const offer of product.offers || []) {
+            if (offer.retailer_name) suggestions.add(offer.retailer_name);
+          }
+        }
+        document.getElementById("board-suggestions").innerHTML = [...suggestions]
+          .filter(Boolean)
+          .sort((a, b) => a.localeCompare(b))
+          .slice(0, 450)
+          .map(value => `<option value="${escAttr(value)}"></option>`)
+          .join("");
+      }
+
+      function applyProductDeepLink() {
+        if (!productFilter) return;
+        const product = products.find(item => item.slug === productFilter);
+        if (!product) return;
+        query = product.name.toLowerCase();
+        document.getElementById("board-search").value = product.name;
+      }
+
+      function focusDeepLinkedProduct() {
+        if (!productFilter) return;
+        window.setTimeout(() => {
+          const target = document.querySelector(`[data-product-slug="${CSS.escape(productFilter)}"]`);
+          if (!target) return;
+          target.scrollIntoView({ block: "center", behavior: "smooth" });
+        }, 80);
+      }
+
+      function productUrl(product) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("product", product.slug);
+        return url.toString();
+      }
+
+      function productVariants(product) {
+        const groups = {};
+        for (const offer of product.offers || []) {
+          if (offer.price == null || offer.excluded || isGoogleUrl(offer.url)) continue;
+          const quantity = offer.package_quantity ?? offer.quantity ?? null;
+          const unit = offer.package_unit ?? offer.unit ?? null;
+          const label = offer.package_label ?? (quantity != null && unit ? formatSize(quantity, unit) : "");
+          const key = quantity != null && unit
+            ? `${quantity}_${unit}`
+            : "__unknown__";
+          if (!groups[key]) groups[key] = { quantity, unit, label, offers: [] };
+          groups[key].offers.push(offer);
+        }
+        const variants = Object.values(groups);
+        return variants.length ? variants : [{ quantity: null, unit: null, label: "", offers: [] }];
+      }
+
+      function matchesSizeTier(variant, tier) {
+        if (tier === "all") return true;
+        const { quantity, unit } = variant;
+        if (!quantity || !unit) return true;
+        const isConsumer =
+          (unit === "lb" && quantity <= 10) ||
+          (unit === "fl_oz" && quantity <= 32) ||
+          (unit === "oz" && quantity <= 16);
+        return tier === "consumer" ? isConsumer : !isConsumer;
+      }
+
+      function variantMatchesQuery(product, variant, q) {
+        const sizeStr = variant.label || (variant.quantity != null && variant.unit ? formatSize(variant.quantity, variant.unit) : "");
+        const text = [
+          product.name,
+          productBrand(product),
+          CATEGORY_LABELS[product.category] || product.category,
+          product.active_ingredient,
+          ...(product.alt_names || []),
+          sizeStr,
+          ...variant.offers.map(o => o.retailer_name || o.retailer),
+        ].join(" ").toLowerCase();
+        return text.includes(q);
+      }
+
+      function formatSize(quantity, unit) {
+        if (unit === "fl_oz") {
+          if (quantity >= 320) return "2.5 gal";
+          if (quantity >= 256) return "2 gal";
+          if (quantity >= 128) return "1 gal";
+          if (quantity >= 64) return "½ gal";
+          if (quantity >= 32) return "1 qt";
+          return quantity + " fl oz";
+        }
+        return quantity + " " + (UNIT_DISPLAY[unit] || unit);
+      }
+
+      function pricePerUnit(price, quantity, unit) {
+        if (!quantity || !unit) return null;
+        return "$" + (price / quantity).toFixed(2) + "/" + (UNIT_DISPLAY[unit] || unit);
+      }
+
       function renderBoard() {
         const grid = document.getElementById("board-grid");
-        const visible = products.filter(product => {
-          const top = topOffers(product);
-          const text = [
-            product.name,
-            product.category,
-            product.active_ingredient,
-            ...(product.alt_names || []),
-            ...top.map(offer => offer.retailer_name),
-          ].join(" ").toLowerCase();
-          return (category === "all" || product.category === category) && (!query || text.includes(query));
-        });
+        const allVariants = [];
 
-        if (!visible.length) {
+        for (const product of products) {
+          if (category !== "all" && product.category !== category) continue;
+          if (brand !== "all" && productBrand(product) !== brand) continue;
+          for (const variant of productVariants(product)) {
+            if (!matchesSizeTier(variant, sizeTier)) continue;
+            if (query && !variantMatchesQuery(product, variant, query)) continue;
+            allVariants.push({ product, variant });
+          }
+        }
+
+        if (!allVariants.length) {
           grid.innerHTML = `<p class="no-board-results">No products match the current filters.</p>`;
           return;
         }
 
-        grid.innerHTML = visible.map(renderProduct).join("");
+        const grouped = groupVariants(allVariants);
+        grid.innerHTML = grouped.map(group => renderGroup(group)).join("");
       }
 
-      function renderProduct(product) {
-        const offers = topOffers(product);
-        const groups = sizeGroups(product);
+      function groupVariants(items) {
+        const groups = new Map();
+        for (const item of items) {
+          const key = viewMode === "brand"
+            ? productBrand(item.product)
+            : item.product.category || "other";
+          const label = viewMode === "brand"
+            ? key
+            : CATEGORY_LABELS[key] || key;
+          if (!groups.has(key)) groups.set(key, { key, label, items: [] });
+          groups.get(key).items.push(item);
+        }
+        return [...groups.values()].sort((a, b) => groupSortValue(a).localeCompare(groupSortValue(b)));
+      }
+
+      function groupSortValue(group) {
+        const categoryOrder = [
+          "pre-emergent",
+          "post-emergent",
+          "pgr",
+          "fungicide",
+          "insecticide",
+          "fertilizer",
+          "micronutrient",
+          "macronutrient",
+          "biostimulant",
+          "soil-amendment",
+          "moisture-manager",
+          "surfactant",
+        ];
+        if (viewMode === "category") {
+          const index = categoryOrder.indexOf(group.key);
+          return String(index === -1 ? 999 : index).padStart(3, "0") + group.label;
+        }
+        return group.label;
+      }
+
+      function renderGroup(group) {
+        const productCount = new Set(group.items.map(item => item.product.id)).size;
+        return `<section class="product-group">
+          <header class="product-group__header">
+            <h2>${escHtml(group.label)}</h2>
+            <span>${productCount} product${productCount === 1 ? "" : "s"}</span>
+          </header>
+          <div class="product-group__grid">
+            ${group.items.map(({ product, variant }) => renderVariant(product, variant)).join("")}
+          </div>
+        </section>`;
+      }
+
+      function renderVariant(product, variant) {
+        const offers = variant.offers.slice().sort((a, b) => Number(a.price) - Number(b.price)).slice(0, 3);
+        const hasSize = variant.quantity != null && variant.unit;
+        const sizeLabel = variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null);
+        const isTarget = productFilter && product.slug === productFilter;
         const image = productImage(product, offers);
         const media = image
           ? `<img src="${escAttr(image)}" alt="${escAttr(product.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(fallbackMedia('${escAttr(initials(product.name))}'))" />`
           : `<span class="product-fallback">${escHtml(initials(product.name))}</span>`;
-        const offerHtml = groups.length > 1
-          ? `<div class="size-grid">${groups.map(renderSizeGroup).join("")}</div>`
-          : renderOfferStack(offers);
 
-        return `
-          <article class="price-tile">
-            <div class="product-media">${media}</div>
-            <div class="tile-body">
-              <p class="tile-kicker">${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
-              <h2 class="tile-title">${escHtml(product.name)}</h2>
-              <div class="offer-stack">${offerHtml}</div>
-            </div>
-          </article>
-        `;
-      }
-
-      function eligibleOffers(product) {
-        return (product.offers || [])
-          .filter(offer => offer.price != null && !offer.excluded && !isGoogleUrl(offer.url));
-      }
-
-      function topOffers(product, offers = eligibleOffers(product)) {
-        return offers
-          .sort((a, b) => Number(a.price) - Number(b.price))
-          .slice(0, 3);
-      }
-
-      function sizeGroups(product) {
-        const grouped = new Map();
-        const unknown = [];
-        for (const offer of eligibleOffers(product)) {
-          if (!offer.package_label) {
-            unknown.push(offer);
-            continue;
-          }
-          const key = `${offer.package_unit || ""}:${offer.package_quantity || ""}:${offer.package_label}`;
-          if (!grouped.has(key)) {
-            grouped.set(key, {
-              label: offer.package_label,
-              unit: offer.package_unit || "",
-              quantity: Number(offer.package_quantity || 0),
-              offers: [],
-            });
-          }
-          grouped.get(key).offers.push(offer);
-        }
-
-        const groups = Array.from(grouped.values())
-          .sort((a, b) => a.unit.localeCompare(b.unit) || a.quantity - b.quantity)
-          .map(group => ({ ...group, offers: topOffers(product, group.offers) }));
-
-        if (groups.length && unknown.length) {
-          groups.push({ label: "Other sizes", unit: "", quantity: 0, tier: "", offers: topOffers(product, unknown) });
-        }
-        if (groups.length) return groups;
-        return unknown.length ? [{ label: "", unit: "", quantity: 0, tier: "", offers: topOffers(product, unknown) }] : [];
-      }
-
-      function renderSizeGroup(group) {
-        return `
-          <div class="size-panel">
-            <p class="size-heading">${escHtml(group.label)}</p>
-            ${renderOfferStack(group.offers)}
-          </div>
-        `;
-      }
-
-      function renderOfferStack(offers) {
-        return offers.length
-          ? `<div class="offer-stack">${offers.map((offer, index) => `
-              <a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
-                <span>${index + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
-                <span class="offer-price">
-                  <strong>$${Number(offer.price).toFixed(2)}</strong>
-                  ${offer.price_per_unit && offer.package_unit ? `<span class="offer-unit">$${Number(offer.price_per_unit).toFixed(2)}/${escHtml(offer.package_unit)}</span>` : ""}
-                </span>
-              </a>
-            `).join("")}</div>`
+        const offerHtml = offers.length
+          ? offers.map((offer, i) => {
+              const ppu = offer.price_per_unit && offer.package_unit
+                ? "$" + Number(offer.price_per_unit).toFixed(2) + "/" + (UNIT_DISPLAY[offer.package_unit] || offer.package_unit)
+                : hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
+              return `<a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
+                <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
+                <span class="offer-right"><strong>$${Number(offer.price).toFixed(2)}</strong>${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
+              </a>`;
+            }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;
+
+        return `<article class="price-tile${isTarget ? " is-target" : ""}" data-product-slug="${escAttr(product.slug)}">
+          <div class="product-media">${media}</div>
+          <div class="tile-body">
+            <p class="tile-kicker">${escHtml(productBrand(product))} / ${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
+            ${sizeLabel ? `<p class="tile-size">${escHtml(sizeLabel)}</p>` : ""}
+            <h2 class="tile-title">${escHtml(product.name)}</h2>
+            <button class="product-link" type="button" data-copy-product="${escAttr(product.slug)}">Copy product link</button>
+            <div class="offer-stack">${offerHtml}</div>
+          </div>
+        </article>`;
       }
 
       function isGoogleUrl(url) {
-        try {
-          return new URL(url).hostname.endsWith("google.com");
-        } catch {
-          return false;
-        }
+        try { return new URL(url).hostname.endsWith("google.com"); }
+        catch { return false; }
       }
 
       function productImage(product, offers) {
-        const imageOffer = offers.find(offer => offer.image) || (product.offers || []).find(offer => offer.image);
+        const imageOffer = offers.find(o => o.image) || (product.offers || []).find(o => o.image);
         return imageOffer ? imageOffer.image : "";
       }
 
@@ -505,7 +804,7 @@
           .split(/\s+/)
           .filter(Boolean)
           .slice(0, 2)
-          .map(part => part[0])
+          .map(p => p[0])
           .join("")
           .toUpperCase();
       }
@@ -519,28 +818,71 @@
         return `${mins}m ago`;
       }
 
-      function escHtml(value) {
-        return String(value ?? "")
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
+      function escHtml(v) {
+        return String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
       }
 
-      function escAttr(value) {
-        return escHtml(value).replace(/'/g, "&#39;");
-      }
+      function escAttr(v) { return escHtml(v).replace(/'/g, "&#39;"); }
 
-      document.getElementById("board-search").addEventListener("input", event => {
-        query = event.target.value.trim().toLowerCase();
+      document.getElementById("board-search").addEventListener("input", e => {
+        query = e.target.value.trim().toLowerCase();
+        productFilter = "";
+        const url = new URL(window.location.href);
+        url.searchParams.delete("product");
+        window.history.replaceState({}, "", url);
         renderBoard();
       });
 
-      document.getElementById("board-category").addEventListener("change", event => {
-        category = event.target.value;
+      document.getElementById("board-category").addEventListener("change", e => {
+        category = e.target.value;
         renderBoard();
       });
 
+      document.getElementById("board-brand").addEventListener("change", e => {
+        brand = e.target.value;
+        renderBoard();
+      });
+
+      document.querySelectorAll(".board-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".board-tab").forEach(tab => {
+            tab.classList.remove("active");
+            tab.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+          viewMode = btn.dataset.view;
+          renderBoard();
+        });
+      });
+
+      document.querySelectorAll(".size-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".size-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          sizeTier = btn.dataset.tier;
+          renderBoard();
+        });
+      });
+
+      document.getElementById("board-grid").addEventListener("click", async event => {
+        const button = event.target.closest("[data-copy-product]");
+        if (!button) return;
+        const product = products.find(item => item.slug === button.dataset.copyProduct);
+        if (!product) return;
+        const url = productUrl(product);
+        try {
+          await navigator.clipboard.writeText(url);
+          button.textContent = "Copied";
+          button.classList.add("copied");
+          window.setTimeout(() => {
+            button.textContent = "Copy product link";
+            button.classList.remove("copied");
+          }, 1400);
+        } catch {
+          window.prompt("Product link", url);
+        }
+      });
     </script>
   </body>
 </html>

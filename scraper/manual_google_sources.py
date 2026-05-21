@@ -147,7 +147,14 @@ def _source_exists(sources: list[dict], url: str) -> bool:
     return any(urllib.parse.urldefrag(s.get("url", ""))[0].rstrip("/") == normalized for s in sources)
 
 
-def _record_source(page, product: dict, sources_data: dict, sources_path: Path) -> bool:
+def _record_source(
+    page,
+    product: dict,
+    sources_data: dict,
+    sources_path: Path,
+    *,
+    has_multiple_sizes: bool = False,
+) -> bool:
     try:
         raw_url = page.url
         html = page.content()
@@ -181,6 +188,9 @@ def _record_source(page, product: dict, sources_data: dict, sources_path: Path) 
         "image": None,
         "last_seen": now_iso(),
     }
+    if has_multiple_sizes:
+        source["has_multiple_sizes"] = True
+        source["needs_size_review"] = True
 
     if _source_exists(product_sources, url):
         for existing in product_sources:
@@ -194,7 +204,8 @@ def _record_source(page, product: dict, sources_data: dict, sources_path: Path) 
 
     save_sources(sources_path, sources_data)
     price_text = f"${price:.2f}" if price is not None else "$n/a"
-    print(f"  {status:<8} {retailer_name:<24} {price_text:<8} {title[:70]}")
+    size_text = " multi-size" if has_multiple_sizes else ""
+    print(f"  {status:<8} {retailer_name:<24} {price_text:<8}{size_text:<12} {title[:70]}")
     print(f"           {url}")
     return True
 
@@ -240,6 +251,7 @@ def _overlay_script(product: dict, index: int, total: int, recorded_count: int) 
     <div style="font-size:11px; color:#6b7280; margin-bottom:8px;">${{ {queries} }}</div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
       <button id="ld-record" style="padding:8px; font-weight:700;">Record link</button>
+      <button id="ld-record-sizes" style="padding:8px; font-weight:700; background:#fde68a;">Record multi-size</button>
       <button id="ld-record-all" style="padding:8px; font-weight:700;">Record all tabs</button>
       <button id="ld-next" style="padding:8px;">Next product</button>
       <button id="ld-skip" style="padding:8px;">Skip</button>
@@ -254,6 +266,7 @@ def _overlay_script(product: dict, index: int, total: int, recorded_count: int) 
 
   const set = (action) => {{ window.__ldSourceRecorderAction = action; }};
   document.getElementById('ld-record').onclick = () => set('record');
+  document.getElementById('ld-record-sizes').onclick = () => set('record_sizes');
   document.getElementById('ld-record-all').onclick = () => set('record_all');
   document.getElementById('ld-next').onclick = () => set('next');
   document.getElementById('ld-skip').onclick = () => set('skip');
@@ -361,6 +374,10 @@ def main() -> int:
 
                     if action == "record":
                         _record_source(candidate, product, sources_data, sources_path)
+                        handled = True
+                    elif action == "record_sizes":
+                        _record_source(candidate, product, sources_data, sources_path, has_multiple_sizes=True)
+                        print("  Marked source for package-size review.")
                         handled = True
                     elif action == "record_all":
                         count = _record_all_tabs(ctx, product, sources_data, sources_path)
