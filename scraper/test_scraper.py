@@ -93,6 +93,36 @@ class ScraperExtractionTests(unittest.TestCase):
         )
         self.assertEqual(result["image"], "https://www.domyown.com/images/prodiamine.jpg")
 
+    def test_page_out_of_stock_overrides_jsonld_availability(self):
+        soup = BeautifulSoup(
+            """
+            <script type="application/ld+json">
+            {
+              "@type": "Product",
+              "name": "Certainty Turf Herbicide",
+              "offers": {
+                "@type": "Offer",
+                "price": "105.95",
+                "availability": "https://schema.org/InStock",
+                "url": "https://pestrong.com/product/certainty-turf-herbicide-1-25-oz"
+              }
+            }
+            </script>
+            <main><h1>Certainty Turf Herbicide</h1><button>Sold Out</button></main>
+            """,
+            "lxml",
+        )
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://pestrong.com/product/certainty-turf-herbicide-1-25-oz",
+            "pestrong",
+            "Pestrong",
+        )
+
+        self.assertEqual(result["price"], 105.95)
+        self.assertFalse(result["in_stock"])
+
     def test_extracts_meta_product_image(self):
         soup = BeautifulSoup(
             """

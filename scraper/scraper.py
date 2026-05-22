@@ -974,16 +974,25 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
             if not product_url:
                 continue
             image = _jsonld_image_url(obj, base_url)
+            in_stock = "outofstock" not in str(offers.get("availability", "")).lower()
+            if _page_indicates_out_of_stock(soup):
+                in_stock = False
             return {
                 "retailer": retailer,
                 "retailer_name": retailer_name,
                 "price": price,
                 "url": product_url,
-                "in_stock": "outofstock" not in str(offers.get("availability", "")).lower(),
+                "in_stock": in_stock,
                 "image": image,
                 "last_checked": now_iso(),
             }
     return None
+
+
+def _page_indicates_out_of_stock(soup: BeautifulSoup) -> bool:
+    text = soup.get_text(" ", strip=True).lower()
+    leading = text[:4000]
+    return any(phrase in leading for phrase in ("out of stock", "sold out", "currently unavailable"))
 
 
 def _jsonld_image_url(obj: dict, base_url: str) -> Optional[str]:
@@ -1078,7 +1087,7 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
             continue
 
         text = search_root.get_text(" ", strip=True).lower()
-        in_stock = "out of stock" not in text and "currently unavailable" not in text
+        in_stock = not any(phrase in text for phrase in ("out of stock", "sold out", "currently unavailable"))
 
         return {
             "retailer":      retailer,
