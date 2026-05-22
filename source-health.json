@@ -3,14 +3,14 @@
   "generated_at": "2026-05-22T10:50:57.239208+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 708,
-    "manual_verified_sources": 339,
-    "included_sources": 366,
+    "sources": 710,
+    "manual_verified_sources": 341,
+    "included_sources": 368,
     "not_included_sources": 342,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 366,
+    "included": 368,
     "no_extracted_offer": 250,
     "not_checked_saved_source_limit": 90,
     "below $10.00 minimum for this category": 2
@@ -3013,9 +3013,29 @@
           "reason": "included",
           "price": 114.0,
           "offer_url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex?variant=33101565231156"
+        },
+        {
+          "url": "https://www.lawnandpestcontrolsupply.com/products/heritage-sc-fungicide-4oz",
+          "retailer": "lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 39.95,
+          "offer_url": "https://www.lawnandpestcontrolsupply.com/products/heritage-sc-fungicide-4oz"
+        },
+        {
+          "url": "https://www.bes-tex.com/catalogItems/view/heritage-g-with-22-9-azoxystrobin-4-oz",
+          "retailer": "bes-tex",
+          "retailer_name": "Bes-Tex",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 58.7,
+          "offer_url": "https://www.bes-tex.com/catalogItems/view/heritage-g-with-22-9-azoxystrobin-4-oz"
         }
       ],
-      "included_sources": 4,
+      "included_sources": 6,
       "not_included_sources": 2,
       "invalid_sources": 0
     },

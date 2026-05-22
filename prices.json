@@ -3109,6 +3109,36 @@
           "package_unit": "lb",
           "package_label": "1 lb",
           "price_per_unit": 299.95
+        },
+        {
+          "retailer": "lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
+          "price": 39.95,
+          "url": "https://www.lawnandpestcontrolsupply.com/products/heritage-sc-fungicide-4oz",
+          "in_stock": true,
+          "image": "https://www.lawnandpestcontrolsupply.com/cdn/shop/products/heritage_20sc_204_20ounce.jpg?v=1628816227",
+          "last_checked": "2026-05-22T10:38:59.393926+00:00",
+          "title": "Heritage SC Fungicide - 4oz",
+          "source": "manual_verified_source",
+          "package_quantity": 4.0,
+          "package_unit": "fl oz",
+          "package_label": "4 fl oz",
+          "price_per_unit": 9.99
+        },
+        {
+          "retailer": "bes-tex",
+          "retailer_name": "Bes-Tex",
+          "price": 58.7,
+          "url": "https://www.bes-tex.com/catalogItems/view/heritage-g-with-22-9-azoxystrobin-4-oz",
+          "in_stock": true,
+          "image": "https://www.bes-tex.com/storage/ImageCache/380_380/Heritage_SC_3c6b8d180a.jpg",
+          "last_checked": "2026-05-22T10:38:59.393926+00:00",
+          "title": "Heritage G With 22.9% Azoxystrobin 4 oz",
+          "source": "manual_verified_source",
+          "package_quantity": 4.0,
+          "package_unit": "fl oz",
+          "package_label": "4 fl oz",
+          "price_per_unit": 14.68
         }
       ],
       "best_price": {
