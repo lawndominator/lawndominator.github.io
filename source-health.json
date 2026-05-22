@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-22T11:14:15.321999+00:00",
+  "generated_at": "2026-05-22T15:05:13.255266+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 717,
+    "sources": 720,
     "manual_verified_sources": 341,
-    "included_sources": 373,
-    "not_included_sources": 344,
+    "included_sources": 569,
+    "not_included_sources": 151,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 373,
-    "no_extracted_offer": 252,
+    "included": 569,
     "not_checked_saved_source_limit": 90,
-    "below $10.00 minimum for this category": 2
+    "no_extracted_offer": 49,
+    "below $10.00 minimum for this category": 12
   },
   "products": [
     {
@@ -77,10 +77,10 @@
           "retailer": "yardmastery",
           "retailer_name": "Yardmastery",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 119.0,
+          "offer_url": "https://yardmastery.com/products/prodiamine-65-wdg"
         },
         {
           "url": "https://pestrong.com/product/barricade-65-wg-herbicide-prodiamine-5-lb",
@@ -113,8 +113,8 @@
           "offer_url": "https://yardmastery.com/products/prodiamine-65-wdg?variant=31755335565364"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 3,
+      "included_sources": 7,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -148,10 +148,10 @@
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 234.95,
+          "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2l"
         },
         {
           "url": "https://www.seedworldusa.com/products/dimension-2ew-herbicide-64-oz",
@@ -168,10 +168,10 @@
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 509.95,
+          "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2-ew"
         },
         {
           "url": "https://diypestcontrol.com/dimension-2ew-herbicide",
@@ -228,10 +228,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 157.77,
+          "offer_url": "https://seedbarn.com/products/dimension-2ew-herbicide-64-oz"
         },
         {
           "url": "https://seedbarn.com/products/dimension-2ew-herbicide-64-oz?variant=12532674101348",
@@ -264,8 +264,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2l?variant=39630369128511"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 8,
+      "included_sources": 9,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -289,20 +289,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 138.95,
+          "offer_url": "https://seedbarn.com/products/oxadiazon-2g-pre-emergent-herbicide-ronstar-alternative-50lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/oxadiazon-2g",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 142.31,
+          "offer_url": "https://www.sunspotsupply.com/products/oxadiazon-2g"
         },
         {
           "url": "https://www.sunspotsupply.com/products/oxadiazon-2g?variant=43994329710778",
@@ -325,8 +325,8 @@
           "offer_url": "https://seedbarn.com/products/oxadiazon-2g-pre-emergent-herbicide-ronstar-alternative-50lbs?variant=32204335251591"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -350,20 +350,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 387.77,
+          "offer_url": "https://seedbarn.com/products/specticle-flo-herbicide-18-ounces"
         },
         {
           "url": "https://www.sunspotsupply.com/products/specticle-flo-18oz",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 349.0,
+          "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-18oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide",
@@ -371,19 +371,19 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide"
         },
         {
           "url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2151.5,
+          "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon"
         },
         {
           "url": "https://seedbarn.com/products/specticle-flo-herbicide-18-ounces?variant=12543653642340",
@@ -416,8 +416,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon?variant=43994447610042"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -451,30 +451,30 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 75.75,
+          "offer_url": "https://seedbarn.com/products/pendulum-2g-herbicide-20-lbs"
         },
         {
           "url": "https://seedbarn.com/products/pendulum-2g-herbicide-40-lbs",
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 115.95,
+          "offer_url": "https://seedbarn.com/products/pendulum-2g-herbicide-40-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/pendulum-2g-granular-herbicide",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 111.24,
+          "offer_url": "https://www.sunspotsupply.com/products/pendulum-2g-granular-herbicide"
         },
         {
           "url": "https://seedbarn.com/products/pendulum-2g-herbicide-20-lbs?variant=32185817989255",
@@ -507,8 +507,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/pendulum-2g-granular-herbicide?variant=43994279706810"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 8,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -522,20 +522,20 @@
           "retailer": "pedchem",
           "retailer_name": "Pedchem",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 195.0,
+          "offer_url": "https://www.pedchem.com/products/gallery-75-df-specialty-herbicide"
         },
         {
           "url": "https://www.ebay.com/itm/335759919834",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 179.59,
+          "offer_url": "https://www.ebay.com/itm/335759919834"
         },
         {
           "url": "https://diypestcontrol.com/gallery-75df-herbicide",
@@ -582,10 +582,10 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 153.5,
+          "offer_url": "https://www.sunspotsupply.com/products/gallery-75-df-specialty-herbicide"
         },
         {
           "url": "https://www.sunspotsupply.com/products/gallery-75-df-specialty-herbicide?variant=43994320765114",
@@ -608,8 +608,8 @@
           "offer_url": "https://www.pedchem.com/products/gallery-75-df-specialty-herbicide?variant=10703459123243"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 4,
+      "included_sources": 8,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -663,10 +663,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 197.77,
+          "offer_url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs"
         },
         {
           "url": "https://lawnsynergy.com/products/specticle-g-herbicide?variant=45955595731082",
@@ -689,8 +689,8 @@
           "offer_url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs?variant=12543660425316"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -735,20 +735,20 @@
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 175.95,
+          "offer_url": "https://chemicalwarehouse.com/products/pendulum-aquacap"
         },
         {
           "url": "https://www.intermountainturf.com/products/pendulum-aquacap-herbicide-jug-15-gal",
           "retailer": "intermountainturf",
           "retailer_name": "Intermountainturf",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1035.0,
+          "offer_url": "https://www.intermountainturf.com/products/pendulum-aquacap-herbicide-jug-15-gal"
         },
         {
           "url": "https://www.arborchem.com/product/25/pendulum-aquacap-2-5-gal-container",
@@ -831,8 +831,8 @@
           "offer_url": "https://www.intermountainturf.com/products/pendulum-aquacap-herbicide-jug-15-gal?variant=45348258283658"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 5,
+      "included_sources": 7,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -846,30 +846,30 @@
           "retailer": "thelawncarenut",
           "retailer_name": "Thelawncarenut",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 22.99,
+          "offer_url": "https://thelawncarenut.com/products/celsius-wg"
         },
         {
           "url": "https://yardmastery.com/products/celsius%c2%ae-wg-broadleaf-and-grassy-weed-control-for-warm-season-turf",
           "retailer": "yardmastery",
           "retailer_name": "Yardmastery",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 22.99,
+          "offer_url": "https://yardmastery.com/products/celsius%c2%ae-wg-broadleaf-and-grassy-weed-control-for-warm-season-turf"
         },
         {
           "url": "https://lawnsynergy.com/products/celsius-wg-herbicide",
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 14.86,
+          "offer_url": "https://lawnsynergy.com/products/celsius-wg-herbicide"
         },
         {
           "url": "https://www.amazon.com/dp/B0BTKTVN76",
@@ -886,10 +886,10 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sodsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 15.95,
+          "offer_url": "https://sodsolutions.com/shop/weed-control/celsius-wg"
         },
         {
           "url": "https://www.solutionsstores.com/celsius-wg",
@@ -982,8 +982,8 @@
           "offer_url": "https://yardmastery.com/products/celsius%C2%AE-wg-broadleaf-and-grassy-weed-control-for-warm-season-turf?variant=47748416471092"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 8,
+      "included_sources": 10,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -1007,20 +1007,20 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 135.89,
+          "offer_url": "https://www.ebay.com/itm/116101744133"
         },
         {
           "url": "https://www.atozlawnsupply.com/products/certainty-turf-herbicide",
           "retailer": "atozlawnsupply",
           "retailer_name": "Atozlawnsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.95,
+          "offer_url": "https://www.atozlawnsupply.com/products/certainty-turf-herbicide"
         },
         {
           "url": "https://chemicalwarehouse.com/products/certainty-herbicide",
@@ -1049,7 +1049,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 115.73,
+          "price": 115.72,
           "offer_url": "https://www.amazon.com/dp/B004RVNFY6?tag=lawndominator-20"
         },
         {
@@ -1067,30 +1067,30 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.99,
+          "offer_url": "https://www.walmart.com/ip/17860562650"
         },
         {
           "url": "https://www.walmart.com/ip/394118875",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.13,
+          "offer_url": "https://www.walmart.com/ip/394118875"
         },
         {
           "url": "https://golfcourselawn.store/products/certainty-herbicide-1-25-oz-sedge-and-poa-annua-control",
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 139.99,
+          "offer_url": "https://golfcourselawn.store/products/certainty-herbicide-1-25-oz-sedge-and-poa-annua-control"
         },
         {
           "url": "https://golfcourselawn.store/products/certainty-herbicide-1-25-oz-sedge-and-poa-annua-control?variant=44424695415033",
@@ -1113,8 +1113,8 @@
           "offer_url": "https://www.facebook.com/sharer.php?u=https://www.atozlawnsupply.com/products/certainty-turf-herbicide"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 5,
+      "included_sources": 12,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -1128,10 +1128,10 @@
           "retailer": "intermountainturf",
           "retailer_name": "Intermountainturf",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.55,
+          "offer_url": "https://www.intermountainturf.com/products/drive-xlr8-64-ounces"
         },
         {
           "url": "https://www.forestrydistributing.com/drive-xlr8-herbicide-basf",
@@ -1148,10 +1148,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 87.77,
+          "offer_url": "https://www.ebay.com/itm/325471149174"
         },
         {
           "url": "https://www.amazon.com/dp/B0058W42QS",
@@ -1168,10 +1168,10 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 80.2,
+          "offer_url": "https://www.walmart.com/ip/365310056"
         },
         {
           "url": "https://diypestcontrol.com/drive-xlr8-herbicide",
@@ -1188,10 +1188,10 @@
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 84.99,
+          "offer_url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer"
         },
         {
           "url": "https://www.domyown.com/drive-xlr8-herbicide-crabgrass-killer-p-1520.html",
@@ -1254,8 +1254,8 @@
           "offer_url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer?variant=46526175543545"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 10,
+      "included_sources": 7,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -1289,10 +1289,10 @@
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.99,
+          "offer_url": "https://golfcourselawn.store/products/sedgehammer%c2%ae-herbicide-nutsedge-weed-killer"
         },
         {
           "url": "https://www.domyown.com/sedgehammer-herbicide-p-1348.html",
@@ -1335,8 +1335,8 @@
           "offer_url": "https://golfcourselawn.store/products/sedgehammer%C2%AE-herbicide-nutsedge-weed-killer?variant=44424761245945"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 2,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -1350,10 +1350,10 @@
           "retailer": "agrisupply",
           "retailer_name": "Agrisupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 119.99,
+          "offer_url": "https://www.agrisupply.com/speedzone-ew-southern-1gal/p/125384"
         },
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/speedzone-southern-herbicide-1",
@@ -1416,8 +1416,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -1431,10 +1431,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 27.25,
+          "offer_url": "https://www.ebay.com/itm/134845221641"
         },
         {
           "url": "https://www.solutionsstores.com/msm-turf-herbicide-manor",
@@ -1467,8 +1467,8 @@
           "offer_url": "https://www.domyown.com/amtide-msm-60-df-herbicide-p-2262.html"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 1,
+      "included_sources": 4,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -1482,30 +1482,30 @@
           "retailer": "homeandgardensupply",
           "retailer_name": "Homeandgardensupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 60.99,
+          "offer_url": "https://homeandgardensupply.com/products/tenacity-herbicide-broadleaf-weed-grass-control"
         },
         {
           "url": "https://www.ebay.com/itm/334689338039",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 60.84,
+          "offer_url": "https://www.ebay.com/itm/334689338039"
         },
         {
           "url": "https://golfcourselawn.store/products/tenacity-herbicide",
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 84.99,
+          "offer_url": "https://golfcourselawn.store/products/tenacity-herbicide"
         },
         {
           "url": "https://www.amazon.com/dp/B005DUTNF0",
@@ -1578,8 +1578,8 @@
           "offer_url": "https://golfcourselawn.store/products/tenacity-herbicide?variant=44424749842681"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 5,
+      "included_sources": 8,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -1593,10 +1593,10 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 100.47,
+          "offer_url": "https://www.walmart.com/ip/160081931"
         },
         {
           "url": "https://www.solutionsstores.com/hi-yield-triclopyr-ester",
@@ -1639,8 +1639,8 @@
           "offer_url": "https://pestrong.com/product/turflon-ester-ultra-specialty-herbicide-gal"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 1,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -1828,7 +1828,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 253.05,
+          "price": 248.55,
           "offer_url": "https://www.amazon.com/dp/B00EDQ1DCQ?tag=lawndominator-20"
         },
         {
@@ -1836,30 +1836,30 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.52,
+          "offer_url": "https://steveregan.com/products/7552500"
         },
         {
           "url": "https://www.ebay.com/itm/287256259347",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 149.0,
+          "offer_url": "https://www.ebay.com/itm/287256259347"
         },
         {
           "url": "https://chemicalwarehouse.com/products/msma-6-plus-herbicide",
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 128.95,
+          "offer_url": "https://chemicalwarehouse.com/products/msma-6-plus-herbicide"
         },
         {
           "url": "https://diypestcontrol.com/target-msma-6-plus",
@@ -1896,10 +1896,10 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.52,
+          "offer_url": "https://steveregan.com/cdn/shop/products/IMG_1039-removebg-preview_1024x1024.png?v=1678375095"
         },
         {
           "url": "https://chemicalwarehouse.com/products/msma-6-plus-herbicide?variant=7365300355135",
@@ -1956,14 +1956,14 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 92.95,
-          "offer_url": "https://steveregan.com/products/733cust?pr_prod_strat=e5_desc&pr_rec_id=be2fc6c40&pr_rec_pid=4647604977753&pr_ref_pid=4647558512729&pr_seq=uniform"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 10,
+      "included_sources": 8,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -2008,10 +2008,10 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 49.99,
+          "offer_url": "https://lawnsynergy.com/products/granular-broadleaf-weed-killer-with-1-81-trimec"
         },
         {
           "url": "https://pestrong.com/product/trimec-classic-broadleaf-herbicide-2-5",
@@ -2038,10 +2038,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 183.95,
+          "offer_url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons"
         },
         {
           "url": "https://lawnsynergy.com/products/granular-broadleaf-weed-killer-with-1-81-trimec?variant=45742411219082",
@@ -2064,8 +2064,8 @@
           "offer_url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons?variant=47621611094234"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 2,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -2099,20 +2099,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 395.95,
+          "offer_url": "https://seedbarn.com/products/revolver-herbicide-1-quart"
         },
         {
           "url": "https://www.sunspotsupply.com/products/revolver-herbicide-quart",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 373.17,
+          "offer_url": "https://www.sunspotsupply.com/products/revolver-herbicide-quart"
         },
         {
           "url": "https://www.sunspotsupply.com/products/revolver-herbicide-quart?variant=43994455507130",
@@ -2135,8 +2135,8 @@
           "offer_url": "https://seedbarn.com/products/revolver-herbicide-1-quart?variant=12542001512548"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2180,10 +2180,10 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 235.25,
+          "offer_url": "https://www.sunspotsupply.com/products/katana-turf-herbicide-bottle-5-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/katana-turf-herbicide-bottle-5-oz?variant=43994393018554",
@@ -2196,8 +2196,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/katana-turf-herbicide-bottle-5-oz?variant=43994393018554"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 1,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -2221,10 +2221,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 38.02,
+          "offer_url": "https://www.ebay.com/itm/335925853779"
         },
         {
           "url": "https://www.amazon.com/dp/B0B4VBN389",
@@ -2251,10 +2251,10 @@
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 49.99,
+          "offer_url": "https://golfcourselawn.store/products/primo-maxx-plant-growth-regulator-4-oz"
         },
         {
           "url": "https://www.domyown.com/primo-maxx-plant-growth-regulator-p-2320.html",
@@ -2281,10 +2281,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 33.99,
+          "offer_url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator"
         },
         {
           "url": "https://pestrong.com/product/podium-tgr-trin-pac-select-generic-primo-maxx-gallon",
@@ -2301,10 +2301,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 399.95,
+          "offer_url": "https://seedbarn.com/products/primo-maxx-plant-growth-regulator-1-gallon"
         },
         {
           "url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator?variant=42990895628426",
@@ -2337,8 +2337,8 @@
           "offer_url": "https://golfcourselawn.store/products/primo-maxx-plant-growth-regulator-4-oz?variant=42507530666233"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 6,
+      "included_sources": 11,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -2362,20 +2362,20 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 127.13,
+          "offer_url": "https://www.walmart.com/ip/5081584180"
         },
         {
           "url": "https://www.ebay.com/itm/232322660324",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 174.37,
+          "offer_url": "https://www.ebay.com/itm/232322660324"
         },
         {
           "url": "https://diypestcontrol.com/t-nex-plant-growth-regulator",
@@ -2404,7 +2404,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.0,
+          "price": 125.37,
           "offer_url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator"
         },
         {
@@ -2432,30 +2432,30 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 334.95,
+          "offer_url": "https://seedbarn.com/products/t-nex-plant-growth-regulator-2-5-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-gallon",
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 149.03,
+          "offer_url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-2-5-gallons",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 362.0,
+          "offer_url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-2-5-gallons"
         },
         {
           "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-gallon?variant=43994323091642",
@@ -2498,8 +2498,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 9,
+      "included_sources": 11,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -2533,30 +2533,30 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 154.95,
+          "offer_url": "https://seedbarn.com/products/anuew-plant-growth-regulator-1-5-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-64",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 213.44,
+          "offer_url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-64"
         },
         {
           "url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 813.96,
+          "offer_url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25"
         },
         {
           "url": "https://seedbarn.com/products/anuew-plant-growth-regulator-1-5-lbs?variant=12529692311652",
@@ -2589,8 +2589,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25?variant=43994501152954"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2624,20 +2624,20 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1282.5,
+          "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons"
         },
         {
           "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 561.0,
+          "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator",
@@ -2645,9 +2645,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator"
         },
         {
           "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons?variant=43994303627450",
@@ -2670,8 +2670,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon?variant=43994303594682"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -2705,10 +2705,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 367.77,
+          "offer_url": "https://seedbarn.com/products/cutless-0-33g-landscape-growth-regulator-40-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator",
@@ -2716,19 +2716,19 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator"
         },
         {
           "url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator-gallon-128-oz",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 524.54,
+          "offer_url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator-gallon-128-oz"
         },
         {
           "url": "https://seedbarn.com/products/cutless-0-33g-landscape-growth-regulator-40-lbs?variant=12532490764388",
@@ -2751,8 +2751,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator-gallon-128-oz?variant=43994369982650"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2776,10 +2776,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 157.77,
+          "offer_url": "https://seedbarn.com/products/trin-pac-select-pgr-plant-growth-regulator-1-gal"
         },
         {
           "url": "https://seedbarn.com/products/trin-pac-select-pgr-plant-growth-regulator-1-gal?variant=45670127403226",
@@ -2792,8 +2792,8 @@
           "offer_url": "https://seedbarn.com/products/trin-pac-select-pgr-plant-growth-regulator-1-gal?variant=45670127403226"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 1,
+      "included_sources": 3,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -2807,40 +2807,40 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 52.99,
+          "offer_url": "https://www.walmart.com/ip/2838397298"
         },
         {
           "url": "https://www.sunspotsupply.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz",
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.5,
+          "offer_url": "https://www.sunspotsupply.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz"
         },
         {
           "url": "https://www.intermountainturf.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz",
           "retailer": "intermountainturf",
           "retailer_name": "Intermountainturf",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 41.2,
+          "offer_url": "https://www.intermountainturf.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz"
         },
         {
           "url": "https://www.ebay.com/itm/335925853866",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 52.06,
+          "offer_url": "https://www.ebay.com/itm/335925853866"
         },
         {
           "url": "https://www.amazon.com/dp/B0BJ3662N7",
@@ -2883,8 +2883,8 @@
           "offer_url": "https://www.intermountainturf.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz?variant=45347721838730"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 8,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -2918,10 +2918,10 @@
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 51.99,
+          "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide"
         },
         {
           "url": "https://pestrong.com/product/propiconazole-14-3-fungicide-ppz-pt-qt-1-2-5-gallon",
@@ -2954,8 +2954,8 @@
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide?variant=33097543843892"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2989,10 +2989,10 @@
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 114.0,
+          "offer_url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex"
         },
         {
           "url": "https://pestrong.com/product/mural-fungicide-heritage-azoxystrobin-benzovindiflupyr-lb",
@@ -3045,8 +3045,8 @@
           "offer_url": "https://www.bes-tex.com/catalogItems/view/heritage-g-with-22-9-azoxystrobin-4-oz"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 2,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -3080,10 +3080,10 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.99,
+          "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide"
         },
         {
           "url": "https://pestrong.com/product/headway-g-broad-spectrum-fungicide-30-lbs",
@@ -3116,8 +3116,8 @@
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide?variant=46295278420106"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -3171,10 +3171,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 159.95,
+          "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs"
         },
         {
           "url": "https://lawnsynergy.com/products/armada-50-wdg-fungicide?variant=46431100403850",
@@ -3197,8 +3197,8 @@
           "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -3222,10 +3222,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 247.77,
+          "offer_url": "https://seedbarn.com/products/pillar-sc-fungicide-43-5-fl-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide",
@@ -3233,29 +3233,29 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide"
         },
         {
           "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-25",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 3791.25,
+          "offer_url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-25"
         },
         {
           "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-2",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 590.75,
+          "offer_url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-2"
         },
         {
           "url": "https://seedbarn.com/products/pillar-sc-fungicide-43-5-fl-oz?variant=46114571616474",
@@ -3288,8 +3288,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-2?variant=43994448920762"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -3384,30 +3384,30 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 49.95,
+          "offer_url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-pint"
         },
         {
           "url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-gallon",
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 219.95,
+          "offer_url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/eagle-20ew-fungicide-pint",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 43.52,
+          "offer_url": "https://www.sunspotsupply.com/products/eagle-20ew-fungicide-pint"
         },
         {
           "url": "https://seedbarn.com/products/eagle-20ew-specialty-fungicide-1-pint?variant=12533518401636",
@@ -3440,8 +3440,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/eagle-20ew-fungicide-pint?variant=43994299728058"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -3526,20 +3526,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 184.25,
+          "offer_url": "https://seedbarn.com/products/emerald-fungicide-0-49-lb"
         },
         {
           "url": "https://www.sunspotsupply.com/products/packet-49-lb",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1251.66,
+          "offer_url": "https://www.sunspotsupply.com/products/packet-49-lb"
         },
         {
           "url": "https://seedbarn.com/products/emerald-fungicide-0-49-lb?variant=12533628403812",
@@ -3562,8 +3562,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/packet-49-lb?variant=43994343309498"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3587,20 +3587,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 217.77,
+          "offer_url": "https://seedbarn.com/products/medallion-wdg-fungicide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/medallion-wdg-fungicide-8oz",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 205.0,
+          "offer_url": "https://www.sunspotsupply.com/products/medallion-wdg-fungicide-8oz"
         },
         {
           "url": "https://seedbarn.com/products/medallion-wdg-fungicide-8-oz?variant=12537998442596",
@@ -3623,8 +3623,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/medallion-wdg-fungicide-8oz?variant=43994445938874"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3678,10 +3678,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 789.95,
+          "offer_url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon"
         },
         {
           "url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon?variant=47651436888282",
@@ -3694,8 +3694,8 @@
           "offer_url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon?variant=47651436888282"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -3719,20 +3719,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 365.85,
+          "offer_url": "https://seedbarn.com/products/velista-fungicide-22-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/velista",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 330.75,
+          "offer_url": "https://www.sunspotsupply.com/products/velista"
         },
         {
           "url": "https://seedbarn.com/products/velista-fungicide-22-oz?variant=44307957121242",
@@ -3755,8 +3755,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/velista?variant=43994329448634"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3770,10 +3770,10 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 370.0,
+          "offer_url": "https://www.sunspotsupply.com/products/encartis-fungicide-jug-2-5-gal"
         },
         {
           "url": "https://www.sunspotsupply.com/products/encartis-fungicide-jug-2-5-gal?variant=44739889692858",
@@ -3786,8 +3786,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/encartis-fungicide-jug-2-5-gal?variant=44739889692858"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3801,10 +3801,10 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 754.6,
+          "offer_url": "https://www.sunspotsupply.com/products/densicor-fungicide-bottl-51-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/densicor-fungicide-bottl-51-oz?variant=43994456686778",
@@ -3817,8 +3817,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/densicor-fungicide-bottl-51-oz?variant=43994456686778"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3832,10 +3832,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 85.0,
+          "offer_url": "https://www.sunspotsupply.com/products/acelepryn-insecticide-4-oz-bottle"
         },
         {
           "url": "https://www.solutionsstores.com/acelepryn-insecticide",
@@ -3852,10 +3852,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 99.45,
+          "offer_url": "https://www.ebay.com/itm/334772691433"
         },
         {
           "url": "https://chemicalwarehouse.com/products/acelepryn",
@@ -3882,10 +3882,10 @@
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 124.99,
+          "offer_url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control"
         },
         {
           "url": "https://www.domyown.com/acelepryn-sc-insecticide-p-3953.html",
@@ -3922,10 +3922,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 85.0,
-          "offer_url": "https://www.sunspotsupply.com/products/acelepryn-insecticide-4-oz-bottle?variant=43994330431674"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control?variant=42425589465337",
@@ -3938,8 +3938,8 @@
           "offer_url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control?variant=42425589465337"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 5,
+      "included_sources": 8,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -3953,10 +3953,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 125.0,
+          "offer_url": "https://www.sunspotsupply.com/products/acelepryn-granular-insecticide"
         },
         {
           "url": "https://www.amazon.com/dp/B01BZLG0PQ",
@@ -3973,10 +3973,10 @@
           "retailer": "golfcourselawn",
           "retailer_name": "Golfcourselawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 155.99,
+          "offer_url": "https://golfcourselawn.store/products/acelepryn-g-insecticide-grub-and-armyworm-control"
         },
         {
           "url": "https://www.domyown.com/acelepryn-insecticide-p-15739.html",
@@ -4039,8 +4039,8 @@
           "offer_url": "https://golfcourselawn.store/products/acelepryn-g-insecticide-grub-and-armyworm-control?variant=42408172781817"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 5,
+      "included_sources": 6,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -4074,20 +4074,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 74.95,
+          "offer_url": "https://seedbarn.com/products/quali-pro-imidacloprid-insecticide-0-5g-30-lb"
         },
         {
           "url": "https://www.sunspotsupply.com/products/merit-0-5g-insecticide",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.05,
+          "offer_url": "https://www.sunspotsupply.com/products/merit-0-5g-insecticide"
         },
         {
           "url": "https://www.sunspotsupply.com/products/imidacloprid-0-5g",
@@ -4095,9 +4095,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/imidacloprid-0-5g"
         },
         {
           "url": "https://seedbarn.com/products/quali-pro-imidacloprid-insecticide-0-5g-30-lb?variant=47315381518554",
@@ -4120,8 +4120,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/merit-0-5g-insecticide?variant=43994286522554"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -4166,10 +4166,10 @@
           "retailer": "pittsborofeed",
           "retailer_name": "Pittsborofeed",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 23.99,
+          "offer_url": "https://www.pittsborofeed.com/products/csi-bifen-it-7-9-bifenthrin-insecticide-concentrate"
         },
         {
           "url": "https://www.diypestwarehouse.com/products/bifen-it-bifenthrin-7-9-insecticide",
@@ -4196,10 +4196,10 @@
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 39.95,
+          "offer_url": "https://chemicalwarehouse.com/products/bifen-i-t"
         },
         {
           "url": "https://www.amazon.com/dp/B00DGUY2LO",
@@ -4236,10 +4236,10 @@
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 77.99,
+          "offer_url": "https://yardmastery.com/products/bifenthrin-7-9f-select"
         },
         {
           "url": "https://pestrong.com/product/wisdom-tc-flowable-bifenthrin-insecticide-gallon",
@@ -4302,8 +4302,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/bifen-i-t?variant=39715779870783"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 8,
+      "included_sources": 9,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -4398,20 +4398,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 155.77,
+          "offer_url": "https://seedbarn.com/products/meridian-0-33g-insecticide-40-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/meridian-0-33g-bag-40-lbs",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 153.18,
+          "offer_url": "https://www.sunspotsupply.com/products/meridian-0-33g-bag-40-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/meridian-0-33g-bag-40-lbs?variant=43994339246266",
@@ -4434,8 +4434,8 @@
           "offer_url": "https://seedbarn.com/products/meridian-0-33g-insecticide-40-lbs?variant=12538019020900"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -4469,20 +4469,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 127.77,
+          "offer_url": "https://seedbarn.com/products/arena-0-25g-insecticide-30-lbs"
         },
         {
           "url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 109.45,
+          "offer_url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs"
         },
         {
           "url": "https://seedbarn.com/products/arena-0-25g-insecticide-30-lbs?variant=12530110759012",
@@ -4505,8 +4505,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs?variant=43994456490170"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -4540,20 +4540,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 59.95,
+          "offer_url": "https://seedbarn.com/products/demand-cs-insecticide-8-oz"
         },
         {
           "url": "https://seedbarn.com/products/warrior-ii-lambda-cyhalothrin-insecticide-demand-cs-1-gal",
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 87.77,
+          "offer_url": "https://seedbarn.com/products/warrior-ii-lambda-cyhalothrin-insecticide-demand-cs-1-gal"
         },
         {
           "url": "https://www.sunspotsupply.com/products/ludo-cs-insecticide-lambda-cyhalothrin",
@@ -4561,9 +4561,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/ludo-cs-insecticide-lambda-cyhalothrin"
         },
         {
           "url": "https://seedbarn.com/products/demand-cs-insecticide-8-oz?variant=12532598210660",
@@ -4586,8 +4586,8 @@
           "offer_url": "https://seedbarn.com/products/warrior-ii-lambda-cyhalothrin-insecticide-demand-cs-1-gal?variant=31258736590983"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -4611,10 +4611,10 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 149.75,
+          "offer_url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart"
         },
         {
           "url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide",
@@ -4622,9 +4622,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide"
         },
         {
           "url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart?variant=43994286293178",
@@ -4637,8 +4637,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart?variant=43994286293178"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 2,
+      "included_sources": 3,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -4662,20 +4662,20 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 141.63,
+          "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-gallon"
         },
         {
           "url": "https://www.walmart.com/ip/854524378",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 100.55,
+          "offer_url": "https://www.walmart.com/ip/854524378"
         },
         {
           "url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-quart",
@@ -4712,10 +4712,10 @@
           "retailer": "homeandgardensupply",
           "retailer_name": "Homeandgardensupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 95.99,
+          "offer_url": "https://homeandgardensupply.com/products/avid-0-15ec"
         },
         {
           "url": "https://www.amazon.com/dp/B004CZ866E",
@@ -4752,20 +4752,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 245.96,
+          "offer_url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-quart",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.46,
+          "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-quart"
         },
         {
           "url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide",
@@ -4773,9 +4773,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide"
         },
         {
           "url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-gallon?variant=12529372397668",
@@ -4802,10 +4802,10 @@
           "retailer": "forestrydistributing",
           "retailer_name": "Forestrydistributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 499.95,
-          "offer_url": "https://www.forestrydistributing.com/ardent-015-ec-miticide-insecticide-syngenta"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://homeandgardensupply.com/products/avid-0-15ec?variant=12690266062935",
@@ -4838,8 +4838,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 10,
+      "included_sources": 13,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -4853,10 +4853,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 329.3,
+          "offer_url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart"
         },
         {
           "url": "https://maguires.co/products/chemicals/insecticides/movento-240sc-bayer",
@@ -4873,20 +4873,20 @@
           "retailer": "doubleavineyards",
           "retailer_name": "Doubleavineyards",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 475.11,
+          "offer_url": "https://doubleavineyards.com/products/movento-spirotetramat-insecticide"
         },
         {
           "url": "https://chemicalwarehouse.com/products/movento",
           "retailer": "chemicalwarehouse",
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1021.95,
+          "offer_url": "https://chemicalwarehouse.com/products/movento"
         },
         {
           "url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart?variant=43994441416890",
@@ -4919,8 +4919,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/movento?variant=32848877649983"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -4954,10 +4954,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 409.99,
+          "offer_url": "https://seedbarn.com/products/mainspring-gnl-insecticide"
         },
         {
           "url": "https://seedbarn.com/products/mainspring-gnl-insecticide?variant=47315579633882",
@@ -4970,8 +4970,8 @@
           "offer_url": "https://seedbarn.com/products/mainspring-gnl-insecticide?variant=47315579633882"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 1,
+      "included_sources": 4,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -5005,20 +5005,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 320.65,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 273.0,
+          "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle"
         },
         {
           "url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444",
@@ -5041,8 +5041,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -5086,20 +5086,20 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 157.77,
+          "offer_url": "https://seedbarn.com/products/tetrasan-5-wdg-miticide-ovicide-1-lb-8x2-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/tetrasan-5-wdg-miticide",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 154.89,
+          "offer_url": "https://www.sunspotsupply.com/products/tetrasan-5-wdg-miticide"
         },
         {
           "url": "https://seedbarn.com/products/tetrasan-5-wdg-miticide-ovicide-1-lb-8x2-oz?variant=12545139572836",
@@ -5122,8 +5122,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/tetrasan-5-wdg-miticide?variant=43994274201786"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -5137,20 +5137,20 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 267.32,
+          "offer_url": "https://www.ebay.com/itm/335754982770"
         },
         {
           "url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide",
           "retailer": "intermountainturf",
           "retailer_name": "Intermountainturf",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 228.48,
+          "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide"
         },
         {
           "url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide",
@@ -5167,10 +5167,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 674.68,
+          "offer_url": "https://www.ebay.com/itm/336502144793"
         },
         {
           "url": "https://www.domyown.com/bayer-kontos-insecticide-p-21398.html",
@@ -5193,8 +5193,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -5218,10 +5218,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 649.95,
+          "offer_url": "https://seedbarn.com/products/tristar-8-5-sl-insecticide-1-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/tristar-8-5sl",
@@ -5229,29 +5229,29 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/tristar-8-5sl"
         },
         {
           "url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-gallon",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 625.0,
+          "offer_url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-quart",
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 186.53,
+          "offer_url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-quart"
         },
         {
           "url": "https://seedbarn.com/products/tristar-8-5-sl-insecticide-1-gallon?variant=47621438406874",
@@ -5284,8 +5284,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-quart?variant=43994303529146"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5299,10 +5299,10 @@
           "retailer": "johnsonsgarden",
           "retailer_name": "Johnsonsgarden",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 19.99,
+          "offer_url": "https://johnsonsgarden.com/products/hydretain-granular-root-zone-moisture-manager-3-lbs"
         },
         {
           "url": "https://www.greenthumbnurseryshop.com/products/hydretain-root-zone-moisture-manager-ready-to-spray-1-qt",
@@ -5329,10 +5329,10 @@
           "retailer": "treehelp",
           "retailer_name": "Treehelp",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 39.95,
+          "offer_url": "https://www.treehelp.com/products/hydretain-root-zone-moisture-manager"
         },
         {
           "url": "https://www.amazon.com/dp/B009KS5ZF8",
@@ -5399,10 +5399,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 24.95,
+          "offer_url": "https://seedbarn.com/products/hydretain-granular-moisture-manager-3lbs"
         },
         {
           "url": "https://lawnsynergy.com/products/hydretain-es-plus-ii?variant=46419722829962",
@@ -5465,8 +5465,8 @@
           "offer_url": "https://www.treehelp.com/products/hydretain-root-zone-moisture-manager?variant=42716364964008"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 10,
+      "included_sources": 10,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -5563,10 +5563,10 @@
           "retailer": "lawnandpestcontrolsupply",
           "retailer_name": "Lawnandpestcontrolsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 92.95,
+          "offer_url": "https://www.lawnandpestcontrolsupply.com/products/lesco-carbonpro-g"
         },
         {
           "url": "https://ibspot.com/products/lesco-carbonpro-g-soil-optimizer-w-mirimichi-green-sgn-100-40-lb-qgcy",
@@ -5603,20 +5603,20 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 99.95,
+          "offer_url": "https://www.ebay.com/itm/285868654283"
         },
         {
           "url": "https://www.walmart.com/ip/2901222193",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 92.95,
+          "offer_url": "https://www.walmart.com/ip/2901222193"
         },
         {
           "url": "https://www.bes-tex.com/catalogItems/view/carbonpro-g-soil-optimizer-with-47-4-compost-47-4-biochar-12-humic-acid-40-lbs",
@@ -5643,10 +5643,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://lawnsynergy.com/products/lesco-carbonpro-g"
         },
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/lesco-carbonpro-g?variant=39322773717103",
@@ -5669,8 +5669,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-carbonpro-g?variant=42501778800778"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 6,
+      "included_sources": 9,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -5694,20 +5694,20 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 189.95,
+          "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-carbonpro-l-mobilex-liquid-biostimulant-1-gal"
         },
         {
           "url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon",
           "retailer": "seedbarn",
           "retailer_name": "Seedbarn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 203.77,
+          "offer_url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon"
         },
         {
           "url": "https://www.siteone.com/en/510894b-lesco-carbonpro-l-w-mobilex-biostimulant-liquid-soil-amendment/p/1061272",
@@ -5730,8 +5730,8 @@
           "offer_url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon?variant=47135745573082"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 3,
+      "included_sources": 4,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5765,10 +5765,10 @@
           "retailer": "seedbarn",
           "retailer_name": "Seedbarn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.95,
+          "offer_url": "https://seedbarn.com/products/lesco-fertilizer-24-0-11-56-polyplus-as-3-fe-1-mn-50-lbs"
         },
         {
           "url": "https://www.seedworldusa.com/products/fertilizer-24-0-11-75-polyplus-as-3-fe-1-mn-50-lb",
@@ -5785,10 +5785,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.99,
+          "offer_url": "https://lawnsynergy.com/products/lesco-24-0-11-fertilizer"
         },
         {
           "url": "https://www.amazon.com/dp/B07876FR4M",
@@ -5821,8 +5821,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-24-0-11-fertilizer?variant=45586115264650"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 5,
+      "included_sources": 5,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -5866,40 +5866,40 @@
           "retailer": "antegowheels",
           "retailer_name": "Antegowheels",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://antegowheels.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer"
         },
         {
           "url": "https://www.ebay.com/itm/397119847822",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 87.5,
+          "offer_url": "https://www.ebay.com/itm/397119847822"
         },
         {
           "url": "https://www.walmart.com/ip/17812655324",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.99,
+          "offer_url": "https://www.walmart.com/ip/17812655324"
         },
         {
           "url": "https://lawnsynergy.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer",
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 82.99,
+          "offer_url": "https://lawnsynergy.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer"
         },
         {
           "url": "https://www.siteone.com/en/510971-lesco-46-0-0-100-nos-am-turfgrass-soluble-fertilizer-50-lb-bag/p/647084",
@@ -5932,8 +5932,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer?variant=46228052574346"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 8,
+      "included_sources": 6,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -5957,20 +5957,20 @@
           "retailer": "antegowheels",
           "retailer_name": "Antegowheels",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://antegowheels.com/products/lesco-0-0-7-pre-emergent-fertilizer-stonewall-0-37-50-lb"
         },
         {
           "url": "https://www.walmart.com/ip/19399071498",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 82.99,
+          "offer_url": "https://www.walmart.com/ip/19399071498"
         },
         {
           "url": "https://www.siteone.com/en/702737-lesco-stonewall-037-0-0-7-am-pre-emergent-plus-fertilizer-50-lb/p/849542",
@@ -5987,10 +5987,10 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.99,
+          "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-0-0-7-pre-emergent-fertilizer-stonewall-0.37-50-lb."
         },
         {
           "url": "https://www.lowes.com/pd/Lesco-LESCO-Stonewall-Crabgrass-Preventer-0-0-7/5001213041",
@@ -6007,10 +6007,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.99,
+          "offer_url": "https://lawnsynergy.com/products/lesco-0-0-7-pre-emergent-fertlizer"
         },
         {
           "url": "https://www.amazon.com/dp/B0BYXQXMV8",
@@ -6033,8 +6033,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-0-0-7-pre-emergent-fertlizer?variant=43123942817930"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 6,
+      "included_sources": 7,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -6058,20 +6058,20 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 76.99,
+          "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-19-0-6-dimension-pre-emergent-fertilizer"
         },
         {
           "url": "https://antegowheels.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer",
           "retailer": "antegowheels",
           "retailer_name": "Antegowheels",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 84.99,
+          "offer_url": "https://antegowheels.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer"
         },
         {
           "url": "https://www.siteone.com/en/702631-lesco-dimension-019-19-0-6-30opti45-pre-emergent-plus-fertilizer-50-lb/p/716155",
@@ -6108,10 +6108,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.99,
+          "offer_url": "https://lawnsynergy.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer"
         },
         {
           "url": "https://lawnsynergy.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer?variant=45962623647882",
@@ -6124,8 +6124,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer?variant=45962623647882"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 5,
+      "included_sources": 6,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -6201,10 +6201,10 @@
           "retailer": "coredepots",
           "retailer_name": "Coredepots",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 40.83,
+          "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle"
         },
         {
           "url": "https://lawnsynergy.com/products/lesco-moisture-manager",
@@ -6221,10 +6221,10 @@
           "retailer": "seedbarn",
           "retailer_name": "Seedbarn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 42.95,
+          "offer_url": "https://seedbarn.com/products/lesco-moisture-manager-liquid"
         },
         {
           "url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle?variant=50489188712612",
@@ -6247,8 +6247,8 @@
           "offer_url": "https://seedbarn.com/products/lesco-moisture-manager-liquid?variant=42022911672538"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -6272,10 +6272,10 @@
           "retailer": "target",
           "retailer_name": "Target",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.88,
+          "offer_url": "https://www.target.com/p/the-andersons-pgf-complete-16-4-8/-/A-1004907707"
         },
         {
           "url": "https://www.amazon.com/dp/B09TLBRQBK",
@@ -6302,20 +6302,20 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 64.88,
+          "offer_url": "https://www.walmart.com/ip/1119396098"
         },
         {
           "url": "https://andersonslawn.com/products/pgf-complete-16-4-8",
           "retailer": "andersonslawn",
           "retailer_name": "Andersonslawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 59.88,
+          "offer_url": "https://andersonslawn.com/products/pgf-complete-16-4-8"
         },
         {
           "url": "https://andersonslawn.com/products/pgf-complete-16-4-8?variant=47528654012662",
@@ -6328,8 +6328,8 @@
           "offer_url": "https://andersonslawn.com/products/pgf-complete-16-4-8?variant=47528654012662"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6373,10 +6373,10 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 54.88,
+          "offer_url": "https://www.walmart.com/ip/797487955"
         },
         {
           "url": "https://www.amazon.com/dp/B08FXR8R75",
@@ -6403,10 +6403,10 @@
           "retailer": "andersonslawn",
           "retailer_name": "Andersonslawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 54.88,
+          "offer_url": "https://andersonslawn.com/products/pgf-balanced-10-10-10"
         },
         {
           "url": "https://andersonslawn.com/products/pgf-balanced-10-10-10?variant=48211250381046",
@@ -6419,8 +6419,8 @@
           "offer_url": "https://andersonslawn.com/products/pgf-balanced-10-10-10?variant=48211250381046"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 6,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -6434,20 +6434,20 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.88,
+          "offer_url": "https://www.walmart.com/ip/497767014"
         },
         {
           "url": "https://andersonslawn.com/products/green-shocker-7-1-2",
           "retailer": "andersonslawn",
           "retailer_name": "Andersonslawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 59.88,
+          "offer_url": "https://andersonslawn.com/products/green-shocker-7-1-2"
         },
         {
           "url": "https://www.amazon.com/dp/B09B2LTT3K",
@@ -6470,8 +6470,8 @@
           "offer_url": "https://andersonslawn.com/products/green-shocker-7-1-2?variant=47528653226230"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 2,
+      "included_sources": 4,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -6515,20 +6515,20 @@
           "retailer": "7springsfarm",
           "retailer_name": "7Springsfarm",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 58.6,
-          "offer_url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/18749200605",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 54.87,
+          "offer_url": "https://www.walmart.com/ip/18749200605"
         },
         {
           "url": "https://www.target.com/p/the-andersons-humic-dg/-/A-1004907708",
@@ -6545,10 +6545,10 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 89.88,
+          "offer_url": "https://www.walmart.com/ip/259000166"
         },
         {
           "url": "https://www.amazon.com/dp/B07KXZHMK1",
@@ -6561,8 +6561,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 5,
+      "included_sources": 4,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -6606,20 +6606,20 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 59.87,
+          "offer_url": "https://www.walmart.com/ip/18772905985"
         },
         {
           "url": "https://andersonslawn.com/products/humichar",
           "retailer": "andersonslawn",
           "retailer_name": "Andersonslawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 49.88,
+          "offer_url": "https://andersonslawn.com/products/humichar"
         },
         {
           "url": "https://andersonslawn.com/products/humichar?variant=47528653947126",
@@ -6632,8 +6632,8 @@
           "offer_url": "https://andersonslawn.com/products/humichar?variant=47528653947126"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6657,10 +6657,10 @@
           "retailer": "customhydronutrients",
           "retailer_name": "Customhydronutrients",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 62.64,
+          "offer_url": "https://customhydronutrients.com/products/biomend-dg-black-gypsum"
         },
         {
           "url": "https://www.amleo.com/soil-amendment-21-black-gypsum-50lb/p/A11006",
@@ -6677,10 +6677,10 @@
           "retailer": "russopower",
           "retailer_name": "Russopower",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 39.99,
+          "offer_url": "https://russopower.com/products/the-andersons-black-gypsum-dg"
         },
         {
           "url": "https://www.domyown.com/andersons-black-gypsum-dg-p-22186.html",
@@ -6713,8 +6713,8 @@
           "offer_url": "https://www.facebook.com/sharer.php?u=https://russopower.com/products/the-andersons-black-gypsum-dg"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6728,10 +6728,10 @@
           "retailer": "homegardengear",
           "retailer_name": "Homegardengear",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 99.01,
+          "offer_url": "https://www.homegardengear.com/products/b08yz2qqjb"
         },
         {
           "url": "https://www.amazon.com/dp/B08YZ2QQJB",
@@ -6748,30 +6748,30 @@
           "retailer": "andersonslawn",
           "retailer_name": "Andersonslawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 64.88,
+          "offer_url": "https://andersonslawn.com/products/dirt-booster-plus"
         },
         {
           "url": "https://www.walmart.com/ip/761104175",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 64.88,
+          "offer_url": "https://www.walmart.com/ip/761104175"
         },
         {
           "url": "https://www.ebay.com/itm/236362202521",
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 64.88,
+          "offer_url": "https://www.ebay.com/itm/236362202521"
         },
         {
           "url": "https://www.homegardengear.com/products/b08yz2qqjb?variant=51668319240491",
@@ -6794,8 +6794,8 @@
           "offer_url": "https://andersonslawn.com/products/dirt-booster-plus?variant=48239409823990"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -6819,10 +6819,10 @@
           "retailer": "lawnandpestcontrolsupply",
           "retailer_name": "Lawnandpestcontrolsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 89.95,
+          "offer_url": "https://www.lawnandpestcontrolsupply.com/products/the-andersons-charx-organic-soil-amendment-with-humic-acid-and-biochar-40lb-bag"
         },
         {
           "url": "https://www.gardenersedge.com/humichar-trade/p/HUMCHAR",
@@ -6855,8 +6855,8 @@
           "offer_url": "https://www.lawnandpestcontrolsupply.com/products/the-andersons-charx-organic-soil-amendment-with-humic-acid-and-biochar-40lb-bag?variant=40979194380399"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 1,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -6870,20 +6870,20 @@
           "retailer": "yardmastery",
           "retailer_name": "Yardmastery",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 17.59,
+          "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
           "url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant",
           "retailer": "thelawncarenut",
           "retailer_name": "Thelawncarenut",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 17.59,
+          "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant"
         },
         {
           "url": "https://diygrasscare.com/products/0-0-2-microgreene-n-ext",
@@ -6926,8 +6926,8 @@
           "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant?variant=40182174810250"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6941,30 +6941,30 @@
           "retailer": "thelawncarenut",
           "retailer_name": "Thelawncarenut",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 29.59,
+          "offer_url": "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
           "url": "https://gciturfacademy.com/products/7-0-0-greene-effect%e2%84%a2-two-2-5-gallon-jugs-5-gallons-total",
           "retailer": "gciturfacademy",
           "retailer_name": "Gciturfacademy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 72.99,
+          "offer_url": "https://gciturfacademy.com/products/7-0-0-greene-effect%e2%84%a2-two-2-5-gallon-jugs-5-gallons-total"
         },
         {
           "url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer",
           "retailer": "yardmastery",
           "retailer_name": "Yardmastery",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 29.59,
+          "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
           "url": "https://www.amazon.com/dp/B098ZR65HX",
@@ -7007,8 +7007,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7063,20 +7063,20 @@
           "retailer": "yardmastery",
           "retailer_name": "Yardmastery",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 17.59,
+          "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
           "url": "https://thelawncarenut.com/products/rgs-root-growth-liquid-biostimulant",
           "retailer": "thelawncarenut",
           "retailer_name": "Thelawncarenut",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 17.59,
+          "offer_url": "https://thelawncarenut.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
           "url": "https://www.amazon.com/dp/B09S2FTYWP",
@@ -7109,8 +7109,8 @@
           "offer_url": "https://thelawncarenut.com/products/rgs-root-growth-liquid-biostimulant?variant=40182617211018"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7134,20 +7134,20 @@
           "retailer": "simplelawnsolutions",
           "retailer_name": "Simplelawnsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 23.99,
+          "offer_url": "https://simplelawnsolutions.com/products/lawn-food-16-4-8-complete-balanced-npk-1-quart"
         },
         {
           "url": "https://www.walmart.com/ip/311029486",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 22.25,
+          "offer_url": "https://www.walmart.com/ip/311029486"
         },
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-16-4-8-complete-balanced-npk-1-quart?variant=40817623662703",
@@ -7160,8 +7160,8 @@
           "offer_url": "https://simplelawnsolutions.com/products/lawn-food-16-4-8-complete-balanced-npk-1-quart?variant=40817623662703"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 2,
+      "included_sources": 4,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7185,30 +7185,30 @@
           "retailer": "simplelawnsolutions",
           "retailer_name": "Simplelawnsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 99.99,
+          "offer_url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-2-5-gallon"
         },
         {
           "url": "https://simplelawnsolutions.com/products/28-0-0",
           "retailer": "simplelawnsolutions",
           "retailer_name": "Simplelawnsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 24.99,
+          "offer_url": "https://simplelawnsolutions.com/products/28-0-0"
         },
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-1-quart",
           "retailer": "simplelawnsolutions",
           "retailer_name": "Simplelawnsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 23.99,
+          "offer_url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-1-quart"
         },
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-2-5-gallon?variant=44337521262886",
@@ -7241,8 +7241,8 @@
           "offer_url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-1-quart?variant=40817624547439"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7266,10 +7266,10 @@
           "retailer": "simplelawnsolutions",
           "retailer_name": "Simplelawnsolutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 49.99,
+          "offer_url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon"
         },
         {
           "url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon?variant=40586275455087",
@@ -7282,8 +7282,8 @@
           "offer_url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon?variant=40586275455087"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 1,
+      "included_sources": 3,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7317,10 +7317,10 @@
           "retailer": "gsplantfoods",
           "retailer_name": "Gsplantfoods",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 41.95,
+          "offer_url": "https://gsplantfoods.com/products/organic-liquid-humic-acid"
         },
         {
           "url": "https://www.facebook.com/sharer.php?u=https://gsplantfoods.com/products/organic-liquid-humic-acid",
@@ -7333,8 +7333,8 @@
           "offer_url": "https://www.facebook.com/sharer.php?u=https://gsplantfoods.com/products/organic-liquid-humic-acid"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 2,
+      "included_sources": 3,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7358,10 +7358,10 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 14.99,
+          "offer_url": "https://www.walmart.com/ip/428618332"
         },
         {
           "url": "https://shop.petittigardencenter.com/products/hydretain-reg--moisture-manager-3lb-granules-402.html",
@@ -7388,10 +7388,10 @@
           "retailer": "mother-earth-gardens-webstore",
           "retailer_name": "Mother Earth Gardens Webstore",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 22.0,
+          "offer_url": "https://mother-earth-gardens-webstore.myshopify.com/products/hydretain-granular-root-zone-moisture-manager-3lb"
         },
         {
           "url": "https://www.amazon.com/dp/B07CP7QRPW",
@@ -7414,8 +7414,8 @@
           "offer_url": "https://mother-earth-gardens-webstore.myshopify.com/products/hydretain-granular-root-zone-moisture-manager-3lb?variant=45336509514030"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7429,10 +7429,10 @@
           "retailer": "ewingoutdoorsupply",
           "retailer_name": "Ewingoutdoorsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 38.13,
+          "offer_url": "https://www.ewingoutdoorsupply.com/54053520-pro-soil-enhancer-carbonizpn-fertilizer-40-lb-bag"
         },
         {
           "url": "https://www.amazon.com/dp/B01JEPEH9Q",
@@ -7475,8 +7475,8 @@
           "offer_url": "https://shop.mirimichigreen.com/products/carbonizpn%e2%84%a2-soil-enhancer"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 4,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7510,10 +7510,10 @@
           "retailer": "seedbarn",
           "retailer_name": "Seedbarn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 75.95,
+          "offer_url": "https://seedbarn.com/products/turf-fuel-blade-iron-15-0-0-liquid-turf-fertilizer-2-5-gal"
         },
         {
           "url": "https://www.seedworldusa.com/products/turf-fuel-blade-iron-6-liquid-turf-fertilizer-2-5-gallons",
@@ -7536,8 +7536,8 @@
           "offer_url": "https://seedbarn.com/products/turf-fuel-blade-iron-15-0-0-liquid-turf-fertilizer-2-5-gal?variant=12546404483172"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -7551,10 +7551,10 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 43.75,
+          "offer_url": "https://growcycle.com/helena-agri-enterprises/growers/nutrients-and-supplements/ele-max-turf-nectar-ac-15-0-0-with-6-fe"
         },
         {
           "url": "https://pestrong.com/product/ele-max-turf-nectar-ac-15-0-0-6-iron-ferromec-2-5-gal",
@@ -7581,10 +7581,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 78.19,
+          "offer_url": "https://www.sunspotsupply.com/products/turf-nectar-ac"
         },
         {
           "url": "https://www.domyown.com/turf-nectar-ac-1500-with-iron-p-2530.html",
@@ -7617,8 +7617,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/turf-nectar-ac?variant=43994275643578"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 2,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7642,20 +7642,20 @@
           "retailer": "homeandgardensupply",
           "retailer_name": "Homeandgardensupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 13.99,
+          "offer_url": "https://homeandgardensupply.com/products/chelated-liquid-iron"
         },
         {
           "url": "https://camelcamelcamel.com/product/B00A528VOK",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 15.21,
+          "offer_url": "https://camelcamelcamel.com/product/B00A528VOK"
         },
         {
           "url": "https://www.seedworldusa.com/products/chelated-liquid-iron-fertilizer-1-gallon",
@@ -7692,20 +7692,20 @@
           "retailer": "tierrasupplyco",
           "retailer_name": "Tierrasupplyco",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 35.0,
+          "offer_url": "https://tierrasupplyco.com/products/2-5-gal-12-0-0-chelated-southern-ag"
         },
         {
           "url": "https://www.walmart.com/ip/649671973",
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 15.21,
+          "offer_url": "https://www.walmart.com/ip/649671973"
         },
         {
           "url": "https://www.amazon.com/dp/B0053NDZJW",
@@ -7714,7 +7714,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.63,
+          "price": 30.67,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -7812,20 +7812,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 66.49,
+          "offer_url": "https://camelcamelcamel.com/product/B0GKG9YZMK?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GGBLSC6Q?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 143.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GGBLSC6Q?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GZNDNFDZ?active=price_amazon&context=sp",
@@ -7842,10 +7842,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 68.11,
+          "offer_url": "https://camelcamelcamel.com/product/B0F21VGRG8?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GQF6TSN9?active=price_amazon&context=sp",
@@ -7862,54 +7862,84 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.95,
+          "offer_url": "https://camelcamelcamel.com/product/B0F4KDQ1LF?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 3239.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 2879.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 339.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0B9H561YS?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 53.62,
-          "offer_url": "https://camelcamelcamel.com/product/B0B9H561YS?active=price_amazon&context=sp"
+          "price": 599.0,
+          "offer_url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 79.97,
+          "offer_url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 349.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 16,
+      "included_sources": 19,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
@@ -7955,9 +7985,9 @@
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 5.55,
+          "offer_url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros"
         },
         {
           "url": "https://www.amazon.com/dp/B0CL1XQ54R",
@@ -7984,10 +8014,10 @@
           "retailer": "grandarborsupply",
           "retailer_name": "Grandarborsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 21.95,
+          "offer_url": "https://www.grandarborsupply.com/brands/quest/quest-main-event-dry-fe-6-0-0-3lb"
         },
         {
           "url": "https://www.amleo.com/main-event-dry-iron-complex-6-0-0-10-fe-2-mn-quest/p/Q26001",
@@ -8014,10 +8044,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 29.75,
+          "offer_url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros-3"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack",
@@ -8034,10 +8064,10 @@
           "retailer": "grandarborsupply",
           "retailer_name": "Grandarborsupply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 21.95,
-          "offer_url": "https://www.grandarborsupply.com/brands/quest-products"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros-3?variant=43994454130874",
@@ -8054,30 +8084,30 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 30.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
@@ -8094,10 +8124,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
@@ -8114,10 +8144,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 79.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese",
@@ -8134,10 +8164,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 140.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10",
@@ -8150,8 +8180,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 9,
+      "included_sources": 15,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -8165,30 +8195,30 @@
           "retailer": "agcareproducts",
           "retailer_name": "Agcareproducts",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 32.0,
+          "offer_url": "https://www.agcareproducts.com/products/4925-sulfate-of-potash-0050-gr-fer"
         },
         {
           "url": "https://www.seedranch.com/Sulfate-of-Potash-0-0-50-Fertilizer-20-Lbs-p/sulfate-of-potash-20.htm",
           "retailer": "seedranch",
           "retailer_name": "Seedranch",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 47.77,
+          "offer_url": "https://www.seedranch.com/Sulfate-of-Potash-0-0-50-Fertilizer-20-Lbs-p/sulfate-of-potash-20.htm"
         },
         {
           "url": "https://seedbarn.com/products/sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs",
           "retailer": "seedbarn",
           "retailer_name": "Seedbarn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 47.77,
+          "offer_url": "https://seedbarn.com/products/sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs"
         },
         {
           "url": "https://www.seedworldusa.com/products/copy-of-sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs",
@@ -8205,20 +8235,20 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 21.99,
+          "offer_url": "https://www.walmart.com/ip/866683671"
         },
         {
           "url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer",
           "retailer": "themillstores",
           "retailer_name": "Themillstores",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 42.0,
+          "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer"
         },
         {
           "url": "https://www.amazon.com/dp/B0BL7XQ18Q",
@@ -8271,8 +8301,8 @@
           "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer?variant=47974179111151"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 6,
+      "included_sources": 10,
+      "not_included_sources": 1,
       "invalid_sources": 0
     }
   ]
