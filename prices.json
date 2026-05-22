@@ -1075,17 +1075,17 @@
         {
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
-          "price": 44.95,
+          "price": 105.95,
           "url": "https://pestrong.com/product/certainty-turf-herbicide-1-25-oz",
-          "in_stock": true,
-          "title": "Certainty Turf Herbicide - 1.25 Oz",
+          "in_stock": false,
+          "title": "Certainty Turf Herbicide - 1.25 Oz - Out of stock",
           "last_checked": "2026-05-22T00:00:51.028516+00:00",
           "source": "manual_verified_source",
           "image": null,
           "package_quantity": 1.25,
           "package_unit": "fl oz",
           "package_label": "1.25 fl oz",
-          "price_per_unit": 35.96
+          "price_per_unit": 84.76
         },
         {
           "retailer": "ebay",
@@ -1164,19 +1164,19 @@
         }
       ],
       "best_price": {
-        "retailer": "pestrong",
-        "retailer_name": "Pestrong",
-        "price": 44.95,
-        "url": "https://pestrong.com/product/certainty-turf-herbicide-1-25-oz",
+        "retailer": "domyown",
+        "retailer_name": "DoMyOwn",
+        "price": 83.69,
+        "url": "https://www.domyown.com/sertay-herbicide-p-25487.html",
         "in_stock": true,
-        "title": "Certainty Turf Herbicide - 1.25 Oz",
-        "last_checked": "2026-05-22T00:00:51.028516+00:00",
+        "title": "Sertay Herbicide",
+        "last_checked": "2026-05-21T11:46:12.155448+00:00",
         "source": "manual_verified_source",
-        "image": null,
+        "image": "https://www.domyown.com/sertay-herbicide-p-25487.html/25487-Atticus-Sertay-Herbicide.jpg",
         "package_quantity": 1.25,
         "package_unit": "fl oz",
         "package_label": "1.25 fl oz",
-        "price_per_unit": 35.96
+        "price_per_unit": 66.95
       },
       "updated_at": "2026-05-21T11:28:41.437231+00:00"
     },

@@ -276,7 +276,7 @@ class ScraperExtractionTests(unittest.TestCase):
             )
         )
 
-    def test_best_offer_allows_out_of_stock_product_page_for_display(self):
+    def test_best_offer_ignores_out_of_stock_product_page(self):
         product = {"id": 1, "category": "soil-amendment"}
         offers = [
             {
@@ -297,7 +297,7 @@ class ScraperExtractionTests(unittest.TestCase):
 
         best = scraper.select_best_offer(product, offers)
 
-        self.assertEqual(best["retailer"], "domyown")
+        self.assertEqual(best["retailer"], "amazon")
 
     def test_extract_uses_product_page_when_offer_link_is_cart(self):
         soup = BeautifulSoup(

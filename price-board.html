@@ -530,23 +530,20 @@
 
       async function loadBoard() {
         try {
-          const [priceResponse, catalogResponse, sourceResponse] = await Promise.all([
+          const [priceResponse, catalogResponse] = await Promise.all([
             fetch("./prices.json?v=" + Date.now()),
             fetch("./products.json?v=" + Date.now()),
-            fetch("./product_sources.json?v=" + Date.now()),
           ]);
           if (!priceResponse.ok) throw new Error("HTTP " + priceResponse.status);
           const data = await priceResponse.json();
           const catalog = catalogResponse.ok ? await catalogResponse.json() : { products: [] };
-          const sourceMap = sourceResponse.ok ? await sourceResponse.json() : { products: {} };
           products = mergeCatalogProducts(catalog.products || [], data.products || []);
-          mergeVerifiedSources(products, sourceMap.products || {});
           updateStats(data);
           populateBrandFilter();
           populateSearchSuggestions();
           applyProductDeepLink();
           document.getElementById("board-meta").textContent =
-            `${products.length} catalog products refreshed ${timeSince(data.generated_at)}. Showing verified priced offers per size.`;
+            `${products.length} catalog products refreshed ${timeSince(data.generated_at)}. Showing checked offers per size.`;
           renderBoard();
           focusDeepLinkedProduct();
         } catch (error) {
@@ -566,105 +563,6 @@
           if (!merged.some(item => String(item.id) === String(product.id))) merged.push(product);
         }
         return merged;
-      }
-
-      function mergeVerifiedSources(mergedProducts, sourcesByProduct) {
-        for (const product of mergedProducts) {
-          const offers = product.offers || [];
-          const byUrl = new Map(offers.map((offer, index) => [offerKey(offer.url), index]));
-          for (const source of sourcesByProduct[String(product.id)] || []) {
-            const offer = sourceOffer(source);
-            if (!offer) continue;
-            const key = offerKey(offer.url);
-            if (byUrl.has(key)) {
-              const existing = offers[byUrl.get(key)];
-              offers[byUrl.get(key)] = {
-                ...existing,
-                ...offer,
-                image: offer.image || existing.image || "",
-              };
-              continue;
-            }
-            byUrl.set(key, offers.length);
-            offers.push(offer);
-          }
-          product.offers = offers;
-        }
-      }
-
-      function sourceOffer(source) {
-        if (!source || (source.source_type && source.source_type !== "product")) return null;
-        if (source.price_verified == null || !source.url || isGoogleUrl(source.url)) return null;
-        const price = Number(source.price_verified);
-        if (!Number.isFinite(price)) return null;
-        const packageData = sourcePackage(source);
-        return {
-          retailer: source.retailer || retailerKey(source.url),
-          retailer_name: source.retailer_name || source.retailer || retailerKey(source.url),
-          price,
-          url: source.url,
-          in_stock: true,
-          title: source.title || "",
-          image: source.image || "",
-          last_checked: source.last_seen || "",
-          source: "manual_verified_source",
-          ...packageData,
-        };
-      }
-
-      function offerKey(url) {
-        try {
-          const parsed = new URL(url);
-          parsed.searchParams.delete("tag");
-          parsed.searchParams.delete("utm_source");
-          parsed.searchParams.delete("utm_medium");
-          parsed.searchParams.delete("utm_campaign");
-          return parsed.origin.toLowerCase() + parsed.pathname.replace(/\/$/, "").toLowerCase() + parsed.search.toLowerCase();
-        } catch {
-          return String(url || "").toLowerCase();
-        }
-      }
-
-      function retailerKey(url) {
-        try {
-          return new URL(url).hostname.replace(/^www\./, "").split(".")[0];
-        } catch {
-          return "retailer";
-        }
-      }
-
-      function sourcePackage(source) {
-        if (source.package_quantity != null && source.package_unit) {
-          const quantity = Number(source.package_quantity);
-          const unit = source.package_unit;
-          return {
-            package_quantity: quantity,
-            package_unit: unit,
-            package_label: source.package_label || formatSize(quantity, unit),
-            price_per_unit: quantity ? Number(source.price_verified) / quantity : null,
-          };
-        }
-        const text = `${source.title || ""} ${source.url || ""}`.toLowerCase().replace(/[_-]+/g, " ");
-        const liquid = text.match(/\b(\d+(?:\.\d+)?)\s*(?:fl\s*)?(oz|ounce|ounces)\b/);
-        if (liquid) return packageMeta(Number(liquid[1]), "fl_oz", source.price_verified);
-        const gallon = text.match(/\b(\d+(?:\.\d+)?)\s*(gal|gallon|gallons)\b/);
-        if (gallon) return packageMeta(Number(gallon[1]) * 128, "fl_oz", source.price_verified);
-        if (/\b(quart|qt)\b/.test(text)) return packageMeta(32, "fl_oz", source.price_verified);
-        if (/\bpint\b/.test(text)) return packageMeta(16, "fl_oz", source.price_verified);
-        const dry = text.match(/\b(\d+(?:\.\d+)?)\s*(lb|lbs|pound|pounds)\b/);
-        if (dry) return packageMeta(Number(dry[1]), "lb", source.price_verified);
-        const grams = text.match(/\b(\d+(?:\.\d+)?)\s*(g|gram|grams)\b/);
-        if (grams) return packageMeta(Number(grams[1]), "g", source.price_verified);
-        return {};
-      }
-
-      function packageMeta(quantity, unit, price) {
-        return {
-          package_quantity: quantity,
-          package_unit: unit,
-          package_label: formatSize(quantity, unit),
-          price_per_unit: quantity ? Number(price) / quantity : null,
-        };
       }
 
       function updateStats(data) {
@@ -741,7 +639,7 @@
       function productVariants(product) {
         const groups = {};
         for (const offer of product.offers || []) {
-          if (offer.price == null || offer.excluded || isGoogleUrl(offer.url)) continue;
+          if (offer.price == null || offer.excluded || offer.in_stock === false || isGoogleUrl(offer.url)) continue;
           const quantity = offer.package_quantity ?? offer.quantity ?? null;
           const unit = offer.package_unit ?? offer.unit ?? null;
           const label = offer.package_label ?? (quantity != null && unit ? formatSize(quantity, unit) : "");

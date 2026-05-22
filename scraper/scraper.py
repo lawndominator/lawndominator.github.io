@@ -266,6 +266,7 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         o for o in offers
         if o.get("price") is not None
         and not o.get("excluded")
+        and o.get("in_stock") is not False
         and not is_google_url(o.get("url", ""))
         and not is_bad_product_url(o.get("url", ""))
         and float(o["price"]) >= min_price_for_product(product)
@@ -1446,10 +1447,8 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             continue
         if is_known_wrong_product_source(product["id"], url, source.get("title", "")):
             continue
-        fallback_offer = _offer_from_verified_source(source)
         html = fetch_saved_source(url)
         if not html:
-            add_offer(offers, fallback_offer)
             continue
 
         retailer = source.get("retailer") or retailer_key(url)
@@ -1478,7 +1477,7 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             offer["image"] = _stored_image_url(source.get("image")) or offer.get("image")
             add_offer(offers, offer)
         else:
-            add_offer(offers, fallback_offer)
+            continue
         time.sleep(0.5)
     return offers
 
@@ -1542,11 +1541,17 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
                 "image": offer.get("image"),
                 "last_seen": now_iso(),
             }
+            if offer.get("price") is not None and updated_source["retailer"] != "amazon":
+                updated_source["price_verified"] = round(float(offer["price"]), 2)
+            if "in_stock" in offer:
+                updated_source["in_stock"] = offer.get("in_stock")
             for key in ("package_quantity", "package_unit", "package_label", "price_per_unit"):
                 if key in offer:
                     updated_source[key] = offer[key]
             for key in ("verified", "manual_verified", "price_verified", "source_type"):
                 if key == "price_verified" and updated_source["retailer"] == "amazon":
+                    continue
+                if key == "price_verified" and key in updated_source:
                     continue
                 if key in previous_source:
                     updated_source[key] = previous_source[key]
