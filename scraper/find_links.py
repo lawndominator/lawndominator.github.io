@@ -941,12 +941,12 @@ def main():
         id_set   = {int(i.strip()) for i in args.ids.split(",")}
         products = [p for p in products if p["id"] in id_set]
 
-    if args.refind:
-        # Clear verified flag so _run_discovery won't skip anything
-        sources_data = {"schema_version": "1.0", "updated_at": None, "products": {}}
-    else:
-        sources_data = load_sources(sources_path)
+    sources_data = load_sources(sources_path)
     existing = sources_data.setdefault("products", {})
+    if args.refind:
+        # Clear only the selected products so a targeted refind does not wipe unrelated sources.
+        for product in products:
+            existing.pop(str(product["id"]), None)
 
     if args.no_domyown:
         _run_discovery(products, catalog, existing, sources_path, sources_data, domyown_ctx=None)

@@ -232,6 +232,12 @@ def is_bad_product_url(url: str) -> bool:
         return True
     if "ebay." in host and path.startswith("/sch"):
         return True
+    if "keystonepestsolutions.com" in host and path.rstrip("/") in {"", "/index.php"}:
+        return True
+    if "mycorrhizalonline.com" in host and path.rstrip("/") in {"", "/"}:
+        return True
+    if path.endswith("/online-shop-2.html"):
+        return True
     return "notify" in path or "notify" in query
 
 
@@ -362,7 +368,7 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     if product_id == 17 and ("drive-xlr8" in url or "drive xlr8" in title):
         return _package(64.0, "fl oz")
 
-    if product_id == 16 and ("certainty" in text or "sulfosulfuron" in text or "empero" in text or "sertay" in text):
+    if product_id == 16 and ("certainty" in text or "sulfosulfuron" in text or "sertay" in text):
         return _package(1.25, "fl oz")
 
     if product_id == 18 and ("sedgehammer" in text or "halosulfuron" in text):
@@ -655,17 +661,25 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
         return True
     if ".pdf" in urllib.parse.urlparse(url).path.lower() or title.strip().lower() == "product label":
         return True
+    if "just a moment" == title.strip().lower():
+        return True
+    if "golf-course-lawn-academy" in text:
+        return True
     if "headway-g-fungicide" in text and product_id != 52:
         return True
     if "speedzone-broadleaf" in text and product_id != 19:
         return True
     if "basagran" in text:
         return True
+    if product_id == 16 and "empero" in text:
+        return True
     if product_id == 75 and "bifenthrin-7-9f-select" in text:
         return True
     if product_id == 79 and ("2.7 lbs" in text or "2-7-lbs" in text or "venom-insecticide" in text):
         return True
     if product_id == 81 and "kontos" in text:
+        return True
+    if product_id == 71 and ("acelepryn-sc" in text or "acelepryn sc" in text):
         return True
     if product_id == 116 and "hydr8" in text:
         return True
@@ -676,6 +690,16 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
     if product_id != 6 and ("gallery-75" in text or "gallery 75" in text or "isoxaben 75" in text):
         return True
     if product_id == 2 and "crabgrass-control-plus" in text:
+        return True
+    if product_id == 23 and "ourprosolutions.com/product/" in text and "dismiss" not in text:
+        return True
+    if product_id == 25 and "ourprosolutions.com/product/" in text and not any(term in text for term in ("msma", "target-6", "target 6")):
+        return True
+    if product_id == 25 and "roundup-custom" in text:
+        return True
+    if product_id == 41 and "pasture-pro" in text:
+        return True
+    if product_id == 138 and ("b07kxz_hmk1".replace("_", "") in text or ("humic dg" in text and "charx" not in text)):
         return True
     return False
 

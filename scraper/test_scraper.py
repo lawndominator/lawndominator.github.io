@@ -535,6 +535,27 @@ class ScraperExtractionTests(unittest.TestCase):
                 "Basagran T/O Herbicide. 1 Gallon $ 98.99",
             )
         )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                71,
+                "https://gciturfacademy.com/products/acelepryn-sc-insecticide",
+                "Acelepryn SC Insecticide",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                138,
+                "https://www.amazon.com/dp/B07KXZHMK1",
+                "The Andersons Humic DG Organic Soil Amendment",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                16,
+                "https://diypestcontrol.com/empero-selective-herbicide",
+                "Empero Selective Herbicide",
+            )
+        )
 
     def test_manual_remaining_product_sizes_are_sized(self):
         cases = [
