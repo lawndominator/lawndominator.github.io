@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-22T10:50:57.239208+00:00",
+  "generated_at": "2026-05-22T11:14:15.321999+00:00",
   "saved_source_limit": 5,
   "totals": {
+<<<<<<< Updated upstream
     "sources": 710,
     "manual_verified_sources": 341,
     "included_sources": 368,
@@ -12,6 +13,17 @@
   "reason_counts": {
     "included": 368,
     "no_extracted_offer": 250,
+=======
+    "sources": 715,
+    "manual_verified_sources": 339,
+    "included_sources": 371,
+    "not_included_sources": 344,
+    "invalid_sources": 0
+  },
+  "reason_counts": {
+    "included": 371,
+    "no_extracted_offer": 252,
+>>>>>>> Stashed changes
     "not_checked_saved_source_limit": 90,
     "below $10.00 minimum for this category": 2
   },
@@ -49,7 +61,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 78.01,
+          "price": 78.24,
           "offer_url": "https://www.amazon.com/dp/B015BSNZP2?tag=lawndominator-20"
         },
         {
@@ -1372,7 +1384,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 95.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1896,10 +1908,10 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 114.52,
-          "offer_url": "https://steveregan.com/cdn/shop/products/IMG_1039-removebg-preview_1024x1024.png?v=1678375095"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://chemicalwarehouse.com/products/msma-6-plus-herbicide?variant=7365300355135",
@@ -1950,10 +1962,20 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://steveregan.com/products/733cust?pr_prod_strat=e5_desc&pr_rec_id=be2fc6c40&pr_rec_pid=4647604977753&pr_ref_pid=4647558512729&pr_seq=uniform",
+          "retailer": "steveregan",
+          "retailer_name": "Steveregan",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 92.95,
+          "offer_url": "https://steveregan.com/products/733cust?pr_prod_strat=e5_desc&pr_rec_id=be2fc6c40&pr_rec_pid=4647604977753&pr_ref_pid=4647558512729&pr_seq=uniform"
         }
       ],
       "included_sources": 5,
-      "not_included_sources": 9,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -2394,7 +2416,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 125.37,
+          "price": 34.0,
           "offer_url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator"
         },
         {
@@ -3834,7 +3856,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.41,
+          "price": 64.94,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4178,7 +4200,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.98,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -6272,10 +6294,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 59.88,
-          "offer_url": "https://www.amazon.com/dp/B09TLBRQBK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://diypestcontrol.com/the-andersons-turf-fertilizer-16-4-8",
@@ -6318,8 +6340,8 @@
           "offer_url": "https://andersonslawn.com/products/pgf-complete-16-4-8?variant=47528654012662"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -6505,10 +6527,10 @@
           "retailer": "7springsfarm",
           "retailer_name": "7Springsfarm",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 58.6,
+          "offer_url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag"
         },
         {
           "url": "https://www.walmart.com/ip/18749200605",
@@ -6551,8 +6573,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 3,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -6577,7 +6599,7 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -7762,20 +7784,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 329.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0BZ584DH9?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1619.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
@@ -7802,10 +7824,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 66.49,
-          "offer_url": "https://camelcamelcamel.com/product/B0GKG9YZMK?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GGBLSC6Q?active=price_amazon&context=sp",
@@ -7832,10 +7854,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 37.36,
-          "offer_url": "https://camelcamelcamel.com/product/B0F21VGRG8?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GQF6TSN9?active=price_amazon&context=sp",
@@ -7852,14 +7874,54 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 269.95,
-          "offer_url": "https://camelcamelcamel.com/product/B0F4KDQ1LF?active=price_amazon&context=sp"
+          "price": 3239.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 2879.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 339.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0B9H561YS?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 53.62,
+          "offer_url": "https://camelcamelcamel.com/product/B0B9H561YS?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 15,
+      "included_sources": 12,
+      "not_included_sources": 16,
       "invalid_sources": 0
     },
     {
@@ -7894,10 +7956,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 30.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron"
         },
         {
           "url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros",
@@ -8014,23 +8076,13 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 30.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags",
-          "retailer": "nocoastturf",
-          "retailer_name": "Nocoastturf",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 250.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
-        },
-        {
-          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
@@ -8038,6 +8090,16 @@
           "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
@@ -8078,9 +8140,29 @@
           "reason": "included",
           "price": 104.0,
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 140.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         }
       ],
-      "included_sources": 10,
+      "included_sources": 12,
       "not_included_sources": 9,
       "invalid_sources": 0
     },
