@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-22T02:21:18.968479+00:00",
+  "generated_at": "2026-05-22T04:04:21.263457+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 691,
+    "sources": 695,
     "manual_verified_sources": 339,
-    "included_sources": 351,
-    "not_included_sources": 340,
+    "included_sources": 360,
+    "not_included_sources": 335,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 351,
-    "no_extracted_offer": 248,
-    "not_checked_saved_source_limit": 89,
-    "below $10.00 minimum for this category": 3
+    "included": 360,
+    "no_extracted_offer": 243,
+    "not_checked_saved_source_limit": 90,
+    "below $10.00 minimum for this category": 2
   },
   "products": [
     {
@@ -653,10 +653,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 379.95,
+          "offer_url": "https://pestrong.com/product/specticle-flo-pre-emergent-herbicide-18-oz-gallon"
         },
         {
           "url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs",
@@ -689,8 +689,8 @@
           "offer_url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs?variant=12543660425316"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 5,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -1309,20 +1309,20 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 14.95,
+          "offer_url": "https://pestrong.com/product/sedgehammer-plus-herbicide-prosedge-0-5-oz-13-5-grams"
         },
         {
           "url": "https://pestrong.com/product/sedgehammer-turf-herbicide-prosedge-1-33-oz",
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 64.95,
+          "offer_url": "https://pestrong.com/product/sedgehammer-turf-herbicide-prosedge-1-33-oz"
         },
         {
           "url": "https://golfcourselawn.store/products/sedgehammer%C2%AE-herbicide-nutsedge-weed-killer?variant=44424761245945",
@@ -1335,8 +1335,8 @@
           "offer_url": "https://golfcourselawn.store/products/sedgehammer%C2%AE-herbicide-nutsedge-weed-killer?variant=44424761245945"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -1402,7 +1402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 289.98,
+          "price": 299.98,
           "offer_url": "https://www.domyown.com/speedzone-southern-herbicide-ew-p-1915.html"
         },
         {
@@ -1625,7 +1625,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 25.68,
+          "price": 28.48,
           "offer_url": "https://www.domyown.com/hiyield-triclopyr-ester-p-4543.html"
         },
         {
@@ -2071,7 +2071,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 339.86,
+          "price": 418.98,
           "offer_url": "https://www.domyown.com/revolver-selective-herbicide-p-1561.html"
         },
         {
@@ -3131,10 +3131,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 169.95,
+          "offer_url": "https://pestrong.com/product/armada-50-wdg-fungicide-2-lb"
         },
         {
           "url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs",
@@ -3167,8 +3167,8 @@
           "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 5,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -3814,7 +3814,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 64.94,
+          "price": 84.41,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4158,7 +4158,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.99,
+          "price": 25.98,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4672,10 +4672,10 @@
           "retailer": "forestrydistributing",
           "retailer_name": "Forestrydistributing",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 97.95,
+          "offer_url": "https://www.forestrydistributing.com/avid-015-ec-miticide-insecticide-syngenta"
         },
         {
           "url": "https://homeandgardensupply.com/products/avid-0-15ec",
@@ -4694,7 +4694,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 90.57,
+          "price": 91.48,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -4808,8 +4808,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 11,
+      "included_sources": 9,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -4957,7 +4957,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 312.0,
+          "price": 339.98,
           "offer_url": "https://www.domyown.com/forbid-4f-ornamental-insecticide-miticide-p-2332.html"
         },
         {
@@ -5127,9 +5127,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 7.94,
+          "status": "included",
+          "reason": "included",
+          "price": 240.9,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5163,8 +5163,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 4,
+      "included_sources": 3,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -5481,14 +5481,14 @@
           "retailer": "hummert",
           "retailer_name": "Hummert International",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 390.0,
+          "offer_url": "https://www.hummert.com/mycoapply-ultrafine-endo-3-ecto-20lbs-02106500"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -6234,7 +6234,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 67.67,
+          "price": 68.48,
           "offer_url": "https://www.domyown.com/turf-fertilizer-1648-with-fe-40-ns54-sgn135-50-lb-p-21458.html"
         },
         {
@@ -6557,7 +6557,7 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -7684,7 +7684,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.49,
+          "price": 30.63,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -7742,14 +7742,34 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 329.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0BZ584DH9?active=price_amazon&context=sp"
+          "price": 1619.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 1234.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 10,
+      "included_sources": 6,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -7864,10 +7884,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -7888,10 +7908,30 @@
           "reason": "included",
           "price": 29.75,
           "offer_url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros-3?variant=43994454130874"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 30.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 5,
+      "included_sources": 7,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
