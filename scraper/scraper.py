@@ -209,6 +209,16 @@ def canonical_product_url(url: str) -> str:
     return urllib.parse.urldefrag(url)[0].rstrip("/")
 
 
+def _same_product_path(first_url: str, second_url: str) -> bool:
+    first = urllib.parse.urlparse(first_url)
+    second = urllib.parse.urlparse(second_url)
+    return (
+        first.netloc.lower().removeprefix("www.") == second.netloc.lower().removeprefix("www.")
+        and urllib.parse.unquote(first.path).rstrip("/").lower()
+        == urllib.parse.unquote(second.path).rstrip("/").lower()
+    )
+
+
 def amazon_asin_from_url(url: str) -> Optional[str]:
     path = urllib.parse.urlparse(url).path
     match = re.search(r"/(?:[^/]+/)?(?:dp|gp/product)/([A-Z0-9]{10})", path, re.I)
@@ -1426,8 +1436,29 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
             continue
         entries.append(source)
 
-    priced_entries = [entry for entry in entries if entry.get("price_verified") is not None]
-    unpriced_entries = [entry for entry in entries if entry.get("price_verified") is None]
+    priced_entries = []
+    priority_urls = set()
+    for entry in entries:
+        if entry.get("price_verified") is None:
+            continue
+        normalized = canonical_product_url(entry.get("url", ""))
+        if normalized in priority_urls:
+            continue
+        priority_urls.add(normalized)
+        priced_entries.append(entry)
+
+    manual_unpriced_entries = [
+        entry for entry in entries
+        if entry.get("manual_verified")
+        and entry.get("price_verified") is None
+        and canonical_product_url(entry.get("url", "")) not in priority_urls
+    ]
+    auto_unpriced_entries = [
+        entry for entry in entries
+        if not entry.get("manual_verified")
+        and entry.get("price_verified") is None
+        and canonical_product_url(entry.get("url", "")) not in priority_urls
+    ]
 
     if not entries or SAVED_SOURCE_LIMIT <= 0:
         return entries
@@ -1436,16 +1467,31 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
 
     cursors = source_map.setdefault("refresh_cursors", {})
     remaining = max(0, SAVED_SOURCE_LIMIT - len(priced_entries))
-    if remaining <= 0 or not unpriced_entries:
+    if remaining <= 0:
         return priced_entries
 
-    start = int(cursors.get(str(product_id), 0)) % len(unpriced_entries)
-    selected_unpriced = [
-        unpriced_entries[(start + offset) % len(unpriced_entries)]
-        for offset in range(min(remaining, len(unpriced_entries)))
+    selected_manual = manual_unpriced_entries[:remaining]
+    remaining -= len(selected_manual)
+    if remaining <= 0 or not auto_unpriced_entries:
+        return priced_entries + selected_manual
+
+    start = int(cursors.get(str(product_id), 0)) % len(auto_unpriced_entries)
+    selected_rotating = [
+        auto_unpriced_entries[(start + offset) % len(auto_unpriced_entries)]
+        for offset in range(min(remaining, len(auto_unpriced_entries)))
     ]
-    cursors[str(product_id)] = (start + len(selected_unpriced)) % len(unpriced_entries)
-    return priced_entries + selected_unpriced
+    cursors[str(product_id)] = (start + len(selected_rotating)) % len(auto_unpriced_entries)
+    return priced_entries + selected_manual + selected_rotating
+
+
+def _apply_source_metadata(offer: dict, source: dict) -> dict:
+    if source.get("title") and not offer.get("title"):
+        offer["title"] = source["title"]
+    offer["image"] = _stored_image_url(source.get("image")) or offer.get("image")
+    for key in ("package_quantity", "package_unit", "package_label", "price_per_unit"):
+        if key not in offer and key in source:
+            offer[key] = source[key]
+    return offer
 
 
 def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
@@ -1458,6 +1504,9 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             continue
         html = fetch_saved_source(url)
         if not html:
+            fallback = _offer_from_verified_source(source)
+            if fallback:
+                add_offer(offers, fallback)
             continue
 
         retailer = source.get("retailer") or retailer_key(url)
@@ -1469,9 +1518,19 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             retailer_name,
         )
         if offer:
+            source_url = canonical_product_url(url)
+            offer_url = canonical_product_url(offer.get("url", ""))
             if is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", "")):
                 log.info(f"  Saved source wrong product skipped: {(offer.get('title') or '')[:70]} @ {(offer.get('url') or '')[:80]}")
                 continue
+            if offer_url != source_url:
+                if _same_product_path(source_url, offer_url):
+                    offer["url"] = append_affiliate(source_url, retailer)
+                elif source.get("manual_verified"):
+                    fallback = _offer_from_verified_source(source)
+                    if fallback:
+                        add_offer(offers, fallback)
+                    continue
             match_title = offer.get("title") or source.get("title") or ""
             if not source.get("manual_verified") and not _matches_product(product, match_title, url):
                 log.info(f"  Saved source mismatch skipped: {match_title[:70]} @ {url[:80]}")
@@ -1480,12 +1539,13 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
                 offer["url"] = append_affiliate(url, retailer)
                 if source.get("title"):
                     offer["title"] = source["title"]
-            elif source.get("title") and not offer.get("title"):
-                offer["title"] = source["title"]
             offer["source"] = "saved_product_source"
-            offer["image"] = _stored_image_url(source.get("image")) or offer.get("image")
+            _apply_source_metadata(offer, source)
             add_offer(offers, offer)
         else:
+            fallback = _offer_from_verified_source(source)
+            if fallback:
+                add_offer(offers, fallback)
             continue
         time.sleep(0.5)
     return offers
@@ -1511,11 +1571,16 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
         "retailer_name": source.get("retailer_name") or retailer_name_from_url(url),
         "price": price,
         "url": append_affiliate(url, retailer),
-        "in_stock": True,
+        "in_stock": source.get("in_stock", True),
         "title": source.get("title", ""),
         "last_checked": source.get("last_seen") or now_iso(),
         "source": "manual_verified_source",
         "image": _stored_image_url(source.get("image")),
+        **{
+            key: source[key]
+            for key in ("package_quantity", "package_unit", "package_label", "price_per_unit")
+            if key in source
+        },
     }
 
 

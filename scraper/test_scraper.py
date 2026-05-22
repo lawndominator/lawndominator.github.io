@@ -859,7 +859,6 @@ class ScraperExtractionTests(unittest.TestCase):
                             "url": "https://other.example/prodiamine",
                             "retailer": "other",
                             "retailer_name": "Other",
-                            "manual_verified": True,
                         },
                     ]
                 }
@@ -945,6 +944,138 @@ class ScraperExtractionTests(unittest.TestCase):
             self.assertTrue(any(entry.get("retailer") == "amazon" for entry in entries))
         finally:
             scraper.SAVED_SOURCE_LIMIT = previous_limit
+
+    def test_source_entries_prioritizes_manual_verified_sources(self):
+        previous_limit = scraper.SAVED_SOURCE_LIMIT
+        scraper.SAVED_SOURCE_LIMIT = 2
+        try:
+            source_map = {
+                "products": {
+                    "15": [
+                        {
+                            "url": "https://manual-one.example/celsius",
+                            "manual_verified": True,
+                            "source_type": "product",
+                        },
+                        {
+                            "url": "https://manual-two.example/celsius",
+                            "manual_verified": True,
+                            "source_type": "product",
+                        },
+                        {
+                            "url": "https://auto.example/celsius",
+                            "source_type": "product",
+                        },
+                    ]
+                }
+            }
+
+            entries = scraper._source_entries(source_map, 15)
+
+            self.assertEqual(len(entries), 2)
+            self.assertTrue(all(entry.get("manual_verified") for entry in entries))
+        finally:
+            scraper.SAVED_SOURCE_LIMIT = previous_limit
+
+    def test_scrape_saved_sources_uses_verified_price_when_fetch_fails(self):
+        previous_fetch = scraper.fetch_saved_source
+        scraper.fetch_saved_source = lambda url: None
+        try:
+            offers = scraper.scrape_saved_sources(
+                {"id": 15, "name": "Celsius WG"},
+                {
+                    "products": {
+                        "15": [{
+                            "url": "https://store.example/celsius-wg",
+                            "retailer": "example-store",
+                            "retailer_name": "Example Store",
+                            "title": "Celsius WG",
+                            "price_verified": 13.79,
+                            "in_stock": True,
+                            "manual_verified": True,
+                            "package_quantity": 10.0,
+                            "package_unit": "oz",
+                            "package_label": "10 oz",
+                        }]
+                    }
+                },
+            )
+
+            self.assertEqual(len(offers), 1)
+            self.assertEqual(offers[0]["source"], "manual_verified_source")
+            self.assertEqual(offers[0]["price"], 13.79)
+            self.assertEqual(offers[0]["package_label"], "10 oz")
+        finally:
+            scraper.fetch_saved_source = previous_fetch
+
+    def test_scrape_saved_sources_falls_back_when_manual_extracts_wrong_url(self):
+        previous_fetch = scraper.fetch_saved_source
+        scraper.fetch_saved_source = lambda url: """
+            <div class="product">
+              <a href="https://store.example/products/not-the-product">Wrong Product</a>
+              <span class="price">$1.25</span>
+            </div>
+        """
+        try:
+            offers = scraper.scrape_saved_sources(
+                {"id": 15, "name": "Celsius WG"},
+                {
+                    "products": {
+                        "15": [{
+                            "url": "https://store.example/products/celsius-wg",
+                            "retailer": "example-store",
+                            "retailer_name": "Example Store",
+                            "title": "Celsius WG",
+                            "price_verified": 22.99,
+                            "manual_verified": True,
+                        }]
+                    }
+                },
+            )
+
+            self.assertEqual(len(offers), 1)
+            self.assertEqual(offers[0]["source"], "manual_verified_source")
+            self.assertEqual(offers[0]["price"], 22.99)
+            self.assertEqual(offers[0]["url"], "https://store.example/products/celsius-wg")
+        finally:
+            scraper.fetch_saved_source = previous_fetch
+
+    def test_scrape_saved_sources_normalizes_variant_url_to_saved_source(self):
+        previous_fetch = scraper.fetch_saved_source
+        scraper.fetch_saved_source = lambda url: """
+            <script type="application/ld+json">
+            {
+              "@type": "Product",
+              "name": "Celsius WG",
+              "offers": {
+                "@type": "Offer",
+                "price": "22.99",
+                "url": "https://store.example/products/celsius-wg?variant=123"
+              }
+            }
+            </script>
+        """
+        try:
+            offers = scraper.scrape_saved_sources(
+                {"id": 15, "name": "Celsius WG"},
+                {
+                    "products": {
+                        "15": [{
+                            "url": "https://store.example/products/celsius-wg",
+                            "retailer": "example-store",
+                            "retailer_name": "Example Store",
+                            "title": "Celsius WG",
+                            "manual_verified": True,
+                        }]
+                    }
+                },
+            )
+
+            self.assertEqual(len(offers), 1)
+            self.assertEqual(offers[0]["source"], "saved_product_source")
+            self.assertEqual(offers[0]["url"], "https://store.example/products/celsius-wg")
+        finally:
+            scraper.fetch_saved_source = previous_fetch
 
     def test_build_price_alerts_detects_best_price_drop(self):
         previous = {
