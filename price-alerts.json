@@ -1,5 +1,6 @@
 {
   "schema_version": "1.0",
+<<<<<<< Updated upstream
   "generated_at": "2026-05-23T13:53:54Z",
   "min_drop_percent": 5.0,
   "alert_count": 169,
@@ -38,11 +39,36 @@
     },
     {
       "id": "tenacity:new_lowest_retailer:ebay:60.99:60.84",
+=======
+  "generated_at": "2026-05-23T13:59:17.562828+00:00",
+  "min_drop_percent": 5.0,
+  "alert_count": 3,
+  "alerts": [
+    {
+      "id": "tenacity:best_price_drop:amazon:60.84:56.45",
+      "type": "best_price_drop",
+      "product_id": 21,
+      "product_slug": "tenacity",
+      "product_name": "Tenacity Turf Herbicide (Mesotrione)",
+      "category": "post-emergent",
+      "old_price": 60.84,
+      "new_price": 56.45,
+      "drop_percent": 7.2,
+      "old_retailer": "eBay",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20",
+      "in_stock": true,
+      "created_at": "2026-05-23T13:59:17.562828+00:00"
+    },
+    {
+      "id": "tenacity:new_lowest_retailer:amazon:60.84:56.45",
+>>>>>>> Stashed changes
       "type": "new_lowest_retailer",
       "product_id": 21,
       "product_slug": "tenacity",
       "product_name": "Tenacity Turf Herbicide (Mesotrione)",
       "category": "post-emergent",
+<<<<<<< Updated upstream
       "old_price": 60.99,
       "new_price": 60.84,
       "drop_percent": 0.2,
@@ -739,6 +765,16 @@
       "url": "https://www.sunspotsupply.com/products/revolver-herbicide-quart?variant=43994455507130",
       "in_stock": true,
       "created_at": "2026-05-20T15:46:12.374675+00:00"
+=======
+      "old_price": 60.84,
+      "new_price": 56.45,
+      "drop_percent": 7.2,
+      "old_retailer": "eBay",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20",
+      "in_stock": true,
+      "created_at": "2026-05-23T13:59:17.562828+00:00"
+>>>>>>> Stashed changes
     },
     {
       "id": "acelepryn-sc:new_lowest_retailer:solutions:66.94:64.94",
@@ -754,6 +790,7 @@
       "new_retailer": "Solutions Pest & Lawn",
       "url": "https://www.solutionsstores.com/acelepryn-insecticide",
       "in_stock": true,
+<<<<<<< Updated upstream
       "created_at": "2026-05-20T11:05:22.850668+00:00"
     },
     {
@@ -2712,3 +2749,9 @@
   "retention_days": 7,
   "current_alert_count": 0
 }
+=======
+      "created_at": "2026-05-23T13:59:17.562828+00:00"
+    }
+  ]
+}
+>>>>>>> Stashed changes
