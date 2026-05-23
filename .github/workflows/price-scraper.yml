@@ -124,6 +124,14 @@ jobs:
           git config user.name  "price-bot[bot]"
           git config user.email "price-bot@lawndominators.com"
           git pull --rebase --autostash origin main
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for name in ("prices.json", "price-alerts.json", "source-health.json", "product_sources.json"):
+              json.loads(Path(name).read_text())
+              print(f"{name} is valid JSON")
+          PY
           git add prices.json price-alerts.json source-health.json product_sources.json
           # Only commit if prices.json actually changed
           git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"

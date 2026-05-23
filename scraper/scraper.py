@@ -2092,7 +2092,7 @@ def run():
     try:
         with open(alerts_path) as f:
             existing_alerts = json.load(f).get("alerts", [])
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         existing_alerts = []
 
     results = []
