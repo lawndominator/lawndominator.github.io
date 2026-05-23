@@ -1197,6 +1197,60 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(output["alert_count"], 1)
         self.assertEqual(output["alerts"][0]["type"], "back_in_stock")
 
+    def test_build_price_alerts_retains_recent_previous_alerts(self):
+        previous = {
+            1: {
+                "id": 1,
+                "slug": "prodiamine-65wdg",
+                "name": "Prodiamine 65WDG",
+                "best_price": {"retailer": "store", "retailer_name": "Store", "price": 100.0},
+            }
+        }
+        current = [{
+            "id": 1,
+            "slug": "prodiamine-65wdg",
+            "name": "Prodiamine 65WDG",
+            "category": "pre-emergent",
+            "best_price": {"retailer": "store", "retailer_name": "Store", "price": 100.0},
+        }]
+        previous_alerts = [{
+            "id": "old-but-recent",
+            "type": "best_price_drop",
+            "product_id": 2,
+            "product_slug": "dimension-2ew",
+            "created_at": "2026-05-13T16:00:00+00:00",
+        }]
+
+        output = scraper.build_price_alerts(
+            previous,
+            current,
+            "2026-05-14T16:00:00+00:00",
+            previous_alerts,
+        )
+
+        self.assertEqual(output["current_alert_count"], 0)
+        self.assertEqual(output["alert_count"], 1)
+        self.assertEqual(output["alerts"][0]["id"], "old-but-recent")
+
+    def test_build_price_alerts_prunes_expired_previous_alerts(self):
+        previous_alerts = [{
+            "id": "expired",
+            "type": "best_price_drop",
+            "product_id": 2,
+            "product_slug": "dimension-2ew",
+            "created_at": "2026-05-01T16:00:00+00:00",
+        }]
+
+        output = scraper.build_price_alerts(
+            {},
+            [],
+            "2026-05-14T16:00:00+00:00",
+            previous_alerts,
+        )
+
+        self.assertEqual(output["alert_count"], 0)
+        self.assertEqual(output["alerts"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

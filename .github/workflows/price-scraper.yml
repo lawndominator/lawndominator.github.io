@@ -88,10 +88,36 @@ jobs:
             echo "Price alert webhook not configured; skipping."
             exit 0
           fi
+          python - <<'PY'
+          import json
+
+          with open("price-alerts.json") as f:
+              feed = json.load(f)
+
+          generated_at = feed.get("generated_at")
+          current_alerts = [
+              alert for alert in feed.get("alerts", [])
+              if alert.get("created_at") == generated_at
+          ]
+          output = {
+              **feed,
+              "alert_count": len(current_alerts),
+              "current_alert_count": len(current_alerts),
+              "alerts": current_alerts,
+          }
+          with open("price-alerts-current.json", "w") as f:
+              json.dump(output, f, indent=2)
+
+          print(f"Current-run alerts: {len(current_alerts)}")
+          PY
+          if [ "$(python -c "import json; print(json.load(open('price-alerts-current.json')).get('alert_count', 0))")" = "0" ]; then
+            echo "No current-run price alerts; skipping webhook."
+            exit 0
+          fi
           curl -sS -X POST "$PRICE_ALERT_WEBHOOK_URL" \
             -H "Authorization: Bearer $PRICE_ALERT_WEBHOOK_SECRET" \
             -H "Content-Type: application/json" \
-            --data @price-alerts.json
+            --data @price-alerts-current.json
 
       - name: Commit updated prices.json
         run: |

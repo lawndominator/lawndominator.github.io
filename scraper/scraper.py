@@ -25,7 +25,7 @@ import sys
 import time
 import logging
 import urllib.parse
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 import requests
@@ -65,6 +65,7 @@ MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
 MIN_ALERT_DROP_PERCENT = float(os.getenv("MIN_ALERT_DROP_PERCENT", "5"))
+PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -843,7 +844,33 @@ def _alert_payload(
     }
 
 
-def build_price_alerts(previous_products: dict, current_products: list[dict], generated_at: str) -> dict:
+def _parse_alert_time(value: str) -> Optional[datetime]:
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def _recent_alerts(alerts: list[dict], generated_at: str) -> list[dict]:
+    generated_time = _parse_alert_time(generated_at) or datetime.now(timezone.utc)
+    cutoff = generated_time - timedelta(days=PRICE_ALERT_RETENTION_DAYS)
+    recent = []
+    for alert in alerts:
+        created_at = _parse_alert_time(alert.get("created_at", ""))
+        if created_at and created_at >= cutoff:
+            recent.append(alert)
+    recent.sort(key=lambda alert: alert.get("created_at", ""), reverse=True)
+    return recent
+
+
+def build_price_alerts(
+    previous_products: dict,
+    current_products: list[dict],
+    generated_at: str,
+    previous_alerts: Optional[list[dict]] = None,
+) -> dict:
     alerts = []
     previous_by_slug = {
         product.get("slug"): product
@@ -879,16 +906,20 @@ def build_price_alerts(previous_products: dict, current_products: list[dict], ge
         if old_best and old_best.get("in_stock") is False and new_best.get("in_stock") is True:
             alerts.append(_alert_payload(product, "back_in_stock", old_best, new_best, generated_at, 0.0))
 
+    current_alert_ids = {alert["id"] for alert in alerts}
     unique_alerts = {}
-    for alert in alerts:
+    for alert in alerts + _recent_alerts(previous_alerts or [], generated_at):
         unique_alerts[alert["id"]] = alert
+    retained_alerts = _recent_alerts(list(unique_alerts.values()), generated_at)
 
     return {
         "schema_version": "1.0",
         "generated_at": generated_at,
         "min_drop_percent": MIN_ALERT_DROP_PERCENT,
-        "alert_count": len(unique_alerts),
-        "alerts": list(unique_alerts.values()),
+        "retention_days": PRICE_ALERT_RETENTION_DAYS,
+        "current_alert_count": len(current_alert_ids),
+        "alert_count": len(retained_alerts),
+        "alerts": retained_alerts,
     }
 
 
@@ -2058,6 +2089,12 @@ def run():
         existing_data = {"products": []}
         stale_map = {}
 
+    try:
+        with open(alerts_path) as f:
+            existing_alerts = json.load(f).get("alerts", [])
+    except FileNotFoundError:
+        existing_alerts = []
+
     results = []
     total   = len(catalog["products"])
 
@@ -2163,7 +2200,7 @@ def run():
         "product_count":  len(results),
         "products":       results,
     }
-    alerts_output = build_price_alerts(stale_map, results, generated_at)
+    alerts_output = build_price_alerts(stale_map, results, generated_at, existing_alerts)
     health_output = build_source_health(catalog["products"], source_map, results, generated_at)
 
     with open(prices_path, "w") as f:
