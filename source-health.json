@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-23T18:10:08.691027+00:00",
+  "generated_at": "2026-05-23T21:18:04.771528+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 738,
+    "sources": 739,
     "manual_verified_sources": 341,
     "included_sources": 576,
-    "not_included_sources": 162,
+    "not_included_sources": 163,
     "invalid_sources": 0
   },
   "reason_counts": {
     "included": 576,
     "not_checked_saved_source_limit": 90,
-    "no_extracted_offer": 60,
+    "no_extracted_offer": 61,
     "below $10.00 minimum for this category": 12
   },
   "products": [
@@ -1514,7 +1514,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56.45,
+          "price": 61.02,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -4724,7 +4724,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.15,
+          "price": 81.81,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -7714,7 +7714,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.67,
+          "price": 30.62,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -7772,20 +7772,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 329.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0BZ584DH9?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1619.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
@@ -8056,9 +8056,19 @@
           "reason": "included",
           "price": 149.99,
           "offer_url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp"
+        },
+        {
+          "url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp",
+          "retailer": "camelcamelcamel",
+          "retailer_name": "Camelcamelcamel",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 359.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 24,
+      "included_sources": 25,
       "not_included_sources": 19,
       "invalid_sources": 0
     },
@@ -8174,10 +8184,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -8204,20 +8214,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 104.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 30.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags",
@@ -8234,10 +8244,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
@@ -8274,60 +8284,60 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 140.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 30.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 52.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 235.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal",
@@ -8354,14 +8364,14 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 96.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 17,
-      "not_included_sources": 10,
+      "included_sources": 16,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
