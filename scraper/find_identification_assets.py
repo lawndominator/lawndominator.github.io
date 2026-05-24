@@ -11,18 +11,18 @@ Usage:
   python scraper/find_identification_assets.py --refind
   python scraper/find_identification_assets.py --output C:\\Users\\Brian\\Downloads\\aso\\identification_assets.json
 
-Commands while running:
-  c        capture current page URL
-  i        capture largest image URL on the current page
-  p        paste/type a URL manually
-  o URL    open a URL in the browser
-  r        reopen the search page
-  n        skip this item
-  q        quit and save
+Browser workflow:
+  Use the fixed top-right Lawn Dominator panel.
+  - Record Link saves the current page URL.
+  - Record Image saves the largest visible image URL.
+  - Next opens the next item without saving.
+  - Skip marks the current item skipped.
+  - Quit saves and exits.
 """
 
 import argparse
 import json
+import queue
 import re
 import urllib.parse
 from datetime import datetime, timezone
@@ -322,44 +322,180 @@ def save_asset(data: dict, item: dict, asset_url: str, page_url: str, title: str
     save_output(output_path, data)
 
 
-def prompt_for_item(ctx, page, data: dict, item: dict, output_path: Path) -> bool:
-    print(f"\n[{item['id']}] {item['name']}  ({item['category']})")
-    print(f"Search: {search_url(item)}")
+def save_skip(data: dict, item: dict, output_path: Path):
+    bucket_name = "weeds" if item["kind"] == "weed" else "labels"
+    bucket = data.setdefault(bucket_name, {})
+    bucket[str(item["id"])] = {
+        "id": item["id"],
+        "name": item["name"],
+        "category": item["category"],
+        "url": "",
+        "source_page": "",
+        "title": "",
+        "notes": "skipped",
+        "skipped": True,
+        "last_seen": now_iso(),
+    }
+    save_output(output_path, data)
+
+
+OVERLAY_SCRIPT = r"""
+(() => {
+  const state = window.__ldAssetState || {};
+  if (document.getElementById('ld-asset-panel')) return;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    #ld-asset-panel {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 2147483647;
+      width: 300px;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 2px solid #245c29;
+      border-radius: 8px;
+      background: #f7fbef;
+      color: #152112;
+      font: 13px/1.35 Arial, sans-serif;
+      box-shadow: 0 12px 40px rgba(0,0,0,.28);
+    }
+    #ld-asset-panel * { box-sizing: border-box; }
+    #ld-asset-panel strong { display: block; font-size: 14px; margin-bottom: 3px; }
+    #ld-asset-panel .ld-meta { color: #52604c; margin-bottom: 8px; }
+    #ld-asset-panel .ld-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    #ld-asset-panel button {
+      border: 1px solid #7d8d70;
+      border-radius: 6px;
+      background: #fff;
+      color: #152112;
+      padding: 8px 7px;
+      font: 700 12px Arial, sans-serif;
+      cursor: pointer;
+    }
+    #ld-asset-panel button.ld-primary { background: #2f6b2f; color: white; border-color: #2f6b2f; }
+    #ld-asset-panel button.ld-danger { background: #7d2f1e; color: white; border-color: #7d2f1e; }
+    #ld-asset-panel input {
+      width: 100%;
+      margin-top: 7px;
+      border: 1px solid #bac7b0;
+      border-radius: 6px;
+      padding: 7px;
+      font: 12px Arial, sans-serif;
+    }
+  `;
+  document.documentElement.appendChild(style);
+
+  const panel = document.createElement('div');
+  panel.id = 'ld-asset-panel';
+  panel.innerHTML = `
+    <strong>Lawn Dominator Capture</strong>
+    <div class="ld-meta">
+      <div>${state.index || ''}/${state.total || ''} ${state.kind || ''}</div>
+      <div>${state.name || ''}</div>
+    </div>
+    <div class="ld-buttons">
+      <button class="ld-primary" data-command="record-link">Record Link</button>
+      <button class="ld-primary" data-command="record-image">Record Image</button>
+      <button data-command="next">Next</button>
+      <button data-command="skip">Skip</button>
+      <button data-command="reopen">Reopen Search</button>
+      <button class="ld-danger" data-command="quit">Quit</button>
+    </div>
+    <input id="ld-asset-notes" placeholder="Optional notes">
+  `;
+  document.body.appendChild(panel);
+
+  function largestImageUrl() {
+    const visible = img => {
+      const r = img.getBoundingClientRect();
+      return r.width > 80 && r.height > 60 && r.bottom > 0 && r.right > 0;
+    };
+    const imgs = [...document.images]
+      .filter(img => visible(img) && (img.currentSrc || img.src))
+      .sort((a, b) => (b.naturalWidth * b.naturalHeight) - (a.naturalWidth * a.naturalHeight));
+    return imgs[0]?.currentSrc || imgs[0]?.src || '';
+  }
+
+  panel.addEventListener('click', event => {
+    const button = event.target.closest('button[data-command]');
+    if (!button || !window.ldAssetCommand) return;
+    const command = button.dataset.command;
+    const notes = document.getElementById('ld-asset-notes')?.value || '';
+    const payload = {
+      command,
+      url: command === 'record-image' ? largestImageUrl() : location.href,
+      pageUrl: location.href,
+      title: document.title,
+      notes,
+    };
+    window.ldAssetCommand(payload);
+  });
+})();
+"""
+
+
+def set_overlay_state(page, item: dict, index: int, total: int):
+    page.evaluate(
+        """state => {
+            window.__ldAssetState = state;
+            const old = document.getElementById('ld-asset-panel');
+            if (old) old.remove();
+        }""",
+        {
+            "index": index,
+            "total": total,
+            "kind": "weed image" if item["kind"] == "weed" else "product label",
+            "name": item["name"],
+        },
+    )
+    page.evaluate(OVERLAY_SCRIPT)
+
+
+def wait_for_overlay_command(command_queue: "queue.Queue[dict]", item: dict) -> dict:
+    while True:
+        command = command_queue.get()
+        if command.get("item_id") == item["id"] and command.get("kind") == item["kind"]:
+            return command
+
+
+def process_item(page, command_queue: "queue.Queue[dict]", data: dict, item: dict, index: int, total: int, output_path: Path) -> bool:
+    print(f"\n[{index}/{total}] {item['name']}  ({item['category']})")
     page.goto(search_url(item), wait_until="domcontentloaded", timeout=30000)
+    set_overlay_state(page, item, index, total)
 
     while True:
-        command = input("  c=current URL, i=largest image, p=paste, o URL=open, r=reopen, n=skip, q=quit > ").strip()
-        if command == "q":
+        command = wait_for_overlay_command(command_queue, item)
+        action = command.get("command")
+        if action == "quit":
             return False
-        if command == "n":
+        if action == "next":
             return True
-        if command == "r":
+        if action == "skip":
+            save_skip(data, item, output_path)
+            print("  skipped")
+            return True
+        if action == "reopen":
             page.goto(search_url(item), wait_until="domcontentloaded", timeout=30000)
+            set_overlay_state(page, item, index, total)
             continue
-        if command.startswith("o "):
-            page.goto(command[2:].strip(), wait_until="domcontentloaded", timeout=30000)
-            continue
-
-        page_info = capture_current_page(page)
-        asset_url = ""
-        if command == "c":
-            asset_url = page_info["url"]
-        elif command == "i":
-            asset_url = capture_largest_image(page)
+        if action in ("record-link", "record-image"):
+            asset_url = command.get("url", "")
             if not asset_url:
-                print("  No image found on current page.")
+                print("  no URL found, click a result or use Record Link")
                 continue
-        elif command == "p":
-            asset_url = input("  URL > ").strip()
-            page_info["url"] = input("  Source page, optional > ").strip() or page_info["url"]
-        else:
-            print("  Unknown command.")
-            continue
-
-        notes = input("  Notes, optional > ").strip()
-        save_asset(data, item, asset_url, page_info["url"], page_info["title"], notes, output_path)
-        print(f"  OK saved: {asset_url[:110]}")
-        return True
+            save_asset(
+                data,
+                item,
+                asset_url,
+                command.get("pageUrl", page.url),
+                command.get("title", ""),
+                command.get("notes", ""),
+                output_path,
+            )
+            print(f"  saved: {asset_url[:110]}")
+            return True
 
 
 def existing_for(data: dict, item: dict) -> dict | None:
@@ -405,16 +541,29 @@ def main():
 
     print(f"Lawn Dominator - Identification Asset Finder ({len(items)} item(s))")
     print(f"Output: {output_path}")
-    print("Click the result you want in the browser, then use c or i in this terminal.")
+    print("Use the top-right browser panel: Record Link, Record Image, Next, Skip, Quit.")
 
     with sync_playwright() as pw:
         ctx = launch_browser_context(pw, root, args.profile_dir)
+        command_queue: queue.Queue[dict] = queue.Queue()
+        current = {"id": None, "kind": None}
+
+        def handle_command(source, payload):
+            payload = dict(payload or {})
+            payload["item_id"] = current["id"]
+            payload["kind"] = current["kind"]
+            command_queue.put(payload)
+
+        ctx.expose_binding("ldAssetCommand", handle_command)
+        ctx.add_init_script(OVERLAY_SCRIPT)
         page = ctx.new_page()
-        for item in items:
+        for index, item in enumerate(items, 1):
             if existing_for(data, item) and not args.refind:
                 print(f"[{item['id']}] {item['name']} - skipped (already saved)")
                 continue
-            keep_going = prompt_for_item(ctx, page, data, item, output_path)
+            current["id"] = item["id"]
+            current["kind"] = item["kind"]
+            keep_going = process_item(page, command_queue, data, item, index, len(items), output_path)
             if not keep_going:
                 break
         page.close()
