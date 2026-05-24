@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T10:37:24.242443+00:00",
+  "generated_at": "2026-05-24T14:28:52.574703+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 70,
+  "current_alert_count": 1,
+  "alert_count": 67,
   "alerts": [
     {
       "id": "manor-60df:major_price_drop:ebay:37.70:27.25",
@@ -1077,54 +1077,6 @@
       "url": "https://www.ourprosolutions.com/product/basagran-t-o-herbicide-1-gallon",
       "in_stock": true,
       "created_at": "2026-05-17T23:11:03.480426+00:00"
-    },
-    {
-      "id": "sedgehammer-plus:best_price_drop:amazon:14.95:13.99",
-      "type": "best_price_drop",
-      "product_id": 18,
-      "product_slug": "sedgehammer-plus",
-      "product_name": "SedgeHammer+ (Halosulfuron)",
-      "category": "post-emergent",
-      "old_price": 14.95,
-      "new_price": 13.99,
-      "drop_percent": 6.4,
-      "old_retailer": "Pestrong",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-05-17T13:26:12.536600+00:00"
-    },
-    {
-      "id": "sedgehammer-plus:new_lowest_retailer:amazon:14.95:13.99",
-      "type": "new_lowest_retailer",
-      "product_id": 18,
-      "product_slug": "sedgehammer-plus",
-      "product_name": "SedgeHammer+ (Halosulfuron)",
-      "category": "post-emergent",
-      "old_price": 14.95,
-      "new_price": 13.99,
-      "drop_percent": 6.4,
-      "old_retailer": "Pestrong",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-05-17T13:26:12.536600+00:00"
-    },
-    {
-      "id": "msma-target-6:major_price_drop:ourprosolutions:104.49:60.49",
-      "type": "major_price_drop",
-      "product_id": 25,
-      "product_slug": "msma-target-6",
-      "product_name": "MSMA Target 6 Plus",
-      "category": "post-emergent",
-      "old_price": 104.49,
-      "new_price": 60.49,
-      "drop_percent": 42.1,
-      "old_retailer": "Ourprosolutions",
-      "new_retailer": "Ourprosolutions",
-      "url": "https://www.ourprosolutions.com/product/clethodim-2e-herbicide-1-gallon",
-      "in_stock": true,
-      "created_at": "2026-05-17T13:26:12.536600+00:00"
     }
   ]
 }
