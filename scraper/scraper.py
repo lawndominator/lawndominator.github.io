@@ -7,14 +7,15 @@ and writes prices.json, which is served as a static file by GitHub Pages.
 Retailers:
   - DoMyOwn.com           (specialty lawn chemical retailer — Playwright)
   - Solutions Pest & Lawn (specialty retailer — Playwright)
-  - Amazon                (PA API if credentials set, otherwise affiliate link)
+  - Amazon                (Creators API if credentials set, otherwise affiliate link)
 
 GitHub Secrets:
-  AMAZON_AFFILIATE_TAG   - your Amazon Associates tag
-  AMAZON_ACCESS_KEY      - PA API access key (optional, enables real prices)
-  AMAZON_SECRET_KEY      - PA API secret key (optional)
-  KEEPA_API_KEY          - Keepa API key (optional, enables Amazon prices)
-  DOMYOWN_AFFILIATE_ID   - DoMyOwn affiliate ID (optional)
+  AMAZON_AFFILIATE_TAG          - your Amazon Associates tag
+  AMAZON_CREATOR_CREDENTIAL_ID  - Creators API credential ID (optional, enables real prices)
+  AMAZON_CREATOR_SECRET         - Creators API credential secret (optional)
+  AMAZON_CREATOR_VERSION        - Creators API version, defaults to 3.1
+  KEEPA_API_KEY                 - Keepa API key (optional, enables Amazon prices)
+  DOMYOWN_AFFILIATE_ID          - DoMyOwn affiliate ID (optional)
 """
 
 import json
@@ -42,8 +43,9 @@ log = logging.getLogger(__name__)
 # ── Credentials ───────────────────────────────────────────────────────────────
 SERPAPI_API_KEY   = os.getenv("SERPAPI_API_KEY", "")
 AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominator-20")
-AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY", "")
-AMAZON_SECRET_KEY = os.getenv("AMAZON_SECRET_KEY", "")
+AMAZON_CREATOR_CREDENTIAL_ID = os.getenv("AMAZON_CREATOR_CREDENTIAL_ID", "")
+AMAZON_CREATOR_SECRET = os.getenv("AMAZON_CREATOR_SECRET", "")
+AMAZON_CREATOR_VERSION = os.getenv("AMAZON_CREATOR_VERSION", "3.1")
 KEEPA_API_KEY     = os.getenv("KEEPA_API_KEY", "")
 KEEPA_DOMAIN      = int(os.getenv("KEEPA_DOMAIN", "1"))  # 1 = amazon.com
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
@@ -69,6 +71,7 @@ PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
+_amazon_creators_disabled = False
 
 
 def get_browser() -> Browser:
@@ -1886,8 +1889,8 @@ def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[
     keepa = _amazon_keepa(product, source_map or {})
     if keepa:
         return keepa
-    if AMAZON_ACCESS_KEY and AMAZON_SECRET_KEY:
-        return _amazon_paapi(product)
+    if AMAZON_CREATOR_CREDENTIAL_ID and AMAZON_CREATOR_SECRET:
+        return _amazon_creators_api(product)
     return _amazon_affiliate_link(product)
 
 
@@ -2001,62 +2004,107 @@ def _amazon_affiliate_link(product: dict) -> dict:
     }
 
 
-def _amazon_paapi(product: dict) -> dict:
+def _attr_chain(value, *names):
+    for name in names:
+        if value is None:
+            return None
+        if isinstance(value, dict):
+            value = value.get(name)
+        else:
+            value = getattr(value, name, None)
+    return value
+
+
+def _amazon_item_title(item) -> str:
+    return (
+        _attr_chain(item, "item_info", "title", "display_value")
+        or _attr_chain(item, "item_info", "title", "displayValue")
+        or _attr_chain(item, "item_info", "title")
+        or ""
+    )
+
+
+def _amazon_item_price(item) -> Optional[float]:
+    listings = _attr_chain(item, "offers_v2", "listings") or []
+    for listing in listings:
+        amount = _attr_chain(listing, "price", "money", "amount")
+        if amount is not None:
+            return float(amount)
+    return None
+
+
+def _amazon_item_in_stock(item) -> Optional[bool]:
+    listings = _attr_chain(item, "offers_v2", "listings") or []
+    for listing in listings:
+        availability_type = str(_attr_chain(listing, "availability", "type") or "").lower()
+        availability_msg = str(_attr_chain(listing, "availability", "message") or "").lower()
+        if availability_type or availability_msg:
+            unavailable = ("out" in availability_type or "unavailable" in availability_type or "out of stock" in availability_msg)
+            return not unavailable
+    return None
+
+
+def _amazon_item_image(item) -> Optional[str]:
+    return (
+        _attr_chain(item, "images", "primary", "large", "url")
+        or _attr_chain(item, "images", "primary", "medium", "url")
+        or _attr_chain(item, "images", "primary", "small", "url")
+    )
+
+
+def _amazon_creators_api(product: dict) -> dict:
+    global _amazon_creators_disabled
+    if _amazon_creators_disabled:
+        return _amazon_affiliate_link(product)
+
     try:
-        from paapi5_python_sdk.api.default_api import DefaultApi
-        from paapi5_python_sdk.models.search_items_request import SearchItemsRequest
-        from paapi5_python_sdk.models.search_items_resource import SearchItemsResource
-        from paapi5_python_sdk.models.partner_type import PartnerType
-        from paapi5_python_sdk.configuration import Configuration
-        from paapi5_python_sdk.api_client import ApiClient
+        from amazon_creatorsapi import AmazonCreatorsApi, Country
+        from amazon_creatorsapi.models import SearchItemsResource
 
-        config             = Configuration()
-        config.access_key  = AMAZON_ACCESS_KEY
-        config.secret_key  = AMAZON_SECRET_KEY
-        config.host        = "webservices.amazon.com"
-        config.region      = "us-east-1"
-        client             = DefaultApi(ApiClient(config))
-        query              = product.get("amazon_query") or product["search_query"]
-
-        req = SearchItemsRequest(
-            partner_tag=AMAZON_TAG,
-            partner_type=PartnerType.ASSOCIATES,
+        client = AmazonCreatorsApi(
+            credential_id=AMAZON_CREATOR_CREDENTIAL_ID,
+            credential_secret=AMAZON_CREATOR_SECRET,
+            version=AMAZON_CREATOR_VERSION,
+            tag=AMAZON_TAG,
+            country=Country.US,
+            throttling=0,
+        )
+        query = product.get("amazon_query") or product["search_query"]
+        response = client.search_items(
             keywords=query,
             search_index="LawnAndGarden",
             item_count=1,
             resources=[
-                SearchItemsResource.OFFERS_LISTINGS_PRICE,
-                SearchItemsResource.ITEMINFO_TITLE,
-                SearchItemsResource.OFFERS_LISTINGS_AVAILABILITY_MESSAGE,
+                SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
+                SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                SearchItemsResource.ITEM_INFO_DOT_TITLE,
+                SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
             ],
         )
-        response = client.search_items(req)
-        if not response.search_result or not response.search_result.items:
+
+        items = _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
+        if not items:
             return _amazon_affiliate_link(product)
 
-        item     = response.search_result.items[0]
-        price    = None
-        in_stock = None
-        if item.offers and item.offers.listings:
-            listing = item.offers.listings[0]
-            if listing.price:
-                price = float(listing.price.amount)
-            if listing.availability and listing.availability.message:
-                in_stock = "In Stock" in listing.availability.message
-
+        item = items[0]
         url = item.detail_page_url or _amazon_affiliate_link(product)["url"]
         return {
             "retailer":      "amazon",
             "retailer_name": "Amazon",
-            "price":         price,
+            "price":         _amazon_item_price(item),
             "url":           append_affiliate(url, "amazon"),
-            "in_stock":      in_stock,
+            "in_stock":      _amazon_item_in_stock(item),
+            "title":         _amazon_item_title(item) or product.get("name", ""),
+            "image":         _amazon_item_image(item),
             "last_checked":  now_iso(),
+            "source":        "amazon_creators_api",
         }
     except ImportError:
         return _amazon_affiliate_link(product)
     except Exception as e:
-        log.warning(f"Amazon PA API error: {e}")
+        if "AssociateNotEligible" in str(e):
+            _amazon_creators_disabled = True
+        log.warning(f"Amazon Creators API error: {e}")
         return _amazon_affiliate_link(product)
 
 
