@@ -3,5 +3,6 @@ __pycache__/
 .pytest_cache/
 scraper/browser-profile/
 scraper/domyown-manual-profile/
+scraper/google-asset-profile/
 scraper/manual-google-profile/
 manual_google_sources*.log

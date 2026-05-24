@@ -437,20 +437,29 @@ OVERLAY_SCRIPT = r"""
 
 
 def set_overlay_state(page, item: dict, index: int, total: int):
-    page.evaluate(
-        """state => {
-            window.__ldAssetState = state;
-            const old = document.getElementById('ld-asset-panel');
-            if (old) old.remove();
-        }""",
-        {
-            "index": index,
-            "total": total,
-            "kind": "weed image" if item["kind"] == "weed" else "product label",
-            "name": item["name"],
-        },
-    )
-    page.evaluate(OVERLAY_SCRIPT)
+    state = {
+        "index": index,
+        "total": total,
+        "kind": "weed image" if item["kind"] == "weed" else "product label",
+        "name": item["name"],
+    }
+    try:
+        page.evaluate(
+            """state => {
+                window.__ldAssetState = state;
+                const old = document.getElementById('ld-asset-panel');
+                if (old) old.remove();
+            }""",
+            state,
+        )
+        page.evaluate(OVERLAY_SCRIPT)
+    except Exception as exc:
+        print(f"  overlay injection failed on {page.url[:80]}: {exc.__class__.__name__}")
+
+
+def set_overlay_state_all(ctx, item: dict, index: int, total: int):
+    for open_page in ctx.pages:
+        set_overlay_state(open_page, item, index, total)
 
 
 def wait_for_overlay_command(command_queue: "queue.Queue[dict]", item: dict) -> dict:
@@ -460,10 +469,10 @@ def wait_for_overlay_command(command_queue: "queue.Queue[dict]", item: dict) -> 
             return command
 
 
-def process_item(page, command_queue: "queue.Queue[dict]", data: dict, item: dict, index: int, total: int, output_path: Path) -> bool:
+def process_item(ctx, page, command_queue: "queue.Queue[dict]", data: dict, item: dict, index: int, total: int, output_path: Path) -> bool:
     print(f"\n[{index}/{total}] {item['name']}  ({item['category']})")
     page.goto(search_url(item), wait_until="domcontentloaded", timeout=30000)
-    set_overlay_state(page, item, index, total)
+    set_overlay_state_all(ctx, item, index, total)
 
     while True:
         command = wait_for_overlay_command(command_queue, item)
@@ -478,7 +487,7 @@ def process_item(page, command_queue: "queue.Queue[dict]", data: dict, item: dic
             return True
         if action == "reopen":
             page.goto(search_url(item), wait_until="domcontentloaded", timeout=30000)
-            set_overlay_state(page, item, index, total)
+            set_overlay_state_all(ctx, item, index, total)
             continue
         if action in ("record-link", "record-image"):
             asset_url = command.get("url", "")
@@ -547,6 +556,7 @@ def main():
         ctx = launch_browser_context(pw, root, args.profile_dir)
         command_queue: queue.Queue[dict] = queue.Queue()
         current = {"id": None, "kind": None}
+        overlay_state = {"item": None, "index": 0, "total": len(items)}
 
         def handle_command(source, payload):
             payload = dict(payload or {})
@@ -556,6 +566,14 @@ def main():
 
         ctx.expose_binding("ldAssetCommand", handle_command)
         ctx.add_init_script(OVERLAY_SCRIPT)
+        ctx.on(
+            "page",
+            lambda new_page: new_page.on(
+                "domcontentloaded",
+                lambda: overlay_state["item"]
+                and set_overlay_state(new_page, overlay_state["item"], overlay_state["index"], overlay_state["total"]),
+            ),
+        )
         page = ctx.new_page()
         for index, item in enumerate(items, 1):
             if existing_for(data, item) and not args.refind:
@@ -563,7 +581,9 @@ def main():
                 continue
             current["id"] = item["id"]
             current["kind"] = item["kind"]
-            keep_going = process_item(page, command_queue, data, item, index, len(items), output_path)
+            overlay_state["item"] = item
+            overlay_state["index"] = index
+            keep_going = process_item(ctx, page, command_queue, data, item, index, len(items), output_path)
             if not keep_going:
                 break
         page.close()
