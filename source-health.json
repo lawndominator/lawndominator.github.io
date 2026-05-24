@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T17:42:32.829751+00:00",
+  "generated_at": "2026-05-24T21:48:14.257248+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 746,
-    "manual_verified_sources": 341,
-    "included_sources": 583,
-    "not_included_sources": 163,
+    "sources": 752,
+    "manual_verified_sources": 347,
+    "included_sources": 578,
+    "not_included_sources": 174,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 583,
-    "not_checked_saved_source_limit": 90,
-    "no_extracted_offer": 61,
+    "included": 578,
+    "not_checked_saved_source_limit": 91,
+    "no_extracted_offer": 71,
     "below $10.00 minimum for this category": 12
   },
   "products": [
@@ -1514,7 +1514,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.98,
+          "price": 59.74,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -2198,6 +2198,77 @@
       ],
       "included_sources": 5,
       "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 30,
+      "slug": "tribute-total",
+      "name": "Tribute Total Herbicide",
+      "category": "post-emergent",
+      "sources": [
+        {
+          "url": "https://www.domyown.com/bayer-tribute-total-p-13537.html",
+          "retailer": "domyown",
+          "retailer_name": "DoMyOwn",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 434.93,
+          "offer_url": "https://www.domyown.com/bayer-tribute-total-p-13537.html"
+        },
+        {
+          "url": "https://www.solutionsstores.com/tribute-total-herbicide",
+          "retailer": "solutions",
+          "retailer_name": "Solutions Pest & Lawn",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 428.93,
+          "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
+        },
+        {
+          "url": "https://gciturfacademy.com/products/tribute-total-herbicide",
+          "retailer": "gci-turf",
+          "retailer_name": "GCI Turf Academy",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 469.95,
+          "offer_url": "https://gciturfacademy.com/products/tribute-total-herbicide"
+        },
+        {
+          "url": "https://www.lawnandpestcontrolsupply.com/products/tribute-total-herbicide-6-ounce",
+          "retailer": "lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 469.95,
+          "offer_url": "https://www.lawnandpestcontrolsupply.com/products/tribute-total-herbicide-6-ounce"
+        },
+        {
+          "url": "https://www.forestrydistributing.com/tribute-total-herbicide-envu",
+          "retailer": "forestrydistributing",
+          "retailer_name": "Forestry Distributing",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.siteone.com/en/d00001013-tribute-total-post-emergent-water-dispersible-granule-herbicide-6-oz-bottle/p/1032868",
+          "retailer": "siteone",
+          "retailer_name": "SiteOne",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 434.93,
+          "offer_url": "https://www.siteone.com/en/d00001013-tribute-total-post-emergent-water-dispersible-granule-herbicide-6-oz-bottle/p/1032868"
+        }
+      ],
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6515,10 +6586,10 @@
           "retailer": "7springsfarm",
           "retailer_name": "7Springsfarm",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 58.6,
+          "offer_url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag"
         },
         {
           "url": "https://www.walmart.com/ip/18749200605",
@@ -6561,8 +6632,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 4,
+      "included_sources": 5,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -7714,7 +7785,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.08,
+          "price": 30.67,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -7882,10 +7953,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2879.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
@@ -7922,50 +7993,50 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 79.97,
-          "offer_url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 349.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FMXCPWBN?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 2148.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0FMXCPWBN?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 82.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 679.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B09KS846TW?active=price_amazon&context=sp",
@@ -7982,90 +8053,90 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 999.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0GTZTH6JH?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 119.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 54.99,
-          "offer_url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 72.73,
-          "offer_url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 62.98,
-          "offer_url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 2598.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 2069.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 149.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 359.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDWLZDK?active=price_amazon&context=sp",
@@ -8128,8 +8199,8 @@
           "offer_url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 32,
-      "not_included_sources": 18,
+      "included_sources": 19,
+      "not_included_sources": 31,
       "invalid_sources": 0
     },
     {
@@ -8244,10 +8315,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -8294,20 +8365,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
@@ -8374,10 +8445,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 30.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2",
@@ -8394,10 +8465,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 235.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal",
@@ -8434,14 +8505,14 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 28.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 12,
+      "included_sources": 18,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
