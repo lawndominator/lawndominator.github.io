@@ -462,11 +462,20 @@ def set_overlay_state_all(ctx, item: dict, index: int, total: int):
         set_overlay_state(open_page, item, index, total)
 
 
-def wait_for_overlay_command(command_queue: "queue.Queue[dict]", item: dict) -> dict:
+def wait_for_overlay_command(
+    ctx,
+    command_queue: "queue.Queue[dict]",
+    item: dict,
+    index: int,
+    total: int,
+) -> dict:
     while True:
-        command = command_queue.get()
-        if command.get("item_id") == item["id"] and command.get("kind") == item["kind"]:
-            return command
+        try:
+            command = command_queue.get(timeout=0.75)
+            if command.get("item_id") == item["id"] and command.get("kind") == item["kind"]:
+                return command
+        except queue.Empty:
+            set_overlay_state_all(ctx, item, index, total)
 
 
 def process_item(ctx, page, command_queue: "queue.Queue[dict]", data: dict, item: dict, index: int, total: int, output_path: Path) -> bool:
@@ -475,7 +484,7 @@ def process_item(ctx, page, command_queue: "queue.Queue[dict]", data: dict, item
     set_overlay_state_all(ctx, item, index, total)
 
     while True:
-        command = wait_for_overlay_command(command_queue, item)
+        command = wait_for_overlay_command(ctx, command_queue, item, index, total)
         action = command.get("command")
         if action == "quit":
             return False
@@ -566,15 +575,21 @@ def main():
 
         ctx.expose_binding("ldAssetCommand", handle_command)
         ctx.add_init_script(OVERLAY_SCRIPT)
-        ctx.on(
-            "page",
-            lambda new_page: new_page.on(
-                "domcontentloaded",
-                lambda: overlay_state["item"]
-                and set_overlay_state(new_page, overlay_state["item"], overlay_state["index"], overlay_state["total"]),
-            ),
-        )
+        def wire_overlay_events(new_page):
+            def refresh_overlay():
+                if overlay_state["item"]:
+                    set_overlay_state(new_page, overlay_state["item"], overlay_state["index"], overlay_state["total"])
+
+            new_page.on("domcontentloaded", refresh_overlay)
+            new_page.on("load", refresh_overlay)
+            new_page.on(
+                "framenavigated",
+                lambda frame: frame == new_page.main_frame and refresh_overlay(),
+            )
+
+        ctx.on("page", wire_overlay_events)
         page = ctx.new_page()
+        wire_overlay_events(page)
         for index, item in enumerate(items, 1):
             if existing_for(data, item) and not args.refind:
                 print(f"[{item['id']}] {item['name']} - skipped (already saved)")
