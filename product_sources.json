@@ -11253,6 +11253,92 @@
         "manual_verified": true,
         "source_type": "product"
       }
+    ],
+    "245": [
+      {
+        "url": "https://www.amazon.com/Hi-yield-32340-Iron-Sulfate-Sq-ft/dp/B07CRNTR7G/",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Hi-Yield 32340 Iron Sulfate 4 lb",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb"
+      },
+      {
+        "url": "https://www.domyown.com/hi-yield-iron-sulfate-p-17880.html",
+        "retailer": "domyown",
+        "retailer_name": "DoMyOwn",
+        "title": "Hi-Yield Iron Sulfate",
+        "price_verified": 20.91,
+        "in_stock": true,
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb",
+        "price_per_unit": 5.23
+      },
+      {
+        "url": "https://www.zoro.com/hi-yield-hi-yield-iron-sulfate-1000-sq-ft-4-lb-32340/i/G800445985/",
+        "retailer": "zoro",
+        "retailer_name": "Zoro",
+        "title": "Hi-Yield Iron Sulfate 1000 sq ft 4 lb",
+        "price_verified": 15.19,
+        "in_stock": true,
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb",
+        "price_per_unit": 3.8
+      },
+      {
+        "url": "https://sutherlands.com/products/item/524256/hi-yield-4-pound-iron-sulfate",
+        "retailer": "sutherlands",
+        "retailer_name": "Sutherlands",
+        "title": "Hi-Yield 4-Pound Iron Sulfate",
+        "price_verified": 7.99,
+        "in_stock": true,
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb",
+        "price_per_unit": 2.0
+      },
+      {
+        "url": "https://www.dkhardware.com/hi-yield-32340-iron-sulfate-1000-sq-ft-4-lb-product-5655636.html",
+        "retailer": "dkhardware",
+        "retailer_name": "DK Hardware",
+        "title": "Hi-Yield 32340 4 lb 1000 sq ft Iron Sulfate",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb"
+      },
+      {
+        "url": "https://www.siteone.com/en/32340-p-hi-yield-iron-sulfate-all-purpose-granular-soil-amendment-4-lb-bag/p/942039",
+        "retailer": "siteone",
+        "retailer_name": "SiteOne",
+        "title": "Hi-Yield Iron Sulfate All Purpose Granular Soil Amendment 4 lb Bag",
+        "price_verified": 14.28,
+        "in_stock": true,
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product",
+        "package_quantity": 4.0,
+        "package_unit": "lb",
+        "package_label": "4 lb",
+        "price_per_unit": 3.57
+      }
     ]
   },
   "refresh_cursors": {
@@ -11336,6 +11422,7 @@
     "241": 1,
     "242": 1,
     "243": 1,
-    "244": 1
+    "244": 1,
+    "245": 6
   }
 }
