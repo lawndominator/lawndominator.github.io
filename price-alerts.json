@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-25T19:20:44.287122+00:00",
+  "generated_at": "2026-05-25T22:22:17.852468+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 57,
+  "current_alert_count": 0,
+  "alert_count": 56,
   "alerts": [
     {
       "id": "dismiss:major_price_drop:ourprosolutions:198.95:89.99",
@@ -901,22 +901,6 @@
       "url": "https://gciturfacademy.com/products/acelepryn-sc-insecticide",
       "in_stock": true,
       "created_at": "2026-05-19T07:59:35.753298+00:00"
-    },
-    {
-      "id": "specticle-g:back_in_stock:seed-barn:135.77:197.77",
-      "type": "back_in_stock",
-      "product_id": 7,
-      "product_slug": "specticle-g",
-      "product_name": "Specticle G (Indaziflam)",
-      "category": "pre-emergent",
-      "old_price": 135.77,
-      "new_price": 197.77,
-      "drop_percent": 0.0,
-      "old_retailer": "DoMyOwn",
-      "new_retailer": "Seed Barn",
-      "url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs?variant=12543660425316",
-      "in_stock": true,
-      "created_at": "2026-05-18T20:55:39.696819+00:00"
     }
   ]
 }
