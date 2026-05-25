@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T21:48:14.257248+00:00",
+  "generated_at": "2026-05-25T05:20:57.742242+00:00",
   "saved_source_limit": 5,
   "totals": {
-    "sources": 752,
-    "manual_verified_sources": 347,
-    "included_sources": 578,
-    "not_included_sources": 174,
+    "sources": 774,
+    "manual_verified_sources": 368,
+    "included_sources": 609,
+    "not_included_sources": 165,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 578,
-    "not_checked_saved_source_limit": 91,
-    "no_extracted_offer": 71,
-    "below $10.00 minimum for this category": 12
+    "included": 609,
+    "not_checked_saved_source_limit": 92,
+    "no_extracted_offer": 60,
+    "below $10.00 minimum for this category": 13
   },
   "products": [
     {
@@ -1049,7 +1049,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 116.0,
+          "price": 116.09,
           "offer_url": "https://www.amazon.com/dp/B004RVNFY6?tag=lawndominator-20"
         },
         {
@@ -1514,7 +1514,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.74,
+          "price": 61.02,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -4795,7 +4795,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 82.95,
+          "price": 84.4,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -6323,6 +6323,392 @@
       "invalid_sources": 0
     },
     {
+      "id": 230,
+      "slug": "rk-equalizorr",
+      "name": "Ryan Knorr EqualizORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/equalizorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 49.99,
+          "offer_url": "https://ryanknorrlawncare.com/product/equalizorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 231,
+      "slug": "rk-greenorr",
+      "name": "Ryan Knorr GreenORR",
+      "category": "micronutrient",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/greenorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 30.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/greenorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 232,
+      "slug": "rk-ammonium-sulfate",
+      "name": "Ryan Knorr Ammonium Sulfate",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/ammonium-sulfate",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 43.99,
+          "offer_url": "https://ryanknorrlawncare.com/product/ammonium-sulfate/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 233,
+      "slug": "rk-greenorr-g",
+      "name": "Ryan Knorr GreenORR G",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/greenorr-g",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 89.99,
+          "offer_url": "https://ryanknorrlawncare.com/product/greenorr-g/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 234,
+      "slug": "rk-maxorr-g",
+      "name": "Ryan Knorr MaxORR G",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/maxorr-g",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 89.99,
+          "offer_url": "https://ryanknorrlawncare.com/product/maxorr-g/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 235,
+      "slug": "rk-groworr",
+      "name": "Ryan Knorr GrowORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/groworr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 45.99,
+          "offer_url": "https://ryanknorrlawncare.com/product/groworr/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 236,
+      "slug": "rk-sloworr",
+      "name": "Ryan Knorr SlowORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/sloworr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 27.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/sloworr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 237,
+      "slug": "rk-vigorr",
+      "name": "Ryan Knorr VigORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/vigorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 33.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/vigorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 238,
+      "slug": "rk-defendorr",
+      "name": "Ryan Knorr DefendORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/defendorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 33.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/defendorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 239,
+      "slug": "rk-phiteorr",
+      "name": "Ryan Knorr PhiteORR",
+      "category": "macronutrient",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/phiteorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 44.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/phiteorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 240,
+      "slug": "rk-plantorr",
+      "name": "Ryan Knorr PlantORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/plantorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 22.5,
+          "offer_url": "https://ryanknorrlawncare.com/product/plantorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 241,
+      "slug": "rk-resistorr",
+      "name": "Ryan Knorr ResistORR",
+      "category": "macronutrient",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/resistorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 29.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/resistorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 242,
+      "slug": "rk-strongorr",
+      "name": "Ryan Knorr StrongORR",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/strongorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 59.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/strongorr/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 243,
+      "slug": "rk-soakorr",
+      "name": "Ryan Knorr SoakORR",
+      "category": "moisture-manager",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/soakorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 59.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/soakorr"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 244,
+      "slug": "rk-phixorr",
+      "name": "Ryan Knorr pHixORR",
+      "category": "soil-amendment",
+      "sources": [
+        {
+          "url": "https://ryanknorrlawncare.com/product/phixorr",
+          "retailer": "ryanknorr",
+          "retailer_name": "Ryan Knorr Lawn Care",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 79.0,
+          "offer_url": "https://ryanknorrlawncare.com/product/phixorr/"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
+      "invalid_sources": 0
+    },
+    {
+      "id": 245,
+      "slug": "hi-yield-iron-sulfate",
+      "name": "Hi-Yield Iron Sulfate 4 lb",
+      "category": "micronutrient",
+      "sources": [
+        {
+          "url": "https://www.amazon.com/dp/B07CRNTR7G",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 21.02,
+          "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
+        },
+        {
+          "url": "https://www.domyown.com/hi-yield-iron-sulfate-p-17880.html",
+          "retailer": "domyown",
+          "retailer_name": "DoMyOwn",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 20.91,
+          "offer_url": "https://www.domyown.com/hi-yield-iron-sulfate-p-17880.html"
+        },
+        {
+          "url": "https://www.zoro.com/hi-yield-hi-yield-iron-sulfate-1000-sq-ft-4-lb-32340/i/G800445985",
+          "retailer": "zoro",
+          "retailer_name": "Zoro",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 15.19,
+          "offer_url": "https://www.zoro.com/hi-yield-hi-yield-iron-sulfate-1000-sq-ft-4-lb-32340/i/G800445985/"
+        },
+        {
+          "url": "https://sutherlands.com/products/item/524256/hi-yield-4-pound-iron-sulfate",
+          "retailer": "sutherlands",
+          "retailer_name": "Sutherlands",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 7.99,
+          "offer_url": "https://sutherlands.com/products/item/524256/hi-yield-4-pound-iron-sulfate"
+        },
+        {
+          "url": "https://www.dkhardware.com/hi-yield-32340-iron-sulfate-1000-sq-ft-4-lb-product-5655636.html",
+          "retailer": "dkhardware",
+          "retailer_name": "DK Hardware",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.siteone.com/en/32340-p-hi-yield-iron-sulfate-all-purpose-granular-soil-amendment-4-lb-bag/p/942039",
+          "retailer": "siteone",
+          "retailer_name": "SiteOne",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 14.28,
+          "offer_url": "https://www.siteone.com/en/32340-p-hi-yield-iron-sulfate-all-purpose-granular-soil-amendment-4-lb-bag/p/942039"
+        }
+      ],
+      "included_sources": 4,
+      "not_included_sources": 2,
+      "invalid_sources": 0
+    },
+    {
       "id": 130,
       "slug": "andersons-pgf-complete",
       "name": "The Andersons PGF Complete 16-4-8",
@@ -6586,10 +6972,10 @@
           "retailer": "7springsfarm",
           "retailer_name": "7Springsfarm",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 58.6,
-          "offer_url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/18749200605",
@@ -6632,8 +7018,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 4,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -7853,10 +8239,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 1619.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
@@ -7983,60 +8369,60 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 721.98,
-          "offer_url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.97,
+          "offer_url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 349.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FMXCPWBN?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2148.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0FMXCPWBN?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 82.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 679.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B09KS846TW?active=price_amazon&context=sp",
@@ -8053,90 +8439,90 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 999.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GTZTH6JH?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 119.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 54.99,
+          "offer_url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 72.73,
+          "offer_url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 62.98,
+          "offer_url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2598.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2069.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 149.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 359.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDWLZDK?active=price_amazon&context=sp",
@@ -8199,8 +8585,8 @@
           "offer_url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 31,
+      "included_sources": 31,
+      "not_included_sources": 19,
       "invalid_sources": 0
     },
     {
@@ -8345,10 +8731,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart",
@@ -8365,10 +8751,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 250.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
@@ -8415,10 +8801,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 104.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
@@ -8465,20 +8851,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 235.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid",
@@ -8495,10 +8881,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 96.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses",
@@ -8509,9 +8895,19 @@
           "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 55.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 18,
+      "included_sources": 19,
       "not_included_sources": 10,
       "invalid_sources": 0
     },
