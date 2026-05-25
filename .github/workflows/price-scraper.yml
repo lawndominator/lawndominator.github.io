@@ -2,8 +2,8 @@ name: Price Scraper
 
 on:
   schedule:
-    # Every 4 hours — keeps prices fresh for app premium users
-    - cron: "17 */4 * * *"
+    # Every 3 hours, offset from the top of the hour to reduce GitHub schedule drops.
+    - cron: "17 */3 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
     inputs:
