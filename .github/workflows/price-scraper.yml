@@ -2,8 +2,8 @@ name: Price Scraper
 
 on:
   schedule:
-    # Every 3 hours, offset from the top of the hour to reduce GitHub schedule drops.
-    - cron: "17 */3 * * *"
+    # Every 3 hours from morning through evening Central time, offset to reduce GitHub schedule drops.
+    - cron: "17 11,14,17,20,23,2 * * *"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
     inputs:
