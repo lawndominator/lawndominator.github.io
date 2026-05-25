@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-25T05:20:57.742242+00:00",
+  "generated_at": "2026-05-25T12:27:19.565317+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 58,
+  "current_alert_count": 1,
+  "alert_count": 56,
   "alerts": [
     {
       "id": "tenacity:new_lowest_retailer:amazon:60.84:59.98",
@@ -901,38 +901,6 @@
       "url": "https://sodsolutions.com/shop/weed-control/speedzone-broadleaf-herbicide-for-turf",
       "in_stock": true,
       "created_at": "2026-05-18T15:57:35.051228+00:00"
-    },
-    {
-      "id": "tetrasan-5wdg:major_price_drop:pestrong:154.89:129.95",
-      "type": "major_price_drop",
-      "product_id": 84,
-      "product_slug": "tetrasan-5wdg",
-      "product_name": "TetraSan 5WDG (Etoxazole)",
-      "category": "insecticide",
-      "old_price": 154.89,
-      "new_price": 129.95,
-      "drop_percent": 16.1,
-      "old_retailer": "Sunspot Supply",
-      "new_retailer": "Pestrong",
-      "url": "https://pestrong.com/product/tetrasan-5-wdg-miticide-ovicide-8-x-2-oz-1-lb",
-      "in_stock": true,
-      "created_at": "2026-05-18T08:19:18.041412+00:00"
-    },
-    {
-      "id": "tetrasan-5wdg:new_lowest_retailer:pestrong:154.89:129.95",
-      "type": "new_lowest_retailer",
-      "product_id": 84,
-      "product_slug": "tetrasan-5wdg",
-      "product_name": "TetraSan 5WDG (Etoxazole)",
-      "category": "insecticide",
-      "old_price": 154.89,
-      "new_price": 129.95,
-      "drop_percent": 16.1,
-      "old_retailer": "Sunspot Supply",
-      "new_retailer": "Pestrong",
-      "url": "https://pestrong.com/product/tetrasan-5-wdg-miticide-ovicide-8-x-2-oz-1-lb",
-      "in_stock": true,
-      "created_at": "2026-05-18T08:19:18.041412+00:00"
     }
   ]
 }
