@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-25T12:27:19.565317+00:00",
+  "generated_at": "2026-05-25T16:58:56.197665+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 1,
-  "alert_count": 56,
+  "current_alert_count": 0,
+  "alert_count": 55,
   "alerts": [
     {
       "id": "tenacity:new_lowest_retailer:amazon:60.84:59.98",
@@ -885,22 +885,6 @@
       "url": "https://seedbarn.com/products/specticle-g-herbicide-50-lbs?variant=12543660425316",
       "in_stock": true,
       "created_at": "2026-05-18T20:55:39.696819+00:00"
-    },
-    {
-      "id": "dimension-2ew:new_lowest_retailer:sodsolutions:142.58:139.95",
-      "type": "new_lowest_retailer",
-      "product_id": 2,
-      "product_slug": "dimension-2ew",
-      "product_name": "Dimension 2EW (Dithiopyr)",
-      "category": "pre-emergent",
-      "old_price": 142.58,
-      "new_price": 139.95,
-      "drop_percent": 1.8,
-      "old_retailer": "Amazon",
-      "new_retailer": "Sodsolutions",
-      "url": "https://sodsolutions.com/shop/weed-control/speedzone-broadleaf-herbicide-for-turf",
-      "in_stock": true,
-      "created_at": "2026-05-18T15:57:35.051228+00:00"
     }
   ]
 }
