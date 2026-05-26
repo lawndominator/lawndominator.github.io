@@ -70,6 +70,9 @@
             <button id="measure-locate" class="measure-search__secondary" type="button">Use my location</button>
             <p id="measure-status" class="measure-status">Search an address, then use the draw tools on the map.</p>
             <div id="measure-results" class="measure-results" hidden></div>
+            <p id="measure-geocoder-credit" class="measure-credit" hidden>
+              Address search powered by <a href="https://www.geoapify.com/" rel="noopener">Geoapify</a>.
+            </p>
           </form>
         </section>
 
@@ -91,6 +94,7 @@
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="./lawn-measure-config.js"></script>
     <script src="./lawn-measure.js"></script>
   </body>
 </html>

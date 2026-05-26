@@ -2176,6 +2176,17 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   font-size: 0.9rem;
 }
 
+.measure-credit {
+  margin: var(--space-sm) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.measure-credit a {
+  color: var(--accent);
+  font-weight: 800;
+}
+
 .measure-status--error {
   color: oklch(0.79 0.15 42);
 }

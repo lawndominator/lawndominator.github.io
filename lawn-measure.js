@@ -2,6 +2,9 @@
   var SQM_TO_SQFT = 10.7639104167;
   var DEFAULT_CENTER = [39.8283, -98.5795];
   var DEFAULT_ZOOM = 4;
+  var GEOAPIFY_KEY = String(window.LAWNDOMINATOR_GEOAPIFY_KEY || '').trim();
+  var autocompleteTimer = null;
+  var autocompleteController = null;
 
   var mapEl = document.getElementById('lawn-measure-map');
   if (!mapEl || !window.L || !window.L.Control || !window.L.Control.Draw) return;
@@ -70,6 +73,11 @@
   var clearBtn = document.getElementById('measure-clear');
   var locateBtn = document.getElementById('measure-locate');
   var resultsEl = document.getElementById('measure-results');
+  var geocoderCreditEl = document.getElementById('measure-geocoder-credit');
+
+  if (GEOAPIFY_KEY && geocoderCreditEl) {
+    geocoderCreditEl.hidden = false;
+  }
 
   function formatSqft(value) {
     return Math.round(value).toLocaleString('en-US') + ' sq ft';
@@ -95,11 +103,12 @@
 
   function zoomToResult(result) {
     map.setView([result.lat, result.lon], 19);
+    if (result.label) addressInput.value = result.label;
     clearResults();
     setStatus('Found it. Zoom or pan if needed, then draw the lawn edge.');
   }
 
-  function showResults(results) {
+  function showResults(results, headingText) {
     if (!resultsEl) return;
     resultsEl.innerHTML = '';
     if (!results.length) {
@@ -108,7 +117,7 @@
     }
 
     var heading = document.createElement('p');
-    heading.textContent = 'Choose the matching address:';
+    heading.textContent = headingText || 'Choose the matching address:';
     resultsEl.appendChild(heading);
 
     results.forEach(function (result) {
@@ -165,6 +174,38 @@
 
   map.on(L.Draw.Event.EDITED, updateTotals);
   map.on(L.Draw.Event.DELETED, updateTotals);
+
+  function geoapifyUrl(path, params) {
+    params.apiKey = GEOAPIFY_KEY;
+    return 'https://api.geoapify.com/v1/' + path + '?' + new URLSearchParams(params).toString();
+  }
+
+  function geoapifyFeatureToResult(feature) {
+    var props = feature.properties || {};
+    var coords = (feature.geometry || {}).coordinates || [];
+    return {
+      lat: Number(props.lat || coords[1]),
+      lon: Number(props.lon || coords[0]),
+      label: props.formatted || props.address_line1 || props.name || '',
+      source: 'geoapify'
+    };
+  }
+
+  async function geocodeGeoapify(query, autocomplete, signal) {
+    if (!GEOAPIFY_KEY) return [];
+    var url = geoapifyUrl(autocomplete ? 'geocode/autocomplete' : 'geocode/search', {
+      text: query,
+      filter: 'countrycode:us',
+      format: 'geojson',
+      limit: autocomplete ? '6' : '5'
+    });
+    var res = await fetch(url, { headers: { Accept: 'application/json' }, signal: signal });
+    if (!res.ok) throw new Error('Geoapify address search failed. Try again in a minute.');
+    var data = await res.json();
+    return (data.features || []).map(geoapifyFeatureToResult).filter(function (result) {
+      return Number.isFinite(result.lat) && Number.isFinite(result.lon) && result.label;
+    });
+  }
 
   async function geocodeCensus(query) {
     var callbackName = 'ldCensusGeocode' + Date.now() + Math.floor(Math.random() * 1000);
@@ -238,6 +279,11 @@
   }
 
   async function geocode(query) {
+    var geoapifyResults = await geocodeGeoapify(query, false);
+    if (geoapifyResults.length) {
+      return { source: 'geoapify', results: geoapifyResults };
+    }
+
     var censusResults = await geocodeCensus(query);
     if (censusResults.length) {
       return { source: 'census', results: censusResults };
@@ -250,6 +296,28 @@
     return { source: 'nominatim', results: osmResults };
   }
 
+  addressInput.addEventListener('input', function () {
+    if (!GEOAPIFY_KEY) return;
+    var query = addressInput.value.trim();
+    window.clearTimeout(autocompleteTimer);
+    if (autocompleteController) autocompleteController.abort();
+    if (query.length < 4) {
+      clearResults();
+      return;
+    }
+
+    autocompleteTimer = window.setTimeout(async function () {
+      autocompleteController = new AbortController();
+      try {
+        var suggestions = await geocodeGeoapify(query, true, autocompleteController.signal);
+        showResults(suggestions, 'Address suggestions:');
+        if (suggestions.length) setStatus('Pick the matching address, or keep typing.');
+      } catch (error) {
+        if (error.name !== 'AbortError') clearResults();
+      }
+    }, 350);
+  });
+
   addressForm.addEventListener('submit', async function (event) {
     event.preventDefault();
     var query = addressInput.value.trim();
@@ -261,7 +329,7 @@
     clearResults();
     try {
       var response = await geocode(query);
-      if (response.source === 'census' && response.results.length === 1) {
+      if ((response.source === 'census' || response.source === 'geoapify') && response.results.length === 1) {
         zoomToResult(response.results[0]);
         return;
       }
