@@ -93,6 +93,42 @@ class ScraperExtractionTests(unittest.TestCase):
         )
         self.assertEqual(result["image"], "https://www.domyown.com/images/prodiamine.jpg")
 
+    def test_product_detail_price_beats_related_product_card_price(self):
+        soup = BeautifulSoup(
+            """
+            <main class="product-info-main">
+              <h1 class="page-title">T-Nex Plant Growth Regulator</h1>
+              <div class="product-info-price">
+                <span id="product-price-5647"
+                      data-price-amount="125.37"
+                      data-price-type="finalPrice"
+                      class="price-wrapper">
+                  <span class="price">$125.37</span>
+                </span>
+              </div>
+            </main>
+            <div class="product-item" data-product-id="2708">
+              <a class="product-item-link" href="/unrelated-product">Unrelated Product</a>
+              <span id="product-price-2708" data-price-amount="34.00" class="price-wrapper">
+                <span class="price">$34.00</span>
+              </span>
+            </div>
+            """,
+            "lxml",
+        )
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+            "solutions",
+            "Solutions Pest & Lawn",
+        )
+
+        self.assertIsNotNone(result)
+        self.assertEqual(result["price"], 125.37)
+        self.assertEqual(result["url"], "https://www.solutionsstores.com/t-nex-plant-growth-regulator")
+        self.assertEqual(result["title"], "T-Nex Plant Growth Regulator")
+
     def test_page_out_of_stock_overrides_jsonld_availability(self):
         soup = BeautifulSoup(
             """

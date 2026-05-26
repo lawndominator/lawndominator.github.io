@@ -1065,6 +1065,53 @@ def _price_from_node(node) -> Optional[float]:
     return parse_price(node.get_text(" ", strip=True))
 
 
+def _primary_product_price_from_soup(soup: BeautifulSoup) -> Optional[float]:
+    selectors = [
+        ".product-info-main .product-info-price [data-price-type='finalPrice'][data-price-amount]",
+        ".product-info-main [data-price-type='finalPrice'][data-price-amount]",
+        ".product-info-price [data-price-type='finalPrice'][data-price-amount]",
+        ".product-info-main [itemprop='price']",
+        ".product-info-main meta[property='product:price:amount']",
+        ".summary .price",
+        ".productView-price",
+        ".product__price",
+        ".product-single__price",
+    ]
+    for sel in selectors:
+        elem = soup.select_one(sel)
+        if not elem:
+            continue
+        raw = (
+            elem.get("data-price-amount")
+            or elem.get("content")
+            or elem.get("data-price")
+            or elem.get_text(" ", strip=True)
+        )
+        price = parse_price(raw)
+        if price is not None:
+            return price
+    return None
+
+
+def _primary_product_title_from_soup(soup: BeautifulSoup) -> str:
+    selectors = [
+        ".product-info-main h1",
+        "h1.page-title",
+        ".page-title",
+        "[itemprop='name']",
+        "h1",
+    ]
+    for sel in selectors:
+        elem = soup.select_one(sel)
+        if elem:
+            title = elem.get_text(" ", strip=True)
+            if title:
+                return title
+    if soup.title and soup.title.string:
+        return soup.title.string.strip()
+    return ""
+
+
 def _image_from_node(node, base_url: str) -> Optional[str]:
     selectors = [
         "meta[property='og:image']",
@@ -1101,6 +1148,19 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
     jsonld_result = _jsonld_product_offer(soup, base_url, retailer, retailer_name)
     if jsonld_result:
         return jsonld_result
+
+    primary_price = _primary_product_price_from_soup(soup)
+    if primary_price is not None:
+        return {
+            "retailer":      retailer,
+            "retailer_name": retailer_name,
+            "price":         primary_price,
+            "url":           base_url,
+            "in_stock":      not _page_indicates_out_of_stock(soup),
+            "title":         _primary_product_title_from_soup(soup),
+            "image":         _image_from_node(soup, base_url),
+            "last_checked":  now_iso(),
+        }
 
     card_selectors = [
         "[data-product-id]", ".product-item", ".product-card",
