@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-26T06:55:48.131356+00:00",
+  "generated_at": "2026-05-26T14:38:11.210307+00:00",
   "saved_source_limit": 5,
   "totals": {
     "sources": 774,
     "manual_verified_sources": 368,
-    "included_sources": 613,
-    "not_included_sources": 161,
+    "included_sources": 620,
+    "not_included_sources": 154,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 613,
-    "not_checked_saved_source_limit": 92,
-    "no_extracted_offer": 55,
+    "included": 620,
+    "not_checked_saved_source_limit": 91,
+    "no_extracted_offer": 49,
     "below $10.00 minimum for this category": 14
   },
   "products": [
@@ -138,10 +138,10 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sodsolutions",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 164.95,
-          "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://chemicalwarehouse.com/products/dithiopyr-2l",
@@ -264,8 +264,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2l?variant=39630369128511"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 4,
+      "included_sources": 9,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -3222,10 +3222,10 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 157.99,
+          "offer_url": "https://lawnsynergy.com/products/armada-50-wdg-fungicide"
         },
         {
           "url": "https://pestrong.com/product/armada-50-wdg-fungicide-2-lb",
@@ -3268,8 +3268,8 @@
           "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -3993,10 +3993,10 @@
           "retailer": "sunspotsupply",
           "retailer_name": "Sunspotsupply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 85.0,
-          "offer_url": "https://www.sunspotsupply.com/products/acelepryn-insecticide-4-oz-bottle?variant=43994330431674"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control?variant=42425589465337",
@@ -4009,8 +4009,8 @@
           "offer_url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control?variant=42425589465337"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 2,
+      "included_sources": 8,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -4408,10 +4408,10 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.99,
+          "offer_url": "https://lawnsynergy.com/products/talstar-pl-granular-insecticide"
         },
         {
           "url": "https://pestrong.com/product/talstar-pl-granular-insecticide-bifenthrin-25-lbs",
@@ -4428,14 +4428,14 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.99,
+          "offer_url": "https://lawnsynergy.com/products/talstar-pl-granular-insecticide?variant=47138761474186"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -4795,7 +4795,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 82.56,
+          "price": 84.66,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5440,20 +5440,20 @@
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 47.95,
+          "offer_url": "https://lawnsynergy.com/products/hydretain-es-plus-ii"
         },
         {
           "url": "https://lawnsynergy.com/products/hydretain-es-plus-granular-qd",
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 105.99,
+          "offer_url": "https://lawnsynergy.com/products/hydretain-es-plus-granular-qd"
         },
         {
           "url": "https://pestrong.com/product/hydretain-rts-hose-end-sprayer-qt",
@@ -5536,8 +5536,8 @@
           "offer_url": "https://www.treehelp.com/products/hydretain-root-zone-moisture-manager?variant=42716364964008"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 7,
+      "included_sources": 12,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -6282,10 +6282,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 54.52,
+          "offer_url": "https://lawnsynergy.com/products/lesco-moisture-manager"
         },
         {
           "url": "https://seedbarn.com/products/lesco-moisture-manager-liquid",
@@ -6318,8 +6318,8 @@
           "offer_url": "https://seedbarn.com/products/lesco-moisture-manager-liquid?variant=42022911672538"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -6377,7 +6377,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 43.99,
+          "price": 79.99,
           "offer_url": "https://ryanknorrlawncare.com/product/ammonium-sulfate"
         }
       ],
@@ -6419,7 +6419,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 89.99,
+          "price": 179.95,
           "offer_url": "https://ryanknorrlawncare.com/product/maxorr-g"
         }
       ],
@@ -6440,7 +6440,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 45.99,
+          "price": 49.99,
           "offer_url": "https://ryanknorrlawncare.com/product/groworr"
         }
       ],
@@ -6587,7 +6587,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.0,
+          "price": 44.0,
           "offer_url": "https://ryanknorrlawncare.com/product/strongorr"
         }
       ],
@@ -6629,7 +6629,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 79.0,
+          "price": 59.0,
           "offer_url": "https://ryanknorrlawncare.com/product/phixorr"
         }
       ],
@@ -8171,7 +8171,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.9,
+          "price": 30.66,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -8189,10 +8189,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 169.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0D1N82LTB?active=price_amazon&context=sp"
         },
         {
           "url": "https://tierrasupplyco.com/products/2-5-gal-12-0-0-chelated-southern-ag?variant=45034788258099",
@@ -8259,10 +8259,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 737.19,
-          "offer_url": "https://camelcamelcamel.com/product/B00O1EVJJC?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0GKG9YZMK?active=price_amazon&context=sp",
@@ -8339,10 +8339,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2879.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
@@ -8369,10 +8369,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 721.98,
-          "offer_url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp",
@@ -8761,10 +8761,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
@@ -8781,20 +8781,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 104.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese",
@@ -8831,20 +8831,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 30.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10",
@@ -8861,20 +8861,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 69.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 200.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4",
@@ -8891,24 +8891,24 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 28.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 55.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 18,
-      "not_included_sources": 11,
+      "included_sources": 21,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
