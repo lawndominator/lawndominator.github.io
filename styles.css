@@ -2079,3 +2079,215 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
     position: static;
   }
 }
+
+/* Lawn measurement tool */
+
+.measure-page {
+  width: var(--max-width);
+  margin-inline: auto;
+  padding-block: var(--space-2xl) var(--space-4xl);
+}
+
+.measure-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
+  gap: var(--space-xl);
+  align-items: end;
+  margin-bottom: var(--space-xl);
+}
+
+.measure-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2rem, 5vw, 4.3rem);
+}
+
+.measure-hero p {
+  max-width: 58ch;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.measure-search,
+.measure-panel {
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: oklch(0.2 0.03 118 / 0.88);
+  padding: var(--space-lg);
+}
+
+.measure-search label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.measure-search__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-sm);
+}
+
+.measure-search input {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: oklch(0.14 0.02 118);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.92rem 1rem;
+}
+
+.measure-search button,
+.measure-actions button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: oklch(0.12 0.02 118);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0.9rem 1.05rem;
+}
+
+.measure-search__secondary,
+.measure-actions .btn-secondary {
+  border: 1px solid var(--line) !important;
+  background: oklch(0.16 0.025 118) !important;
+  color: var(--ink) !important;
+}
+
+.measure-search__secondary {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.measure-status,
+.measure-note,
+.measure-count {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.measure-status {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.9rem;
+}
+
+.measure-status--error {
+  color: oklch(0.79 0.15 42);
+}
+
+.measure-tool {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.32fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.measure-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+}
+
+.measure-total {
+  margin-top: var(--space-sm);
+  color: var(--ink);
+  font-family: 'Archivo Expanded', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.measure-count {
+  margin: var(--space-xs) 0 var(--space-md);
+}
+
+.measure-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.measure-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.measure-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.measure-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: oklch(0.14 0.02 118 / 0.68);
+  color: var(--ink-soft);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.measure-list strong {
+  color: var(--ink);
+}
+
+.measure-note {
+  margin: auto 0 0;
+  font-size: 0.88rem;
+}
+
+.measure-map {
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: oklch(0.12 0.02 118);
+  box-shadow: var(--shadow-sm);
+}
+
+.measure-map .leaflet-control-attribution {
+  color: oklch(0.18 0.02 118);
+  font-size: 0.68rem;
+}
+
+.measure-map .leaflet-draw-toolbar a,
+.measure-map .leaflet-bar a {
+  color: oklch(0.16 0.02 118);
+}
+
+@media (max-width: 920px) {
+  .measure-hero,
+  .measure-tool {
+    grid-template-columns: 1fr;
+  }
+
+  .measure-panel,
+  .measure-map {
+    min-height: auto;
+  }
+
+  .measure-map {
+    height: 68vh;
+  }
+}
+
+@media (max-width: 560px) {
+  .measure-search__row,
+  .measure-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .measure-map {
+    height: 62vh;
+    border-radius: 0.8rem;
+  }
+}
