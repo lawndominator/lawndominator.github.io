@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-25T22:22:17.852468+00:00",
+  "generated_at": "2026-05-26T00:43:50.041556+00:00",
   "saved_source_limit": 5,
   "totals": {
     "sources": 774,
     "manual_verified_sources": 368,
-    "included_sources": 613,
-    "not_included_sources": 161,
+    "included_sources": 608,
+    "not_included_sources": 166,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 613,
+    "included": 608,
     "not_checked_saved_source_limit": 92,
-    "no_extracted_offer": 56,
+    "no_extracted_offer": 61,
     "below $10.00 minimum for this category": 13
   },
   "products": [
@@ -138,10 +138,10 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sodsolutions",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 164.95,
-          "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://chemicalwarehouse.com/products/dithiopyr-2l",
@@ -264,8 +264,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2l?variant=39630369128511"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 4,
+      "included_sources": 9,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -1372,7 +1372,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 95.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1514,7 +1514,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.02,
+          "price": 59.04,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -2475,7 +2475,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 125.37,
+          "price": 34.0,
           "offer_url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator"
         },
         {
@@ -6972,10 +6972,10 @@
           "retailer": "7springsfarm",
           "retailer_name": "7Springsfarm",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 58.6,
-          "offer_url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/18749200605",
@@ -7018,8 +7018,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 4,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -8229,20 +8229,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 329.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0BZ584DH9?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 1899.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
@@ -8329,10 +8329,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 5899.0,
-          "offer_url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp",
@@ -8585,8 +8585,8 @@
           "offer_url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 32,
-      "not_included_sources": 18,
+      "included_sources": 29,
+      "not_included_sources": 21,
       "invalid_sources": 0
     },
     {
@@ -8701,10 +8701,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -8751,10 +8751,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
@@ -8771,10 +8771,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
@@ -8821,10 +8821,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8881,20 +8881,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 96.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 28.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb",
