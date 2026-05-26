@@ -2319,9 +2319,63 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   color: oklch(0.16 0.02 118);
 }
 
+.measure-seo {
+  display: grid;
+  gap: var(--space-xl);
+  margin-top: var(--space-3xl);
+}
+
+.measure-seo__intro {
+  max-width: 780px;
+}
+
+.measure-seo__intro h2 {
+  max-width: 15ch;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.measure-seo__intro p,
+.measure-seo li,
+.measure-seo article p {
+  color: var(--ink-soft);
+  line-height: 1.72;
+}
+
+.measure-seo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.measure-seo article {
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: oklch(0.2 0.03 118 / 0.82);
+  padding: var(--space-lg);
+}
+
+.measure-seo h3 {
+  max-width: none;
+  font-size: 1.08rem;
+  margin-bottom: var(--space-sm);
+}
+
+.measure-seo ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.measure-seo article p {
+  margin: 0;
+}
+
 @media (max-width: 920px) {
   .measure-hero,
   .measure-tool {
+    grid-template-columns: 1fr;
+  }
+
+  .measure-seo__grid {
     grid-template-columns: 1fr;
   }
 
