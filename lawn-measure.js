@@ -69,6 +69,7 @@
   var copyBtn = document.getElementById('measure-copy');
   var clearBtn = document.getElementById('measure-clear');
   var locateBtn = document.getElementById('measure-locate');
+  var resultsEl = document.getElementById('measure-results');
 
   function formatSqft(value) {
     return Math.round(value).toLocaleString('en-US') + ' sq ft';
@@ -84,6 +85,43 @@
   function setStatus(message, isError) {
     statusEl.textContent = message;
     statusEl.classList.toggle('measure-status--error', Boolean(isError));
+  }
+
+  function clearResults() {
+    if (!resultsEl) return;
+    resultsEl.hidden = true;
+    resultsEl.innerHTML = '';
+  }
+
+  function zoomToResult(result) {
+    map.setView([result.lat, result.lon], 19);
+    clearResults();
+    setStatus('Found it. Zoom or pan if needed, then draw the lawn edge.');
+  }
+
+  function showResults(results) {
+    if (!resultsEl) return;
+    resultsEl.innerHTML = '';
+    if (!results.length) {
+      clearResults();
+      return;
+    }
+
+    var heading = document.createElement('p');
+    heading.textContent = 'Choose the matching address:';
+    resultsEl.appendChild(heading);
+
+    results.forEach(function (result) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = result.label;
+      button.addEventListener('click', function () {
+        zoomToResult(result);
+      });
+      resultsEl.appendChild(button);
+    });
+
+    resultsEl.hidden = false;
   }
 
   function updateTotals() {
@@ -128,11 +166,57 @@
   map.on(L.Draw.Event.EDITED, updateTotals);
   map.on(L.Draw.Event.DELETED, updateTotals);
 
-  async function geocode(query) {
+  async function geocodeCensus(query) {
+    var callbackName = 'ldCensusGeocode' + Date.now() + Math.floor(Math.random() * 1000);
+    var params = new URLSearchParams({
+      address: query,
+      benchmark: 'Public_AR_Current',
+      format: 'jsonp',
+      callback: callbackName
+    });
+
+    return new Promise(function (resolve) {
+      var script = document.createElement('script');
+      var timeout = window.setTimeout(function () {
+        cleanup();
+        resolve([]);
+      }, 8000);
+
+      function cleanup() {
+        window.clearTimeout(timeout);
+        delete window[callbackName];
+        if (script.parentNode) script.parentNode.removeChild(script);
+      }
+
+      window[callbackName] = function (data) {
+        cleanup();
+        var matches = (((data || {}).result || {}).addressMatches || []);
+        resolve(matches.map(function (match) {
+          return {
+            lat: Number(match.coordinates.y),
+            lon: Number(match.coordinates.x),
+            label: match.matchedAddress || query,
+            source: 'census'
+          };
+        }).filter(function (result) {
+          return Number.isFinite(result.lat) && Number.isFinite(result.lon);
+        }));
+      };
+
+      script.onerror = function () {
+        cleanup();
+        resolve([]);
+      };
+      script.src = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?' + params.toString();
+      document.head.appendChild(script);
+    });
+  }
+
+  async function geocodeNominatim(query) {
     var params = new URLSearchParams({
       q: query,
       format: 'json',
-      limit: '1',
+      limit: '5',
       countrycodes: 'us',
       addressdetails: '0'
     });
@@ -141,12 +225,29 @@
     });
     if (!res.ok) throw new Error('Address search failed. Try again in a minute.');
     var data = await res.json();
-    if (!data.length) throw new Error('No address found. Try a full street address with city and state.');
-    return {
-      lat: parseFloat(data[0].lat),
-      lon: parseFloat(data[0].lon),
-      label: data[0].display_name
-    };
+    return data.map(function (item) {
+      return {
+        lat: parseFloat(item.lat),
+        lon: parseFloat(item.lon),
+        label: item.display_name,
+        source: 'nominatim'
+      };
+    }).filter(function (result) {
+      return Number.isFinite(result.lat) && Number.isFinite(result.lon);
+    });
+  }
+
+  async function geocode(query) {
+    var censusResults = await geocodeCensus(query);
+    if (censusResults.length) {
+      return { source: 'census', results: censusResults };
+    }
+
+    var osmResults = await geocodeNominatim(query);
+    if (!osmResults.length) {
+      throw new Error('No address found. Try a full street address with city, state, and ZIP.');
+    }
+    return { source: 'nominatim', results: osmResults };
   }
 
   addressForm.addEventListener('submit', async function (event) {
@@ -157,10 +258,15 @@
       return;
     }
     setStatus('Searching address...');
+    clearResults();
     try {
-      var result = await geocode(query);
-      map.setView([result.lat, result.lon], 19);
-      setStatus('Found it. Zoom or pan if needed, then draw the lawn edge.');
+      var response = await geocode(query);
+      if (response.source === 'census' && response.results.length === 1) {
+        zoomToResult(response.results[0]);
+        return;
+      }
+      showResults(response.results);
+      setStatus('Pick the matching address from the results below.');
     } catch (error) {
       setStatus(error.message, true);
     }

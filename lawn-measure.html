@@ -29,6 +29,27 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Lawn Square Footage Measuring Tool",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "url": "https://lawndominators.com/lawn-measure.html",
+        "description": "Free browser tool for measuring lawn square footage from satellite imagery.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Lawn Dominator",
+          "url": "https://lawndominators.com/"
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="site-shell">
@@ -48,6 +69,7 @@
             </div>
             <button id="measure-locate" class="measure-search__secondary" type="button">Use my location</button>
             <p id="measure-status" class="measure-status">Search an address, then use the draw tools on the map.</p>
+            <div id="measure-results" class="measure-results" hidden></div>
           </form>
         </section>
 
