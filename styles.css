@@ -2126,6 +2126,7 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
 }
 
 .measure-search__row {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--space-sm);
@@ -2192,13 +2193,24 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
 }
 
 .measure-results {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  z-index: 800;
   display: grid;
   gap: var(--space-xs);
-  margin-top: var(--space-md);
+  max-height: min(340px, 52vh);
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.95rem;
+  background: oklch(0.13 0.02 118 / 0.98);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-sm);
 }
 
 .measure-results p {
-  margin: 0 0 var(--space-xs);
+  margin: 0;
   color: var(--ink-soft);
   font-size: 0.86rem;
   font-weight: 800;
@@ -2327,6 +2339,10 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   .measure-search__row,
   .measure-actions {
     grid-template-columns: 1fr;
+  }
+
+  .measure-results {
+    top: 3.35rem;
   }
 
   .measure-map {

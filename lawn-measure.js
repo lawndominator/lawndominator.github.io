@@ -133,6 +133,16 @@
     resultsEl.hidden = false;
   }
 
+  document.addEventListener('click', function (event) {
+    if (!resultsEl || resultsEl.hidden) return;
+    if (addressForm.contains(event.target)) return;
+    clearResults();
+  });
+
+  addressInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') clearResults();
+  });
+
   function updateTotals() {
     var total = 0;
     var rows = [];
