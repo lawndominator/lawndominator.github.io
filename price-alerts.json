@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-27T20:01:09.212679+00:00",
+  "generated_at": "2026-05-27T22:40:41.735518+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 5,
-  "alert_count": 59,
+  "current_alert_count": 0,
+  "alert_count": 58,
   "alerts": [
     {
       "id": "tenacity:new_lowest_retailer:amazon:60.84:58.08",
@@ -933,22 +933,6 @@
       "url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant?variant=39523799760948",
       "in_stock": true,
       "created_at": "2026-05-21T08:13:58.900039+00:00"
-    },
-    {
-      "id": "t-nex-1as:major_price_drop:solutions:125.37:34.00",
-      "type": "major_price_drop",
-      "product_id": 36,
-      "product_slug": "t-nex-1as",
-      "product_name": "T-Nex 1AS (Trinexapac-ethyl)",
-      "category": "pgr",
-      "old_price": 125.37,
-      "new_price": 34.0,
-      "drop_percent": 72.9,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
-      "in_stock": true,
-      "created_at": "2026-05-20T22:09:20.916599+00:00"
     }
   ]
 }
