@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Agreement — [COMPANY NAME]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf6ec;
+    --paper-warm: #f3ecd6;
+    --paper-cool: #eee8d2;
+    --moss: #1f3d2b;
+    --moss-dark: #15291d;
+    --sage: #6b8c5f;
+    --sage-light: #c5d4ba;
+    --earth: #b07a3a;
+    --earth-warm: #d49641;
+    --ink: #1c2218;
+    --ink-soft: #2f3829;
+    --ink-mute: #6b6c5e;
+    --rule: #d4ccb3;
+    --rule-strong: #1f3d2b;
+    --warn: #b8492a;
+    --field: #ffffff;
+    --highlight: #ffeec2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #e8e2cf;
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 28px auto;
+    background: var(--paper);
+    box-shadow: 0 2px 4px rgba(31,61,43,0.06), 0 12px 36px rgba(31,61,43,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle topographic leaf pattern in corner */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(107,140,95,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Action bar */
+  .actions {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--moss);
+    color: var(--paper);
+    padding: 11px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .actions .status { opacity: 0.85; }
+  .actions .status strong { color: var(--earth-warm); font-weight: 500; }
+  .actions button {
+    background: transparent;
+    color: var(--paper);
+    border: 1px solid rgba(250,246,236,0.3);
+    padding: 5px 12px;
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .actions button:hover {
+    background: rgba(250,246,236,0.1);
+    border-color: var(--earth-warm);
+  }
+  .actions .btn-group { display: flex; gap: 8px; }
+
+  /* Masthead */
+  .masthead {
+    padding: 48px 48px 36px;
+    border-bottom: 1px solid var(--moss);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    position: relative;
+  }
+  .masthead-left .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--sage);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .masthead-left .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--sage) 0%, transparent 100%);
+    max-width: 120px;
+  }
+  .masthead-left .company {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 44px;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: var(--moss);
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .masthead-left .tagline {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 36;
+  }
+  .masthead-right {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+  }
+  .masthead-right .form-id {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--moss);
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  /* Title section */
+  .form-title {
+    padding: 36px 48px 30px;
+    background: linear-gradient(to bottom, var(--paper) 0%, var(--paper-warm) 100%);
+    border-bottom: 1px solid var(--rule);
+  }
+  .form-title h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    color: var(--moss);
+    max-width: 80%;
+  }
+  .form-title .subtitle {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    max-width: 75%;
+    line-height: 1.5;
+  }
+
+  /* Sections */
+  .section {
+    padding: 0 48px;
+    margin-top: 36px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--moss);
+    margin-bottom: 22px;
+  }
+  .section-header .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--sage);
+    min-width: 28px;
+  }
+  .section-header h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    flex: 1;
+    line-height: 1.1;
+    color: var(--moss);
+  }
+  .section-header .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-transform: uppercase;
+    border: 1px solid var(--sage);
+    padding: 3px 8px;
+    background: var(--paper);
+  }
+  .section-header .tag.required {
+    color: var(--warn);
+    border-color: var(--warn);
+    background: rgba(184,73,42,0.05);
+  }
+
+  /* Field grids */
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .field-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  .field.full { grid-column: 1 / -1; }
+  .field .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .field .input {
+    border: 1px solid var(--rule);
+    background: var(--field);
+    padding: 9px 12px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    transition: border 0.15s, background 0.15s;
+  }
+  .field .input:focus {
+    outline: none;
+    border-color: var(--moss);
+    background: var(--paper);
+    box-shadow: 0 0 0 3px rgba(31,61,43,0.08);
+  }
+  .field select.input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231f3d2b'%3e%3cpath d='M8 11L3 6h10z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+    padding-right: 32px;
+  }
+
+  /* T&Cs viewer */
+  .tcs-container {
+    border: 2px solid var(--moss);
+    background: var(--field);
+    position: relative;
+    overflow: hidden;
+  }
+  .tcs-header {
+    background: var(--moss);
+    color: var(--paper);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tcs-header .tcs-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .tcs-header .tcs-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .tcs-scroll {
+    height: 480px;
+    overflow-y: auto;
+    padding: 24px 28px;
+    background: var(--paper);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    scrollbar-width: thin;
+    scrollbar-color: var(--sage) transparent;
+  }
+  .tcs-scroll::-webkit-scrollbar { width: 8px; }
+  .tcs-scroll::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 4px; }
+  .tcs-scroll::-webkit-scrollbar-track { background: transparent; }
+  .tcs-scroll h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--moss);
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+  .tcs-scroll h3:first-child { margin-top: 0; }
+  .tcs-scroll h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--moss-dark);
+    margin-top: 14px;
+    margin-bottom: 4px;
+  }
+  .tcs-scroll p { margin-bottom: 10px; }
+  .tcs-scroll ul, .tcs-scroll ol { margin: 8px 0 12px 22px; }
+  .tcs-scroll li { margin-bottom: 4px; }
+  .tcs-scroll strong { color: var(--ink); font-weight: 600; }
+  .tcs-scroll .caps {
+    font-weight: 600;
+    color: var(--moss);
+    background: rgba(212,150,65,0.12);
+    padding: 1px 4px;
+  }
+  .tcs-progress {
+    height: 4px;
+    background: var(--paper-cool);
+    position: relative;
+  }
+  .tcs-progress-bar {
+    height: 100%;
+    background: var(--sage);
+    width: 0%;
+    transition: width 0.1s;
+  }
+  .tcs-status {
+    padding: 12px 20px;
+    background: var(--paper-warm);
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tcs-status.read {
+    background: rgba(107,140,95,0.15);
+    color: var(--moss);
+  }
+  .tcs-status.read::before {
+    content: '✓';
+    font-size: 14px;
+    color: var(--moss);
+    margin-right: 6px;
+    font-family: serif;
+  }
+
+  /* Photo upload */
+  .photo-instructions {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--earth);
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .photo-instructions strong { color: var(--moss); font-weight: 600; }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .photo-slot {
+    aspect-ratio: 4/3;
+    border: 2px dashed var(--rule);
+    background: var(--field);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+  .photo-slot:hover {
+    border-color: var(--moss);
+    background: var(--paper);
+  }
+  .photo-slot.filled {
+    border-style: solid;
+    border-color: var(--sage);
+  }
+  .photo-slot .empty-state {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    padding: 10px;
+  }
+  .photo-slot .icon {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--sage);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .photo-slot:hover .icon {
+    border-color: var(--moss);
+    color: var(--moss);
+  }
+  .photo-slot .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--sage);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+  }
+  .photo-slot:hover .label { color: var(--moss); }
+  .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-slot.filled .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(31,61,43,0.92) 0%, transparent 100%);
+    color: var(--paper);
+    padding: 18px 10px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+  }
+  .photo-slot .remove {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(31,61,43,0.85);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+    font-family: sans-serif;
+  }
+  .photo-slot.filled .remove { display: flex; }
+  .photo-slot input[type="file"] { display: none; }
+
+  .photo-extra {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+  }
+  .photo-extra .extra-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .photo-extra .extra-label strong {
+    color: var(--moss);
+    font-weight: 600;
+  }
+  .photo-extra .add-btn {
+    background: var(--moss);
+    color: var(--paper);
+    border: none;
+    padding: 8px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .photo-extra .add-btn:hover { background: var(--moss-dark); }
+
+  /* Existing damage notes */
+  .damage-notes {
+    margin-top: 16px;
+  }
+  .damage-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .damage-row input {
+    border: 1px solid var(--rule);
+    background: var(--field);
+    padding: 8px 10px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .damage-row input:focus {
+    outline: none;
+    border-color: var(--moss);
+    background: var(--paper);
+  }
+
+  /* Acknowledgments */
+  .ack-list {
+    border-top: 1.5px solid var(--moss);
+    border-bottom: 1.5px solid var(--moss);
+    background: var(--field);
+  }
+  .ack-item {
+    display: grid;
+    grid-template-columns: 38px 74px 1fr;
+    align-items: stretch;
+    border-bottom: 1px solid var(--rule);
+    counter-increment: ack-counter;
+  }
+  .ack-list { counter-reset: ack-counter; }
+  .ack-item:last-child { border-bottom: none; }
+  .ack-item .ack-num {
+    background: var(--paper-warm);
+    border-right: 1px solid var(--rule);
+    text-align: center;
+    padding: 14px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sage);
+  }
+  .ack-item .ack-num::before {
+    content: counter(ack-counter);
+  }
+  .ack-item .ack-init {
+    border-right: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: var(--paper);
+  }
+  .ack-item .ack-init input {
+    width: 100%;
+    height: 32px;
+    border: 1.5px solid var(--moss);
+    background: var(--field);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    color: var(--moss);
+    letter-spacing: 0.05em;
+  }
+  .ack-item .ack-init input:focus,
+  .ack-item .ack-init input.filled {
+    background: var(--highlight);
+  }
+  .ack-item .ack-init.auto-filled input {
+    animation: pulseFill 0.5s ease-out;
+  }
+  @keyframes pulseFill {
+    0% { background: var(--earth-warm); color: var(--paper); }
+    100% { background: var(--highlight); color: var(--moss); }
+  }
+  .ack-item .ack-text {
+    padding: 12px 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    align-self: center;
+  }
+  .ack-item.critical { background: rgba(212,150,65,0.06); }
+  .ack-item .ack-text strong { color: var(--moss); font-weight: 600; }
+  .ack-item.trailer .ack-text::before {
+    content: 'Trailer';
+    display: inline-block;
+    background: var(--moss);
+    color: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding: 2px 7px;
+    margin-right: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    vertical-align: 1px;
+  }
+
+  /* Signature */
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .sig-block {
+    background: var(--field);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+  }
+  .sig-block .sig-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .sig-block .sig-pad {
+    border: 1px dashed var(--rule);
+    background: var(--paper);
+    height: 80px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-mute);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    cursor: text;
+  }
+  .sig-block .sig-pad input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--moss);
+    outline: none;
+    padding: 0 20px;
+  }
+  .sig-block .sig-pad input:focus { background: var(--highlight); }
+  .sig-block .sig-meta {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+  }
+  .sig-block .sig-meta input {
+    border: none;
+    border-bottom: 1px solid var(--moss);
+    padding: 4px 0;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    background: transparent;
+    outline: none;
+    color: var(--ink);
+  }
+  .sig-block .sig-meta input:focus { background: var(--highlight); }
+  .sig-block .sig-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+
+  /* Staff inspection - collapsible */
+  .staff-toggle {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+    transition: background 0.15s;
+  }
+  .staff-toggle:hover { background: var(--paper-cool); }
+  .staff-toggle .arrow { transition: transform 0.2s; }
+  .staff-toggle.open .arrow { transform: rotate(90deg); }
+  .staff-content {
+    display: none;
+    padding: 20px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+  .staff-content.open { display: block; }
+  .staff-content .ins-note {
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding: 24px 48px 40px;
+    border-top: 1px solid var(--rule);
+    background: var(--paper-warm);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+  .footer-inner .seal {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid var(--moss);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--moss);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Print */
+  @media print {
+    html, body { background: white; }
+    .page { box-shadow: none; margin: 0; max-width: none; }
+    .actions, .staff-toggle, .photo-extra .add-btn { display: none; }
+    .tcs-scroll { height: auto; max-height: none; overflow: visible; }
+    .staff-content { display: block !important; }
+  }
+
+  @media (max-width: 700px) {
+    body { font-size: 13px; }
+    .page { margin: 0; }
+    .masthead { padding: 28px 22px 22px; grid-template-columns: 1fr; gap: 12px; }
+    .masthead-left .company { font-size: 32px; }
+    .masthead-right { text-align: left; }
+    .form-title { padding: 24px 22px 22px; }
+    .form-title h1 { font-size: 22px; max-width: 100%; }
+    .form-title .subtitle { max-width: 100%; }
+    .section, .footer { padding-left: 22px; padding-right: 22px; }
+    .field-grid, .field-grid.three { grid-template-columns: 1fr; }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .sig-grid { grid-template-columns: 1fr; }
+    .ack-item { grid-template-columns: 30px 64px 1fr; }
+    .actions { padding: 9px 22px; }
+    .tcs-scroll { height: 360px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="actions">
+    <div class="status">
+      Initials memory: <strong id="memStatus">—</strong> &nbsp;·&nbsp; Tap blank initial box to auto-fill
+    </div>
+    <div class="btn-group">
+      <button onclick="clearMemory()">Reset</button>
+      <button onclick="window.print()">Print</button>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="masthead-left">
+      <div class="eyebrow">[Company Name] · Moore, Oklahoma</div>
+      <div class="company">Rental Agreement</div>
+      <div class="tagline">Lawn equipment and trailer rentals · Customer copy</div>
+    </div>
+    <div class="masthead-right">
+      <div class="form-id">Form RTL-01</div>
+      <div>Rev. 3 · 2026</div>
+    </div>
+  </header>
+
+  <div class="form-title">
+    <h1>Please review the rental terms below, then complete your acknowledgments and signature.</h1>
+    <div class="subtitle">This agreement covers your responsibility for the equipment, authorization to charge your card on file for damages, and the conditions under which you are renting. Please read the full terms before signing.</div>
+  </div>
+
+  <!-- RENTAL INFO -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">i.</span>
+      <h2>Your Information</h2>
+      <span class="tag required">Required</span>
+    </div>
+    <div class="field-grid">
+      <div class="field"><span class="label">Full Name</span><input class="input" type="text"></div>
+      <div class="field"><span class="label">Phone</span><input class="input" type="text"></div>
+      <div class="field full"><span class="label">Email</span><input class="input" type="text"></div>
+      <div class="field full"><span class="label">Address</span><input class="input" type="text"></div>
+      <div class="field"><span class="label">Driver's License No.</span><input class="input" type="text"></div>
+      <div class="field"><span class="label">State / Expiration</span><input class="input" type="text" placeholder="OK / 03-2028"></div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT INFO -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">ii.</span>
+      <h2>Equipment Rented</h2>
+    </div>
+    <div class="field-grid">
+      <div class="field"><span class="label">Equipment Type</span><input class="input" type="text" placeholder="e.g. Zero-turn mower / Utility trailer"></div>
+      <div class="field"><span class="label">Make / Model</span><input class="input" type="text"></div>
+      <div class="field"><span class="label">Serial No. or VIN</span><input class="input" type="text"></div>
+      <div class="field"><span class="label">Replacement Cost</span><input class="input" type="text" placeholder="$"></div>
+      <div class="field"><span class="label">Pickup Date / Time</span><input class="input" type="text" placeholder="MM/DD/YY HH:MM"></div>
+      <div class="field"><span class="label">Return Date / Time</span><input class="input" type="text" placeholder="MM/DD/YY HH:MM"></div>
+      <div class="field"><span class="label">Daily Rate</span><input class="input" type="text" placeholder="$"></div>
+      <div class="field"><span class="label">Security Hold Amount</span><input class="input" type="text" placeholder="$"></div>
+    </div>
+  </section>
+
+  <!-- T&Cs -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">iii.</span>
+      <h2>Rental Terms &amp; Conditions</h2>
+      <span class="tag required">Read Before Signing</span>
+    </div>
+
+    <div class="tcs-container">
+      <div class="tcs-header">
+        <span class="tcs-title">Full Rental Agreement</span>
+        <span class="tcs-meta">Governed by Oklahoma Law</span>
+      </div>
+      <div class="tcs-progress"><div class="tcs-progress-bar" id="tcsProgress"></div></div>
+      <div class="tcs-scroll" id="tcsScroll">
+
+        <h3>1. The Basics</h3>
+        <p>This is a binding contract between you (<strong>Customer</strong>) and <strong>[Company Name]</strong> (<strong>Company</strong>). By signing this agreement or taking possession of the equipment, you agree to every term below. Read it carefully. It transfers significant financial responsibility to you and authorizes Company to charge your card on file for damages, late fees, and replacement cost.</p>
+
+        <h3>2. Rental Period</h3>
+        <p>Your rental begins when you take possession of the equipment and ends when Company physically inspects and accepts the returned equipment at our place of business. <strong>Time is of the essence.</strong> Rental fees and late fees continue to accrue until we physically inspect the equipment back into our possession. Leaving equipment outside our shop without inspection does not end the rental.</p>
+
+        <h3>3. Payment, Deposits, and Card on File</h3>
+        <h4>3.1 Security Hold</h4>
+        <p>At pickup, Company will place a pre-authorization hold on your card on file in an amount based on the equipment rented (typically $250 to $2,500). This is a hold, not a charge, but it reduces your available credit until released.</p>
+
+        <h4>3.2 Card on File Authorization</h4>
+        <p><span class="caps">You expressly authorize Company to charge your card on file</span>, during and after the rental, for any amounts you owe under this agreement, including:</p>
+        <ul>
+          <li>The rental fee and any extensions you request</li>
+          <li>Late return fees of $25 per hour, up to 24 hours late</li>
+          <li>Cleaning fees of at least $50 if equipment is returned dirty</li>
+          <li>Refueling fees (actual fuel cost plus $15)</li>
+          <li>Repair costs for damage you cause, supported by an invoice or written estimate, plus a 15% administrative recovery fee</li>
+          <li>Full replacement cost if the equipment is lost, stolen, destroyed, or not returned</li>
+          <li>Reasonable loss-of-use damages while damaged equipment is being repaired or replaced (capped at 30 days)</li>
+        </ul>
+
+        <h4>3.3 Notice Before Post-Rental Charges</h4>
+        <p>Company will email you at least three business days before processing any post-rental damage or replacement charge, with supporting documentation (photos, invoices, or estimates). Charges assessed at the time of return in your presence do not require advance notice.</p>
+
+        <h4>3.4 Refunds</h4>
+        <p>Rental fees are non-refundable once the rental period begins, <strong>except</strong> if the equipment becomes unusable during the rental due to mechanical failure not caused by your misuse. In that case, you may choose substitution of comparable equipment or a prorated refund of the unused portion of the rental fee.</p>
+
+        <h3>4. Your Responsibility for the Equipment</h3>
+        <p>From the moment you take possession until Company physically inspects and accepts the returned equipment, <strong>you are responsible for it</strong>. You will pay Company for all damage, loss, theft, vandalism, destruction, or wear beyond ordinary use during the rental, <strong>except to the extent caused solely by Company's gross negligence, willful misconduct, or by a defect we failed to disclose that was not reasonably discoverable at pickup</strong>.</p>
+        <p>Your responsibility includes damage caused by:</p>
+        <ul>
+          <li>Your own use or misuse</li>
+          <li>Acts of family members, employees, contractors, or invitees</li>
+          <li>Theft, vandalism, or any criminal act while the equipment is with you</li>
+          <li>Fire, flood, hail, tornado, or any act of God while the equipment is with you</li>
+          <li>Mechanical breakdown caused by improper use, improper fueling, lack of lubrication, foreign object damage, or operation contrary to the operator's manual</li>
+          <li>Cosmetic damage beyond ordinary wear (scratches, dents, gouges, cracks, broken plastic, torn seats or grips)</li>
+        </ul>
+        <p>For trailers specifically, the following are not ordinary wear and tear: bent axles, bent or cracked frames, cracked welds, suspension damage, wheel damage, hub damage, coupler damage, bent ramps, sidewall tire damage, and damage from overloading or improper cargo securement.</p>
+
+        <h3>5. Latent Damage (Discovered After Return)</h3>
+        <p>You acknowledge that structural damage, axle damage, suspension damage, frame alignment damage, weld damage, and internal mechanical damage may not be visible at the return inspection and may be discovered later when the equipment is operated or serviced. You remain responsible for such damage if it is reasonably documented within thirty days after your return, and Company will provide supporting documentation before processing any related charge.</p>
+
+        <h3>6. How We Calculate Damages</h3>
+        <ul>
+          <li><strong>Repairable damage:</strong> the actual or estimated cost to restore the equipment to pre-rental condition, supported by an invoice or estimate, plus a 15% administrative recovery fee covering inspection, sourcing, downtime coordination, and claims processing.</li>
+          <li><strong>Total loss, theft, or non-return:</strong> the documented replacement cost of equivalent new equipment, plus taxes, freight, and a 15% administrative recovery fee.</li>
+          <li><strong>Loss of use:</strong> our daily rental rate for each day the equipment is reasonably unavailable for rent due to damage or non-return, up to 30 days. Company will take commercially reasonable steps to mitigate (assess promptly, repair without unreasonable delay, substitute available equipment).</li>
+        </ul>
+
+        <h3>7. Theft</h3>
+        <p>If the equipment is stolen or vandalized, you must (1) report the incident to local law enforcement within 24 hours, (2) provide a copy of the official report to Company within 72 hours, and (3) cooperate with any recovery effort. A police report does not, by itself, release you from liability under this agreement.</p>
+
+        <h3>8. Late Return and Non-Return</h3>
+        <p>Late fees of $25 per hour accrue immediately at the scheduled return time. If the equipment is more than 24 hours late after written demand, Company may terminate this agreement, charge your card on file for the replacement cost plus accrued fees, and pursue any lawful civil or criminal remedy. Company does not threaten criminal prosecution as a means of debt collection.</p>
+
+        <h3>9. Permitted and Prohibited Uses</h3>
+        <p>You may use the equipment only for its intended residential or light-commercial purpose, only at the address you provided at pickup, and only by an authorized operator (yourself or someone we approve in writing). You may not:</p>
+        <ul>
+          <li>Use the equipment while impaired</li>
+          <li>Allow anyone under 18 (or under 21 for trailers) to operate the equipment</li>
+          <li>Sublease, sublet, loan, or transfer the equipment</li>
+          <li>Modify, repair, paint, or service the equipment, or remove any decal, serial number, or GPS device</li>
+          <li>Move the equipment outside Oklahoma without our written approval</li>
+          <li>Use the equipment for commercial purposes without our written approval</li>
+          <li>Operate the equipment in thunderstorms, high winds, icy conditions, or contrary to the operator's manual</li>
+          <li>For trailers: exceed GVWR or tongue weight, tow off-road, tow without working lights or brakes, or tow with a vehicle other than the one identified at pickup</li>
+        </ul>
+
+        <h3>10. GPS and Telematics</h3>
+        <p>You acknowledge that some equipment contains GPS or telematics tracking used for theft prevention, recovery, maintenance monitoring, and verification of compliance with this agreement. Location and usage data may be used as evidence of breach and may be shared with law enforcement.</p>
+
+        <h3>11. Assumption of Risk and Release</h3>
+        <p>Operating lawn equipment and towing trailers is inherently dangerous. You knowingly assume all risks of operating the equipment, including the risk of serious injury or death. To the maximum extent permitted by Oklahoma law, you release Company and its representatives from all claims arising from the equipment or this rental, <strong>except</strong> claims that, as a matter of Oklahoma law, cannot be released (such as gross negligence, willful misconduct, fraud, or undisclosed product defects).</p>
+
+        <h3>12. Indemnification</h3>
+        <p>You will defend, indemnify, and hold harmless Company from any claim, loss, or expense (including attorneys' fees) arising from your possession, use, transport, or return of the equipment, including any injury or property damage caused by or in connection with the equipment during the rental period.</p>
+
+        <h3>13. Chargebacks</h3>
+        <p>You agree not to initiate a chargeback or payment dispute for charges that are validly owed under this agreement. If you initiate a chargeback that is resolved in our favor, you agree to pay a $50 chargeback response fee plus the original disputed amount. Nothing in this section limits your statutory rights to dispute unauthorized or fraudulent charges with your card issuer.</p>
+
+        <h3>14. Arbitration and Class Waiver</h3>
+        <p>Any dispute arising from this agreement will be resolved by binding arbitration under the AAA Consumer Arbitration Rules in Cleveland County, Oklahoma (or by videoconference at your choice). You and Company each waive any right to a jury trial and any right to participate in a class action. <strong>You may opt out of arbitration by mailing written notice to Company within 30 days of first accepting this agreement.</strong> Small claims court actions, actions to recover the equipment, and actions to enforce an arbitration award are exempt from arbitration.</p>
+
+        <h3>15. Governing Law and Venue</h3>
+        <p>This agreement is governed by Oklahoma law. Any non-arbitration claim must be brought in the state or federal courts of Cleveland County, Oklahoma.</p>
+
+        <h3>16. Attorneys' Fees</h3>
+        <p>In any action to enforce this agreement, the prevailing party is entitled to recover reasonable attorneys' fees, court or arbitration costs, and expert fees, as awarded.</p>
+
+        <h3>17. Insurance</h3>
+        <p>Any insurance you carry that covers the equipment is primary to any insurance Company carries. You are responsible for verifying whether your homeowner's, renter's, auto, or commercial insurance covers rented equipment. Your obligations under this agreement are not contingent on insurance proceeds.</p>
+
+        <h3>18. Electronic Signature</h3>
+        <p>You agree that electronic signature (typed name or click-to-sign) is the legal equivalent of a handwritten signature under Oklahoma and federal law. You consent to receive notices, billing, and communications by email or text at the contact information you provided.</p>
+
+        <h3>19. Severability and Construction</h3>
+        <p>If any part of this agreement is held invalid, the rest stays in force, and the invalid part is reformed to the minimum extent necessary to make it enforceable. The rule that an ambiguity is construed against the drafter does not apply.</p>
+
+        <h3>20. Entire Agreement</h3>
+        <p>This agreement, together with the rental receipt and any photos taken at pickup and return, is the entire agreement between us and supersedes any prior conversation or representation. No oral modification is valid.</p>
+
+        <h3>By Signing Below, You Acknowledge</h3>
+        <p>That you have read this entire agreement, you understand and agree to every section (including the responsibility for damage, the card-on-file authorization, the release and indemnification, the chargeback waiver, the arbitration clause, the class waiver, and the jury trial waiver), you are at least 18 years of age (21 if towing a trailer), and you are signing freely.</p>
+
+        <p style="text-align:center;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-mute);margin-top:24px;border-top:1px solid var(--rule);padding-top:16px;">— end of agreement —</p>
+
+      </div>
+      <div class="tcs-status" id="tcsStatus">
+        <span id="tcsStatusText">Scroll to read the full agreement before signing</span>
+        <span id="tcsScrollPct">0% read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACKNOWLEDGMENTS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">iv.</span>
+      <h2>Your Acknowledgments</h2>
+      <span class="tag required">Initial Each Line</span>
+    </div>
+    <div class="ack-list">
+      <div class="ack-item critical">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I have <strong>read the full Rental Agreement above</strong> and I agree to every part of it.</div>
+      </div>
+      <div class="ack-item critical">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I <strong>authorize my card on file to be charged</strong> for any amounts I owe under this agreement, including damage, replacement cost, late fees, and cleaning, subject to the 3-business-day notice provision.</div>
+      </div>
+      <div class="ack-item">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I have personally inspected the equipment and accept it in the condition documented (any existing damage is photographed and noted below).</div>
+      </div>
+      <div class="ack-item">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I am at least 18 years old (21 if towing a trailer), not impaired, and capable of safely operating the equipment.</div>
+      </div>
+      <div class="ack-item">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I consent to GPS or telematics tracking on the equipment for theft prevention, recovery, and verification of compliance with this agreement.</div>
+      </div>
+      <div class="ack-item trailer">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">My tow vehicle is rated for the loaded weight, my hitch and electrical connections are compatible, lights and (if applicable) brakes have been tested, and I will not exceed GVWR or leave Oklahoma without written approval.</div>
+      </div>
+      <div class="ack-item trailer">
+        <div class="ack-num"></div>
+        <div class="ack-init"><input type="text" maxlength="3" class="init-input"></div>
+        <div class="ack-text">I understand that structural damage (axles, frame, welds, suspension) may not be visible at return and that I remain responsible for any such damage discovered within 30 days, with documentation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">v.</span>
+      <h2>Equipment Photos &amp; Existing Damage</h2>
+      <span class="tag">Required at Pickup</span>
+    </div>
+
+    <div class="photo-instructions">
+      <strong>Tap each slot to take or upload a photo.</strong> These photos document the equipment's condition at pickup and protect both parties in case of dispute. The required photos depend on what you're renting. Add extra photos at the bottom for any existing damage.
+    </div>
+
+    <div class="photo-grid" id="photoGrid">
+      <!-- Required photos populated by JS -->
+    </div>
+
+    <div class="photo-extra">
+      <div class="extra-label">
+        <strong id="photoCount">0</strong> required &nbsp;·&nbsp; <strong id="extraCount">0</strong> additional photos uploaded
+      </div>
+      <button class="add-btn" onclick="addExtraPhoto()">+ Add Extra Photo</button>
+      <input type="file" id="extraPhotoInput" accept="image/*" multiple capture="environment" style="display:none">
+    </div>
+
+    <div class="damage-notes">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--sage); text-transform: uppercase; margin: 16px 0 8px;">Existing damage notes (if any)</p>
+      <div class="damage-row">
+        <input type="text" placeholder="Location (e.g. rear deck)">
+        <input type="text" placeholder="Description of existing damage">
+      </div>
+      <div class="damage-row">
+        <input type="text" placeholder="Location">
+        <input type="text" placeholder="Description">
+      </div>
+      <div class="damage-row">
+        <input type="text" placeholder="Location">
+        <input type="text" placeholder="Description">
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURES -->
+  <section class="section">
+    <div class="section-header">
+      <span class="num">vi.</span>
+      <h2>Signatures</h2>
+      <span class="tag required">Required</span>
+    </div>
+    <div class="sig-grid">
+      <div class="sig-block">
+        <div class="sig-label">Customer Signature</div>
+        <div class="sig-pad"><input type="text" placeholder="Sign here"></div>
+        <div class="sig-meta">
+          <div>
+            <input type="text">
+            <div class="sig-sub">Printed Name</div>
+          </div>
+          <div>
+            <input type="text" placeholder="MM/DD/YY">
+            <div class="sig-sub">Date</div>
+          </div>
+        </div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-label">[Company Name] Representative</div>
+        <div class="sig-pad"><input type="text" placeholder="Staff signature"></div>
+        <div class="sig-meta">
+          <div>
+            <input type="text">
+            <div class="sig-sub">Printed Name</div>
+          </div>
+          <div>
+            <input type="text" placeholder="MM/DD/YY">
+            <div class="sig-sub">Date</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAFF INSPECTION (collapsible) -->
+  <section class="section">
+    <div class="staff-toggle" id="staffToggle" onclick="toggleStaff()">
+      <span>Staff Inspection Checklist (filled at pickup &amp; return)</span>
+      <span class="arrow">▸</span>
+    </div>
+    <div class="staff-content" id="staffContent">
+      <div class="ins-note">For internal use. Detailed condition record completed by the shop representative. The customer does not need to initial this section.</div>
+      <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.6;">The full inspection checklist (lawn equipment 20-point and trailer 51-point) is available as a separate document and is incorporated by reference into this agreement. The shop completes it during pickup and return inspection; photographs taken in Section v above serve as the primary visual record. Reference: <strong>Form RTL-02 — Detailed Inspection Checklist</strong>.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Form RTL-01 · Rev. 3 · 2026</span>
+      <div class="seal">A</div>
+      <span>[Company Name] · Moore, OK</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ===== INITIALS MEMORY =====
+  let memorizedInitials = '';
+  const memStatus = document.getElementById('memStatus');
+
+  function updateMemStatus() {
+    memStatus.textContent = memorizedInitials || '—';
+  }
+
+  function clearMemory() {
+    if (confirm('Reset stored initials? Already-filled boxes are not cleared.')) {
+      memorizedInitials = '';
+      updateMemStatus();
+    }
+  }
+
+  document.querySelectorAll('input.init-input').forEach(function(input) {
+    input.addEventListener('click', function() {
+      if (!this.value && memorizedInitials) {
+        this.value = memorizedInitials;
+        this.classList.add('filled');
+        const parent = this.parentElement;
+        parent.classList.remove('auto-filled');
+        void parent.offsetWidth;
+        parent.classList.add('auto-filled');
+      }
+    });
+    input.addEventListener('input', function() {
+      this.value = this.value.toUpperCase();
+      if (this.value.length >= 2 && /^[A-Z]+$/.test(this.value)) {
+        memorizedInitials = this.value;
+        updateMemStatus();
+      }
+      if (this.value) this.classList.add('filled');
+      else this.classList.remove('filled');
+    });
+    input.addEventListener('blur', function() {
+      this.value = this.value.toUpperCase();
+    });
+  });
+
+  // ===== T&C SCROLL TRACKING =====
+  const tcsScroll = document.getElementById('tcsScroll');
+  const tcsProgress = document.getElementById('tcsProgress');
+  const tcsStatusText = document.getElementById('tcsStatusText');
+  const tcsScrollPct = document.getElementById('tcsScrollPct');
+  const tcsStatus = document.getElementById('tcsStatus');
+
+  tcsScroll.addEventListener('scroll', function() {
+    const scrollTop = this.scrollTop;
+    const scrollHeight = this.scrollHeight - this.clientHeight;
+    const pct = Math.round((scrollTop / scrollHeight) * 100);
+    tcsProgress.style.width = pct + '%';
+    tcsScrollPct.textContent = pct + '% read';
+    if (pct >= 95) {
+      tcsStatus.classList.add('read');
+      tcsStatusText.textContent = 'Full agreement reviewed';
+    } else {
+      tcsStatus.classList.remove('read');
+      tcsStatusText.textContent = 'Scroll to read the full agreement before signing';
+    }
+  });
+
+  // ===== PHOTO UPLOAD =====
+  const requiredPhotos = [
+    { id: 'photo-id', label: "Driver's License" },
+    { id: 'photo-selfie', label: 'Customer Selfie' },
+    { id: 'photo-equip-front', label: 'Equipment · Front' },
+    { id: 'photo-equip-rear', label: 'Equipment · Rear' },
+    { id: 'photo-equip-left', label: 'Equipment · Left Side' },
+    { id: 'photo-equip-right', label: 'Equipment · Right Side' },
+    { id: 'photo-serial', label: 'Serial No. / VIN Plate' },
+    { id: 'photo-hour-meter', label: 'Hour Meter / Odometer' },
+    { id: 'photo-tires', label: 'Tires & Wheels' }
+  ];
+
+  const photoGrid = document.getElementById('photoGrid');
+  const uploadedPhotos = {};
+
+  requiredPhotos.forEach(p => {
+    const slot = document.createElement('label');
+    slot.className = 'photo-slot';
+    slot.dataset.id = p.id;
+    slot.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">+</div>
+        <div class="label">${p.label}</div>
+      </div>
+      <button class="remove" onclick="removePhoto(event, '${p.id}')">×</button>
+      <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(event, '${p.id}', '${p.label}')">
+    `;
+    photoGrid.appendChild(slot);
+  });
+
+  document.getElementById('photoCount').textContent = `0 / ${requiredPhotos.length}`;
+
+  function handlePhoto(e, id, label) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      uploadedPhotos[id] = { src: ev.target.result, label: label, name: file.name };
+      const slot = document.querySelector(`.photo-slot[data-id="${id}"]`);
+      slot.classList.add('filled');
+      const emptyState = slot.querySelector('.empty-state');
+      if (emptyState) emptyState.remove();
+      const oldImg = slot.querySelector('img');
+      const oldOverlay = slot.querySelector('.overlay');
+      if (oldImg) oldImg.remove();
+      if (oldOverlay) oldOverlay.remove();
+      const img = document.createElement('img');
+      img.src = ev.target.result;
+      slot.insertBefore(img, slot.querySelector('.remove'));
+      const overlay = document.createElement('div');
+      overlay.className = 'overlay';
+      overlay.textContent = label;
+      slot.insertBefore(overlay, slot.querySelector('.remove'));
+      updatePhotoCount();
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function removePhoto(e, id) {
+    e.preventDefault();
+    e.stopPropagation();
+    delete uploadedPhotos[id];
+    const slot = document.querySelector(`.photo-slot[data-id="${id}"]`);
+    slot.classList.remove('filled');
+    const img = slot.querySelector('img');
+    const overlay = slot.querySelector('.overlay');
+    if (img) img.remove();
+    if (overlay) overlay.remove();
+    const p = requiredPhotos.find(x => x.id === id);
+    const emptyState = document.createElement('div');
+    emptyState.className = 'empty-state';
+    emptyState.innerHTML = `<div class="icon">+</div><div class="label">${p.label}</div>`;
+    slot.insertBefore(emptyState, slot.querySelector('.remove'));
+    slot.querySelector('input[type="file"]').value = '';
+    updatePhotoCount();
+  }
+
+  function updatePhotoCount() {
+    const filled = Object.keys(uploadedPhotos).length;
+    document.getElementById('photoCount').textContent = `${filled} / ${requiredPhotos.length}`;
+  }
+
+  // Extra photos
+  let extraPhotos = [];
+  const extraPhotoInput = document.getElementById('extraPhotoInput');
+  function addExtraPhoto() {
+    extraPhotoInput.click();
+  }
+  extraPhotoInput.addEventListener('change', function(e) {
+    const files = Array.from(e.target.files);
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const id = 'extra-' + Date.now() + '-' + Math.random().toString(36).slice(2,8);
+        extraPhotos.push({ id, src: ev.target.result, name: file.name });
+        const slot = document.createElement('label');
+        slot.className = 'photo-slot filled';
+        slot.dataset.id = id;
+        slot.innerHTML = `
+          <img src="${ev.target.result}">
+          <div class="overlay">${file.name.slice(0,24)}</div>
+          <button class="remove" onclick="removeExtra(event, '${id}')">×</button>
+        `;
+        photoGrid.appendChild(slot);
+        document.getElementById('extraCount').textContent = extraPhotos.length;
+      };
+      reader.readAsDataURL(file);
+    });
+    extraPhotoInput.value = '';
+  });
+
+  function removeExtra(e, id) {
+    e.preventDefault();
+    e.stopPropagation();
+    extraPhotos = extraPhotos.filter(p => p.id !== id);
+    document.querySelector(`.photo-slot[data-id="${id}"]`).remove();
+    document.getElementById('extraCount').textContent = extraPhotos.length;
+  }
+
+  // ===== STAFF SECTION TOGGLE =====
+  function toggleStaff() {
+    document.getElementById('staffToggle').classList.toggle('open');
+    document.getElementById('staffContent').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
