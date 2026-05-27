@@ -1,11 +1,43 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-27T07:09:58.892462+00:00",
+  "generated_at": "2026-05-27T14:59:54.273665+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 1,
-  "alert_count": 54,
+  "current_alert_count": 2,
+  "alert_count": 55,
   "alerts": [
+    {
+      "id": "primo-maxx:best_price_drop:chemicalwarehouse:33.98:32.00",
+      "type": "best_price_drop",
+      "product_id": 35,
+      "product_slug": "primo-maxx",
+      "product_name": "Primo Maxx (Trinexapac-ethyl)",
+      "category": "pgr",
+      "old_price": 33.98,
+      "new_price": 32.0,
+      "drop_percent": 5.8,
+      "old_retailer": "Diypestcontrol",
+      "new_retailer": "Chemicalwarehouse",
+      "url": "https://chemicalwarehouse.com/products/primo-maxx",
+      "in_stock": true,
+      "created_at": "2026-05-27T14:59:54.273665+00:00"
+    },
+    {
+      "id": "primo-maxx:new_lowest_retailer:chemicalwarehouse:33.98:32.00",
+      "type": "new_lowest_retailer",
+      "product_id": 35,
+      "product_slug": "primo-maxx",
+      "product_name": "Primo Maxx (Trinexapac-ethyl)",
+      "category": "pgr",
+      "old_price": 33.98,
+      "new_price": 32.0,
+      "drop_percent": 5.8,
+      "old_retailer": "Diypestcontrol",
+      "new_retailer": "Chemicalwarehouse",
+      "url": "https://chemicalwarehouse.com/products/primo-maxx",
+      "in_stock": true,
+      "created_at": "2026-05-27T14:59:54.273665+00:00"
+    },
     {
       "id": "rk-strongorr:major_price_drop:ryanknorr:59.00:44.00",
       "type": "major_price_drop",
@@ -853,22 +885,6 @@
       "url": "https://www.sunspotsupply.com/products/revolver-herbicide-quart?variant=43994455507130",
       "in_stock": true,
       "created_at": "2026-05-20T15:46:12.374675+00:00"
-    },
-    {
-      "id": "acelepryn-sc:new_lowest_retailer:solutions:66.94:64.94",
-      "type": "new_lowest_retailer",
-      "product_id": 70,
-      "product_slug": "acelepryn-sc",
-      "product_name": "Acelepryn SC (Chlorantraniliprole)",
-      "category": "insecticide",
-      "old_price": 66.94,
-      "new_price": 64.94,
-      "drop_percent": 3.0,
-      "old_retailer": "Amazon",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/acelepryn-insecticide",
-      "in_stock": true,
-      "created_at": "2026-05-20T11:05:22.850668+00:00"
     }
   ]
 }
