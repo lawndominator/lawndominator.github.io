@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-29T18:24:02.419095+00:00",
+  "generated_at": "2026-05-29T22:33:45.726216+00:00",
   "saved_source_limit": 5,
   "totals": {
     "sources": 774,
     "manual_verified_sources": 368,
-    "included_sources": 609,
-    "not_included_sources": 165,
+    "included_sources": 617,
+    "not_included_sources": 157,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 609,
+    "included": 617,
     "not_checked_saved_source_limit": 90,
-    "no_extracted_offer": 61,
+    "no_extracted_offer": 53,
     "below $10.00 minimum for this category": 14
   },
   "products": [
@@ -138,10 +138,10 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sodsolutions",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 164.95,
-          "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://chemicalwarehouse.com/products/dithiopyr-2l",
@@ -264,8 +264,8 @@
           "offer_url": "https://chemicalwarehouse.com/products/dithiopyr-2l?variant=39630369128511"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 4,
+      "included_sources": 9,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -1160,7 +1160,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.65,
+          "price": 56.9,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1453,7 +1453,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 37.7,
+          "price": 35.81,
           "offer_url": "https://www.amazon.com/dp/B0CB96F141?tag=lawndominator-20"
         },
         {
@@ -4795,7 +4795,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 82.98,
+          "price": 81.91,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -7583,7 +7583,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.39,
+          "price": 23.77,
           "offer_url": "https://www.amazon.com/dp/B06XWFL84R?tag=lawndominator-20"
         },
         {
@@ -8171,7 +8171,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.21,
+          "price": 30.0,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -8319,10 +8319,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 269.95,
-          "offer_url": "https://camelcamelcamel.com/product/B0F4KDQ1LF?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp",
@@ -8409,20 +8409,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 82.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 679.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B09KS846TW?active=price_amazon&context=sp",
@@ -8439,20 +8439,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 999.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0GTZTH6JH?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 119.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp",
@@ -8469,20 +8469,20 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 72.73,
+          "offer_url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 62.98,
+          "offer_url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp",
@@ -8499,10 +8499,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2069.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp",
@@ -8519,40 +8519,40 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 359.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DYDWLZDK?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 119.59,
+          "offer_url": "https://camelcamelcamel.com/product/B0DYDWLZDK?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FGW3M3Y7?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 90.23,
+          "offer_url": "https://camelcamelcamel.com/product/B0FGW3M3Y7?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B00APVGP7Q?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 62.79,
+          "offer_url": "https://camelcamelcamel.com/product/B00APVGP7Q?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBHQK9DD?active=price_amazon&context=sp",
@@ -8569,24 +8569,24 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 465.56,
+          "offer_url": "https://camelcamelcamel.com/product/B0GVSXH6LH?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp",
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 1698.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 31,
+      "included_sources": 31,
+      "not_included_sources": 19,
       "invalid_sources": 0
     },
     {
@@ -8701,10 +8701,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -8751,10 +8751,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
@@ -8771,10 +8771,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
@@ -8791,20 +8791,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 79.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
@@ -8841,30 +8841,30 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 235.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 69.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid",
@@ -8901,14 +8901,14 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 55.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 20,
-      "not_included_sources": 9,
+      "included_sources": 17,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
