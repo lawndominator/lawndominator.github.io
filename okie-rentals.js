@@ -24,6 +24,9 @@ if (rateGrid) {
     .map(
       item => `
         <article class="rate-card">
+          <div class="rate-card__image">
+            <img src="${item.image}" alt="${item.name} rental equipment." loading="lazy" />
+          </div>
           <span class="rate-card__type">${item.type}</span>
           <h3>${item.name}</h3>
           <div class="rate-card__price">
