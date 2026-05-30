@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Okie Equipment Rentals | Oklahoma Lawn & Trailer Rentals</title>
+    <meta
+      name="description"
+      content="Okie Equipment Rentals provides Oklahoma lawn equipment, compact equipment, and trailer rentals with simple hourly rates."
+    />
+    <meta name="theme-color" content="#284128" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter+Tight:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./okie-rentals.css" />
+  </head>
+  <body class="okie-site">
+    <header class="okie-nav">
+      <a class="okie-brand" href="./okie-equipment.html" aria-label="Okie Equipment Rentals home">
+        <span class="okie-brand__mark">OK</span>
+        <span>
+          <strong>Okie Equipment Rentals</strong>
+          <small>Oklahoma lawn, dirt, and trailer rentals</small>
+        </span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#equipment">Equipment</a>
+        <a href="#rates">Rates</a>
+        <a href="./rental-agreement.html">Agreement</a>
+      </nav>
+      <a class="okie-button okie-button--small" href="#rates">View rates</a>
+    </header>
+
+    <main>
+      <section class="okie-hero">
+        <div class="okie-hero__copy">
+          <p class="okie-kicker">Based in Oklahoma</p>
+          <h1>Rent the gear that turns rough ground into clean, green work.</h1>
+          <p>
+            Sod cutters, trenchers, aerators, skid steers, trailers, topdressers,
+            stump grinders, and tillers for homeowners, lawn crews, and weekend
+            projects that need real equipment.
+          </p>
+          <div class="okie-actions">
+            <a class="okie-button" href="#rates">See equipment rates</a>
+            <a class="okie-button okie-button--ghost" href="./rental-agreement.html">Open rental agreement</a>
+          </div>
+        </div>
+
+        <div class="okie-carousel" aria-label="Featured rental equipment">
+          <div class="okie-carousel__frame">
+            <img src="./okie-equipment-fleet.png" alt="Rental equipment staged beside a green Oklahoma lawn." />
+            <div class="okie-carousel__shade"></div>
+            <div class="okie-carousel__caption" aria-live="polite">
+              <span id="slideType">Featured fleet</span>
+              <strong id="slideName">Lawn and trailer rentals</strong>
+              <small id="slideRate">Simple hourly rates</small>
+            </div>
+          </div>
+          <div class="okie-carousel__dots" id="carouselDots" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="okie-strip" aria-label="Rental categories">
+        <span>Sod removal</span>
+        <span>Trenching</span>
+        <span>Aeration</span>
+        <span>Topdressing</span>
+        <span>Mini skid work</span>
+        <span>Trailer hauling</span>
+      </section>
+
+      <section class="okie-section okie-feature" id="equipment">
+        <div>
+          <p class="okie-kicker">What you can rent</p>
+          <h2>Equipment for lawns, dirt work, hauling, and cleanup.</h2>
+        </div>
+        <p>
+          Reserve the machine that matches the job, pick it up ready to work,
+          and return it when the project is handled. Rates below are hourly,
+          with an 8-hour day estimate shown for planning.
+        </p>
+      </section>
+
+      <section class="okie-section" id="rates">
+        <div class="okie-section__heading">
+          <p class="okie-kicker">Hourly rental menu</p>
+          <h2>Clear rates for the equipment people actually ask for.</h2>
+        </div>
+        <div class="rate-grid" id="rateGrid"></div>
+      </section>
+
+      <section class="okie-cta">
+        <div>
+          <p class="okie-kicker">Before pickup</p>
+          <h2>Use the agreement when a customer is ready to rent.</h2>
+          <p>
+            The rental agreement now shares this same Oklahoma lawn-and-equipment
+            visual system, so the customer-facing paperwork feels connected to the site.
+          </p>
+        </div>
+        <a class="okie-button" href="./rental-agreement.html">Review agreement</a>
+      </section>
+    </main>
+
+    <footer class="okie-footer">
+      <span>Okie Equipment Rentals</span>
+      <a href="./rental-agreement.html">Rental Agreement</a>
+    </footer>
+
+    <script src="./okie-rentals.js"></script>
+  </body>
+</html>
