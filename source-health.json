@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-30T18:44:02.852824+00:00",
+  "generated_at": "2026-05-30T21:43:42.868280+00:00",
   "saved_source_limit": 5,
   "totals": {
     "sources": 774,
     "manual_verified_sources": 368,
-    "included_sources": 620,
-    "not_included_sources": 154,
+    "included_sources": 621,
+    "not_included_sources": 153,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 620,
-    "not_checked_saved_source_limit": 90,
+    "included": 621,
+    "not_checked_saved_source_limit": 89,
     "no_extracted_offer": 50,
     "below $10.00 minimum for this category": 14
   },
@@ -878,7 +878,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.4,
+          "price": 16.6,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1372,7 +1372,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 95.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1828,7 +1828,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 248.55,
+          "price": 253.05,
           "offer_url": "https://www.amazon.com/dp/B00EDQ1DCQ?tag=lawndominator-20"
         },
         {
@@ -7898,7 +7898,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 10.0,
+          "price": 86.95,
           "offer_url": "https://www.amazon.com/dp/B01JEPEH9Q?tag=lawndominator-20"
         },
         {
@@ -8209,10 +8209,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 62.99,
+          "offer_url": "https://camelcamelcamel.com/product/B0DRYR9K3V?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBVKXGLD?active=price_amazon&context=sp",
@@ -8369,10 +8369,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 721.98,
+          "offer_url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp",
@@ -8585,8 +8585,8 @@
           "offer_url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp"
         }
       ],
-      "included_sources": 31,
-      "not_included_sources": 19,
+      "included_sources": 33,
+      "not_included_sources": 17,
       "invalid_sources": 0
     },
     {
@@ -8771,10 +8771,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
@@ -8801,10 +8801,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 104.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
@@ -8821,10 +8821,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8861,23 +8861,13 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 69.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid",
-          "retailer": "nocoastturf",
-          "retailer_name": "Nocoastturf",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 200.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid"
-        },
-        {
-          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
@@ -8887,14 +8877,24 @@
           "offer_url": null
         },
         {
-          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses",
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 28.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses"
+          "price": 96.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb",
@@ -8907,8 +8907,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 20,
-      "not_included_sources": 9,
+      "included_sources": 19,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
