@@ -6,7 +6,7 @@
 <title>Rental Agreement | Okie Equipment Rentals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Barlow+Condensed:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #faf6ec;
@@ -859,13 +859,13 @@
       <h2>Equipment Rented</h2>
     </div>
     <div class="field-grid">
-      <div class="field"><span class="label">Equipment Type</span><input class="input" type="text" placeholder="e.g. Zero-turn mower / Utility trailer"></div>
+      <div class="field"><span class="label">Equipment Type</span><select class="input" id="equipmentType"><option value="">Select equipment</option></select></div>
       <div class="field"><span class="label">Make / Model</span><input class="input" type="text"></div>
       <div class="field"><span class="label">Serial No. or VIN</span><input class="input" type="text"></div>
       <div class="field"><span class="label">Replacement Cost</span><input class="input" type="text" placeholder="$"></div>
       <div class="field"><span class="label">Pickup Date / Time</span><input class="input" type="text" placeholder="MM/DD/YY HH:MM"></div>
       <div class="field"><span class="label">Return Date / Time</span><input class="input" type="text" placeholder="MM/DD/YY HH:MM"></div>
-      <div class="field"><span class="label">Daily Rate</span><input class="input" type="text" placeholder="$"></div>
+      <div class="field"><span class="label">Daily Rate</span><input class="input" id="dailyRate" type="text" placeholder="$"></div>
       <div class="field"><span class="label">Security Hold Amount</span><input class="input" type="text" placeholder="$"></div>
     </div>
   </section>
@@ -1151,6 +1151,43 @@
 </div>
 
 <script>
+  // ===== EQUIPMENT RATE AUTOFILL =====
+  const rentalEquipmentRates = [
+    { name: 'Sod cutter', hourly: 70 },
+    { name: 'Small 18 in. walk-behind trencher', hourly: 65 },
+    { name: 'Dump trailer, tall wall', hourly: 110 },
+    { name: 'Dump trailer, short wall', hourly: 95 },
+    { name: 'Mini skid, small', hourly: 100 },
+    { name: 'Mini skid, large', hourly: 180 },
+    { name: 'Small stump grinder', hourly: 60 },
+    { name: 'Tiller', hourly: 65 },
+    { name: 'Eco 250', hourly: 135 },
+    { name: 'Earth & Turf 100SP', hourly: 155 },
+    { name: 'Stand-on aerator', hourly: 155 },
+    { name: 'Walk-behind aerator', hourly: 65 },
+    { name: '30 ft. gooseneck', hourly: 125 },
+    { name: '20 ft. equipment hauler, 7K axles', hourly: 110 },
+    { name: '20 ft. car hauler', hourly: 85 },
+  ];
+
+  const equipmentTypeSelect = document.getElementById('equipmentType');
+  const dailyRateInput = document.getElementById('dailyRate');
+
+  if (equipmentTypeSelect && dailyRateInput) {
+    rentalEquipmentRates.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.name;
+      option.dataset.dailyRate = String(item.hourly * 8);
+      option.textContent = `${item.name} - $${item.hourly}/hr`;
+      equipmentTypeSelect.appendChild(option);
+    });
+
+    equipmentTypeSelect.addEventListener('change', () => {
+      const option = equipmentTypeSelect.selectedOptions[0];
+      dailyRateInput.value = option && option.dataset.dailyRate ? `$${option.dataset.dailyRate}` : '';
+    });
+  }
+
   // ===== INITIALS MEMORY =====
   let memorizedInitials = '';
   const memStatus = document.getElementById('memStatus');
@@ -1246,6 +1283,86 @@
 
   document.getElementById('photoCount').textContent = `0 / ${requiredPhotos.length}`;
 
+  const photoProfiles = {
+    default: [
+      { id: 'photo-id', label: "Driver's License" },
+      { id: 'photo-selfie', label: 'Customer Selfie' },
+      { id: 'photo-equip-front', label: 'Equipment Front / Overview' },
+      { id: 'photo-serial', label: 'Serial No. / VIN Plate' },
+    ],
+    lawn: [
+      { id: 'photo-id', label: "Driver's License" },
+      { id: 'photo-selfie', label: 'Customer Selfie' },
+      { id: 'photo-equip-front', label: 'Equipment Front / Overview' },
+      { id: 'photo-work-end', label: 'Blade / Teeth / Work End' },
+      { id: 'photo-serial', label: 'Serial No. Plate' },
+      { id: 'photo-hour-meter', label: 'Hour Meter / Controls' },
+    ],
+    compact: [
+      { id: 'photo-id', label: "Driver's License" },
+      { id: 'photo-selfie', label: 'Customer Selfie' },
+      { id: 'photo-equip-front', label: 'Equipment Front' },
+      { id: 'photo-equip-left', label: 'Left Side / Tracks' },
+      { id: 'photo-equip-right', label: 'Right Side / Tracks' },
+      { id: 'photo-serial', label: 'Serial No. Plate' },
+      { id: 'photo-hour-meter', label: 'Hour Meter / Controls' },
+    ],
+    trailer: [
+      { id: 'photo-id', label: "Driver's License" },
+      { id: 'photo-selfie', label: 'Customer Selfie' },
+      { id: 'photo-trailer-front', label: 'Trailer Front / Coupler' },
+      { id: 'photo-trailer-rear', label: 'Trailer Rear / Ramps' },
+      { id: 'photo-trailer-deck', label: 'Deck / Bed Condition' },
+      { id: 'photo-vin', label: 'VIN Plate' },
+      { id: 'photo-tires', label: 'Tires & Wheels' },
+    ],
+  };
+  let currentRequiredPhotos = photoProfiles.default;
+
+  function getPhotoProfileName(equipmentName) {
+    const value = String(equipmentName || '').toLowerCase();
+    if (!value) return 'default';
+    if (value.includes('trailer') || value.includes('gooseneck') || value.includes('hauler')) return 'trailer';
+    if (value.includes('mini skid')) return 'compact';
+    return 'lawn';
+  }
+
+  function renderRequiredPhotos() {
+    const selectedEquipment = equipmentTypeSelect ? equipmentTypeSelect.value : '';
+    currentRequiredPhotos = photoProfiles[getPhotoProfileName(selectedEquipment)];
+    const requiredIds = new Set(currentRequiredPhotos.map(p => p.id));
+
+    Object.keys(uploadedPhotos).forEach(id => {
+      if (!requiredIds.has(id)) delete uploadedPhotos[id];
+    });
+
+    photoGrid.innerHTML = '';
+    currentRequiredPhotos.forEach(p => {
+      const uploaded = uploadedPhotos[p.id];
+      const slot = document.createElement('label');
+      slot.className = 'photo-slot';
+      slot.dataset.id = p.id;
+      if (uploaded) slot.classList.add('filled');
+      slot.innerHTML = uploaded
+        ? `
+          <img src="${uploaded.src}">
+          <div class="overlay">${p.label}</div>
+          <button class="remove" onclick="removePhoto(event, '${p.id}')">x</button>
+          <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(event, '${p.id}', '${p.label}')">
+        `
+        : `
+          <div class="empty-state">
+            <div class="icon">+</div>
+            <div class="label">${p.label}</div>
+          </div>
+          <button class="remove" onclick="removePhoto(event, '${p.id}')">x</button>
+          <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(event, '${p.id}', '${p.label}')">
+        `;
+      photoGrid.appendChild(slot);
+    });
+    updatePhotoCount();
+  }
+
   function handlePhoto(e, id, label) {
     const file = e.target.files[0];
     if (!file) return;
@@ -1282,7 +1399,7 @@
     const overlay = slot.querySelector('.overlay');
     if (img) img.remove();
     if (overlay) overlay.remove();
-    const p = requiredPhotos.find(x => x.id === id);
+    const p = currentRequiredPhotos.find(x => x.id === id);
     const emptyState = document.createElement('div');
     emptyState.className = 'empty-state';
     emptyState.innerHTML = `<div class="icon">+</div><div class="label">${p.label}</div>`;
@@ -1292,8 +1409,14 @@
   }
 
   function updatePhotoCount() {
-    const filled = Object.keys(uploadedPhotos).length;
-    document.getElementById('photoCount').textContent = `${filled} / ${requiredPhotos.length}`;
+    const requiredIds = new Set(currentRequiredPhotos.map(p => p.id));
+    const filled = Object.keys(uploadedPhotos).filter(id => requiredIds.has(id)).length;
+    document.getElementById('photoCount').textContent = `${filled} / ${currentRequiredPhotos.length}`;
+  }
+
+  renderRequiredPhotos();
+  if (equipmentTypeSelect) {
+    equipmentTypeSelect.addEventListener('change', renderRequiredPhotos);
   }
 
   // Extra photos
