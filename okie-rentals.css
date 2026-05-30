@@ -32,20 +32,6 @@
   background-size: 34px 34px, 34px 34px, auto, auto;
 }
 
-.okie-site::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      -10deg,
-      transparent 0 18px,
-      oklch(0.32 0.07 45 / 0.045) 18px 20px
-    );
-  mix-blend-mode: multiply;
-}
-
 .okie-site a {
   color: inherit;
 }
@@ -255,13 +241,13 @@
 .okie-section h2,
 .okie-cta h2 {
   margin: 0;
-  max-width: 10ch;
+  max-width: 11.5ch;
   color: var(--yard-green-dark);
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(4.2rem, 8.6vw, 8rem);
+  font-size: clamp(3.15rem, 6.4vw, 5.85rem);
   font-weight: 900;
   letter-spacing: 0;
-  line-height: 0.78;
+  line-height: 0.82;
   text-transform: uppercase;
 }
 
@@ -750,7 +736,7 @@ body.okie-agreement {
   }
 
   .okie-hero h1 {
-    font-size: clamp(4rem, 20vw, 5.2rem);
+    font-size: clamp(3.1rem, 14.5vw, 4.25rem);
   }
 
   .okie-carousel {
