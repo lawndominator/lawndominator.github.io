@@ -189,25 +189,66 @@
 
 .okie-carousel {
   position: relative;
+  min-height: clamp(430px, 56vw, 680px);
+  perspective: 1300px;
 }
 
-.okie-carousel__frame {
+.okie-carousel__stage {
   position: relative;
   min-height: clamp(390px, 54vw, 650px);
+}
+
+.okie-carousel__slide {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   border-radius: var(--okie-radius);
   box-shadow: var(--okie-shadow);
   border: 1px solid oklch(0.74 0.04 96);
   background: var(--okie-moss);
+  opacity: 0;
+  transform: translate3d(0, 0, -160px) rotateY(0deg) scale(0.82);
+  transition:
+    opacity 620ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 620ms ease;
+  will-change: transform, opacity;
 }
 
-.okie-carousel__frame img {
+.okie-carousel__slide.is-active {
+  z-index: 4;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+  filter: saturate(1.02);
+}
+
+.okie-carousel__slide.is-prev {
+  z-index: 2;
+  opacity: 0.7;
+  transform: translate3d(-18%, 5%, -170px) rotateY(16deg) scale(0.82);
+  filter: saturate(0.72) brightness(0.88);
+}
+
+.okie-carousel__slide.is-next {
+  z-index: 3;
+  opacity: 0.78;
+  transform: translate3d(18%, 5%, -150px) rotateY(-16deg) scale(0.84);
+  filter: saturate(0.78) brightness(0.9);
+}
+
+.okie-carousel__slide.is-back {
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(0, 8%, -260px) rotateY(0deg) scale(0.74);
+}
+
+.okie-carousel__slide img {
   width: 100%;
   height: 100%;
   min-height: inherit;
   display: block;
   object-fit: cover;
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .okie-carousel__shade {
@@ -251,7 +292,7 @@
 .okie-carousel__dots {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .okie-carousel__dots span {
@@ -467,6 +508,12 @@ body.okie-agreement {
 
   .okie-hero {
     min-height: auto;
+  }
+
+  .okie-carousel__slide.is-prev,
+  .okie-carousel__slide.is-next {
+    opacity: 0;
+    transform: translate3d(0, 6%, -160px) scale(0.84);
   }
 
   .rate-grid {
