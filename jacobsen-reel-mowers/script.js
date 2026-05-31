@@ -4,7 +4,6 @@ const products = {
     alt: "2017 Jacobsen Greens King IV Plus",
     title: "2017 Jacobsen Greens King IV Plus",
     price: "$4,850.00",
-    payment: "Starting at $169/mo or 0% APR with example financing. See if you qualify.",
     specs: [
       ["Year", "2017"],
       ["Model", "Jacobsen Greens King IV Plus"],
@@ -21,7 +20,6 @@ const products = {
     alt: "2020 Jacobsen Eclipse 2",
     title: "2020 Jacobsen Eclipse 2",
     price: "$3,950.00",
-    payment: "Starting at $138/mo or 0% APR with example financing. See if you qualify.",
     specs: [
       ["Year", "2020"],
       ["Model", "Jacobsen Eclipse 2"],
@@ -37,7 +35,6 @@ const products = {
     alt: "2019 Jacobsen GP400 Triplex",
     title: "2019 Jacobsen GP400 Triplex",
     price: "$12,900.00",
-    payment: "Starting at $449/mo or 0% APR with example financing. See if you qualify.",
     specs: [
       ["Year", "2019"],
       ["Model", "Jacobsen GP400"],
@@ -53,7 +50,6 @@ const products = {
     alt: "2018 Jacobsen Greens King Example",
     title: "2018 Jacobsen Greens King Example",
     price: "$5,250.00",
-    payment: "Starting at $183/mo or 0% APR with example financing. See if you qualify.",
     specs: [
       ["Year", "2018"],
       ["Model", "Jacobsen Greens King example"],
@@ -70,8 +66,8 @@ const detailPanel = document.querySelector("#details");
 const detailImage = document.querySelector("#detailImage");
 const detailTitle = document.querySelector("#detailTitle");
 const detailPrice = document.querySelector("#detailPrice");
-const detailPayment = document.querySelector("#detailPayment");
 const detailSpecs = document.querySelector("#detailSpecs");
+const detailMessage = document.querySelector("#detailMessage");
 const detailThumbs = document.querySelectorAll(".detail-thumb img");
 
 function openProduct(key) {
@@ -82,7 +78,7 @@ function openProduct(key) {
   detailImage.alt = product.alt;
   detailTitle.textContent = product.title;
   detailPrice.textContent = product.price;
-  detailPayment.textContent = product.payment;
+  detailMessage.value = `I am interested in the ${product.title}.`;
   detailSpecs.innerHTML = product.specs
     .map(([term, value]) => `<div><dt>${term}:</dt><dd>${value}</dd></div>`)
     .join("");
@@ -109,10 +105,10 @@ document.querySelector(".close-detail")?.addEventListener("click", () => {
   detailPanel.classList.remove("is-open");
 });
 
-document.querySelector(".lead-form button")?.addEventListener("click", (event) => {
+document.querySelector(".inline-inquiry button")?.addEventListener("click", (event) => {
   const button = event.currentTarget;
   button.textContent = "Inquiry drafted";
   window.setTimeout(() => {
-    button.textContent = "Send mower inquiry";
+    button.textContent = "Send inquiry";
   }, 2200);
 });

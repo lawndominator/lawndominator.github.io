@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       <a class="brand" href="./">Jacobsen mower inventory</a>
-      <a class="contact-link" href="#contact">Contact seller</a>
+      <span class="seller-note">Used mower sales</span>
     </header>
 
     <main>
@@ -21,39 +21,43 @@
 
       <section class="inventory-grid" aria-label="Mower inventory">
         <article class="inventory-card" tabindex="0" data-product="greens">
-          <div class="photo-box">
+          <div class="photo-box cutout">
             <img src="./assets/greens-king-iv-plus.png" alt="2017 Jacobsen Greens King IV Plus" />
           </div>
           <h2>2017 Jacobsen Greens King IV Plus</h2>
           <p class="price">$4,850.00</p>
-          <p class="payment">Starting at $169/mo or 0% APR with example financing. See if you qualify.</p>
+          <p class="card-note">Used greens mower example. Pickup or freight quote confirmed with seller.</p>
+          <button type="button">Inquire to buy</button>
         </article>
 
         <article class="inventory-card" tabindex="0" data-product="eclipse">
-          <div class="photo-box">
+          <div class="photo-box cutout">
             <img src="./assets/eclipse-2.png" alt="2020 Jacobsen Eclipse 2" />
           </div>
           <h2>2020 Jacobsen Eclipse 2</h2>
           <p class="price">$3,950.00</p>
-          <p class="payment">Starting at $138/mo or 0% APR with example financing. See if you qualify.</p>
+          <p class="card-note">Battery walk mower example with room for hours, notes, and accessories.</p>
+          <button type="button">Inquire to buy</button>
         </article>
 
         <article class="inventory-card" tabindex="0" data-product="gp">
-          <div class="photo-box">
+          <div class="photo-box cutout">
             <img src="./assets/gp400.png" alt="2019 Jacobsen GP400" />
           </div>
           <h2>2019 Jacobsen GP400 Triplex</h2>
           <p class="price">$12,900.00</p>
-          <p class="payment">Starting at $449/mo or 0% APR with example financing. See if you qualify.</p>
+          <p class="card-note">Triplex example for larger turf areas, crews, or course buyers.</p>
+          <button type="button">Inquire to buy</button>
         </article>
 
         <article class="inventory-card" tabindex="0" data-product="greens2">
-          <div class="photo-box phone-photo">
+          <div class="photo-box">
             <img src="./assets/greens-king-iv-plus.png" alt="2018 Jacobsen Greens King example mower" />
           </div>
           <h2>2018 Jacobsen Greens King Example</h2>
           <p class="price">$5,250.00</p>
-          <p class="payment">Starting at $183/mo or 0% APR with example financing. See if you qualify.</p>
+          <p class="card-note">Placeholder listing for seller-uploaded photos and condition notes.</p>
+          <button type="button">Inquire to buy</button>
         </article>
       </section>
 
@@ -78,7 +82,6 @@
         <article class="detail-copy">
           <h2 id="detailTitle">2017 Jacobsen Greens King IV Plus</h2>
           <p class="detail-price" id="detailPrice">$4,850.00</p>
-          <p class="payment" id="detailPayment">Starting at $169/mo or 0% APR with example financing. See if you qualify.</p>
           <p class="shipping">Pickup or shipping quote confirmed with seller.</p>
 
           <div class="quantity">
@@ -86,7 +89,13 @@
             <div><button type="button">-</button><strong>1</strong><button type="button">+</button></div>
           </div>
 
-          <a class="primary-action" href="#contact">Ask about this mower</a>
+          <form class="inline-inquiry">
+            <h3>Inquire to buy</h3>
+            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="contact" placeholder="Phone or email" />
+            <textarea id="detailMessage" name="message" placeholder="I am interested in this mower."></textarea>
+            <button type="button">Send inquiry</button>
+          </form>
 
           <div class="description">
             <h3>Description</h3>
@@ -95,15 +104,6 @@
         </article>
       </section>
 
-      <section class="contact-section" id="contact">
-        <h2>Contact seller</h2>
-        <form class="lead-form">
-          <input type="text" name="name" placeholder="Name" />
-          <input type="text" name="contact" placeholder="Phone or email" />
-          <textarea name="message" placeholder="Which mower are you asking about?"></textarea>
-          <button type="button">Send mower inquiry</button>
-        </form>
-      </section>
     </main>
 
     <script src="./script.js"></script>

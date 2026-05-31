@@ -1,14 +1,16 @@
 :root {
   color-scheme: dark;
-  --bg: oklch(13% 0.006 150);
-  --panel: oklch(17% 0.007 150);
-  --panel-light: oklch(88% 0.012 96);
-  --text: oklch(82% 0.006 120);
-  --strong: oklch(94% 0.006 120);
-  --muted: oklch(66% 0.006 120);
-  --line: oklch(92% 0.006 120 / 16%);
+  --bg: oklch(23% 0.025 116);
+  --deck: oklch(18% 0.023 112 / 88%);
+  --deck-hover: oklch(21% 0.03 112 / 94%);
+  --photo: oklch(91% 0.018 92);
+  --text: oklch(88% 0.016 92);
+  --strong: oklch(97% 0.016 86);
+  --muted: oklch(70% 0.025 94);
+  --line: oklch(97% 0.016 86 / 18%);
   --orange: oklch(68% 0.18 55);
-  --green: oklch(47% 0.16 143);
+  --green-dark: oklch(21% 0.055 142);
+  --green-mid: oklch(33% 0.08 142);
 }
 
 * {
@@ -21,7 +23,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 16% 8%, oklch(68% 0.18 55 / 16%), transparent 28%),
+    linear-gradient(118deg, oklch(18% 0.03 118) 0 38%, transparent 38% 100%),
+    repeating-linear-gradient(104deg, var(--green-mid) 0 76px, var(--green-dark) 76px 152px),
+    var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -50,20 +56,21 @@ img {
 }
 
 .brand,
-.contact-link {
+.seller-note {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.contact-link {
+.seller-note {
   border-bottom: 1px solid var(--orange);
   color: var(--orange);
   padding-bottom: 4px;
 }
 
 .inventory-intro {
+  max-width: 1180px;
   padding: 28px clamp(20px, 5vw, 60px) 10px;
 }
 
@@ -88,35 +95,50 @@ img {
 
 .inventory-grid {
   display: grid;
-  gap: clamp(26px, 5vw, 76px);
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: clamp(20px, 3vw, 38px);
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   padding: clamp(24px, 5vw, 56px) clamp(20px, 5vw, 60px) clamp(50px, 8vw, 90px);
 }
 
 .inventory-card {
+  background: var(--deck);
+  border: 1px solid oklch(97% 0.016 86 / 14%);
+  box-shadow: 0 24px 70px oklch(8% 0.03 120 / 28%);
   cursor: pointer;
   outline: none;
+  padding: 12px 12px 16px;
+  transition:
+    background 220ms ease,
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.inventory-card:focus-visible .photo-box,
-.inventory-card:hover .photo-box {
-  border-color: var(--orange);
-  transform: translateY(-4px);
+.inventory-card:hover,
+.inventory-card:focus-visible {
+  background: var(--deck-hover);
+  transform: translateY(-5px);
 }
 
 .photo-box {
   align-items: center;
   aspect-ratio: 1;
   background:
-    linear-gradient(180deg, oklch(94% 0.008 96), oklch(79% 0.012 96));
-  border: 1px solid transparent;
+    linear-gradient(135deg, oklch(97% 0.012 86), oklch(82% 0.024 96));
+  border: 1px solid oklch(18% 0.022 108 / 20%);
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
   overflow: hidden;
-  transition:
-    border-color 220ms ease,
-    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.photo-box::after {
+  background:
+    linear-gradient(180deg, transparent 60%, oklch(18% 0.022 108 / 28%)),
+    repeating-linear-gradient(90deg, transparent 0 18px, oklch(18% 0.022 108 / 5%) 18px 19px);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
 }
 
 .photo-box img {
@@ -125,7 +147,7 @@ img {
   width: 100%;
 }
 
-.photo-box:not(.phone-photo) img {
+.photo-box.cutout img {
   object-fit: contain;
   padding: 16px;
 }
@@ -146,16 +168,28 @@ img {
   margin: 0 0 8px;
 }
 
-.payment {
-  color: var(--text);
+.card-note {
+  color: var(--muted);
   font-size: 0.9rem;
-  font-weight: 700;
   line-height: 1.45;
-  margin: 0;
+  margin: 0 0 14px;
+}
+
+.inventory-card button,
+.inline-inquiry button {
+  background: var(--orange);
+  border: 0;
+  color: oklch(17% 0.025 98);
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 42px;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .detail-panel {
-  background: var(--bg);
+  background:
+    linear-gradient(90deg, oklch(15% 0.018 112), oklch(24% 0.035 112));
   border-top: 1px solid var(--line);
   display: none;
   gap: clamp(18px, 3vw, 40px);
@@ -190,7 +224,7 @@ img {
 }
 
 .detail-thumb {
-  background: var(--panel-light);
+  background: var(--photo);
   border: 1px solid var(--line);
   cursor: pointer;
   overflow: hidden;
@@ -216,13 +250,13 @@ img {
 .detail-image {
   align-self: start;
   aspect-ratio: 1;
-  background: var(--panel-light);
+  background: var(--photo);
+  border: 8px solid oklch(97% 0.016 86 / 8%);
   overflow: hidden;
 }
 
 .detail-image img {
-  object-fit: contain;
-  padding: clamp(18px, 4vw, 42px);
+  object-fit: cover;
 }
 
 .detail-copy {
@@ -290,26 +324,45 @@ img {
   justify-content: center;
 }
 
-.primary-action {
-  border: 1px solid var(--line);
-  color: var(--strong);
-  display: grid;
-  font-weight: 700;
-  min-height: 48px;
-  place-items: center;
-}
-
+.inline-inquiry,
 .description {
-  margin-top: 38px;
+  margin-top: 30px;
 }
 
+.inline-inquiry {
+  background: oklch(97% 0.016 86 / 8%);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.inline-inquiry h3,
 .description h3 {
   color: var(--text);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  margin: 0 0 22px;
+  margin: 0 0 8px;
   text-transform: uppercase;
+}
+
+.description h3 {
+  margin-bottom: 22px;
+}
+
+.inline-inquiry input,
+.inline-inquiry textarea {
+  background: oklch(12% 0.012 112 / 62%);
+  border: 1px solid var(--line);
+  color: var(--strong);
+  min-height: 44px;
+  padding: 11px;
+}
+
+.inline-inquiry textarea {
+  min-height: 88px;
+  resize: vertical;
 }
 
 dl {
@@ -336,59 +389,12 @@ dd {
   margin: 0;
 }
 
-.contact-section {
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 30px;
-  grid-template-columns: minmax(0, 0.6fr) minmax(320px, 0.5fr);
-  padding: clamp(42px, 7vw, 90px) clamp(20px, 5vw, 60px);
-}
-
-.contact-section h2 {
-  color: var(--strong);
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 0.95;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.lead-form {
-  display: grid;
-  gap: 12px;
-}
-
-.lead-form input,
-.lead-form textarea {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  color: var(--strong);
-  min-height: 48px;
-  padding: 12px;
-}
-
-.lead-form textarea {
-  min-height: 124px;
-  resize: vertical;
-}
-
-.lead-form button {
-  background: var(--orange);
-  border: 0;
-  color: var(--bg);
-  cursor: pointer;
-  font-weight: 800;
-  min-height: 50px;
-}
-
 @media (max-width: 860px) {
   .inventory-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .detail-panel,
-  .contact-section {
+  .detail-panel {
     grid-template-columns: 1fr;
   }
 
@@ -420,7 +426,7 @@ dd {
     font-size: 1rem;
   }
 
-  .payment {
+  .card-note {
     font-size: 0.82rem;
   }
 
