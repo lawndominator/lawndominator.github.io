@@ -290,6 +290,24 @@
         box-shadow: 0 0 0 2px oklch(0.72 0.16 132 / 0.24), var(--shadow-sm);
       }
 
+      .price-tile.has-amazon {
+        border-color: oklch(0.63 0.12 82 / 0.72);
+      }
+
+      .amazon-badge {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0.35rem 0 0;
+        border: 1px solid oklch(0.68 0.13 82 / 0.72);
+        border-radius: 999px;
+        color: oklch(0.86 0.12 82);
+        font-size: 0.66rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        padding: 0.16rem 0.44rem;
+        text-transform: uppercase;
+      }
+
       .offer-stack {
         display: grid;
         gap: 0.45rem;
@@ -311,6 +329,11 @@
       .top-offer:first-child {
         border-color: oklch(0.68 0.14 132 / 0.75);
         background: oklch(0.22 0.05 128 / 0.72);
+      }
+
+      .top-offer.is-amazon {
+        border-color: oklch(0.68 0.13 82 / 0.82);
+        background: oklch(0.2 0.04 84 / 0.68);
       }
 
       .top-offer span {
@@ -534,6 +557,8 @@
         ["Pennington", ["pennington"]],
         ["Hi-Yield", ["hi-yield", "hi yield"]],
         ["Lawnbox", ["lawnbox"]],
+        ["Yard Mastery", ["yard mastery", "flagship", "double dark", "stress blend", "freedom fertilizer"]],
+        ["N-Ext", ["n-ext", "microgreene", "greene effect", "humic12", "rgs", "spoon juice"]],
       ];
 
       let products = [];
@@ -775,15 +800,46 @@
 
       function renderGroup(group) {
         const productCount = new Set(group.items.map(item => item.product.id)).size;
+        const items = group.items.slice().sort(compareBoardItems);
         return `<section class="product-group">
           <header class="product-group__header">
             <h2>${escHtml(group.label)}</h2>
             <span>${productCount} product${productCount === 1 ? "" : "s"}</span>
           </header>
           <div class="product-group__grid">
-            ${group.items.map(({ product, variant }) => renderVariant(product, variant)).join("")}
+            ${items.map(({ product, variant }) => renderVariant(product, variant)).join("")}
           </div>
         </section>`;
+      }
+
+      function compareBoardItems(a, b) {
+        const amazonDelta = Number(hasAmazonOffer(b.variant)) - Number(hasAmazonOffer(a.variant));
+        if (amazonDelta) return amazonDelta;
+        const aBest = bestVariantPrice(a.variant);
+        const bBest = bestVariantPrice(b.variant);
+        if (aBest !== bBest) return aBest - bBest;
+        return String(a.product.name).localeCompare(String(b.product.name));
+      }
+
+      function bestVariantPrice(variant) {
+        const priced = variant.offers
+          .filter(offer => offer.price != null && !offer.excluded && offer.in_stock !== false)
+          .map(offer => Number(offer.price))
+          .filter(Number.isFinite);
+        return priced.length ? Math.min(...priced) : Number.POSITIVE_INFINITY;
+      }
+
+      function isAmazonOffer(offer) {
+        return offer && (offer.retailer === "amazon" || /(^|\.)amazon\.com$/i.test(safeHostname(offer.url)));
+      }
+
+      function hasAmazonOffer(variant) {
+        return variant.offers.some(isAmazonOffer);
+      }
+
+      function safeHostname(url) {
+        try { return new URL(url).hostname; }
+        catch { return ""; }
       }
 
       function renderVariant(product, variant) {
@@ -791,6 +847,7 @@
         const hasSize = variant.quantity != null && variant.unit;
         const sizeLabel = variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null);
         const isTarget = productFilter && product.slug === productFilter;
+        const hasAmazon = hasAmazonOffer(variant);
         const image = productImage(product, offers);
         const media = image
           ? `<img src="${escAttr(image)}" alt="${escAttr(product.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(fallbackMedia('${escAttr(initials(product.name))}'))" />`
@@ -801,17 +858,18 @@
               const ppu = offer.price_per_unit && offer.package_unit
                 ? "$" + Number(offer.price_per_unit).toFixed(2) + "/" + (UNIT_DISPLAY[offer.package_unit] || offer.package_unit)
                 : hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
-              return `<a class="top-offer" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
+              return `<a class="top-offer${isAmazonOffer(offer) ? " is-amazon" : ""}" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
                 <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
                 <span class="offer-right"><strong>$${Number(offer.price).toFixed(2)}</strong>${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
               </a>`;
             }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;
 
-        return `<article class="price-tile${isTarget ? " is-target" : ""}" data-product-slug="${escAttr(product.slug)}">
+        return `<article class="price-tile${isTarget ? " is-target" : ""}${hasAmazon ? " has-amazon" : ""}" data-product-slug="${escAttr(product.slug)}">
           <div class="product-media">${media}</div>
           <div class="tile-body">
             <p class="tile-kicker">${escHtml(productBrand(product))} / ${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
+            ${hasAmazon ? `<span class="amazon-badge">Amazon linked</span>` : ""}
             ${sizeLabel ? `<p class="tile-size">${escHtml(sizeLabel)}</p>` : ""}
             <h2 class="tile-title">${escHtml(product.name)}</h2>
             <button class="product-link" type="button" data-copy-product="${escAttr(product.slug)}">Copy product link</button>

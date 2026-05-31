@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_at": "2026-05-31T00:44:07.388220+00:00",
-  "product_count": 116,
+  "product_count": 120,
   "products": [
     {
       "id": 1,
@@ -12564,6 +12564,231 @@
         "price_per_unit": 3.96
       },
       "updated_at": "2026-05-31T00:44:07.280597+00:00"
+    },
+    {
+      "id": 145,
+      "slug": "yard-mastery-flagship",
+      "name": "Yard Mastery Flagship 24-0-6",
+      "category": "fertilizer",
+      "active_ingredient": "24-0-6 fertilizer + iron + Bio-Nite",
+      "alt_names": [
+        "Flagship",
+        "Flagship 24-0-6",
+        "Yard Mastery Flagship fertilizer"
+      ],
+      "offers": [
+        {
+          "retailer": "thelawncarenut",
+          "retailer_name": "Thelawncarenut",
+          "price": 39.99,
+          "url": "https://thelawncarenut.com/products/24-0-6-flagship-with-3-iron-and-bio-nite%e2%84%a2",
+          "in_stock": true,
+          "title": "Yard Mastery Flagship Blend: Balanced Lawn Fertilizer for Lasting Green\n \u2013 LawnCareNut",
+          "image": null,
+          "last_checked": "2026-05-21T02:38:30.497533+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": 49.94,
+          "url": "https://www.amazon.com/dp/B08YGTH3P2?tag=lawndominator-20",
+          "in_stock": true,
+          "title": "Amazon.com : Yard Mastery 24-0-6 Flagship Granular Lawn Fertilizer with 3% Iron, Bio-Nite\u2122, 45 lb Bag Covers 15,000 sq ft, 6% Potassium, Micronutrients and 24% Slow Release Nitroge",
+          "image": null,
+          "last_checked": "2026-05-21T02:38:27.986589+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "yardmastery",
+          "retailer_name": "Yardmastery",
+          "price": 69.99,
+          "url": "https://yardmastery.com/products/24-0-6-flagship-granular-lawn-fertilizer-with-iron",
+          "in_stock": true,
+          "title": "Flagship 24-0-6 Lawn Fertilizer (3% Iron + Bio-Nite) | Yard Mastery",
+          "image": null,
+          "last_checked": "2026-05-21T02:38:22.305055+00:00",
+          "source": "manual_verified_source"
+        }
+      ],
+      "best_price": {
+        "retailer": "thelawncarenut",
+        "retailer_name": "Thelawncarenut",
+        "price": 39.99,
+        "url": "https://thelawncarenut.com/products/24-0-6-flagship-with-3-iron-and-bio-nite%e2%84%a2",
+        "in_stock": true,
+        "title": "Yard Mastery Flagship Blend: Balanced Lawn Fertilizer for Lasting Green\n \u2013 LawnCareNut",
+        "image": null,
+        "last_checked": "2026-05-21T02:38:30.497533+00:00",
+        "source": "manual_verified_source"
+      },
+      "updated_at": "2026-05-31T00:44:07.388220+00:00"
+    },
+    {
+      "id": 146,
+      "slug": "yard-mastery-double-dark",
+      "name": "Yard Mastery Double Dark 16-0-0",
+      "category": "fertilizer",
+      "active_ingredient": "16-0-0 fertilizer + 6% iron + Bio-Nite",
+      "alt_names": [
+        "Double Dark",
+        "Double Dark 16-0-0",
+        "Yard Mastery Double Dark fertilizer"
+      ],
+      "offers": [
+        {
+          "retailer": "thelawncarenut",
+          "retailer_name": "Thelawncarenut",
+          "price": 39.99,
+          "url": "https://thelawncarenut.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2",
+          "in_stock": true,
+          "title": "Yard Mastery Double Dark Blend: 16-0-0 Fertilizer with 6% Iron\n \u2013 LawnCareNut",
+          "image": null,
+          "last_checked": "2026-05-21T02:39:27.909098+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "yardmastery",
+          "retailer_name": "Yardmastery",
+          "price": 39.99,
+          "url": "https://yardmastery.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2",
+          "in_stock": true,
+          "title": "Yard Mastery Double Dark Blend: 16-0-0 Fertilizer with 6% Iron",
+          "image": null,
+          "last_checked": "2026-05-21T02:39:25.341276+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": 49.94,
+          "url": "https://www.amazon.com/dp/B0BHC47S44?tag=lawndominator-20",
+          "in_stock": true,
+          "title": "Amazon.com : Yard Mastery Double Dark 16-0-0 Granular Lawn Fertilizer with 6% Iron and Bio-Nite - 18lb Bag Covers 6,000 sq ft - Green Up Your Lawn Without Excess Growth - Apply Yea",
+          "image": null,
+          "last_checked": "2026-05-21T02:39:33.131473+00:00",
+          "source": "manual_verified_source"
+        }
+      ],
+      "best_price": {
+        "retailer": "thelawncarenut",
+        "retailer_name": "Thelawncarenut",
+        "price": 39.99,
+        "url": "https://thelawncarenut.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2",
+        "in_stock": true,
+        "title": "Yard Mastery Double Dark Blend: 16-0-0 Fertilizer with 6% Iron\n \u2013 LawnCareNut",
+        "image": null,
+        "last_checked": "2026-05-21T02:39:27.909098+00:00",
+        "source": "manual_verified_source"
+      },
+      "updated_at": "2026-05-31T00:44:07.388220+00:00"
+    },
+    {
+      "id": 147,
+      "slug": "yard-mastery-stress-blend",
+      "name": "Yard Mastery Stress Blend 7-0-20",
+      "category": "fertilizer",
+      "active_ingredient": "7-0-20 fertilizer + iron + Bio-Nite",
+      "alt_names": [
+        "Stress Blend",
+        "Stress Blend 7-0-20",
+        "Yard Mastery Stress Blend fertilizer"
+      ],
+      "offers": [
+        {
+          "retailer": "thelawncarenut",
+          "retailer_name": "Thelawncarenut",
+          "price": 39.99,
+          "url": "https://thelawncarenut.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2",
+          "in_stock": true,
+          "title": "Yard Mastery 7-0-20 Stress Blend: Lawn Fertilizer for Resilient Turf\n \u2013 LawnCareNut",
+          "image": null,
+          "last_checked": "2026-05-21T02:40:22.198412+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "yardmastery",
+          "retailer_name": "Yardmastery",
+          "price": 39.99,
+          "url": "https://yardmastery.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2",
+          "in_stock": true,
+          "title": "7-0-20 Stress Blend Lawn Fertilizer | Yard Mastery",
+          "image": null,
+          "last_checked": "2026-05-21T02:40:16.383915+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": 79.94,
+          "url": "https://www.amazon.com/dp/B08YS4CTRM?tag=lawndominator-20",
+          "in_stock": true,
+          "title": "Amazon.com : 7-0-20 Summer Lawn and Turf Stress Granular Fertilizer Blend (with Bio-Nite 45lb Bag - Covers 15,000 Square Feet - 7% Nitrogen - 3% Iron - 20% Potash - Safe for All La",
+          "image": null,
+          "last_checked": "2026-05-21T02:40:19.831173+00:00",
+          "source": "manual_verified_source"
+        }
+      ],
+      "best_price": {
+        "retailer": "thelawncarenut",
+        "retailer_name": "Thelawncarenut",
+        "price": 39.99,
+        "url": "https://thelawncarenut.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2",
+        "in_stock": true,
+        "title": "Yard Mastery 7-0-20 Stress Blend: Lawn Fertilizer for Resilient Turf\n \u2013 LawnCareNut",
+        "image": null,
+        "last_checked": "2026-05-21T02:40:22.198412+00:00",
+        "source": "manual_verified_source"
+      },
+      "updated_at": "2026-05-31T00:44:07.388220+00:00"
+    },
+    {
+      "id": 148,
+      "slug": "yard-mastery-freedom",
+      "name": "Yard Mastery Freedom 17-7-6",
+      "category": "fertilizer",
+      "active_ingredient": "17-7-6 fertilizer",
+      "alt_names": [
+        "Freedom Fertilizer",
+        "Freedom 17-7-6",
+        "Yard Mastery Freedom fertilizer"
+      ],
+      "offers": [
+        {
+          "retailer": "thelawncarenut",
+          "retailer_name": "Thelawncarenut",
+          "price": 39.99,
+          "url": "https://thelawncarenut.com/products/freedom-lawn-fertilizer-17-7-6",
+          "in_stock": true,
+          "title": "Yard Mastery FREEDOM Fertilizer: Summer-Ready 17-7-6 Lawn Boost\n \u2013 LawnCareNut",
+          "image": null,
+          "last_checked": "2026-05-21T02:40:46.118389+00:00",
+          "source": "manual_verified_source"
+        },
+        {
+          "retailer": "yardmastery",
+          "retailer_name": "Yardmastery",
+          "price": 39.99,
+          "url": "https://yardmastery.com/products/freedom-granular-lawn-fertilizer",
+          "in_stock": true,
+          "title": "Freedom Fertilizer 17-7-6 | Summer Lawn Fertilizer\n \u2013 Yard Mastery",
+          "image": null,
+          "last_checked": "2026-05-21T02:40:43.805210+00:00",
+          "source": "manual_verified_source"
+        }
+      ],
+      "best_price": {
+        "retailer": "thelawncarenut",
+        "retailer_name": "Thelawncarenut",
+        "price": 39.99,
+        "url": "https://thelawncarenut.com/products/freedom-lawn-fertilizer-17-7-6",
+        "in_stock": true,
+        "title": "Yard Mastery FREEDOM Fertilizer: Summer-Ready 17-7-6 Lawn Boost\n \u2013 LawnCareNut",
+        "image": null,
+        "last_checked": "2026-05-21T02:40:46.118389+00:00",
+        "source": "manual_verified_source"
+      },
+      "updated_at": "2026-05-31T00:44:07.388220+00:00"
     }
   ]
 }
