@@ -1993,11 +1993,14 @@ def _solutions_search(query: str) -> Optional[dict]:
 # ── Amazon ────────────────────────────────────────────────────────────────────
 
 def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[dict]:
-    keepa = _amazon_keepa(product, source_map or {})
+    source_map = source_map or {}
+    if AMAZON_CREATOR_CREDENTIAL_ID and AMAZON_CREATOR_SECRET:
+        creators = _amazon_creators_api(product, source_map)
+        if creators and creators.get("source") == "amazon_creators_api":
+            return creators
+    keepa = _amazon_keepa(product, source_map)
     if keepa:
         return keepa
-    if AMAZON_CREATOR_CREDENTIAL_ID and AMAZON_CREATOR_SECRET:
-        return _amazon_creators_api(product)
     return _amazon_affiliate_link(product)
 
 
@@ -2174,7 +2177,7 @@ def _amazon_item_offer(item, product: dict) -> dict:
     }
 
 
-def _amazon_creators_api(product: dict) -> dict:
+def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> dict:
     global _amazon_creators_disabled
     if _amazon_creators_disabled:
         return _amazon_affiliate_link(product)
@@ -2191,9 +2194,11 @@ def _amazon_creators_api(product: dict) -> dict:
             country=Country.US,
             throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING", "1")),
         )
-        if product.get("asin"):
+        asins = _amazon_asins_for_product(product, source_map or {})
+        used_exact_asin = bool(asins)
+        if used_exact_asin:
             items = client.get_items(
-                items=product["asin"],
+                items=asins[:10],
                 resources=[
                     GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
                     GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
@@ -2217,7 +2222,12 @@ def _amazon_creators_api(product: dict) -> dict:
         if not items:
             return _amazon_affiliate_link(product)
 
-        return _amazon_item_offer(items[0], product)
+        for item in items:
+            offer = _amazon_item_offer(item, product)
+            if used_exact_asin or _matches_product(product, offer.get("title", ""), offer.get("url", "")):
+                return offer
+
+        return _amazon_affiliate_link(product)
     except ImportError:
         return _amazon_affiliate_link(product)
     except Exception as e:
