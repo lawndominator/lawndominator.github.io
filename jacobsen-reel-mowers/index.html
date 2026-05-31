@@ -3,180 +3,164 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Precision Turf Equipment | Jacobsen Reel Mowers</title>
+    <title>Jacobsen Reel Mower Inventory</title>
     <meta
       name="description"
-      content="Used Jacobsen reel mower sales, reel mower service, setup, sharpening, and turf equipment support."
+      content="Example Jacobsen reel mower inventory page for mower sales, pricing, photos, and listing details."
     />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header" data-reveal>
-      <a class="brand" href="#top" aria-label="Precision Turf Equipment home">
-        <span class="brand-mark">PT</span>
-        <span>
-          <strong>Precision Turf</strong>
-          <small>Jacobsen sales & reel service</small>
-        </span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#inventory">Inventory</a>
-        <a href="#service">Service</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="nav-cta" href="#contact">Find a mower</a>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-label="Jacobsen reel mower sales and service">
-        <div class="stripe-field" aria-hidden="true"></div>
-        <div class="hero-vignette" aria-hidden="true"></div>
-
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Used Jacobsen reel mowers, sharpened and set up right</p>
-          <h1>Fairway-grade cuts without the dealership runaround.</h1>
-          <p class="lede">
-            Clean used Jacobsen machines, reel mower service, grinding, bedknife work, and setup support for homeowners, small crews, and turf pros who care about the cut.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#inventory">See current mowers</a>
-            <a class="button secondary" href="#service">Book service</a>
-          </div>
+    <main class="inventory-shell">
+      <section class="product-stage" aria-label="Featured mower listing">
+        <div class="topline">
+          <a class="brand" href="./" aria-label="Mower inventory home">
+            <span class="brand-badge">JM</span>
+            <span>Jacobsen mower inventory</span>
+          </a>
+          <a class="seller-link" href="#contact">Contact seller</a>
         </div>
 
-        <aside class="hero-panel" data-reveal>
-          <div class="availability">
-            <span>Current focus</span>
-            <strong>Jacobsen Greens King & Eclipse units</strong>
+        <div class="listing-board">
+          <aside class="thumb-rail" aria-label="Select example mower">
+            <button class="thumb is-active" type="button" data-product="greens">
+              <img src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
+              <span>GK IV</span>
+            </button>
+            <button class="thumb" type="button" data-product="eclipse">
+              <img src="./assets/eclipse-2.png" alt="Jacobsen Eclipse 2 walking reel mower" />
+              <span>E2</span>
+            </button>
+            <button class="thumb" type="button" data-product="gp">
+              <img src="./assets/gp400.png" alt="Jacobsen GP400 triplex reel mower" />
+              <span>GP400</span>
+            </button>
+          </aside>
+
+          <div class="photo-well" data-reveal>
+            <div class="stripe-mat" aria-hidden="true"></div>
+            <img id="activeImage" src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
+            <div class="lot-plate">
+              <span>Example listing</span>
+              <strong id="activeLot">LOT 0417</strong>
+            </div>
           </div>
-          <div class="machine-card">
-            <img
-              src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=82"
-              alt="Close cropped striped turf"
-            />
+
+          <article class="product-sheet" data-reveal>
+            <p class="eyebrow" id="activeStatus">Available now</p>
+            <h1 id="activeTitle">2017 Jacobsen Greens King IV Plus</h1>
+            <p class="price" id="activePrice">$4,850.00</p>
+            <p class="fine-print">Example pricing. Freight, pickup, and final condition details confirmed by seller.</p>
+
+            <div class="quantity-row" aria-label="Quantity selector">
+              <span>Quantity</span>
+              <div>
+                <button type="button" aria-label="Decrease quantity">-</button>
+                <strong>1</strong>
+                <button type="button" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="purchase-actions">
+              <a href="#contact">Ask about this mower</a>
+              <a href="#inventory" class="secondary-action">View other examples</a>
+            </div>
+
+            <section class="description-block" aria-label="Mower description">
+              <h2>Description</h2>
+              <dl id="activeSpecs">
+                <div><dt>Year</dt><dd>2017</dd></div>
+                <div><dt>Model</dt><dd>Greens King IV Plus</dd></div>
+                <div><dt>Reel</dt><dd>11 blade example reel</dd></div>
+                <div><dt>Cutting width</dt><dd>22 in.</dd></div>
+                <div><dt>Engine hours</dt><dd>Example hours shown here</dd></div>
+                <div><dt>Included</dt><dd>Roller, catcher, transport wheels</dd></div>
+                <div><dt>Condition</dt><dd>Used. Example listing copy for photos, notes, and buyer questions.</dd></div>
+              </dl>
+            </section>
+          </article>
+        </div>
+      </section>
+
+      <section class="ticker-strip" aria-label="Inventory notes">
+        <div>
+          <span>Jacobsen walk mowers</span>
+          <span>Greens mowers</span>
+          <span>Triplex units</span>
+          <span>Used inventory</span>
+          <span>Buyer questions welcome</span>
+          <span>Jacobsen walk mowers</span>
+          <span>Greens mowers</span>
+          <span>Triplex units</span>
+          <span>Used inventory</span>
+          <span>Buyer questions welcome</span>
+        </div>
+      </section>
+
+      <section class="inventory-drawer" id="inventory">
+        <div class="drawer-heading" data-reveal>
+          <p class="eyebrow">Current examples</p>
+          <h2>Listings built for photos, price, specs, and quick buyer decisions.</h2>
+        </div>
+
+        <div class="mower-list">
+          <article class="mower-row" data-reveal data-product-row="greens">
+            <span class="row-number">01</span>
+            <img src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
             <div>
-              <span>Incoming listings</span>
-              <strong>Inspected, priced, photographed</strong>
+              <h3>2017 Jacobsen Greens King IV Plus</h3>
+              <p>Example listing with year, model, reel count, included accessories, and seller notes.</p>
             </div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="inventory-section" id="inventory">
-        <div class="section-kicker" data-reveal>
-          <p class="eyebrow">Available inventory</p>
-          <h2>Machines that are ready to talk about.</h2>
-        </div>
-
-        <div class="inventory-grid">
-          <article class="listing feature-listing" data-reveal>
-            <img
-              src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1200&q=84"
-              alt="Striped bermuda grass fairway"
-            />
-            <div class="listing-body">
-              <span class="tag">Featured</span>
-              <h3>Jacobsen Greens King IV</h3>
-              <p>Great home green or small-course candidate. Reel condition, hours, and service notes can be dropped in from the admin dashboard later.</p>
-              <div class="price-row">
-                <strong>$4,850</strong>
-                <a href="#contact">Ask about it</a>
-              </div>
-            </div>
+            <strong>$4,850</strong>
           </article>
 
-          <article class="listing" data-reveal>
-            <img
-              src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=82"
-              alt="Golf course green with clean turf"
-            />
-            <div class="listing-body">
-              <span class="tag">Service checked</span>
-              <h3>Jacobsen Eclipse 2</h3>
-              <p>Electric walk mower candidate with clean reels, fresh setup, and pickup options.</p>
-              <div class="price-row">
-                <strong>$3,200</strong>
-                <a href="#contact">Details</a>
-              </div>
+          <article class="mower-row" data-reveal data-product-row="eclipse">
+            <span class="row-number">02</span>
+            <img src="./assets/eclipse-2.png" alt="Jacobsen Eclipse 2" />
+            <div>
+              <h3>2020 Jacobsen Eclipse 2</h3>
+              <p>Example battery walk mower listing with clean photo gallery and short buyer details.</p>
             </div>
+            <strong>$3,950</strong>
           </article>
 
-          <article class="listing" data-reveal>
-            <img
-              src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=82"
-              alt="Golf fairway with striped green turf"
-            />
-            <div class="listing-body">
-              <span class="tag">Coming soon</span>
-              <h3>Triplex reel mower</h3>
-              <p>Good fit for larger turf areas. Photos, pricing, and notes will appear once inspection is done.</p>
-              <div class="price-row">
-                <strong>TBD</strong>
-                <a href="#contact">Get notified</a>
-              </div>
+          <article class="mower-row" data-reveal data-product-row="gp">
+            <span class="row-number">03</span>
+            <img src="./assets/gp400.png" alt="Jacobsen GP400" />
+            <div>
+              <h3>2019 Jacobsen GP400</h3>
+              <p>Example triplex listing for larger properties, crews, and golf course buyers.</p>
             </div>
+            <strong>$12,900</strong>
           </article>
         </div>
       </section>
 
-      <section class="service-section" id="service">
-        <div class="service-copy" data-reveal>
-          <p class="eyebrow">Service that protects the cut</p>
-          <h2>Reels, bedknives, bearings, setup, and seasonal checks.</h2>
+      <section class="contact-dock" id="contact">
+        <div data-reveal>
+          <p class="eyebrow">Contact seller</p>
+          <h2>Want this inventory connected to real listings?</h2>
           <p>
-            A sharp reel mower should feel controlled, quiet, and repeatable. Bring in the machine, describe the cut issue, and get straightforward repair notes before money gets spent.
+            The admin dashboard can add mower photos, specs, price, sold status, and delete buttons without touching code.
           </p>
         </div>
-
-        <div class="service-list" data-reveal>
-          <div>
-            <span>01</span>
-            <strong>Reel grinding</strong>
-            <p>Clean contact, clean paper test, clean turf.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <strong>Bedknife work</strong>
-            <p>Replacement, facing, adjustment, and setup.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <strong>Used mower prep</strong>
-            <p>Inspection, photos, pricing notes, and buyer-ready listings.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div class="contact-panel" data-reveal>
-          <p class="eyebrow">Call, text, or send mower photos</p>
-          <h2>Looking for a specific Jacobsen or need one serviced?</h2>
-          <form class="lead-form">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              Phone or email
-              <input type="text" name="contact" placeholder="Best way to reach you" />
-            </label>
-            <label>
-              What do you need?
-              <textarea name="message" placeholder="Mower model, service issue, budget, or photos you want to send"></textarea>
-            </label>
-            <button type="button">Send request</button>
-          </form>
-        </div>
+        <form class="lead-form" data-reveal>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" />
+          </label>
+          <label>
+            Phone or email
+            <input type="text" name="contact" placeholder="Best contact" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Which mower are you asking about?"></textarea>
+          </label>
+          <button type="button">Send mower inquiry</button>
+        </form>
       </section>
     </main>
-
-    <footer class="footer">
-      <span>Precision Turf Equipment</span>
-      <span>Independent seller and service shop. Not affiliated with Jacobsen.</span>
-    </footer>
 
     <script src="./script.js"></script>
   </body>

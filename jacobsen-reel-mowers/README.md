@@ -1,12 +1,16 @@
-# Jacobsen Reel Mower Website Prototype
+# Jacobsen Reel Mower Inventory Prototype
 
-Static first-pass landing page for a used Jacobsen reel mower sales and reel mower service business.
+Standalone static sales site for Jacobsen mower inventory.
 
-Open `index.html` directly in a browser, or publish this folder with GitHub Pages.
+Current prototype:
 
-Future admin direction:
+- Product-detail layout with mower image rail.
+- Example listing text modeled after ecommerce mower listings.
+- Actual Jacobsen product imagery stored in `assets/`.
+- Frontend-only product switching.
 
-- Store listings in a small database or JSON-backed CMS.
-- Admin dashboard shows listing cards with photo, price, status, and a delete button.
-- Add-listing flow should support multiple photos, model, hours, price, service notes, and availability.
-- GitHub Pages can host the public frontend, but the admin dashboard will need a backend service such as Supabase, Firebase, or a simple hosted API.
+Future admin:
+
+- Add, edit, mark sold, and delete mower listings.
+- Upload multiple photos per mower.
+- Store year, model, price, hours, reel details, included accessories, and condition notes.
