@@ -3,7 +3,7 @@ const STORAGE_KEY = "jacobsen-mower-admin-demo";
 const starterListings = [
   {
     id: crypto.randomUUID(),
-    image: "./assets/pgm22-field-1.jpg",
+    image: "./assets/pgm22.png",
     year: "2017",
     model: "Jacobsen PGM22 Walk Reel",
     price: "$4,850",
@@ -14,7 +14,7 @@ const starterListings = [
   },
   {
     id: crypto.randomUUID(),
-    image: "./assets/eclipse-2-field.jpg",
+    image: "./assets/eclipse-2.png",
     year: "2020",
     model: "Jacobsen Eclipse 2",
     price: "$3,950",
@@ -25,7 +25,7 @@ const starterListings = [
   },
   {
     id: crypto.randomUUID(),
-    image: "./assets/pgm22-field-2.jpg",
+    image: "./assets/pgm22.png",
     year: "2019",
     model: "Jacobsen PGM22 Walk Reel",
     price: "$3,650",
@@ -43,7 +43,6 @@ const count = document.querySelector("#listingCount");
 const imageInput = document.querySelector("#imageInput");
 const imagePreview = document.querySelector("#imagePreview");
 const imagePrompt = document.querySelector("#imagePrompt");
-const resetButton = document.querySelector("#resetListings");
 
 let listings = loadListings();
 let uploadedImage = "";
@@ -131,12 +130,6 @@ form.addEventListener("submit", (event) => {
   imagePreview.removeAttribute("src");
   imagePreview.parentElement.classList.remove("has-image");
   imagePrompt.textContent = "Add photo";
-});
-
-resetButton.addEventListener("click", () => {
-  listings = starterListings.map((listing) => ({ ...listing, id: crypto.randomUUID() }));
-  saveListings();
-  renderListings();
 });
 
 renderListings();
