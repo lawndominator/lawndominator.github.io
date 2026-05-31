@@ -30,25 +30,25 @@ const products = {
       ["Condition", "Used. Example listing notes for a real uploaded mower."]
     ]
   },
-  gp: {
-    image: "./assets/gp400.png",
-    alt: "2019 Jacobsen GP400 Triplex",
-    title: "2019 Jacobsen GP400 Triplex",
-    price: "$12,900.00",
+  pgm: {
+    image: "./assets/eclipse-2.png",
+    alt: "2019 Jacobsen PGM 22 Walk Reel",
+    title: "2019 Jacobsen PGM 22 Walk Reel",
+    price: "$3,650.00",
     specs: [
       ["Year", "2019"],
-      ["Model", "Jacobsen GP400"],
-      ["Type", "Triplex greens mower example"],
-      ["Cutting width", "Approx. 62 in."],
+      ["Model", "Jacobsen PGM 22 example"],
+      ["Type", "Walk-behind reel mower"],
+      ["Cutting width", "22 in. width of cut"],
       ["Engine hours", "Example hours"],
-      ["Included accessories", "Three cutting units, operator platform, turf tires"],
-      ["Condition", "Used. Example condition notes for a larger mower."]
+      ["Included accessories", "Catcher, roller, transport wheels"],
+      ["Condition", "Used. Example condition notes for a walk reel mower."]
     ]
   },
   greens2: {
     image: "./assets/greens-king-iv-plus.png",
-    alt: "2018 Jacobsen Greens King Example",
-    title: "2018 Jacobsen Greens King Example",
+    alt: "2018 Jacobsen Greens King Walk Reel",
+    title: "2018 Jacobsen Greens King Walk Reel",
     price: "$5,250.00",
     specs: [
       ["Year", "2018"],
