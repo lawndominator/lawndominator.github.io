@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-31T12:11:10.144394+00:00",
+  "generated_at": "2026-05-31T13:22:00.817492+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 855,
     "manual_verified_sources": 383,
-    "included_sources": 718,
-    "not_included_sources": 137,
+    "included_sources": 714,
+    "not_included_sources": 141,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 718,
-    "no_extracted_offer": 69,
+    "included": 714,
+    "no_extracted_offer": 73,
     "not_checked_saved_source_limit": 53,
     "below $10.00 minimum for this category": 10,
     "no_price": 5
@@ -1889,7 +1889,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 253.05,
+          "price": 248.55,
           "offer_url": "https://www.amazon.com/dp/B00EDQ1DCQ?tag=lawndominator-20"
         },
         {
@@ -2586,7 +2586,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 126.99,
+          "price": 34.0,
           "offer_url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator"
         },
         {
@@ -3051,7 +3051,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 52.99,
+          "price": 50.34,
           "offer_url": "https://www.amazon.com/dp/B0BJ3662N7?tag=lawndominator-20"
         },
         {
@@ -3536,7 +3536,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 156.44,
+          "price": 154.89,
           "offer_url": "https://www.amazon.com/dp/B01GQSEQC2?tag=lawndominator-20"
         }
       ],
@@ -3921,7 +3921,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 195.21,
+          "price": 193.3,
           "offer_url": "https://www.amazon.com/dp/B017PV1L7M?tag=lawndominator-20"
         }
       ],
@@ -4297,7 +4297,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 135.69,
+          "price": 10.0,
           "offer_url": "https://www.amazon.com/dp/B01BZLG0PQ?tag=lawndominator-20"
         },
         {
@@ -5126,7 +5126,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.91,
+          "price": 83.31,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -6756,7 +6756,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 21.1,
+          "price": 21.26,
           "offer_url": "https://www.amazon.com/dp/B00725LGAO?tag=lawndominator-20"
         }
       ],
@@ -7290,9 +7290,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 59.88,
           "offer_url": "https://www.amazon.com/dp/B09TLBRQBK?tag=lawndominator-20"
         },
         {
@@ -7346,8 +7346,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 2,
+      "included_sources": 7,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7778,7 +7778,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.64,
+          "price": 64.88,
           "offer_url": "https://www.amazon.com/dp/B08YZ2QQJB?tag=lawndominator-20"
         },
         {
@@ -7938,9 +7938,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 10.0,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B08YGTH3P2?tag=lawndominator-20"
         },
         {
@@ -7954,8 +7954,8 @@
           "offer_url": "https://yardmastery.com/products/24-0-6-flagship-granular-lawn-fertilizer-with-iron"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -8325,20 +8325,20 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 10.0,
+          "offer_url": "https://www.amazon.com/dp/B09J1FVBPW?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B09Q85BQ71",
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 24.99,
-          "offer_url": "https://www.amazon.com/dp/B09Q85BQ71?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
       "included_sources": 2,
@@ -8622,7 +8622,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.81,
+          "price": 40.95,
           "offer_url": "https://www.amazon.com/dp/B00CSAOFUG?tag=lawndominator-20"
         },
         {
@@ -9205,10 +9205,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 2879.0,
+          "offer_url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp"
         },
         {
           "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
@@ -9275,10 +9275,10 @@
           "retailer": "camelcamelcamel",
           "retailer_name": "Camelcamelcamel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 82.99,
-          "offer_url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp",
@@ -9617,13 +9617,23 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 250.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
+          "retailer": "nocoastturf",
+          "retailer_name": "Nocoastturf",
+          "manual_verified": false,
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
+        },
+        {
+          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
@@ -9633,24 +9643,14 @@
           "offer_url": null
         },
         {
-          "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
-          "retailer": "nocoastturf",
-          "retailer_name": "Nocoastturf",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 56.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
-        },
-        {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 104.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon",
@@ -9667,10 +9667,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
@@ -9687,10 +9687,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -9707,10 +9707,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10",
@@ -9727,10 +9727,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 69.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/dual-carbon-six-pack-soluble-molasses-and-humic-acid",
@@ -9773,8 +9773,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 8,
+      "included_sources": 17,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
