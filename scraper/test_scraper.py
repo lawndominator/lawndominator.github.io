@@ -397,6 +397,60 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(best["retailer"], "real")
 
+    def test_select_best_uses_unit_price_for_comparable_sizes(self):
+        product = {"id": 1, "category": "post-emergent"}
+        offers = [
+            {
+                "retailer": "small",
+                "retailer_name": "Small",
+                "price": 21.99,
+                "url": "https://store.example/small",
+                "package_quantity": 32.0,
+                "package_unit": "fl oz",
+                "price_per_unit": 0.69,
+            },
+            {
+                "retailer": "large",
+                "retailer_name": "Large",
+                "price": 49.99,
+                "url": "https://store.example/large",
+                "package_quantity": 128.0,
+                "package_unit": "fl oz",
+                "price_per_unit": 0.39,
+            },
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "large")
+
+    def test_select_best_falls_back_to_flat_price_when_sizes_are_not_comparable(self):
+        product = {"id": 1, "category": "post-emergent"}
+        offers = [
+            {
+                "retailer": "liquid",
+                "retailer_name": "Liquid",
+                "price": 49.99,
+                "url": "https://store.example/liquid",
+                "package_quantity": 128.0,
+                "package_unit": "fl oz",
+                "price_per_unit": 0.39,
+            },
+            {
+                "retailer": "dry",
+                "retailer_name": "Dry",
+                "price": 24.99,
+                "url": "https://store.example/dry",
+                "package_quantity": 5.0,
+                "package_unit": "lb",
+                "price_per_unit": 5.00,
+            },
+        ]
+
+        best = scraper.select_best_offer(product, offers)
+
+        self.assertEqual(best["retailer"], "dry")
+
     def test_infers_dry_package_size_from_offer_url(self):
         package = scraper.infer_package_size({}, {
             "url": "https://seedbarn.com/products/pendulum-2g-herbicide-40-lbs",
@@ -660,6 +714,27 @@ class ScraperExtractionTests(unittest.TestCase):
         offer = results[0]["offers"][0]
         self.assertEqual(offer["package_label"], "20 lb")
         self.assertEqual(offer["price_per_unit"], 3.79)
+
+    def test_apply_offer_package_metadata_flags_mixed_size_results(self):
+        results = [{
+            "id": 5,
+            "offers": [
+                {
+                    "title": "Pendulum 2G Herbicide - 20 Lbs.",
+                    "price": 75.75,
+                    "url": "https://store.example/pendulum-2g-20-lbs",
+                },
+                {
+                    "title": "Pendulum 2G Herbicide - 40 Lbs.",
+                    "price": 115.95,
+                    "url": "https://store.example/pendulum-2g-40-lbs",
+                },
+            ],
+        }]
+
+        scraper.apply_offer_package_metadata(results)
+
+        self.assertTrue(results[0]["has_multiple_sizes"])
 
     def test_quality_filter_excludes_repeated_flat_prices(self):
         results = []

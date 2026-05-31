@@ -276,6 +276,24 @@ def min_price_for_product(product: dict) -> float:
     return MIN_CHEMICAL_PRICE
 
 
+def _valid_price(offer: dict) -> Optional[float]:
+    try:
+        return float(offer["price"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _valid_unit_price(offer: dict) -> Optional[float]:
+    try:
+        unit_price = float(offer["price_per_unit"])
+        quantity = float(offer["package_quantity"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if unit_price <= 0 or quantity <= 0 or not offer.get("package_unit"):
+        return None
+    return unit_price
+
+
 def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
     priced = [
         o for o in offers
@@ -286,7 +304,22 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         and not is_bad_product_url(o.get("url", ""))
         and float(o["price"]) >= min_price_for_product(product)
     ]
-    priced.sort(key=lambda o: o["price"])
+    comparable_by_unit: dict[str, list[dict]] = {}
+    for offer in priced:
+        if _valid_unit_price(offer) is None:
+            continue
+        comparable_by_unit.setdefault(str(offer.get("package_unit")), []).append(offer)
+
+    comparable_groups = [
+        group for group in comparable_by_unit.values()
+        if len(group) >= 2
+    ]
+    if comparable_groups:
+        largest_group = max(comparable_groups, key=len)
+        largest_group.sort(key=lambda o: (_valid_unit_price(o), _valid_price(o)))
+        return largest_group[0]
+
+    priced.sort(key=lambda o: _valid_price(o))
     return priced[0] if priced else None
 
 
@@ -722,13 +755,26 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
 
 def apply_offer_package_metadata(results: list[dict]) -> None:
     for product in results:
+        package_keys = set()
+        priced_offer_count = 0
+        priced_without_package = 0
         for offer in product.get("offers", []):
+            if offer.get("price") is not None:
+                priced_offer_count += 1
             package = infer_package_size(product, offer)
             if not package:
+                if offer.get("price") is not None:
+                    priced_without_package += 1
                 continue
             offer.update(package)
             if offer.get("price") is not None and package["package_quantity"]:
                 offer["price_per_unit"] = round(float(offer["price"]) / float(package["package_quantity"]), 2)
+                package_keys.add((package["package_quantity"], package["package_unit"]))
+
+        if len(package_keys) > 1:
+            product["has_multiple_sizes"] = True
+        if priced_offer_count > 1 and priced_without_package:
+            product["needs_size_review"] = True
 
 
 def apply_offer_quality_filters(results: list[dict]) -> None:
@@ -2113,6 +2159,21 @@ def _amazon_item_image(item) -> Optional[str]:
     )
 
 
+def _amazon_item_offer(item, product: dict) -> dict:
+    url = _attr_chain(item, "detail_page_url") or _attr_chain(item, "detailPageURL") or _amazon_affiliate_link(product)["url"]
+    return {
+        "retailer":      "amazon",
+        "retailer_name": "Amazon",
+        "price":         _amazon_item_price(item),
+        "url":           append_affiliate(url, "amazon"),
+        "in_stock":      _amazon_item_in_stock(item),
+        "title":         _amazon_item_title(item) or product.get("name", ""),
+        "image":         _amazon_item_image(item),
+        "last_checked":  now_iso(),
+        "source":        "amazon_creators_api",
+    }
+
+
 def _amazon_creators_api(product: dict) -> dict:
     global _amazon_creators_disabled
     if _amazon_creators_disabled:
@@ -2120,7 +2181,7 @@ def _amazon_creators_api(product: dict) -> dict:
 
     try:
         from amazon_creatorsapi import AmazonCreatorsApi, Country
-        from amazon_creatorsapi.models import SearchItemsResource
+        from amazon_creatorsapi.models import GetItemsResource, SearchItemsResource
 
         client = AmazonCreatorsApi(
             credential_id=AMAZON_CREATOR_CREDENTIAL_ID,
@@ -2130,35 +2191,33 @@ def _amazon_creators_api(product: dict) -> dict:
             country=Country.US,
             throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING", "1")),
         )
-        query = product.get("amazon_query") or product["search_query"]
-        response = client.search_items(
-            keywords=query,
-            item_count=1,
-            resources=[
-                SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
-                SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
-                SearchItemsResource.ITEM_INFO_DOT_TITLE,
-                SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
-            ],
-        )
-
-        items = _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
+        if product.get("asin"):
+            items = client.get_items(
+                items=product["asin"],
+                resources=[
+                    GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
+                    GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                    GetItemsResource.ITEM_INFO_DOT_TITLE,
+                    GetItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
+                ],
+            )
+        else:
+            query = product.get("amazon_query") or product["search_query"]
+            response = client.search_items(
+                keywords=query,
+                item_count=1,
+                resources=[
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                    SearchItemsResource.ITEM_INFO_DOT_TITLE,
+                    SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
+                ],
+            )
+            items = _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
         if not items:
             return _amazon_affiliate_link(product)
 
-        item = items[0]
-        url = item.detail_page_url or _amazon_affiliate_link(product)["url"]
-        return {
-            "retailer":      "amazon",
-            "retailer_name": "Amazon",
-            "price":         _amazon_item_price(item),
-            "url":           append_affiliate(url, "amazon"),
-            "in_stock":      _amazon_item_in_stock(item),
-            "title":         _amazon_item_title(item) or product.get("name", ""),
-            "image":         _amazon_item_image(item),
-            "last_checked":  now_iso(),
-            "source":        "amazon_creators_api",
-        }
+        return _amazon_item_offer(items[0], product)
     except ImportError:
         return _amazon_affiliate_link(product)
     except Exception as e:
