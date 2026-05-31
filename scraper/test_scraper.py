@@ -129,6 +129,36 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(result["url"], "https://www.solutionsstores.com/t-nex-plant-growth-regulator")
         self.assertEqual(result["title"], "T-Nex Plant Growth Regulator")
 
+    def test_saved_source_rejects_related_product_card_price(self):
+        soup = BeautifulSoup(
+            """
+            <main class="product-info-main">
+              <h1 class="page-title">T-Nex Plant Growth Regulator</h1>
+            </main>
+            <div class="product-item" data-product-id="2708">
+              <a class="product-item-link" href="/fahrenheit-herbicide">Fahrenheit Herbicide 6oz</a>
+              <span data-price-amount="34.00" class="price-wrapper">$34.00</span>
+            </div>
+            """,
+            "lxml",
+        )
+        product = {
+            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "search_query": "T-Nex 1AS trinexapac-ethyl",
+            "alt_names": ["T Nex 1AS", "Quali-Pro T-Nex 1AS"],
+            "active_ingredient": "trinexapac-ethyl",
+        }
+
+        result = scraper._extract_from_soup(
+            soup,
+            "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+            "solutions",
+            "Solutions Pest & Lawn",
+            product,
+        )
+
+        self.assertIsNone(result)
+
     def test_page_out_of_stock_overrides_jsonld_availability(self):
         soup = BeautifulSoup(
             """
@@ -1035,6 +1065,80 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertIsNone(offer)
 
+    def test_amazon_result_requires_exact_asin(self):
+        product = {
+            "id": 230,
+            "slug": "rk-equalizorr",
+            "name": "Ryan Knorr EqualizORR",
+            "search_query": "EqualizORR soluble fertilizer",
+            "amazon_query": "EqualizORR soluble fertilizer",
+            "asin": None,
+        }
+
+        self.assertIsNone(scraper.amazon_result(product, {"products": {}}))
+
+    def test_amazon_asins_ignore_unverified_sources(self):
+        product = {
+            "id": 230,
+            "slug": "rk-equalizorr",
+            "name": "Ryan Knorr EqualizORR",
+            "asin": None,
+        }
+        source_map = {
+            "products": {
+                "230": [{
+                    "url": "https://www.amazon.com/dp/B00725LGAO",
+                    "retailer": "amazon",
+                    "title": "Southern Ag PowerPak 20-20-20",
+                }]
+            }
+        }
+
+        self.assertEqual(scraper._amazon_asins_for_product(product, source_map), [])
+
+    def test_amazon_asins_allow_exact_title_verified_source(self):
+        product = {
+            "id": 36,
+            "slug": "t-nex-1as",
+            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "alt_names": ["T Nex 1AS", "Quali-Pro T-Nex 1AS"],
+            "active_ingredient": "trinexapac-ethyl",
+            "asin": None,
+        }
+        source_map = {
+            "products": {
+                "36": [{
+                    "url": "https://www.amazon.com/dp/B07FS56D66",
+                    "retailer": "amazon",
+                    "title": "Quali-Pro T-Nex 1AS Plant Growth Regulator (2.5 Gallons)",
+                }]
+            }
+        }
+
+        self.assertEqual(scraper._amazon_asins_for_product(product, source_map), ["B07FS56D66"])
+
+    def test_amazon_asins_reject_related_but_different_product(self):
+        product = {
+            "id": 230,
+            "slug": "rk-equalizorr",
+            "name": "Ryan Knorr EqualizORR",
+            "alt_names": ["EqualizORR"],
+            "active_ingredient": "",
+            "asin": None,
+        }
+        source_map = {
+            "products": {
+                "230": [{
+                    "url": "https://www.amazon.com/dp/B00725LGAO",
+                    "retailer": "amazon",
+                    "title": "Southern Ag PowerPak 20-20-20 Water Soluble Fertilizer",
+                    "manual_verified": True,
+                }]
+            }
+        }
+
+        self.assertEqual(scraper._amazon_asins_for_product(product, source_map), [])
+
     def test_source_entries_always_include_priced_sources(self):
         previous_limit = scraper.SAVED_SOURCE_LIMIT
         scraper.SAVED_SOURCE_LIMIT = 2
@@ -1279,6 +1383,77 @@ class ScraperExtractionTests(unittest.TestCase):
         output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
 
         self.assertEqual(output["alert_count"], 0)
+
+    def test_build_price_alerts_suppresses_untrusted_extreme_drop(self):
+        previous = {
+            36: {
+                "id": 36,
+                "slug": "t-nex-1as",
+                "name": "T-Nex 1AS (Trinexapac-ethyl)",
+                "best_price": {
+                    "retailer": "solutions",
+                    "retailer_name": "Solutions Pest & Lawn",
+                    "price": 126.99,
+                    "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                    "in_stock": True,
+                },
+            }
+        }
+        current = [{
+            "id": 36,
+            "slug": "t-nex-1as",
+            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "category": "pgr",
+            "best_price": {
+                "retailer": "solutions",
+                "retailer_name": "Solutions Pest & Lawn",
+                "price": 34.0,
+                "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                "in_stock": True,
+            },
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 0)
+
+    def test_build_price_alerts_allows_verified_extreme_drop_same_package(self):
+        previous = {
+            36: {
+                "id": 36,
+                "slug": "t-nex-1as",
+                "name": "T-Nex 1AS (Trinexapac-ethyl)",
+                "best_price": {
+                    "retailer": "solutions",
+                    "retailer_name": "Solutions Pest & Lawn",
+                    "price": 126.99,
+                    "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                    "in_stock": True,
+                    "package_quantity": 128.0,
+                    "package_unit": "fl oz",
+                },
+            }
+        }
+        current = [{
+            "id": 36,
+            "slug": "t-nex-1as",
+            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "category": "pgr",
+            "best_price": {
+                "retailer": "solutions",
+                "retailer_name": "Solutions Pest & Lawn",
+                "price": 49.99,
+                "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                "in_stock": True,
+                "package_quantity": 128.0,
+                "package_unit": "fl oz",
+            },
+        }]
+
+        output = scraper.build_price_alerts(previous, current, "2026-05-14T16:00:00+00:00")
+
+        self.assertEqual(output["alert_count"], 1)
+        self.assertEqual(output["alerts"][0]["type"], "major_price_drop")
 
     def test_build_price_alerts_detects_back_in_stock(self):
         previous = {

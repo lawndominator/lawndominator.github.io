@@ -853,6 +853,45 @@ def _drop_percent(old_price: float, new_price: float) -> float:
     return ((old_price - new_price) / old_price) * 100
 
 
+def _same_offer_package(old_offer: Optional[dict], new_offer: Optional[dict]) -> bool:
+    if not old_offer or not new_offer:
+        return False
+    old_unit = old_offer.get("package_unit")
+    new_unit = new_offer.get("package_unit")
+    old_quantity = old_offer.get("package_quantity")
+    new_quantity = new_offer.get("package_quantity")
+    if old_unit and new_unit and old_quantity and new_quantity:
+        try:
+            return old_unit == new_unit and abs(float(old_quantity) - float(new_quantity)) < 0.001
+        except (TypeError, ValueError):
+            return False
+    return False
+
+
+def _same_offer_source(old_offer: Optional[dict], new_offer: Optional[dict]) -> bool:
+    if not old_offer or not new_offer:
+        return False
+    old_retailer = old_offer.get("retailer")
+    new_retailer = new_offer.get("retailer")
+    old_url = canonical_product_url(old_offer.get("url", ""))
+    new_url = canonical_product_url(new_offer.get("url", ""))
+    return bool(old_retailer and old_retailer == new_retailer and old_url and old_url == new_url)
+
+
+def _trusted_extreme_drop(old_offer: Optional[dict], new_offer: dict) -> bool:
+    return _same_offer_source(old_offer, new_offer) and _same_offer_package(old_offer, new_offer)
+
+
+def _should_emit_price_drop_alert(old_offer: Optional[dict], new_offer: dict, drop_percent: float) -> bool:
+    if drop_percent < MIN_ALERT_DROP_PERCENT:
+        return False
+    if drop_percent >= 60:
+        return _trusted_extreme_drop(old_offer, new_offer)
+    if drop_percent >= 40:
+        return _same_offer_package(old_offer, new_offer)
+    return True
+
+
 def _alert_id(product_slug: str, alert_type: str, old_offer: Optional[dict], new_offer: dict) -> str:
     old_price = _offer_price(old_offer)
     new_price = _offer_price(new_offer)
@@ -942,7 +981,8 @@ def build_price_alerts(
 
         if old_price is not None and new_best.get("in_stock") is not False:
             drop = _drop_percent(old_price, new_price)
-            if drop >= MIN_ALERT_DROP_PERCENT:
+            emit_drop_alert = _should_emit_price_drop_alert(old_best, new_best, drop)
+            if emit_drop_alert:
                 if drop >= 10:
                     alerts.append(_alert_payload(product, "major_price_drop", old_best, new_best, generated_at, drop))
                 else:
@@ -950,7 +990,7 @@ def build_price_alerts(
 
             old_retailer = old_best.get("retailer") if old_best else None
             new_retailer = new_best.get("retailer")
-            if new_retailer and old_retailer and new_retailer != old_retailer and new_price < old_price:
+            if emit_drop_alert and new_retailer and old_retailer and new_retailer != old_retailer and new_price < old_price:
                 alerts.append(_alert_payload(product, "new_lowest_retailer", old_best, new_best, generated_at, drop))
 
         if old_best and old_best.get("in_stock") is False and new_best.get("in_stock") is True:
@@ -1190,7 +1230,13 @@ def _image_from_node(node, base_url: str) -> Optional[str]:
     return None
 
 
-def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retailer_name: str) -> Optional[dict]:
+def _extract_from_soup(
+    soup: BeautifulSoup,
+    base_url: str,
+    retailer: str,
+    retailer_name: str,
+    product: Optional[dict] = None,
+) -> Optional[dict]:
     """Generic price + link extractor from parsed HTML."""
     jsonld_result = _jsonld_product_offer(soup, base_url, retailer, retailer_name)
     if jsonld_result:
@@ -1236,6 +1282,9 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
         product_url = _offer_product_url(base_url, href, retailer)
         if not product_url:
             continue
+        title = link_elem.get_text(" ", strip=True) if link_elem else ""
+        if product and not _matches_product(product, title, product_url):
+            continue
 
         text = search_root.get_text(" ", strip=True).lower()
         in_stock = not any(phrase in text for phrase in ("out of stock", "sold out", "currently unavailable"))
@@ -1246,7 +1295,7 @@ def _extract_from_soup(soup: BeautifulSoup, base_url: str, retailer: str, retail
             "price":         price,
             "url":           product_url,
             "in_stock":      in_stock,
-            "title":         link_elem.get_text(" ", strip=True) if link_elem else "",
+            "title":         title,
             "image":         _image_from_node(search_root, base_url) or _image_from_node(soup, base_url),
             "last_checked":  now_iso(),
         }
@@ -1440,6 +1489,7 @@ def scrape_discovered_web_pages(product: dict) -> list[dict]:
             url,
             retailer,
             retailer_name_from_url(url),
+            product,
         )
         if offer:
             offer["source"] = "google_organic"
@@ -1542,6 +1592,7 @@ def scrape_known_retailers(product: dict) -> list[dict]:
             retailer["base"],
             retailer["key"],
             retailer["name"],
+            product,
         )
         if offer and _matches_product(product, offer.get("title", ""), retailer["name"]):
             offer["source"] = "known_retailer_search"
@@ -1657,6 +1708,7 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
             url,
             retailer,
             retailer_name,
+            product,
         )
         if offer:
             source_url = canonical_product_url(url)
@@ -1923,14 +1975,14 @@ def build_source_health(catalog_products: list[dict], source_map: dict, results:
 def scrape_domyown(product: dict) -> Optional[dict]:
     queries = search_variants(product, base_key="domyown_query")
     for query in queries:
-        result = _domyown_search(query)
+        result = _domyown_search(query, product)
         if result:
             return result
         time.sleep(1.0)
     return None
 
 
-def _domyown_search(query: str) -> Optional[dict]:
+def _domyown_search(query: str, product: dict) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
     for url in [
         f"https://www.domyown.com/search?q={encoded}",
@@ -1947,7 +1999,7 @@ def _domyown_search(query: str) -> Optional[dict]:
             log.info(f"  DoMyOwn: search URL redirected to home page, skipping")
             time.sleep(1.0)
             continue
-        result = _extract_from_soup(soup, "https://www.domyown.com", "domyown", "DoMyOwn")
+        result = _extract_from_soup(soup, "https://www.domyown.com", "domyown", "DoMyOwn", product)
         if result:
             return result
         log.info(f"  DoMyOwn: page loaded but no price found in HTML")
@@ -1960,14 +2012,14 @@ def _domyown_search(query: str) -> Optional[dict]:
 def scrape_solutions(product: dict) -> Optional[dict]:
     queries = search_variants(product)
     for query in queries:
-        result = _solutions_search(query)
+        result = _solutions_search(query, product)
         if result:
             return result
         time.sleep(1.0)
     return None
 
 
-def _solutions_search(query: str) -> Optional[dict]:
+def _solutions_search(query: str, product: dict) -> Optional[dict]:
     encoded = urllib.parse.quote_plus(query)
     for url in [
         f"https://www.solutionspestcontrol.com/search?q={encoded}&type=product",
@@ -1982,7 +2034,7 @@ def _solutions_search(query: str) -> Optional[dict]:
             log.info(f"  Solutions: got empty title, skipping")
             time.sleep(1.0)
             continue
-        result = _extract_from_soup(soup, "https://www.solutionspestcontrol.com", "solutions", "Solutions Pest & Lawn")
+        result = _extract_from_soup(soup, "https://www.solutionspestcontrol.com", "solutions", "Solutions Pest & Lawn", product)
         if result:
             return result
         log.info(f"  Solutions: page '{title[:60]}' loaded but no price found")
@@ -1994,6 +2046,8 @@ def _solutions_search(query: str) -> Optional[dict]:
 
 def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[dict]:
     source_map = source_map or {}
+    if not _amazon_asins_for_product(product, source_map):
+        return None
     if AMAZON_CREATOR_CREDENTIAL_ID and AMAZON_CREATOR_SECRET:
         creators = _amazon_creators_api(product, source_map)
         if creators and creators.get("source") == "amazon_creators_api":
@@ -2001,7 +2055,7 @@ def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[
     keepa = _amazon_keepa(product, source_map)
     if keepa:
         return keepa
-    return _amazon_affiliate_link(product)
+    return None
 
 
 def _amazon_asins_for_product(product: dict, source_map: dict) -> list[str]:
@@ -2014,9 +2068,47 @@ def _amazon_asins_for_product(product: dict, source_map: dict) -> list[str]:
 
     add(product.get("asin"))
     for source in source_map.get("products", {}).get(str(product["id"]), []):
+        if not _verified_amazon_source(product, source):
+            continue
         if source.get("retailer") == "amazon" or "amazon.com" in source.get("url", ""):
             add(amazon_asin_from_url(source.get("url", "")))
     return asins
+
+
+def _tokenize_product_text(value: str) -> list[str]:
+    return [t for t in re.findall(r"[a-z0-9]+", str(value or "").lower()) if len(t) > 1]
+
+
+def _exact_product_phrases(product: dict) -> list[str]:
+    phrases = []
+    values = [product.get("name"), *product.get("alt_names", [])]
+    for value in values:
+        if not value:
+            continue
+        for candidate in (str(value), re.sub(r"\([^)]*\)", "", str(value))):
+            candidate = re.sub(r"\s+", " ", candidate).strip().lower()
+            tokens = _tokenize_product_text(candidate)
+            if len(tokens) >= 2 and candidate not in phrases:
+                phrases.append(candidate)
+    return phrases
+
+
+def _verified_amazon_source(product: dict, source: dict) -> bool:
+    is_amazon = source.get("retailer") == "amazon" or "amazon.com" in source.get("url", "")
+    if not is_amazon:
+        return False
+
+    source_asin = amazon_asin_from_url(source.get("url", ""))
+    product_asin = str(product.get("asin") or "").upper()
+    if product_asin and source_asin == product_asin:
+        return True
+
+    title = str(source.get("title") or "")
+    haystack = f"{title} {source.get('url', '')}".lower()
+    if any(phrase and phrase in haystack for phrase in _exact_product_phrases(product)):
+        return True
+
+    return False
 
 
 def _keepa_current_price(product_data: dict) -> Optional[float]:
@@ -2180,7 +2272,7 @@ def _amazon_item_offer(item, product: dict) -> dict:
 def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> dict:
     global _amazon_creators_disabled
     if _amazon_creators_disabled:
-        return _amazon_affiliate_link(product)
+        return None
 
     try:
         from amazon_creatorsapi import AmazonCreatorsApi, Country
@@ -2220,21 +2312,21 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
             )
             items = _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
         if not items:
-            return _amazon_affiliate_link(product)
+            return None
 
         for item in items:
             offer = _amazon_item_offer(item, product)
             if used_exact_asin or _matches_product(product, offer.get("title", ""), offer.get("url", "")):
                 return offer
 
-        return _amazon_affiliate_link(product)
+        return None
     except ImportError:
-        return _amazon_affiliate_link(product)
+        return None
     except Exception as e:
         if "AssociateNotEligible" in str(e):
             _amazon_creators_disabled = True
         log.warning(f"Amazon Creators API error: {e}")
-        return _amazon_affiliate_link(product)
+        return None
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
