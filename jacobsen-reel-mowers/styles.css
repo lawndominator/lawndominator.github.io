@@ -1,8 +1,8 @@
 :root {
   color-scheme: dark;
-  --bg: oklch(23% 0.025 116);
-  --deck: oklch(18% 0.023 112 / 88%);
-  --deck-hover: oklch(21% 0.03 112 / 94%);
+  --bg: oklch(13% 0.007 145);
+  --deck: oklch(17% 0.01 145 / 88%);
+  --deck-hover: oklch(21% 0.014 145 / 94%);
   --photo: oklch(91% 0.018 92);
   --text: oklch(88% 0.016 92);
   --strong: oklch(97% 0.016 86);
@@ -23,11 +23,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 16% 8%, oklch(68% 0.18 55 / 16%), transparent 28%),
-    linear-gradient(118deg, oklch(18% 0.03 118) 0 38%, transparent 38% 100%),
-    repeating-linear-gradient(104deg, var(--green-mid) 0 76px, var(--green-dark) 76px 152px),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -48,11 +44,45 @@ img {
   max-width: 100%;
 }
 
+.showroom-hero {
+  min-height: 42vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.ambient-field {
+  animation: field-drift 18s linear infinite;
+  background:
+    radial-gradient(circle at 18% 20%, oklch(68% 0.18 55 / 20%), transparent 24%),
+    radial-gradient(circle at 82% 24%, oklch(48% 0.16 143 / 22%), transparent 26%),
+    linear-gradient(180deg, oklch(9% 0.012 145 / 30%), var(--bg) 86%),
+    repeating-linear-gradient(
+      106deg,
+      oklch(31% 0.09 143 / 62%) 0 72px,
+      oklch(22% 0.07 143 / 70%) 72px 144px
+    );
+  inset: -12%;
+  opacity: 0.72;
+  position: absolute;
+  transform: rotate(-1deg) scale(1.04);
+}
+
+.showroom-hero::after {
+  background:
+    linear-gradient(90deg, var(--bg) 0%, transparent 48%, var(--bg) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 34%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
 .site-header {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 28px clamp(20px, 5vw, 60px) 8px;
+  position: relative;
+  z-index: 2;
 }
 
 .brand,
@@ -71,7 +101,9 @@ img {
 
 .inventory-intro {
   max-width: 1180px;
-  padding: 28px clamp(20px, 5vw, 60px) 10px;
+  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 60px) clamp(36px, 6vw, 78px);
+  position: relative;
+  z-index: 2;
 }
 
 .inventory-intro p {
@@ -93,11 +125,22 @@ img {
   text-transform: uppercase;
 }
 
+.inventory-intro span {
+  color: var(--muted);
+  display: block;
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.5;
+  margin-top: 18px;
+  max-width: 620px;
+}
+
 .inventory-grid {
   display: grid;
   gap: clamp(20px, 3vw, 38px);
   grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   padding: clamp(24px, 5vw, 56px) clamp(20px, 5vw, 60px) clamp(50px, 8vw, 90px);
+  position: relative;
+  z-index: 2;
 }
 
 .inventory-card {
@@ -407,6 +450,15 @@ dd {
   .detail-thumb {
     flex: 0 0 72px;
     height: 72px;
+  }
+}
+
+@keyframes field-drift {
+  from {
+    background-position: center, center, center, 0 0;
+  }
+  to {
+    background-position: center, center, center, 220px 0;
   }
 }
 
