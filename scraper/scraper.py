@@ -1692,6 +1692,8 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
         url = source.get("url")
         if not url or is_google_url(url):
             continue
+        if source.get("retailer") == "amazon" or "amazon.com" in url:
+            continue
         if is_known_wrong_product_source(product["id"], url, source.get("title", "")):
             continue
         html = fetch_saved_source(url)

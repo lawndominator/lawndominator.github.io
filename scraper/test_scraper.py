@@ -1065,6 +1065,34 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertIsNone(offer)
 
+    def test_saved_sources_skip_amazon_html_scraping(self):
+        product = {
+            "id": 118,
+            "slug": "feature-6-0-0",
+            "name": "Feature 6-0-0 Iron Fertilizer",
+            "search_query": "Feature 6-0-0",
+            "alt_names": ["Feature iron 6-0-0"],
+            "active_ingredient": "nitrogen + iron",
+        }
+        source_map = {
+            "products": {
+                "118": [{
+                    "url": "https://www.amazon.com/dp/B076TFPB1Z",
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                    "title": "Feature, 1 Bag",
+                    "manual_verified": True,
+                }]
+            }
+        }
+
+        previous_fetch = scraper.fetch_saved_source
+        scraper.fetch_saved_source = lambda url: "<html><body>0 Cart $10</body></html>"
+        try:
+            self.assertEqual(scraper.scrape_saved_sources(product, source_map), [])
+        finally:
+            scraper.fetch_saved_source = previous_fetch
+
     def test_amazon_result_requires_exact_asin(self):
         product = {
             "id": 230,
