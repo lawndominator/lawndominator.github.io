@@ -1726,6 +1726,9 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
                     if fallback:
                         add_offer(offers, fallback)
                     continue
+                else:
+                    log.info(f"  Saved source URL mismatch skipped: offer {offer_url[:60]} vs saved {source_url[:60]}")
+                    continue
             match_title = offer.get("title") or source.get("title") or ""
             if not source.get("manual_verified") and not _matches_product(product, match_title, url):
                 log.info(f"  Saved source mismatch skipped: {match_title[:70]} @ {url[:80]}")
