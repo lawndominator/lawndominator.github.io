@@ -82,14 +82,26 @@ img {
 }
 
 .brand,
-.seller-note {
+.header-actions {
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.seller-note {
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.header-actions a {
+  background: var(--orange);
+  color: oklch(17% 0.025 98);
+  padding: 10px 12px;
+}
+
+.header-actions span {
   border-bottom: 1px solid var(--orange);
   color: var(--orange);
   padding-bottom: 4px;
@@ -461,6 +473,11 @@ dd {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .header-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .inventory-grid {

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mower Inventory Admin</title>
+    <meta name="description" content="Simple admin dashboard prototype for adding and removing mower listings." />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <header class="admin-header">
+        <div>
+          <p>Inventory admin</p>
+          <h1>Mower listings</h1>
+        </div>
+        <a href="./">View website</a>
+      </header>
+
+      <section class="admin-board">
+        <form class="listing-form" id="listingForm">
+          <div class="form-heading">
+            <span>Add mower</span>
+            <strong>New listing</strong>
+          </div>
+          <p class="form-note">This demo saves changes in this browser only. The real SiteGround version will save to MySQL.</p>
+
+          <label class="image-drop">
+            <input id="imageInput" type="file" accept="image/*" />
+            <img id="imagePreview" alt="" />
+            <span id="imagePrompt">Add photo</span>
+          </label>
+
+          <div class="field-grid">
+            <label>
+              Year
+              <input name="year" type="text" placeholder="2017" required />
+            </label>
+            <label>
+              Price
+              <input name="price" type="text" placeholder="$4,850" required />
+            </label>
+          </div>
+
+          <label>
+            Model
+            <input name="model" type="text" placeholder="Jacobsen PGM22 Walk Reel" required />
+          </label>
+
+          <label>
+            Short note
+            <textarea name="note" placeholder="22 inch walk-behind reel mower. Includes catcher and transport wheels." required></textarea>
+          </label>
+
+          <div class="field-grid">
+            <label>
+              Hours
+              <input name="hours" type="text" placeholder="Example: 312" />
+            </label>
+            <label>
+              Cutting width
+              <input name="width" type="text" placeholder="22 in." />
+            </label>
+          </div>
+
+          <label>
+            Included
+            <input name="included" type="text" placeholder="Catcher, roller, transport wheels" />
+          </label>
+
+          <button type="submit">Add listing</button>
+        </form>
+
+        <section class="inventory-admin" aria-label="Current listings">
+          <div class="section-bar">
+            <div>
+              <span>Current listings</span>
+              <strong id="listingCount">0 active</strong>
+            </div>
+            <button id="resetListings" type="button">Reset demo</button>
+          </div>
+
+          <div class="admin-grid" id="adminGrid"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="listingTemplate">
+      <article class="admin-card">
+        <button class="remove-button" type="button" aria-label="Remove listing">X</button>
+        <img class="card-image" alt="" />
+        <div class="card-copy">
+          <h2></h2>
+          <strong class="card-price"></strong>
+          <p></p>
+          <dl></dl>
+        </div>
+      </article>
+    </template>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
