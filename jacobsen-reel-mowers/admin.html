@@ -26,10 +26,11 @@
           <p class="form-note">This demo saves changes in this browser only. The real SiteGround version will save to MySQL.</p>
 
           <label class="image-drop">
-            <input id="imageInput" type="file" accept="image/*" />
+            <input id="imageInput" type="file" accept="image/*" multiple />
             <img id="imagePreview" alt="" />
-            <span id="imagePrompt">Add photo</span>
+            <span id="imagePrompt">Add photos</span>
           </label>
+          <div class="image-strip" id="imageStrip" aria-label="Selected image previews"></div>
 
           <div class="field-grid">
             <label>
@@ -54,19 +55,18 @@
 
           <div class="field-grid">
             <label>
-              Hours
-              <input name="hours" type="text" placeholder="Example: 312" />
+              Stock #
+              <input name="stock" type="text" placeholder="JM-017" />
             </label>
             <label>
-              Cutting width
-              <input name="width" type="text" placeholder="22 in." />
+              Status
+              <select name="status">
+                <option>Available</option>
+                <option>Pending</option>
+                <option>Sold</option>
+              </select>
             </label>
           </div>
-
-          <label>
-            Included
-            <input name="included" type="text" placeholder="Catcher, roller, transport wheels" />
-          </label>
 
           <button type="submit">Add listing</button>
         </form>
@@ -85,17 +85,33 @@
     </main>
 
     <template id="listingTemplate">
-      <article class="admin-card">
+      <article class="admin-card" tabindex="0">
         <button class="remove-button" type="button" aria-label="Remove listing">X</button>
         <img class="card-image" alt="" />
         <div class="card-copy">
+          <span class="stock-pill"></span>
           <h2></h2>
           <strong class="card-price"></strong>
           <p></p>
-          <dl></dl>
+          <span class="status-pill"></span>
         </div>
       </article>
     </template>
+
+    <dialog class="listing-dialog" id="listingDialog">
+      <button class="dialog-close" type="button" aria-label="Close listing">X</button>
+      <div class="dialog-gallery" id="dialogGallery"></div>
+      <div>
+        <span class="stock-pill" id="dialogStock"></span>
+        <h2 id="dialogTitle"></h2>
+        <strong id="dialogPrice"></strong>
+        <p id="dialogNote"></p>
+        <div class="dialog-actions">
+          <button type="button">Edit listing</button>
+          <button type="button">Mark sold</button>
+        </div>
+      </div>
+    </dialog>
 
     <script src="./admin.js"></script>
   </body>

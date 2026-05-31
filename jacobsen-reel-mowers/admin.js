@@ -3,36 +3,33 @@ const STORAGE_KEY = "jacobsen-mower-admin-demo";
 const starterListings = [
   {
     id: crypto.randomUUID(),
-    image: "./assets/pgm22.png",
+    images: ["./assets/pgm22.png", "./assets/pgm22-field-2.jpg"],
     year: "2017",
     model: "Jacobsen PGM22 Walk Reel",
     price: "$4,850",
     note: "22 inch walk-behind reel mower example. Pickup or freight quote confirmed with seller.",
-    hours: "312",
-    width: "22 in.",
-    included: "Catcher, roller, transport wheels"
+    stock: "JM-017",
+    status: "Available"
   },
   {
     id: crypto.randomUUID(),
-    image: "./assets/eclipse-2.png",
+    images: ["./assets/eclipse-2.png", "./assets/eclipse-2-field.jpg"],
     year: "2020",
     model: "Jacobsen Eclipse 2",
     price: "$3,950",
     note: "Battery walk mower example with room for hours, notes, and accessories.",
-    hours: "184",
-    width: "22 in.",
-    included: "Charger, catcher, roller"
+    stock: "JM-020",
+    status: "Available"
   },
   {
     id: crypto.randomUUID(),
-    image: "./assets/pgm22.png",
+    images: ["./assets/pgm22.png", "./assets/pgm22-field-1.jpg"],
     year: "2019",
     model: "Jacobsen PGM22 Walk Reel",
     price: "$3,650",
     note: "Walk-behind reel mower example with room for blade count and accessories.",
-    hours: "428",
-    width: "22 in.",
-    included: "Catcher, roller"
+    stock: "JM-019",
+    status: "Pending"
   }
 ];
 
@@ -43,9 +40,16 @@ const count = document.querySelector("#listingCount");
 const imageInput = document.querySelector("#imageInput");
 const imagePreview = document.querySelector("#imagePreview");
 const imagePrompt = document.querySelector("#imagePrompt");
+const imageStrip = document.querySelector("#imageStrip");
+const dialog = document.querySelector("#listingDialog");
+const dialogGallery = document.querySelector("#dialogGallery");
+const dialogStock = document.querySelector("#dialogStock");
+const dialogTitle = document.querySelector("#dialogTitle");
+const dialogPrice = document.querySelector("#dialogPrice");
+const dialogNote = document.querySelector("#dialogNote");
 
 let listings = loadListings();
-let uploadedImage = "";
+let uploadedImages = [];
 
 function loadListings() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -67,23 +71,30 @@ function renderListings() {
     const title = node.querySelector("h2");
     const price = node.querySelector(".card-price");
     const note = node.querySelector("p");
-    const specs = node.querySelector("dl");
+    const stock = node.querySelector(".stock-pill");
+    const status = node.querySelector(".status-pill");
     const remove = node.querySelector(".remove-button");
+    const primaryImage = listing.images?.[0] || listing.image || "./assets/pgm22.png";
 
-    image.src = listing.image;
+    image.src = primaryImage;
     image.alt = `${listing.year} ${listing.model}`;
+    stock.textContent = listing.stock || "No stock #";
     title.textContent = `${listing.year} ${listing.model}`;
     price.textContent = listing.price;
     note.textContent = listing.note;
-    specs.innerHTML = [
-      ["Hours", listing.hours || "Not listed"],
-      ["Width", listing.width || "Not listed"],
-      ["Included", listing.included || "Not listed"]
-    ]
-      .map(([term, value]) => `<div><dt>${term}:</dt><dd>${value}</dd></div>`)
-      .join("");
+    status.textContent = listing.status || "Available";
+    status.dataset.status = status.textContent.toLowerCase();
 
-    remove.addEventListener("click", () => {
+    card.addEventListener("click", () => openListing(listing));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openListing(listing);
+      }
+    });
+
+    remove.addEventListener("click", (event) => {
+      event.stopPropagation();
       listings = listings.filter((item) => item.id !== listing.id);
       saveListings();
       renderListings();
@@ -94,17 +105,18 @@ function renderListings() {
 }
 
 imageInput.addEventListener("change", () => {
-  const file = imageInput.files?.[0];
-  if (!file) return;
+  const files = Array.from(imageInput.files || []);
+  if (!files.length) return;
 
-  const reader = new FileReader();
-  reader.addEventListener("load", () => {
-    uploadedImage = reader.result;
-    imagePreview.src = uploadedImage;
-    imagePrompt.textContent = "Change photo";
+  Promise.all(files.map(readFile)).then((images) => {
+    uploadedImages = images;
+    imagePreview.src = uploadedImages[0];
+    imagePrompt.textContent = `${uploadedImages.length} selected`;
     imagePreview.parentElement.classList.add("has-image");
+    imageStrip.innerHTML = uploadedImages
+      .map((src) => `<img src="${src}" alt="Selected mower preview" />`)
+      .join("");
   });
-  reader.readAsDataURL(file);
 });
 
 form.addEventListener("submit", (event) => {
@@ -112,24 +124,44 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   const listing = {
     id: crypto.randomUUID(),
-    image: uploadedImage || "./assets/pgm22.png",
+    images: uploadedImages.length ? uploadedImages : ["./assets/pgm22.png"],
     year: data.get("year").trim(),
     model: data.get("model").trim(),
     price: data.get("price").trim(),
     note: data.get("note").trim(),
-    hours: data.get("hours").trim(),
-    width: data.get("width").trim(),
-    included: data.get("included").trim()
+    stock: data.get("stock").trim() || `JM-${String(Date.now()).slice(-4)}`,
+    status: data.get("status")
   };
 
   listings = [listing, ...listings];
   saveListings();
   renderListings();
   form.reset();
-  uploadedImage = "";
+  uploadedImages = [];
   imagePreview.removeAttribute("src");
   imagePreview.parentElement.classList.remove("has-image");
-  imagePrompt.textContent = "Add photo";
+  imagePrompt.textContent = "Add photos";
+  imageStrip.innerHTML = "";
 });
+
+function readFile(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => resolve(reader.result));
+    reader.readAsDataURL(file);
+  });
+}
+
+function openListing(listing) {
+  const images = listing.images?.length ? listing.images : [listing.image || "./assets/pgm22.png"];
+  dialogGallery.innerHTML = images.map((src) => `<img src="${src}" alt="${listing.model}" />`).join("");
+  dialogStock.textContent = listing.stock || "No stock #";
+  dialogTitle.textContent = `${listing.year} ${listing.model}`;
+  dialogPrice.textContent = listing.price;
+  dialogNote.textContent = listing.note;
+  dialog.showModal();
+}
+
+document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
 
 renderListings();

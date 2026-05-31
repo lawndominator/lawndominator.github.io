@@ -178,7 +178,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   background: var(--panel);
   border: 1px solid var(--line);
   color: var(--paper);
@@ -191,6 +192,23 @@ textarea {
 textarea {
   min-height: 84px;
   resize: vertical;
+}
+
+select {
+  appearance: none;
+}
+
+.image-strip {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.image-strip img {
+  aspect-ratio: 1;
+  background: oklch(86% 0.012 88);
+  object-fit: cover;
+  width: 100%;
 }
 
 .listing-form > button {
@@ -232,9 +250,14 @@ textarea {
 .admin-card {
   background: var(--panel);
   border: 1px solid var(--line);
+  cursor: pointer;
   min-height: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.admin-card:hover {
+  border-color: var(--orange);
 }
 
 .remove-button {
@@ -267,6 +290,15 @@ textarea {
   padding: 14px;
 }
 
+.stock-pill,
+.status-pill {
+  color: var(--orange);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .card-copy h2 {
   font-size: 1.05rem;
   font-weight: 500;
@@ -279,35 +311,96 @@ textarea {
   font-size: 1rem;
 }
 
-.card-copy p {
+.card-copy p,
+.listing-dialog p {
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.42;
   margin: 0;
 }
 
-dl {
-  display: grid;
-  gap: 5px;
-  margin: 8px 0 0;
-}
-
-dl div {
-  display: grid;
-  gap: 6px;
-  grid-template-columns: 76px minmax(0, 1fr);
-}
-
-dt {
+.status-pill {
   color: var(--paper);
-  font-weight: 900;
+  margin-top: 2px;
 }
 
-dd {
-  color: var(--muted);
-  line-height: 1.25;
-  margin: 0;
-  min-width: 0;
+.status-pill[data-status="sold"] {
+  color: oklch(68% 0.18 29);
+}
+
+.status-pill[data-status="pending"] {
+  color: oklch(78% 0.14 82);
+}
+
+.listing-dialog {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  max-width: min(980px, calc(100vw - 28px));
+  padding: 18px;
+  width: 920px;
+}
+
+.listing-dialog::backdrop {
+  background: oklch(4% 0.012 145 / 72%);
+}
+
+.dialog-close {
+  background: var(--danger);
+  border: 0;
+  color: var(--paper);
+  cursor: pointer;
+  font-weight: 900;
+  height: 36px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 36px;
+}
+
+.dialog-gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-bottom: 18px;
+}
+
+.dialog-gallery img {
+  aspect-ratio: 1.1;
+  background: oklch(86% 0.012 88);
+  object-fit: cover;
+  width: 100%;
+}
+
+.listing-dialog h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+#dialogPrice {
+  color: var(--orange);
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dialog-actions button {
+  background: var(--orange);
+  border: 0;
+  color: oklch(16% 0.018 80);
+  cursor: pointer;
+  font-weight: 900;
+  min-height: 42px;
+  padding: 0 16px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 980px) {
