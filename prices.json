@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_at": "2026-05-31T00:44:07.388220+00:00",
-  "product_count": 120,
+  "product_count": 121,
   "products": [
     {
       "id": 1,
@@ -12789,6 +12789,52 @@
         "source": "manual_verified_source"
       },
       "updated_at": "2026-05-31T00:44:07.388220+00:00"
+    },
+    {
+      "id": 157,
+      "slug": "n-ext-spoon-juice",
+      "name": "N-Ext Spoon Juice 5-0-1",
+      "category": "fertilizer",
+      "active_ingredient": "5-0-1 fertilizer + humic acid + kelp + iron",
+      "alt_names": [
+        "Spoon Juice",
+        "Spoon Juice 5-0-1",
+        "Yard Mastery Spoon Juice",
+        "Greene County Spoon Juice"
+      ],
+      "offers": [
+        {
+          "retailer": "yardmastery",
+          "retailer_name": "Yard Mastery",
+          "price": 21.59,
+          "url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp",
+          "in_stock": true,
+          "title": "5-0-1 Spoon Juice Liquid Fertilizer and Bio Stimulant with Humic Acid - Yard Mastery",
+          "image": "https://yardmastery.com/cdn/shop/files/1000x1000_SpoonJuice_MAINimage_quart_gal.jpg?v=1742332371",
+          "last_checked": "2026-05-31T03:11:15.870993+00:00",
+          "source": "manual_verified_source",
+          "package_quantity": 32.0,
+          "package_unit": "fl oz",
+          "package_label": "1 qt",
+          "price_per_unit": 0.67
+        }
+      ],
+      "best_price": {
+        "retailer": "yardmastery",
+        "retailer_name": "Yard Mastery",
+        "price": 21.59,
+        "url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp",
+        "in_stock": true,
+        "title": "5-0-1 Spoon Juice Liquid Fertilizer and Bio Stimulant with Humic Acid - Yard Mastery",
+        "image": "https://yardmastery.com/cdn/shop/files/1000x1000_SpoonJuice_MAINimage_quart_gal.jpg?v=1742332371",
+        "last_checked": "2026-05-31T03:11:15.870993+00:00",
+        "source": "manual_verified_source",
+        "package_quantity": 32.0,
+        "package_unit": "fl oz",
+        "package_label": "1 qt",
+        "price_per_unit": 0.67
+      },
+      "updated_at": "2026-05-31T03:11:15.870993+00:00"
     }
   ]
 }

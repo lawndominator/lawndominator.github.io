@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-31T00:44:07.388220+00:00",
+  "generated_at": "2026-05-31T03:11:15.870993+00:00",
   "saved_source_limit": 5,
   "totals": {
     "sources": 774,
@@ -9030,6 +9030,27 @@
       ],
       "included_sources": 10,
       "not_included_sources": 1,
+      "invalid_sources": 0
+    },
+    {
+      "id": 157,
+      "slug": "n-ext-spoon-juice",
+      "name": "N-Ext Spoon Juice 5-0-1",
+      "category": "fertilizer",
+      "sources": [
+        {
+          "url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp",
+          "retailer": "yardmastery",
+          "retailer_name": "Yard Mastery",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 21.59,
+          "offer_url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp"
+        }
+      ],
+      "included_sources": 1,
+      "not_included_sources": 0,
       "invalid_sources": 0
     }
   ]
