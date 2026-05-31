@@ -4,159 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jacobsen Reel Mower Inventory</title>
-    <meta
-      name="description"
-      content="Example Jacobsen reel mower inventory page for mower sales, pricing, photos, and listing details."
-    />
+    <meta name="description" content="Example mower inventory grid with expandable listing details." />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="inventory-shell">
-      <section class="product-stage" aria-label="Featured mower listing">
-        <div class="topline">
-          <a class="brand" href="./" aria-label="Mower inventory home">
-            <span class="brand-badge">JM</span>
-            <span>Jacobsen mower inventory</span>
-          </a>
-          <a class="seller-link" href="#contact">Contact seller</a>
+    <header class="site-header">
+      <a class="brand" href="./">Jacobsen mower inventory</a>
+      <a class="contact-link" href="#contact">Contact seller</a>
+    </header>
+
+    <main>
+      <section class="inventory-intro">
+        <p>Current mower examples</p>
+        <h1>Available reel mowers</h1>
+      </section>
+
+      <section class="inventory-grid" aria-label="Mower inventory">
+        <article class="inventory-card" tabindex="0" data-product="greens">
+          <div class="photo-box">
+            <img src="./assets/greens-king-iv-plus.png" alt="2017 Jacobsen Greens King IV Plus" />
+          </div>
+          <h2>2017 Jacobsen Greens King IV Plus</h2>
+          <p class="price">$4,850.00</p>
+          <p class="payment">Starting at $169/mo or 0% APR with example financing. See if you qualify.</p>
+        </article>
+
+        <article class="inventory-card" tabindex="0" data-product="eclipse">
+          <div class="photo-box">
+            <img src="./assets/eclipse-2.png" alt="2020 Jacobsen Eclipse 2" />
+          </div>
+          <h2>2020 Jacobsen Eclipse 2</h2>
+          <p class="price">$3,950.00</p>
+          <p class="payment">Starting at $138/mo or 0% APR with example financing. See if you qualify.</p>
+        </article>
+
+        <article class="inventory-card" tabindex="0" data-product="gp">
+          <div class="photo-box">
+            <img src="./assets/gp400.png" alt="2019 Jacobsen GP400" />
+          </div>
+          <h2>2019 Jacobsen GP400 Triplex</h2>
+          <p class="price">$12,900.00</p>
+          <p class="payment">Starting at $449/mo or 0% APR with example financing. See if you qualify.</p>
+        </article>
+
+        <article class="inventory-card" tabindex="0" data-product="greens2">
+          <div class="photo-box phone-photo">
+            <img src="./assets/greens-king-iv-plus.png" alt="2018 Jacobsen Greens King example mower" />
+          </div>
+          <h2>2018 Jacobsen Greens King Example</h2>
+          <p class="price">$5,250.00</p>
+          <p class="payment">Starting at $183/mo or 0% APR with example financing. See if you qualify.</p>
+        </article>
+      </section>
+
+      <section class="detail-panel" id="details" aria-live="polite">
+        <button class="close-detail" type="button" aria-label="Close details">Close</button>
+        <div class="detail-gallery">
+          <button class="detail-thumb is-active" type="button">
+            <img id="detailThumb" src="./assets/greens-king-iv-plus.png" alt="" />
+          </button>
+          <button class="detail-thumb" type="button">
+            <img id="detailThumbTwo" src="./assets/greens-king-iv-plus.png" alt="" />
+          </button>
+          <button class="detail-thumb" type="button">
+            <img id="detailThumbThree" src="./assets/greens-king-iv-plus.png" alt="" />
+          </button>
         </div>
 
-        <div class="listing-board">
-          <aside class="thumb-rail" aria-label="Select example mower">
-            <button class="thumb is-active" type="button" data-product="greens">
-              <img src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
-              <span>GK IV</span>
-            </button>
-            <button class="thumb" type="button" data-product="eclipse">
-              <img src="./assets/eclipse-2.png" alt="Jacobsen Eclipse 2 walking reel mower" />
-              <span>E2</span>
-            </button>
-            <button class="thumb" type="button" data-product="gp">
-              <img src="./assets/gp400.png" alt="Jacobsen GP400 triplex reel mower" />
-              <span>GP400</span>
-            </button>
-          </aside>
+        <div class="detail-image">
+          <img id="detailImage" src="./assets/greens-king-iv-plus.png" alt="Selected mower" />
+        </div>
 
-          <div class="photo-well" data-reveal>
-            <div class="stripe-mat" aria-hidden="true"></div>
-            <img id="activeImage" src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
-            <div class="lot-plate">
-              <span>Example listing</span>
-              <strong id="activeLot">LOT 0417</strong>
-            </div>
+        <article class="detail-copy">
+          <h2 id="detailTitle">2017 Jacobsen Greens King IV Plus</h2>
+          <p class="detail-price" id="detailPrice">$4,850.00</p>
+          <p class="payment" id="detailPayment">Starting at $169/mo or 0% APR with example financing. See if you qualify.</p>
+          <p class="shipping">Pickup or shipping quote confirmed with seller.</p>
+
+          <div class="quantity">
+            <span>Quantity</span>
+            <div><button type="button">-</button><strong>1</strong><button type="button">+</button></div>
           </div>
 
-          <article class="product-sheet" data-reveal>
-            <p class="eyebrow" id="activeStatus">Available now</p>
-            <h1 id="activeTitle">2017 Jacobsen Greens King IV Plus</h1>
-            <p class="price" id="activePrice">$4,850.00</p>
-            <p class="fine-print">Example pricing. Freight, pickup, and final condition details confirmed by seller.</p>
+          <a class="primary-action" href="#contact">Ask about this mower</a>
 
-            <div class="quantity-row" aria-label="Quantity selector">
-              <span>Quantity</span>
-              <div>
-                <button type="button" aria-label="Decrease quantity">-</button>
-                <strong>1</strong>
-                <button type="button" aria-label="Increase quantity">+</button>
-              </div>
-            </div>
-
-            <div class="purchase-actions">
-              <a href="#contact">Ask about this mower</a>
-              <a href="#inventory" class="secondary-action">View other examples</a>
-            </div>
-
-            <section class="description-block" aria-label="Mower description">
-              <h2>Description</h2>
-              <dl id="activeSpecs">
-                <div><dt>Year</dt><dd>2017</dd></div>
-                <div><dt>Model</dt><dd>Greens King IV Plus</dd></div>
-                <div><dt>Reel</dt><dd>11 blade example reel</dd></div>
-                <div><dt>Cutting width</dt><dd>22 in.</dd></div>
-                <div><dt>Engine hours</dt><dd>Example hours shown here</dd></div>
-                <div><dt>Included</dt><dd>Roller, catcher, transport wheels</dd></div>
-                <div><dt>Condition</dt><dd>Used. Example listing copy for photos, notes, and buyer questions.</dd></div>
-              </dl>
-            </section>
-          </article>
-        </div>
+          <div class="description">
+            <h3>Description</h3>
+            <dl id="detailSpecs"></dl>
+          </div>
+        </article>
       </section>
 
-      <section class="ticker-strip" aria-label="Inventory notes">
-        <div>
-          <span>Jacobsen walk mowers</span>
-          <span>Greens mowers</span>
-          <span>Triplex units</span>
-          <span>Used inventory</span>
-          <span>Buyer questions welcome</span>
-          <span>Jacobsen walk mowers</span>
-          <span>Greens mowers</span>
-          <span>Triplex units</span>
-          <span>Used inventory</span>
-          <span>Buyer questions welcome</span>
-        </div>
-      </section>
-
-      <section class="inventory-drawer" id="inventory">
-        <div class="drawer-heading" data-reveal>
-          <p class="eyebrow">Current examples</p>
-          <h2>Listings built for photos, price, specs, and quick buyer decisions.</h2>
-        </div>
-
-        <div class="mower-list">
-          <article class="mower-row" data-reveal data-product-row="greens">
-            <span class="row-number">01</span>
-            <img src="./assets/greens-king-iv-plus.png" alt="Jacobsen Greens King IV Plus" />
-            <div>
-              <h3>2017 Jacobsen Greens King IV Plus</h3>
-              <p>Example listing with year, model, reel count, included accessories, and seller notes.</p>
-            </div>
-            <strong>$4,850</strong>
-          </article>
-
-          <article class="mower-row" data-reveal data-product-row="eclipse">
-            <span class="row-number">02</span>
-            <img src="./assets/eclipse-2.png" alt="Jacobsen Eclipse 2" />
-            <div>
-              <h3>2020 Jacobsen Eclipse 2</h3>
-              <p>Example battery walk mower listing with clean photo gallery and short buyer details.</p>
-            </div>
-            <strong>$3,950</strong>
-          </article>
-
-          <article class="mower-row" data-reveal data-product-row="gp">
-            <span class="row-number">03</span>
-            <img src="./assets/gp400.png" alt="Jacobsen GP400" />
-            <div>
-              <h3>2019 Jacobsen GP400</h3>
-              <p>Example triplex listing for larger properties, crews, and golf course buyers.</p>
-            </div>
-            <strong>$12,900</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact-dock" id="contact">
-        <div data-reveal>
-          <p class="eyebrow">Contact seller</p>
-          <h2>Want this inventory connected to real listings?</h2>
-          <p>
-            The admin dashboard can add mower photos, specs, price, sold status, and delete buttons without touching code.
-          </p>
-        </div>
-        <form class="lead-form" data-reveal>
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" />
-          </label>
-          <label>
-            Phone or email
-            <input type="text" name="contact" placeholder="Best contact" />
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Which mower are you asking about?"></textarea>
-          </label>
+      <section class="contact-section" id="contact">
+        <h2>Contact seller</h2>
+        <form class="lead-form">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="contact" placeholder="Phone or email" />
+          <textarea name="message" placeholder="Which mower are you asking about?"></textarea>
           <button type="button">Send mower inquiry</button>
         </form>
       </section>
