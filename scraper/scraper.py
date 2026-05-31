@@ -14,6 +14,7 @@ GitHub Secrets:
   AMAZON_CREATOR_CREDENTIAL_ID  - Creators API credential ID (optional, enables real prices)
   AMAZON_CREATOR_SECRET         - Creators API credential secret (optional)
   AMAZON_CREATOR_VERSION        - Creators API version, defaults to 3.1
+  AMAZON_CREATOR_THROTTLING     - Creators API request delay, defaults to 1 second
   KEEPA_API_KEY                 - Keepa API key (optional, enables Amazon prices)
   DOMYOWN_AFFILIATE_ID          - DoMyOwn affiliate ID (optional)
 """
@@ -2127,12 +2128,11 @@ def _amazon_creators_api(product: dict) -> dict:
             version=AMAZON_CREATOR_VERSION,
             tag=AMAZON_TAG,
             country=Country.US,
-            throttling=0,
+            throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING", "1")),
         )
         query = product.get("amazon_query") or product["search_query"]
         response = client.search_items(
             keywords=query,
-            search_index="LawnAndGarden",
             item_count=1,
             resources=[
                 SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
