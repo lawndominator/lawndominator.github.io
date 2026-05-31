@@ -271,7 +271,7 @@ def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
 
 
 def min_price_for_product(product: dict) -> float:
-    if product.get("category") == "soil-amendment":
+    if product.get("category") in {"soil-amendment", "micronutrient", "fertilizer-consumer"}:
         return MIN_SOIL_AMENDMENT_PRICE
     return MIN_CHEMICAL_PRICE
 

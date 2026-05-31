@@ -397,6 +397,11 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(best["retailer"], "real")
 
+    def test_micronutrient_uses_lower_price_floor(self):
+        product = {"id": 245, "category": "micronutrient"}
+
+        self.assertEqual(scraper.min_price_for_product(product), scraper.MIN_SOIL_AMENDMENT_PRICE)
+
     def test_select_best_uses_unit_price_for_comparable_sizes(self):
         product = {"id": 1, "category": "post-emergent"}
         offers = [

@@ -72,7 +72,7 @@ jobs:
           SHOPPING_DETAIL_RESULT_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '3' || '0' }}
           ORGANIC_RESULT_LIMIT:  "1"
           ORGANIC_FETCH_TIMEOUT: "9000"
-          SAVED_SOURCE_LIMIT: "5"
+          SAVED_SOURCE_LIMIT: "8"
           MAX_SAVED_SOURCES_PER_PRODUCT: "50"
           MIN_CHEMICAL_PRICE: "10"
           MIN_SOIL_AMENDMENT_PRICE: "5"
