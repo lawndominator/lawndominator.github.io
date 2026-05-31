@@ -1,12 +1,12 @@
 const products = {
   greens: {
-    image: "./assets/greens-king-iv-plus.png",
-    alt: "2017 Jacobsen Greens King IV Plus",
-    title: "2017 Jacobsen Greens King IV Plus",
+    image: "./assets/pgm22-field-1.jpg",
+    alt: "2017 Jacobsen PGM22 Walk Reel",
+    title: "2017 Jacobsen PGM22 Walk Reel",
     price: "$4,850.00",
     specs: [
       ["Year", "2017"],
-      ["Model", "Jacobsen Greens King IV Plus"],
+      ["Model", "Jacobsen PGM22"],
       ["Number of blades", "11 blade example reel"],
       ["Cutting width", "22 in. width of cut"],
       ["Height of cut", "0.1 - 1.42"],
@@ -16,7 +16,7 @@ const products = {
     ]
   },
   eclipse: {
-    image: "./assets/eclipse-2.png",
+    image: "./assets/eclipse-2-field.jpg",
     alt: "2020 Jacobsen Eclipse 2",
     title: "2020 Jacobsen Eclipse 2",
     price: "$3,950.00",
@@ -31,7 +31,7 @@ const products = {
     ]
   },
   pgm: {
-    image: "./assets/eclipse-2.png",
+    image: "./assets/pgm22-field-2.jpg",
     alt: "2019 Jacobsen PGM 22 Walk Reel",
     title: "2019 Jacobsen PGM 22 Walk Reel",
     price: "$3,650.00",
@@ -46,13 +46,13 @@ const products = {
     ]
   },
   greens2: {
-    image: "./assets/greens-king-iv-plus.png",
-    alt: "2018 Jacobsen Greens King Walk Reel",
-    title: "2018 Jacobsen Greens King Walk Reel",
+    image: "./assets/pgm22.png",
+    alt: "2018 Jacobsen PGM22 Walk Reel",
+    title: "2018 Jacobsen PGM22 Walk Reel",
     price: "$5,250.00",
     specs: [
       ["Year", "2018"],
-      ["Model", "Jacobsen Greens King example"],
+      ["Model", "Jacobsen PGM22 example"],
       ["Number of blades", "Example blade count"],
       ["Cutting width", "22 in. width of cut"],
       ["Engine hours", "Example hours"],

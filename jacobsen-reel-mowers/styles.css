@@ -51,26 +51,22 @@ img {
 }
 
 .ambient-field {
-  animation: field-drift 18s linear infinite;
+  animation: hero-breathe 18s ease-in-out infinite alternate;
   background:
-    radial-gradient(circle at 18% 20%, oklch(68% 0.18 55 / 20%), transparent 24%),
-    radial-gradient(circle at 82% 24%, oklch(48% 0.16 143 / 22%), transparent 26%),
-    linear-gradient(180deg, oklch(9% 0.012 145 / 30%), var(--bg) 86%),
-    repeating-linear-gradient(
-      106deg,
-      oklch(31% 0.09 143 / 62%) 0 72px,
-      oklch(22% 0.07 143 / 70%) 72px 144px
-    );
+    radial-gradient(circle at 18% 18%, oklch(68% 0.18 55 / 20%), transparent 22%),
+    linear-gradient(90deg, oklch(8% 0.012 145 / 92%) 0%, oklch(10% 0.012 145 / 70%) 44%, oklch(10% 0.012 145 / 24%) 100%),
+    url("./assets/pgm22-field-1.jpg") center 42% / cover;
   inset: -12%;
-  opacity: 0.72;
+  opacity: 0.88;
   position: absolute;
-  transform: rotate(-1deg) scale(1.04);
+  transform: scale(1.04);
 }
 
 .showroom-hero::after {
   background:
     linear-gradient(90deg, var(--bg) 0%, transparent 48%, var(--bg) 100%),
-    linear-gradient(0deg, var(--bg) 0%, transparent 34%);
+    linear-gradient(0deg, var(--bg) 0%, transparent 34%),
+    radial-gradient(circle at 76% 26%, oklch(68% 0.18 55 / 16%), transparent 20%);
   content: "";
   inset: 0;
   position: absolute;
@@ -148,6 +144,8 @@ img {
   border: 1px solid oklch(97% 0.016 86 / 14%);
   box-shadow: 0 24px 70px oklch(8% 0.03 120 / 28%);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   outline: none;
   padding: 12px 12px 16px;
   transition:
@@ -190,11 +188,6 @@ img {
   width: 100%;
 }
 
-.photo-box.cutout img {
-  object-fit: contain;
-  padding: 16px;
-}
-
 .inventory-card h2 {
   color: var(--text);
   font-size: clamp(1.05rem, 1.8vw, 1.35rem);
@@ -226,6 +219,7 @@ img {
   cursor: pointer;
   font-weight: 800;
   min-height: 42px;
+  margin-top: auto;
   text-transform: uppercase;
   width: 100%;
 }
@@ -453,12 +447,12 @@ dd {
   }
 }
 
-@keyframes field-drift {
+@keyframes hero-breathe {
   from {
-    background-position: center, center, center, 0 0;
+    transform: scale(1.04) translate3d(0, 0, 0);
   }
   to {
-    background-position: center, center, center, 220px 0;
+    transform: scale(1.1) translate3d(-1.4%, -1.2%, 0);
   }
 }
 
