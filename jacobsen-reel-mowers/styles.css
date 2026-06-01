@@ -74,14 +74,9 @@ img {
 
 .site-header {
   align-items: center;
-  background:
-    linear-gradient(90deg, oklch(9% 0.01 145 / 94%), oklch(13% 0.012 145 / 82%));
-  border: 1px solid oklch(97% 0.016 86 / 12%);
-  box-shadow: 0 24px 80px oklch(4% 0.02 145 / 34%);
   display: flex;
-  justify-content: space-between;
-  margin: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 60px) 0;
-  padding: 14px clamp(14px, 2.4vw, 24px);
+  justify-content: flex-end;
+  padding: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 60px) 0;
   position: relative;
   z-index: 2;
 }
@@ -91,20 +86,6 @@ img {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.logo-brand {
-  align-items: center;
-  display: inline-flex;
-  max-width: min(300px, 52vw);
-}
-
-.logo-brand img {
-  filter: drop-shadow(0 14px 30px oklch(4% 0.02 145 / 42%));
-  height: auto;
-  max-height: 64px;
-  object-fit: contain;
-  width: 100%;
 }
 
 .header-actions {
@@ -126,10 +107,21 @@ img {
 }
 
 .inventory-intro {
+  margin: 0 auto;
   max-width: 1180px;
-  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 60px) clamp(36px, 6vw, 78px);
+  padding: clamp(8px, 2vw, 26px) clamp(20px, 5vw, 60px) clamp(46px, 8vw, 96px);
   position: relative;
+  text-align: center;
   z-index: 2;
+}
+
+.hero-logo {
+  display: block;
+  filter: drop-shadow(0 24px 70px oklch(2% 0.02 145 / 65%));
+  height: auto;
+  margin: 0 auto clamp(22px, 4vw, 42px);
+  max-width: min(820px, 88vw);
+  width: 100%;
 }
 
 .inventory-intro p {
@@ -156,7 +148,7 @@ img {
   display: block;
   font-size: clamp(1rem, 1.7vw, 1.22rem);
   line-height: 1.5;
-  margin-top: 18px;
+  margin: 18px auto 0;
   max-width: 620px;
 }
 
