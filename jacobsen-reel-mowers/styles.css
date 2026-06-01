@@ -72,44 +72,10 @@ img {
   position: absolute;
 }
 
-.site-header {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  padding: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 60px) 0;
-  position: relative;
-  z-index: 2;
-}
-
-.header-actions {
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.header-actions {
-  align-items: center;
-  display: flex;
-  gap: 16px;
-}
-
-.header-actions a {
-  background: var(--orange);
-  color: oklch(17% 0.025 98);
-  padding: 10px 12px;
-}
-
-.header-actions span {
-  border-bottom: 1px solid var(--orange);
-  color: var(--orange);
-  padding-bottom: 4px;
-}
-
 .inventory-intro {
   margin: 0 auto;
   max-width: 1180px;
-  padding: clamp(8px, 2vw, 26px) clamp(20px, 5vw, 60px) clamp(46px, 8vw, 96px);
+  padding: clamp(38px, 7vw, 78px) clamp(20px, 5vw, 60px) clamp(42px, 7vw, 82px);
   position: relative;
   text-align: center;
   z-index: 2;
@@ -135,7 +101,7 @@ img {
 
 .inventory-intro h1 {
   color: var(--strong);
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(1.7rem, 3.8vw, 3.4rem);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 0.95;
@@ -156,6 +122,8 @@ img {
   display: grid;
   gap: clamp(20px, 3vw, 38px);
   grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  margin: 0 auto;
+  max-width: 1240px;
   padding: clamp(24px, 5vw, 56px) clamp(20px, 5vw, 60px) clamp(50px, 8vw, 90px);
   position: relative;
   z-index: 2;
@@ -479,17 +447,6 @@ dd {
 }
 
 @media (max-width: 520px) {
-  .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .header-actions {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .inventory-grid {
     gap: 30px 18px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
