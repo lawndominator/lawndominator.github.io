@@ -74,9 +74,14 @@ img {
 
 .site-header {
   align-items: center;
+  background:
+    linear-gradient(90deg, oklch(9% 0.01 145 / 94%), oklch(13% 0.012 145 / 82%));
+  border: 1px solid oklch(97% 0.016 86 / 12%);
+  box-shadow: 0 24px 80px oklch(4% 0.02 145 / 34%);
   display: flex;
   justify-content: space-between;
-  padding: 28px clamp(20px, 5vw, 60px) 8px;
+  margin: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 60px) 0;
+  padding: 14px clamp(14px, 2.4vw, 24px);
   position: relative;
   z-index: 2;
 }
@@ -91,13 +96,13 @@ img {
 .logo-brand {
   align-items: center;
   display: inline-flex;
-  max-width: min(340px, 54vw);
+  max-width: min(300px, 52vw);
 }
 
 .logo-brand img {
   filter: drop-shadow(0 14px 30px oklch(4% 0.02 145 / 42%));
   height: auto;
-  max-height: 82px;
+  max-height: 64px;
   object-fit: contain;
   width: 100%;
 }
