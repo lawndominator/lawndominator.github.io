@@ -81,12 +81,25 @@ img {
   z-index: 2;
 }
 
-.brand,
 .header-actions {
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.logo-brand {
+  align-items: center;
+  display: inline-flex;
+  max-width: min(340px, 54vw);
+}
+
+.logo-brand img {
+  filter: drop-shadow(0 14px 30px oklch(4% 0.02 145 / 42%));
+  height: auto;
+  max-height: 82px;
+  object-fit: contain;
+  width: 100%;
 }
 
 .header-actions {

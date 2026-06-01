@@ -47,6 +47,15 @@ a {
   margin-bottom: 22px;
 }
 
+.admin-logo {
+  display: block;
+  height: auto;
+  margin-bottom: 18px;
+  max-height: 76px;
+  max-width: min(360px, 70vw);
+  object-fit: contain;
+}
+
 .admin-header p,
 .form-heading span,
 .section-bar span {
