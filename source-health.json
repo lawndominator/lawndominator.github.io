@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-02T02:07:15.152456+00:00",
+  "generated_at": "2026-06-02T07:28:11.097559+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 786,
     "manual_verified_sources": 359,
-    "included_sources": 687,
-    "not_included_sources": 99,
+    "included_sources": 686,
+    "not_included_sources": 100,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 687,
+    "included": 686,
     "not_checked_saved_source_limit": 50,
     "no_extracted_offer": 37,
     "below $10.00 minimum for this category": 10,
-    "no_price": 2
+    "no_price": 3
   },
   "products": [
     {
@@ -737,7 +737,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.48,
+          "price": 24.77,
           "offer_url": "https://www.domyown.com/hiyield-atrazine-weed-killer-p-2023.html"
         }
       ],
@@ -1373,7 +1373,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 95.0,
+          "price": 97.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1616,7 +1616,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 28.48,
+          "price": 29.07,
           "offer_url": "https://www.domyown.com/hiyield-triclopyr-ester-p-4543.html"
         },
         {
@@ -1634,14 +1634,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 35.76,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B009ATET6I?tag=lawndominator-20"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2061,7 +2061,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 81.03,
+          "price": 80.23,
           "offer_url": "https://www.amazon.com/dp/B015BSWOV8?tag=lawndominator-20"
         }
       ],
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 64.94,
+          "price": 84.41,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 58.43,
+          "price": 63.98,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4320,7 +4320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.98,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4876,7 +4876,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 82.99,
+          "price": 85.64,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -8357,7 +8357,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.9,
+          "price": 29.69,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
