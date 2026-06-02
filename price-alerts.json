@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-02T07:28:11.097559+00:00",
+  "generated_at": "2026-06-02T15:43:39.204863+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 42,
+  "alert_count": 40,
   "alerts": [
     {
       "id": "acelepryn-sc:major_price_drop:amazon:64.94:58.43",
@@ -645,38 +645,6 @@
       "url": "https://chemicalwarehouse.com/products/primo-maxx",
       "in_stock": true,
       "created_at": "2026-05-27T14:59:54.273665+00:00"
-    },
-    {
-      "id": "rk-strongorr:major_price_drop:ryanknorr:59.00:44.00",
-      "type": "major_price_drop",
-      "product_id": 242,
-      "product_slug": "rk-strongorr",
-      "product_name": "Ryan Knorr StrongORR",
-      "category": "fertilizer",
-      "old_price": 59.0,
-      "new_price": 44.0,
-      "drop_percent": 25.4,
-      "old_retailer": "Ryan Knorr Lawn Care",
-      "new_retailer": "Ryan Knorr Lawn Care",
-      "url": "https://ryanknorrlawncare.com/product/strongorr",
-      "in_stock": true,
-      "created_at": "2026-05-26T14:38:11.210307+00:00"
-    },
-    {
-      "id": "rk-phixorr:major_price_drop:ryanknorr:79.00:59.00",
-      "type": "major_price_drop",
-      "product_id": 244,
-      "product_slug": "rk-phixorr",
-      "product_name": "Ryan Knorr pHixORR",
-      "category": "soil-amendment",
-      "old_price": 79.0,
-      "new_price": 59.0,
-      "drop_percent": 25.3,
-      "old_retailer": "Ryan Knorr Lawn Care",
-      "new_retailer": "Ryan Knorr Lawn Care",
-      "url": "https://ryanknorrlawncare.com/product/phixorr",
-      "in_stock": true,
-      "created_at": "2026-05-26T14:38:11.210307+00:00"
     }
   ]
 }

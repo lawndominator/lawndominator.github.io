@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-02T07:28:11.097559+00:00",
+  "generated_at": "2026-06-02T15:43:39.204863+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 786,
     "manual_verified_sources": 359,
-    "included_sources": 686,
-    "not_included_sources": 100,
+    "included_sources": 687,
+    "not_included_sources": 99,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 686,
+    "included": 687,
     "not_checked_saved_source_limit": 50,
     "no_extracted_offer": 37,
     "below $10.00 minimum for this category": 10,
-    "no_price": 3
+    "no_price": 2
   },
   "products": [
     {
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 142.77,
+          "price": 142.68,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1373,7 +1373,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 95.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1634,14 +1634,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 36.24,
           "offer_url": "https://www.amazon.com/dp/B009ATET6I?tag=lawndominator-20"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3447,7 +3447,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 99.2,
+          "price": 94.49,
           "offer_url": "https://www.amazon.com/dp/B015BSRZ7G?tag=lawndominator-20"
         }
       ],
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 63.98,
+          "price": 70.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4320,7 +4320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.99,
+          "price": 25.98,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4734,7 +4734,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 39.33,
+          "price": 37.84,
           "offer_url": "https://www.amazon.com/dp/B002Y6BC1O?tag=lawndominator-20"
         }
       ],
@@ -4876,7 +4876,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.64,
+          "price": 82.99,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5929,7 +5929,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1161.22,
+          "price": 1185.41,
           "offer_url": "https://www.siteone.com/en/511538b-lesco-24-0-11-50-polyplus-opti45-1-fe-04-mn-turfgrass-granular-fertilizer/p/1061053"
         },
         {
@@ -6070,7 +6070,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 80.67,
+          "price": 97.89,
           "offer_url": "https://www.siteone.com/en/510971-lesco-46-0-0-100-nos-am-turfgrass-soluble-fertilizer-50-lb-bag/p/647084"
         },
         {
@@ -6131,7 +6131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.12,
+          "price": 30.66,
           "offer_url": "https://www.siteone.com/en/702737-lesco-stonewall-037-0-0-7-am-pre-emergent-plus-fertilizer-50-lb/p/849542"
         },
         {
@@ -6222,7 +6222,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.79,
+          "price": 60.61,
           "offer_url": "https://www.siteone.com/en/702631-lesco-dimension-019-19-0-6-30opti45-pre-emergent-plus-fertilizer-50-lb/p/716155"
         },
         {
@@ -6232,7 +6232,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 64.05,
+          "price": 65.57,
           "offer_url": "https://www.siteone.com/en/702024-lesco-dimension-015-19-0-6-30-polyplus-opti45-45cl-mop-pre-emergent-granular-herbicide-plus-fertilizer-50-lb-bag/p/356323"
         },
         {
@@ -6293,7 +6293,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 2514.92,
+          "price": 2511.11,
           "offer_url": "https://www.siteone.com/en/510112b-lesco-25-0-6-50-polyplus-opti-5-fe-mop-turfgrass-granular-fertilizer/p/1059877"
         }
       ],
@@ -8357,7 +8357,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.69,
+          "price": 29.66,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
