@@ -143,24 +143,6 @@
         margin: 0 0 1.2rem;
       }
 
-      .affiliate-note {
-        border: 1px solid oklch(0.36 0.035 118 / 0.62);
-        border-radius: 0.65rem;
-        background: oklch(0.14 0.022 120 / 0.72);
-        color: var(--ink-soft);
-        font-size: 0.82rem;
-        line-height: 1.55;
-        margin: 0 0 1.2rem;
-        padding: 0.8rem 0.95rem;
-      }
-
-      .affiliate-note a {
-        color: var(--glow);
-        font-weight: 850;
-        text-decoration: underline;
-        text-underline-offset: 0.18em;
-      }
-
       .board-grid {
         display: grid;
         gap: 1.1rem;
@@ -288,24 +270,6 @@
       .price-tile.is-target {
         border-color: oklch(0.72 0.16 132 / 0.95);
         box-shadow: 0 0 0 2px oklch(0.72 0.16 132 / 0.24), var(--shadow-sm);
-      }
-
-      .price-tile.has-amazon {
-        border-color: oklch(0.63 0.12 82 / 0.72);
-      }
-
-      .amazon-badge {
-        display: inline-flex;
-        width: fit-content;
-        margin: 0.35rem 0 0;
-        border: 1px solid oklch(0.68 0.13 82 / 0.72);
-        border-radius: 999px;
-        color: oklch(0.86 0.12 82);
-        font-size: 0.66rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        padding: 0.16rem 0.44rem;
-        text-transform: uppercase;
       }
 
       .offer-stack {
@@ -489,6 +453,11 @@
             <option value="soil-amendment">Soil amendments</option>
             <option value="moisture-manager">Moisture managers</option>
             <option value="surfactant">Surfactants</option>
+            <option value="equipment">Equipment</option>
+            <option value="spreader-handheld">Handheld Spreaders</option>
+            <option value="spreader-push">Push Spreaders</option>
+            <option value="spreader-tow">Tow-Behind Spreaders</option>
+            <option value="sprayer-backpack">Backpack Sprayers</option>
           </select>
           <select class="board-select" id="board-brand" aria-label="Filter by brand">
             <option value="all">All brands</option>
@@ -502,10 +471,6 @@
         </div>
 
         <p class="board-meta" id="board-meta">Loading current price feed.</p>
-        <p class="affiliate-note">
-          As an Amazon Associate I earn from qualifying purchases. Some price-board links are affiliate links, including this
-          <a href="https://www.amazon.com/dp/B015BSNZP2?tag=lawndominator-20" target="_blank" rel="nofollow sponsored noopener">Amazon product link</a>.
-        </p>
         <section class="board-grid" id="board-grid" aria-live="polite">
           <p class="board-status">Loading price board.</p>
         </section>
@@ -526,10 +491,15 @@
         "soil-amendment": "Soil amendment",
         "moisture-manager": "Moisture manager",
         surfactant: "Surfactant",
+        equipment: "Equipment",
+        "spreader-handheld": "Handheld Spreader",
+        "spreader-push": "Push Spreader",
+        "spreader-tow": "Tow-Behind Spreader",
+        "sprayer-backpack": "Backpack Sprayer",
       };
 
       const UNIT_DISPLAY = { lb: "lb", oz: "oz", fl_oz: "fl oz", g: "g", gal: "gal", qt: "qt" };
-      const OFFER_DISPLAY_LIMIT = 8;
+      const OFFER_DISPLAY_LIMIT = 3;
       const BRAND_RULES = [
         ["The Andersons", ["andersons", "pgf", "humic dg", "humichar", "black gypsum", "foltec"]],
         ["LESCO", ["lesco", "siteone", "carbonpro", "carbon pro", "polyplus", "stonewall"]],
@@ -682,7 +652,7 @@
       function productVariants(product) {
         const groups = {};
         for (const offer of product.offers || []) {
-          if (offer.price == null || offer.excluded || offer.in_stock === false || isGoogleUrl(offer.url)) continue;
+          if (offer.price == null || offer.excluded || offer.in_stock === false || isExcludedOffer(offer)) continue;
           const quantity = offer.package_quantity ?? offer.quantity ?? null;
           const unit = offer.package_unit ?? offer.unit ?? null;
           const label = offer.package_label ?? (quantity != null && unit ? formatSize(quantity, unit) : "");
@@ -743,7 +713,7 @@
         const allVariants = [];
 
         for (const product of products) {
-          if (category !== "all" && product.category !== category) continue;
+          if (!categoryMatches(product.category)) continue;
           if (brand !== "all" && productBrand(product) !== brand) continue;
           for (const variant of productVariants(product)) {
             if (!matchesSizeTier(variant, sizeTier)) continue;
@@ -757,7 +727,16 @@
           return;
         }
 
-        const grouped = groupVariants(allVariants);
+        const equipmentItems = category === "all" && viewMode === "category"
+          ? allVariants.filter(item => isEquipmentCategory(item.product.category))
+          : [];
+        const standardItems = equipmentItems.length
+          ? allVariants.filter(item => !isEquipmentCategory(item.product.category))
+          : allVariants;
+        const grouped = [
+          ...(equipmentItems.length ? [{ key: "equipment", label: "Equipment", items: equipmentItems }] : []),
+          ...groupVariants(standardItems),
+        ];
         grid.innerHTML = grouped.map(group => renderGroup(group)).join("");
       }
 
@@ -790,6 +769,11 @@
           "soil-amendment",
           "moisture-manager",
           "surfactant",
+          "equipment",
+          "spreader-handheld",
+          "spreader-push",
+          "spreader-tow",
+          "sprayer-backpack",
         ];
         if (viewMode === "category") {
           const index = categoryOrder.indexOf(group.key);
@@ -837,9 +821,28 @@
         return variant.offers.some(isAmazonOffer);
       }
 
+      function isEquipmentCategory(productCategory) {
+        return productCategory === "spreader-handheld"
+          || productCategory === "spreader-push"
+          || productCategory === "spreader-tow"
+          || productCategory === "sprayer-backpack";
+      }
+
+      function categoryMatches(productCategory) {
+        if (category === "all") return true;
+        if (category === "equipment") return isEquipmentCategory(productCategory);
+        return productCategory === category;
+      }
+
       function safeHostname(url) {
         try { return new URL(url).hostname; }
         catch { return ""; }
+      }
+
+      function isExcludedOffer(offer) {
+        if (isGoogleUrl(offer.url)) return true;
+        const host = safeHostname(offer.url);
+        return /(^|\.)camelcamelcamel\.com$/i.test(host);
       }
 
       function renderVariant(product, variant) {
@@ -847,7 +850,6 @@
         const hasSize = variant.quantity != null && variant.unit;
         const sizeLabel = variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null);
         const isTarget = productFilter && product.slug === productFilter;
-        const hasAmazon = hasAmazonOffer(variant);
         const image = productImage(product, offers);
         const media = image
           ? `<img src="${escAttr(image)}" alt="${escAttr(product.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(fallbackMedia('${escAttr(initials(product.name))}'))" />`
@@ -865,11 +867,10 @@
             }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;
 
-        return `<article class="price-tile${isTarget ? " is-target" : ""}${hasAmazon ? " has-amazon" : ""}" data-product-slug="${escAttr(product.slug)}">
+        return `<article class="price-tile${isTarget ? " is-target" : ""}" data-product-slug="${escAttr(product.slug)}">
           <div class="product-media">${media}</div>
           <div class="tile-body">
             <p class="tile-kicker">${escHtml(productBrand(product))} / ${escHtml(CATEGORY_LABELS[product.category] || product.category || "Product")}</p>
-            ${hasAmazon ? `<span class="amazon-badge">Amazon linked</span>` : ""}
             ${sizeLabel ? `<p class="tile-size">${escHtml(sizeLabel)}</p>` : ""}
             <h2 class="tile-title">${escHtml(product.name)}</h2>
             <button class="product-link" type="button" data-copy-product="${escAttr(product.slug)}">Copy product link</button>

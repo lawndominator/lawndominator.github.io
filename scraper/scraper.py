@@ -2206,7 +2206,6 @@ def _amazon_affiliate_link(product: dict) -> dict:
         "price":         None,
         "url":           url,
         "in_stock":      None,
-        "note":          "Live price shown on Amazon",
         "last_checked":  now_iso(),
     }
 

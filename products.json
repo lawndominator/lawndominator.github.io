@@ -1,145 +1,1555 @@
 {
-  "version": "3.0",
-  "updated": "2026-05-21",
+  "version": "3.1",
+  "updated": "2026-06-02",
   "_notes": "Premium specialty lawn products only — professional chemistry sold on DoMyOwn, PestMall, and specialty retailers. No consumer shelf brands, no commodity fertilizers, nothing at Walmart/Lowes/Home Depot.",
   "products": [
-
-    {"id": 1,  "slug": "prodiamine-65wdg",          "name": "Prodiamine 65WDG",                          "category": "pre-emergent",   "search_query": "Prodiamine 65WDG",               "amazon_query": "Prodiamine 65WDG pre-emergent",         "active_ingredient": "prodiamine",                    "alt_names": ["Prodiamine 65 WDG","Quali-Pro Prodiamine 65WDG"],                            "asin": null},
-    {"id": 2,  "slug": "dimension-2ew",             "name": "Dimension 2EW (Dithiopyr)",                 "category": "pre-emergent",   "search_query": "Dimension 2EW Dithiopyr",        "amazon_query": "Dimension 2EW herbicide",              "active_ingredient": "dithiopyr",                     "alt_names": ["Dimension 2 EW","Dow Dimension 2EW","dithiopyr herbicide"],                  "asin": null},
-    {"id": 3,  "slug": "ronstar-g",                 "name": "Ronstar G (Oxadiazon 2G)",                  "category": "pre-emergent",   "search_query": "Ronstar G Oxadiazon",            "amazon_query": "Ronstar G pre-emergent",               "active_ingredient": "oxadiazon",                     "alt_names": ["Ronstar G granule","Oxadiazon 2G"],                                          "asin": null},
-    {"id": 4,  "slug": "spectacle-flo",             "name": "Spectacle Flo (Indaziflam)",                "category": "pre-emergent",   "search_query": "Spectacle Flo herbicide",        "amazon_query": "Spectacle Flo indaziflam",             "active_ingredient": "indaziflam",                    "alt_names": ["Spectacle Flo Herbicide","Bayer Spectacle Flo"],                             "asin": null},
-    {"id": 5,  "slug": "pendulum-2g",               "name": "Pendulum 2G (Pendimethalin)",               "category": "pre-emergent",   "search_query": "Pendulum 2G pendimethalin",      "amazon_query": "Pendulum 2G pre-emergent granule",    "active_ingredient": "pendimethalin",                 "alt_names": ["Pendulum 2 G","BASF Pendulum 2G","Pendimethalin 2G"],                       "asin": null},
-    {"id": 6,  "slug": "gallery-75df",              "name": "Gallery 75 DF (Isoxaben)",                  "category": "pre-emergent",   "search_query": "Gallery 75 DF isoxaben",         "amazon_query": "Gallery 75 DF broadleaf pre-emergent","active_ingredient": "isoxaben",                     "alt_names": ["Gallery 75DF","Gallery Dry Flowable","isoxaben broadleaf pre-emergent"],    "asin": null},
-    {"id": 7,  "slug": "specticle-g",               "name": "Specticle G (Indaziflam)",                  "category": "pre-emergent",   "search_query": "Specticle G indaziflam",         "amazon_query": "Specticle G pre-emergent granule",    "active_ingredient": "indaziflam",                    "alt_names": ["Specticle Granule","Bayer Specticle G"],                                    "asin": null},
-    {"id": 8,  "slug": "atrazine-4l",               "name": "Atrazine 4L",                               "category": "pre-emergent",   "search_query": "Atrazine 4L herbicide",          "amazon_query": "Atrazine 4L weed killer",             "active_ingredient": "atrazine",                      "alt_names": ["Atrazine 4L Plus","Southern Ag Atrazine 4L"],                               "asin": null},
-    {"id": 9,  "slug": "pendulum-aquacap",          "name": "Pendulum AquaCap (Pendimethalin 38.7%)",    "category": "pre-emergent",   "search_query": "Pendulum AquaCap pendimethalin", "amazon_query": "Pendulum AquaCap herbicide",          "active_ingredient": "pendimethalin 38.7%",           "alt_names": ["Pendulum Aqua Cap","BASF Pendulum AquaCap"],                                "asin": null},
-
-    {"id": 15, "slug": "celsius-wg",                "name": "Celsius WG",                                "category": "post-emergent",  "search_query": "Celsius WG herbicide",           "amazon_query": "Celsius WG turf herbicide",           "active_ingredient": "thiencarbazone-methyl + iodosulfuron + foramsulfuron", "alt_names": ["Celsius WG Herbicide","Bayer Celsius WG"],           "asin": null},
-    {"id": 16, "slug": "certainty-wdg",             "name": "Certainty WDG (Sulfosulfuron)",             "category": "post-emergent",  "search_query": "Certainty WDG sulfosulfuron",    "amazon_query": "Certainty herbicide turf",             "active_ingredient": "sulfosulfuron",                 "alt_names": ["Certainty Turf Herbicide","Monsanto Certainty WDG"],                        "asin": null},
-    {"id": 17, "slug": "drive-xlr8",                "name": "Drive XLR8 (Quinclorac)",                   "category": "post-emergent",  "search_query": "Drive XLR8 quinclorac",          "amazon_query": "Drive XLR8 crabgrass herbicide",      "active_ingredient": "quinclorac",                    "alt_names": ["Drive XLR8","Drive XLR 8","BASF Drive XLR8"],                               "asin": null},
-    {"id": 18, "slug": "sedgehammer-plus",          "name": "SedgeHammer+ (Halosulfuron)",               "category": "post-emergent",  "search_query": "SedgeHammer halosulfuron",       "amazon_query": "Sedgehammer nutsedge killer",         "active_ingredient": "halosulfuron-methyl",           "alt_names": ["SedgeHammer Plus","Sedge Hammer+","halosulfuron nutsedge"],                  "asin": null},
-    {"id": 19, "slug": "speedzone-southern",        "name": "SpeedZone Southern EW",                     "category": "post-emergent",  "search_query": "SpeedZone Southern EW",          "amazon_query": "SpeedZone Southern lawn weed killer", "active_ingredient": "carfentrazone + 2,4-D + MCPP + dicamba", "alt_names": ["SpeedZone Southern","PBI Gordon SpeedZone Southern"],       "asin": null},
-    {"id": 20, "slug": "manor-60df",                "name": "Manor 60DF (Metsulfuron-Methyl)",           "category": "post-emergent",  "search_query": "Manor 60DF metsulfuron",         "amazon_query": "Manor 60DF herbicide",                "active_ingredient": "metsulfuron-methyl",            "alt_names": ["Manor 60 DF","metsulfuron methyl herbicide"],                               "asin": null},
-    {"id": 21, "slug": "tenacity",                  "name": "Tenacity Turf Herbicide (Mesotrione)",      "category": "post-emergent",  "search_query": "Tenacity mesotrione herbicide",  "amazon_query": "Tenacity turf herbicide mesotrione",  "active_ingredient": "mesotrione",                    "alt_names": ["Tenacity Herbicide","Syngenta Tenacity","mesotrione turf"],                 "asin": null},
-    {"id": 22, "slug": "turflon-ester",             "name": "Turflon Ester (Triclopyr)",                 "category": "post-emergent",  "search_query": "Turflon Ester triclopyr",        "amazon_query": "Turflon Ester lawn herbicide",        "active_ingredient": "triclopyr",                     "alt_names": ["Turflon Ester Ultra","triclopyr ester herbicide"],                          "asin": null},
-    {"id": 23, "slug": "dismiss",                   "name": "Dismiss Turf Herbicide (Sulfentrazone)",    "category": "post-emergent",  "search_query": "Dismiss sulfentrazone herbicide","amazon_query": "Dismiss turf herbicide sulfentrazone","active_ingredient": "sulfentrazone",                 "alt_names": ["Dismiss Herbicide","FMC Dismiss","sulfentrazone turf"],                     "asin": null},
-    {"id": 24, "slug": "pylex",                     "name": "Pylex Turf Herbicide (Topramezone)",        "category": "post-emergent",  "search_query": "Pylex topramezone turf",         "amazon_query": "Pylex herbicide topramezone",         "active_ingredient": "topramezone",                   "alt_names": ["Pylex Herbicide","BASF Pylex","topramezone turf"],                          "asin": null},
-    {"id": 25, "slug": "msma-target-6",             "name": "MSMA Target 6 Plus",                        "category": "post-emergent",  "search_query": "MSMA Target 6 Plus herbicide",  "amazon_query": "MSMA Target 6 Plus lawn herbicide",   "active_ingredient": "MSMA",                          "alt_names": ["MSMA Target 6","MSMA 6.6 Plus"],                                            "asin": null},
-    {"id": 26, "slug": "q4-plus",                   "name": "Q4 Plus Turf Herbicide",                    "category": "post-emergent",  "search_query": "Q4 Plus turf herbicide",         "amazon_query": "Q4 Plus turf herbicide broadleaf",    "active_ingredient": "quinclorac + 2,4-D + dicamba + sulfentrazone", "alt_names": ["Q4 Plus Herbicide","PBI Gordon Q4 Plus"],          "asin": null},
-    {"id": 27, "slug": "trimec",                    "name": "Trimec Classic Broadleaf Herbicide",        "category": "post-emergent",  "search_query": "Trimec Classic broadleaf",       "amazon_query": "Trimec Classic lawn herbicide",       "active_ingredient": "2,4-D + MCPP + dicamba",        "alt_names": ["Trimec Classic","Trimec Southern","PBI Gordon Trimec Classic"],             "asin": null},
-    {"id": 28, "slug": "revolver",                  "name": "Revolver Herbicide (Foramsulfuron)",        "category": "post-emergent",  "search_query": "Revolver foramsulfuron herbicide","amazon_query": "Revolver herbicide foramsulfuron",    "active_ingredient": "foramsulfuron",                 "alt_names": ["Revolver Turf Herbicide","Bayer Revolver","foramsulfuron turf"],            "asin": null},
-    {"id": 29, "slug": "katana",                    "name": "Katana Turf Herbicide (Flazasulfuron)",     "category": "post-emergent",  "search_query": "Katana flazasulfuron herbicide", "amazon_query": "Katana turf herbicide flazasulfuron", "active_ingredient": "flazasulfuron",                 "alt_names": ["Katana Herbicide","Bayer Katana Turf","flazasulfuron turf"],                "asin": null},
-    {"id": 30, "slug": "tribute-total",             "name": "Tribute Total Herbicide",                   "category": "post-emergent",  "search_query": "Tribute Total herbicide",        "amazon_query": "Tribute Total herbicide",             "active_ingredient": "thiencarbazone-methyl + foramsulfuron + halosulfuron-methyl", "alt_names": ["Tribute Total","Bayer Tribute Total","Envu Tribute Total","Tribute Total WDG"], "asin": null},
-
-    {"id": 35, "slug": "primo-maxx",                "name": "Primo Maxx (Trinexapac-ethyl)",             "category": "pgr",            "search_query": "Primo Maxx trinexapac-ethyl",    "amazon_query": "Primo Maxx PGR trinexapac",           "active_ingredient": "trinexapac-ethyl",              "alt_names": ["Primo MAXX","Primo Maxx 1L","Syngenta Primo Maxx"],                         "asin": null},
-    {"id": 36, "slug": "t-nex-1as",                 "name": "T-Nex 1AS (Trinexapac-ethyl)",              "category": "pgr",            "search_query": "T-Nex 1AS trinexapac-ethyl",     "amazon_query": "T-Nex 1AS PGR trinexapac",            "active_ingredient": "trinexapac-ethyl",              "alt_names": ["T Nex 1AS","TNex 1AS","Quali-Pro T-Nex 1AS"],                               "asin": null},
-    {"id": 37, "slug": "anuew",                     "name": "Anuew (Prohexadione Calcium)",              "category": "pgr",            "search_query": "Anuew prohexadione calcium",     "amazon_query": "Anuew plant growth regulator",        "active_ingredient": "prohexadione-calcium",          "alt_names": ["Anuew PGR","Bayer Anuew","prohexadione calcium turf"],                     "asin": null},
-    {"id": 38, "slug": "trimmit-2sc",               "name": "Trimmit 2SC (Paclobutrazol)",               "category": "pgr",            "search_query": "Trimmit 2SC paclobutrazol",      "amazon_query": "Trimmit 2SC PGR paclobutrazol",       "active_ingredient": "paclobutrazol",                 "alt_names": ["Trimmit 2 SC","Trimmit SC","paclobutrazol 2SC turf"],                       "asin": null},
-    {"id": 39, "slug": "cutless",                   "name": "Cutless (Flurprimidol)",                    "category": "pgr",            "search_query": "Cutless flurprimidol PGR",       "amazon_query": "Cutless 0.33G plant growth regulator","active_ingredient": "flurprimidol",                 "alt_names": ["Cutless 0.33G","Cutless MEC","flurprimidol PGR"],                           "asin": null},
-    {"id": 40, "slug": "proxy-embark",              "name": "Proxy / Embark (Mefluidide)",               "category": "pgr",            "search_query": "Proxy Embark mefluidide PGR",    "amazon_query": "Proxy PGR mefluidide lawn",           "active_ingredient": "mefluidide",                    "alt_names": ["Proxy PGR","Embark Turf Regulator","mefluidide turf"],                     "asin": null},
-    {"id": 41, "slug": "pramaxis-mec",              "name": "Pramaxis MEC (Trinexapac-ethyl)",           "category": "pgr",            "search_query": "Pramaxis MEC trinexapac",        "amazon_query": "Pramaxis MEC PGR trinexapac",         "active_ingredient": "trinexapac-ethyl",              "alt_names": ["Pramaxis MEC","PBI Gordon Pramaxis"],                                       "asin": null},
-
-    {"id": 50, "slug": "propiconazole-14-3",        "name": "Propiconazole 14.3 (Banner Maxx)",          "category": "fungicide",      "search_query": "Propiconazole 14.3 Banner Maxx", "amazon_query": "Propiconazole 14.3 fungicide",        "active_ingredient": "propiconazole",                 "alt_names": ["Propiconazole 14.3%","Banner Maxx","Quali-Pro Propiconazole 14.3"],         "asin": null},
-    {"id": 51, "slug": "heritage-g",                "name": "Heritage G (Azoxystrobin)",                 "category": "fungicide",      "search_query": "Heritage azoxystrobin fungicide","amazon_query": "Heritage azoxystrobin fungicide",     "active_ingredient": "azoxystrobin",                  "alt_names": ["Heritage G Granule","Syngenta Heritage","azoxystrobin fungicide turf"],    "asin": null},
-    {"id": 52, "slug": "headway-g",                 "name": "Headway G Fungicide",                       "category": "fungicide",      "search_query": "Headway G fungicide",            "amazon_query": "Headway G fungicide granule",         "active_ingredient": "azoxystrobin + propiconazole",  "alt_names": ["Headway G Granule","Syngenta Headway G"],                                   "asin": null},
-    {"id": 53, "slug": "armada-50-wdg",             "name": "Armada 50 WDG",                             "category": "fungicide",      "search_query": "Armada 50 WDG fungicide",        "amazon_query": "Armada 50 WDG fungicide turf",        "active_ingredient": "trifloxystrobin + triadimefon", "alt_names": ["Armada 50 WDG Fungicide","Bayer Armada 50 WDG"],                           "asin": null},
-    {"id": 54, "slug": "pillar-sc",                 "name": "Pillar SC Intrinsic Fungicide",             "category": "fungicide",      "search_query": "Pillar SC Intrinsic fungicide",  "amazon_query": "Pillar SC Intrinsic fungicide lawn",  "active_ingredient": "trifloxystrobin + ipconazole",  "alt_names": ["Pillar SC Fungicide","BASF Pillar SC Intrinsic"],                           "asin": null},
-    {"id": 55, "slug": "clearys-3336-f",            "name": "Clearys 3336 F (Thiophanate-Methyl)",       "category": "fungicide",      "search_query": "Clearys 3336 F fungicide",       "amazon_query": "Clearys 3336 F fungicide turf",       "active_ingredient": "thiophanate-methyl",            "alt_names": ["Clearys 3336F","Cleary 3336","thiophanate-methyl turf fungicide"],          "asin": null},
-    {"id": 56, "slug": "eagle-20ew",                "name": "Eagle 20EW (Myclobutanil)",                 "category": "fungicide",      "search_query": "Eagle 20EW fungicide",           "amazon_query": "Eagle 20EW fungicide lawn",           "active_ingredient": "myclobutanil",                  "alt_names": ["Eagle 20 EW","Dow Eagle 20EW","myclobutanil fungicide"],                    "asin": null},
-    {"id": 57, "slug": "daconil",                   "name": "Daconil (Chlorothalonil)",                  "category": "fungicide",      "search_query": "Daconil chlorothalonil fungicide","amazon_query": "Daconil fungicide chlorothalonil",    "active_ingredient": "chlorothalonil",                "alt_names": ["Daconil Ultrex","Daconil 2787","chlorothalonil fungicide turf"],            "asin": null},
-    {"id": 58, "slug": "emerald",                   "name": "Emerald Fungicide (Boscalid)",              "category": "fungicide",      "search_query": "Emerald boscalid fungicide",     "amazon_query": "Emerald fungicide boscalid turf",     "active_ingredient": "boscalid",                      "alt_names": ["Emerald 70WG","BASF Emerald","boscalid fungicide turf"],                    "asin": null},
-    {"id": 59, "slug": "medallion-wdg",             "name": "Medallion WDG (Fludioxonil)",               "category": "fungicide",      "search_query": "Medallion WDG fludioxonil",      "amazon_query": "Medallion WDG fungicide fludioxonil", "active_ingredient": "fludioxonil",                   "alt_names": ["Medallion WDG Fungicide","Syngenta Medallion","fludioxonil turf"],          "asin": null},
-    {"id": 60, "slug": "subdue-maxx",               "name": "Subdue Maxx (Mefenoxam)",                   "category": "fungicide",      "search_query": "Subdue Maxx mefenoxam",          "amazon_query": "Subdue Maxx mefenoxam lawn fungicide","active_ingredient": "mefenoxam",                    "alt_names": ["Subdue MAXX","Syngenta Subdue Maxx","mefenoxam fungicide"],                 "asin": null},
-    {"id": 61, "slug": "velista",                   "name": "Velista (Penthiopyrad)",                    "category": "fungicide",      "search_query": "Velista penthiopyrad fungicide", "amazon_query": "Velista fungicide penthiopyrad",      "active_ingredient": "penthiopyrad",                  "alt_names": ["Velista 50WG","Syngenta Velista","penthiopyrad fungicide"],                 "asin": null},
-    {"id": 62, "slug": "encartis",                  "name": "Encartis (Lumiderm / Isoclast)",            "category": "fungicide",      "search_query": "Encartis fungicide turf",        "amazon_query": "Encartis turf fungicide",             "active_ingredient": "isofetamid",                    "alt_names": ["Encartis Fungicide","Ishihara Sangyo Encartis"],                            "asin": null},
-    {"id": 63, "slug": "densicor",                  "name": "Densicor Fungicide (Cyprodinil + Fludioxonil)","category": "fungicide",  "search_query": "Densicor fungicide turf",        "amazon_query": "Densicor fungicide lawn",             "active_ingredient": "cyprodinil + fludioxonil",      "alt_names": ["Densicor Turf Fungicide","Syngenta Densicor"],                              "asin": null},
-
-    {"id": 70, "slug": "acelepryn-sc",              "name": "Acelepryn SC (Chlorantraniliprole)",         "category": "insecticide",    "search_query": "Acelepryn SC chlorantraniliprole","amazon_query": "Acelepryn SC insecticide",            "active_ingredient": "chlorantraniliprole",           "alt_names": ["Acelepryn liquid","Syngenta Acelepryn SC","chlorantraniliprole SC"],        "asin": null},
-    {"id": 71, "slug": "acelepryn-gr",              "name": "Acelepryn GR (Chlorantraniliprole 0.2%)",   "category": "insecticide",    "search_query": "Acelepryn GR chlorantraniliprole","amazon_query": "Acelepryn GR granule insecticide",   "active_ingredient": "chlorantraniliprole 0.2%",      "alt_names": ["Acelepryn G","Acelepryn Granule","chlorantraniliprole 0.2G turf"],          "asin": null},
-    {"id": 72, "slug": "merit-0-5g",                "name": "Merit 0.5G (Imidacloprid)",                 "category": "insecticide",    "search_query": "Merit 0.5G imidacloprid",        "amazon_query": "Merit 0.5G imidacloprid grub",       "active_ingredient": "imidacloprid",                  "alt_names": ["Merit 0.5 G","Bayer Merit 0.5G","imidacloprid 0.5G"],                       "asin": null},
-    {"id": 73, "slug": "dylox-6-2g",                "name": "Dylox 6.2G (Trichlorfon)",                  "category": "insecticide",    "search_query": "Dylox 6.2G trichlorfon",         "amazon_query": "Dylox 6.2G grub killer lawn",        "active_ingredient": "trichlorfon",                   "alt_names": ["Dylox 6.2 G","Dylox 6.2 Granule","trichlorfon grub killer"],                "asin": null},
-    {"id": 74, "slug": "bifen-it",                  "name": "Bifen IT (Bifenthrin 7.9%)",                "category": "insecticide",    "search_query": "Bifen IT bifenthrin 7.9%",       "amazon_query": "Bifen IT bifenthrin insecticide",    "active_ingredient": "bifenthrin",                    "alt_names": ["Bifen I/T","Bifenthrin 7.9%","Atticus Bifen IT"],                           "asin": null},
-    {"id": 75, "slug": "talstar-pl",                "name": "Talstar PL Granules (Bifenthrin 0.2%)",     "category": "insecticide",    "search_query": "Talstar PL Granules bifenthrin", "amazon_query": "Talstar PL Granules bifenthrin",     "active_ingredient": "bifenthrin 0.2%",               "alt_names": ["Talstar PL","FMC Talstar PL","bifenthrin 0.2% granule"],                    "asin": null},
-    {"id": 76, "slug": "meridian-0-33g",            "name": "Meridian 0.33G (Thiamethoxam)",             "category": "insecticide",    "search_query": "Meridian 0.33G insecticide",     "amazon_query": "Meridian 0.33G insecticide lawn",    "active_ingredient": "thiamethoxam",                  "alt_names": ["Meridian 0.33 G","Syngenta Meridian","thiamethoxam 0.33G turf"],            "asin": null},
-    {"id": 77, "slug": "arena-0-25g",               "name": "Arena 0.25G (Clothianidin)",                "category": "insecticide",    "search_query": "Arena 0.25G clothianidin",       "amazon_query": "Arena 0.25G clothianidin grub",      "active_ingredient": "clothianidin",                  "alt_names": ["Arena 0.25 G","Valent Arena 0.25G","clothianidin granule turf"],            "asin": null},
-    {"id": 78, "slug": "demand-cs",                 "name": "Demand CS (Lambda-Cyhalothrin)",            "category": "insecticide",    "search_query": "Demand CS lambda-cyhalothrin",  "amazon_query": "Demand CS insecticide",              "active_ingredient": "lambda-cyhalothrin",            "alt_names": ["Demand CS insecticide","Syngenta Demand CS","lambda-cyhalothrin CS"],       "asin": null},
-    {"id": 79, "slug": "zylam-liquid",              "name": "Zylam Liquid Systemic (Dinotefuran)",       "category": "insecticide",    "search_query": "Zylam Liquid dinotefuran",       "amazon_query": "Zylam liquid systemic insecticide",  "active_ingredient": "dinotefuran",                   "alt_names": ["Zylam Liquid","PBI Gordon Zylam","dinotefuran systemic turf"],              "asin": null},
-    {"id": 80, "slug": "avid-0-15ec",               "name": "Avid 0.15EC (Abamectin)",                   "category": "insecticide",    "search_query": "Avid 0.15EC abamectin",          "amazon_query": "Avid 0.15EC abamectin miticide",     "active_ingredient": "abamectin",                     "alt_names": ["Avid miticide","Syngenta Avid 0.15EC","abamectin EC miticide"],             "asin": null},
-    {"id": 81, "slug": "movento-240sc",             "name": "Movento 240SC (Spirotetramat)",              "category": "insecticide",    "search_query": "Movento 240SC spirotetramat",    "amazon_query": "Movento 240SC insecticide spirotetramat","active_ingredient": "spirotetramat",               "alt_names": ["Movento SC","Bayer Movento 240SC","spirotetramat systemic"],                "asin": null},
-    {"id": 82, "slug": "mainspring-gnl",            "name": "Mainspring GNL (Cyantraniliprole)",         "category": "insecticide",    "search_query": "Mainspring GNL cyantraniliprole","amazon_query": "Mainspring GNL insecticide turf",    "active_ingredient": "cyantraniliprole",              "alt_names": ["Mainspring insecticide","Syngenta Mainspring GNL","cyantraniliprole SC"],   "asin": null},
-    {"id": 83, "slug": "forbid-4f",                 "name": "Forbid 4F (Spiromesifen)",                  "category": "insecticide",    "search_query": "Forbid 4F spiromesifen",         "amazon_query": "Forbid 4F spiromesifen miticide",    "active_ingredient": "spiromesifen",                  "alt_names": ["Forbid 4F miticide","Bayer Forbid 4F","spiromesifen mite control"],         "asin": null},
-    {"id": 84, "slug": "tetrasan-5wdg",             "name": "TetraSan 5WDG (Etoxazole)",                 "category": "insecticide",    "search_query": "TetraSan 5WDG etoxazole",        "amazon_query": "TetraSan 5WDG etoxazole miticide",   "active_ingredient": "etoxazole",                     "alt_names": ["TetraSan WDG","Valent TetraSan 5WDG","etoxazole mite growth regulator"],    "asin": null},
-    {"id": 85, "slug": "kontos-sc",                 "name": "Kontos SC (Spirotetramat 22.4%)",           "category": "insecticide",    "search_query": "Kontos SC spirotetramat",        "amazon_query": "Kontos SC insecticide spirotetramat","active_ingredient": "spirotetramat 22.4%",          "alt_names": ["Kontos insecticide","Bayer Kontos SC","spirotetramat 22.4"],                "asin": null},
-    {"id": 86, "slug": "tristar-8-5sl",             "name": "Tristar 8.5 SL (Acetamiprid)",              "category": "insecticide",    "search_query": "Tristar 8.5 SL acetamiprid",     "amazon_query": "Tristar 8.5 SL insecticide",         "active_ingredient": "acetamiprid",                   "alt_names": ["Tristar SL","Cleary Tristar 8.5SL","acetamiprid systemic insecticide"],     "asin": null},
-
-    {"id": 115,"slug": "hydretain",                 "name": "Hydretain Root Zone Moisture Manager",      "category": "soil-amendment", "search_query": "Hydretain Root Zone Moisture Manager","amazon_query": "Hydretain root zone moisture manager","active_ingredient": "hygroscopic humectant compounds","alt_names": ["Hydretain liquid","Hydretain ES Plus","Hydretain moisture manager"], "asin": null},
-    {"id": 116,"slug": "revolution-surfactant",     "name": "Revolution Soil Surfactant",                "category": "soil-amendment", "search_query": "Revolution Soil Surfactant",     "amazon_query": "Revolution soil surfactant turf",     "active_ingredient": "polyethylene glycol surfactant","alt_names": ["Revolution wetting agent","turf surfactant revolution"],                   "asin": null},
-    {"id": 117,"slug": "mycoapply",                 "name": "MycoApply Mycorrhizal Inoculant",           "category": "soil-amendment", "search_query": "MycoApply Mycorrhizal Inoculant", "amazon_query": "MycoApply Mycorrhizal Inoculant lawn","active_ingredient": "mycorrhizal fungi endomycorrhizae","alt_names": ["MycoApply inoculant","Mycorrhizal inoculant lawn","Mycorrhizae lawn soil"],"asin": null},
-    {"id": 118,"slug": "feature-6-0-0",              "name": "Feature 6-0-0 Iron Fertilizer",             "category": "micronutrient",  "search_query": "Feature 6-0-0",                  "amazon_query": "Feature 6-0-0 iron fertilizer lawn",  "active_ingredient": "nitrogen + iron 6-0-0",         "alt_names": ["Feature 6-0-0 fertilizer","Feature iron 6-0-0","Feature lawn iron fertilizer"],"asin": "B076TFPB1Z"},
-
-    {"id": 221,"slug": "lesco-carbonpro-g",          "name": "LESCO CarbonPro-G Soil Optimizer",          "category": "soil-amendment", "search_query": "LESCO CarbonPro-G Soil Optimizer", "amazon_query": "LESCO CarbonPro-G soil optimizer", "active_ingredient": "carbon-based microbial soil optimizer", "alt_names": ["CarbonPro-G","Carbon Pro G","LESCO CarbonPRO G","SiteOne CarbonPro-G"], "asin": null},
-    {"id": 222,"slug": "lesco-carbonpro-l",          "name": "LESCO CarbonPro-L Liquid Soil Optimizer",   "category": "soil-amendment", "search_query": "LESCO CarbonPro-L Liquid Soil Optimizer", "amazon_query": "LESCO CarbonPro-L liquid soil optimizer", "active_ingredient": "liquid carbon-based soil optimizer", "alt_names": ["CarbonPro-L","Carbon Pro L","LESCO CarbonPRO L","SiteOne CarbonPro-L"], "asin": null},
-    {"id": 223,"slug": "lesco-24-0-11-polyplus",     "name": "LESCO 24-0-11 PolyPlus Fertilizer",         "category": "fertilizer",     "search_query": "LESCO 24-0-11 PolyPlus fertilizer", "amazon_query": "LESCO 24-0-11 PolyPlus fertilizer", "active_ingredient": "24-0-11 controlled-release nitrogen + iron", "alt_names": ["LESCO 24-0-11","24-0-11 PolyPlus","LESCO 24-0-11 50 PolyPlus","SiteOne 24-0-11"], "asin": null},
-    {"id": 224,"slug": "lesco-46-0-0-nos",           "name": "LESCO 46-0-0 NOS Fertilizer",               "category": "fertilizer",     "search_query": "LESCO 46-0-0 NOS fertilizer", "amazon_query": "LESCO 46-0-0 NOS fertilizer", "active_ingredient": "46-0-0 stabilized nitrogen", "alt_names": ["LESCO NOS 46-0-0","LESCO nitrogen optimization system","LESCO 46-0-0 sprayable"], "asin": null},
-    {"id": 225,"slug": "lesco-stonewall-0-0-7",      "name": "LESCO Stonewall 0-0-7 Pre-Emergent",        "category": "pre-emergent",   "search_query": "LESCO Stonewall 0-0-7 pre-emergent", "amazon_query": "LESCO Stonewall 0-0-7 prodiamine", "active_ingredient": "prodiamine + 0-0-7 fertilizer carrier", "alt_names": ["LESCO 0-0-7","Stonewall 0-0-7","LESCO Stonewall pre-emergent","LESCO 0-0-7 with Stonewall"], "asin": null},
-    {"id": 226,"slug": "lesco-dimension-19-0-6",     "name": "LESCO Dimension 19-0-6 Pre-Emergent",       "category": "pre-emergent",   "search_query": "LESCO Dimension 19-0-6 pre-emergent", "amazon_query": "LESCO Dimension 19-0-6 dithiopyr", "active_ingredient": "dithiopyr + 19-0-6 fertilizer carrier", "alt_names": ["LESCO 19-0-6 Dimension","Dimension 19-0-6","LESCO dithiopyr fertilizer","SiteOne Dimension 19-0-6"], "asin": null},
-    {"id": 227,"slug": "lesco-25-0-6-polyplus",      "name": "LESCO 25-0-6 PolyPlus Fertilizer",          "category": "fertilizer",     "search_query": "LESCO 25-0-6 PolyPlus fertilizer", "amazon_query": "LESCO 25-0-6 PolyPlus fertilizer", "active_ingredient": "25-0-6 controlled-release nitrogen + iron", "alt_names": ["LESCO 25-0-6","25-0-6 PolyPlus","LESCO 25-0-6 PolyPlus OPTI","SiteOne 25-0-6"], "asin": null},
-    {"id": 228,"slug": "lesco-30-0-10-nos-polyplus", "name": "LESCO 30-0-10 NOS PolyPlus Fertilizer",     "category": "fertilizer",     "search_query": "LESCO 30-0-10 NOS PolyPlus fertilizer", "amazon_query": "LESCO 30-0-10 PolyPlus fertilizer", "active_ingredient": "30-0-10 stabilized nitrogen + controlled-release nitrogen + iron + manganese", "alt_names": ["LESCO 30-0-10","30-0-10 PolyPlus","LESCO 30-0-10 NOS","SiteOne 30-0-10"], "asin": null},
-    {"id": 229,"slug": "lesco-moisture-manager",     "name": "LESCO Moisture Manager",                    "category": "moisture-manager", "search_query": "LESCO Moisture Manager", "amazon_query": "LESCO Moisture Manager Hydretain", "active_ingredient": "hygroscopic humectants + non-ionic surfactant", "alt_names": ["LESCO Hydretain","LESCO moisture management","SiteOne Moisture Manager","Moisture Manager by LESCO"], "asin": null},
-    {"id": 230,"slug": "rk-equalizorr",              "name": "Ryan Knorr EqualizORR",                      "category": "fertilizer",     "search_query": "Ryan Knorr EqualizORR soluble fertilizer", "amazon_query": "EqualizORR soluble fertilizer", "active_ingredient": "soluble fertilizer + chelated micronutrients", "alt_names": ["EqualizORR","Lawn Supply Company EqualizORR"], "asin": null},
-    {"id": 231,"slug": "rk-greenorr",                "name": "Ryan Knorr GreenORR",                        "category": "micronutrient",  "search_query": "Ryan Knorr GreenORR liquid fertilizer", "amazon_query": "GreenORR liquid micronutrient fertilizer", "active_ingredient": "chelated iron + magnesium + manganese", "alt_names": ["GreenORR","Lawn Supply Company GreenORR"], "asin": null},
-    {"id": 232,"slug": "rk-ammonium-sulfate",        "name": "Ryan Knorr Ammonium Sulfate",                "category": "fertilizer",     "search_query": "Ryan Knorr Ammonium Sulfate soluble fertilizer", "amazon_query": "ammonium sulfate lawn fertilizer", "active_ingredient": "ammonium sulfate", "alt_names": ["Lawn Supply Company Ammonium Sulfate","AMS fertilizer"], "asin": null},
-    {"id": 233,"slug": "rk-greenorr-g",              "name": "Ryan Knorr GreenORR G",                      "category": "fertilizer",     "search_query": "Ryan Knorr GreenORR G granular fertilizer", "amazon_query": "GreenORR G granular fertilizer", "active_ingredient": "granular nitrogen + iron + biochar", "alt_names": ["GreenORR G","Lawn Supply Company GreenORR G"], "asin": null},
-    {"id": 234,"slug": "rk-maxorr-g",                "name": "Ryan Knorr MaxORR G",                        "category": "fertilizer",     "search_query": "Ryan Knorr MaxORR G granular fertilizer", "amazon_query": "MaxORR G granular fertilizer", "active_ingredient": "slow-release nitrogen + iron + biochar", "alt_names": ["MaxORR G","Lawn Supply Company MaxORR G"], "asin": null},
-    {"id": 235,"slug": "rk-groworr",                 "name": "Ryan Knorr GrowORR",                         "category": "fertilizer",     "search_query": "Ryan Knorr GrowORR soluble fertilizer", "amazon_query": "GrowORR soluble fertilizer", "active_ingredient": "soluble nitrogen + potassium fertilizer", "alt_names": ["GrowORR","Lawn Supply Company GrowORR"], "asin": null},
-    {"id": 236,"slug": "rk-sloworr",                 "name": "Ryan Knorr SlowORR",                         "category": "fertilizer",     "search_query": "Ryan Knorr SlowORR liquid fertilizer", "amazon_query": "SlowORR liquid fertilizer", "active_ingredient": "slow-release liquid nitrogen", "alt_names": ["SlowORR","Lawn Supply Company SlowORR"], "asin": null},
-    {"id": 237,"slug": "rk-vigorr",                  "name": "Ryan Knorr VigORR",                          "category": "fertilizer",     "search_query": "Ryan Knorr VigORR liquid starter fertilizer", "amazon_query": "VigORR liquid starter fertilizer", "active_ingredient": "liquid starter fertilizer", "alt_names": ["VigORR","Lawn Supply Company VigORR"], "asin": null},
-    {"id": 238,"slug": "rk-defendorr",               "name": "Ryan Knorr DefendORR",                       "category": "fertilizer",     "search_query": "Ryan Knorr DefendORR liquid fertilizer", "amazon_query": "DefendORR liquid fertilizer", "active_ingredient": "liquid fertilizer", "alt_names": ["DefendORR","Lawn Supply Company DefendORR"], "asin": null},
-    {"id": 239,"slug": "rk-phiteorr",                "name": "Ryan Knorr PhiteORR",                        "category": "macronutrient",  "search_query": "Ryan Knorr PhiteORR phosphite fertilizer", "amazon_query": "PhiteORR phosphite fertilizer", "active_ingredient": "phosphite fertilizer", "alt_names": ["PhiteORR","Lawn Supply Company PhiteORR"], "asin": null},
-    {"id": 240,"slug": "rk-plantorr",                "name": "Ryan Knorr PlantORR",                        "category": "fertilizer",     "search_query": "Ryan Knorr PlantORR liquid fertilizer", "amazon_query": "PlantORR liquid fertilizer", "active_ingredient": "liquid fertilizer", "alt_names": ["PlantORR","Lawn Supply Company PlantORR"], "asin": null},
-    {"id": 241,"slug": "rk-resistorr",               "name": "Ryan Knorr ResistORR",                       "category": "macronutrient",  "search_query": "Ryan Knorr ResistORR potassium fertilizer", "amazon_query": "ResistORR potassium fertilizer", "active_ingredient": "liquid potassium fertilizer", "alt_names": ["ResistORR","Lawn Supply Company ResistORR"], "asin": null},
-    {"id": 242,"slug": "rk-strongorr",               "name": "Ryan Knorr StrongORR",                       "category": "fertilizer",     "search_query": "Ryan Knorr StrongORR liquid fertilizer", "amazon_query": "StrongORR liquid fertilizer", "active_ingredient": "liquid fertilizer", "alt_names": ["StrongORR","Lawn Supply Company StrongORR"], "asin": null},
-    {"id": 243,"slug": "rk-soakorr",                 "name": "Ryan Knorr SoakORR",                         "category": "moisture-manager", "search_query": "Ryan Knorr SoakORR wetting agent", "amazon_query": "SoakORR wetting agent", "active_ingredient": "soil wetting agent", "alt_names": ["SoakORR","Lawn Supply Company SoakORR"], "asin": null},
-    {"id": 244,"slug": "rk-phixorr",                 "name": "Ryan Knorr pHixORR",                         "category": "soil-amendment", "search_query": "Ryan Knorr pHixORR hard water soil amendment", "amazon_query": "pHixORR liquid soil amendment", "active_ingredient": "hard water treatment + carbonate management", "alt_names": ["pHixORR","Lawn Supply Company pHixORR"], "asin": null},
-    {"id": 245,"slug": "hi-yield-iron-sulfate",      "name": "Hi-Yield Iron Sulfate 4 lb",                 "category": "micronutrient",  "search_query": "Hi-Yield 32340 Iron Sulfate 4 lb", "amazon_query": "Hi-Yield 32340 Iron Sulfate 4 lb", "active_ingredient": "iron sulfate", "alt_names": ["Hi-Yield Iron Sulfate","Hi Yield Iron Sulfate","Hi-Yield 32340","Iron Sulfate 4 lb","Copperas"], "asin": "B07CRNTR7G"},
-
-    {"id": 130,"slug": "andersons-pgf-complete",     "name": "The Andersons PGF Complete 16-4-8",          "category": "fertilizer",     "search_query": "The Andersons PGF Complete 16-4-8", "amazon_query": "The Andersons PGF Complete 16-4-8 fertilizer", "active_ingredient": "16-4-8 fertilizer + humic + iron", "alt_names": ["PGF Complete","PGF Complete 16-4-8","Andersons 16-4-8 Humic DG"], "asin": null},
-    {"id": 131,"slug": "andersons-pgf-balanced",     "name": "The Andersons PGF Balanced 10-10-10",        "category": "fertilizer",     "search_query": "The Andersons PGF Balanced 10-10-10", "amazon_query": "The Andersons PGF Balanced 10-10-10 fertilizer", "active_ingredient": "10-10-10 fertilizer", "alt_names": ["PGF Balanced","PGF Balanced 10-10-10","Andersons balanced fertilizer"], "asin": null},
-    {"id": 132,"slug": "andersons-green-shocker",    "name": "The Andersons Green Shocker 7-1-2",          "category": "fertilizer",     "search_query": "The Andersons Green Shocker 7-1-2", "amazon_query": "The Andersons Green Shocker 7-1-2 fertilizer", "active_ingredient": "7-1-2 fertilizer + humic", "alt_names": ["Green Shocker","Andersons Green Shocker","Green Shocker with Humic DG"], "asin": null},
-    {"id": 133,"slug": "andersons-humic-dg",         "name": "The Andersons Humic DG",                     "category": "soil-amendment", "search_query": "The Andersons Humic DG",       "amazon_query": "The Andersons Humic DG soil amendment", "active_ingredient": "humic acid + fulvic acid + humin", "alt_names": ["Humic DG","Andersons Humic DG","Humic DG organic soil amendment"], "asin": null},
-    {"id": 134,"slug": "andersons-humichar",         "name": "The Andersons HumiChar",                     "category": "soil-amendment", "search_query": "The Andersons HumiChar",       "amazon_query": "The Andersons HumiChar humic biochar", "active_ingredient": "humic acid + biochar", "alt_names": ["HumiChar","Andersons HumiChar","HumiChar organic soil amendment"], "asin": null},
-    {"id": 135,"slug": "andersons-black-gypsum-dg",  "name": "The Andersons Black Gypsum DG",              "category": "soil-amendment", "search_query": "The Andersons Black Gypsum DG", "amazon_query": "The Andersons Black Gypsum DG", "active_ingredient": "gypsum + humic acid", "alt_names": ["Black Gypsum DG","Andersons Black Gypsum","Black Gypsum"], "asin": null},
-    {"id": 137,"slug": "andersons-dirt-booster-plus","name": "The Andersons Dirt Booster Plus",            "category": "soil-amendment", "search_query": "The Andersons Dirt Booster Plus", "amazon_query": "The Andersons Dirt Booster Plus soil amendment", "active_ingredient": "microbials + humic + biochar", "alt_names": ["Dirt Booster Plus","Andersons Dirt Booster","Dirt Booster soil amendment"], "asin": null},
-    {"id": 138,"slug": "andersons-humic-dg-charx",   "name": "The Andersons Humic DG CharX",               "category": "soil-amendment", "search_query": "The Andersons Humic DG CharX", "amazon_query": "The Andersons Humic DG CharX biochar", "active_ingredient": "humic acid + biochar", "alt_names": ["Humic DG CharX","Andersons CharX","CharX","Andersons humic biochar"], "asin": null},
-
-    {"id": 145,"slug": "yard-mastery-flagship",     "name": "Yard Mastery Flagship 24-0-6",                "category": "fertilizer",     "search_query": "Yard Mastery Flagship 24-0-6",  "amazon_query": "Yard Mastery Flagship 24-0-6 fertilizer", "active_ingredient": "24-0-6 fertilizer + iron + Bio-Nite", "alt_names": ["Flagship","Flagship 24-0-6","Yard Mastery Flagship fertilizer"], "asin": null},
-    {"id": 146,"slug": "yard-mastery-double-dark",  "name": "Yard Mastery Double Dark 16-0-0",             "category": "fertilizer",     "search_query": "Yard Mastery Double Dark 16-0-0", "amazon_query": "Yard Mastery Double Dark 16-0-0 fertilizer", "active_ingredient": "16-0-0 fertilizer + 6% iron + Bio-Nite", "alt_names": ["Double Dark","Double Dark 16-0-0","Yard Mastery Double Dark fertilizer"], "asin": null},
-    {"id": 147,"slug": "yard-mastery-stress-blend", "name": "Yard Mastery Stress Blend 7-0-20",            "category": "fertilizer",     "search_query": "Yard Mastery Stress Blend 7-0-20", "amazon_query": "Yard Mastery Stress Blend 7-0-20 fertilizer", "active_ingredient": "7-0-20 fertilizer + iron + Bio-Nite", "alt_names": ["Stress Blend","Stress Blend 7-0-20","Yard Mastery Stress Blend fertilizer"], "asin": null},
-    {"id": 148,"slug": "yard-mastery-freedom",      "name": "Yard Mastery Freedom 17-7-6",                 "category": "fertilizer",     "search_query": "Yard Mastery Freedom 17-7-6",   "amazon_query": "Yard Mastery Freedom 17-7-6 fertilizer", "active_ingredient": "17-7-6 fertilizer", "alt_names": ["Freedom Fertilizer","Freedom 17-7-6","Yard Mastery Freedom fertilizer"], "asin": null},
-
-
-    {"id": 155,"slug": "n-ext-microgreene",         "name": "N-Ext MicroGreene 0-0-2",                    "category": "micronutrient",  "search_query": "N-Ext MicroGreene 0-0-2",       "amazon_query": "N-Ext MicroGreene 0-0-2",       "active_ingredient": "micronutrients + humic + sea kelp", "alt_names": ["MicroGreene","MicroGreene 0-0-2","Greene County MicroGreene"], "asin": null},
-    {"id": 156,"slug": "n-ext-greene-effect",       "name": "N-Ext GreeNe EfFect 7-0-0",                  "category": "fertilizer",     "search_query": "N-Ext GreeNe EfFect 7-0-0",     "amazon_query": "N-Ext GreeNe EfFect 7-0-0",     "active_ingredient": "7-0-0 nitrogen + iron", "alt_names": ["GreeNe EfFect","Greene Effect","N-Ext Green Effect"], "asin": null},
-    {"id": 157,"slug": "n-ext-spoon-juice",         "name": "N-Ext Spoon Juice 5-0-1",                    "category": "fertilizer",     "search_query": "N-Ext Spoon Juice 5-0-1",       "amazon_query": "N-Ext Spoon Juice 5-0-1 liquid fertilizer", "active_ingredient": "5-0-1 fertilizer + humic acid + kelp + iron", "alt_names": ["Spoon Juice","Spoon Juice 5-0-1","Yard Mastery Spoon Juice","Greene County Spoon Juice"], "asin": null},
-    {"id": 158,"slug": "n-ext-humic12",             "name": "N-Ext Humic12 0-0-1",                        "category": "soil-amendment", "search_query": "N-Ext Humic12 0-0-1",           "amazon_query": "N-Ext Humic12 liquid humic acid", "active_ingredient": "12% humic acid", "alt_names": ["Humic12","Humic 12","Greene County Humic12"], "asin": null},
-    {"id": 159,"slug": "n-ext-rgs",                 "name": "N-Ext RGS 0-0-1",                            "category": "biostimulant",   "search_query": "N-Ext RGS 0-0-1",               "amazon_query": "N-Ext RGS root growth stimulant", "active_ingredient": "humic acid + sea kelp", "alt_names": ["RGS","Root Growth Stimulant","N-Ext RGS Root Growth"], "asin": null},
-
-    {"id": 170,"slug": "simple-lawn-16-4-8",        "name": "Simple Lawn Solutions 16-4-8",               "category": "fertilizer",     "search_query": "Simple Lawn Solutions 16-4-8",  "amazon_query": "Simple Lawn Solutions 16-4-8 fertilizer", "active_ingredient": "16-4-8 liquid fertilizer + seaweed + fish", "alt_names": ["SLS 16-4-8","Simple Lawn 16-4-8","Advanced 16-4-8 Lawn Food"], "asin": null},
-    {"id": 171,"slug": "simple-lawn-28-0-0",        "name": "Simple Lawn Solutions 28-0-0",               "category": "fertilizer",     "search_query": "Simple Lawn Solutions 28-0-0",  "amazon_query": "Simple Lawn Solutions 28-0-0 high nitrogen", "active_ingredient": "28-0-0 liquid nitrogen", "alt_names": ["SLS 28-0-0","Simple Lawn High Nitrogen","28-0-0 High Nitrogen Lawn Food"], "asin": null},
-    {"id": 172,"slug": "simple-lawn-darker-green",  "name": "Simple Lawn Solutions Darker Green",         "category": "micronutrient",  "search_query": "Simple Lawn Solutions Darker Green Liquid Iron", "amazon_query": "Simple Lawn Solutions Darker Green liquid iron", "active_ingredient": "liquid iron + micronutrients", "alt_names": ["Darker Green","SLS Darker Green","Simple Lawn Liquid Iron"], "asin": null},
-
-    {"id": 185,"slug": "gs-liquid-humic",           "name": "GS Plant Foods Liquid Humic Acid",           "category": "soil-amendment", "search_query": "GS Plant Foods Liquid Humic Acid", "amazon_query": "GS Plant Foods liquid humic acid", "active_ingredient": "liquid humic acid", "alt_names": ["GS Liquid Humic","GS Plant Foods Humic Acid","Organic Liquid Humic Acid"], "asin": null},
-
-    {"id": 195,"slug": "hydretain-granular",        "name": "Hydretain Granular Moisture Manager",        "category": "moisture-manager", "search_query": "Hydretain Granular Moisture Manager", "amazon_query": "Hydretain Granular moisture manager", "active_ingredient": "hygroscopic humectant compounds", "alt_names": ["Hydretain Granular","Hydretain granular root zone","Hydretain moisture manager granules"], "asin": null},
-    {"id": 199,"slug": "carbonizpn",                "name": "CarbonizPN Soil Enhancer",                   "category": "soil-amendment", "search_query": "CarbonizPN Soil Enhancer",      "amazon_query": "CarbonizPN soil enhancer biochar", "active_ingredient": "activated biochar + premium organics", "alt_names": ["CarbonizPN","CarbonizPN top dressing","CarbonizPN biochar"], "asin": null},
-
-    {"id": 206,"slug": "turfgrasspro-blade-iron",   "name": "TurfGrassPro Blade Iron 15-0-0",             "category": "micronutrient",  "search_query": "TurfGrassPro Blade Iron 15-0-0", "amazon_query": "TurfGrassPro Blade Iron 15-0-0", "active_ingredient": "15-0-0 nitrogen + iron", "alt_names": ["Blade Iron","Blade Iron 15-0-0","TurfGrassPro Blade Iron"], "asin": null},
-    {"id": 207,"slug": "elemax-turf-nectar-ac",     "name": "Ele-Max Turf Nectar AC 15-0-0",              "category": "micronutrient",  "search_query": "Ele-Max Turf Nectar AC 15-0-0", "amazon_query": "Ele-Max Turf Nectar AC iron fertilizer", "active_ingredient": "15-0-0 nitrogen + 6% iron", "alt_names": ["Turf Nectar AC","Ele-Max Turf Nectar","EleMax Turf Nectar AC"], "asin": null},
-    {"id": 208,"slug": "southern-ag-chelated-iron", "name": "Southern Ag Chelated Liquid Iron",           "category": "micronutrient",  "search_query": "Southern Ag Chelated Liquid Iron", "amazon_query": "Southern Ag chelated liquid iron", "active_ingredient": "chelated iron", "alt_names": ["Southern Ag Liquid Iron","Chelated Liquid Iron","Southern Ag iron"], "asin": null},
-    {"id": 209,"slug": "lawnstar-liquid-iron",      "name": "LawnStar Liquid Iron",                       "category": "micronutrient",  "search_query": "LawnStar Liquid Iron",          "amazon_query": "LawnStar liquid iron",          "active_ingredient": "liquid iron", "alt_names": ["LawnStar iron","LawnStar chelated iron","LawnStar liquid iron fertilizer"], "asin": null},
-    {"id": 210,"slug": "main-event-dry-iron",        "name": "Main Event Dry Iron",                       "category": "micronutrient",  "search_query": "Main Event Dry Iron Quest",      "amazon_query": "Main Event Dry Iron micronutrient", "active_ingredient": "6-0-0 nitrogen + magnesium + sulfur + iron + manganese + zinc", "alt_names": ["Quest Main Event Dry Iron","Main Event chelated iron","Main Event micronutrient","dry iron fertilizer"], "asin": null},
-
-    {"id": 215,"slug": "sulfate-of-potash-0-0-50",  "name": "Sulfate of Potash 0-0-50",                  "category": "macronutrient",  "search_query": "Sulfate of Potash 0-0-50 lawn", "amazon_query": "sulfate of potash 0-0-50 lawn fertilizer", "active_ingredient": "soluble potash + sulfur", "alt_names": ["SOP 0-0-50","Sulfate of Potash","Potassium sulfate fertilizer"], "asin": null}
-
+    {
+      "id": 1,
+      "slug": "prodiamine-65wdg",
+      "name": "Prodiamine 65WDG",
+      "category": "pre-emergent",
+      "search_query": "Prodiamine 65WDG",
+      "amazon_query": "Prodiamine 65WDG pre-emergent",
+      "active_ingredient": "prodiamine",
+      "alt_names": [
+        "Prodiamine 65 WDG",
+        "Quali-Pro Prodiamine 65WDG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 2,
+      "slug": "dimension-2ew",
+      "name": "Dimension 2EW (Dithiopyr)",
+      "category": "pre-emergent",
+      "search_query": "Dimension 2EW Dithiopyr",
+      "amazon_query": "Dimension 2EW herbicide",
+      "active_ingredient": "dithiopyr",
+      "alt_names": [
+        "Dimension 2 EW",
+        "Dow Dimension 2EW",
+        "dithiopyr herbicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 3,
+      "slug": "ronstar-g",
+      "name": "Ronstar G (Oxadiazon 2G)",
+      "category": "pre-emergent",
+      "search_query": "Ronstar G Oxadiazon",
+      "amazon_query": "Ronstar G pre-emergent",
+      "active_ingredient": "oxadiazon",
+      "alt_names": [
+        "Ronstar G granule",
+        "Oxadiazon 2G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 4,
+      "slug": "spectacle-flo",
+      "name": "Spectacle Flo (Indaziflam)",
+      "category": "pre-emergent",
+      "search_query": "Spectacle Flo herbicide",
+      "amazon_query": "Spectacle Flo indaziflam",
+      "active_ingredient": "indaziflam",
+      "alt_names": [
+        "Spectacle Flo Herbicide",
+        "Bayer Spectacle Flo"
+      ],
+      "asin": null
+    },
+    {
+      "id": 5,
+      "slug": "pendulum-2g",
+      "name": "Pendulum 2G (Pendimethalin)",
+      "category": "pre-emergent",
+      "search_query": "Pendulum 2G pendimethalin",
+      "amazon_query": "Pendulum 2G pre-emergent granule",
+      "active_ingredient": "pendimethalin",
+      "alt_names": [
+        "Pendulum 2 G",
+        "BASF Pendulum 2G",
+        "Pendimethalin 2G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 6,
+      "slug": "gallery-75df",
+      "name": "Gallery 75 DF (Isoxaben)",
+      "category": "pre-emergent",
+      "search_query": "Gallery 75 DF isoxaben",
+      "amazon_query": "Gallery 75 DF broadleaf pre-emergent",
+      "active_ingredient": "isoxaben",
+      "alt_names": [
+        "Gallery 75DF",
+        "Gallery Dry Flowable",
+        "isoxaben broadleaf pre-emergent"
+      ],
+      "asin": null
+    },
+    {
+      "id": 7,
+      "slug": "specticle-g",
+      "name": "Specticle G (Indaziflam)",
+      "category": "pre-emergent",
+      "search_query": "Specticle G indaziflam",
+      "amazon_query": "Specticle G pre-emergent granule",
+      "active_ingredient": "indaziflam",
+      "alt_names": [
+        "Specticle Granule",
+        "Bayer Specticle G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 8,
+      "slug": "atrazine-4l",
+      "name": "Atrazine 4L",
+      "category": "pre-emergent",
+      "search_query": "Atrazine 4L herbicide",
+      "amazon_query": "Atrazine 4L weed killer",
+      "active_ingredient": "atrazine",
+      "alt_names": [
+        "Atrazine 4L Plus",
+        "Southern Ag Atrazine 4L"
+      ],
+      "asin": null
+    },
+    {
+      "id": 9,
+      "slug": "pendulum-aquacap",
+      "name": "Pendulum AquaCap (Pendimethalin 38.7%)",
+      "category": "pre-emergent",
+      "search_query": "Pendulum AquaCap pendimethalin",
+      "amazon_query": "Pendulum AquaCap herbicide",
+      "active_ingredient": "pendimethalin 38.7%",
+      "alt_names": [
+        "Pendulum Aqua Cap",
+        "BASF Pendulum AquaCap"
+      ],
+      "asin": null
+    },
+    {
+      "id": 15,
+      "slug": "celsius-wg",
+      "name": "Celsius WG",
+      "category": "post-emergent",
+      "search_query": "Celsius WG herbicide",
+      "amazon_query": "Celsius WG turf herbicide",
+      "active_ingredient": "thiencarbazone-methyl + iodosulfuron + foramsulfuron",
+      "alt_names": [
+        "Celsius WG Herbicide",
+        "Bayer Celsius WG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 16,
+      "slug": "certainty-wdg",
+      "name": "Certainty WDG (Sulfosulfuron)",
+      "category": "post-emergent",
+      "search_query": "Certainty WDG sulfosulfuron",
+      "amazon_query": "Certainty herbicide turf",
+      "active_ingredient": "sulfosulfuron",
+      "alt_names": [
+        "Certainty Turf Herbicide",
+        "Monsanto Certainty WDG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 17,
+      "slug": "drive-xlr8",
+      "name": "Drive XLR8 (Quinclorac)",
+      "category": "post-emergent",
+      "search_query": "Drive XLR8 quinclorac",
+      "amazon_query": "Drive XLR8 crabgrass herbicide",
+      "active_ingredient": "quinclorac",
+      "alt_names": [
+        "Drive XLR8",
+        "Drive XLR 8",
+        "BASF Drive XLR8"
+      ],
+      "asin": null
+    },
+    {
+      "id": 18,
+      "slug": "sedgehammer-plus",
+      "name": "SedgeHammer+ (Halosulfuron)",
+      "category": "post-emergent",
+      "search_query": "SedgeHammer halosulfuron",
+      "amazon_query": "Sedgehammer nutsedge killer",
+      "active_ingredient": "halosulfuron-methyl",
+      "alt_names": [
+        "SedgeHammer Plus",
+        "Sedge Hammer+",
+        "halosulfuron nutsedge"
+      ],
+      "asin": null
+    },
+    {
+      "id": 19,
+      "slug": "speedzone-southern",
+      "name": "SpeedZone Southern EW",
+      "category": "post-emergent",
+      "search_query": "SpeedZone Southern EW",
+      "amazon_query": "SpeedZone Southern lawn weed killer",
+      "active_ingredient": "carfentrazone + 2,4-D + MCPP + dicamba",
+      "alt_names": [
+        "SpeedZone Southern",
+        "PBI Gordon SpeedZone Southern"
+      ],
+      "asin": null
+    },
+    {
+      "id": 20,
+      "slug": "manor-60df",
+      "name": "Manor 60DF (Metsulfuron-Methyl)",
+      "category": "post-emergent",
+      "search_query": "Manor 60DF metsulfuron",
+      "amazon_query": "Manor 60DF herbicide",
+      "active_ingredient": "metsulfuron-methyl",
+      "alt_names": [
+        "Manor 60 DF",
+        "metsulfuron methyl herbicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 21,
+      "slug": "tenacity",
+      "name": "Tenacity Turf Herbicide (Mesotrione)",
+      "category": "post-emergent",
+      "search_query": "Tenacity mesotrione herbicide",
+      "amazon_query": "Tenacity turf herbicide mesotrione",
+      "active_ingredient": "mesotrione",
+      "alt_names": [
+        "Tenacity Herbicide",
+        "Syngenta Tenacity",
+        "mesotrione turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 22,
+      "slug": "turflon-ester",
+      "name": "Turflon Ester (Triclopyr)",
+      "category": "post-emergent",
+      "search_query": "Turflon Ester triclopyr",
+      "amazon_query": "Turflon Ester lawn herbicide",
+      "active_ingredient": "triclopyr",
+      "alt_names": [
+        "Turflon Ester Ultra",
+        "triclopyr ester herbicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 23,
+      "slug": "dismiss",
+      "name": "Dismiss Turf Herbicide (Sulfentrazone)",
+      "category": "post-emergent",
+      "search_query": "Dismiss sulfentrazone herbicide",
+      "amazon_query": "Dismiss turf herbicide sulfentrazone",
+      "active_ingredient": "sulfentrazone",
+      "alt_names": [
+        "Dismiss Herbicide",
+        "FMC Dismiss",
+        "sulfentrazone turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 24,
+      "slug": "pylex",
+      "name": "Pylex Turf Herbicide (Topramezone)",
+      "category": "post-emergent",
+      "search_query": "Pylex topramezone turf",
+      "amazon_query": "Pylex herbicide topramezone",
+      "active_ingredient": "topramezone",
+      "alt_names": [
+        "Pylex Herbicide",
+        "BASF Pylex",
+        "topramezone turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 25,
+      "slug": "msma-target-6",
+      "name": "MSMA Target 6 Plus",
+      "category": "post-emergent",
+      "search_query": "MSMA Target 6 Plus herbicide",
+      "amazon_query": "MSMA Target 6 Plus lawn herbicide",
+      "active_ingredient": "MSMA",
+      "alt_names": [
+        "MSMA Target 6",
+        "MSMA 6.6 Plus"
+      ],
+      "asin": null
+    },
+    {
+      "id": 26,
+      "slug": "q4-plus",
+      "name": "Q4 Plus Turf Herbicide",
+      "category": "post-emergent",
+      "search_query": "Q4 Plus turf herbicide",
+      "amazon_query": "Q4 Plus turf herbicide broadleaf",
+      "active_ingredient": "quinclorac + 2,4-D + dicamba + sulfentrazone",
+      "alt_names": [
+        "Q4 Plus Herbicide",
+        "PBI Gordon Q4 Plus"
+      ],
+      "asin": null
+    },
+    {
+      "id": 27,
+      "slug": "trimec",
+      "name": "Trimec Classic Broadleaf Herbicide",
+      "category": "post-emergent",
+      "search_query": "Trimec Classic broadleaf",
+      "amazon_query": "Trimec Classic lawn herbicide",
+      "active_ingredient": "2,4-D + MCPP + dicamba",
+      "alt_names": [
+        "Trimec Classic",
+        "Trimec Southern",
+        "PBI Gordon Trimec Classic"
+      ],
+      "asin": null
+    },
+    {
+      "id": 28,
+      "slug": "revolver",
+      "name": "Revolver Herbicide (Foramsulfuron)",
+      "category": "post-emergent",
+      "search_query": "Revolver foramsulfuron herbicide",
+      "amazon_query": "Revolver herbicide foramsulfuron",
+      "active_ingredient": "foramsulfuron",
+      "alt_names": [
+        "Revolver Turf Herbicide",
+        "Bayer Revolver",
+        "foramsulfuron turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 29,
+      "slug": "katana",
+      "name": "Katana Turf Herbicide (Flazasulfuron)",
+      "category": "post-emergent",
+      "search_query": "Katana flazasulfuron herbicide",
+      "amazon_query": "Katana turf herbicide flazasulfuron",
+      "active_ingredient": "flazasulfuron",
+      "alt_names": [
+        "Katana Herbicide",
+        "Bayer Katana Turf",
+        "flazasulfuron turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 35,
+      "slug": "primo-maxx",
+      "name": "Primo Maxx (Trinexapac-ethyl)",
+      "category": "pgr",
+      "search_query": "Primo Maxx trinexapac-ethyl",
+      "amazon_query": "Primo Maxx PGR trinexapac",
+      "active_ingredient": "trinexapac-ethyl",
+      "alt_names": [
+        "Primo MAXX",
+        "Primo Maxx 1L",
+        "Syngenta Primo Maxx"
+      ],
+      "asin": null
+    },
+    {
+      "id": 36,
+      "slug": "t-nex-1as",
+      "name": "T-Nex 1AS (Trinexapac-ethyl)",
+      "category": "pgr",
+      "search_query": "T-Nex 1AS trinexapac-ethyl",
+      "amazon_query": "T-Nex 1AS PGR trinexapac",
+      "active_ingredient": "trinexapac-ethyl",
+      "alt_names": [
+        "T Nex 1AS",
+        "TNex 1AS",
+        "Quali-Pro T-Nex 1AS"
+      ],
+      "asin": null
+    },
+    {
+      "id": 37,
+      "slug": "anuew",
+      "name": "Anuew (Prohexadione Calcium)",
+      "category": "pgr",
+      "search_query": "Anuew prohexadione calcium",
+      "amazon_query": "Anuew plant growth regulator",
+      "active_ingredient": "prohexadione-calcium",
+      "alt_names": [
+        "Anuew PGR",
+        "Bayer Anuew",
+        "prohexadione calcium turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 38,
+      "slug": "trimmit-2sc",
+      "name": "Trimmit 2SC (Paclobutrazol)",
+      "category": "pgr",
+      "search_query": "Trimmit 2SC paclobutrazol",
+      "amazon_query": "Trimmit 2SC PGR paclobutrazol",
+      "active_ingredient": "paclobutrazol",
+      "alt_names": [
+        "Trimmit 2 SC",
+        "Trimmit SC",
+        "paclobutrazol 2SC turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 39,
+      "slug": "cutless",
+      "name": "Cutless (Flurprimidol)",
+      "category": "pgr",
+      "search_query": "Cutless flurprimidol PGR",
+      "amazon_query": "Cutless 0.33G plant growth regulator",
+      "active_ingredient": "flurprimidol",
+      "alt_names": [
+        "Cutless 0.33G",
+        "Cutless MEC",
+        "flurprimidol PGR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 40,
+      "slug": "proxy-embark",
+      "name": "Proxy / Embark (Mefluidide)",
+      "category": "pgr",
+      "search_query": "Proxy Embark mefluidide PGR",
+      "amazon_query": "Proxy PGR mefluidide lawn",
+      "active_ingredient": "mefluidide",
+      "alt_names": [
+        "Proxy PGR",
+        "Embark Turf Regulator",
+        "mefluidide turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 41,
+      "slug": "pramaxis-mec",
+      "name": "Pramaxis MEC (Trinexapac-ethyl)",
+      "category": "pgr",
+      "search_query": "Pramaxis MEC trinexapac",
+      "amazon_query": "Pramaxis MEC PGR trinexapac",
+      "active_ingredient": "trinexapac-ethyl",
+      "alt_names": [
+        "Pramaxis MEC",
+        "PBI Gordon Pramaxis"
+      ],
+      "asin": null
+    },
+    {
+      "id": 50,
+      "slug": "propiconazole-14-3",
+      "name": "Propiconazole 14.3 (Banner Maxx)",
+      "category": "fungicide",
+      "search_query": "Propiconazole 14.3 Banner Maxx",
+      "amazon_query": "Propiconazole 14.3 fungicide",
+      "active_ingredient": "propiconazole",
+      "alt_names": [
+        "Propiconazole 14.3%",
+        "Banner Maxx",
+        "Quali-Pro Propiconazole 14.3"
+      ],
+      "asin": null
+    },
+    {
+      "id": 51,
+      "slug": "heritage-g",
+      "name": "Heritage G (Azoxystrobin)",
+      "category": "fungicide",
+      "search_query": "Heritage azoxystrobin fungicide",
+      "amazon_query": "Heritage azoxystrobin fungicide",
+      "active_ingredient": "azoxystrobin",
+      "alt_names": [
+        "Heritage G Granule",
+        "Syngenta Heritage",
+        "azoxystrobin fungicide turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 52,
+      "slug": "headway-g",
+      "name": "Headway G Fungicide",
+      "category": "fungicide",
+      "search_query": "Headway G fungicide",
+      "amazon_query": "Headway G fungicide granule",
+      "active_ingredient": "azoxystrobin + propiconazole",
+      "alt_names": [
+        "Headway G Granule",
+        "Syngenta Headway G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 53,
+      "slug": "armada-50-wdg",
+      "name": "Armada 50 WDG",
+      "category": "fungicide",
+      "search_query": "Armada 50 WDG fungicide",
+      "amazon_query": "Armada 50 WDG fungicide turf",
+      "active_ingredient": "trifloxystrobin + triadimefon",
+      "alt_names": [
+        "Armada 50 WDG Fungicide",
+        "Bayer Armada 50 WDG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 54,
+      "slug": "pillar-sc",
+      "name": "Pillar SC Intrinsic Fungicide",
+      "category": "fungicide",
+      "search_query": "Pillar SC Intrinsic fungicide",
+      "amazon_query": "Pillar SC Intrinsic fungicide lawn",
+      "active_ingredient": "trifloxystrobin + ipconazole",
+      "alt_names": [
+        "Pillar SC Fungicide",
+        "BASF Pillar SC Intrinsic"
+      ],
+      "asin": null
+    },
+    {
+      "id": 55,
+      "slug": "clearys-3336-f",
+      "name": "Clearys 3336 F (Thiophanate-Methyl)",
+      "category": "fungicide",
+      "search_query": "Clearys 3336 F fungicide",
+      "amazon_query": "Clearys 3336 F fungicide turf",
+      "active_ingredient": "thiophanate-methyl",
+      "alt_names": [
+        "Clearys 3336F",
+        "Cleary 3336",
+        "thiophanate-methyl turf fungicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 56,
+      "slug": "eagle-20ew",
+      "name": "Eagle 20EW (Myclobutanil)",
+      "category": "fungicide",
+      "search_query": "Eagle 20EW fungicide",
+      "amazon_query": "Eagle 20EW fungicide lawn",
+      "active_ingredient": "myclobutanil",
+      "alt_names": [
+        "Eagle 20 EW",
+        "Dow Eagle 20EW",
+        "myclobutanil fungicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 57,
+      "slug": "daconil",
+      "name": "Daconil (Chlorothalonil)",
+      "category": "fungicide",
+      "search_query": "Daconil chlorothalonil fungicide",
+      "amazon_query": "Daconil fungicide chlorothalonil",
+      "active_ingredient": "chlorothalonil",
+      "alt_names": [
+        "Daconil Ultrex",
+        "Daconil 2787",
+        "chlorothalonil fungicide turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 58,
+      "slug": "emerald",
+      "name": "Emerald Fungicide (Boscalid)",
+      "category": "fungicide",
+      "search_query": "Emerald boscalid fungicide",
+      "amazon_query": "Emerald fungicide boscalid turf",
+      "active_ingredient": "boscalid",
+      "alt_names": [
+        "Emerald 70WG",
+        "BASF Emerald",
+        "boscalid fungicide turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 59,
+      "slug": "medallion-wdg",
+      "name": "Medallion WDG (Fludioxonil)",
+      "category": "fungicide",
+      "search_query": "Medallion WDG fludioxonil",
+      "amazon_query": "Medallion WDG fungicide fludioxonil",
+      "active_ingredient": "fludioxonil",
+      "alt_names": [
+        "Medallion WDG Fungicide",
+        "Syngenta Medallion",
+        "fludioxonil turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 60,
+      "slug": "subdue-maxx",
+      "name": "Subdue Maxx (Mefenoxam)",
+      "category": "fungicide",
+      "search_query": "Subdue Maxx mefenoxam",
+      "amazon_query": "Subdue Maxx mefenoxam lawn fungicide",
+      "active_ingredient": "mefenoxam",
+      "alt_names": [
+        "Subdue MAXX",
+        "Syngenta Subdue Maxx",
+        "mefenoxam fungicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 61,
+      "slug": "velista",
+      "name": "Velista (Penthiopyrad)",
+      "category": "fungicide",
+      "search_query": "Velista penthiopyrad fungicide",
+      "amazon_query": "Velista fungicide penthiopyrad",
+      "active_ingredient": "penthiopyrad",
+      "alt_names": [
+        "Velista 50WG",
+        "Syngenta Velista",
+        "penthiopyrad fungicide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 62,
+      "slug": "encartis",
+      "name": "Encartis (Lumiderm / Isoclast)",
+      "category": "fungicide",
+      "search_query": "Encartis fungicide turf",
+      "amazon_query": "Encartis turf fungicide",
+      "active_ingredient": "isofetamid",
+      "alt_names": [
+        "Encartis Fungicide",
+        "Ishihara Sangyo Encartis"
+      ],
+      "asin": null
+    },
+    {
+      "id": 63,
+      "slug": "densicor",
+      "name": "Densicor Fungicide (Cyprodinil + Fludioxonil)",
+      "category": "fungicide",
+      "search_query": "Densicor fungicide turf",
+      "amazon_query": "Densicor fungicide lawn",
+      "active_ingredient": "cyprodinil + fludioxonil",
+      "alt_names": [
+        "Densicor Turf Fungicide",
+        "Syngenta Densicor"
+      ],
+      "asin": null
+    },
+    {
+      "id": 70,
+      "slug": "acelepryn-sc",
+      "name": "Acelepryn SC (Chlorantraniliprole)",
+      "category": "insecticide",
+      "search_query": "Acelepryn SC chlorantraniliprole",
+      "amazon_query": "Acelepryn SC insecticide",
+      "active_ingredient": "chlorantraniliprole",
+      "alt_names": [
+        "Acelepryn liquid",
+        "Syngenta Acelepryn SC",
+        "chlorantraniliprole SC"
+      ],
+      "asin": null
+    },
+    {
+      "id": 71,
+      "slug": "acelepryn-gr",
+      "name": "Acelepryn GR (Chlorantraniliprole 0.2%)",
+      "category": "insecticide",
+      "search_query": "Acelepryn GR chlorantraniliprole",
+      "amazon_query": "Acelepryn GR granule insecticide",
+      "active_ingredient": "chlorantraniliprole 0.2%",
+      "alt_names": [
+        "Acelepryn G",
+        "Acelepryn Granule",
+        "chlorantraniliprole 0.2G turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 72,
+      "slug": "merit-0-5g",
+      "name": "Merit 0.5G (Imidacloprid)",
+      "category": "insecticide",
+      "search_query": "Merit 0.5G imidacloprid",
+      "amazon_query": "Merit 0.5G imidacloprid grub",
+      "active_ingredient": "imidacloprid",
+      "alt_names": [
+        "Merit 0.5 G",
+        "Bayer Merit 0.5G",
+        "imidacloprid 0.5G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 73,
+      "slug": "dylox-6-2g",
+      "name": "Dylox 6.2G (Trichlorfon)",
+      "category": "insecticide",
+      "search_query": "Dylox 6.2G trichlorfon",
+      "amazon_query": "Dylox 6.2G grub killer lawn",
+      "active_ingredient": "trichlorfon",
+      "alt_names": [
+        "Dylox 6.2 G",
+        "Dylox 6.2 Granule",
+        "trichlorfon grub killer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 74,
+      "slug": "bifen-it",
+      "name": "Bifen IT (Bifenthrin 7.9%)",
+      "category": "insecticide",
+      "search_query": "Bifen IT bifenthrin 7.9%",
+      "amazon_query": "Bifen IT bifenthrin insecticide",
+      "active_ingredient": "bifenthrin",
+      "alt_names": [
+        "Bifen I/T",
+        "Bifenthrin 7.9%",
+        "Atticus Bifen IT"
+      ],
+      "asin": null
+    },
+    {
+      "id": 75,
+      "slug": "talstar-pl",
+      "name": "Talstar PL Granules (Bifenthrin 0.2%)",
+      "category": "insecticide",
+      "search_query": "Talstar PL Granules bifenthrin",
+      "amazon_query": "Talstar PL Granules bifenthrin",
+      "active_ingredient": "bifenthrin 0.2%",
+      "alt_names": [
+        "Talstar PL",
+        "FMC Talstar PL",
+        "bifenthrin 0.2% granule"
+      ],
+      "asin": null
+    },
+    {
+      "id": 76,
+      "slug": "meridian-0-33g",
+      "name": "Meridian 0.33G (Thiamethoxam)",
+      "category": "insecticide",
+      "search_query": "Meridian 0.33G insecticide",
+      "amazon_query": "Meridian 0.33G insecticide lawn",
+      "active_ingredient": "thiamethoxam",
+      "alt_names": [
+        "Meridian 0.33 G",
+        "Syngenta Meridian",
+        "thiamethoxam 0.33G turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 77,
+      "slug": "arena-0-25g",
+      "name": "Arena 0.25G (Clothianidin)",
+      "category": "insecticide",
+      "search_query": "Arena 0.25G clothianidin",
+      "amazon_query": "Arena 0.25G clothianidin grub",
+      "active_ingredient": "clothianidin",
+      "alt_names": [
+        "Arena 0.25 G",
+        "Valent Arena 0.25G",
+        "clothianidin granule turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 78,
+      "slug": "demand-cs",
+      "name": "Demand CS (Lambda-Cyhalothrin)",
+      "category": "insecticide",
+      "search_query": "Demand CS lambda-cyhalothrin",
+      "amazon_query": "Demand CS insecticide",
+      "active_ingredient": "lambda-cyhalothrin",
+      "alt_names": [
+        "Demand CS insecticide",
+        "Syngenta Demand CS",
+        "lambda-cyhalothrin CS"
+      ],
+      "asin": null
+    },
+    {
+      "id": 79,
+      "slug": "zylam-liquid",
+      "name": "Zylam Liquid Systemic (Dinotefuran)",
+      "category": "insecticide",
+      "search_query": "Zylam Liquid dinotefuran",
+      "amazon_query": "Zylam liquid systemic insecticide",
+      "active_ingredient": "dinotefuran",
+      "alt_names": [
+        "Zylam Liquid",
+        "PBI Gordon Zylam",
+        "dinotefuran systemic turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 80,
+      "slug": "avid-0-15ec",
+      "name": "Avid 0.15EC (Abamectin)",
+      "category": "insecticide",
+      "search_query": "Avid 0.15EC abamectin",
+      "amazon_query": "Avid 0.15EC abamectin miticide",
+      "active_ingredient": "abamectin",
+      "alt_names": [
+        "Avid miticide",
+        "Syngenta Avid 0.15EC",
+        "abamectin EC miticide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 81,
+      "slug": "movento-240sc",
+      "name": "Movento 240SC (Spirotetramat)",
+      "category": "insecticide",
+      "search_query": "Movento 240SC spirotetramat",
+      "amazon_query": "Movento 240SC insecticide spirotetramat",
+      "active_ingredient": "spirotetramat",
+      "alt_names": [
+        "Movento SC",
+        "Bayer Movento 240SC",
+        "spirotetramat systemic"
+      ],
+      "asin": null
+    },
+    {
+      "id": 82,
+      "slug": "mainspring-gnl",
+      "name": "Mainspring GNL (Cyantraniliprole)",
+      "category": "insecticide",
+      "search_query": "Mainspring GNL cyantraniliprole",
+      "amazon_query": "Mainspring GNL insecticide turf",
+      "active_ingredient": "cyantraniliprole",
+      "alt_names": [
+        "Mainspring insecticide",
+        "Syngenta Mainspring GNL",
+        "cyantraniliprole SC"
+      ],
+      "asin": null
+    },
+    {
+      "id": 83,
+      "slug": "forbid-4f",
+      "name": "Forbid 4F (Spiromesifen)",
+      "category": "insecticide",
+      "search_query": "Forbid 4F spiromesifen",
+      "amazon_query": "Forbid 4F spiromesifen miticide",
+      "active_ingredient": "spiromesifen",
+      "alt_names": [
+        "Forbid 4F miticide",
+        "Bayer Forbid 4F",
+        "spiromesifen mite control"
+      ],
+      "asin": null
+    },
+    {
+      "id": 84,
+      "slug": "tetrasan-5wdg",
+      "name": "TetraSan 5WDG (Etoxazole)",
+      "category": "insecticide",
+      "search_query": "TetraSan 5WDG etoxazole",
+      "amazon_query": "TetraSan 5WDG etoxazole miticide",
+      "active_ingredient": "etoxazole",
+      "alt_names": [
+        "TetraSan WDG",
+        "Valent TetraSan 5WDG",
+        "etoxazole mite growth regulator"
+      ],
+      "asin": null
+    },
+    {
+      "id": 85,
+      "slug": "kontos-sc",
+      "name": "Kontos SC (Spirotetramat 22.4%)",
+      "category": "insecticide",
+      "search_query": "Kontos SC spirotetramat",
+      "amazon_query": "Kontos SC insecticide spirotetramat",
+      "active_ingredient": "spirotetramat 22.4%",
+      "alt_names": [
+        "Kontos insecticide",
+        "Bayer Kontos SC",
+        "spirotetramat 22.4"
+      ],
+      "asin": null
+    },
+    {
+      "id": 86,
+      "slug": "tristar-8-5sl",
+      "name": "Tristar 8.5 SL (Acetamiprid)",
+      "category": "insecticide",
+      "search_query": "Tristar 8.5 SL acetamiprid",
+      "amazon_query": "Tristar 8.5 SL insecticide",
+      "active_ingredient": "acetamiprid",
+      "alt_names": [
+        "Tristar SL",
+        "Cleary Tristar 8.5SL",
+        "acetamiprid systemic insecticide"
+      ],
+      "asin": null
+    },
+    {
+      "id": 115,
+      "slug": "hydretain",
+      "name": "Hydretain Root Zone Moisture Manager",
+      "category": "soil-amendment",
+      "search_query": "Hydretain Root Zone Moisture Manager",
+      "amazon_query": "Hydretain root zone moisture manager",
+      "active_ingredient": "hygroscopic humectant compounds",
+      "alt_names": [
+        "Hydretain liquid",
+        "Hydretain ES Plus",
+        "Hydretain moisture manager"
+      ],
+      "asin": null
+    },
+    {
+      "id": 116,
+      "slug": "revolution-surfactant",
+      "name": "Revolution Soil Surfactant",
+      "category": "soil-amendment",
+      "search_query": "Revolution Soil Surfactant",
+      "amazon_query": "Revolution soil surfactant turf",
+      "active_ingredient": "polyethylene glycol surfactant",
+      "alt_names": [
+        "Revolution wetting agent",
+        "turf surfactant revolution"
+      ],
+      "asin": null
+    },
+    {
+      "id": 117,
+      "slug": "mycoapply",
+      "name": "MycoApply Mycorrhizal Inoculant",
+      "category": "soil-amendment",
+      "search_query": "MycoApply Mycorrhizal Inoculant",
+      "amazon_query": "MycoApply Mycorrhizal Inoculant lawn",
+      "active_ingredient": "mycorrhizal fungi endomycorrhizae",
+      "alt_names": [
+        "MycoApply inoculant",
+        "Mycorrhizal inoculant lawn",
+        "Mycorrhizae lawn soil"
+      ],
+      "asin": null
+    },
+    {
+      "id": 118,
+      "slug": "feature-6-0-0",
+      "name": "Feature 6-0-0 Iron Fertilizer",
+      "category": "soil-amendment",
+      "search_query": "Feature 6-0-0",
+      "amazon_query": "Feature 6-0-0 iron fertilizer lawn",
+      "active_ingredient": "nitrogen + iron 6-0-0",
+      "alt_names": [
+        "Feature 6-0-0 fertilizer",
+        "Feature iron 6-0-0",
+        "Feature lawn iron fertilizer"
+      ],
+      "asin": "B076TFPB1Z"
+    },
+    {
+      "id": 204,
+      "slug": "spyker-hhs100",
+      "name": "Spyker HHS100 Handheld Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Spyker HHS100 handheld spreader",
+      "amazon_query": "Spyker HHS100 handheld spreader",
+      "asin": "B00LFWNUAO",
+      "alt_names": [
+        "Spyker HHS-100",
+        "Spyker 5lb handheld spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00LFWNUAO",
+        "mkrittenhouse": "https://www.mkrittenhouse.com/us/spyker-handheld-spreader-hhs100",
+        "spyker": "https://www.spyker.com/product/hhs100-spyker-5lb-all-season-handheld-spreader-with-lifetime-warranty/"
+      }
+    },
+    {
+      "id": 205,
+      "slug": "solo-421s",
+      "name": "Solo 421-S Chest-Mount Portable Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Solo 421-S portable spreader",
+      "amazon_query": "Solo 421-S chest mount portable spreader",
+      "asin": "B00WUEZBSA",
+      "alt_names": [
+        "Solo 421 spreader",
+        "Solo 421S hand spreader",
+        "Solo 421 portable"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00WUEZBSA",
+        "home_depot": "https://www.homedepot.com/p/SOLO-20-lbs-Chest-Mount-Portable-Spreader-421-S/312097101",
+        "mkrittenhouse": "https://www.mkrittenhouse.com/us/solo-421-s-spreader"
+      }
+    },
+    {
+      "id": 200,
+      "slug": "scotts-wizz",
+      "name": "Scotts Wizz Handheld Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Scotts Wizz handheld spreader",
+      "amazon_query": "Scotts Wizz battery powered handheld spreader",
+      "asin": "B011HY5Q1K",
+      "alt_names": [
+        "Scotts Whiz spreader",
+        "Scotts Wizz 71131",
+        "Scotts battery handheld spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B011HY5Q1K",
+        "walmart": "https://www.walmart.com/ip/Scotts-Wizz-Spreader-for-Seed-Fertilizer-Salt-and-Ice-Melt-Holds-up-to-2-500-sq-ft-of-Product/46879329"
+      }
+    },
+    {
+      "id": 201,
+      "slug": "scotts-handygreen-ii",
+      "name": "Scotts HandyGreen II Handheld Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Scotts HandyGreen II 71133 spreader",
+      "amazon_query": "Scotts HandyGreen II handheld spreader",
+      "asin": "B0000BYCP7",
+      "alt_names": [
+        "Scotts Handy Green 2",
+        "Scotts 71133"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0000BYCP7",
+        "home_depot": "https://www.homedepot.com/p/Scotts-Handy-Green-II-2-lb-1-500-sq-ft-Hand-Held-Broadcast-Spreader-71133/100066212"
+      }
+    },
+    {
+      "id": 210,
+      "slug": "lesco-high-wheel-80",
+      "name": "LESCO High Wheel 80 lb Spreader",
+      "category": "spreader-push",
+      "search_query": "LESCO 101186 High Wheel spreader",
+      "amazon_query": "LESCO 101186 High Wheel fertilizer spreader",
+      "asin": "B00BL03CGC",
+      "alt_names": [
+        "Lesco 80 lb spreader",
+        "LESCO 101186",
+        "SiteOne LESCO high wheel spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00BL03CGC",
+        "mkrittenhouse": "https://www.mkrittenhouse.com/us/lesco-fertilizer-spreader-101186-high-wheel",
+        "lawn_synergy": "https://lawnsynergy.com/products/lesco-commercial-push-spreader-80-lb-compacity"
+      }
+    },
+    {
+      "id": 211,
+      "slug": "lesco-50lb-spreader",
+      "name": "LESCO 50 lb Push Spreader",
+      "category": "spreader-push",
+      "search_query": "LESCO 092807 50 lb spreader",
+      "amazon_query": "LESCO 092807 50 lb fertilizer push spreader",
+      "asin": "B00BIK3WTC",
+      "alt_names": [
+        "Lesco 50lb spreader",
+        "LESCO 092807",
+        "SiteOne LESCO 50 lb"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00BIK3WTC",
+        "siteone": "https://www.siteone.com/en/092807-lesco-broadcast-spreader-w-50-lb-capacity/p/23988",
+        "mkrittenhouse": "https://www.mkrittenhouse.com/us/lesco-50-lb-push-spreader-092807",
+        "lowes": "https://www.lowes.com/pd/Lesco-Pro-50-Broadcast-Fertilizer-Spreader/5000877067"
+      }
+    },
+    {
+      "id": 215,
+      "slug": "spyker-spy80-1s",
+      "name": "Spyker Ergo-PRO SPY80-1S 80 lb Spreader",
+      "category": "spreader-push",
+      "search_query": "Spyker SPY80-1S Ergo-PRO spreader",
+      "amazon_query": "Spyker Ergo-PRO SPY80-1S 80 lb broadcast spreader",
+      "asin": null,
+      "alt_names": [
+        "Spyker SPY80",
+        "Spyker 80 lb Ergo-PRO"
+      ],
+      "retailers": {
+        "spyker": "https://www.spyker.com/product-category/spreaders/"
+      }
+    },
+    {
+      "id": 214,
+      "slug": "spyker-p70-12010",
+      "name": "Spyker P70-12010 Commercial Drop Spreader (120 lb)",
+      "category": "spreader-push",
+      "search_query": "Spyker P70-12010 commercial drop spreader",
+      "amazon_query": "Spyker P70-12010 commercial drop spreader 120 lb",
+      "asin": "B06X936K42",
+      "alt_names": [
+        "Spyker 70-12010",
+        "Spyker 120 lb drop spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B06X936K42",
+        "mkrittenhouse": "https://www.mkrittenhouse.com/us/spyker-commercial-drop-spreader-p70-12010",
+        "spyker": "https://www.spyker.com/product/pro-series-p70-12010-120-commercial-drop-spreader/"
+      }
+    },
+    {
+      "id": 212,
+      "slug": "andersons-model-2000",
+      "name": "Andersons Model 2000 Rotary Spreader",
+      "category": "spreader-push",
+      "search_query": "Andersons Model 2000 rotary spreader",
+      "amazon_query": "Andersons Model 2000 professional push spreader",
+      "asin": null,
+      "alt_names": [
+        "The Andersons Model 2000",
+        "Andersons 2000 SR",
+        "Andersons professional rotary spreader"
+      ],
+      "retailers": {
+        "reinders": "https://www.reinders.com/products/asp8099/",
+        "ewing": "https://www.ewingoutdoorsupply.com/56006010-the-andersons-model-2000-rotary-spreader",
+        "target_specialty": "https://www.target-specialty.com/spreader-model-2000-rotary-spreader"
+      }
+    },
+    {
+      "id": 216,
+      "slug": "earthway-2050p",
+      "name": "Earthway 2050P Commercial Spreader (80 lb)",
+      "category": "spreader-push",
+      "search_query": "Earthway 2050P commercial broadcast spreader",
+      "amazon_query": "Earthway 2050P commercial broadcast spreader 80 lb",
+      "asin": "B0000BYDXN",
+      "alt_names": [
+        "Earthway 2050P",
+        "Earthway commercial broadcast"
+      ],
+      "retailers": {
+        "russo_power": "https://russopower.com/products/earthway-2050p-commercial-push-spreader-80-lb",
+        "acme_tools": "https://www.acmetools.com/earthway-estate-broadcast-spreader-2050p/052732205093.html",
+        "earthway": "https://earthway.com/product/2050p-estate-residential-broadcast-spreader/"
+      }
+    },
+    {
+      "id": 217,
+      "slug": "earthway-2030p",
+      "name": "Earthway 2030P-Plus Broadcast Spreader (65 lb)",
+      "category": "spreader-push",
+      "search_query": "Earthway 2030P-Plus spreader",
+      "amazon_query": "Earthway 2030P Plus broadcast spreader 65 lb",
+      "asin": "B000XS3EFW",
+      "alt_names": [
+        "Earthway 2030P",
+        "Earthway 2030 P Plus"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B000XS3EFW",
+        "gemplers": "https://gemplers.com/products/earthway-deluxe-2030p-plus-spreader-with-9-quot-pneumatic-wheels",
+        "earthway": "https://earthway.com/product/2030p-plus/"
+      }
+    },
+    {
+      "id": 222,
+      "slug": "agri-fab-45-0462",
+      "name": "Agri-Fab 45-0462 Push Spreader (130 lb)",
+      "category": "spreader-push",
+      "search_query": "Agri-Fab 45-0462 push spreader 130 lb",
+      "amazon_query": "Agri-Fab 45-0462 130 lb push broadcast spreader",
+      "asin": "B002U0KDH8",
+      "alt_names": [
+        "Agri-Fab 450462",
+        "Agri Fab 130 lb push spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B002U0KDH8",
+        "lowes": "https://www.lowes.com/pd/Agri-Fab-Agri-Fab-45-0462-130-lb-Push-Broadcast-Spreader-in-Orange-and-Black/7725398",
+        "agrifab": "https://www.agri-fab.com/Products/Push-Spreader/45-0462",
+        "tractor_supply": "https://www.tractorsupply.com/tsc/product/agri-fab-130-lb-push-broadcast-spreader"
+      }
+    },
+    {
+      "id": 225,
+      "slug": "chapin-8201a",
+      "name": "Chapin 8201A Push Spreader (80 lb)",
+      "category": "spreader-push",
+      "search_query": "Chapin 8201A push spreader 80 lb",
+      "amazon_query": "Chapin 8201A 80 lb broadcast spreader",
+      "asin": "B07VKXLX7V",
+      "alt_names": [
+        "Chapin 8201 spreader",
+        "Chapin 80 lb push spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B07VKXLX7V",
+        "russo_power": "https://russopower.com/products/chapin-8201a-80-pound-residential-salt-spreader"
+      }
+    },
+    {
+      "id": 226,
+      "slug": "chapin-8301c",
+      "name": "Chapin 8301C 80 lb Contractor Turf Spreader",
+      "category": "spreader-push",
+      "search_query": "Chapin 8301C contractor turf spreader",
+      "amazon_query": "Chapin 8301C 80 lb contractor turf spreader",
+      "asin": "B01MUODGQ2",
+      "alt_names": [
+        "Chapin 8301 contractor spreader",
+        "Chapin contractor turf spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B01MUODGQ2",
+        "home_depot": "https://www.homedepot.com/p/Chapin-80-lbs-Capacity-Contractor-Turf-Spreader-8301C/301977870"
+      }
+    },
+    {
+      "id": 220,
+      "slug": "scotts-elite-spreader",
+      "name": "Scotts Elite Spreader",
+      "category": "spreader-push",
+      "search_query": "Scotts Elite spreader 75902",
+      "amazon_query": "Scotts Elite broadcast spreader",
+      "asin": "B077JBGG4H",
+      "alt_names": [
+        "Scotts 75902",
+        "Scotts Elite EdgeGuard spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B077JBGG4H",
+        "scotts": "https://scotts.com/en-us/shop/spreaders/",
+        "tractor_supply": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902"
+      }
+    },
+    {
+      "id": 219,
+      "slug": "scotts-edgeguard-dlx",
+      "name": "Scotts Turf Builder EdgeGuard DLX Spreader",
+      "category": "spreader-push",
+      "search_query": "Scotts EdgeGuard DLX spreader 76232",
+      "amazon_query": "Scotts Turf Builder EdgeGuard DLX spreader",
+      "asin": "B001H1EQO2",
+      "alt_names": [
+        "Scotts EdgeGuard Deluxe",
+        "Scotts 76232"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B001H1EQO2",
+        "scotts": "https://scotts.com/en-us/shop/lawn-care-deals/scotts-turf-builder-edgeguard-dlx-broadcast-spreader/76232B.html"
+      }
+    },
+    {
+      "id": 218,
+      "slug": "scotts-edgeguard-mini",
+      "name": "Scotts Turf Builder EdgeGuard Mini Spreader",
+      "category": "spreader-push",
+      "search_query": "Scotts EdgeGuard Mini spreader 76121",
+      "amazon_query": "Scotts Turf Builder EdgeGuard Mini spreader",
+      "asin": "B002YPS1KK",
+      "alt_names": [
+        "Scotts 76121",
+        "Scotts EdgeGuard Mini"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B002YPS1KK",
+        "scotts": "https://scotts.com/en-us/shop/spreaders/"
+      }
+    },
+    {
+      "id": 221,
+      "slug": "scotts-classic-drop",
+      "name": "Scotts Turf Builder Classic Drop Spreader",
+      "category": "spreader-push",
+      "search_query": "Scotts Classic Drop spreader 76565A",
+      "amazon_query": "Scotts Turf Builder Classic Drop Spreader",
+      "asin": "B002ZTK09U",
+      "alt_names": [
+        "Scotts drop spreader",
+        "Scotts 76565A"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B002ZTK09U",
+        "scotts": "https://scotts.com/en-us/shop/spreaders/"
+      }
+    },
+    {
+      "id": 223,
+      "slug": "agri-fab-45-0463",
+      "name": "Agri-Fab 45-0463 Tow-Behind Spreader (130 lb)",
+      "category": "spreader-tow",
+      "search_query": "Agri-Fab 45-0463 tow behind spreader 130 lb",
+      "amazon_query": "Agri-Fab 45-0463 130 lb tow behind spreader",
+      "asin": null,
+      "alt_names": [
+        "Agri-Fab 450463",
+        "Agri Fab 130 lb tow spreader"
+      ],
+      "retailers": {
+        "agrifab": "https://www.agri-fab.com/Products/Tow-Spreader/45-0463",
+        "tractor_supply": "https://www.tractorsupply.com/tsc/product/agri-fab-130-lb-tow-broadcast-spreader"
+      }
+    },
+    {
+      "id": 224,
+      "slug": "brinly-bs-36bh",
+      "name": "Brinly BS-36BH Tow-Behind Spreader (175 lb)",
+      "category": "spreader-tow",
+      "search_query": "Brinly BS-36BH tow behind spreader",
+      "amazon_query": "Brinly BS-36BH 175 lb tow behind broadcast spreader",
+      "asin": "B001U40NFC",
+      "alt_names": [
+        "Brinly Hardy BS36BH",
+        "Brinly 36BH",
+        "Brinly 175 lb tow spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B001U40NFC",
+        "home_depot": "https://www.homedepot.com/p/Brinly-Hardy-175-lb-3-5-cu-ft-Tow-Behind-Broadcast-Spreader-for-Lawn-Tractors-and-Zero-Turn-Mowers-BS36BH/202819024",
+        "brinly": "https://brinly.com/products/bs-36bh-175-lb-tow-spreader"
+      }
+    },
+    {
+      "id": 230,
+      "slug": "flowzone-typhoon-3",
+      "name": "FlowZone Typhoon 3 Battery Backpack Sprayer (4 gal)",
+      "category": "sprayer-backpack",
+      "search_query": "FlowZone Typhoon 3 backpack sprayer FZVAAK-3",
+      "amazon_query": "FlowZone Typhoon 3 battery backpack sprayer 4 gallon",
+      "asin": "B0C3WGCK64",
+      "alt_names": [
+        "Flow Zone Typhoon 3",
+        "FlowZone FZVAAK-3",
+        "Typhoon 3 sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0C3WGCK64",
+        "fzspray": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer",
+        "solutions_stores": "https://www.solutionsstores.com/flowzone-typhoon-backpack-sprayer"
+      }
+    },
+    {
+      "id": 231,
+      "slug": "flowzone-cyclone-3",
+      "name": "FlowZone Cyclone 3 Battery Backpack Sprayer (4 gal)",
+      "category": "sprayer-backpack",
+      "search_query": "FlowZone Cyclone 3 backpack sprayer FZVAAJ-3",
+      "amazon_query": "FlowZone Cyclone 3 battery backpack sprayer 4 gallon",
+      "asin": "B0CHN3P8CN",
+      "alt_names": [
+        "Flow Zone Cyclone 3",
+        "FlowZone FZVAAJ-3",
+        "Cyclone 3 sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0CHN3P8CN",
+        "fzspray": "https://fzspray.com/products/cyclone-3-battery-powered-backpack-sprayer",
+        "solutions_stores": "https://www.solutionsstores.com/flowzone-cyclone-backpack-sprayer",
+        "diypestcontrol": "https://diypestcontrol.com/cyclone-3-variable-pressure-5-position-battery-backpack-sprayer-4-gallon"
+      }
+    },
+    {
+      "id": 232,
+      "slug": "flowzone-storm-2-5",
+      "name": "FlowZone Storm 2.5 Battery Backpack Sprayer (2.5 gal)",
+      "category": "sprayer-backpack",
+      "search_query": "FlowZone Storm 2.5 backpack sprayer",
+      "amazon_query": "FlowZone Storm 2.5 gallon battery backpack sprayer",
+      "asin": "B08VJL8RW1",
+      "alt_names": [
+        "Flow Zone Storm 2.5",
+        "FlowZone Storm"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B08VJL8RW1",
+        "fzspray": "https://fzspray.com/collections/backpack-sprayers"
+      }
+    },
+    {
+      "id": 233,
+      "slug": "flowzone-zephyr",
+      "name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
+      "category": "sprayer-backpack",
+      "search_query": "FlowZone Zephyr backpack sprayer FZSATJ-3",
+      "amazon_query": "FlowZone Zephyr battery backpack sprayer 4 gallon",
+      "asin": "B0DZ7CGSLQ",
+      "alt_names": [
+        "Flow Zone Zephyr",
+        "FlowZone FZSATJ-3",
+        "Zephyr 4 gallon sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0DZ7CGSLQ",
+        "home_depot": "https://www.homedepot.com/p/FLOWZONE-Zephyr-Battery-Powered-Backpack-Sprayer-4-Gal-FZSATJ-3/335125596",
+        "fzspray": "https://fzspray.com/products/zephyr-battery-powered-backpack-sprayer-4-gallon"
+      }
+    },
+    {
+      "id": 253,
+      "slug": "milwaukee-m18-switch-tank",
+      "name": "Milwaukee M18 Switch Tank 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Milwaukee M18 Switch Tank backpack sprayer 2820",
+      "amazon_query": "Milwaukee M18 Switch Tank 4 gallon backpack sprayer",
+      "asin": "B0F7TMVCCF",
+      "alt_names": [
+        "Milwaukee 2820-20PS",
+        "Milwaukee 2820-21PS",
+        "Milwaukee M18 backpack sprayer",
+        "Milwaukee SWITCH TANK sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0F7TMVCCF",
+        "milwaukee": "https://www.milwaukeetool.com/Products/2820-21PS"
+      }
+    },
+    {
+      "id": 251,
+      "slug": "jacto-pjb-16u",
+      "name": "Jacto PJB-16U 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Jacto PJB-16U battery backpack sprayer",
+      "amazon_query": "Jacto PJB-16U battery powered backpack sprayer",
+      "asin": "B01NA6K0SB",
+      "alt_names": [
+        "Jacto PJB16U",
+        "Jacto battery backpack sprayer",
+        "Jacto PJB-16"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B01NA6K0SB",
+        "home_garden_supply": "https://homeandgardensupply.com/products/jacto-pjb-16u-battery-powered-backpack-sprayer-w-spray-trigger"
+      }
+    },
+    {
+      "id": 248,
+      "slug": "petratools-hd4000",
+      "name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "PetraTools HD4000 battery backpack sprayer",
+      "amazon_query": "PetraTools HD4000 4 gallon cordless backpack sprayer",
+      "asin": "B07ZQT4TVV",
+      "alt_names": [
+        "Petra Tools HD4000",
+        "PetraTools HD 4000"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B07ZQT4TVV"
+      }
+    },
+    {
+      "id": 249,
+      "slug": "ryobi-p2860",
+      "name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "RYOBI P2860 18V backpack sprayer",
+      "amazon_query": "RYOBI P2860 18V ONE+ 4 gallon backpack chemical sprayer",
+      "asin": "B09N3MTWBG",
+      "alt_names": [
+        "Ryobi P2860",
+        "RYOBI ONE+ backpack sprayer",
+        "RYOBI 18V backpack sprayer",
+        "RYOBI RY120BP"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B09N3MTWBG",
+        "home_depot": "https://www.homedepot.com/p/RYOBI-ONE-18V-Cordless-Battery-4-Gal-Backpack-Chemical-Sprayer-with-2-0-Ah-Battery-and-Charger-P2860/314259313",
+        "ryobi": "https://www.ryobitools.com/products/46396026774"
+      }
+    },
+    {
+      "id": 246,
+      "slug": "chapin-63985",
+      "name": "Chapin 63985 4-Gallon 20V Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Chapin 63985 battery backpack sprayer 20V",
+      "amazon_query": "Chapin 63985 4 gallon 20V battery backpack sprayer",
+      "asin": "B00XLHDFNI",
+      "alt_names": [
+        "Chapin 63985 Tree Turf Pro",
+        "Chapin 20V backpack sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00XLHDFNI",
+        "lowes": "https://www.lowes.com/pd/Chapin-63985-4-Gallon-Backpack-Sprayer/1002673774",
+        "domyown": "https://www.domyown.com/chapin-gallon-20v-wide-mouth-backpack-sprayer-63985-p-17357.html"
+      }
+    },
+    {
+      "id": 235,
+      "slug": "solo-433",
+      "name": "Solo 433 Gas-Powered Backpack Power Sprayer (Honda 25cc)",
+      "category": "sprayer-backpack",
+      "search_query": "Solo 433 motorized backpack sprayer Honda 25cc",
+      "amazon_query": "Solo 433 gas motorized backpack power sprayer",
+      "asin": "B003AOBVY2",
+      "alt_names": [
+        "Solo 433 power sprayer",
+        "Solo 433 motorized",
+        "Solo 433H"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B003AOBVY2",
+        "solo": "https://us.solo.global/product/433-backpack-sprayer-honda-4-stroke-25cc-engine-5-gallon-piston-pump/",
+        "forestry_suppliers": "https://www.forestry-suppliers.com/p/13088/80781/solo-model-433-motorized-backpack-sprayer"
+      }
+    },
+    {
+      "id": 244,
+      "slug": "stihl-sr200",
+      "name": "STIHL SR 200 Gas Backpack Mist Blower",
+      "category": "sprayer-backpack",
+      "search_query": "STIHL SR 200 backpack mist blower sprayer",
+      "amazon_query": "STIHL SR200 gas backpack mist sprayer",
+      "asin": null,
+      "alt_names": [
+        "Stihl SR200",
+        "STIHL SR 200 mistblower",
+        "4241-011-2602-US"
+      ],
+      "retailers": {
+        "stihl": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-200-1027067",
+        "ace_hardware": "https://www.acehardware.com/departments/lawn-and-garden/lawn-care/sprayers/1001240",
+        "acme_tools": "https://www.acmetools.com/stihl-sr-200-21-gallon-gas-powered-lightweight-backpack-sprayer-4241-011-2602-us/886661909766.html"
+      }
+    },
+    {
+      "id": 245,
+      "slug": "stihl-sr450",
+      "name": "STIHL SR 450 Gas Backpack Mist Blower",
+      "category": "sprayer-backpack",
+      "search_query": "STIHL SR 450 backpack mist blower sprayer",
+      "amazon_query": "STIHL SR450 gas backpack mist sprayer",
+      "asin": null,
+      "alt_names": [
+        "Stihl SR450",
+        "STIHL SR 450 mistblower"
+      ],
+      "retailers": {
+        "stihl": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-450-gasoline-backpack-sprayer-1027378"
+      }
+    }
   ]
 }
