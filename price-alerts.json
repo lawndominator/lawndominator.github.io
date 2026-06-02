@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-02T21:36:03.640331+00:00",
+  "generated_at": "2026-06-02T21:37:03.418748+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 36,
-  "alert_count": 74,
+  "current_alert_count": 37,
+  "alert_count": 75,
   "alerts": [
     {
       "id": "dimension-2ew:best_price_drop:amazon:155.00:142.50",
@@ -20,7 +20,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "dimension-2ew:new_lowest_retailer:amazon:155.00:142.50",
@@ -36,7 +36,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "dimension-2ew:back_in_stock:amazon:155.00:142.50",
@@ -52,7 +52,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "spectacle-flo:back_in_stock:sunspot-supply:331.68:2151.50",
@@ -68,7 +68,7 @@
       "new_retailer": "Sunspot Supply",
       "url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "specticle-g:back_in_stock:lawn-synergy:135.77:189.99",
@@ -84,7 +84,7 @@
       "new_retailer": "Lawn Synergy",
       "url": "https://lawnsynergy.com/products/specticle-g-herbicide",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "atrazine-4l:back_in_stock:solutions:24.77:88.77",
@@ -100,7 +100,7 @@
       "new_retailer": "Solutions Pest & Lawn",
       "url": "https://www.solutionsstores.com/southern-ag-atrazine-st-augustine-weed-killer",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "sedgehammer-plus:best_price_drop:amazon:14.95:13.99",
@@ -116,7 +116,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "sedgehammer-plus:new_lowest_retailer:amazon:14.95:13.99",
@@ -132,7 +132,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B007PHMAYK?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "manor-60df:back_in_stock:ebay:28.49:27.25",
@@ -148,7 +148,7 @@
       "new_retailer": "eBay",
       "url": "https://www.ebay.com/itm/134845221641",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "dismiss:back_in_stock:amazon:60.48:184.95",
@@ -164,7 +164,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B0FHJX5MKP?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "pylex:back_in_stock:pestrong:416.00:419.95",
@@ -180,7 +180,23 @@
       "new_retailer": "Pestrong",
       "url": "https://pestrong.com/product/pylex-herbicide-for-cool-season-grass-4-oz",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
+    },
+    {
+      "id": "t-nex-1as:major_price_drop:solutions:126.99:34.00",
+      "type": "major_price_drop",
+      "product_id": 36,
+      "product_slug": "t-nex-1as",
+      "product_name": "T-Nex 1AS (Trinexapac-ethyl)",
+      "category": "pgr",
+      "old_price": 126.99,
+      "new_price": 34.0,
+      "drop_percent": 73.2,
+      "old_retailer": "Solutions Pest & Lawn",
+      "new_retailer": "Solutions Pest & Lawn",
+      "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+      "in_stock": true,
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "headway-g:back_in_stock:lawn-synergy:79.98:79.99",
@@ -196,7 +212,7 @@
       "new_retailer": "Lawn Synergy",
       "url": "https://lawnsynergy.com/products/headway-g-fungicide",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "daconil:back_in_stock:pestrong:28.69:129.95",
@@ -212,7 +228,7 @@
       "new_retailer": "Pestrong",
       "url": "https://pestrong.com/product/chlorothalonil-5g-fungicide-andersons-daconil-fungicide-40-lb",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "velista:back_in_stock:sunspot-supply:313.70:330.75",
@@ -228,7 +244,7 @@
       "new_retailer": "Sunspot Supply",
       "url": "https://www.sunspotsupply.com/products/velista",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "acelepryn-sc:major_price_drop:amazon:84.41:70.90",
@@ -244,7 +260,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "acelepryn-sc:new_lowest_retailer:amazon:84.41:70.90",
@@ -260,7 +276,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "dylox-6-2g:back_in_stock:pestrong:96.80:99.95",
@@ -276,7 +292,7 @@
       "new_retailer": "Pestrong",
       "url": "https://pestrong.com/product/dylox-6-2g-granular-insecticide-30-lbs",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "demand-cs:back_in_stock:pestrong:41.50:45.95",
@@ -292,7 +308,7 @@
       "new_retailer": "Pestrong",
       "url": "https://pestrong.com/product/lambdastar-ultracap-9-7-insecticide-demand-cs-pt-qt",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "forbid-4f:back_in_stock:sunspot-supply:264.95:273.00",
@@ -308,7 +324,7 @@
       "new_retailer": "Sunspot Supply",
       "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "feature-6-0-0:back_in_stock:amazon:26.17:30.00",
@@ -324,7 +340,7 @@
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "spyker-spy80-1s:best_price_drop:shop:544.99:499.00",
@@ -340,7 +356,7 @@
       "new_retailer": "Shop",
       "url": "https://shop.spyker.com/products/spy80-1p",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "spyker-spy80-1s:new_lowest_retailer:shop:544.99:499.00",
@@ -356,7 +372,7 @@
       "new_retailer": "Shop",
       "url": "https://shop.spyker.com/products/spy80-1p",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "earthway-2030p:best_price_drop:factorypure:154.99:145.48",
@@ -372,7 +388,7 @@
       "new_retailer": "Factorypure",
       "url": "https://factorypure.com/products/earthway-broadcast-spreader-65-lbs-hopper-with-pneumatic-tires-2030p-plus-new",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "earthway-2030p:new_lowest_retailer:factorypure:154.99:145.48",
@@ -388,7 +404,7 @@
       "new_retailer": "Factorypure",
       "url": "https://factorypure.com/products/earthway-broadcast-spreader-65-lbs-hopper-with-pneumatic-tires-2030p-plus-new",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "agri-fab-45-0462:best_price_drop:acmetools:262.39:245.99",
@@ -404,7 +420,7 @@
       "new_retailer": "Acmetools",
       "url": "https://www.acmetools.com/agri-fab-130-lb-broadcast-spreader-45-0462/052613102411.html",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "agri-fab-45-0462:new_lowest_retailer:acmetools:262.39:245.99",
@@ -420,7 +436,7 @@
       "new_retailer": "Acmetools",
       "url": "https://www.acmetools.com/agri-fab-130-lb-broadcast-spreader-45-0462/052613102411.html",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "flowzone-typhoon-3:major_price_drop:barndoorag:328.79:289.99",
@@ -436,7 +452,7 @@
       "new_retailer": "Barndoorag",
       "url": "https://barndoorag.com/flowzone-tool-only-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3to",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "flowzone-typhoon-3:new_lowest_retailer:barndoorag:328.79:289.99",
@@ -452,7 +468,7 @@
       "new_retailer": "Barndoorag",
       "url": "https://barndoorag.com/flowzone-tool-only-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3to",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "flowzone-zephyr:major_price_drop:diypestcontrol:435.00:214.99",
@@ -468,7 +484,7 @@
       "new_retailer": "Diypestcontrol",
       "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "flowzone-zephyr:new_lowest_retailer:diypestcontrol:435.00:214.99",
@@ -484,7 +500,7 @@
       "new_retailer": "Diypestcontrol",
       "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "flowzone-zephyr:back_in_stock:diypestcontrol:435.00:214.99",
@@ -500,7 +516,7 @@
       "new_retailer": "Diypestcontrol",
       "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "jacto-pjb-16u:major_price_drop:ebay:320.99:209.99",
@@ -516,7 +532,7 @@
       "new_retailer": "eBay",
       "url": "https://www.ebay.com/itm/124823780245",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "jacto-pjb-16u:new_lowest_retailer:ebay:320.99:209.99",
@@ -532,7 +548,7 @@
       "new_retailer": "eBay",
       "url": "https://www.ebay.com/itm/124823780245",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "jacto-pjb-16u:back_in_stock:ebay:320.99:209.99",
@@ -548,7 +564,7 @@
       "new_retailer": "eBay",
       "url": "https://www.ebay.com/itm/124823780245",
       "in_stock": true,
-      "created_at": "2026-06-02T21:36:03.640331+00:00"
+      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "acelepryn-sc:major_price_drop:amazon:64.94:58.43",
