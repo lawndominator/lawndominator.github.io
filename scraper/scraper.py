@@ -46,7 +46,7 @@ SERPAPI_API_KEY   = os.getenv("SERPAPI_API_KEY", "")
 AMAZON_TAG        = os.getenv("AMAZON_AFFILIATE_TAG", "lawndominator-20")
 AMAZON_CREATOR_CREDENTIAL_ID = os.getenv("AMAZON_CREATOR_CREDENTIAL_ID", "")
 AMAZON_CREATOR_SECRET = os.getenv("AMAZON_CREATOR_SECRET", "")
-AMAZON_CREATOR_VERSION = os.getenv("AMAZON_CREATOR_VERSION", "3.1")
+AMAZON_CREATOR_VERSION = os.getenv("AMAZON_CREATOR_VERSION") or "3.1"
 KEEPA_API_KEY     = os.getenv("KEEPA_API_KEY", "")
 KEEPA_DOMAIN      = int(os.getenv("KEEPA_DOMAIN", "1"))  # 1 = amazon.com
 DOMYOWN_AFFID     = os.getenv("DOMYOWN_AFFILIATE_ID", "")
@@ -1613,7 +1613,16 @@ def load_product_sources(path: str) -> dict:
     return data
 
 
-def _source_entries(source_map: dict, product_id: int) -> list[dict]:
+def is_equipment_category(category: str) -> bool:
+    return category in {
+        "spreader-handheld",
+        "spreader-push",
+        "spreader-tow",
+        "sprayer-backpack",
+    }
+
+
+def _source_entries(source_map: dict, product_id: int, product: Optional[dict] = None) -> list[dict]:
     entries = []
     for source in source_map.get("products", {}).get(str(product_id), []):
         url = source.get("url", "")
@@ -1625,6 +1634,8 @@ def _source_entries(source_map: dict, product_id: int) -> list[dict]:
             continue
         source_type = source.get("source_type", "product")
         if source_type != "product":
+            continue
+        if product and is_equipment_category(product.get("category", "")) and not source.get("manual_verified"):
             continue
         entries.append(source)
 
@@ -1688,7 +1699,7 @@ def _apply_source_metadata(offer: dict, source: dict) -> dict:
 
 def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
     offers = []
-    for source in _source_entries(source_map, product["id"]):
+    for source in _source_entries(source_map, product["id"], product):
         url = source.get("url")
         if not url or is_google_url(url):
             continue
@@ -1887,7 +1898,7 @@ def build_source_health(catalog_products: list[dict], source_map: dict, results:
         result = result_by_id.get(product_id, {})
         selected_urls = {
             canonical_product_url(source.get("url", ""))
-            for source in _source_entries(source_map_for_selection, product["id"])
+            for source in _source_entries(source_map_for_selection, product["id"], product)
             if source.get("url")
         }
 
@@ -2107,6 +2118,10 @@ def _verified_amazon_source(product: dict, source: dict) -> bool:
     product_asin = str(product.get("asin") or "").upper()
     if product_asin and source_asin == product_asin:
         return True
+    if product_asin and is_equipment_category(product.get("category", "")):
+        return False
+    if is_equipment_category(product.get("category", "")) and not source.get("manual_verified"):
+        return False
 
     title = str(source.get("title") or "")
     haystack = f"{title} {source.get('url', '')}".lower()
@@ -2288,7 +2303,7 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
             version=AMAZON_CREATOR_VERSION,
             tag=AMAZON_TAG,
             country=Country.US,
-            throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING", "1")),
+            throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING") or "1"),
         )
         asins = _amazon_asins_for_product(product, source_map or {})
         used_exact_asin = bool(asins)
@@ -2324,7 +2339,8 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                 return offer
 
         return None
-    except ImportError:
+    except ImportError as e:
+        log.warning(f"Amazon Creators API unavailable: {e}")
         return None
     except Exception as e:
         if "AssociateNotEligible" in str(e):

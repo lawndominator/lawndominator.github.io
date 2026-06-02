@@ -974,6 +974,57 @@
       "asin": "B076TFPB1Z"
     },
     {
+      "id": 200,
+      "slug": "scotts-wizz",
+      "name": "Scotts Wizz Handheld Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Scotts Wizz handheld spreader",
+      "amazon_query": "Scotts Wizz battery powered handheld spreader",
+      "asin": "B011HY5Q1K",
+      "alt_names": [
+        "Scotts Whiz spreader",
+        "Scotts Wizz 71131",
+        "Scotts battery handheld spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B011HY5Q1K",
+        "walmart": "https://www.walmart.com/ip/Scotts-Wizz-Spreader-for-Seed-Fertilizer-Salt-and-Ice-Melt-Holds-up-to-2-500-sq-ft-of-Product/46879329"
+      }
+    },
+    {
+      "id": 201,
+      "slug": "scotts-handygreen-ii",
+      "name": "Scotts HandyGreen II Handheld Spreader",
+      "category": "spreader-handheld",
+      "search_query": "Scotts HandyGreen II 71133 spreader",
+      "amazon_query": "Scotts HandyGreen II handheld spreader",
+      "asin": "B0000BYCP7",
+      "alt_names": [
+        "Scotts Handy Green 2",
+        "Scotts 71133"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0000BYCP7",
+        "home_depot": "https://www.homedepot.com/p/Scotts-Handy-Green-II-2-lb-1-500-sq-ft-Hand-Held-Broadcast-Spreader-71133/100066212"
+      }
+    },
+    {
+      "id": 203,
+      "slug": "andersons-handheld-4lb",
+      "name": "Andersons Hand-Held Spreader (4 lb)",
+      "category": "spreader-handheld",
+      "search_query": "Andersons hand-held spreader 4 lb",
+      "amazon_query": "Andersons hand-held spreader 4 lb",
+      "asin": "B08NFG17VD",
+      "alt_names": [
+        "The Andersons Hand-Held Spreader",
+        "Andersons 4 lb hand spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B08NFG17VD"
+      }
+    },
+    {
       "id": 204,
       "slug": "spyker-hhs100",
       "name": "Spyker HHS100 Handheld Spreader",
@@ -1008,41 +1059,6 @@
         "amazon": "https://www.amazon.com/dp/B00WUEZBSA",
         "home_depot": "https://www.homedepot.com/p/SOLO-20-lbs-Chest-Mount-Portable-Spreader-421-S/312097101",
         "mkrittenhouse": "https://www.mkrittenhouse.com/us/solo-421-s-spreader"
-      }
-    },
-    {
-      "id": 200,
-      "slug": "scotts-wizz",
-      "name": "Scotts Wizz Handheld Spreader",
-      "category": "spreader-handheld",
-      "search_query": "Scotts Wizz handheld spreader",
-      "amazon_query": "Scotts Wizz battery powered handheld spreader",
-      "asin": "B011HY5Q1K",
-      "alt_names": [
-        "Scotts Whiz spreader",
-        "Scotts Wizz 71131",
-        "Scotts battery handheld spreader"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B011HY5Q1K",
-        "walmart": "https://www.walmart.com/ip/Scotts-Wizz-Spreader-for-Seed-Fertilizer-Salt-and-Ice-Melt-Holds-up-to-2-500-sq-ft-of-Product/46879329"
-      }
-    },
-    {
-      "id": 201,
-      "slug": "scotts-handygreen-ii",
-      "name": "Scotts HandyGreen II Handheld Spreader",
-      "category": "spreader-handheld",
-      "search_query": "Scotts HandyGreen II 71133 spreader",
-      "amazon_query": "Scotts HandyGreen II handheld spreader",
-      "asin": "B0000BYCP7",
-      "alt_names": [
-        "Scotts Handy Green 2",
-        "Scotts 71133"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B0000BYCP7",
-        "home_depot": "https://www.homedepot.com/p/Scotts-Handy-Green-II-2-lb-1-500-sq-ft-Hand-Held-Broadcast-Spreader-71133/100066212"
       }
     },
     {
@@ -1085,19 +1101,39 @@
       }
     },
     {
-      "id": 215,
-      "slug": "spyker-spy80-1s",
-      "name": "Spyker Ergo-PRO SPY80-1S 80 lb Spreader",
+      "id": 212,
+      "slug": "andersons-model-2000",
+      "name": "Andersons Model 2000 Rotary Spreader",
       "category": "spreader-push",
-      "search_query": "Spyker SPY80-1S Ergo-PRO spreader",
-      "amazon_query": "Spyker Ergo-PRO SPY80-1S 80 lb broadcast spreader",
+      "search_query": "Andersons Model 2000 rotary spreader",
+      "amazon_query": "Andersons Model 2000 professional push spreader",
       "asin": null,
       "alt_names": [
-        "Spyker SPY80",
-        "Spyker 80 lb Ergo-PRO"
+        "The Andersons Model 2000",
+        "Andersons 2000 SR",
+        "Andersons professional rotary spreader"
       ],
       "retailers": {
-        "spyker": "https://www.spyker.com/product-category/spreaders/"
+        "reinders": "https://www.reinders.com/products/asp8099/",
+        "ewing": "https://www.ewingoutdoorsupply.com/56006010-the-andersons-model-2000-rotary-spreader",
+        "target_specialty": "https://www.target-specialty.com/spreader-model-2000-rotary-spreader"
+      }
+    },
+    {
+      "id": 213,
+      "slug": "andersons-pacer-pro",
+      "name": "Andersons Pacer Pro Spreader",
+      "category": "spreader-push",
+      "search_query": "Andersons Pacer Pro spreader",
+      "amazon_query": "Andersons Pacer Pro spreader",
+      "asin": null,
+      "alt_names": [
+        "The Andersons Pacer Pro",
+        "Pacer Pro spreader",
+        "Andersons Pacer Pro 10010322"
+      ],
+      "retailers": {
+        "andersons": "https://andersonslawn.com/products/pacer-pro"
       }
     },
     {
@@ -1119,22 +1155,19 @@
       }
     },
     {
-      "id": 212,
-      "slug": "andersons-model-2000",
-      "name": "Andersons Model 2000 Rotary Spreader",
+      "id": 215,
+      "slug": "spyker-spy80-1s",
+      "name": "Spyker Ergo-PRO SPY80-1S 80 lb Spreader",
       "category": "spreader-push",
-      "search_query": "Andersons Model 2000 rotary spreader",
-      "amazon_query": "Andersons Model 2000 professional push spreader",
+      "search_query": "Spyker SPY80-1S Ergo-PRO spreader",
+      "amazon_query": "Spyker Ergo-PRO SPY80-1S 80 lb broadcast spreader",
       "asin": null,
       "alt_names": [
-        "The Andersons Model 2000",
-        "Andersons 2000 SR",
-        "Andersons professional rotary spreader"
+        "Spyker SPY80",
+        "Spyker 80 lb Ergo-PRO"
       ],
       "retailers": {
-        "reinders": "https://www.reinders.com/products/asp8099/",
-        "ewing": "https://www.ewingoutdoorsupply.com/56006010-the-andersons-model-2000-rotary-spreader",
-        "target_specialty": "https://www.target-specialty.com/spreader-model-2000-rotary-spreader"
+        "spyker": "https://www.spyker.com/product-category/spreaders/"
       }
     },
     {
@@ -1174,56 +1207,37 @@
       }
     },
     {
-      "id": 222,
-      "slug": "agri-fab-45-0462",
-      "name": "Agri-Fab 45-0462 Push Spreader (130 lb)",
+      "id": 218,
+      "slug": "scotts-edgeguard-mini",
+      "name": "Scotts Turf Builder EdgeGuard Mini Spreader",
       "category": "spreader-push",
-      "search_query": "Agri-Fab 45-0462 push spreader 130 lb",
-      "amazon_query": "Agri-Fab 45-0462 130 lb push broadcast spreader",
-      "asin": "B002U0KDH8",
+      "search_query": "Scotts EdgeGuard Mini spreader 76121",
+      "amazon_query": "Scotts Turf Builder EdgeGuard Mini spreader",
+      "asin": "B002YPS1KK",
       "alt_names": [
-        "Agri-Fab 450462",
-        "Agri Fab 130 lb push spreader"
+        "Scotts 76121",
+        "Scotts EdgeGuard Mini"
       ],
       "retailers": {
-        "amazon": "https://www.amazon.com/dp/B002U0KDH8",
-        "lowes": "https://www.lowes.com/pd/Agri-Fab-Agri-Fab-45-0462-130-lb-Push-Broadcast-Spreader-in-Orange-and-Black/7725398",
-        "agrifab": "https://www.agri-fab.com/Products/Push-Spreader/45-0462",
-        "tractor_supply": "https://www.tractorsupply.com/tsc/product/agri-fab-130-lb-push-broadcast-spreader"
+        "amazon": "https://www.amazon.com/dp/B002YPS1KK",
+        "scotts": "https://scotts.com/en-us/shop/spreaders/"
       }
     },
     {
-      "id": 225,
-      "slug": "chapin-8201a",
-      "name": "Chapin 8201A Push Spreader (80 lb)",
+      "id": 219,
+      "slug": "scotts-edgeguard-dlx",
+      "name": "Scotts Turf Builder EdgeGuard DLX Spreader",
       "category": "spreader-push",
-      "search_query": "Chapin 8201A push spreader 80 lb",
-      "amazon_query": "Chapin 8201A 80 lb broadcast spreader",
-      "asin": "B07VKXLX7V",
+      "search_query": "Scotts EdgeGuard DLX spreader 76232",
+      "amazon_query": "Scotts Turf Builder EdgeGuard DLX spreader",
+      "asin": "B001H1EQO2",
       "alt_names": [
-        "Chapin 8201 spreader",
-        "Chapin 80 lb push spreader"
+        "Scotts EdgeGuard Deluxe",
+        "Scotts 76232"
       ],
       "retailers": {
-        "amazon": "https://www.amazon.com/dp/B07VKXLX7V",
-        "russo_power": "https://russopower.com/products/chapin-8201a-80-pound-residential-salt-spreader"
-      }
-    },
-    {
-      "id": 226,
-      "slug": "chapin-8301c",
-      "name": "Chapin 8301C 80 lb Contractor Turf Spreader",
-      "category": "spreader-push",
-      "search_query": "Chapin 8301C contractor turf spreader",
-      "amazon_query": "Chapin 8301C 80 lb contractor turf spreader",
-      "asin": "B01MUODGQ2",
-      "alt_names": [
-        "Chapin 8301 contractor spreader",
-        "Chapin contractor turf spreader"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B01MUODGQ2",
-        "home_depot": "https://www.homedepot.com/p/Chapin-80-lbs-Capacity-Contractor-Turf-Spreader-8301C/301977870"
+        "amazon": "https://www.amazon.com/dp/B001H1EQO2",
+        "scotts": "https://scotts.com/en-us/shop/lawn-care-deals/scotts-turf-builder-edgeguard-dlx-broadcast-spreader/76232B.html"
       }
     },
     {
@@ -1245,40 +1259,6 @@
       }
     },
     {
-      "id": 219,
-      "slug": "scotts-edgeguard-dlx",
-      "name": "Scotts Turf Builder EdgeGuard DLX Spreader",
-      "category": "spreader-push",
-      "search_query": "Scotts EdgeGuard DLX spreader 76232",
-      "amazon_query": "Scotts Turf Builder EdgeGuard DLX spreader",
-      "asin": "B001H1EQO2",
-      "alt_names": [
-        "Scotts EdgeGuard Deluxe",
-        "Scotts 76232"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B001H1EQO2",
-        "scotts": "https://scotts.com/en-us/shop/lawn-care-deals/scotts-turf-builder-edgeguard-dlx-broadcast-spreader/76232B.html"
-      }
-    },
-    {
-      "id": 218,
-      "slug": "scotts-edgeguard-mini",
-      "name": "Scotts Turf Builder EdgeGuard Mini Spreader",
-      "category": "spreader-push",
-      "search_query": "Scotts EdgeGuard Mini spreader 76121",
-      "amazon_query": "Scotts Turf Builder EdgeGuard Mini spreader",
-      "asin": "B002YPS1KK",
-      "alt_names": [
-        "Scotts 76121",
-        "Scotts EdgeGuard Mini"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B002YPS1KK",
-        "scotts": "https://scotts.com/en-us/shop/spreaders/"
-      }
-    },
-    {
       "id": 221,
       "slug": "scotts-classic-drop",
       "name": "Scotts Turf Builder Classic Drop Spreader",
@@ -1293,6 +1273,25 @@
       "retailers": {
         "amazon": "https://www.amazon.com/dp/B002ZTK09U",
         "scotts": "https://scotts.com/en-us/shop/spreaders/"
+      }
+    },
+    {
+      "id": 222,
+      "slug": "agri-fab-45-0462",
+      "name": "Agri-Fab 45-0462 Push Spreader (130 lb)",
+      "category": "spreader-push",
+      "search_query": "Agri-Fab 45-0462 push spreader 130 lb",
+      "amazon_query": "Agri-Fab 45-0462 130 lb push broadcast spreader",
+      "asin": "B002U0KDH8",
+      "alt_names": [
+        "Agri-Fab 450462",
+        "Agri Fab 130 lb push spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B002U0KDH8",
+        "lowes": "https://www.lowes.com/pd/Agri-Fab-Agri-Fab-45-0462-130-lb-Push-Broadcast-Spreader-in-Orange-and-Black/7725398",
+        "agrifab": "https://www.agri-fab.com/Products/Push-Spreader/45-0462",
+        "tractor_supply": "https://www.tractorsupply.com/tsc/product/agri-fab-130-lb-push-broadcast-spreader"
       }
     },
     {
@@ -1329,6 +1328,40 @@
         "amazon": "https://www.amazon.com/dp/B001U40NFC",
         "home_depot": "https://www.homedepot.com/p/Brinly-Hardy-175-lb-3-5-cu-ft-Tow-Behind-Broadcast-Spreader-for-Lawn-Tractors-and-Zero-Turn-Mowers-BS36BH/202819024",
         "brinly": "https://brinly.com/products/bs-36bh-175-lb-tow-spreader"
+      }
+    },
+    {
+      "id": 225,
+      "slug": "chapin-8201a",
+      "name": "Chapin 8201A Push Spreader (80 lb)",
+      "category": "spreader-push",
+      "search_query": "Chapin 8201A push spreader 80 lb",
+      "amazon_query": "Chapin 8201A 80 lb broadcast spreader",
+      "asin": "B07VKXLX7V",
+      "alt_names": [
+        "Chapin 8201 spreader",
+        "Chapin 80 lb push spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B07VKXLX7V",
+        "russo_power": "https://russopower.com/products/chapin-8201a-80-pound-residential-salt-spreader"
+      }
+    },
+    {
+      "id": 226,
+      "slug": "chapin-8301c",
+      "name": "Chapin 8301C 80 lb Contractor Turf Spreader",
+      "category": "spreader-push",
+      "search_query": "Chapin 8301C contractor turf spreader",
+      "amazon_query": "Chapin 8301C 80 lb contractor turf spreader",
+      "asin": "B01MUODGQ2",
+      "alt_names": [
+        "Chapin 8301 contractor spreader",
+        "Chapin contractor turf spreader"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B01MUODGQ2",
+        "home_depot": "https://www.homedepot.com/p/Chapin-80-lbs-Capacity-Contractor-Turf-Spreader-8301C/301977870"
       }
     },
     {
@@ -1407,97 +1440,6 @@
       }
     },
     {
-      "id": 253,
-      "slug": "milwaukee-m18-switch-tank",
-      "name": "Milwaukee M18 Switch Tank 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "search_query": "Milwaukee M18 Switch Tank backpack sprayer 2820",
-      "amazon_query": "Milwaukee M18 Switch Tank 4 gallon backpack sprayer",
-      "asin": "B0F7TMVCCF",
-      "alt_names": [
-        "Milwaukee 2820-20PS",
-        "Milwaukee 2820-21PS",
-        "Milwaukee M18 backpack sprayer",
-        "Milwaukee SWITCH TANK sprayer"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B0F7TMVCCF",
-        "milwaukee": "https://www.milwaukeetool.com/Products/2820-21PS"
-      }
-    },
-    {
-      "id": 251,
-      "slug": "jacto-pjb-16u",
-      "name": "Jacto PJB-16U 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "search_query": "Jacto PJB-16U battery backpack sprayer",
-      "amazon_query": "Jacto PJB-16U battery powered backpack sprayer",
-      "asin": "B01NA6K0SB",
-      "alt_names": [
-        "Jacto PJB16U",
-        "Jacto battery backpack sprayer",
-        "Jacto PJB-16"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B01NA6K0SB",
-        "home_garden_supply": "https://homeandgardensupply.com/products/jacto-pjb-16u-battery-powered-backpack-sprayer-w-spray-trigger"
-      }
-    },
-    {
-      "id": 248,
-      "slug": "petratools-hd4000",
-      "name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "search_query": "PetraTools HD4000 battery backpack sprayer",
-      "amazon_query": "PetraTools HD4000 4 gallon cordless backpack sprayer",
-      "asin": "B07ZQT4TVV",
-      "alt_names": [
-        "Petra Tools HD4000",
-        "PetraTools HD 4000"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B07ZQT4TVV"
-      }
-    },
-    {
-      "id": 249,
-      "slug": "ryobi-p2860",
-      "name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "search_query": "RYOBI P2860 18V backpack sprayer",
-      "amazon_query": "RYOBI P2860 18V ONE+ 4 gallon backpack chemical sprayer",
-      "asin": "B09N3MTWBG",
-      "alt_names": [
-        "Ryobi P2860",
-        "RYOBI ONE+ backpack sprayer",
-        "RYOBI 18V backpack sprayer",
-        "RYOBI RY120BP"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B09N3MTWBG",
-        "home_depot": "https://www.homedepot.com/p/RYOBI-ONE-18V-Cordless-Battery-4-Gal-Backpack-Chemical-Sprayer-with-2-0-Ah-Battery-and-Charger-P2860/314259313",
-        "ryobi": "https://www.ryobitools.com/products/46396026774"
-      }
-    },
-    {
-      "id": 246,
-      "slug": "chapin-63985",
-      "name": "Chapin 63985 4-Gallon 20V Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "search_query": "Chapin 63985 battery backpack sprayer 20V",
-      "amazon_query": "Chapin 63985 4 gallon 20V battery backpack sprayer",
-      "asin": "B00XLHDFNI",
-      "alt_names": [
-        "Chapin 63985 Tree Turf Pro",
-        "Chapin 20V backpack sprayer"
-      ],
-      "retailers": {
-        "amazon": "https://www.amazon.com/dp/B00XLHDFNI",
-        "lowes": "https://www.lowes.com/pd/Chapin-63985-4-Gallon-Backpack-Sprayer/1002673774",
-        "domyown": "https://www.domyown.com/chapin-gallon-20v-wide-mouth-backpack-sprayer-63985-p-17357.html"
-      }
-    },
-    {
       "id": 235,
       "slug": "solo-433",
       "name": "Solo 433 Gas-Powered Backpack Power Sprayer (Honda 25cc)",
@@ -1549,6 +1491,97 @@
       ],
       "retailers": {
         "stihl": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-450-gasoline-backpack-sprayer-1027378"
+      }
+    },
+    {
+      "id": 246,
+      "slug": "chapin-63985",
+      "name": "Chapin 63985 4-Gallon 20V Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Chapin 63985 battery backpack sprayer 20V",
+      "amazon_query": "Chapin 63985 4 gallon 20V battery backpack sprayer",
+      "asin": "B00XLHDFNI",
+      "alt_names": [
+        "Chapin 63985 Tree Turf Pro",
+        "Chapin 20V backpack sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B00XLHDFNI",
+        "lowes": "https://www.lowes.com/pd/Chapin-63985-4-Gallon-Backpack-Sprayer/1002673774",
+        "domyown": "https://www.domyown.com/chapin-gallon-20v-wide-mouth-backpack-sprayer-63985-p-17357.html"
+      }
+    },
+    {
+      "id": 248,
+      "slug": "petratools-hd4000",
+      "name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "PetraTools HD4000 battery backpack sprayer",
+      "amazon_query": "PetraTools HD4000 4 gallon cordless backpack sprayer",
+      "asin": "B07ZQT4TVV",
+      "alt_names": [
+        "Petra Tools HD4000",
+        "PetraTools HD 4000"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B07ZQT4TVV"
+      }
+    },
+    {
+      "id": 249,
+      "slug": "ryobi-p2860",
+      "name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "RYOBI P2860 18V backpack sprayer",
+      "amazon_query": "RYOBI P2860 18V ONE+ 4 gallon backpack chemical sprayer",
+      "asin": "B09N3MTWBG",
+      "alt_names": [
+        "Ryobi P2860",
+        "RYOBI ONE+ backpack sprayer",
+        "RYOBI 18V backpack sprayer",
+        "RYOBI RY120BP"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B09N3MTWBG",
+        "home_depot": "https://www.homedepot.com/p/RYOBI-ONE-18V-Cordless-Battery-4-Gal-Backpack-Chemical-Sprayer-with-2-0-Ah-Battery-and-Charger-P2860/314259313",
+        "ryobi": "https://www.ryobitools.com/products/46396026774"
+      }
+    },
+    {
+      "id": 251,
+      "slug": "jacto-pjb-16u",
+      "name": "Jacto PJB-16U 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Jacto PJB-16U battery backpack sprayer",
+      "amazon_query": "Jacto PJB-16U battery powered backpack sprayer",
+      "asin": "B01NA6K0SB",
+      "alt_names": [
+        "Jacto PJB16U",
+        "Jacto battery backpack sprayer",
+        "Jacto PJB-16"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B01NA6K0SB",
+        "home_garden_supply": "https://homeandgardensupply.com/products/jacto-pjb-16u-battery-powered-backpack-sprayer-w-spray-trigger"
+      }
+    },
+    {
+      "id": 253,
+      "slug": "milwaukee-m18-switch-tank",
+      "name": "Milwaukee M18 Switch Tank 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "search_query": "Milwaukee M18 Switch Tank backpack sprayer 2820",
+      "amazon_query": "Milwaukee M18 Switch Tank 4 gallon backpack sprayer",
+      "asin": "B0F7TMVCCF",
+      "alt_names": [
+        "Milwaukee 2820-20PS",
+        "Milwaukee 2820-21PS",
+        "Milwaukee M18 backpack sprayer",
+        "Milwaukee SWITCH TANK sprayer"
+      ],
+      "retailers": {
+        "amazon": "https://www.amazon.com/dp/B0F7TMVCCF",
+        "milwaukee": "https://www.milwaukeetool.com/Products/2820-21PS"
       }
     }
   ]

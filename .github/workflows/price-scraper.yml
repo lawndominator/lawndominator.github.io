@@ -133,7 +133,11 @@ jobs:
         run: |
           git config user.name  "price-bot[bot]"
           git config user.email "price-bot@lawndominators.com"
-          git pull --rebase --autostash origin main
+          tmpdir="$(mktemp -d)"
+          cp prices.json price-alerts.json source-health.json product_sources.json "$tmpdir"/
+          git fetch origin main
+          git reset --hard origin/main
+          cp "$tmpdir"/prices.json "$tmpdir"/price-alerts.json "$tmpdir"/source-health.json "$tmpdir"/product_sources.json .
           python - <<'PY'
           import json
           from pathlib import Path

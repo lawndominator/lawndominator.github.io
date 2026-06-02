@@ -436,6 +436,12 @@
           <button class="board-tab" type="button" data-view="brand" role="tab" aria-selected="false">Brands</button>
         </div>
 
+        <div class="board-tabs board-scope-tabs" role="tablist" aria-label="Choose product section">
+          <button class="board-tab active" type="button" data-scope="all" role="tab" aria-selected="true">All products</button>
+          <button class="board-tab" type="button" data-scope="chemicals" role="tab" aria-selected="false">Chemicals</button>
+          <button class="board-tab" type="button" data-scope="equipment" role="tab" aria-selected="false">Equipment</button>
+        </div>
+
         <div class="board-controls">
           <input class="board-input" id="board-search" type="search" list="board-suggestions" placeholder="Search product, brand, ingredient, store" aria-label="Search price board" autocomplete="off" />
           <datalist id="board-suggestions"></datalist>
@@ -537,20 +543,23 @@
       let brand = "all";
       let sizeTier = "all";
       let viewMode = "category";
+      let boardScope = "all";
       let productFilter = new URLSearchParams(window.location.search).get("product") || "";
 
       loadBoard();
 
       async function loadBoard() {
         try {
-          const [priceResponse, catalogResponse] = await Promise.all([
+          const [priceResponse, catalogResponse, sourceResponse] = await Promise.all([
             fetch("./prices.json?v=" + Date.now()),
             fetch("./products.json?v=" + Date.now()),
+            fetch("./product_sources.json?v=" + Date.now()),
           ]);
           if (!priceResponse.ok) throw new Error("HTTP " + priceResponse.status);
           const data = await priceResponse.json();
           const catalog = catalogResponse.ok ? await catalogResponse.json() : { products: [] };
-          products = mergeCatalogProducts(catalog.products || [], data.products || []);
+          const sourceData = sourceResponse.ok ? await sourceResponse.json() : { products: {} };
+          products = mergeCatalogProducts(catalog.products || [], data.products || [], sourceData.products || {});
           updateStats(data);
           populateBrandFilter();
           populateSearchSuggestions();
@@ -565,17 +574,94 @@
         }
       }
 
-      function mergeCatalogProducts(catalogProducts, pricedProducts) {
+      function mergeCatalogProducts(catalogProducts, pricedProducts, sourceProducts) {
         const pricedById = new Map(pricedProducts.map(product => [String(product.id), product]));
         const merged = catalogProducts.map(product => ({
           ...product,
           ...(pricedById.get(String(product.id)) || {}),
-          offers: (pricedById.get(String(product.id)) || {}).offers || [],
+          offers: mergedOffers(product, pricedById.get(String(product.id)), sourceProducts[String(product.id)] || []),
         }));
         for (const product of pricedProducts) {
           if (!merged.some(item => String(item.id) === String(product.id))) merged.push(product);
         }
         return merged;
+      }
+
+      function mergedOffers(catalogProduct, pricedProduct, savedSources) {
+        const pricedOffers = (pricedProduct || {}).offers || [];
+        if (!isEquipmentCategory(catalogProduct.category)) return pricedOffers;
+
+        const offersByUrl = new Map();
+        for (const source of equipmentSourceOffers(catalogProduct, savedSources)) {
+          const key = normalizedOfferUrl(source.url);
+          if (!key || offersByUrl.has(key)) continue;
+          offersByUrl.set(key, source);
+        }
+
+        for (const offer of pricedOffers) {
+          const key = normalizedOfferUrl(offer.url);
+          if (!key || !offersByUrl.has(key)) continue;
+          offersByUrl.set(key, {
+            ...offersByUrl.get(key),
+            ...offer,
+            url: offersByUrl.get(key).url,
+          });
+        }
+
+        return [...offersByUrl.values()];
+      }
+
+      function equipmentSourceOffers(product, savedSources) {
+        const sources = [];
+        for (const source of savedSources || []) {
+          if (!source.manual_verified) continue;
+          if (!source.url || isExcludedOffer(source)) continue;
+          if (product.asin && isAmazonOffer(source) && amazonAsinFromUrl(source.url) !== String(product.asin).toUpperCase()) continue;
+          sources.push({
+            retailer: source.retailer || retailerFromUrl(source.url),
+            retailer_name: source.retailer_name || titleCaseRetailer(source.retailer || retailerFromUrl(source.url)),
+            price: source.price_verified ?? source.price ?? null,
+            url: source.url,
+            in_stock: source.in_stock ?? null,
+            title: source.title || product.name,
+            image: source.image || null,
+            source: "saved_product_source",
+            package_quantity: source.package_quantity ?? null,
+            package_unit: source.package_unit ?? null,
+            package_label: source.package_label ?? "",
+            price_per_unit: source.price_per_unit ?? null,
+          });
+        }
+
+        const retailers = product.retailers || {};
+        for (const [retailer, url] of Object.entries(retailers)) {
+          if (!url || isExcludedOffer({ url })) continue;
+          sources.push({
+            retailer,
+            retailer_name: titleCaseRetailer(retailer),
+            price: null,
+            url,
+            in_stock: null,
+            title: product.name,
+            image: null,
+            source: "catalog_retailer",
+          });
+        }
+
+        if (product.asin) {
+          sources.push({
+            retailer: "amazon",
+            retailer_name: "Amazon",
+            price: null,
+            url: `https://www.amazon.com/dp/${encodeURIComponent(product.asin)}?tag=lawndominator-20`,
+            in_stock: null,
+            title: product.name,
+            image: null,
+            source: "catalog_asin",
+          });
+        }
+
+        return sources;
       }
 
       function updateStats(data) {
@@ -649,10 +735,58 @@
         return url.toString();
       }
 
+      function normalizedOfferUrl(url) {
+        try {
+          const parsed = new URL(url);
+          parsed.searchParams.delete("tag");
+          parsed.searchParams.delete("psc");
+          parsed.hash = "";
+          return parsed.toString().replace(/\/$/, "");
+        } catch {
+          return String(url || "").trim();
+        }
+      }
+
+      function retailerFromUrl(url) {
+        const host = safeHostname(url).replace(/^www\./, "");
+        return host ? host.split(".")[0].replace(/-/g, "_") : "retailer";
+      }
+
+      function titleCaseRetailer(value) {
+        const known = {
+          amazon: "Amazon",
+          home_depot: "Home Depot",
+          lowes: "Lowe's",
+          ace_hardware: "Ace Hardware",
+          tractor_supply: "Tractor Supply",
+          siteone: "SiteOne",
+          andersons: "The Andersons",
+          agri_fab: "Agri-Fab",
+          brinly: "Brinly",
+          spyker: "Spyker",
+          stihl: "STIHL",
+        };
+        const key = String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+        if (known[key]) return known[key];
+        return key.split("_").filter(Boolean).map(part => part[0].toUpperCase() + part.slice(1)).join(" ") || "Retailer";
+      }
+
       function productVariants(product) {
+        if (isEquipmentCategory(product.category)) {
+          const offers = (product.offers || []).filter(offer => (
+            !offer.excluded
+            && offer.in_stock !== false
+            && !isExcludedOffer(offer)
+            && offer.url
+          ));
+          return offers.length ? [{ key: "equipment", label: "", quantity: null, unit: null, offers }] : [];
+        }
+
         const groups = {};
         for (const offer of product.offers || []) {
-          if (offer.price == null || offer.excluded || offer.in_stock === false || isExcludedOffer(offer)) continue;
+          if (offer.excluded || offer.in_stock === false || isExcludedOffer(offer)) continue;
+          if (offer.price == null && !isEquipmentCategory(product.category)) continue;
+          if (offer.price == null && !offer.url) continue;
           const quantity = offer.package_quantity ?? offer.quantity ?? null;
           const unit = offer.package_unit ?? offer.unit ?? null;
           const label = offer.package_label ?? (quantity != null && unit ? formatSize(quantity, unit) : "");
@@ -713,6 +847,7 @@
         const allVariants = [];
 
         for (const product of products) {
+          if (!scopeMatches(product.category)) continue;
           if (!categoryMatches(product.category)) continue;
           if (brand !== "all" && productBrand(product) !== brand) continue;
           for (const variant of productVariants(product)) {
@@ -727,7 +862,7 @@
           return;
         }
 
-        const equipmentItems = category === "all" && viewMode === "category"
+        const equipmentItems = boardScope === "all" && category === "all" && viewMode === "category"
           ? allVariants.filter(item => isEquipmentCategory(item.product.category))
           : [];
         const standardItems = equipmentItems.length
@@ -817,6 +952,15 @@
         return offer && (offer.retailer === "amazon" || /(^|\.)amazon\.com$/i.test(safeHostname(offer.url)));
       }
 
+      function amazonAsinFromUrl(url) {
+        try {
+          const match = new URL(url).pathname.match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i);
+          return match ? match[1].toUpperCase() : "";
+        } catch {
+          return "";
+        }
+      }
+
       function hasAmazonOffer(variant) {
         return variant.offers.some(isAmazonOffer);
       }
@@ -834,6 +978,12 @@
         return productCategory === category;
       }
 
+      function scopeMatches(productCategory) {
+        if (boardScope === "equipment") return isEquipmentCategory(productCategory);
+        if (boardScope === "chemicals") return !isEquipmentCategory(productCategory);
+        return true;
+      }
+
       function safeHostname(url) {
         try { return new URL(url).hostname; }
         catch { return ""; }
@@ -845,8 +995,33 @@
         return /(^|\.)camelcamelcamel\.com$/i.test(host);
       }
 
+      function visibleOffers(product, variant) {
+        const limit = isEquipmentCategory(product.category) ? 4 : OFFER_DISPLAY_LIMIT;
+        const sorted = variant.offers.slice().sort(compareOffers);
+        const selected = sorted.slice(0, limit);
+
+        if (isEquipmentCategory(product.category) && !selected.some(isAmazonOffer)) {
+          const amazon = sorted.find(isAmazonOffer);
+          if (amazon) {
+            if (selected.length < limit) selected.push(amazon);
+            else selected[selected.length - 1] = amazon;
+          }
+        }
+
+        return selected;
+      }
+
+      function compareOffers(a, b) {
+        const aPriced = a.price != null && Number.isFinite(Number(a.price));
+        const bPriced = b.price != null && Number.isFinite(Number(b.price));
+        if (aPriced && bPriced && Number(a.price) !== Number(b.price)) return Number(a.price) - Number(b.price);
+        if (aPriced !== bPriced) return aPriced ? -1 : 1;
+        if (isAmazonOffer(a) !== isAmazonOffer(b)) return isAmazonOffer(a) ? -1 : 1;
+        return String(a.retailer_name || a.retailer || "").localeCompare(String(b.retailer_name || b.retailer || ""));
+      }
+
       function renderVariant(product, variant) {
-        const offers = variant.offers.slice().sort((a, b) => Number(a.price) - Number(b.price)).slice(0, OFFER_DISPLAY_LIMIT);
+        const offers = visibleOffers(product, variant);
         const hasSize = variant.quantity != null && variant.unit;
         const sizeLabel = variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null);
         const isTarget = productFilter && product.slug === productFilter;
@@ -861,8 +1036,8 @@
                 ? "$" + Number(offer.price_per_unit).toFixed(2) + "/" + (UNIT_DISPLAY[offer.package_unit] || offer.package_unit)
                 : hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
               return `<a class="top-offer${isAmazonOffer(offer) ? " is-amazon" : ""}" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
-                <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer)}</span>
-                <span class="offer-right"><strong>$${Number(offer.price).toFixed(2)}</strong>${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
+                <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer || "Retailer")}</span>
+                <span class="offer-right">${offer.price == null ? `<strong>Check price</strong>` : `<strong>$${Number(offer.price).toFixed(2)}</strong>`}${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
               </a>`;
             }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;
@@ -943,13 +1118,15 @@
 
       document.querySelectorAll(".board-tab").forEach(btn => {
         btn.addEventListener("click", () => {
-          document.querySelectorAll(".board-tab").forEach(tab => {
+          const attr = btn.dataset.view ? "data-view" : "data-scope";
+          document.querySelectorAll(`.board-tab[${attr}]`).forEach(tab => {
             tab.classList.remove("active");
             tab.setAttribute("aria-selected", "false");
           });
           btn.classList.add("active");
           btn.setAttribute("aria-selected", "true");
-          viewMode = btn.dataset.view;
+          if (btn.dataset.view) viewMode = btn.dataset.view;
+          if (btn.dataset.scope) boardScope = btn.dataset.scope;
           renderBoard();
         });
       });
