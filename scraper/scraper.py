@@ -34,6 +34,10 @@ import requests
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright, Browser
 
+VENDOR_DIR = os.path.join(os.path.dirname(__file__), "vendor")
+if os.path.isdir(VENDOR_DIR) and VENDOR_DIR not in sys.path:
+    sys.path.insert(0, VENDOR_DIR)
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
