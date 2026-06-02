@@ -437,8 +437,7 @@
         </div>
 
         <div class="board-tabs board-scope-tabs" role="tablist" aria-label="Choose product section">
-          <button class="board-tab active" type="button" data-scope="all" role="tab" aria-selected="true">All products</button>
-          <button class="board-tab" type="button" data-scope="chemicals" role="tab" aria-selected="false">Chemicals</button>
+          <button class="board-tab active" type="button" data-scope="products" role="tab" aria-selected="true">Products</button>
           <button class="board-tab" type="button" data-scope="equipment" role="tab" aria-selected="false">Equipment</button>
         </div>
 
@@ -543,7 +542,7 @@
       let brand = "all";
       let sizeTier = "all";
       let viewMode = "category";
-      let boardScope = "all";
+      let boardScope = "products";
       let productFilter = new URLSearchParams(window.location.search).get("product") || "";
 
       loadBoard();
@@ -980,7 +979,7 @@
 
       function scopeMatches(productCategory) {
         if (boardScope === "equipment") return isEquipmentCategory(productCategory);
-        if (boardScope === "chemicals") return !isEquipmentCategory(productCategory);
+        if (boardScope === "products") return !isEquipmentCategory(productCategory);
         return true;
       }
 
