@@ -547,6 +547,30 @@
 
       loadBoard();
 
+      const PRODUCT_CATEGORY_OPTIONS = [
+        ["all", "All product categories"],
+        ["pre-emergent", "Pre-emergent"],
+        ["post-emergent", "Herbicides"],
+        ["pgr", "PGRs"],
+        ["fungicide", "Fungicides"],
+        ["insecticide", "Insecticides"],
+        ["fertilizer", "Fertilizers"],
+        ["micronutrient", "Micros / iron"],
+        ["macronutrient", "Macros"],
+        ["biostimulant", "Biostimulants"],
+        ["soil-amendment", "Soil amendments"],
+        ["moisture-manager", "Moisture managers"],
+        ["surfactant", "Surfactants"],
+      ];
+
+      const EQUIPMENT_CATEGORY_OPTIONS = [
+        ["all", "All equipment"],
+        ["spreader-handheld", "Handheld Spreaders"],
+        ["spreader-push", "Push Spreaders"],
+        ["spreader-tow", "Tow-Behind Spreaders"],
+        ["sprayer-backpack", "Backpack Sprayers"],
+      ];
+
       async function loadBoard() {
         try {
           const [priceResponse, catalogResponse, sourceResponse] = await Promise.all([
@@ -560,6 +584,7 @@
           const sourceData = sourceResponse.ok ? await sourceResponse.json() : { products: {} };
           products = mergeCatalogProducts(catalog.products || [], data.products || [], sourceData.products || {});
           updateStats(data);
+          populateCategoryFilter();
           populateBrandFilter();
           populateSearchSuggestions();
           applyProductDeepLink();
@@ -685,10 +710,22 @@
 
       function populateBrandFilter() {
         const select = document.getElementById("board-brand");
-        const brands = [...new Set(products.map(productBrand))].sort((a, b) => a.localeCompare(b));
+        const brands = [...new Set(products.filter(product => scopeMatches(product.category)).map(productBrand))].sort((a, b) => a.localeCompare(b));
         select.innerHTML = `<option value="all">All brands</option>` + brands.map(name => (
           `<option value="${escAttr(name)}">${escHtml(name)}</option>`
         )).join("");
+        if (![...select.options].some(option => option.value === brand)) brand = "all";
+        select.value = brand;
+      }
+
+      function populateCategoryFilter() {
+        const select = document.getElementById("board-category");
+        const options = boardScope === "equipment" ? EQUIPMENT_CATEGORY_OPTIONS : PRODUCT_CATEGORY_OPTIONS;
+        select.innerHTML = options.map(([value, label]) => (
+          `<option value="${escAttr(value)}">${escHtml(label)}</option>`
+        )).join("");
+        if (!options.some(([value]) => value === category)) category = "all";
+        select.value = category;
       }
 
       function populateSearchSuggestions() {
@@ -1125,7 +1162,13 @@
           btn.classList.add("active");
           btn.setAttribute("aria-selected", "true");
           if (btn.dataset.view) viewMode = btn.dataset.view;
-          if (btn.dataset.scope) boardScope = btn.dataset.scope;
+          if (btn.dataset.scope) {
+            boardScope = btn.dataset.scope;
+            category = "all";
+            brand = "all";
+            populateCategoryFilter();
+            populateBrandFilter();
+          }
           renderBoard();
         });
       });

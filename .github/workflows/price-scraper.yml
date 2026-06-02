@@ -88,6 +88,9 @@ jobs:
           MIN_ALERT_DROP_PERCENT: "5"
         run: python scraper/scraper.py
 
+      - name: Validate rendered price board
+        run: python scraper/validate_price_board.py
+
       - name: Send premium price alerts
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.send_alerts == 'true' }}
         env:
