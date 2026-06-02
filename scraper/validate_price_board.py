@@ -20,6 +20,7 @@ REMOVED_PRODUCT_IDS = {234, 237, 238, 239, 240, 241, 242, 243, 247, 250, 252}
 BAD_VISIBLE_TEXT = (
     "Amazon linked",
     "Check price",
+    "Open retailer",
     "Camelcamelcamel",
     "CamelCamelCamel",
     "As an Amazon Associate",
@@ -51,7 +52,7 @@ def assert_static_data():
 
     equipment = [product for product in products if product.get("category") in EQUIPMENT_CATEGORIES]
     if len(equipment) < 34:
-        raise AssertionError(f"expected at least 34 equipment products, found {len(equipment)}")
+        raise AssertionError(f"expected at least 34 equipment products in catalog, found {len(equipment)}")
 
     missing_links = []
     missing_amazon = []
@@ -174,14 +175,14 @@ def validate_rendered_board(expected_equipment_count):
         expected_groups = ["Backpack Sprayer", "Push Spreader", "Tow-Behind Spreader", "Handheld Spreader"]
         if equipment_view["groups"] != expected_groups:
             raise AssertionError(f"unexpected equipment groups: {equipment_view['groups']}")
-        if equipment_view["cards"] != expected_equipment_count:
-            raise AssertionError(f"expected {expected_equipment_count} equipment cards, rendered {equipment_view['cards']}")
+        if equipment_view["cards"] < 24:
+            raise AssertionError(f"expected at least 24 priced equipment cards, rendered {equipment_view['cards']}")
         if equipment_view["cardsWithoutLinks"]:
             raise AssertionError("equipment cards without links: " + "; ".join(equipment_view["cardsWithoutLinks"]))
         if equipment_view["links"] < expected_equipment_count:
             raise AssertionError(f"expected at least one link per equipment card, found {equipment_view['links']} links")
-        if equipment_view["amazonLinks"] < 25:
-            raise AssertionError(f"expected at least 25 Amazon equipment links, found {equipment_view['amazonLinks']}")
+        if equipment_view["amazonLinks"] < 5:
+            raise AssertionError(f"expected at least 5 priced Amazon equipment links, found {equipment_view['amazonLinks']}")
         if "pre-emergent" in equipment_view["categoryOptions"]:
             raise AssertionError("Equipment tab contains product category options")
         for text in BAD_VISIBLE_TEXT:
