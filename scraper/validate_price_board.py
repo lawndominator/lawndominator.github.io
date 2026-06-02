@@ -141,7 +141,7 @@ def validate_rendered_board(expected_equipment_count):
 
         if equipment_view["activeTab"] != "Equipment":
             raise AssertionError(f"Equipment tab did not become active: {equipment_view['activeTab']}")
-        expected_groups = ["Handheld Spreader", "Push Spreader", "Tow-Behind Spreader", "Backpack Sprayer"]
+        expected_groups = ["Backpack Sprayer", "Push Spreader", "Tow-Behind Spreader", "Handheld Spreader"]
         if equipment_view["groups"] != expected_groups:
             raise AssertionError(f"unexpected equipment groups: {equipment_view['groups']}")
         if equipment_view["cards"] != expected_equipment_count:
