@@ -641,10 +641,11 @@
           if (!source.manual_verified) continue;
           if (!source.url || isExcludedOffer(source)) continue;
           if (product.asin && isAmazonOffer(source) && amazonAsinFromUrl(source.url) !== String(product.asin).toUpperCase()) continue;
+          const sourcePrice = source.price_verified ?? source.price ?? null;
           sources.push({
             retailer: source.retailer || retailerFromUrl(source.url),
             retailer_name: source.retailer_name || titleCaseRetailer(source.retailer || retailerFromUrl(source.url)),
-            price: source.price_verified ?? source.price ?? null,
+            price: validEquipmentPrice(product, sourcePrice) ? sourcePrice : null,
             url: source.url,
             in_stock: source.in_stock ?? null,
             title: source.title || product.name,
@@ -807,6 +808,19 @@
         return key.split("_").filter(Boolean).map(part => part[0].toUpperCase() + part.slice(1)).join(" ") || "Retailer";
       }
 
+      function minPriceForProduct(product) {
+        if (product.category === "spreader-handheld") return 15;
+        if (product.category === "spreader-push" || product.category === "spreader-tow") return 100;
+        if (product.category === "sprayer-backpack") return 100;
+        return 0;
+      }
+
+      function validEquipmentPrice(product, price) {
+        if (!isEquipmentCategory(product.category)) return true;
+        const value = Number(price);
+        return Number.isFinite(value) && value >= minPriceForProduct(product);
+      }
+
       function productVariants(product) {
         if (isEquipmentCategory(product.category)) {
           const offers = (product.offers || []).filter(offer => (
@@ -814,6 +828,7 @@
             && offer.in_stock !== false
             && !isExcludedOffer(offer)
             && offer.url
+            && (offer.price == null || validEquipmentPrice(product, offer.price))
           ));
           return offers.length ? [{ key: "equipment", label: "", quantity: null, unit: null, offers }] : [];
         }
@@ -1073,7 +1088,7 @@
                 : hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
               return `<a class="top-offer${isAmazonOffer(offer) ? " is-amazon" : ""}" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
                 <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer || "Retailer")}</span>
-                <span class="offer-right">${offer.price == null ? `<strong>Check price</strong>` : `<strong>$${Number(offer.price).toFixed(2)}</strong>`}${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
+                <span class="offer-right">${offer.price == null ? `<strong>Open retailer</strong>` : `<strong>$${Number(offer.price).toFixed(2)}</strong>`}${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
               </a>`;
             }).join("")
           : `<p class="empty-offers">No eligible price yet.</p>`;

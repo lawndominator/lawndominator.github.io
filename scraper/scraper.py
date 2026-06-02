@@ -251,6 +251,8 @@ def is_bad_product_url(url: str) -> bool:
         return True
     if "ebay." in host and path.startswith("/sch"):
         return True
+    if "mkrittenhouse.com" in host:
+        return True
     if "keystonepestsolutions.com" in host and path.rstrip("/") in {"", "/index.php"}:
         return True
     if "mycorrhizalonline.com" in host and path.rstrip("/") in {"", "/"}:
@@ -275,6 +277,13 @@ def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
 
 
 def min_price_for_product(product: dict) -> float:
+    category = product.get("category")
+    if category == "spreader-handheld":
+        return 15
+    if category in {"spreader-push", "spreader-tow"}:
+        return 100
+    if category == "sprayer-backpack":
+        return 100
     if product.get("category") in {"soil-amendment", "micronutrient", "fertilizer-consumer"}:
         return MIN_SOIL_AMENDMENT_PRICE
     return MIN_CHEMICAL_PRICE
@@ -706,6 +715,10 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
 
 def is_known_wrong_product_source(product_id: int, url: str, title: str = "") -> bool:
     text = f"{url} {title}".lower()
+    if 200 <= int(product_id) < 300 and "rittenhouse" in text:
+        return True
+    if int(product_id) == 249 and "b09n3mtwbg" in text:
+        return True
     if "alyce-clover" in text:
         return True
     if "/topic/privacy" in text or "privacy policy" == title.strip().lower():

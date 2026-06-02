@@ -19,6 +19,7 @@ EQUIPMENT_CATEGORIES = {
 REMOVED_PRODUCT_IDS = {234, 237, 238, 239, 240, 241, 242, 243, 247, 250, 252}
 BAD_VISIBLE_TEXT = (
     "Amazon linked",
+    "Check price",
     "Camelcamelcamel",
     "CamelCamelCamel",
     "As an Amazon Associate",
@@ -30,10 +31,18 @@ def load_json(name):
     return json.loads((ROOT / name).read_text(encoding="utf-8"))
 
 
+def min_equipment_price(category):
+    if category == "spreader-handheld":
+        return 15
+    if category in {"spreader-push", "spreader-tow", "sprayer-backpack"}:
+        return 100
+    return 0
+
+
 def assert_static_data():
     products = load_json("products.json")["products"]
     sources = load_json("product_sources.json")["products"]
-    load_json("prices.json")
+    prices = load_json("prices.json")["products"]
 
     ids = {int(product["id"]) for product in products}
     removed = sorted(ids & REMOVED_PRODUCT_IDS)
@@ -67,6 +76,27 @@ def assert_static_data():
         raise AssertionError("equipment products without any link: " + "; ".join(missing_links))
     if missing_amazon:
         raise AssertionError("equipment products with ASIN but no matching Amazon URL: " + "; ".join(missing_amazon))
+
+    category_by_id = {int(product["id"]): product.get("category") for product in products}
+    low_equipment_prices = []
+    for product in prices:
+        category = category_by_id.get(int(product["id"]))
+        if category not in EQUIPMENT_CATEGORIES:
+            continue
+        floor = min_equipment_price(category)
+        for offer in product.get("offers", []):
+            price = offer.get("price")
+            if price is not None and float(price) < floor:
+                low_equipment_prices.append(
+                    f"{product['id']} {product['name']} {offer.get('retailer')} ${float(price):.2f} below ${floor:.2f}"
+                )
+        best = product.get("best_price")
+        if best and best.get("price") is not None and float(best["price"]) < floor:
+            low_equipment_prices.append(
+                f"{product['id']} {product['name']} best {best.get('retailer')} ${float(best['price']):.2f} below ${floor:.2f}"
+            )
+    if low_equipment_prices:
+        raise AssertionError("low equipment prices found: " + "; ".join(low_equipment_prices))
 
     html = (ROOT / "price-board.html").read_text(encoding="utf-8")
     for text in BAD_VISIBLE_TEXT:
