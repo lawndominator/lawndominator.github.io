@@ -809,8 +809,30 @@
       }
 
       function minPriceForProduct(product) {
-        if (product.category === "spreader-handheld") return 15;
-        if (product.category === "spreader-push" || product.category === "spreader-tow") return 100;
+        const equipmentMinimums = {
+          210: 300,
+          211: 300,
+          214: 300,
+          215: 300,
+          222: 150,
+          223: 150,
+          224: 150,
+          230: 150,
+          231: 150,
+          232: 150,
+          233: 150,
+          235: 500,
+          244: 300,
+          245: 500,
+          246: 100,
+          248: 100,
+          249: 100,
+          251: 150,
+          253: 250,
+        };
+        if (equipmentMinimums[Number(product.id)]) return equipmentMinimums[Number(product.id)];
+        if (product.category === "spreader-handheld") return 10;
+        if (product.category === "spreader-push" || product.category === "spreader-tow") return 20;
         if (product.category === "sprayer-backpack") return 100;
         return 0;
       }
@@ -895,6 +917,7 @@
 
       function renderBoard() {
         const grid = document.getElementById("board-grid");
+        document.querySelector(".size-pills").hidden = boardScope === "equipment";
         const allVariants = [];
 
         for (const product of products) {
@@ -1074,7 +1097,8 @@
       function renderVariant(product, variant) {
         const offers = visibleOffers(product, variant);
         const hasSize = variant.quantity != null && variant.unit;
-        const sizeLabel = variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null);
+        const isEquipment = isEquipmentCategory(product.category);
+        const sizeLabel = isEquipment ? null : (variant.label || (hasSize ? formatSize(variant.quantity, variant.unit) : null));
         const isTarget = productFilter && product.slug === productFilter;
         const image = productImage(product, offers);
         const media = image
@@ -1083,9 +1107,9 @@
 
         const offerHtml = offers.length
           ? offers.map((offer, i) => {
-              const ppu = offer.price_per_unit && offer.package_unit
+              const ppu = !isEquipment && offer.price_per_unit && offer.package_unit
                 ? "$" + Number(offer.price_per_unit).toFixed(2) + "/" + (UNIT_DISPLAY[offer.package_unit] || offer.package_unit)
-                : hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
+                : !isEquipment && hasSize ? pricePerUnit(offer.price, variant.quantity, variant.unit) : null;
               return `<a class="top-offer${isAmazonOffer(offer) ? " is-amazon" : ""}" href="${escAttr(offer.url)}" target="_blank" rel="noopener noreferrer">
                 <span>${i + 1}. ${escHtml(offer.retailer_name || offer.retailer || "Retailer")}</span>
                 <span class="offer-right">${offer.price == null ? `<strong>View</strong>` : `<strong>$${Number(offer.price).toFixed(2)}</strong>`}${ppu ? `<small class="ppu">${escHtml(ppu)}</small>` : ""}</span>
@@ -1181,6 +1205,8 @@
             boardScope = btn.dataset.scope;
             category = "all";
             brand = "all";
+            sizeTier = "all";
+            document.querySelectorAll(".size-pill").forEach(pill => pill.classList.toggle("active", pill.dataset.tier === "all"));
             populateCategoryFilter();
             populateBrandFilter();
           }

@@ -278,10 +278,34 @@ def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
 
 def min_price_for_product(product: dict) -> float:
     category = product.get("category")
+    product_id = int(product.get("id", 0))
+    equipment_minimums = {
+        210: 300,  # LESCO 101186 high wheel
+        211: 300,  # LESCO 092807 50 lb
+        214: 300,  # Spyker P70 commercial drop
+        215: 300,  # Spyker Ergo-PRO
+        222: 150,
+        223: 150,
+        224: 150,
+        230: 150,
+        231: 150,
+        232: 150,
+        233: 150,
+        235: 500,
+        244: 300,
+        245: 500,
+        246: 100,
+        248: 100,
+        249: 100,
+        251: 150,
+        253: 250,
+    }
+    if is_equipment_category(category) and product_id in equipment_minimums:
+        return equipment_minimums[product_id]
     if category == "spreader-handheld":
-        return 15
+        return 10
     if category in {"spreader-push", "spreader-tow"}:
-        return 100
+        return 20
     if category == "sprayer-backpack":
         return 100
     if product.get("category") in {"soil-amendment", "micronutrient", "fertilizer-consumer"}:
@@ -833,6 +857,62 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
                 offer["exclude_reason"] = "same retailer/price repeated across many unrelated products"
 
         product["best_price"] = select_best_offer(product, product.get("offers", []))
+
+
+def sanitize_equipment_results(results: list[dict]) -> None:
+    unit_keys = ("package_quantity", "package_unit", "package_label", "price_per_unit", "quantity", "unit")
+    for product in results:
+        if not is_equipment_category(product.get("category", "")):
+            continue
+        clean_offers = []
+        floor = min_price_for_product(product)
+        for offer in product.get("offers", []):
+            price = offer.get("price")
+            try:
+                price_ok = price is not None and float(price) >= floor
+            except (TypeError, ValueError):
+                price_ok = False
+            if (
+                offer.get("excluded")
+                or offer.get("in_stock") is False
+                or not price_ok
+                or is_google_url(offer.get("url", ""))
+                or is_bad_product_url(offer.get("url", ""))
+                or is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", ""))
+            ):
+                continue
+            for key in unit_keys:
+                offer.pop(key, None)
+            clean_offers.append(offer)
+        product["offers"] = clean_offers
+        product["best_price"] = select_best_offer(product, clean_offers)
+
+
+def sanitize_equipment_sources(source_map: dict, catalog_products: list[dict]) -> None:
+    product_by_id = {str(product["id"]): product for product in catalog_products}
+    unit_keys = ("package_quantity", "package_unit", "package_label", "price_per_unit", "quantity", "unit")
+    for product_id, entries in list(source_map.get("products", {}).items()):
+        product = product_by_id.get(str(product_id))
+        if not product or not is_equipment_category(product.get("category", "")):
+            continue
+        floor = min_price_for_product(product)
+        kept = []
+        for source in entries or []:
+            price = source.get("price_verified")
+            try:
+                low_price = price is not None and float(price) < floor
+            except (TypeError, ValueError):
+                low_price = False
+            if (
+                low_price
+                or is_bad_product_url(source.get("url", ""))
+                or is_known_wrong_product_source(product["id"], source.get("url", ""), source.get("title", ""))
+            ):
+                continue
+            for key in unit_keys:
+                source.pop(key, None)
+            kept.append(source)
+        source_map["products"][product_id] = kept
 
 
 def preserve_last_good_products(results: list[dict], previous_products: dict) -> list[dict]:
@@ -2497,7 +2577,10 @@ def run():
     apply_offer_package_metadata(results)
     apply_offer_quality_filters(results)
     results = preserve_last_good_products(results, stale_map)
+    apply_offer_quality_filters(results)
+    sanitize_equipment_results(results)
     source_map = update_product_sources(source_map, results)
+    sanitize_equipment_sources(source_map, catalog["products"])
 
     generated_at = now_iso()
     output = {

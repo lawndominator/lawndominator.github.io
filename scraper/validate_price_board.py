@@ -34,8 +34,8 @@ def load_json(name):
 
 def min_equipment_price(category):
     if category == "spreader-handheld":
-        return 15
-    if category in {"spreader-push", "spreader-tow", "sprayer-backpack"}:
+        return 10
+    if category == "sprayer-backpack":
         return 100
     return 0
 
@@ -78,19 +78,43 @@ def assert_static_data():
     if missing_amazon:
         raise AssertionError("equipment products with ASIN but no matching Amazon URL: " + "; ".join(missing_amazon))
 
-    category_by_id = {int(product["id"]): product.get("category") for product in products}
+    product_by_id = {int(product["id"]): product for product in products}
+    equipment_minimums = {
+        210: 300,
+        211: 300,
+        214: 300,
+        215: 300,
+        222: 150,
+        223: 150,
+        224: 150,
+        230: 150,
+        231: 150,
+        232: 150,
+        233: 150,
+        235: 500,
+        244: 300,
+        245: 500,
+        246: 100,
+        248: 100,
+        249: 100,
+        251: 150,
+        253: 250,
+    }
     low_equipment_prices = []
     for product in prices:
-        category = category_by_id.get(int(product["id"]))
+        category = product_by_id.get(int(product["id"]), {}).get("category")
         if category not in EQUIPMENT_CATEGORIES:
             continue
-        floor = min_equipment_price(category)
+        floor = equipment_minimums.get(int(product["id"]), min_equipment_price(category))
         for offer in product.get("offers", []):
             price = offer.get("price")
             if price is not None and float(price) < floor:
                 low_equipment_prices.append(
                     f"{product['id']} {product['name']} {offer.get('retailer')} ${float(price):.2f} below ${floor:.2f}"
                 )
+            for key in ("package_quantity", "package_unit", "package_label", "price_per_unit", "quantity", "unit"):
+                if key in offer:
+                    low_equipment_prices.append(f"{product['id']} {product['name']} equipment offer contains size metadata: {key}")
         best = product.get("best_price")
         if best and best.get("price") is not None and float(best["price"]) < floor:
             low_equipment_prices.append(
@@ -163,6 +187,9 @@ def validate_rendered_board(expected_equipment_count):
                     cards: document.querySelectorAll(".price-tile").length,
                     links: document.querySelectorAll(".price-tile a.top-offer").length,
                     amazonLinks: [...document.querySelectorAll(".price-tile a.top-offer")].filter(link => /amazon\\.com/i.test(link.href)).length,
+                    sizePillsHidden: document.querySelector(".size-pills")?.hidden,
+                    sizeLabels: [...document.querySelectorAll(".tile-size")].map(el => el.textContent.trim()),
+                    unitPrices: [...document.querySelectorAll(".ppu")].map(el => el.textContent.trim()),
                     cardsWithoutLinks: [...document.querySelectorAll(".price-tile")].filter(card => !card.querySelector("a.top-offer")).map(card => card.querySelector(".tile-title")?.textContent.trim()),
                     categoryOptions: [...document.querySelectorAll("#board-category option")].map(option => option.value),
                     bodyText: document.body.textContent
@@ -179,6 +206,12 @@ def validate_rendered_board(expected_equipment_count):
             raise AssertionError(f"expected at least 24 priced equipment cards, rendered {equipment_view['cards']}")
         if equipment_view["cardsWithoutLinks"]:
             raise AssertionError("equipment cards without links: " + "; ".join(equipment_view["cardsWithoutLinks"]))
+        if not equipment_view["sizePillsHidden"]:
+            raise AssertionError("equipment tab should hide size filters")
+        if equipment_view["sizeLabels"]:
+            raise AssertionError("equipment cards should not render size labels: " + "; ".join(equipment_view["sizeLabels"]))
+        if equipment_view["unitPrices"]:
+            raise AssertionError("equipment offers should not render unit prices: " + "; ".join(equipment_view["unitPrices"]))
         if equipment_view["links"] < expected_equipment_count:
             raise AssertionError(f"expected at least one link per equipment card, found {equipment_view['links']} links")
         if equipment_view["amazonLinks"] < 5:
