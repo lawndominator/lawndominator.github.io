@@ -1,21 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-02T21:37:03.418748+00:00",
+  "generated_at": "2026-06-03T00:50:08.468075+00:00",
   "saved_source_limit": 8,
   "totals": {
-    "sources": 1019,
-    "manual_verified_sources": 359,
-    "included_sources": 547,
-    "not_included_sources": 472,
+    "sources": 925,
+    "manual_verified_sources": 348,
+    "included_sources": 518,
+    "not_included_sources": 407,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 547,
-    "not_checked_saved_source_limit": 384,
-    "no_extracted_offer": 64,
-    "below $10.00 minimum for this category": 11,
-    "no_price": 9,
-    "same retailer/price repeated across many unrelated products": 4
+    "included": 518,
+    "not_checked_saved_source_limit": 317,
+    "no_extracted_offer": 80,
+    "below $10.00 minimum for this category": 10
   },
   "products": [
     {
@@ -2406,7 +2404,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.0,
+          "price": 126.99,
           "offer_url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator"
         },
         {
@@ -4250,7 +4248,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.98,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4401,7 +4399,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.95,
+          "price": 50.95,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4836,7 +4834,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.09,
+          "price": 83.92,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5453,7 +5451,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.67,
+          "price": 33.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -5876,9 +5874,9 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
       "included_sources": 2,
@@ -6007,9 +6005,9 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B0000BYCP7?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
       "included_sources": 1,
@@ -6044,16 +6042,6 @@
         },
         {
           "url": "https://www.amazon.com/dp/B0DV9W259K?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B09C6LR1Q2?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
@@ -6138,13 +6126,13 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "no_extracted_offer",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B08NFG17VD?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 12,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -6355,16 +6343,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B09C6LR1Q2?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B073X83BXL?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -6380,13 +6358,13 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B00WUEZBSA?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 9,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -6404,26 +6382,6 @@
           "reason": "included",
           "price": 707.77,
           "offer_url": "https://seedbarn.com/products/lesco-high-wheel-fertilizer-spreader-w-manual-deflector-80-lb-hopper-101186"
-        },
-        {
-          "url": "https://www.walmart.com/ip/5121128654",
-          "retailer": "walmart",
-          "retailer_name": "Walmart",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 930.0,
-          "offer_url": "https://www.walmart.com/ip/5121128654"
-        },
-        {
-          "url": "https://www.mkrittenhouse.com/us/lesco-fertilizer-spreader-101186-high-wheel",
-          "retailer": "mkrittenhouse",
-          "retailer_name": "Mkrittenhouse",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 36.98,
-          "offer_url": "https://www.mkrittenhouse.com/us/lesco-fertilizer-spreader-101186-high-wheel"
         },
         {
           "url": "https://www.ebay.com/itm/146196657161",
@@ -6450,10 +6408,10 @@
           "retailer": "siteone",
           "retailer_name": "SiteOne Landscape Supply",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 698.0,
-          "offer_url": "https://www.siteone.com/en/101186-lesco-broadcast-spreader-w-80-lb-capacity-and-stainless-steel-frame-/p/237659"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B07BLYRJ68",
@@ -6486,37 +6444,7 @@
           "offer_url": "https://www.amazon.com/dp/B00BL03CGC?tag=lawndominator-20"
         },
         {
-          "url": "https://www.amazon.com/dp/B074VG4HWW?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B000S95YRM?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B00BIK3WTC?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0FM8JBCRK?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
@@ -6536,16 +6464,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B0FSLF1LYV?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/lesco-broadcast-spreader-stainless-steel-w-deflector-80-lb-capacity",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
@@ -6556,8 +6474,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 9,
+      "included_sources": 4,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -6597,16 +6515,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.mkrittenhouse.com/us/lesco-50-lb-push-spreader-092807",
-          "retailer": "mkrittenhouse",
-          "retailer_name": "Mkrittenhouse",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 50.45,
-          "offer_url": "https://www.mkrittenhouse.com/us/lesco-50-lb-push-spreader-092807"
-        },
-        {
           "url": "https://www.ebay.com/itm/127045509898",
           "retailer": "ebay",
           "retailer_name": "eBay",
@@ -6615,16 +6523,6 @@
           "reason": "included",
           "price": 579.0,
           "offer_url": "https://www.ebay.com/itm/127045509898"
-        },
-        {
-          "url": "https://www.amazon.com/dp/B01MQML8JT",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
         },
         {
           "url": "https://seedbarn.com/products/lesco-broadcast-spreader-w-50-lb-capacity-092807",
@@ -6641,10 +6539,10 @@
           "retailer": "siteone",
           "retailer_name": "SiteOne Landscape Supply",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 409.0,
-          "offer_url": "https://www.siteone.com/en/092807-lesco-broadcast-spreader-w-50-lb-capacity/p/23988"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B00BIK3WTC",
@@ -6657,37 +6555,7 @@
           "offer_url": "https://www.amazon.com/dp/B00BIK3WTC?tag=lawndominator-20"
         },
         {
-          "url": "https://www.amazon.com/dp/B00002N66D?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0GJSN72ZV?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B07BMF9NYH?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0GCBF87C5?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
@@ -6707,37 +6575,7 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/lesco-broadcast-spreader-stainless-steel-w-deflector-80-lb-capacity",
-          "retailer": "sprayer-depot",
-          "retailer_name": "Sprayer Depot",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sprayerdepot.com/products/spreader-model-2545s",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
           "manual_verified": false,
@@ -6747,8 +6585,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -6899,16 +6737,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B09C6LR1Q2?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B0BY3DXFMZ?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -6933,13 +6761,13 @@
           "retailer": "andersons",
           "retailer_name": "The Andersons",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 419.88,
-          "offer_url": "https://andersonslawn.com/products/pacer-pro"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 1,
+      "included_sources": 0,
       "not_included_sources": 8,
       "invalid_sources": 0
     },
@@ -7016,7 +6844,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 855.07,
+          "price": 852.26,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
@@ -7050,16 +6878,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B0B8FWLKSC?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B084CS1LJP?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -7081,7 +6899,7 @@
         }
       ],
       "included_sources": 5,
-      "not_included_sources": 8,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -7090,16 +6908,6 @@
       "name": "Spyker Ergo-PRO SPY80-1S 80 lb Spreader",
       "category": "spreader-push",
       "sources": [
-        {
-          "url": "https://www.mkrittenhouse.com/us/spyker-80-lb-ergo-pro-broadcast-spreader-spy80-1s",
-          "retailer": "mkrittenhouse",
-          "retailer_name": "Mkrittenhouse",
-          "manual_verified": true,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 1.22,
-          "offer_url": "https://www.mkrittenhouse.com/us/spyker-80-lb-ergo-pro-broadcast-spreader-spy80-1s"
-        },
         {
           "url": "https://arlingtonpower.com/products/spyker-ergo-pro-80-lb-spreader-stainless-steel-frame-spy80-1s",
           "retailer": "arlingtonpower",
@@ -7191,47 +6999,7 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B09739SZKP?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B09MY7RJZB?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0973B21SR?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0B8FWLKSC?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0FWS1382V?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
@@ -7252,7 +7020,7 @@
         }
       ],
       "included_sources": 5,
-      "not_included_sources": 11,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -7276,10 +7044,10 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 212.96,
-          "offer_url": "https://www.domyown.com/earthway-professional-broadcast-spreader-2050p-p-3917.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://earthway.com/product/2050p-estate-residential-broadcast-spreader",
@@ -7472,8 +7240,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 10,
+      "included_sources": 10,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -7814,16 +7582,6 @@
           "offer_url": null
         },
         {
-          "url": "https://lawnsynergy.com/products/spray-booster-surfactant-spreader-sticker",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://lawnsynergy.com/products/lesco-hopper-cover-waterproof-for-lesco-80-lb-spreader",
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
@@ -8004,16 +7762,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B09C6LR1Q2?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -8025,7 +7773,7 @@
         }
       ],
       "included_sources": 7,
-      "not_included_sources": 32,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
@@ -8235,16 +7983,6 @@
           "offer_url": null
         },
         {
-          "url": "https://lawnsynergy.com/products/spray-booster-surfactant-spreader-sticker",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://lawnsynergy.com/products/lesco-spreader-sticker",
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
@@ -8336,7 +8074,7 @@
         }
       ],
       "included_sources": 4,
-      "not_included_sources": 26,
+      "not_included_sources": 25,
       "invalid_sources": 0
     },
     {
@@ -8551,10 +8289,10 @@
           "retailer": "surrygeneralstore",
           "retailer_name": "Surrygeneralstore",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 84.88,
-          "offer_url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.meagd.shop/products/scotts-turf-builder-classic-drop-spreader_6d58f225_20cdbcf3",
@@ -8571,10 +8309,10 @@
           "retailer": "ponyx",
           "retailer_name": "Ponyx",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 49.99,
-          "offer_url": "https://ponyx.shop/products/scotts-turf-builder-classic-drop-spreader_3dc3aaa5"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0DV9W259K?tag=lawndominator-20",
@@ -8662,13 +8400,13 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B002ZTK09U?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 9,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -8768,16 +8506,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.amazon.com/dp/B0FQPNFNJJ?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -8806,20 +8534,10 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0FF96LC47?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
         }
       ],
       "included_sources": 3,
-      "not_included_sources": 11,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
@@ -8859,36 +8577,6 @@
           "offer_url": null
         },
         {
-          "url": "https://sangtok.com/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader",
-          "retailer": "sangtok",
-          "retailer_name": "Sangtok",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 60.0,
-          "offer_url": "https://sangtok.com/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader"
-        },
-        {
-          "url": "https://www.meagd.shop/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader",
-          "retailer": "meagd",
-          "retailer_name": "Meagd",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 46.79,
-          "offer_url": "https://www.meagd.shop/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader"
-        },
-        {
-          "url": "https://kopel.shop/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader",
-          "retailer": "kopel",
-          "retailer_name": "Kopel",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 49.99,
-          "offer_url": "https://kopel.shop/products/agri-fab-45-0463-130-pound-tow-behind-broadcast-spreader"
-        },
-        {
           "url": "https://www.zoro.com/agri-fab-130-lbs-cap-broadcast-tow-behind-spreader-for-salt-fertilizer-grass-seed-up-to-4-ft-spread-45-0463/i/G5565476",
           "retailer": "zoro",
           "retailer_name": "Zoro",
@@ -8919,7 +8607,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
+      "included_sources": 3,
       "not_included_sources": 3,
       "invalid_sources": 0
     },
@@ -8929,16 +8617,6 @@
       "name": "Brinly BS-36BH Tow-Behind Spreader (175 lb)",
       "category": "spreader-tow",
       "sources": [
-        {
-          "url": "https://www.ebay.com/itm/267370301193",
-          "retailer": "ebay",
-          "retailer_name": "eBay",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 25.0,
-          "offer_url": "https://www.ebay.com/itm/267370301193"
-        },
         {
           "url": "https://www.walmart.com/ip/46184423",
           "retailer": "walmart",
@@ -8995,7 +8673,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -9035,12 +8713,12 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B001U40NFC?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
-      "included_sources": 6,
+      "included_sources": 5,
       "not_included_sources": 5,
       "invalid_sources": 0
     },
@@ -9196,10 +8874,10 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 263.2,
-          "offer_url": "https://www.domyown.com/chapin-80-lb-contractor-turf-spreader-8301c-p-19638.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://beegreen.green/chapin80lbbroadcaster6622.html",
@@ -9282,8 +8960,8 @@
           "offer_url": "https://www.amazon.com/dp/B01MUODGQ2?tag=lawndominator-20"
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 3,
+      "included_sources": 7,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -9337,10 +9015,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 371.24,
-          "offer_url": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://veseris.com/default/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3",
@@ -9453,16 +9131,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B0G1TBC7FS?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/jacto-cd400-4-gallon-backpack-sprayer",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
@@ -9473,7 +9141,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 10,
+      "included_sources": 9,
       "not_included_sources": 8,
       "invalid_sources": 0
     },
@@ -9498,10 +9166,10 @@
           "retailer": "siteone",
           "retailer_name": "SiteOne Landscape Supply",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.99,
-          "offer_url": "https://www.siteone.com/en/fzvaaj-3-flowzone-cyclone-3-variable-pressure-18v-battery-powered-sprayer-4-gallon-/p/919210"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0C8Y41JS3?tag=lawndominator-20",
@@ -9669,13 +9337,13 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B0CHN3P8CN?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 10,
+      "included_sources": 8,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -9699,10 +9367,10 @@
           "retailer": "gciturfacademy",
           "retailer_name": "Gciturfacademy",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 228.95,
-          "offer_url": "https://gciturfacademy.com/products/flowzone-storm-2-5"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://fzspray.com/products/storm-2-5",
@@ -9870,13 +9538,13 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B08VJL8RW1?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 10,
+      "included_sources": 8,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -9890,10 +9558,10 @@
           "retailer": "siteone",
           "retailer_name": "SiteOne Landscape Supply",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 214.99,
-          "offer_url": "https://www.siteone.com/en/fzsatj-3to-flowzone-zephyr-battery-powered-backpack-sprayer-tool-only-4-gal/p/990848"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
@@ -10056,16 +9724,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B0G1TBC7FS?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/jacto-pjb-16-4-gallon-battery-powered-backpack-sprayer",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
@@ -10091,12 +9749,12 @@
           "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_price",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
-          "offer_url": "https://www.amazon.com/dp/B0DZ7CGSLQ?tag=lawndominator-20"
+          "offer_url": null
         }
       ],
-      "included_sources": 7,
+      "included_sources": 6,
       "not_included_sources": 14,
       "invalid_sources": 0
     },
@@ -10105,240 +9763,9 @@
       "slug": "solo-433",
       "name": "Solo 433 Gas-Powered Backpack Power Sprayer (Honda 25cc)",
       "category": "sprayer-backpack",
-      "sources": [
-        {
-          "url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "same retailer/price repeated across many unrelated products",
-          "price": 239.95,
-          "offer_url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon"
-        },
-        {
-          "url": "https://gciturfacademy.com/products/flowzone-storm-zero-drip-swaptank-handheld-sprayer-1-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-nozzle-adapter",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-nozzle-elbow",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-high-pressure-gun",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-adjustable-nozzle",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/sprayer-microswitch",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-line-shape-nozzle",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-backpack-sprayer-cyclone",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-storm-2-5-gallon-backpack-sprayer",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-pressure-sprayer-430-2g-2-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-handheld-sprayer-2-liter",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chapin-premiumlawn-garden-sprayer-1-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chappin-all-purpose-professional-sprayer",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chapin-lawn-garden-sprayer-1-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B01DWCTSQE?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B000UEMJ3W?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B000HHO6QU?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sprayerdepot.com/products/solo-417-4-5-gallon-12v-backpack-battery-sprayer",
-          "retailer": "sprayer-depot",
-          "retailer_name": "Sprayer Depot",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sprayerdepot.com/products/solo-435-5-gallon-piston-pump-backpack-sprayer",
-          "retailer": "sprayer-depot",
-          "retailer_name": "Sprayer Depot",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-pressure-sprayer-430-2g-2-gal?variant=12543502221412",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://seedbarn.com/products/solo-pressure-sprayer-430-2g-2-gal?variant=12543502221412"
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-handheld-sprayer-2-liter?variant=42444180914394",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 29.95,
-          "offer_url": "https://seedbarn.com/products/solo-handheld-sprayer-2-liter?variant=42444180914394"
-        }
-      ],
-      "included_sources": 2,
-      "not_included_sources": 21,
+      "sources": [],
+      "included_sources": 0,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -10348,99 +9775,9 @@
       "category": "sprayer-backpack",
       "sources": [
         {
-          "url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "same retailer/price repeated across many unrelated products",
-          "price": 239.95,
-          "offer_url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon"
-        },
-        {
-          "url": "https://gciturfacademy.com/products/flowzone-storm-zero-drip-swaptank-handheld-sprayer-1-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://gciturfacademy.com/products/flowzone-storm-zero-drip-swaptank-handheld-sprayer-2-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-backpack-sprayer-cyclone",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-storm-2-5-gallon-backpack-sprayer",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-pressure-sprayer-430-2g-2-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-handheld-sprayer-2-liter",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chappin-all-purpose-professional-sprayer",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chapin-lawn-garden-sprayer-1-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
           "reason": "not_checked_saved_source_limit",
@@ -10468,16 +9805,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.amazon.com/dp/B0DPMYR9Z5?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/solo-451-motorized-mist-blower-backpack",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
@@ -10492,14 +9819,14 @@
           "retailer": "sunspot-supply",
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 435,
-          "offer_url": "https://www.sunspotsupply.com/products/flowzone-typhoon-25v-5-position-variable-pressure-4-gallon-backpack-sprayer?variant=43994478805178"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 14,
+      "included_sources": 0,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -10509,156 +9836,6 @@
       "category": "sprayer-backpack",
       "sources": [
         {
-          "url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "same retailer/price repeated across many unrelated products",
-          "price": 239.95,
-          "offer_url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon"
-        },
-        {
-          "url": "https://gciturfacademy.com/products/flowzone-storm-zero-drip-swaptank-handheld-sprayer-1-gallon",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-nozzle-elbow",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-sprayer-gun-repair-kit",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-backpack-sprayer-cyclone",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://lawnsynergy.com/products/flowzone-storm-2-5-gallon-backpack-sprayer",
-          "retailer": "lawn-synergy",
-          "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-pressure-sprayer-430-2g-2-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/solo-handheld-sprayer-2-liter",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chappin-all-purpose-professional-sprayer",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://seedbarn.com/products/chapin-premiumlawn-garden-sprayer-1-gal",
-          "retailer": "seed-barn",
-          "retailer_name": "Seed Barn",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sunspotsupply.com/products/nutra-sol-tank-cleaner",
-          "retailer": "sunspot-supply",
-          "retailer_name": "Sunspot Supply",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sunspotsupply.com/products/flowzone-typhoon-25v-5-position-variable-pressure-4-gallon-backpack-sprayer",
-          "retailer": "sunspot-supply",
-          "retailer_name": "Sunspot Supply",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sunspotsupply.com/products/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gallon",
-          "retailer": "sunspot-supply",
-          "retailer_name": "Sunspot Supply",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0GLXS58CD?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://www.sprayerdepot.com/products/solo-451-motorized-mist-blower-backpack",
           "retailer": "sprayer-depot",
           "retailer_name": "Sprayer Depot",
@@ -10667,30 +9844,10 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
-        },
-        {
-          "url": "https://www.sprayerdepot.com/products/clamp-425-475-4-gallon-backpack-sprayer",
-          "retailer": "sprayer-depot",
-          "retailer_name": "Sprayer Depot",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.sunspotsupply.com/products/flowzone-typhoon-25v-5-position-variable-pressure-4-gallon-backpack-sprayer?variant=43994478805178",
-          "retailer": "sunspot-supply",
-          "retailer_name": "Sunspot Supply",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 435,
-          "offer_url": "https://www.sunspotsupply.com/products/flowzone-typhoon-25v-5-position-variable-pressure-4-gallon-backpack-sprayer?variant=43994478805178"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 17,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -10705,82 +9862,12 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "same retailer/price repeated across many unrelated products",
-          "price": 239.95,
-          "offer_url": "https://gciturfacademy.com/products/flowzone-zephyr-battery-powered-backpack-sprayer-4-gallon"
-        },
-        {
-          "url": "https://gciturfacademy.com/products/spray-buddy-backpack-fill-kit",
-          "retailer": "gci-turf",
-          "retailer_name": "GCI Turf Academy",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 39.95,
-          "offer_url": "https://gciturfacademy.com/products/spray-buddy-backpack-fill-kit"
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-nozzle-adapter",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-nozzle-elbow",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-high-pressure-gun",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/sprayer-microswitch",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-line-shape-nozzle",
-          "retailer": "yard-mastery",
-          "retailer_name": "Yard Mastery",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://yardmastery.com/products/yard-mastery-sprayer-sprayer-gun-repair-kit",
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
           "manual_verified": false,
@@ -10803,16 +9890,6 @@
           "url": "https://lawnsynergy.com/products/flowzone-storm-2-5-gallon-backpack-sprayer",
           "retailer": "lawn-synergy",
           "retailer_name": "Lawn Synergy",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://www.amazon.com/dp/B0GCJXM4XV?tag=lawndominator-20",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
           "manual_verified": false,
           "status": "not_included",
           "reason": "not_checked_saved_source_limit",
@@ -10860,8 +9937,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 15,
+      "included_sources": 0,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -10885,10 +9962,10 @@
           "retailer": "thelawnlife",
           "retailer_name": "Thelawnlife",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 299.99,
-          "offer_url": "https://thelawnlife.com/products/petratools-hd4000-battery-powered-backpack-sprayer"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B07ZQT4TVV",
@@ -10905,10 +9982,10 @@
           "retailer": "petratools",
           "retailer_name": "Petratools",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 449.99,
-          "offer_url": "https://www.petratools.com/products/petratools-ultimate-sprayer-bundle-hd4000-4-gallon-backpack-sprayer-hd2000-s-2-gallon-sling-sprayer"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/763705483",
@@ -10929,16 +10006,6 @@
           "reason": "included",
           "price": 369.99,
           "offer_url": "https://www.ebay.com/itm/397985687597"
-        },
-        {
-          "url": "https://www.petratools.com/products/petratools-hd4000-battery-powered-backpack-sprayer",
-          "retailer": "petratools",
-          "retailer_name": "Petratools",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 58.99,
-          "offer_url": "https://www.petratools.com/products/petratools-hd4000-battery-powered-backpack-sprayer"
         },
         {
           "url": "https://www.amazon.com/dp/B0D8JTCVDS?tag=lawndominator-20",
@@ -10991,8 +10058,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 5,
+      "included_sources": 4,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -11001,16 +10068,6 @@
       "name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
       "category": "sprayer-backpack",
       "sources": [
-        {
-          "url": "https://www.amazon.com/dp/B09N3MTWBG",
-          "retailer": "amazon",
-          "retailer_name": "Amazon",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 199.0,
-          "offer_url": "https://www.amazon.com/dp/B09N3MTWBG?tag=lawndominator-20"
-        },
         {
           "url": "https://www.homedepot.com/p/RYOBI-ONE-18V-Cordless-Battery-4-Gallon-Backpack-Chemical-Sprayer-with-2-0-Ah-Battery-and-Charger-P2860/314259313",
           "retailer": "homedepot",
@@ -11082,7 +10139,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
+      "included_sources": 2,
       "not_included_sources": 5,
       "invalid_sources": 0
     },
@@ -11117,10 +10174,10 @@
           "retailer": "homeandgardensupply",
           "retailer_name": "Homeandgardensupply",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 320.99,
-          "offer_url": "https://homeandgardensupply.com/products/jacto-pjb-16u-battery-powered-backpack-sprayer-w-spray-trigger"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sustainhydro.com/online-store/Jacto-Battery-Powered-Lithium-Ion-Sprayer-Backpack-p495536991",
@@ -11223,8 +10280,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 6,
+      "included_sources": 6,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -11238,10 +10295,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.41,
-          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -11304,8 +10361,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     }
   ]
