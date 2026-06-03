@@ -125,6 +125,62 @@ RETAILERS = [
         "search": "https://www.ebay.com/sch/i.html?_nkw={query}",
         "marketplace": True,
     },
+    {
+        "key":    "home-depot",
+        "name":   "Home Depot",
+        "base":   "https://www.homedepot.com",
+        "search": "https://www.homedepot.com/s/{query}",
+        "marketplace": True,
+    },
+    {
+        "key":    "lowes",
+        "name":   "Lowe's",
+        "base":   "https://www.lowes.com",
+        "search": "https://www.lowes.com/search?searchTerm={query}",
+        "marketplace": True,
+    },
+    {
+        "key":    "northern-tool",
+        "name":   "Northern Tool",
+        "base":   "https://www.northerntool.com",
+        "search": "https://www.northerntool.com/search/?search={query}",
+    },
+    {
+        "key":    "tractor-supply",
+        "name":   "Tractor Supply",
+        "base":   "https://www.tractorsupply.com",
+        "search": "https://www.tractorsupply.com/tsc/catalog/search?Ntt={query}",
+    },
+    {
+        "key":    "siteone",
+        "name":   "SiteOne Landscape Supply",
+        "base":   "https://www.siteone.com",
+        "search": "https://www.siteone.com/search?q={query}&type=product",
+    },
+    {
+        "key":    "qspray",
+        "name":   "QSpray",
+        "base":   "https://www.qspray.com",
+        "search": "https://www.qspray.com/search?q={query}&type=product",
+    },
+    {
+        "key":    "gemplers",
+        "name":   "Gemplers",
+        "base":   "https://www.gemplers.com",
+        "search": "https://www.gemplers.com/search?q={query}",
+    },
+    {
+        "key":    "sprayer-depot",
+        "name":   "Sprayer Depot",
+        "base":   "https://www.sprayerdepot.com",
+        "search": "https://www.sprayerdepot.com/search?q={query}&type=product",
+    },
+    {
+        "key":    "rittenhouse",
+        "name":   "M. Rittenhouse",
+        "base":   "https://www.mrittenhouse.com",
+        "search": "https://www.mrittenhouse.com/search?q={query}&type=product",
+    },
 ]
 
 HEADERS = {
@@ -351,6 +407,33 @@ def _normalize_product_url(href: str, base: str, retailer_key: str) -> str | Non
         if "/ip/" not in lower_path:
             return None
         return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path, "", "", ""))
+
+    if retailer_key == "home-depot":
+        match = re.search(r"/p/([^/?#]+)/(\d+)", path)
+        if not match:
+            return None
+        return f"https://www.homedepot.com/p/{match.group(1)}/{match.group(2)}"
+
+    if retailer_key == "lowes":
+        match = re.search(r"/pd/([^/?#]+)/(\d+)", path)
+        if not match:
+            return None
+        return f"https://www.lowes.com/pd/{match.group(1)}/{match.group(2)}"
+
+    if retailer_key == "northern-tool":
+        if not re.search(r"/product_\d+", path, re.I):
+            return None
+        return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path.rstrip("/"), "", "", ""))
+
+    if retailer_key == "tractor-supply":
+        if "/product/" not in lower_path:
+            return None
+        return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path.rstrip("/"), "", "", ""))
+
+    if retailer_key == "siteone":
+        if "/products/" not in lower_path and "/product/" not in lower_path:
+            return None
+        return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path.rstrip("/"), "", "", ""))
 
     product_patterns = [
         r"/products/[^/?#]+",
@@ -902,7 +985,7 @@ def _run_discovery(products, catalog, existing, sources_path, sources_data, domy
         sources = discover_product_multi(product, domyown_ctx=domyown_ctx)
         existing[pid] = sources
         save_sources(sources_path, sources_data)
-        print(f"  → {len(sources)} verified source(s) saved\n")
+        print(f"  -> {len(sources)} verified source(s) saved\n")
 
     with_sources = sum(1 for v in existing.values() if any(s.get("verified") for s in v))
     total_urls   = sum(len(v) for v in existing.values())

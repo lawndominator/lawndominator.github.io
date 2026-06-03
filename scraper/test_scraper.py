@@ -1571,5 +1571,112 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(output["alerts"], [])
 
 
+    # ── Regression: T-Nex $34 — related-product card URL mismatch ────────────
+
+    def test_offer_matches_source_url_accepts_same_page(self):
+        self.assertTrue(
+            scraper._offer_matches_source_url(
+                "https://www.solutionspestcontrol.com/t-nex-1as-p-12345.html",
+                "https://www.solutionspestcontrol.com/t-nex-1as-p-12345.html",
+            )
+        )
+
+    def test_offer_matches_source_url_rejects_related_product(self):
+        # A related-product card on the T-Nex page points to a different URL.
+        # This is the T-Nex $34 false price scenario.
+        self.assertFalse(
+            scraper._offer_matches_source_url(
+                "https://www.solutionspestcontrol.com/primo-maxx-p-56789.html",
+                "https://www.solutionspestcontrol.com/t-nex-1as-p-12345.html",
+            )
+        )
+
+    def test_offer_matches_source_url_ignores_affiliate_params(self):
+        # affiliate query params (affid=, tag=) must not cause false mismatch
+        self.assertTrue(
+            scraper._offer_matches_source_url(
+                "https://www.domyown.com/t-nex-p-12345.html?affid=lawndom",
+                "https://www.domyown.com/t-nex-p-12345.html",
+            )
+        )
+
+    # ── Regression: Feature 6-0-0 $10 — Amazon HTML scraping blocked ─────────
+
+    def test_is_amazon_url_detects_amazon_domains(self):
+        self.assertTrue(scraper._is_amazon_url("https://www.amazon.com/dp/B076TFPB1Z"))
+        self.assertTrue(scraper._is_amazon_url("https://amazon.com/Feature-6-0-0/dp/B076TFPB1Z"))
+        self.assertFalse(scraper._is_amazon_url("https://www.domyown.com/feature-6-0-0.html"))
+        self.assertFalse(scraper._is_amazon_url("https://www.solutionspestcontrol.com/product"))
+
+    # ── Regression: Ryan Knorr — Amazon PA API requires exact ASIN ───────────
+
+    def test_amazon_paapi_returns_affiliate_link_without_asin(self):
+        # If no ASIN is known, PA API must not do a keyword search that returns
+        # unrelated products (Miracle-Gro, Southern Ag, Penterra, etc.)
+        product = {
+            "id": 999,
+            "name": "Ryan Knorr Example",
+            "search_query": "Ryan Knorr test product",
+            "amazon_query": "Ryan Knorr test product lawn",
+        }
+        result = scraper._amazon_paapi(product, [])
+        self.assertIsNone(result["price"])
+        self.assertIn("amazon.com", result["url"])
+
+    # ── Extreme drop sanity checks ────────────────────────────────────────────
+
+    def test_is_suspicious_drop_passes_for_small_drop(self):
+        old = {"retailer": "store", "price": 100.0, "url": "https://store.example/product"}
+        new = {"retailer": "store", "price": 92.0,  "url": "https://store.example/product"}
+        self.assertFalse(scraper._is_suspicious_drop(old, new, 8.0))
+
+    def test_is_suspicious_drop_suppresses_67_percent_no_package(self):
+        # Feature 6-0-0 false drop: $30 → $10 with no matching package size info
+        old = {"retailer": "domyown", "price": 30.0, "url": "https://domyown.com/feature"}
+        new = {"retailer": "amazon",  "price": 10.0, "url": "https://amazon.com/dp/B076TFPB1Z"}
+        self.assertTrue(scraper._is_suspicious_drop(old, new, 66.7))
+
+    def test_is_suspicious_drop_suppresses_45_percent_no_package(self):
+        # T-Nex false drop: ~$90 → ~$34, no confirmed package match
+        old = {"retailer": "solutions", "price": 90.0, "url": "https://solutions.com/t-nex"}
+        new = {"retailer": "solutions", "price": 34.0, "url": "https://solutions.com/t-nex"}
+        self.assertTrue(scraper._is_suspicious_drop(old, new, 45.0))
+
+    def test_is_suspicious_drop_passes_45_percent_with_same_package(self):
+        old = {"retailer": "store", "price": 100.0, "url": "https://store.example/product",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        new = {"retailer": "store", "price": 55.0,  "url": "https://store.example/product",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        self.assertFalse(scraper._is_suspicious_drop(old, new, 45.0))
+
+    def test_is_suspicious_drop_suppresses_67_percent_different_url(self):
+        # 60%+ drop requires same retailer AND same URL, not just same package
+        old = {"retailer": "store", "price": 100.0, "url": "https://store.example/product-a",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        new = {"retailer": "store", "price": 33.0,  "url": "https://store.example/product-b",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        self.assertTrue(scraper._is_suspicious_drop(old, new, 67.0))
+
+    def test_build_price_alerts_suppresses_feature_false_drop(self):
+        # Regression: Feature 6-0-0 false drop from $30 to $10 (67%) via wrong Amazon HTML scrape
+        previous = {118: {
+            "id": 118, "slug": "feature-6-0-0", "name": "Feature 6-0-0 Iron Fertilizer",
+            "best_price": {
+                "retailer": "domyown", "retailer_name": "DoMyOwn", "price": 30.0,
+                "url": "https://www.domyown.com/feature-6-0-0.html", "in_stock": True,
+            },
+        }}
+        current = [{
+            "id": 118, "slug": "feature-6-0-0", "name": "Feature 6-0-0 Iron Fertilizer",
+            "category": "soil-amendment",
+            "best_price": {
+                "retailer": "amazon", "retailer_name": "Amazon", "price": 10.0,
+                "url": "https://www.amazon.com/dp/B076TFPB1Z", "in_stock": True,
+            },
+        }]
+        output = scraper.build_price_alerts(previous, current, "2026-05-31T00:00:00+00:00")
+        self.assertEqual(output["alert_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
