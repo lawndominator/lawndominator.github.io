@@ -293,25 +293,25 @@ def min_price_for_product(product: dict) -> float:
     category = product.get("category")
     product_id = int(product.get("id", 0))
     equipment_minimums = {
-        210: 300,  # LESCO 101186 high wheel
-        211: 300,  # LESCO 092807 50 lb
-        214: 300,  # Spyker P70 commercial drop
-        215: 300,  # Spyker Ergo-PRO
-        222: 150,
-        223: 150,
-        224: 150,
-        230: 150,
-        231: 150,
-        232: 150,
-        233: 150,
-        235: 500,
-        244: 300,
-        245: 500,
-        246: 100,
-        248: 100,
-        249: 100,
-        251: 150,
-        253: 250,
+        310: 300,  # LESCO 101186 high wheel
+        311: 300,  # LESCO 092807 50 lb
+        314: 300,  # Spyker P70 commercial drop
+        315: 300,  # Spyker Ergo-PRO
+        322: 150,
+        323: 150,
+        324: 150,
+        330: 150,
+        331: 150,
+        332: 150,
+        333: 150,
+        335: 500,
+        344: 300,
+        345: 500,
+        346: 100,
+        348: 100,
+        349: 100,
+        351: 150,
+        353: 250,
     }
     if is_equipment_category(category) and product_id in equipment_minimums:
         return equipment_minimums[product_id]

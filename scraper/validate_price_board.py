@@ -16,7 +16,17 @@ EQUIPMENT_CATEGORIES = {
     "spreader-tow",
     "sprayer-backpack",
 }
-REMOVED_PRODUCT_IDS = {234, 237, 238, 239, 240, 241, 242, 243, 247, 250, 252}
+REQUIRED_PRODUCT_SLUGS = {
+    "n-ext-spoon-juice",
+    "simple-lawn-16-4-8",
+    "simple-lawn-28-0-0",
+    "yard-mastery-flagship",
+    "yard-mastery-double-dark",
+    "rk-equalizorr",
+    "rk-greenorr",
+    "southern-ag-chelated-iron",
+    "sulfate-of-potash-0-0-50",
+}
 BAD_VISIBLE_TEXT = (
     "Amazon linked",
     "Check price",
@@ -45,10 +55,10 @@ def assert_static_data():
     sources = load_json("product_sources.json")["products"]
     prices = load_json("prices.json")["products"]
 
-    ids = {int(product["id"]) for product in products}
-    removed = sorted(ids & REMOVED_PRODUCT_IDS)
-    if removed:
-        raise AssertionError(f"removed products still present: {removed}")
+    slugs = {product["slug"] for product in products}
+    missing_required = sorted(REQUIRED_PRODUCT_SLUGS - slugs)
+    if missing_required:
+        raise AssertionError("required catalog products missing: " + "; ".join(missing_required))
 
     equipment = [product for product in products if product.get("category") in EQUIPMENT_CATEGORIES]
     if len(equipment) < 34:
@@ -80,25 +90,25 @@ def assert_static_data():
 
     product_by_id = {int(product["id"]): product for product in products}
     equipment_minimums = {
-        210: 300,
-        211: 300,
-        214: 300,
-        215: 300,
-        222: 150,
-        223: 150,
-        224: 150,
-        230: 150,
-        231: 150,
-        232: 150,
-        233: 150,
-        235: 500,
-        244: 300,
-        245: 500,
-        246: 100,
-        248: 100,
-        249: 100,
-        251: 150,
-        253: 250,
+        310: 300,
+        311: 300,
+        314: 300,
+        315: 300,
+        322: 150,
+        323: 150,
+        324: 150,
+        330: 150,
+        331: 150,
+        332: 150,
+        333: 150,
+        335: 500,
+        344: 300,
+        345: 500,
+        346: 100,
+        348: 100,
+        349: 100,
+        351: 150,
+        353: 250,
     }
     low_equipment_prices = []
     for product in prices:

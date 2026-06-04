@@ -1,7 +1,7 @@
 {
   "version": "3.1",
   "updated": "2026-06-02",
-  "_notes": "Premium specialty lawn products only — professional chemistry sold on DoMyOwn, PestMall, and specialty retailers. No consumer shelf brands, no commodity fertilizers, nothing at Walmart/Lowes/Home Depot.",
+  "_notes": "Premium specialty lawn products only \u2014 professional chemistry sold on DoMyOwn, PestMall, and specialty retailers. No consumer shelf brands, no commodity fertilizers, nothing at Walmart/Lowes/Home Depot.",
   "products": [
     {
       "id": 1,
@@ -347,6 +347,22 @@
         "Katana Herbicide",
         "Bayer Katana Turf",
         "flazasulfuron turf"
+      ],
+      "asin": null
+    },
+    {
+      "id": 30,
+      "slug": "tribute-total",
+      "name": "Tribute Total Herbicide",
+      "category": "post-emergent",
+      "search_query": "Tribute Total herbicide",
+      "amazon_query": "Tribute Total herbicide",
+      "active_ingredient": "thiencarbazone-methyl + foramsulfuron + halosulfuron-methyl",
+      "alt_names": [
+        "Tribute Total",
+        "Bayer Tribute Total",
+        "Envu Tribute Total",
+        "Tribute Total WDG"
       ],
       "asin": null
     },
@@ -974,7 +990,815 @@
       "asin": "B076TFPB1Z"
     },
     {
-      "id": 200,
+      "id": 130,
+      "slug": "andersons-pgf-complete",
+      "name": "The Andersons PGF Complete 16-4-8",
+      "category": "fertilizer",
+      "search_query": "The Andersons PGF Complete 16-4-8",
+      "amazon_query": "The Andersons PGF Complete 16-4-8 fertilizer",
+      "active_ingredient": "16-4-8 fertilizer + humic + iron",
+      "alt_names": [
+        "PGF Complete",
+        "PGF Complete 16-4-8",
+        "Andersons 16-4-8 Humic DG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 131,
+      "slug": "andersons-pgf-balanced",
+      "name": "The Andersons PGF Balanced 10-10-10",
+      "category": "fertilizer",
+      "search_query": "The Andersons PGF Balanced 10-10-10",
+      "amazon_query": "The Andersons PGF Balanced 10-10-10 fertilizer",
+      "active_ingredient": "10-10-10 fertilizer",
+      "alt_names": [
+        "PGF Balanced",
+        "PGF Balanced 10-10-10",
+        "Andersons balanced fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 132,
+      "slug": "andersons-green-shocker",
+      "name": "The Andersons Green Shocker 7-1-2",
+      "category": "fertilizer",
+      "search_query": "The Andersons Green Shocker 7-1-2",
+      "amazon_query": "The Andersons Green Shocker 7-1-2 fertilizer",
+      "active_ingredient": "7-1-2 fertilizer + humic",
+      "alt_names": [
+        "Green Shocker",
+        "Andersons Green Shocker",
+        "Green Shocker with Humic DG"
+      ],
+      "asin": null
+    },
+    {
+      "id": 133,
+      "slug": "andersons-humic-dg",
+      "name": "The Andersons Humic DG",
+      "category": "soil-amendment",
+      "search_query": "The Andersons Humic DG",
+      "amazon_query": "The Andersons Humic DG soil amendment",
+      "active_ingredient": "humic acid + fulvic acid + humin",
+      "alt_names": [
+        "Humic DG",
+        "Andersons Humic DG",
+        "Humic DG organic soil amendment"
+      ],
+      "asin": null
+    },
+    {
+      "id": 134,
+      "slug": "andersons-humichar",
+      "name": "The Andersons HumiChar",
+      "category": "soil-amendment",
+      "search_query": "The Andersons HumiChar",
+      "amazon_query": "The Andersons HumiChar humic biochar",
+      "active_ingredient": "humic acid + biochar",
+      "alt_names": [
+        "HumiChar",
+        "Andersons HumiChar",
+        "HumiChar organic soil amendment"
+      ],
+      "asin": null
+    },
+    {
+      "id": 135,
+      "slug": "andersons-black-gypsum-dg",
+      "name": "The Andersons Black Gypsum DG",
+      "category": "soil-amendment",
+      "search_query": "The Andersons Black Gypsum DG",
+      "amazon_query": "The Andersons Black Gypsum DG",
+      "active_ingredient": "gypsum + humic acid",
+      "alt_names": [
+        "Black Gypsum DG",
+        "Andersons Black Gypsum",
+        "Black Gypsum"
+      ],
+      "asin": null
+    },
+    {
+      "id": 137,
+      "slug": "andersons-dirt-booster-plus",
+      "name": "The Andersons Dirt Booster Plus",
+      "category": "soil-amendment",
+      "search_query": "The Andersons Dirt Booster Plus",
+      "amazon_query": "The Andersons Dirt Booster Plus soil amendment",
+      "active_ingredient": "microbials + humic + biochar",
+      "alt_names": [
+        "Dirt Booster Plus",
+        "Andersons Dirt Booster",
+        "Dirt Booster soil amendment"
+      ],
+      "asin": null
+    },
+    {
+      "id": 138,
+      "slug": "andersons-humic-dg-charx",
+      "name": "The Andersons Humic DG CharX",
+      "category": "soil-amendment",
+      "search_query": "The Andersons Humic DG CharX",
+      "amazon_query": "The Andersons Humic DG CharX biochar",
+      "active_ingredient": "humic acid + biochar",
+      "alt_names": [
+        "Humic DG CharX",
+        "Andersons CharX",
+        "CharX",
+        "Andersons humic biochar"
+      ],
+      "asin": null
+    },
+    {
+      "id": 145,
+      "slug": "yard-mastery-flagship",
+      "name": "Yard Mastery Flagship 24-0-6",
+      "category": "fertilizer",
+      "search_query": "Yard Mastery Flagship 24-0-6",
+      "amazon_query": "Yard Mastery Flagship 24-0-6 fertilizer",
+      "active_ingredient": "24-0-6 fertilizer + iron + Bio-Nite",
+      "alt_names": [
+        "Flagship",
+        "Flagship 24-0-6",
+        "Yard Mastery Flagship fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 146,
+      "slug": "yard-mastery-double-dark",
+      "name": "Yard Mastery Double Dark 16-0-0",
+      "category": "fertilizer",
+      "search_query": "Yard Mastery Double Dark 16-0-0",
+      "amazon_query": "Yard Mastery Double Dark 16-0-0 fertilizer",
+      "active_ingredient": "16-0-0 fertilizer + 6% iron + Bio-Nite",
+      "alt_names": [
+        "Double Dark",
+        "Double Dark 16-0-0",
+        "Yard Mastery Double Dark fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 147,
+      "slug": "yard-mastery-stress-blend",
+      "name": "Yard Mastery Stress Blend 7-0-20",
+      "category": "fertilizer",
+      "search_query": "Yard Mastery Stress Blend 7-0-20",
+      "amazon_query": "Yard Mastery Stress Blend 7-0-20 fertilizer",
+      "active_ingredient": "7-0-20 fertilizer + iron + Bio-Nite",
+      "alt_names": [
+        "Stress Blend",
+        "Stress Blend 7-0-20",
+        "Yard Mastery Stress Blend fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 148,
+      "slug": "yard-mastery-freedom",
+      "name": "Yard Mastery Freedom 17-7-6",
+      "category": "fertilizer",
+      "search_query": "Yard Mastery Freedom 17-7-6",
+      "amazon_query": "Yard Mastery Freedom 17-7-6 fertilizer",
+      "active_ingredient": "17-7-6 fertilizer",
+      "alt_names": [
+        "Freedom Fertilizer",
+        "Freedom 17-7-6",
+        "Yard Mastery Freedom fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 155,
+      "slug": "n-ext-microgreene",
+      "name": "N-Ext MicroGreene 0-0-2",
+      "category": "micronutrient",
+      "search_query": "N-Ext MicroGreene 0-0-2",
+      "amazon_query": "N-Ext MicroGreene 0-0-2",
+      "active_ingredient": "micronutrients + humic + sea kelp",
+      "alt_names": [
+        "MicroGreene",
+        "MicroGreene 0-0-2",
+        "Greene County MicroGreene"
+      ],
+      "asin": null
+    },
+    {
+      "id": 156,
+      "slug": "n-ext-greene-effect",
+      "name": "N-Ext GreeNe EfFect 7-0-0",
+      "category": "fertilizer",
+      "search_query": "N-Ext GreeNe EfFect 7-0-0",
+      "amazon_query": "N-Ext GreeNe EfFect 7-0-0",
+      "active_ingredient": "7-0-0 nitrogen + iron",
+      "alt_names": [
+        "GreeNe EfFect",
+        "Greene Effect",
+        "N-Ext Green Effect"
+      ],
+      "asin": null
+    },
+    {
+      "id": 157,
+      "slug": "n-ext-spoon-juice",
+      "name": "N-Ext Spoon Juice 5-0-1",
+      "category": "fertilizer",
+      "search_query": "N-Ext Spoon Juice 5-0-1",
+      "amazon_query": "N-Ext Spoon Juice 5-0-1 liquid fertilizer",
+      "active_ingredient": "5-0-1 fertilizer + humic acid + kelp + iron",
+      "alt_names": [
+        "Spoon Juice",
+        "Spoon Juice 5-0-1",
+        "Yard Mastery Spoon Juice",
+        "Greene County Spoon Juice"
+      ],
+      "asin": null
+    },
+    {
+      "id": 158,
+      "slug": "n-ext-humic12",
+      "name": "N-Ext Humic12 0-0-1",
+      "category": "soil-amendment",
+      "search_query": "N-Ext Humic12 0-0-1",
+      "amazon_query": "N-Ext Humic12 liquid humic acid",
+      "active_ingredient": "12% humic acid",
+      "alt_names": [
+        "Humic12",
+        "Humic 12",
+        "Greene County Humic12"
+      ],
+      "asin": null
+    },
+    {
+      "id": 159,
+      "slug": "n-ext-rgs",
+      "name": "N-Ext RGS 0-0-1",
+      "category": "biostimulant",
+      "search_query": "N-Ext RGS 0-0-1",
+      "amazon_query": "N-Ext RGS root growth stimulant",
+      "active_ingredient": "humic acid + sea kelp",
+      "alt_names": [
+        "RGS",
+        "Root Growth Stimulant",
+        "N-Ext RGS Root Growth"
+      ],
+      "asin": null
+    },
+    {
+      "id": 170,
+      "slug": "simple-lawn-16-4-8",
+      "name": "Simple Lawn Solutions 16-4-8",
+      "category": "fertilizer",
+      "search_query": "Simple Lawn Solutions 16-4-8",
+      "amazon_query": "Simple Lawn Solutions 16-4-8 fertilizer",
+      "active_ingredient": "16-4-8 liquid fertilizer + seaweed + fish",
+      "alt_names": [
+        "SLS 16-4-8",
+        "Simple Lawn 16-4-8",
+        "Advanced 16-4-8 Lawn Food"
+      ],
+      "asin": null
+    },
+    {
+      "id": 171,
+      "slug": "simple-lawn-28-0-0",
+      "name": "Simple Lawn Solutions 28-0-0",
+      "category": "fertilizer",
+      "search_query": "Simple Lawn Solutions 28-0-0",
+      "amazon_query": "Simple Lawn Solutions 28-0-0 high nitrogen",
+      "active_ingredient": "28-0-0 liquid nitrogen",
+      "alt_names": [
+        "SLS 28-0-0",
+        "Simple Lawn High Nitrogen",
+        "28-0-0 High Nitrogen Lawn Food"
+      ],
+      "asin": null
+    },
+    {
+      "id": 172,
+      "slug": "simple-lawn-darker-green",
+      "name": "Simple Lawn Solutions Darker Green",
+      "category": "micronutrient",
+      "search_query": "Simple Lawn Solutions Darker Green Liquid Iron",
+      "amazon_query": "Simple Lawn Solutions Darker Green liquid iron",
+      "active_ingredient": "liquid iron + micronutrients",
+      "alt_names": [
+        "Darker Green",
+        "SLS Darker Green",
+        "Simple Lawn Liquid Iron"
+      ],
+      "asin": null
+    },
+    {
+      "id": 185,
+      "slug": "gs-liquid-humic",
+      "name": "GS Plant Foods Liquid Humic Acid",
+      "category": "soil-amendment",
+      "search_query": "GS Plant Foods Liquid Humic Acid",
+      "amazon_query": "GS Plant Foods liquid humic acid",
+      "active_ingredient": "liquid humic acid",
+      "alt_names": [
+        "GS Liquid Humic",
+        "GS Plant Foods Humic Acid",
+        "Organic Liquid Humic Acid"
+      ],
+      "asin": null
+    },
+    {
+      "id": 195,
+      "slug": "hydretain-granular",
+      "name": "Hydretain Granular Moisture Manager",
+      "category": "moisture-manager",
+      "search_query": "Hydretain Granular Moisture Manager",
+      "amazon_query": "Hydretain Granular moisture manager",
+      "active_ingredient": "hygroscopic humectant compounds",
+      "alt_names": [
+        "Hydretain Granular",
+        "Hydretain granular root zone",
+        "Hydretain moisture manager granules"
+      ],
+      "asin": null
+    },
+    {
+      "id": 199,
+      "slug": "carbonizpn",
+      "name": "CarbonizPN Soil Enhancer",
+      "category": "soil-amendment",
+      "search_query": "CarbonizPN Soil Enhancer",
+      "amazon_query": "CarbonizPN soil enhancer biochar",
+      "active_ingredient": "activated biochar + premium organics",
+      "alt_names": [
+        "CarbonizPN",
+        "CarbonizPN top dressing",
+        "CarbonizPN biochar"
+      ],
+      "asin": null
+    },
+    {
+      "id": 206,
+      "slug": "turfgrasspro-blade-iron",
+      "name": "TurfGrassPro Blade Iron 15-0-0",
+      "category": "micronutrient",
+      "search_query": "TurfGrassPro Blade Iron 15-0-0",
+      "amazon_query": "TurfGrassPro Blade Iron 15-0-0",
+      "active_ingredient": "15-0-0 nitrogen + iron",
+      "alt_names": [
+        "Blade Iron",
+        "Blade Iron 15-0-0",
+        "TurfGrassPro Blade Iron"
+      ],
+      "asin": null
+    },
+    {
+      "id": 207,
+      "slug": "elemax-turf-nectar-ac",
+      "name": "Ele-Max Turf Nectar AC 15-0-0",
+      "category": "micronutrient",
+      "search_query": "Ele-Max Turf Nectar AC 15-0-0",
+      "amazon_query": "Ele-Max Turf Nectar AC iron fertilizer",
+      "active_ingredient": "15-0-0 nitrogen + 6% iron",
+      "alt_names": [
+        "Turf Nectar AC",
+        "Ele-Max Turf Nectar",
+        "EleMax Turf Nectar AC"
+      ],
+      "asin": null
+    },
+    {
+      "id": 208,
+      "slug": "southern-ag-chelated-iron",
+      "name": "Southern Ag Chelated Liquid Iron",
+      "category": "micronutrient",
+      "search_query": "Southern Ag Chelated Liquid Iron",
+      "amazon_query": "Southern Ag chelated liquid iron",
+      "active_ingredient": "chelated iron",
+      "alt_names": [
+        "Southern Ag Liquid Iron",
+        "Chelated Liquid Iron",
+        "Southern Ag iron"
+      ],
+      "asin": null
+    },
+    {
+      "id": 209,
+      "slug": "lawnstar-liquid-iron",
+      "name": "LawnStar Liquid Iron",
+      "category": "micronutrient",
+      "search_query": "LawnStar Liquid Iron",
+      "amazon_query": "LawnStar liquid iron",
+      "active_ingredient": "liquid iron",
+      "alt_names": [
+        "LawnStar iron",
+        "LawnStar chelated iron",
+        "LawnStar liquid iron fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 210,
+      "slug": "main-event-dry-iron",
+      "name": "Main Event Dry Iron",
+      "category": "micronutrient",
+      "search_query": "Main Event Dry Iron Quest",
+      "amazon_query": "Main Event Dry Iron micronutrient",
+      "active_ingredient": "6-0-0 nitrogen + magnesium + sulfur + iron + manganese + zinc",
+      "alt_names": [
+        "Quest Main Event Dry Iron",
+        "Main Event chelated iron",
+        "Main Event micronutrient",
+        "dry iron fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 215,
+      "slug": "sulfate-of-potash-0-0-50",
+      "name": "Sulfate of Potash 0-0-50",
+      "category": "macronutrient",
+      "search_query": "Sulfate of Potash 0-0-50 lawn",
+      "amazon_query": "sulfate of potash 0-0-50 lawn fertilizer",
+      "active_ingredient": "soluble potash + sulfur",
+      "alt_names": [
+        "SOP 0-0-50",
+        "Sulfate of Potash",
+        "Potassium sulfate fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 221,
+      "slug": "lesco-carbonpro-g",
+      "name": "LESCO CarbonPro-G Soil Optimizer",
+      "category": "soil-amendment",
+      "search_query": "LESCO CarbonPro-G Soil Optimizer",
+      "amazon_query": "LESCO CarbonPro-G soil optimizer",
+      "active_ingredient": "carbon-based microbial soil optimizer",
+      "alt_names": [
+        "CarbonPro-G",
+        "Carbon Pro G",
+        "LESCO CarbonPRO G",
+        "SiteOne CarbonPro-G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 222,
+      "slug": "lesco-carbonpro-l",
+      "name": "LESCO CarbonPro-L Liquid Soil Optimizer",
+      "category": "soil-amendment",
+      "search_query": "LESCO CarbonPro-L Liquid Soil Optimizer",
+      "amazon_query": "LESCO CarbonPro-L liquid soil optimizer",
+      "active_ingredient": "liquid carbon-based soil optimizer",
+      "alt_names": [
+        "CarbonPro-L",
+        "Carbon Pro L",
+        "LESCO CarbonPRO L",
+        "SiteOne CarbonPro-L"
+      ],
+      "asin": null
+    },
+    {
+      "id": 223,
+      "slug": "lesco-24-0-11-polyplus",
+      "name": "LESCO 24-0-11 PolyPlus Fertilizer",
+      "category": "fertilizer",
+      "search_query": "LESCO 24-0-11 PolyPlus fertilizer",
+      "amazon_query": "LESCO 24-0-11 PolyPlus fertilizer",
+      "active_ingredient": "24-0-11 controlled-release nitrogen + iron",
+      "alt_names": [
+        "LESCO 24-0-11",
+        "24-0-11 PolyPlus",
+        "LESCO 24-0-11 50 PolyPlus",
+        "SiteOne 24-0-11"
+      ],
+      "asin": null
+    },
+    {
+      "id": 224,
+      "slug": "lesco-46-0-0-nos",
+      "name": "LESCO 46-0-0 NOS Fertilizer",
+      "category": "fertilizer",
+      "search_query": "LESCO 46-0-0 NOS fertilizer",
+      "amazon_query": "LESCO 46-0-0 NOS fertilizer",
+      "active_ingredient": "46-0-0 stabilized nitrogen",
+      "alt_names": [
+        "LESCO NOS 46-0-0",
+        "LESCO nitrogen optimization system",
+        "LESCO 46-0-0 sprayable"
+      ],
+      "asin": null
+    },
+    {
+      "id": 225,
+      "slug": "lesco-stonewall-0-0-7",
+      "name": "LESCO Stonewall 0-0-7 Pre-Emergent",
+      "category": "pre-emergent",
+      "search_query": "LESCO Stonewall 0-0-7 pre-emergent",
+      "amazon_query": "LESCO Stonewall 0-0-7 prodiamine",
+      "active_ingredient": "prodiamine + 0-0-7 fertilizer carrier",
+      "alt_names": [
+        "LESCO 0-0-7",
+        "Stonewall 0-0-7",
+        "LESCO Stonewall pre-emergent",
+        "LESCO 0-0-7 with Stonewall"
+      ],
+      "asin": null
+    },
+    {
+      "id": 226,
+      "slug": "lesco-dimension-19-0-6",
+      "name": "LESCO Dimension 19-0-6 Pre-Emergent",
+      "category": "pre-emergent",
+      "search_query": "LESCO Dimension 19-0-6 pre-emergent",
+      "amazon_query": "LESCO Dimension 19-0-6 dithiopyr",
+      "active_ingredient": "dithiopyr + 19-0-6 fertilizer carrier",
+      "alt_names": [
+        "LESCO 19-0-6 Dimension",
+        "Dimension 19-0-6",
+        "LESCO dithiopyr fertilizer",
+        "SiteOne Dimension 19-0-6"
+      ],
+      "asin": null
+    },
+    {
+      "id": 227,
+      "slug": "lesco-25-0-6-polyplus",
+      "name": "LESCO 25-0-6 PolyPlus Fertilizer",
+      "category": "fertilizer",
+      "search_query": "LESCO 25-0-6 PolyPlus fertilizer",
+      "amazon_query": "LESCO 25-0-6 PolyPlus fertilizer",
+      "active_ingredient": "25-0-6 controlled-release nitrogen + iron",
+      "alt_names": [
+        "LESCO 25-0-6",
+        "25-0-6 PolyPlus",
+        "LESCO 25-0-6 PolyPlus OPTI",
+        "SiteOne 25-0-6"
+      ],
+      "asin": null
+    },
+    {
+      "id": 228,
+      "slug": "lesco-30-0-10-nos-polyplus",
+      "name": "LESCO 30-0-10 NOS PolyPlus Fertilizer",
+      "category": "fertilizer",
+      "search_query": "LESCO 30-0-10 NOS PolyPlus fertilizer",
+      "amazon_query": "LESCO 30-0-10 PolyPlus fertilizer",
+      "active_ingredient": "30-0-10 stabilized nitrogen + controlled-release nitrogen + iron + manganese",
+      "alt_names": [
+        "LESCO 30-0-10",
+        "30-0-10 PolyPlus",
+        "LESCO 30-0-10 NOS",
+        "SiteOne 30-0-10"
+      ],
+      "asin": null
+    },
+    {
+      "id": 229,
+      "slug": "lesco-moisture-manager",
+      "name": "LESCO Moisture Manager",
+      "category": "moisture-manager",
+      "search_query": "LESCO Moisture Manager",
+      "amazon_query": "LESCO Moisture Manager Hydretain",
+      "active_ingredient": "hygroscopic humectants + non-ionic surfactant",
+      "alt_names": [
+        "LESCO Hydretain",
+        "LESCO moisture management",
+        "SiteOne Moisture Manager",
+        "Moisture Manager by LESCO"
+      ],
+      "asin": null
+    },
+    {
+      "id": 230,
+      "slug": "rk-equalizorr",
+      "name": "Ryan Knorr EqualizORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr EqualizORR soluble fertilizer",
+      "amazon_query": "EqualizORR soluble fertilizer",
+      "active_ingredient": "soluble fertilizer + chelated micronutrients",
+      "alt_names": [
+        "EqualizORR",
+        "Lawn Supply Company EqualizORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 231,
+      "slug": "rk-greenorr",
+      "name": "Ryan Knorr GreenORR",
+      "category": "micronutrient",
+      "search_query": "Ryan Knorr GreenORR liquid fertilizer",
+      "amazon_query": "GreenORR liquid micronutrient fertilizer",
+      "active_ingredient": "chelated iron + magnesium + manganese",
+      "alt_names": [
+        "GreenORR",
+        "Lawn Supply Company GreenORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 232,
+      "slug": "rk-ammonium-sulfate",
+      "name": "Ryan Knorr Ammonium Sulfate",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr Ammonium Sulfate soluble fertilizer",
+      "amazon_query": "ammonium sulfate lawn fertilizer",
+      "active_ingredient": "ammonium sulfate",
+      "alt_names": [
+        "Lawn Supply Company Ammonium Sulfate",
+        "AMS fertilizer"
+      ],
+      "asin": null
+    },
+    {
+      "id": 233,
+      "slug": "rk-greenorr-g",
+      "name": "Ryan Knorr GreenORR G",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr GreenORR G granular fertilizer",
+      "amazon_query": "GreenORR G granular fertilizer",
+      "active_ingredient": "granular nitrogen + iron + biochar",
+      "alt_names": [
+        "GreenORR G",
+        "Lawn Supply Company GreenORR G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 234,
+      "slug": "rk-maxorr-g",
+      "name": "Ryan Knorr MaxORR G",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr MaxORR G granular fertilizer",
+      "amazon_query": "MaxORR G granular fertilizer",
+      "active_ingredient": "slow-release nitrogen + iron + biochar",
+      "alt_names": [
+        "MaxORR G",
+        "Lawn Supply Company MaxORR G"
+      ],
+      "asin": null
+    },
+    {
+      "id": 235,
+      "slug": "rk-groworr",
+      "name": "Ryan Knorr GrowORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr GrowORR soluble fertilizer",
+      "amazon_query": "GrowORR soluble fertilizer",
+      "active_ingredient": "soluble nitrogen + potassium fertilizer",
+      "alt_names": [
+        "GrowORR",
+        "Lawn Supply Company GrowORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 236,
+      "slug": "rk-sloworr",
+      "name": "Ryan Knorr SlowORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr SlowORR liquid fertilizer",
+      "amazon_query": "SlowORR liquid fertilizer",
+      "active_ingredient": "slow-release liquid nitrogen",
+      "alt_names": [
+        "SlowORR",
+        "Lawn Supply Company SlowORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 237,
+      "slug": "rk-vigorr",
+      "name": "Ryan Knorr VigORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr VigORR liquid starter fertilizer",
+      "amazon_query": "VigORR liquid starter fertilizer",
+      "active_ingredient": "liquid starter fertilizer",
+      "alt_names": [
+        "VigORR",
+        "Lawn Supply Company VigORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 238,
+      "slug": "rk-defendorr",
+      "name": "Ryan Knorr DefendORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr DefendORR liquid fertilizer",
+      "amazon_query": "DefendORR liquid fertilizer",
+      "active_ingredient": "liquid fertilizer",
+      "alt_names": [
+        "DefendORR",
+        "Lawn Supply Company DefendORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 239,
+      "slug": "rk-phiteorr",
+      "name": "Ryan Knorr PhiteORR",
+      "category": "macronutrient",
+      "search_query": "Ryan Knorr PhiteORR phosphite fertilizer",
+      "amazon_query": "PhiteORR phosphite fertilizer",
+      "active_ingredient": "phosphite fertilizer",
+      "alt_names": [
+        "PhiteORR",
+        "Lawn Supply Company PhiteORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 240,
+      "slug": "rk-plantorr",
+      "name": "Ryan Knorr PlantORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr PlantORR liquid fertilizer",
+      "amazon_query": "PlantORR liquid fertilizer",
+      "active_ingredient": "liquid fertilizer",
+      "alt_names": [
+        "PlantORR",
+        "Lawn Supply Company PlantORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 241,
+      "slug": "rk-resistorr",
+      "name": "Ryan Knorr ResistORR",
+      "category": "macronutrient",
+      "search_query": "Ryan Knorr ResistORR potassium fertilizer",
+      "amazon_query": "ResistORR potassium fertilizer",
+      "active_ingredient": "liquid potassium fertilizer",
+      "alt_names": [
+        "ResistORR",
+        "Lawn Supply Company ResistORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 242,
+      "slug": "rk-strongorr",
+      "name": "Ryan Knorr StrongORR",
+      "category": "fertilizer",
+      "search_query": "Ryan Knorr StrongORR liquid fertilizer",
+      "amazon_query": "StrongORR liquid fertilizer",
+      "active_ingredient": "liquid fertilizer",
+      "alt_names": [
+        "StrongORR",
+        "Lawn Supply Company StrongORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 243,
+      "slug": "rk-soakorr",
+      "name": "Ryan Knorr SoakORR",
+      "category": "moisture-manager",
+      "search_query": "Ryan Knorr SoakORR wetting agent",
+      "amazon_query": "SoakORR wetting agent",
+      "active_ingredient": "soil wetting agent",
+      "alt_names": [
+        "SoakORR",
+        "Lawn Supply Company SoakORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 244,
+      "slug": "rk-phixorr",
+      "name": "Ryan Knorr pHixORR",
+      "category": "soil-amendment",
+      "search_query": "Ryan Knorr pHixORR hard water soil amendment",
+      "amazon_query": "pHixORR liquid soil amendment",
+      "active_ingredient": "hard water treatment + carbonate management",
+      "alt_names": [
+        "pHixORR",
+        "Lawn Supply Company pHixORR"
+      ],
+      "asin": null
+    },
+    {
+      "id": 245,
+      "slug": "hi-yield-iron-sulfate",
+      "name": "Hi-Yield Iron Sulfate 4 lb",
+      "category": "micronutrient",
+      "search_query": "Hi-Yield 32340 Iron Sulfate 4 lb",
+      "amazon_query": "Hi-Yield 32340 Iron Sulfate 4 lb",
+      "active_ingredient": "iron sulfate",
+      "alt_names": [
+        "Hi-Yield Iron Sulfate",
+        "Hi Yield Iron Sulfate",
+        "Hi-Yield 32340",
+        "Iron Sulfate 4 lb",
+        "Copperas"
+      ],
+      "asin": "B07CRNTR7G"
+    },
+    {
+      "id": 300,
       "slug": "scotts-wizz",
       "name": "Scotts Wizz Handheld Spreader",
       "category": "spreader-handheld",
@@ -992,7 +1816,7 @@
       }
     },
     {
-      "id": 201,
+      "id": 301,
       "slug": "scotts-handygreen-ii",
       "name": "Scotts HandyGreen II Handheld Spreader",
       "category": "spreader-handheld",
@@ -1009,7 +1833,7 @@
       }
     },
     {
-      "id": 203,
+      "id": 303,
       "slug": "andersons-handheld-4lb",
       "name": "Andersons Hand-Held Spreader (4 lb)",
       "category": "spreader-handheld",
@@ -1025,7 +1849,7 @@
       }
     },
     {
-      "id": 204,
+      "id": 304,
       "slug": "spyker-hhs100",
       "name": "Spyker HHS100 Handheld Spreader",
       "category": "spreader-handheld",
@@ -1042,7 +1866,7 @@
       }
     },
     {
-      "id": 205,
+      "id": 305,
       "slug": "solo-421s",
       "name": "Solo 421-S Chest-Mount Portable Spreader",
       "category": "spreader-handheld",
@@ -1060,7 +1884,7 @@
       }
     },
     {
-      "id": 210,
+      "id": 310,
       "slug": "lesco-high-wheel-80",
       "name": "LESCO High Wheel 80 lb Spreader",
       "category": "spreader-push",
@@ -1078,7 +1902,7 @@
       }
     },
     {
-      "id": 211,
+      "id": 311,
       "slug": "lesco-50lb-spreader",
       "name": "LESCO 50 lb Push Spreader",
       "category": "spreader-push",
@@ -1097,7 +1921,7 @@
       }
     },
     {
-      "id": 212,
+      "id": 312,
       "slug": "andersons-model-2000",
       "name": "Andersons Model 2000 Rotary Spreader",
       "category": "spreader-push",
@@ -1116,7 +1940,7 @@
       }
     },
     {
-      "id": 213,
+      "id": 313,
       "slug": "andersons-pacer-pro",
       "name": "Andersons Pacer Pro Spreader",
       "category": "spreader-push",
@@ -1133,7 +1957,7 @@
       }
     },
     {
-      "id": 214,
+      "id": 314,
       "slug": "spyker-p70-12010",
       "name": "Spyker P70-12010 Commercial Drop Spreader (120 lb)",
       "category": "spreader-push",
@@ -1150,7 +1974,7 @@
       }
     },
     {
-      "id": 215,
+      "id": 315,
       "slug": "spyker-spy80-1s",
       "name": "Spyker Ergo-PRO SPY80-1S 80 lb Spreader",
       "category": "spreader-push",
@@ -1166,7 +1990,7 @@
       }
     },
     {
-      "id": 216,
+      "id": 316,
       "slug": "earthway-2050p",
       "name": "Earthway 2050P Commercial Spreader (80 lb)",
       "category": "spreader-push",
@@ -1184,7 +2008,7 @@
       }
     },
     {
-      "id": 217,
+      "id": 317,
       "slug": "earthway-2030p",
       "name": "Earthway 2030P-Plus Broadcast Spreader (65 lb)",
       "category": "spreader-push",
@@ -1202,7 +2026,7 @@
       }
     },
     {
-      "id": 218,
+      "id": 318,
       "slug": "scotts-edgeguard-mini",
       "name": "Scotts Turf Builder EdgeGuard Mini Spreader",
       "category": "spreader-push",
@@ -1219,7 +2043,7 @@
       }
     },
     {
-      "id": 219,
+      "id": 319,
       "slug": "scotts-edgeguard-dlx",
       "name": "Scotts Turf Builder EdgeGuard DLX Spreader",
       "category": "spreader-push",
@@ -1236,7 +2060,7 @@
       }
     },
     {
-      "id": 220,
+      "id": 320,
       "slug": "scotts-elite-spreader",
       "name": "Scotts Elite Spreader",
       "category": "spreader-push",
@@ -1254,7 +2078,7 @@
       }
     },
     {
-      "id": 221,
+      "id": 321,
       "slug": "scotts-classic-drop",
       "name": "Scotts Turf Builder Classic Drop Spreader",
       "category": "spreader-push",
@@ -1271,7 +2095,7 @@
       }
     },
     {
-      "id": 222,
+      "id": 322,
       "slug": "agri-fab-45-0462",
       "name": "Agri-Fab 45-0462 Push Spreader (130 lb)",
       "category": "spreader-push",
@@ -1290,7 +2114,7 @@
       }
     },
     {
-      "id": 223,
+      "id": 323,
       "slug": "agri-fab-45-0463",
       "name": "Agri-Fab 45-0463 Tow-Behind Spreader (130 lb)",
       "category": "spreader-tow",
@@ -1307,7 +2131,7 @@
       }
     },
     {
-      "id": 224,
+      "id": 324,
       "slug": "brinly-bs-36bh",
       "name": "Brinly BS-36BH Tow-Behind Spreader (175 lb)",
       "category": "spreader-tow",
@@ -1326,7 +2150,7 @@
       }
     },
     {
-      "id": 225,
+      "id": 325,
       "slug": "chapin-8201a",
       "name": "Chapin 8201A Push Spreader (80 lb)",
       "category": "spreader-push",
@@ -1343,7 +2167,7 @@
       }
     },
     {
-      "id": 226,
+      "id": 326,
       "slug": "chapin-8301c",
       "name": "Chapin 8301C 80 lb Contractor Turf Spreader",
       "category": "spreader-push",
@@ -1360,7 +2184,7 @@
       }
     },
     {
-      "id": 230,
+      "id": 330,
       "slug": "flowzone-typhoon-3",
       "name": "FlowZone Typhoon 3 Battery Backpack Sprayer (4 gal)",
       "category": "sprayer-backpack",
@@ -1379,7 +2203,7 @@
       }
     },
     {
-      "id": 231,
+      "id": 331,
       "slug": "flowzone-cyclone-3",
       "name": "FlowZone Cyclone 3 Battery Backpack Sprayer (4 gal)",
       "category": "sprayer-backpack",
@@ -1399,7 +2223,7 @@
       }
     },
     {
-      "id": 232,
+      "id": 332,
       "slug": "flowzone-storm-2-5",
       "name": "FlowZone Storm 2.5 Battery Backpack Sprayer (2.5 gal)",
       "category": "sprayer-backpack",
@@ -1416,7 +2240,7 @@
       }
     },
     {
-      "id": 233,
+      "id": 333,
       "slug": "flowzone-zephyr",
       "name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
       "category": "sprayer-backpack",
@@ -1435,7 +2259,7 @@
       }
     },
     {
-      "id": 235,
+      "id": 335,
       "slug": "solo-433",
       "name": "Solo 433 Gas-Powered Backpack Power Sprayer (Honda 25cc)",
       "category": "sprayer-backpack",
@@ -1454,7 +2278,7 @@
       }
     },
     {
-      "id": 244,
+      "id": 344,
       "slug": "stihl-sr200",
       "name": "STIHL SR 200 Gas Backpack Mist Blower",
       "category": "sprayer-backpack",
@@ -1473,7 +2297,7 @@
       }
     },
     {
-      "id": 245,
+      "id": 345,
       "slug": "stihl-sr450",
       "name": "STIHL SR 450 Gas Backpack Mist Blower",
       "category": "sprayer-backpack",
@@ -1489,7 +2313,7 @@
       }
     },
     {
-      "id": 246,
+      "id": 346,
       "slug": "chapin-63985",
       "name": "Chapin 63985 4-Gallon 20V Battery Backpack Sprayer",
       "category": "sprayer-backpack",
@@ -1507,7 +2331,7 @@
       }
     },
     {
-      "id": 248,
+      "id": 348,
       "slug": "petratools-hd4000",
       "name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
       "category": "sprayer-backpack",
@@ -1523,7 +2347,7 @@
       }
     },
     {
-      "id": 249,
+      "id": 349,
       "slug": "ryobi-p2860",
       "name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
       "category": "sprayer-backpack",
@@ -1542,7 +2366,7 @@
       }
     },
     {
-      "id": 251,
+      "id": 351,
       "slug": "jacto-pjb-16u",
       "name": "Jacto PJB-16U 4-Gallon Battery Backpack Sprayer",
       "category": "sprayer-backpack",
@@ -1560,7 +2384,7 @@
       }
     },
     {
-      "id": 253,
+      "id": 353,
       "slug": "milwaukee-m18-switch-tank",
       "name": "Milwaukee M18 Switch Tank 4-Gallon Battery Backpack Sprayer",
       "category": "sprayer-backpack",
