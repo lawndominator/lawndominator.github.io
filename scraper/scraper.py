@@ -218,6 +218,11 @@ def canonical_product_url(url: str) -> str:
     return urllib.parse.urldefrag(url)[0].rstrip("/")
 
 
+def _is_amazon_url(url: str) -> bool:
+    host = urllib.parse.urlparse(url).netloc.lower().removeprefix("www.")
+    return host == "amazon.com" or host.endswith(".amazon.com") or host == "amzn.to"
+
+
 def _same_product_path(first_url: str, second_url: str) -> bool:
     first = urllib.parse.urlparse(first_url)
     second = urllib.parse.urlparse(second_url)
@@ -226,6 +231,14 @@ def _same_product_path(first_url: str, second_url: str) -> bool:
         and urllib.parse.unquote(first.path).rstrip("/").lower()
         == urllib.parse.unquote(second.path).rstrip("/").lower()
     )
+
+
+def _offer_matches_source_url(source_url: str, offer_url: str) -> bool:
+    if not source_url or not offer_url:
+        return False
+    source = canonical_product_url(source_url)
+    offer = canonical_product_url(offer_url)
+    return source == offer or _same_product_path(source, offer)
 
 
 def amazon_asin_from_url(url: str) -> Optional[str]:
@@ -979,14 +992,20 @@ def _trusted_extreme_drop(old_offer: Optional[dict], new_offer: dict) -> bool:
     return _same_offer_source(old_offer, new_offer) and _same_offer_package(old_offer, new_offer)
 
 
+def _is_suspicious_drop(old_offer: Optional[dict], new_offer: dict, drop_percent: float) -> bool:
+    if drop_percent < 40:
+        return False
+    if not _same_offer_package(old_offer, new_offer):
+        return True
+    if drop_percent >= 60 and not _same_offer_source(old_offer, new_offer):
+        return True
+    return False
+
+
 def _should_emit_price_drop_alert(old_offer: Optional[dict], new_offer: dict, drop_percent: float) -> bool:
     if drop_percent < MIN_ALERT_DROP_PERCENT:
         return False
-    if drop_percent >= 60:
-        return _trusted_extreme_drop(old_offer, new_offer)
-    if drop_percent >= 40:
-        return _same_offer_package(old_offer, new_offer)
-    return True
+    return not _is_suspicious_drop(old_offer, new_offer, drop_percent)
 
 
 def _alert_id(product_slug: str, alert_type: str, old_offer: Optional[dict], new_offer: dict) -> str:
@@ -2169,6 +2188,22 @@ def amazon_result(product: dict, source_map: Optional[dict] = None) -> Optional[
     if keepa:
         return keepa
     return None
+
+
+def _amazon_paapi(product: dict, source_map: Optional[dict] = None) -> dict:
+    source_map = source_map or {}
+    asins = _amazon_asins_for_product(product, source_map)
+    if not asins:
+        return _amazon_affiliate_link(product)
+
+    offer = amazon_result(product, source_map)
+    if offer:
+        return offer
+
+    return {
+        **_amazon_affiliate_link(product),
+        "url": append_affiliate(f"https://www.amazon.com/dp/{asins[0]}", "amazon"),
+    }
 
 
 def _amazon_asins_for_product(product: dict, source_map: dict) -> list[str]:
