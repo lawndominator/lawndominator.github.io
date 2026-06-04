@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-04T18:15:00.845088+00:00",
+  "generated_at": "2026-06-04T22:45:25.627513+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 776,
-    "not_included_sources": 457,
+    "included_sources": 774,
+    "not_included_sources": 459,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 776,
+    "included": 774,
     "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 123,
+    "no_extracted_offer": 125,
     "below $10.00 minimum for this category": 10
   },
   "products": [
@@ -878,7 +878,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.79,
+          "price": 16.69,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -2304,7 +2304,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.17,
+          "price": 27.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3133,7 +3133,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 79.99,
+          "price": 79.95,
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide"
         },
         {
@@ -3163,7 +3163,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 79.99,
+          "price": 79.95,
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide?variant=46295278420106"
         }
       ],
@@ -4005,7 +4005,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.79,
+          "price": 70.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4319,7 +4319,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.98,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4905,7 +4905,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.9,
+          "price": 84.35,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5186,10 +5186,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5206,10 +5206,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5222,8 +5222,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -6538,7 +6538,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 17.59,
+          "price": 21.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
@@ -6548,7 +6548,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 17.59,
+          "price": 21.99,
           "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant"
         },
         {
@@ -6558,7 +6558,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 17.59,
+          "price": 21.99,
           "offer_url": "https://diygrasscare.com/products/0-0-2-microgreene-n-ext"
         },
         {
@@ -6578,7 +6578,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 17.59,
+          "price": 21.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer?variant=39522720251956"
         },
         {
@@ -6588,7 +6588,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 17.59,
+          "price": 21.99,
           "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant?variant=40182174810250"
         }
       ],
@@ -6742,7 +6742,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 39.99,
+          "price": 24.99,
           "offer_url": "https://ncgrassplugs.com/products/0-0-1-rgs-root-growth-bio-stimulant-sea-kelp-n-ext"
         },
         {
@@ -6752,7 +6752,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 21.99,
           "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
@@ -6762,7 +6762,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 21.99,
           "offer_url": "https://thelawncarenut.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
@@ -7401,7 +7401,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.88,
+          "price": 30.61,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
