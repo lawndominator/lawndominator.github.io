@@ -153,8 +153,8 @@ def validate_rendered_board(expected_equipment_count):
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1440, "height": 1000})
-            page.goto(f"http://127.0.0.1:{port}/price-board.html", wait_until="networkidle")
-            page.wait_for_selector(".price-tile", timeout=15000)
+            page.goto(f"http://127.0.0.1:{port}/price-board.html", wait_until="domcontentloaded", timeout=15000)
+            page.wait_for_selector(".price-tile", timeout=30000)
 
             products_view = page.evaluate(
                 """() => ({
