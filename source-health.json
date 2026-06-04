@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-04T03:21:53.690882+00:00",
+  "generated_at": "2026-06-04T12:03:41.482562+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 925,
     "manual_verified_sources": 348,
-    "included_sources": 520,
-    "not_included_sources": 405,
+    "included_sources": 521,
+    "not_included_sources": 404,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 520,
+    "included": 521,
     "not_checked_saved_source_limit": 316,
-    "no_extracted_offer": 79,
+    "no_extracted_offer": 78,
     "below $10.00 minimum for this category": 10
   },
   "products": [
@@ -878,7 +878,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.45,
+          "price": 16.69,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1120,7 +1120,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56.81,
+          "price": 58.79,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1332,7 +1332,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 97.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1342,7 +1342,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 96.84,
+          "price": 108.95,
           "offer_url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20"
         },
         {
@@ -1917,10 +1917,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1983,8 +1983,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -3934,7 +3934,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 70.7,
+          "price": 57.05,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4248,7 +4248,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.99,
+          "price": 25.98,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4834,7 +4834,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.77,
+          "price": 83.46,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -6844,7 +6844,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 852.26,
+          "price": 852.15,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
@@ -8815,7 +8815,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 335.51,
+          "price": 345.58,
           "offer_url": "https://www.dkhardware.com/chapin-international-8201a-80-lbs-residential-salt-spreader-product-3917236.html"
         },
         {
@@ -8926,7 +8926,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 378.76,
+          "price": 390.12,
           "offer_url": "https://www.dkhardware.com/chapin-international-8301c-80-lbs-capacity-contractor-turf-spreader-product-3917128.html"
         },
         {
