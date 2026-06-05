@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-05T14:38:04.711428+00:00",
+  "generated_at": "2026-06-05T19:47:08.385393+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 775,
-    "not_included_sources": 458,
+    "included_sources": 776,
+    "not_included_sources": 457,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 775,
-    "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 124,
-    "below $10.00 minimum for this category": 10
+    "included": 776,
+    "not_checked_saved_source_limit": 323,
+    "no_extracted_offer": 122,
+    "below $10.00 minimum for this category": 12
   },
   "products": [
     {
@@ -1120,7 +1120,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.28,
+          "price": 56.81,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -2304,7 +2304,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.2,
+          "price": 34.47,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4470,7 +4470,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.95,
+          "price": 44.51,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4905,7 +4905,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.73,
+          "price": 85.79,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5187,9 +5187,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5207,9 +5207,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -7401,7 +7401,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.32,
+          "price": 28.22,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -10042,14 +10042,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 81.22,
+          "offer_url": "https://www.amazon.com/dp/B00WUEZBSA?tag=lawndominator-20"
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 8,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
