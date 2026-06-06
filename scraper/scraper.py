@@ -292,6 +292,11 @@ def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
 def min_price_for_product(product: dict) -> float:
     category = product.get("category")
     product_id = int(product.get("id", 0))
+    product_minimums = {
+        36: 80,  # T-Nex 1AS gallon false scrape guard
+    }
+    if product_id in product_minimums:
+        return product_minimums[product_id]
     equipment_minimums = {
         310: 300,  # LESCO 101186 high wheel
         311: 300,  # LESCO 092807 50 lb
@@ -1070,6 +1075,34 @@ def _recent_alerts(alerts: list[dict], generated_at: str) -> list[dict]:
     return recent
 
 
+def _alert_matches_current_best(alert: dict, current_by_slug: dict) -> bool:
+    product = current_by_slug.get(alert.get("product_slug"))
+    if not product:
+        return False
+    best = product.get("best_price") or {}
+    alert_price = alert.get("new_price")
+    best_price = _offer_price(best)
+    if alert_price is None or best_price is None:
+        return False
+    try:
+        if abs(float(alert_price) - best_price) >= 0.01:
+            return False
+    except (TypeError, ValueError):
+        return False
+
+    alert_retailer = str(alert.get("new_retailer") or "").lower()
+    best_retailer = str(best.get("retailer_name") or best.get("retailer") or "").lower()
+    if alert_retailer and best_retailer and alert_retailer != best_retailer:
+        return False
+
+    alert_url = alert.get("url")
+    best_url = best.get("url")
+    if alert_url and best_url and not _offer_matches_source_url(alert_url, best_url):
+        return False
+
+    return True
+
+
 def build_price_alerts(
     previous_products: dict,
     current_products: list[dict],
@@ -1077,6 +1110,11 @@ def build_price_alerts(
     previous_alerts: Optional[list[dict]] = None,
 ) -> dict:
     alerts = []
+    current_by_slug = {
+        product.get("slug"): product
+        for product in current_products
+        if product.get("slug")
+    }
     previous_by_slug = {
         product.get("slug"): product
         for product in previous_products.values()
@@ -1114,7 +1152,11 @@ def build_price_alerts(
 
     current_alert_ids = {alert["id"] for alert in alerts}
     unique_alerts = {}
-    for alert in alerts + _recent_alerts(previous_alerts or [], generated_at):
+    retained_previous_alerts = [
+        alert for alert in _recent_alerts(previous_alerts or [], generated_at)
+        if _alert_matches_current_best(alert, current_by_slug)
+    ]
+    for alert in alerts + retained_previous_alerts:
         unique_alerts[alert["id"]] = alert
     retained_alerts = _recent_alerts(list(unique_alerts.values()), generated_at)
 

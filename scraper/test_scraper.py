@@ -1447,15 +1447,15 @@ class ScraperExtractionTests(unittest.TestCase):
 
     def test_build_price_alerts_allows_verified_extreme_drop_same_package(self):
         previous = {
-            36: {
-                "id": 36,
-                "slug": "t-nex-1as",
-                "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            999: {
+                "id": 999,
+                "slug": "verified-product",
+                "name": "Verified Product",
                 "best_price": {
                     "retailer": "solutions",
                     "retailer_name": "Solutions Pest & Lawn",
-                    "price": 126.99,
-                    "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                    "price": 250.00,
+                    "url": "https://www.solutionsstores.com/verified-product",
                     "in_stock": True,
                     "package_quantity": 128.0,
                     "package_unit": "fl oz",
@@ -1463,15 +1463,15 @@ class ScraperExtractionTests(unittest.TestCase):
             }
         }
         current = [{
-            "id": 36,
-            "slug": "t-nex-1as",
-            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "id": 999,
+            "slug": "verified-product",
+            "name": "Verified Product",
             "category": "pgr",
             "best_price": {
                 "retailer": "solutions",
                 "retailer_name": "Solutions Pest & Lawn",
-                "price": 49.99,
-                "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                "price": 100.00,
+                "url": "https://www.solutionsstores.com/verified-product",
                 "in_stock": True,
                 "package_quantity": 128.0,
                 "package_unit": "fl oz",
@@ -1482,6 +1482,28 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(output["alert_count"], 1)
         self.assertEqual(output["alerts"][0]["type"], "major_price_drop")
+
+    def test_select_best_offer_rejects_implausible_tnex_gallon_price(self):
+        product = {"id": 36, "slug": "t-nex-1as", "category": "pgr"}
+        best = scraper.select_best_offer(product, [{
+            "retailer": "solutions",
+            "retailer_name": "Solutions Pest & Lawn",
+            "price": 34.0,
+            "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+            "in_stock": True,
+            "package_quantity": 128.0,
+            "package_unit": "fl oz",
+        }, {
+            "retailer": "walmart",
+            "retailer_name": "Walmart",
+            "price": 126.99,
+            "url": "https://www.walmart.com/ip/5081584180",
+            "in_stock": True,
+            "package_quantity": 128.0,
+            "package_unit": "fl oz",
+        }])
+
+        self.assertEqual(best["price"], 126.99)
 
     def test_build_price_alerts_detects_back_in_stock(self):
         previous = {
@@ -1516,7 +1538,7 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(output["alert_count"], 1)
         self.assertEqual(output["alerts"][0]["type"], "back_in_stock")
 
-    def test_build_price_alerts_retains_recent_previous_alerts(self):
+    def test_build_price_alerts_retains_recent_previous_alerts_that_are_still_current(self):
         previous = {
             1: {
                 "id": 1,
@@ -1535,8 +1557,10 @@ class ScraperExtractionTests(unittest.TestCase):
         previous_alerts = [{
             "id": "old-but-recent",
             "type": "best_price_drop",
-            "product_id": 2,
-            "product_slug": "dimension-2ew",
+            "product_id": 1,
+            "product_slug": "prodiamine-65wdg",
+            "new_price": 100.0,
+            "new_retailer": "Store",
             "created_at": "2026-05-13T16:00:00+00:00",
         }]
 
@@ -1550,6 +1574,40 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(output["current_alert_count"], 0)
         self.assertEqual(output["alert_count"], 1)
         self.assertEqual(output["alerts"][0]["id"], "old-but-recent")
+
+    def test_build_price_alerts_drops_recent_previous_alerts_that_are_no_longer_current(self):
+        current = [{
+            "id": 36,
+            "slug": "t-nex-1as",
+            "name": "T-Nex 1AS (Trinexapac-ethyl)",
+            "category": "pgr",
+            "best_price": {
+                "retailer": "solutions",
+                "retailer_name": "Solutions Pest & Lawn",
+                "price": 126.99,
+                "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+                "in_stock": True,
+            },
+        }]
+        previous_alerts = [{
+            "id": "t-nex-1as:major_price_drop:solutions:126.99:34.00",
+            "type": "major_price_drop",
+            "product_id": 36,
+            "product_slug": "t-nex-1as",
+            "new_price": 34.0,
+            "new_retailer": "Solutions Pest & Lawn",
+            "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+            "created_at": "2026-06-02T21:37:03+00:00",
+        }]
+
+        output = scraper.build_price_alerts(
+            {},
+            current,
+            "2026-06-05T16:00:00+00:00",
+            previous_alerts,
+        )
+
+        self.assertEqual(output["alert_count"], 0)
 
     def test_build_price_alerts_prunes_expired_previous_alerts(self):
         previous_alerts = [{
