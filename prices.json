@@ -3277,21 +3277,6 @@
           "price_per_unit": 1.13
         },
         {
-          "retailer": "solutions",
-          "retailer_name": "Solutions Pest & Lawn",
-          "price": 34.0,
-          "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
-          "in_stock": true,
-          "title": "T-Nex Plant Growth Regulator",
-          "image": "https://www.solutionsstores.com/media/catalog/product/cache/62a7f502b07fc99801b7d3ad99099027/t/n/tnex_gallon.png",
-          "last_checked": "2026-06-06T01:31:12.751608+00:00",
-          "source": "saved_product_source",
-          "package_quantity": 128.0,
-          "package_unit": "fl oz",
-          "package_label": "1 gal",
-          "price_per_unit": 0.27
-        },
-        {
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "price": 334.95,
@@ -3338,19 +3323,19 @@
         }
       ],
       "best_price": {
-        "retailer": "solutions",
-        "retailer_name": "Solutions Pest & Lawn",
-        "price": 34.0,
-        "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
+        "retailer": "walmart",
+        "retailer_name": "Walmart",
+        "price": 127.13,
+        "url": "https://www.walmart.com/ip/5081584180",
         "in_stock": true,
-        "title": "T-Nex Plant Growth Regulator",
-        "image": "https://www.solutionsstores.com/media/catalog/product/cache/62a7f502b07fc99801b7d3ad99099027/t/n/tnex_gallon.png",
-        "last_checked": "2026-06-06T01:31:12.751608+00:00",
-        "source": "saved_product_source",
+        "title": "Quali-Pro T-Nex Plant Growth Regulator, Reduces Growth of Seasonal Grasses, 128 fl oz - Walmart.com",
+        "last_checked": "2026-06-05T22:21:27.849515+00:00",
+        "source": "manual_verified_source",
+        "image": null,
         "package_quantity": 128.0,
         "package_unit": "fl oz",
         "package_label": "1 gal",
-        "price_per_unit": 0.27
+        "price_per_unit": 0.99
       },
       "updated_at": "2026-06-06T01:31:21.698591+00:00",
       "has_multiple_sizes": true

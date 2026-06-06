@@ -3189,15 +3189,14 @@
         "title": "T-Nex Plant Growth Regulator",
         "image": "https://www.solutionsstores.com/media/catalog/product/cache/62a7f502b07fc99801b7d3ad99099027/t/n/tnex_gallon.png",
         "last_seen": "2026-06-06T01:56:01.040277+00:00",
-        "price_verified": 34.0,
         "in_stock": true,
         "package_quantity": 128.0,
         "package_unit": "fl oz",
         "package_label": "1 gal",
-        "price_per_unit": 0.27,
         "verified": true,
         "manual_verified": true,
-        "source_type": "product"
+        "source_type": "product",
+        "price_rejected_reason": "implausible_tnex_gallon_price"
       },
       {
         "url": "https://www.amazon.com/dp/B07FS56D66",

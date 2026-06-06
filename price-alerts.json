@@ -4,7 +4,7 @@
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 40,
+  "alert_count": 39,
   "alerts": [
     {
       "id": "acelepryn-sc:best_price_drop:solutions:70.90:64.94",
@@ -69,22 +69,6 @@
       "url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20",
       "in_stock": true,
       "created_at": "2026-06-03T00:50:08.468075+00:00"
-    },
-    {
-      "id": "t-nex-1as:major_price_drop:solutions:126.99:34.00",
-      "type": "major_price_drop",
-      "product_id": 36,
-      "product_slug": "t-nex-1as",
-      "product_name": "T-Nex 1AS (Trinexapac-ethyl)",
-      "category": "pgr",
-      "old_price": 126.99,
-      "new_price": 34.0,
-      "drop_percent": 73.2,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/t-nex-plant-growth-regulator",
-      "in_stock": true,
-      "created_at": "2026-06-02T21:37:03.418748+00:00"
     },
     {
       "id": "spectacle-flo:back_in_stock:sunspot-supply:331.68:2151.50",
