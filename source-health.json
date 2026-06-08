@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-08T07:40:58.190566+00:00",
+  "generated_at": "2026-06-08T15:28:37.630964+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 776,
-    "not_included_sources": 457,
+    "included_sources": 774,
+    "not_included_sources": 459,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 776,
+    "included": 774,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 124,
-    "below $10.00 minimum for this category": 9,
+    "no_extracted_offer": 125,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 26.78,
+          "price": 31.78,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 70.9,
+          "price": 60.01,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4471,7 +4471,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.26,
+          "price": 44.51,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 82.99,
+          "price": 83.76,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5339,9 +5339,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 316.89,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5375,8 +5375,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5777,7 +5777,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 72.49,
+          "price": 68.25,
           "offer_url": "https://diypestcontrol.com/the-andersons-turf-fertilizer-16-4-8"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.74,
+          "price": 30.86,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -12421,7 +12421,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 329.36,
+          "price": 329.66,
           "offer_url": "https://www.amazon.com/dp/B07VKXLX7V?tag=lawndominator-20"
         },
         {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.41,
-          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     }
   ]
