@@ -1,20 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-11T15:32:29.793005+00:00",
+  "generated_at": "2026-06-11T20:22:29.241190+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 776,
-    "not_included_sources": 457,
+    "included_sources": 774,
+    "not_included_sources": 459,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 776,
-    "not_checked_saved_source_limit": 322,
-    "no_extracted_offer": 125,
-    "below $10.00 minimum for this category": 9,
-    "no_price": 1
+    "included": 774,
+    "not_checked_saved_source_limit": 323,
+    "no_extracted_offer": 124,
+    "below $10.00 minimum for this category": 12
   },
   "products": [
     {
@@ -768,7 +767,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 162.86,
+          "price": 163.04,
           "offer_url": "https://www.amazon.com/dp/B004HFT09Q?tag=lawndominator-20"
         },
         {
@@ -1121,7 +1120,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.05,
+          "price": 56.14,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1333,7 +1332,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -3976,7 +3975,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.81,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4006,7 +4005,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 63.97,
+          "price": 61.72,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4320,7 +4319,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.98,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4906,7 +4905,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.24,
+          "price": 84.5,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5187,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5207,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5339,9 +5338,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 240.9,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5375,8 +5374,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5523,7 +5522,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.9,
+          "price": 34.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6638,9 +6637,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 76.99,
           "offer_url": "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20"
         },
         {
@@ -6650,7 +6649,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 39.99,
           "offer_url": "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39680700907658"
         },
         {
@@ -6674,8 +6673,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -7291,7 +7290,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.17,
+          "price": 47.23,
           "offer_url": "https://www.solutionsstores.com/turf-nectar-ac"
         },
         {
@@ -7402,7 +7401,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.67,
+          "price": 31.98,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -9559,14 +9558,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 39.75,
-          "offer_url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 18,
+      "included_sources": 2,
+      "not_included_sources": 19,
       "invalid_sources": 0
     },
     {
@@ -12419,10 +12418,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 328.84,
-          "offer_url": "https://www.amazon.com/dp/B07VKXLX7V?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.zoro.com/chapin-chapin-80-lb-rock-salt-ice-melt-spreader-8201a/i/G705736942",
@@ -12525,8 +12524,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 3,
+      "included_sources": 7,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
