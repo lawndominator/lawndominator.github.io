@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-11T07:40:22.318699+00:00",
+  "generated_at": "2026-06-11T15:32:29.793005+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 775,
-    "not_included_sources": 458,
+    "included_sources": 776,
+    "not_included_sources": 457,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 775,
-    "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 122,
-    "below $10.00 minimum for this category": 12,
+    "included": 776,
+    "not_checked_saved_source_limit": 322,
+    "no_extracted_offer": 125,
+    "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
   "products": [
@@ -879,7 +879,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.3,
+          "price": 16.49,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1121,7 +1121,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56.47,
+          "price": 57.05,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.98,
+          "price": 33.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 57.81,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 63.97,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4471,7 +4471,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 52.17,
+          "price": 45.26,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.3,
+          "price": 84.24,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5339,9 +5339,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 240.9,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5375,8 +5375,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -6539,7 +6539,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.99,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
@@ -6549,7 +6549,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.99,
+          "price": 24.99,
           "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant"
         },
         {
@@ -6579,7 +6579,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 21.99,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer?variant=39522720251956"
         },
         {
@@ -6589,7 +6589,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 21.99,
+          "price": 24.99,
           "offer_url": "https://thelawncarenut.com/products/0-0-2-microgreene-liquid-biostimulant?variant=40182174810250"
         }
       ],
@@ -6610,7 +6610,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 39.99,
           "offer_url": "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6630,7 +6630,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 39.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6670,7 +6670,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 36.99,
+          "price": 39.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
@@ -6691,7 +6691,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 26.99,
+          "price": 28.99,
           "offer_url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp"
         }
       ],
@@ -7291,7 +7291,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 47.23,
+          "price": 55.17,
           "offer_url": "https://www.solutionsstores.com/turf-nectar-ac"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.74,
+          "price": 30.67,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -9559,14 +9559,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 39.75,
+          "offer_url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20"
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 19,
+      "included_sources": 3,
+      "not_included_sources": 18,
       "invalid_sources": 0
     },
     {
@@ -11174,7 +11174,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 59.97,
+          "price": 44.98,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 432.3,
+          "price": 437.91,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.41,
-          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     }
   ]
