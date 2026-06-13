@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-13T13:33:25.203911+00:00",
+  "generated_at": "2026-06-13T19:34:54.451291+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 774,
-    "not_included_sources": 459,
+    "included_sources": 776,
+    "not_included_sources": 457,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 774,
+    "included": 776,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 125,
+    "no_extracted_offer": 123,
     "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 149.42,
+          "price": 150.54,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1121,7 +1121,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.94,
+          "price": 56.15,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.81,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.08,
+          "price": 30.2,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.41,
+          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     }
   ]
