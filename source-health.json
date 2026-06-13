@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-12T22:36:30.910963+00:00",
+  "generated_at": "2026-06-13T02:09:29.658297+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 774,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 124,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 125,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 149.42,
+          "price": 150.45,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -5037,7 +5037,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 329.3,
+          "price": 342.26,
           "offer_url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart"
         },
         {
@@ -5077,7 +5077,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 329.3,
+          "price": 342.26,
           "offer_url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart?variant=43994441416890"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.94,
+          "price": 33.95,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
