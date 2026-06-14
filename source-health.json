@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-14T13:52:09.083099+00:00",
+  "generated_at": "2026-06-14T16:49:33.933038+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,9 +11,9 @@
   },
   "reason_counts": {
     "included": 775,
-    "not_checked_saved_source_limit": 322,
-    "no_extracted_offer": 126,
-    "below $10.00 minimum for this category": 9,
+    "not_checked_saved_source_limit": 323,
+    "no_extracted_offer": 123,
+    "below $10.00 minimum for this category": 11,
     "no_price": 1
   },
   "products": [
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 149.42,
+          "price": 149.25,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1121,7 +1121,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.91,
+          "price": 56.28,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.81,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.95,
+          "price": 33.91,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -9559,14 +9559,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 39.75,
-          "offer_url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 18,
+      "included_sources": 2,
+      "not_included_sources": 19,
       "invalid_sources": 0
     },
     {
@@ -10530,7 +10530,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 854.66,
+          "price": 852.15,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
