@@ -1,26 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-15T08:13:49.144947+00:00",
+  "generated_at": "2026-06-15T16:55:37.024073+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 1,
-  "alert_count": 1,
-  "alerts": [
-    {
-      "id": "dimension-2ew:best_price_drop:amazon:150.39:142.81",
-      "type": "best_price_drop",
-      "product_id": 2,
-      "product_slug": "dimension-2ew",
-      "product_name": "Dimension 2EW (Dithiopyr)",
-      "category": "pre-emergent",
-      "old_price": 150.39,
-      "new_price": 142.81,
-      "drop_percent": 5.0,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-06-15T08:13:49.144947+00:00"
-    }
-  ]
+  "current_alert_count": 0,
+  "alert_count": 0,
+  "alerts": []
 }
