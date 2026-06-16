@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-16T16:40:42.184212+00:00",
+  "generated_at": "2026-06-16T20:53:32.371216+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 774,
-    "not_included_sources": 459,
+    "included_sources": 773,
+    "not_included_sources": 460,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 774,
+    "included": 773,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 124,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 127,
+    "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
   "products": [
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.45,
+          "price": 84.58,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.9,
+          "price": 34.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.41,
+          "price": 31.99,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -9290,7 +9290,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 22.47,
+          "price": 22.48,
           "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
         },
         {
@@ -10530,7 +10530,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 852.16,
+          "price": 854.99,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
@@ -12922,10 +12922,10 @@
           "retailer": "lawnsynergy",
           "retailer_name": "Lawnsynergy",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 264.99,
-          "offer_url": "https://lawnsynergy.com/products/flowzone-backpack-sprayer-cyclone"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://barndoorag.com/flowzone-tool-only-cyclone-3-battery-powered-backpack-sprayer-4-gal-fzvaaj-3to",
@@ -13028,8 +13028,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 11,
+      "included_sources": 7,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
