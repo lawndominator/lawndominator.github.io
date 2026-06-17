@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="preload" as="image" href="./dashboard.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="./dashboard.webp?v=20260616" fetchpriority="high" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:image:alt" content="Lawn Dominator lawn tracker app preview with soil temperature, GDD, spray logs, and treatment planning." />
@@ -84,8 +84,8 @@
         "description": "Lawn tracker app for serious DIY lawn care with spray logs, fertilizer tracking, soil temperature, GDD, diagnostics, and tank mix planning.",
         "featureList": "Fertilizer tracker, Spray log, GDD tracking, Soil temperature monitoring, Tank mix calculator, Lawn diagnostics, 170+ product library, Photo journal, Pre-emergent timing, PGR reapplication tracking",
         "screenshot": [
-          "https://lawndominators.com/dashboard.webp",
-          "https://lawndominators.com/diagnostic.webp"
+          "https://lawndominators.com/dashboard.webp?v=20260616",
+          "https://lawndominators.com/diagnostic.webp?v=20260616"
         ],
         "publisher": {
           "@type": "Organization",
@@ -105,7 +105,7 @@
           "https://apps.apple.com/us/app/lawn-dominator-lawn-tracker/id6761975483",
           "https://play.google.com/store/apps/details?id=com.lawndominator.app"
         ],
-        "image": "https://lawndominators.com/dashboard.webp"
+        "image": "https://lawndominators.com/dashboard.webp?v=20260616"
       }
     </script>
     <script type="application/ld+json">
@@ -154,7 +154,7 @@
             "name": "Does Lawn Dominator work for soil temperature and GDD tracking?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The app includes soil temperature tracking and growing degree day tracking to help with pre-emergent timing, PGR reapplication windows, and other seasonal lawn decisions."
+              "text": "Yes. The app includes soil temperature tracking and growing degree day tracking to help with pre-emergent timing, PGR reapplication windows, and other seasonal lawn decisions. PGR GDD is tracked in Celsius-scale GDD, using a 0°C base for cool-season trinexapac sessions and a 10°C base for warm-season trinexapac sessions."
             }
           },
           {
@@ -261,8 +261,8 @@
                 <div class="shot-frame">
                   <img
                     class="app-shot"
-                    src="./dashboard.webp"
-                    alt="Lawn Dominator dashboard screen showing GDD, soil temperature, spray conditions, diagnostics, tank mix, and April tasks."
+                    src="./dashboard.webp?v=20260616"
+                    alt="Lawn Dominator dashboard screen showing current weather, 7-day outlook, spray window, soil temperature, GDD, rainfall, and price drops."
                     fetchpriority="high"
                   />
                 </div>
@@ -272,8 +272,8 @@
                 <div class="shot-frame shot-frame--warm">
                   <img
                     class="app-shot"
-                    src="./diagnostic.webp"
-                    alt="Lawn Dominator diagnostic screen showing pest identification cards for grubs, chinch bugs, armyworms, mole crickets, fire ants, and billbugs."
+                    src="./diagnostic.webp?v=20260616"
+                    alt="Lawn Dominator spray window screen showing spray conditions, temperature, wind, rain, humidity, and weather source attribution."
                     loading="lazy"
                   />
                 </div>
@@ -441,7 +441,7 @@
             </a>
             <a href="./gdd-tracker.html" class="free-tool-card">
               <h3>GDD Calculator for Lawns</h3>
-              <p>Track growing degree days from January 1 at your location. Calculate GDD from any date to time Primo Maxx reapplication, pre-emergent windows, and bermuda or zoysia greenup.</p>
+              <p>Track growing degree days from January 1 at your location. Calculate Celsius-scale GDD from any date for PGR reapplication timing, plus pre-emergent windows and bermuda or zoysia greenup.</p>
               <span class="free-tool-card__cta">Calculate GDD at my location →</span>
             </a>
           </div>
@@ -667,7 +667,10 @@
               <p>
                 Yes. The app includes soil temperature tracking and growing
                 degree day tracking to help with pre-emergent timing, PGR
-                reapplication windows, and other seasonal lawn decisions.
+                reapplication windows, and other seasonal lawn decisions. PGR
+                GDD is tracked in Celsius-scale GDD: cool-season trinexapac
+                sessions use a 0°C base, and warm-season trinexapac sessions
+                use a 10°C base.
               </p>
             </article>
             <article class="faq-item reveal">
@@ -684,7 +687,7 @@
               <p>
                 Yes. Lawn Dominator offers a free growing degree day (GDD) calculator at
                 <a href="./gdd-tracker.html">lawndominators.com/gdd-tracker.html</a> — no account required.
-                It shows seasonal GDD accumulation from January 1, lets you calculate GDD from any date for
+                It shows seasonal GDD accumulation from January 1, lets you calculate Celsius-scale GDD from any date for
                 PGR reapplication timing, and shows pre-emergent and greenup milestones for bermuda, zoysia,
                 St. Augustine, and cool-season grass.
               </p>
