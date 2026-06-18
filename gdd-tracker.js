@@ -4,6 +4,7 @@ var currentGrassType = 'bermuda';
 var currentTotal = 0;
 var currentDaily = null;
 var currentPgrDaily = null;
+var currentWeatherData = null;
 
 // GDD milestone labels are approximate trend indicators only.
 // Pre-emergent timing should be confirmed with 2-inch soil temperature (50-55°F per UMN/Penn State).
@@ -29,6 +30,14 @@ var GRASS_MILESTONES = {
 
 // Max possible daily GDD (base 50, cap 86): (86+50)/2 - 50 = 18
 var MAX_DAILY_GDD = 18;
+
+function getPgrBaseC(grassType) {
+  return grassType === 'cool-season' ? 0 : 10;
+}
+
+function fahrenheitToCelsius(value) {
+  return (value - 32) * 5 / 9;
+}
 
 function getLocalDateString() {
   var now = new Date();
@@ -74,6 +83,29 @@ function calculateGDD(data, options) {
     if (typeof maxCap === 'number') tMax = Math.min(tMax, maxCap);
     tMin = Math.max(tMin, tBase);
     var gdd  = Math.max(0, (tMax + tMin) / 2 - tBase);
+    cumulative += gdd;
+    daily.push({
+      date: times[i],
+      gdd: Math.round(gdd * 10) / 10,
+      cumulative: Math.round(cumulative * 10) / 10
+    });
+  }
+  return { daily: daily, total: Math.round(cumulative) };
+}
+
+function calculatePgrGDDC(data, grassType) {
+  var times  = data.daily.time;
+  var maxArr = data.daily.temperature_2m_max;
+  var minArr = data.daily.temperature_2m_min;
+  var baseC = getPgrBaseC(grassType);
+  var cumulative = 0;
+  var daily = [];
+  for (var i = 0; i < times.length; i++) {
+    var tMaxF = maxArr[i] !== null ? maxArr[i] : 32 + baseC * 9 / 5;
+    var tMinF = minArr[i] !== null ? minArr[i] : 32 + baseC * 9 / 5;
+    var tMaxC = fahrenheitToCelsius(tMaxF);
+    var tMinC = fahrenheitToCelsius(tMinF);
+    var gdd = Math.max(0, (tMaxC + tMinC) / 2 - baseC);
     cumulative += gdd;
     daily.push({
       date: times[i],
@@ -147,7 +179,7 @@ function updateFromDateResult() {
   if (!input || !result || !currentDaily || !currentPgrDaily) return;
   var val = input.value;
   if (!val) {
-    result.textContent = 'Pick a date — shows PGR GDD at base 32°F and turf GDD at base 50°F';
+    result.textContent = 'Pick a date — shows PGR GDD°C and turf GDD from that date';
     result.className = 'gdd-from-result gdd-from-result--empty';
     renderDailyList(currentDaily, null);
     return;
@@ -170,7 +202,7 @@ function updateFromDateResult() {
   }
   var dt = new Date(val + 'T12:00:00');
   var dateLabel = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  result.textContent = Math.round(pgrSum) + ' PGR GDD (base 32°F) · ' +
+  result.textContent = Math.round(pgrSum) + ' PGR GDD°C (base ' + getPgrBaseC(currentGrassType) + '°C) · ' +
     Math.round(turfSum) + ' turf GDD (base 50°F) since ' + dateLabel +
     ' (' + days + ' day' + (days === 1 ? ')' : 's)');
   result.className = 'gdd-from-result';
@@ -189,7 +221,8 @@ async function loadData(lat, lon, displayName) {
   try {
     var data   = await fetchHistoricalData(lat, lon);
     var result = calculateGDD(data, { baseTemp: 50, maxCap: 86 });
-    var pgrResult = calculateGDD(data, { baseTemp: 32 });
+    var pgrResult = calculatePgrGDDC(data, currentGrassType);
+    currentWeatherData = data;
     currentDaily = result.daily;
     currentPgrDaily = pgrResult.daily;
     currentTotal = result.total;
@@ -257,6 +290,10 @@ document.querySelectorAll('.grass-pill').forEach(function(btn) {
     document.querySelectorAll('.grass-pill').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     currentGrassType = btn.dataset.grass;
+    if (currentWeatherData) {
+      currentPgrDaily = calculatePgrGDDC(currentWeatherData, currentGrassType).daily;
+      updateFromDateResult();
+    }
     if (currentDaily) renderMilestoneStatus(currentTotal, currentGrassType);
   });
 });

@@ -8,15 +8,15 @@ var soilChart = null;
 
 var INTERPRETATIONS = {
   bermuda: [
-    { max: 50, text: "Bermuda is dormant. Hold all fertilizer, herbicide, and PGR applications. Resume when soil consistently reaches 50°F." },
-    { max: 55, text: "Bermuda is at the pre-emergent window. Apply crabgrass pre-emergent now if you haven't already — the window closes as soil warms past 55°F." },
-    { max: 65, text: "Bermuda is breaking dormancy. Light nitrogen is OK — wait for a visible flush of green before resuming a full program." },
+    { max: 50, text: "Bermuda is dormant. Hold fertilizer and PGR applications. Start watching the crabgrass pre-emergent window as soil approaches 50–55°F." },
+    { max: 55, text: "Bermuda is in the crabgrass pre-emergent window. Apply pre-emergent if the label fits and you haven't already — this is not the same as full bermuda green-up." },
+    { max: 65, text: "Bermuda is breaking dormancy. Wait for visible green-up and consistent growth before resuming a full nitrogen or PGR program." },
     { max: 80, text: "Bermuda is in active growth. Your full fertilizer, herbicide, and PGR program is appropriate." },
     { max: Infinity, text: "Soil is hot. Avoid elemental sulfur and any heat-stress products. Maintain irrigation to prevent drought dormancy." }
   ],
   zoysia: [
     { max: 55, text: "Zoysia is dormant or just beginning to stir. Hold all fertilizer and PGR until soil temps are consistently above 55°F." },
-    { max: 65, text: "Zoysia is at the pre-emergent window. Apply crabgrass pre-emergent before soil reaches 65°F." },
+    { max: 65, text: "Zoysia is moving through the pre-emergent and early green-up window. Apply crabgrass pre-emergent before germination pressure, but wait for visible active growth before pushing fertility." },
     { max: 80, text: "Zoysia is in active growth. Full program is appropriate — confirm visual greenup before applying nitrogen, as zoysia breaks later than bermuda." },
     { max: Infinity, text: "Soil is hot. Monitor for brown patch pressure and keep irrigation consistent." }
   ],

@@ -52,7 +52,7 @@
             "name": "What are growing degree days for lawn care?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Growing degree days (GDD) measure accumulated heat above a base temperature — typically 50°F for warm-season turf. Each day contributes GDD based on the average temperature above that base. Lawn care professionals use GDD to time pre-emergent herbicide applications, track grass greenup, and schedule PGR reapplication windows."
+              "text": "Growing degree days (GDD) measure accumulated heat above a base temperature. Seasonal warm-season turf tracking often uses base 50°F with a high-temperature cap, while PGR tracking in Lawn Dominator uses Celsius-scale GDD from the application date. Lawn care professionals use GDD to time pre-emergent herbicide applications, track grass greenup, and schedule PGR reapplication windows."
             }
           },
           {
@@ -68,7 +68,7 @@
             "name": "When do I reapply Primo Maxx based on GDD?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Primo Maxx (trinexapac-ethyl) is typically reapplied every 150–200 GDD from the previous application date, using a base temperature of 32°F. Higher application rates extend the interval. Always refer to the product label for your specific rate and conditions, as the exact interval varies with grass type, growth rate, and application rate."
+              "text": "Primo Maxx (trinexapac-ethyl) is typically tracked from the previous application date using Celsius-scale GDD: 0°C for cool-season trinexapac sessions and 10°C for warm-season trinexapac sessions. Higher application rates can extend the interval. Always refer to the product label for your specific rate and conditions, as the exact interval varies with grass type, growth rate, weather stress, and application rate."
             }
           },
           {
@@ -76,7 +76,7 @@
             "name": "What base temperature is used for GDD in lawn care?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Seasonal GDD accumulation for pre-emergent and greenup timing uses a base of 50°F (10°C), which is the minimum metabolic temperature for warm-season (C4) grasses like bermuda and zoysia. For PGR reapplication timing, the base temperature depends on grass type: research on cool-season grasses (bentgrass, bluegrass) uses 32°F because C3 plants metabolize products even at lower temperatures — Cornell Turfgrass Program uses this base for trinexapac-ethyl on cool-season turf. Reasor et al. 2018 (Crop Science) used base 50°F when modeling PGR timing on ultradwarf bermuda. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation."
+              "text": "Seasonal GDD accumulation for pre-emergent and greenup timing uses base 50°F with an 86°F high-temperature cap. For PGR reapplication timing, this calculator converts the displayed Fahrenheit high and low temperatures to Celsius first, then applies max(avg°C - base°C, 0). Cool-season trinexapac sessions use a 0°C base; warm-season trinexapac sessions use a 10°C base."
             }
           }
         ]
@@ -91,8 +91,8 @@
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Enter your location", "text": "Type your city or zip code and click Calculate to load seasonal GDD data for your area from January 1 to today." },
           { "@type": "HowToStep", "position": 2, "name": "Enter your application date", "text": "In the 'GDD from a specific date' section, pick the date you last applied your PGR product such as Primo Maxx or T-Nex." },
-          { "@type": "HowToStep", "position": 3, "name": "Read the GDD totals", "text": "The calculator shows PGR GDD accumulated from your application date using base 32°F and turf GDD using base 50°F." },
-          { "@type": "HowToStep", "position": 4, "name": "Compare to reapplication threshold", "text": "Check the PGR reference table below — Primo Maxx and T-Nex typically need reapplication at 150–200 GDD from the application date. If you are at or past that threshold, it is time to reapply." }
+          { "@type": "HowToStep", "position": 3, "name": "Read the GDD totals", "text": "The calculator shows PGR GDD°C accumulated from your application date and seasonal turf GDD using base 50°F." },
+          { "@type": "HowToStep", "position": 4, "name": "Compare to reapplication threshold", "text": "Compare the from-date total with your product, rate, target threshold, turf response, and label guidance before deciding whether to reapply." }
         ]
       }
     </script>
@@ -169,7 +169,7 @@
               <p class="gdd-from-date__label">GDD from a specific date</p>
               <div class="gdd-from-date__row">
                 <input type="date" id="gdd-from-input" class="gdd-date-input" aria-label="Calculate GDD from this date" />
-                <p class="gdd-from-result gdd-from-result--empty" id="gdd-from-result">Pick a date — shows PGR GDD at base 32°F and turf GDD at base 50°F</p>
+                <p class="gdd-from-result gdd-from-result--empty" id="gdd-from-result">Pick a date — shows PGR GDD°C and turf GDD from that date</p>
               </div>
             </div>
 
@@ -192,29 +192,29 @@
                   <tr>
                     <td>Primo Maxx / T-Nex</td>
                     <td>Trinexapac-ethyl</td>
-                    <td>32&deg;F cool-season &middot; 50&deg;F warm-season</td>
-                    <td>~200 GDD on cool-season grasses (Cornell); ~216&ndash;230 GDD on ultradwarf bermuda (Reasor et al. 2018, Crop Science)</td>
+                    <td>0&deg;C cool-season &middot; 10&deg;C warm-season</td>
+                    <td>Track from the application date and calibrate to mowing response, rate, turf condition, and label guidance</td>
                   </tr>
                   <tr>
                     <td>Anuew</td>
                     <td>Prohexadione calcium</td>
-                    <td>32&deg;F cool-season &middot; 50&deg;F warm-season</td>
-                    <td>Shorter residual than trinexapac-ethyl; ~120&ndash;130 GDD on ultradwarf bermuda (Reasor et al. 2018); shorter interval documented on annual bluegrass (Husiny et al. 2023)</td>
+                    <td>0&deg;C cool-season &middot; 10&deg;C warm-season</td>
+                    <td>Shorter residual than trinexapac-ethyl; no single universal GDD target fits every turf and rate</td>
                   </tr>
                   <tr>
                     <td>Trimmit / Pillar</td>
                     <td>Paclobutrazol</td>
-                    <td>32&deg;F</td>
-                    <td>~270&ndash;300 GDD on bentgrass (Kreuser 2018, Crop Science); soil absorption makes interval more variable than foliar PGRs</td>
+                    <td>0&deg;C cool-season &middot; 10&deg;C warm-season</td>
+                    <td>Soil absorption makes interval more variable than foliar PGRs; track turf response and label limits</td>
                   </tr>
                 </tbody>
               </table>
-              <p class="pgr-note">The base temperature used for PGR GDD should match the grass type: 32&deg;F (0&deg;C) for cool-season (C3) grasses, 50&deg;F (10&deg;C) for warm-season (C4) grasses, reflecting each type's minimum metabolic temperature. Most published GDD research for PGRs was conducted on bentgrass putting greens &mdash; apply these as tracking benchmarks on warm-season turf and calibrate with your own mowing response data. Always confirm with the product label.</p>
+              <p class="pgr-note">The base temperature used for PGR GDD should match the grass type: 0&deg;C for cool-season (C3) grasses and 10&deg;C for warm-season (C4) grasses. The calculator converts Fahrenheit weather data to Celsius internally before applying the base. Most published GDD research for PGRs was conducted on putting-green turf &mdash; apply these as tracking benchmarks and calibrate with your own mowing response data. Always confirm with the product label.</p>
               <div class="guide-source-list" style="margin-top:1rem">
                 <p style="font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:0.4rem">PGR research sources</p>
                 <ol style="font-size:0.85rem;color:var(--ink-soft);padding-left:1.15rem;line-height:1.6">
                   <li><a href="https://turf.cals.cornell.edu/pests-and-weeds/plant-growth-regulators/" rel="noopener">Cornell Turfgrass Program: Plant Growth Regulators &mdash; GDD timing for trinexapac-ethyl on cool-season turf</a></li>
-                  <li><a href="https://acsess.onlinelibrary.wiley.com/doi/full/10.2135/cropsci2018.01.0077" rel="noopener">Reasor et al. 2018, Crop Science &mdash; GDD models for PGR applications on ultradwarf bermudagrass (base 50&deg;F)</a></li>
+                  <li><a href="https://acsess.onlinelibrary.wiley.com/doi/full/10.2135/cropsci2018.01.0077" rel="noopener">Reasor et al. 2018, Crop Science &mdash; GDD models for PGR applications on ultradwarf bermudagrass</a></li>
                   <li><a href="https://acsess.onlinelibrary.wiley.com/doi/10.2135/cropsci2017.06.0395" rel="noopener">Kreuser 2018, Crop Science &mdash; GDD models for paclobutrazol on creeping bentgrass</a></li>
                   <li><a href="https://acsess.onlinelibrary.wiley.com/doi/10.1002/cft2.20224" rel="noopener">Husiny et al. 2023, Crop Forage &amp; Turfgrass Management &mdash; Prohexadione calcium residual and rebound on annual bluegrass and bentgrass</a></li>
                 </ol>
@@ -256,7 +256,7 @@
           <section class="seo-content">
             <p class="tool-attribution">Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (open source, no API key required).</p>
             <h2>Why Different GDD Calculators Show Different Results</h2>
-            <p>If you compare this tool to GreenCast or another GDD calculator and see a difference of 100–250 GDD, that is expected — not an error. The main sources of variation between tools:</p>
+            <p>If you compare this tool to GreenCast or another GDD calculator and see a difference, that can be expected — not automatically an error. The main sources of variation between tools:</p>
             <ul>
               <li><strong>Max temperature cap:</strong> This tool applies an 86°F maximum — the standard modified GDD method used by university turfgrass programs. Calculators that do not apply this cap accumulate more GDD on hot days.</li>
               <li><strong>Weather data source:</strong> This tool uses Open-Meteo, a gridded weather model. Tools using local weather stations will read differently based on proximity to official sensors.</li>
@@ -267,7 +267,7 @@
 
             <h2>Growing Degree Days for Lawn Care — What You Need to Know</h2>
             <p>Growing degree days (GDD) are a heat accumulation metric used by turf managers to predict biological events that calendar dates cannot reliably capture. Because plant development responds to temperature — not the date — GDD gives you a more accurate signal for pre-emergent timing, greenup prediction, and PGR reapplication windows.</p>
-            <p>This calculator uses a base of 50°F with a maximum temperature cap of 86°F — the modified GDD method used by most university turfgrass extension programs. Accumulation starts January 1 each year.</p>
+            <p>For seasonal turf tracking, this calculator uses a base of 50°F with a maximum temperature cap of 86°F. Accumulation starts January 1 each year. For PGR tracking from an application date, it converts Fahrenheit weather data to Celsius internally, then uses a 0°C cool-season base or 10°C warm-season base.</p>
 
             <h3>Pre-Emergent Timing with GDD</h3>
             <p>Crabgrass and other summer annual weeds germinate when soil temperature reaches 50–55°F for several consecutive days — University of Minnesota Extension and Penn State Extension both cite this range. GDD accumulation is correlated with warming soil, so tracking seasonal GDD gives you a secondary heat-trend signal alongside the soil temperature reading. Apply pre-emergent before soil temperature is consistently above 55°F or you will miss the window. The most reliable trigger is the soil temperature reading itself, not a fixed GDD number.</p>
@@ -276,13 +276,13 @@
             <p>GDD is a useful trending tool for comparing spring heat accumulation across years, but university extension sources do not establish a single confirmed GDD threshold for bermuda or zoysia greenup. Texas A&M AgriLife Extension identifies 65°F soil temperature as the active growth threshold for bermuda. Track GDD alongside soil temperature and visual greenup at your own location over multiple seasons to build a personal baseline — this combination is more reliable than any single number.</p>
 
             <h3>PGR Reapplication Windows</h3>
-            <p>Primo Maxx (trinexapac-ethyl) and similar PGR products wear off based on heat accumulation from the application date, not elapsed calendar days. The standard reapplication interval is 150–200 GDD from your last application using a base of 32°F. Use the date picker above to calculate GDD from any past date — then compare to the PGR reference table to judge whether it is time to reapply. For soil temperature data at your location, see the <a href="./soil-temperature.html">Soil Temperature Tracker</a>.</p>
+            <p>Primo Maxx (trinexapac-ethyl) and similar PGR products wear off based on heat accumulation from the application date, not elapsed calendar days. Use the date picker above to calculate Celsius-scale PGR GDD from any past date — then compare to your product, target, turf response, and label guidance. For soil temperature data at your location, see the <a href="./soil-temperature.html">Soil Temperature Tracker</a>.</p>
 
             <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
               <details class="faq-item">
                 <summary>What are growing degree days for lawn care?</summary>
-                <p>Growing degree days (GDD) measure accumulated heat above a base temperature — typically 50°F for warm-season turf. Each day contributes GDD based on the average temperature above that base. Lawn professionals use GDD to time pre-emergent herbicide applications, track greenup, and schedule PGR reapplication windows.</p>
+                <p>Growing degree days (GDD) measure accumulated heat above a base temperature. Seasonal warm-season turf tracking often uses base 50°F, while PGR tracking in Lawn Dominator uses Celsius-scale GDD from the application date. Lawn professionals use GDD to time pre-emergent herbicide applications, track greenup, and schedule PGR reapplication windows.</p>
               </details>
               <details class="faq-item">
                 <summary>When does bermuda grass green up based on GDD?</summary>
@@ -290,11 +290,11 @@
               </details>
               <details class="faq-item">
                 <summary>When do I reapply Primo Maxx based on GDD?</summary>
-                <p>Primo Maxx (trinexapac-ethyl) is typically reapplied every 150–200 GDD from the previous application, using a base of 32°F. Higher application rates extend the interval. Use the date picker on this page to calculate exactly how many GDD have passed since your last application, then compare to the threshold in the reference table above.</p>
+                <p>Primo Maxx (trinexapac-ethyl) is tracked from the previous application using Celsius-scale GDD. Cool-season trinexapac sessions use a 0°C base, while warm-season trinexapac sessions use a 10°C base. Use the date picker on this page to calculate how many PGR GDD°C have passed since your last application, then compare that with your product, rate, turf response, and label guidance.</p>
               </details>
               <details class="faq-item">
                 <summary>What base temperature is used for GDD in lawn care?</summary>
-                <p>Seasonal GDD for warm-season turf uses base 50°F (10°C) — the minimum metabolic temperature for C4 plants like bermuda and zoysia. For PGR reapplication, the base temperature depends on grass type: Cornell Turfgrass Program uses base 32°F for trinexapac-ethyl on cool-season grasses; Reasor et al. 2018 (Crop Science) used base 50°F for PGR timing on ultradwarf bermuda. This tool uses base 50°F with a max cap of 86°F for seasonal accumulation, consistent with the modified GDD method used by university turfgrass extension programs.</p>
+                <p>Seasonal GDD for warm-season turf uses base 50°F with an 86°F high-temperature cap. PGR GDD uses Celsius-scale math: the calculator converts the high and low to Celsius first, then uses max(avg°C - base°C, 0). Cool-season trinexapac sessions use a 0°C base, while warm-season trinexapac sessions use a 10°C base.</p>
               </details>
             </div>
           </section>
