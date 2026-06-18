@@ -92,6 +92,109 @@ function initTankMixCalculator() {
   });
 }
 
+function initSprayRateCalculator() {
+  var form = byId('spray-rate-form');
+  if (!form) return;
+  var result = byId('spray-rate-result');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var area = numberValue('spray-area');
+    var rate = numberValue('spray-rate');
+    var carrierRate = numberValue('spray-carrier-rate');
+    var tankSize = numberValue('spray-tank-size');
+    var unitEl = byId('spray-unit');
+    var unit = unitEl ? unitEl.value : 'units';
+    if (!(area > 0 && rate > 0 && carrierRate > 0)) {
+      result.textContent = 'Enter treated area, label rate per 1,000 sq ft, and carrier gallons per 1,000 sq ft.';
+      result.classList.add('tool-result--warn');
+      return;
+    }
+    var multiplier = area / 1000;
+    var productTotal = rate * multiplier;
+    var carrierTotal = carrierRate * multiplier;
+    var tanks = tankSize > 0 ? carrierTotal / tankSize : null;
+    result.classList.remove('tool-result--warn');
+    result.innerHTML =
+      '<strong>' + formatNumber(productTotal, 2) + ' ' + unit + ' product total</strong><br>' +
+      formatNumber(carrierTotal, 2) + ' gal carrier total for ' + formatNumber(area, 0) + ' sq ft' +
+      (tanks ? '<br>' + formatNumber(tanks, 2) + ' tank(s) at ' + formatNumber(tankSize, 2) + ' gal each' : '') +
+      '<p>Confirm the label rate, turf species, PPE, water-in or rainfast window, re-entry interval, and annual maximum before spraying.</p>';
+  });
+}
+
+function initSeedCalculator() {
+  var form = byId('seed-form');
+  if (!form) return;
+  var result = byId('seed-result');
+  var grass = byId('seed-grass');
+  var purpose = byId('seed-purpose');
+  var customRate = byId('seed-custom-rate');
+
+  var seedRates = {
+    tall_fescue: { newRate: 6, overseedRate: 3, note: 'NC State lists tall fescue establishment at 6 lb per 1,000 sq ft.' },
+    kentucky_bluegrass: { newRate: 2, overseedRate: 1, note: 'Kentucky bluegrass is normally seeded lighter than tall fescue and establishes more slowly.' },
+    perennial_ryegrass: { newRate: 8, overseedRate: 4, note: 'Perennial ryegrass establishes quickly but still needs seed-to-soil contact and moisture.' },
+    bermuda_common: { newRate: 1, overseedRate: 0.5, note: 'Common bermuda can be seeded; many hybrid bermuda lawns are established vegetatively.' },
+    zoysia: { newRate: 2, overseedRate: 1, note: 'Zoysia is slow from seed; many zoysia and St. Augustine lawns use sod, plugs, or sprigs.' }
+  };
+
+  function updateDefaultRate() {
+    var item = seedRates[grass.value];
+    var rate = item ? (purpose.value === 'overseed' ? item.overseedRate : item.newRate) : NaN;
+    customRate.placeholder = isFinite(rate) ? String(rate) : 'Optional custom rate';
+  }
+
+  grass.addEventListener('change', updateDefaultRate);
+  purpose.addEventListener('change', updateDefaultRate);
+  updateDefaultRate();
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var area = numberValue('seed-area');
+    var bagWeight = numberValue('seed-bag');
+    var custom = numberValue('seed-custom-rate');
+    var item = seedRates[grass.value];
+    var rate = custom > 0 ? custom : item[purpose.value === 'overseed' ? 'overseedRate' : 'newRate'];
+    if (!(area > 0 && rate > 0)) {
+      result.textContent = 'Enter lawn area and choose a grass type, or enter a custom seed rate.';
+      result.classList.add('tool-result--warn');
+      return;
+    }
+    var pounds = rate * (area / 1000);
+    var bags = bagWeight > 0 ? pounds / bagWeight : null;
+    result.classList.remove('tool-result--warn');
+    result.innerHTML =
+      '<strong>' + formatNumber(pounds, 2) + ' lb seed needed</strong><br>' +
+      formatNumber(rate, 2) + ' lb seed per 1,000 sq ft x ' + formatNumber(area / 1000, 2) + ' thousand sq ft' +
+      (bags ? '<br>' + formatNumber(bags, 2) + ' bag(s) at ' + formatNumber(bagWeight, 1) + ' lb each' : '') +
+      '<p>' + item.note + ' Check the seed tag, cultivar recommendation, local planting window, and label rate before buying.</p>';
+  });
+}
+
+function initIrrigationRuntimeCalculator() {
+  var form = byId('irrigation-form');
+  if (!form) return;
+  var result = byId('irrigation-result');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var target = numberValue('water-target');
+    var caught = numberValue('water-catch');
+    var minutes = numberValue('water-minutes');
+    if (!(target > 0 && caught > 0 && minutes > 0)) {
+      result.textContent = 'Enter target inches, average catch-can depth, and test runtime.';
+      result.classList.add('tool-result--warn');
+      return;
+    }
+    var ratePerHour = caught / minutes * 60;
+    var runtime = target / ratePerHour * 60;
+    result.classList.remove('tool-result--warn');
+    result.innerHTML =
+      '<strong>' + formatNumber(runtime, 0) + ' minutes</strong> to apply ' + formatNumber(target, 2) + ' in<br>' +
+      'Measured precipitation rate: ' + formatNumber(ratePerHour, 2) + ' in/hr from ' + formatNumber(caught, 2) + ' in in ' + formatNumber(minutes, 0) + ' min' +
+      '<p>If water runs off before the runtime finishes, split it into cycle-and-soak runs. Use multiple catch cans and subtract useful rainfall instead of watering by calendar alone.</p>';
+  });
+}
+
 function getTreatments() {
   try {
     return JSON.parse(localStorage.getItem('ldTreatments') || '[]');
@@ -201,6 +304,9 @@ function initCalendarChecklist() {
 document.addEventListener('DOMContentLoaded', function() {
   initFertilizerCalculator();
   initTankMixCalculator();
+  initSprayRateCalculator();
+  initSeedCalculator();
+  initIrrigationRuntimeCalculator();
   initTreatmentLog();
   initCalendarChecklist();
 });
