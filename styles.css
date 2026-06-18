@@ -2302,6 +2302,50 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   color: var(--ink);
 }
 
+.measure-sod {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0 0 var(--space-lg);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: oklch(0.14 0.02 118 / 0.72);
+  padding: var(--space-md);
+}
+
+.measure-sod .guide-kicker {
+  margin-bottom: 0;
+}
+
+.measure-sod label {
+  display: grid;
+  gap: var(--space-xs);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.measure-sod input {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: oklch(0.12 0.02 118);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.72rem 0.82rem;
+}
+
+.sod-estimate {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.sod-estimate strong {
+  color: var(--accent);
+}
+
 .measure-note {
   margin: auto 0 0;
   font-size: 0.88rem;
@@ -2350,7 +2394,7 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
 
 .measure-seo__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
 }
 

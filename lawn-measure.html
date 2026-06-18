@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Free Lawn Measurement Tool: Measure Lawn Square Footage Online | Lawn Dominator</title>
-    <meta name="description" content="Measure lawn square footage online for free. Search your address, draw lawn areas on satellite imagery, and copy the total square feet." />
+    <title>Free Lawn Measurement &amp; Sod Calculator | Lawn Square Footage Tool</title>
+    <meta name="description" content="Measure lawn square footage online for free, then estimate sod order size with waste allowance and pallet coverage." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#1d2a1c" />
     <link rel="canonical" href="https://lawndominators.com/lawn-measure.html" />
-    <meta property="og:title" content="Free Lawn Measurement Tool | Lawn Dominator" />
-    <meta property="og:description" content="Measure lawn square footage online with satellite imagery, address autocomplete, and draw tools." />
+    <meta property="og:title" content="Free Lawn Measurement & Sod Calculator | Lawn Dominator" />
+    <meta property="og:description" content="Measure lawn square footage online with satellite imagery, address autocomplete, draw tools, and a sod order estimator." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/lawn-measure.html" />
     <meta property="og:site_name" content="Lawn Dominator" />
@@ -19,8 +19,8 @@
     <meta property="og:image:alt" content="Lawn Dominator lawn tracker app preview with soil temperature, GDD, spray logs, and lawn care tools." />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Free Lawn Measurement Tool | Lawn Dominator" />
-    <meta name="twitter:description" content="Measure lawn square footage online with satellite imagery, address autocomplete, and draw tools." />
+    <meta name="twitter:title" content="Free Lawn Measurement & Sod Calculator | Lawn Dominator" />
+    <meta name="twitter:description" content="Measure lawn square footage online with satellite imagery, address autocomplete, draw tools, and a sod order estimator." />
     <meta name="twitter:image" content="https://lawndominators.com/social-preview.png" />
     <meta name="twitter:image:alt" content="Lawn Dominator lawn tracker app preview with soil temperature, GDD, spray logs, and lawn care tools." />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -33,11 +33,11 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Lawn Square Footage Measuring Tool",
+        "name": "Lawn Square Footage Measuring and Sod Calculator",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "url": "https://lawndominators.com/lawn-measure.html",
-        "description": "Free browser tool for measuring lawn square footage from satellite imagery.",
+        "description": "Free browser tool for measuring lawn square footage from satellite imagery and estimating sod order size.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -78,6 +78,22 @@
               "@type": "Answer",
               "text": "Yes. The lawn square footage tool runs in the browser and does not require a Lawn Dominator account."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How much extra sod should I order?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Measure the turf square footage and add a waste allowance for cuts, curves, damaged pieces, and mistakes. Simple rectangular lawns may only need about 5 percent waste; complex lawns often need closer to 10 percent or more."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many square feet are on a sod pallet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sod pallet coverage varies by farm and region, often around 450 to 500 square feet. Enter the pallet coverage from your sod supplier before ordering."
+            }
           }
         ]
       }
@@ -90,8 +106,8 @@
         <section class="measure-hero">
           <div>
             <p class="guide-kicker">Free browser tool</p>
-            <h1>Free lawn measurement tool</h1>
-            <p>Measure lawn square footage online with address search, satellite imagery, and simple draw tools.</p>
+            <h1>Free lawn measurement and sod calculator</h1>
+            <p>Measure lawn square footage online with address search, satellite imagery, simple draw tools, and a sod order estimator.</p>
           </div>
           <form id="measure-address-form" class="measure-search">
             <label for="measure-address">Address</label>
@@ -118,7 +134,17 @@
               <button id="measure-clear" class="btn-secondary" type="button" disabled>Clear</button>
             </div>
             <ol id="measure-list" class="measure-list"></ol>
-            <p class="measure-note">Use polygon for curved lawn edges or rectangle for quick rough measurements. Edit points after drawing if the line is off.</p>
+            <section class="measure-sod" aria-label="Sod order estimate">
+              <p class="guide-kicker">Sod estimate</p>
+              <label>Waste allowance %
+                <input id="sod-waste" type="number" min="0" max="30" step="1" value="8" />
+              </label>
+              <label>Sq ft per pallet
+                <input id="sod-pallet" type="number" min="1" step="1" value="500" />
+              </label>
+              <div id="sod-estimate" class="sod-estimate">Draw the lawn to estimate sod.</div>
+            </section>
+            <p class="measure-note">Use polygon for curved lawn edges or rectangle for quick rough measurements. Edit points after drawing if the line is off. For sod, confirm pallet coverage with your local supplier.</p>
           </aside>
           <div id="lawn-measure-map" class="measure-map" role="application" aria-label="Satellite map for drawing lawn square footage"></div>
         </section>
@@ -145,8 +171,16 @@
               <p>Most lawn products, seed, soil amendments, and service quotes are based on treated square feet. Measuring the lawn itself is more useful than using parcel size because parcel size includes buildings and hard surfaces.</p>
             </article>
             <article>
+              <h3>Using it as a sod calculator</h3>
+              <p>After drawing your turf area, set the waste allowance and supplier pallet coverage. Add waste for cuts around curves, sidewalks, beds, trees, and damaged pieces. Confirm the final pallet size with the sod farm before ordering.</p>
+            </article>
+            <article>
               <h3>Accuracy tips</h3>
               <p>Draw slightly inside the hard edge of driveways and sidewalks, use multiple smaller shapes for broken-up lawns, and edit points after drawing if the satellite image is angled or shaded.</p>
+            </article>
+            <article>
+              <h3>New sod next steps</h3>
+              <p>Install sod quickly after delivery, keep it moist but not saturated while roots establish, and wait for the tug test before treating it like an established lawn. Read the <a href="./guides/new-sod-care.html">new sod care guide</a> before delivery day.</p>
             </article>
           </div>
         </section>

@@ -74,6 +74,9 @@
   var locateBtn = document.getElementById('measure-locate');
   var resultsEl = document.getElementById('measure-results');
   var geocoderCreditEl = document.getElementById('measure-geocoder-credit');
+  var sodWasteEl = document.getElementById('sod-waste');
+  var sodPalletEl = document.getElementById('sod-pallet');
+  var sodEstimateEl = document.getElementById('sod-estimate');
 
   if (GEOAPIFY_KEY && geocoderCreditEl) {
     geocoderCreditEl.hidden = false;
@@ -81,6 +84,26 @@
 
   function formatSqft(value) {
     return Math.round(value).toLocaleString('en-US') + ' sq ft';
+  }
+
+  function updateSodEstimate(total) {
+    if (!sodEstimateEl || !sodWasteEl || !sodPalletEl) return;
+    var waste = parseFloat(sodWasteEl.value);
+    var pallet = parseFloat(sodPalletEl.value);
+    if (!(total > 0)) {
+      sodEstimateEl.textContent = 'Draw the lawn to estimate sod.';
+      return;
+    }
+    if (!(waste >= 0 && pallet > 0)) {
+      sodEstimateEl.textContent = 'Enter waste percent and pallet coverage.';
+      return;
+    }
+    var orderSqft = total * (1 + waste / 100);
+    var pallets = Math.ceil(orderSqft / pallet);
+    sodEstimateEl.innerHTML =
+      '<strong>' + formatSqft(orderSqft) + ' to order</strong><br>' +
+      pallets.toLocaleString('en-US') + ' pallet' + (pallets === 1 ? '' : 's') +
+      ' at ' + formatSqft(pallet) + ' each';
   }
 
   function layerAreaSqft(layer) {
@@ -159,6 +182,7 @@
     countEl.textContent = rows.length + (rows.length === 1 ? ' area' : ' areas');
     copyBtn.disabled = total <= 0;
     clearBtn.disabled = rows.length === 0;
+    updateSodEstimate(total);
 
     if (!rows.length) {
       listEl.innerHTML = '<li>Draw around the lawn to start measuring.</li>';
@@ -383,6 +407,9 @@
     updateTotals();
     setStatus('Cleared. Draw a new area when ready.');
   });
+
+  if (sodWasteEl) sodWasteEl.addEventListener('input', updateTotals);
+  if (sodPalletEl) sodPalletEl.addEventListener('input', updateTotals);
 
   updateTotals();
 })();
