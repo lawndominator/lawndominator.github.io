@@ -17,13 +17,40 @@
 
   L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-  L.tileLayer(
+  var imageryLayer = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     {
+      maxNativeZoom: 18,
       maxZoom: 20,
       attribution:
         'Tiles &copy; Esri, Maxar, Earthstar Geographics, and the GIS User Community'
     }
+  ).addTo(map);
+
+  var clarityLayer = L.tileLayer(
+    'https://clarity.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {
+      maxNativeZoom: 18,
+      maxZoom: 20,
+      attribution:
+        'Tiles &copy; Esri, Maxar, Earthstar Geographics, and the GIS User Community'
+    }
+  );
+
+  var streetLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxNativeZoom: 19,
+    maxZoom: 20,
+    attribution: '&copy; OpenStreetMap contributors'
+  });
+
+  L.control.layers(
+    {
+      'Satellite': imageryLayer,
+      'Satellite alternate': clarityLayer,
+      'Street map': streetLayer
+    },
+    null,
+    { position: 'bottomleft' }
   ).addTo(map);
 
   var drawnItems = new L.FeatureGroup();
@@ -125,7 +152,7 @@
   }
 
   function zoomToResult(result) {
-    map.setView([result.lat, result.lon], 19);
+    map.setView([result.lat, result.lon], 20);
     if (result.label) addressInput.value = result.label;
     clearResults();
     setStatus('Found it. Zoom or pan if needed, then draw the lawn edge.');
