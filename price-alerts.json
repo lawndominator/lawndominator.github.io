@@ -1,9 +1,26 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-19T08:04:55.002713+00:00",
+  "generated_at": "2026-06-19T19:46:54.793405+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 0,
-  "alerts": []
+  "current_alert_count": 1,
+  "alert_count": 1,
+  "alerts": [
+    {
+      "id": "southern-ag-chelated-iron:best_price_drop:amazon:31.99:29.90",
+      "type": "best_price_drop",
+      "product_id": 208,
+      "product_slug": "southern-ag-chelated-iron",
+      "product_name": "Southern Ag Chelated Liquid Iron",
+      "category": "micronutrient",
+      "old_price": 31.99,
+      "new_price": 29.9,
+      "drop_percent": 6.5,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20",
+      "in_stock": true,
+      "created_at": "2026-06-19T19:46:54.793405+00:00"
+    }
+  ]
 }
