@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-21T02:27:32.503935+00:00",
+  "generated_at": "2026-06-21T07:43:44.629292+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 771,
-    "not_included_sources": 462,
+    "included_sources": 773,
+    "not_included_sources": 460,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 771,
+    "included": 773,
     "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 126,
-    "below $10.00 minimum for this category": 10,
+    "no_extracted_offer": 125,
+    "below $10.00 minimum for this category": 9,
     "no_price": 2
   },
   "products": [
@@ -768,7 +768,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 162.88,
+          "price": 162.72,
           "offer_url": "https://www.amazon.com/dp/B004HFT09Q?tag=lawndominator-20"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.71,
+          "price": 66.41,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4320,7 +4320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.01,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.95,
+          "price": 34.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.48,
+          "price": 29.47,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -13063,10 +13063,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.99,
+          "offer_url": "https://fzspray.com/products/storm-2-5"
         },
         {
           "url": "https://bugsaway.com/flowzone-storm-2-5-gallon-fzvaag-2-5",
@@ -13229,8 +13229,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 12,
+      "included_sources": 8,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.41,
+          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     }
   ]
