@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-22T08:40:32.995212+00:00",
+  "generated_at": "2026-06-22T16:38:37.201465+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,9 +12,9 @@
   "reason_counts": {
     "included": 772,
     "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 124,
-    "below $10.00 minimum for this category": 11,
-    "no_price": 2
+    "no_extracted_offer": 127,
+    "below $10.00 minimum for this category": 9,
+    "no_price": 1
   },
   "products": [
     {
@@ -1121,7 +1121,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56.01,
+          "price": 57.24,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.97,
+          "price": 35.12,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4370,7 +4370,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 77.99,
+          "price": 35.99,
           "offer_url": "https://yardmastery.com/products/bifenthrin-7-9f-select"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.43,
+          "price": 83.74,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.94,
+          "price": 33.9,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -5878,7 +5878,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 52.13,
+          "price": 65.16,
           "offer_url": "https://discounttoday.net/product/the-andersons-pgf-balanced-10-10-10-fertilizer-with-micronutrients-and-2-iron-5000-sq-ft"
         },
         {
@@ -6610,7 +6610,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 141.99,
+          "price": 39.99,
           "offer_url": "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6630,7 +6630,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 141.99,
+          "price": 39.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6638,9 +6638,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 76.99,
           "offer_url": "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20"
         },
         {
@@ -6674,8 +6674,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -9290,7 +9290,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 22.48,
+          "price": 21.93,
           "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
         },
         {
@@ -12380,7 +12380,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 395.1,
+          "price": 493.88,
           "offer_url": "https://discounttoday.net/product/brinly-bs361bh-a-175-lb-capacity-broadcast-tow-behind-spreader"
         },
         {
@@ -12390,7 +12390,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 368.1,
+          "price": 460.13,
           "offer_url": "https://discounttoday.net/product/brinly-bs36bh-a-175-lb-capacity-broadcast-tow-behind-spreader"
         },
         {
@@ -13993,7 +13993,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 495.99,
+          "price": 498.99,
           "offer_url": "https://www.amazon.com/dp/B0F7TMVCCF?tag=lawndominator-20"
         },
         {
