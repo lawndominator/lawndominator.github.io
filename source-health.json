@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-23T22:28:29.440235+00:00",
+  "generated_at": "2026-06-24T00:48:08.045370+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 774,
-    "not_included_sources": 459,
+    "included_sources": 773,
+    "not_included_sources": 460,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 774,
+    "included": 773,
     "not_checked_saved_source_limit": 323,
     "no_extracted_offer": 126,
-    "below $10.00 minimum for this category": 9,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.11,
+          "price": 85.72,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5207,9 +5207,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
           "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
@@ -5223,8 +5223,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.95,
+          "price": 33.91,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -10530,7 +10530,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 855.14,
+          "price": 854.13,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
@@ -11174,7 +11174,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 59.97,
+          "price": 44.98,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
