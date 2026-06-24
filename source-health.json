@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-24T06:50:00.685092+00:00",
+  "generated_at": "2026-06-24T14:01:49.603500+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 774,
-    "not_included_sources": 459,
+    "included_sources": 787,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 774,
+    "included": 787,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 125,
-    "below $10.00 minimum for this category": 10,
+    "no_extracted_offer": 111,
+    "below $10.00 minimum for this category": 11,
     "no_price": 1
   },
   "products": [
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 97.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.18,
+          "price": 84.5,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.99,
+          "price": 31.31,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -7932,10 +7932,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-2-pack"
         },
         {
           "url": "https://www.grandarborsupply.com/brands/quest-products",
@@ -7962,10 +7962,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-6-0-0-micronutrient-4-pack-copy"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-quart",
@@ -7982,40 +7982,40 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-case-of-10-3-lb-bags"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-manganese-case-of-10-3-lb-packages"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 56.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-iron-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-iron-4-pack-bundle-6-0-0-soluble-micronutrient"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/fungicides/reliant-systematic-fungicide-1-gallon",
@@ -8032,20 +8032,20 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 104.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-bundle-4-pack-2x-iron-2x-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 140.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-event-dry-green-up-six-pack"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10",
@@ -8062,30 +8062,30 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 30.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 52.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-2"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10",
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 235.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-case-of-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/liquid-fertilizer/phosphites/stress-master-with-ute-1-gal",
@@ -8112,10 +8112,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 96.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses-pack-of-4"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/soluble-molasses/main-event-soluble-molasses",
@@ -8132,14 +8132,14 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 55.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 20,
+      "included_sources": 22,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
