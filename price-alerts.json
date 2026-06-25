@@ -1,27 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-24T19:51:27.008174+00:00",
+  "generated_at": "2026-06-25T02:02:33.971829+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 1,
-  "alert_count": 4,
+  "current_alert_count": 0,
+  "alert_count": 3,
   "alerts": [
-    {
-      "id": "q4-plus:major_price_drop:pestrong:52.95:44.95",
-      "type": "major_price_drop",
-      "product_id": 26,
-      "product_slug": "q4-plus",
-      "product_name": "Q4 Plus Turf Herbicide",
-      "category": "post-emergent",
-      "old_price": 52.95,
-      "new_price": 44.95,
-      "drop_percent": 15.1,
-      "old_retailer": "Pestrong",
-      "new_retailer": "Pestrong",
-      "url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal",
-      "in_stock": true,
-      "created_at": "2026-06-24T19:51:27.008174+00:00"
-    },
     {
       "id": "drive-xlr8:best_price_drop:amazon:53.95:49.21",
       "type": "best_price_drop",
