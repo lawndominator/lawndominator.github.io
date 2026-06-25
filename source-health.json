@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-25T19:54:18.949254+00:00",
+  "generated_at": "2026-06-25T22:28:29.524292+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,9 +11,9 @@
   },
   "reason_counts": {
     "included": 788,
-    "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 112,
-    "below $10.00 minimum for this category": 9,
+    "not_checked_saved_source_limit": 324,
+    "no_extracted_offer": 109,
+    "below $10.00 minimum for this category": 11,
     "no_price": 1
   },
   "products": [
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 62.75,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.9,
+          "price": 66.92,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4471,7 +4471,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.71,
+          "price": 45.26,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.04,
+          "price": 85.34,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -11774,10 +11774,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 169.99,
-          "offer_url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902",
@@ -11930,8 +11930,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 9,
+      "included_sources": 6,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 434.95,
+          "price": 431.56,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -13225,7 +13225,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 335.99,
+          "price": 269.99,
           "offer_url": "https://www.amazon.com/dp/B08VJL8RW1?tag=lawndominator-20"
         }
       ],
@@ -13274,10 +13274,10 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 239.99,
+          "offer_url": "https://steveregan.com/products/831fzsatj-3"
         },
         {
           "url": "https://www.homedepot.com/p/FLOWZONE-Zephyr-Battery-Powered-Backpack-Sprayer-4-Gal-FZSATJ-3/335125596",
@@ -13440,8 +13440,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 15,
+      "included_sources": 6,
+      "not_included_sources": 14,
       "invalid_sources": 0
     },
     {
