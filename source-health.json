@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-25T17:27:23.281924+00:00",
+  "generated_at": "2026-06-25T19:54:18.949254+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 789,
-    "not_included_sources": 444,
+    "included_sources": 788,
+    "not_included_sources": 445,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 789,
+    "included": 788,
     "not_checked_saved_source_limit": 323,
-    "no_extracted_offer": 111,
+    "no_extracted_offer": 112,
     "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 97.0,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1475,7 +1475,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.98,
+          "price": 61.05,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.92,
+          "price": 66.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4471,7 +4471,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.26,
+          "price": 45.71,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 85.04,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -13063,10 +13063,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.99,
+          "offer_url": "https://fzspray.com/products/storm-2-5"
         },
         {
           "url": "https://bugsaway.com/flowzone-storm-2-5-gallon-fzvaag-2-5",
@@ -13229,8 +13229,8 @@
           "offer_url": "https://www.amazon.com/dp/B08VJL8RW1?tag=lawndominator-20"
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 11,
+      "included_sources": 9,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -13274,10 +13274,10 @@
           "retailer": "steveregan",
           "retailer_name": "Steveregan",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 239.99,
-          "offer_url": "https://steveregan.com/products/831fzsatj-3"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.homedepot.com/p/FLOWZONE-Zephyr-Battery-Powered-Backpack-Sprayer-4-Gal-FZSATJ-3/335125596",
@@ -13440,8 +13440,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 14,
+      "included_sources": 5,
+      "not_included_sources": 15,
       "invalid_sources": 0
     },
     {
