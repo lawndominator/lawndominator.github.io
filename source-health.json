@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-26T19:44:22.779191+00:00",
+  "generated_at": "2026-06-26T22:16:37.155312+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 786,
     "not_checked_saved_source_limit": 325,
-    "no_extracted_offer": 110,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 111,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -1445,7 +1445,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.99,
+          "price": 62.99,
           "offer_url": "https://homeandgardensupply.com/products/tenacity-herbicide-broadleaf-weed-grass-control"
         },
         {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.01,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.88,
+          "price": 66.86,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.39,
+          "price": 84.89,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.81,
+          "price": 34.76,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -7332,7 +7332,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 13.99,
+          "price": 14.99,
           "offer_url": "https://homeandgardensupply.com/products/chelated-liquid-iron"
         },
         {
@@ -7412,7 +7412,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 13.99,
+          "price": 14.99,
           "offer_url": "https://homeandgardensupply.com/products/chelated-liquid-iron?variant=39624940453975"
         },
         {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 435.34,
+          "price": 371.24,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
