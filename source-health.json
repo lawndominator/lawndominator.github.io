@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-26T13:57:51.774721+00:00",
+  "generated_at": "2026-06-26T17:26:24.740033+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 785,
-    "not_included_sources": 448,
+    "included_sources": 787,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 785,
+    "included": 787,
     "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 111,
-    "below $10.00 minimum for this category": 12,
+    "no_extracted_offer": 110,
+    "below $10.00 minimum for this category": 11,
     "no_price": 1
   },
   "products": [
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.74,
+          "price": 62.8,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4320,7 +4320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.99,
+          "price": 29.01,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.64,
+          "price": 84.44,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5339,9 +5339,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 240.9,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5375,8 +5375,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.94,
+          "price": 33.9,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -9290,7 +9290,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.93,
+          "price": 21.85,
           "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
         },
         {
@@ -11174,7 +11174,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 44.98,
+          "price": 41.38,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
@@ -12610,10 +12610,10 @@
           "retailer": "dkhardware",
           "retailer_name": "Dkhardware",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 400.31,
-          "offer_url": "https://www.dkhardware.com/chapin-international-8301c-80-lbs-capacity-contractor-turf-spreader-product-3917128.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.zoro.com/chapin-80-lbs-cap-spreader-w-spread-pattern-control-for-turf-powder-coated-8301c/i/G205831024",
@@ -12646,8 +12646,8 @@
           "offer_url": "https://www.amazon.com/dp/B01MUODGQ2?tag=lawndominator-20"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 4,
+      "included_sources": 6,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 417.75,
+          "price": 435.34,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -12701,10 +12701,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 371.24,
+          "offer_url": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer"
         },
         {
           "url": "https://veseris.com/default/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3",
@@ -12827,8 +12827,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 8,
+      "included_sources": 10,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
