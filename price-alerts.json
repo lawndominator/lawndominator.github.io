@@ -1,26 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-27T06:37:36.620713+00:00",
+  "generated_at": "2026-06-27T13:18:47.953402+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 1,
-  "alerts": [
-    {
-      "id": "petratools-hd4000:best_price_drop:amazon:199.99:189.99",
-      "type": "best_price_drop",
-      "product_id": 348,
-      "product_slug": "petratools-hd4000",
-      "product_name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "old_price": 199.99,
-      "new_price": 189.99,
-      "drop_percent": 5.0,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-06-23T07:03:25.765235+00:00"
-    }
-  ]
+  "alert_count": 0,
+  "alerts": []
 }

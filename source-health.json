@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-27T06:37:36.620713+00:00",
+  "generated_at": "2026-06-27T13:18:47.953402+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 788,
     "not_checked_saved_source_limit": 325,
-    "no_extracted_offer": 110,
-    "below $10.00 minimum for this category": 9,
+    "no_extracted_offer": 109,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -1010,7 +1010,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.94,
+          "price": 34.86,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 62.75,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4320,7 +4320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.01,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 83.54,
+          "price": 83.39,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.95,
+          "price": 34.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6946,7 +6946,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 19.19,
+          "price": 23.99,
           "offer_url": "https://www.amazon.com/dp/B08Z4DTTJR?tag=lawndominator-20"
         },
         {
@@ -13660,7 +13660,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 189.99,
+          "price": 199.99,
           "offer_url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20"
         },
         {
