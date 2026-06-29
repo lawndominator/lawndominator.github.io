@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-29T07:43:43.788112+00:00",
+  "generated_at": "2026-06-29T15:28:19.407992+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 141.73,
+          "price": 139.3,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1475,7 +1475,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.05,
+          "price": 61.98,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -3134,7 +3134,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 79.95,
+          "price": 78.95,
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide"
         },
         {
@@ -3164,7 +3164,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 79.95,
+          "price": 78.95,
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide?variant=46295278420106"
         }
       ],
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.19,
+          "price": 85.94,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.94,
+          "price": 33.9,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -12610,10 +12610,10 @@
           "retailer": "dkhardware",
           "retailer_name": "Dkhardware",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 400.31,
+          "offer_url": "https://www.dkhardware.com/chapin-international-8301c-80-lbs-capacity-contractor-turf-spreader-product-3917128.html"
         },
         {
           "url": "https://www.zoro.com/chapin-80-lbs-cap-spreader-w-spread-pattern-control-for-turf-powder-coated-8301c/i/G205831024",
@@ -12646,8 +12646,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 6,
+      "included_sources": 6,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 371.24,
+          "price": 435.32,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -12701,10 +12701,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 371.24,
-          "offer_url": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://veseris.com/default/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3",
@@ -12827,8 +12827,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 7,
+      "included_sources": 9,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
