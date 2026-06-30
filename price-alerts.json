@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-30T19:46:50.615440+00:00",
+  "generated_at": "2026-06-30T22:24:09.111709+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 3,
+  "alert_count": 2,
   "alerts": [
     {
       "id": "ryobi-p2860:major_price_drop:directtoolsoutlet:179.99:117.99",
@@ -21,22 +21,6 @@
       "url": "https://www.directtoolsoutlet.com/products/p2860",
       "in_stock": true,
       "created_at": "2026-06-30T17:07:07.347310+00:00"
-    },
-    {
-      "id": "clearys-3336-f:major_price_drop:amazon:83.92:71.40",
-      "type": "major_price_drop",
-      "product_id": 55,
-      "product_slug": "clearys-3336-f",
-      "product_name": "Clearys 3336 F (Thiophanate-Methyl)",
-      "category": "fungicide",
-      "old_price": 83.92,
-      "new_price": 71.4,
-      "drop_percent": 14.9,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-06-28T16:32:48.828948+00:00"
     },
     {
       "id": "speedzone-southern:best_price_drop:amazon:104.95:96.84",
