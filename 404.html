@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lawn Dominators</title>
+    <style>
+      :root {
+        --green: #79b84a;
+        --green-dark: #365f2d;
+        --bg: #e9e5d3;
+        --text: #07170b;
+        --muted: #3b4b3a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 28px 24px;
+        max-width: 420px;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(16, 23, 13, 0.15);
+        text-align: center;
+      }
+      h1 { font-size: 22px; margin: 0 0 8px; }
+      p { color: var(--muted); font-size: 16px; line-height: 1.45; margin: 0 0 18px; }
+      .code {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 6px;
+        background: #f0efe6;
+        border-radius: 14px;
+        padding: 16px;
+        margin: 0 0 22px;
+      }
+      .btn {
+        display: block;
+        text-decoration: none;
+        background: var(--green);
+        color: #fff;
+        font-weight: 600;
+        font-size: 17px;
+        border-radius: 16px;
+        padding: 15px;
+        margin: 0 0 12px;
+      }
+      .btn.secondary { background: var(--green-dark); }
+      .hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="card">
+      <h1 id="title">Page not found</h1>
+      <p id="msg">
+        Sorry, that page doesn't exist.
+        <a href="https://lawndominators.com">Go to lawndominators.com</a>.
+      </p>
+    </div>
+
+    <script>
+      (function () {
+        // GitHub Pages has no catch-all routing, so referral links land here.
+        // If the path is /ref/CODE, render the invite + store fallback.
+        var match = window.location.pathname.match(/\/ref\/([A-Za-z0-9]+)/);
+        if (!match) {
+          return; // leave the default "page not found" content.
+        }
+        var code = match[1].toUpperCase();
+
+        document.getElementById('title').textContent =
+          "You've got 15 days of Premium";
+        var card = document.getElementById('card');
+        card.innerHTML =
+          '<h1>You\'ve got 15 days of Premium</h1>' +
+          "<p>Install Lawn Dominators, set up your lawn, and your friend's code " +
+          'is applied automatically. If asked, enter the code below.</p>' +
+          '<div class="code">' + code + '</div>' +
+          '<a class="btn" id="ios" href="https://apps.apple.com/us/app/lawn-dominator/id6761975483">Download on the App Store</a>' +
+          '<a class="btn secondary" id="android" href="https://play.google.com/store/apps/details?id=com.lawndominator.app">Get it on Google Play</a>' +
+          '<p class="hint">Already have the app? It should open automatically.</p>';
+
+        // If the app is installed, hand off via the custom scheme (universal
+        // links normally open the app before this page even loads).
+        try {
+          window.location.href = 'lawndominator://ref/' + code;
+        } catch (e) {}
+
+        // Show only the relevant store button.
+        var ua = navigator.userAgent || '';
+        if (/Android/i.test(ua)) {
+          document.getElementById('ios').style.display = 'none';
+        } else if (/iPhone|iPad|iPod/i.test(ua)) {
+          document.getElementById('android').style.display = 'none';
+        }
+      })();
+    </script>
+  </body>
+</html>

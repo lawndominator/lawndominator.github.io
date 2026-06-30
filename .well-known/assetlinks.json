@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lawndominator.app",
+      "sha256_cert_fingerprints": ["0B:88:9F:28:3C:3D:61:0F:FC:D2:62:E1:3A:53:A4:C7:6C:B1:6B:BF:84:0D:9B:68:4E:6C:31:6C:5A:9A:B3:79"]
+    }
+  }
+]
