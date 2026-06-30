@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-30T02:16:54.702379+00:00",
+  "generated_at": "2026-06-30T13:53:55.052529+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,9 +11,9 @@
   },
   "reason_counts": {
     "included": 788,
-    "not_checked_saved_source_limit": 325,
-    "no_extracted_offer": 108,
-    "below $10.00 minimum for this category": 11,
+    "not_checked_saved_source_limit": 324,
+    "no_extracted_offer": 111,
+    "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
   "products": [
@@ -131,7 +131,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 149.27,
+          "price": 144.93,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.99,
+          "price": 35.17,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.74,
+          "price": 83.84,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.95,
+          "price": 33.9,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -11172,10 +11172,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.98,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11458,8 +11458,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
