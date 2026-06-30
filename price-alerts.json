@@ -1,11 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-30T13:53:55.052529+00:00",
+  "generated_at": "2026-06-30T17:07:07.347310+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 2,
+  "current_alert_count": 1,
+  "alert_count": 3,
   "alerts": [
+    {
+      "id": "ryobi-p2860:major_price_drop:directtoolsoutlet:179.99:117.99",
+      "type": "major_price_drop",
+      "product_id": 349,
+      "product_slug": "ryobi-p2860",
+      "product_name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
+      "category": "sprayer-backpack",
+      "old_price": 179.99,
+      "new_price": 117.99,
+      "drop_percent": 34.4,
+      "old_retailer": "Directtoolsoutlet",
+      "new_retailer": "Directtoolsoutlet",
+      "url": "https://www.directtoolsoutlet.com/products/p2860",
+      "in_stock": true,
+      "created_at": "2026-06-30T17:07:07.347310+00:00"
+    },
     {
       "id": "clearys-3336-f:major_price_drop:amazon:83.92:71.40",
       "type": "major_price_drop",
