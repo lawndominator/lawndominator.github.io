@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-01T02:07:20.290043+00:00",
+  "generated_at": "2026-07-01T07:35:01.405704+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 789,
     "not_checked_saved_source_limit": 324,
-    "no_extracted_offer": 110,
-    "below $10.00 minimum for this category": 9,
+    "no_extracted_offer": 109,
+    "below $10.00 minimum for this category": 10,
     "no_price": 1
   },
   "products": [
@@ -434,7 +434,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 112.0,
+          "price": 113.6,
           "offer_url": "https://www.domyown.com/pendulum-2g-granular-herbicide-p-1498.html"
         },
         {
@@ -1748,7 +1748,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 416.0,
+          "price": 403.12,
           "offer_url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.08,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2335,7 +2335,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 330.98,
+          "price": 340.98,
           "offer_url": "https://www.domyown.com/primo-maxx-plant-growth-regulator-p-2320.html"
         },
         {
@@ -2678,7 +2678,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 579.0,
+          "price": 596.0,
           "offer_url": "https://www.domyown.com/trimmit-2sc-plant-growth-regulator-p-23967.html"
         },
         {
@@ -3711,7 +3711,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 210.0,
+          "price": 215.2,
           "offer_url": "https://www.domyown.com/medallion-wdg-fungicide-p-2316.html"
         },
         {
@@ -4026,7 +4026,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 899.0,
+          "price": 922.5,
           "offer_url": "https://www.domyown.com/acelepryn-sc-insecticide-p-3953.html"
         },
         {
@@ -4117,7 +4117,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 129.98,
+          "price": 132.48,
           "offer_url": "https://www.domyown.com/acelepryn-insecticide-p-15739.html"
         },
         {
@@ -4562,7 +4562,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 132.66,
+          "price": 134.66,
           "offer_url": "https://www.domyown.com/meridian-033-insecticide-p-10304.html"
         },
         {
@@ -4704,7 +4704,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 41.5,
+          "price": 42.4,
           "offer_url": "https://www.domyown.com/demand-cs-p-46.html"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 70.07,
+          "price": 69.96,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -4916,7 +4916,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 91.48,
+          "price": 93.08,
           "offer_url": "https://www.domyown.com/avid-015-ec-miticide-insecticide-p-2330.html"
         },
         {
@@ -5118,7 +5118,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 381.67,
+          "price": 390.67,
           "offer_url": "https://www.domyown.com/mainspring-gnl-insecticide-p-21927.html"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.89,
+          "price": 34.94,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6385,7 +6385,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 40.49,
           "offer_url": "https://yardmastery.com/products/24-0-6-flagship-granular-lawn-fertilizer-with-iron"
         }
       ],
@@ -6426,7 +6426,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 40.49,
           "offer_url": "https://yardmastery.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2"
         }
       ],
@@ -6477,7 +6477,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 40.49,
           "offer_url": "https://yardmastery.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2"
         }
       ],
@@ -6518,7 +6518,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 40.49,
           "offer_url": "https://yardmastery.com/products/freedom-granular-lawn-fertilizer"
         }
       ],
@@ -6539,7 +6539,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
@@ -6579,7 +6579,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer?variant=39522720251956"
         },
         {
@@ -6630,7 +6630,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 39.99,
+          "price": 33.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6670,7 +6670,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 39.99,
+          "price": 33.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
@@ -6753,7 +6753,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
@@ -6783,7 +6783,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant?variant=39523799760948"
         },
         {
@@ -8468,7 +8468,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1185.41,
+          "price": 1124.93,
           "offer_url": "https://www.siteone.com/en/511538b-lesco-24-0-11-50-polyplus-opti45-1-fe-04-mn-turfgrass-granular-fertilizer/p/1061053"
         },
         {
@@ -8559,7 +8559,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.81,
+          "price": 57.27,
           "offer_url": "https://www.siteone.com/en/510053-lesco-46-0-0-am-urea-nitrogen-turf-soluble-fertilizer-50-lb-bag/p/339142"
         },
         {
@@ -8619,7 +8619,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 97.89,
+          "price": 97.62,
           "offer_url": "https://www.siteone.com/en/510971-lesco-46-0-0-100-nos-am-turfgrass-soluble-fertilizer-50-lb-bag/p/647084"
         },
         {
@@ -8690,7 +8690,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.66,
+          "price": 30.44,
           "offer_url": "https://www.siteone.com/en/702737-lesco-stonewall-037-0-0-7-am-pre-emergent-plus-fertilizer-50-lb/p/849542"
         },
         {
@@ -8801,7 +8801,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 65.57,
+          "price": 61.68,
           "offer_url": "https://www.siteone.com/en/702024-lesco-dimension-015-19-0-6-30-polyplus-opti45-45cl-mop-pre-emergent-granular-herbicide-plus-fertilizer-50-lb-bag/p/356323"
         },
         {
@@ -10530,7 +10530,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 855.1,
+          "price": 851.7,
           "offer_url": "https://www.amazon.com/dp/B06X936K42?tag=lawndominator-20"
         },
         {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 424.96,
+          "price": 420.32,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.41,
-          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 0
     }
   ]
