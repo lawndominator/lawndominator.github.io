@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-01T17:15:52.801351+00:00",
+  "generated_at": "2026-07-01T20:03:12.184512+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,10 +11,10 @@
   },
   "reason_counts": {
     "included": 788,
-    "not_checked_saved_source_limit": 325,
-    "no_extracted_offer": 110,
-    "below $10.00 minimum for this category": 9,
-    "no_price": 1
+    "not_checked_saved_source_limit": 324,
+    "no_extracted_offer": 109,
+    "below $10.00 minimum for this category": 10,
+    "no_price": 2
   },
   "products": [
     {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.14,
+          "price": 84.89,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5339,9 +5339,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 240.9,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5375,8 +5375,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.9,
+          "price": 34.79,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6691,7 +6691,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.99,
+          "price": 24.64,
           "offer_url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp"
         }
       ],
@@ -8276,7 +8276,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 92.95,
+          "price": 89.95,
           "offer_url": "https://www.lawnandpestcontrolsupply.com/products/lesco-carbonpro-g"
         },
         {
@@ -8344,9 +8344,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 99.95,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B08Z6NLYL7?tag=lawndominator-20"
         },
         {
@@ -8366,7 +8366,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 92.95,
+          "price": 89.95,
           "offer_url": "https://www.lawnandpestcontrolsupply.com/products/lesco-carbonpro-g?variant=39322773717103"
         },
         {
@@ -8380,8 +8380,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-carbonpro-g?variant=42501778800778"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 2,
+      "included_sources": 8,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -8791,7 +8791,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.61,
+          "price": 58.34,
           "offer_url": "https://www.siteone.com/en/702631-lesco-dimension-019-19-0-6-30opti45-pre-emergent-plus-fertilizer-50-lb/p/716155"
         },
         {
@@ -8862,7 +8862,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 2511.11,
+          "price": 2481.92,
           "offer_url": "https://www.siteone.com/en/510112b-lesco-25-0-6-50-polyplus-opti-5-fe-mop-turfgrass-granular-fertilizer/p/1059877"
         }
       ],
@@ -11172,10 +11172,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 41.57,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11458,8 +11458,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 412.0,
+          "price": 416.0,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -13063,10 +13063,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 269.99,
-          "offer_url": "https://fzspray.com/products/storm-2-5"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://bugsaway.com/flowzone-storm-2-5-gallon-fzvaag-2-5",
@@ -13229,8 +13229,8 @@
           "offer_url": "https://www.amazon.com/dp/B08VJL8RW1?tag=lawndominator-20"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 10,
+      "included_sources": 8,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.41,
+          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     }
   ]
