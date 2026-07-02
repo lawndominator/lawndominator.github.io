@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-02T19:31:19.155062+00:00",
+  "generated_at": "2026-07-02T22:20:09.776314+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,10 +11,10 @@
   },
   "reason_counts": {
     "included": 786,
-    "not_checked_saved_source_limit": 326,
+    "not_checked_saved_source_limit": 327,
     "no_extracted_offer": 109,
-    "below $10.00 minimum for this category": 11,
-    "no_price": 1
+    "below $10.00 minimum for this category": 9,
+    "no_price": 2
   },
   "products": [
     {
@@ -1394,7 +1394,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.25,
+          "price": 28.49,
           "offer_url": "https://www.ebay.com/itm/134845221641"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.65,
+          "price": 34.87,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6404,9 +6404,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 79.99,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B0BHC47S44?tag=lawndominator-20"
         },
         {
@@ -6430,8 +6430,8 @@
           "offer_url": "https://yardmastery.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 0,
+      "included_sources": 2,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.65,
+          "price": 32.07,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -10076,7 +10076,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 706.65,
+          "price": 940.46,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10187,7 +10187,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 679.19,
+          "price": 661.23,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -11774,10 +11774,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 169.99,
-          "offer_url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902",
@@ -11930,8 +11930,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 9,
+      "included_sources": 6,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -12663,7 +12663,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 414.0,
+          "price": 405.0,
           "offer_url": "https://www.amazon.com/dp/B0C3WGCK64?tag=lawndominator-20"
         },
         {
@@ -13981,10 +13981,10 @@
           "retailer": "acmetools",
           "retailer_name": "Acmetools",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 269.41,
+          "offer_url": "https://www.acmetools.com/milwaukee-m18-switch-tank-4-gallon-backpack-sprayer-bare-tool-2820-20ps/045242526949.html"
         },
         {
           "url": "https://www.amazon.com/dp/B0F7TMVCCF",
@@ -14047,8 +14047,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     }
   ]
