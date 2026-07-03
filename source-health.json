@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-03T19:11:05.228845+00:00",
+  "generated_at": "2026-07-03T22:03:07.756316+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 787,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 109,
-    "below $10.00 minimum for this category": 10,
+    "no_extracted_offer": 110,
+    "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
   "products": [
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 67.68,
+          "price": 67.85,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.99,
+          "price": 31.67,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
