@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-04T01:04:11.465350+00:00",
+  "generated_at": "2026-07-04T06:25:25.493405+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 788,
-    "not_included_sources": 445,
+    "included_sources": 787,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 788,
+    "included": 787,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 109,
+    "no_extracted_offer": 110,
     "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.19,
+          "price": 68.05,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.99,
+          "price": 31.67,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -10076,7 +10076,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 942.72,
+          "price": 941.52,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10187,7 +10187,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 662.81,
+          "price": 661.97,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
