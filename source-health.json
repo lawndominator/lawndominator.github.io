@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-05T13:13:33.711342+00:00",
+  "generated_at": "2026-07-05T16:09:50.519400+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 788,
-    "not_included_sources": 445,
+    "included_sources": 787,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 788,
-    "not_checked_saved_source_limit": 325,
+    "included": 787,
+    "not_checked_saved_source_limit": 326,
     "no_extracted_offer": 110,
     "below $10.00 minimum for this category": 9,
     "no_price": 1
@@ -1010,7 +1010,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 105.72,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 66.7,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.35,
+          "price": 31.22,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -11172,10 +11172,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.98,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11458,8 +11458,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
