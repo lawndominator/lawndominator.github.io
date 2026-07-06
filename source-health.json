@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-06T00:51:30.958559+00:00",
+  "generated_at": "2026-07-06T15:10:17.897419+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 786,
-    "not_included_sources": 447,
+    "included_sources": 787,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 786,
-    "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 109,
-    "below $10.00 minimum for this category": 10,
+    "included": 787,
+    "not_checked_saved_source_limit": 326,
+    "no_extracted_offer": 110,
+    "below $10.00 minimum for this category": 9,
     "no_price": 1
   },
   "products": [
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.99,
+          "price": 35.17,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.9,
+          "price": 68.21,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4471,7 +4471,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.95,
+          "price": 50.95,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5523,7 +5523,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.9,
+          "price": 33.95,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -7402,7 +7402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.43,
+          "price": 29.33,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -11774,10 +11774,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 169.99,
+          "offer_url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20"
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902",
@@ -11930,8 +11930,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 10,
+      "included_sources": 7,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
