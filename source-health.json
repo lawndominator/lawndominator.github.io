@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-08T19:17:22.017474+00:00",
+  "generated_at": "2026-07-08T22:00:25.980326+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
@@ -11,8 +11,8 @@
   },
   "reason_counts": {
     "included": 785,
-    "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 108,
+    "not_checked_saved_source_limit": 325,
+    "no_extracted_offer": 109,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
@@ -3977,7 +3977,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 62.75,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 68.07,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4321,7 +4321,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.99,
+          "price": 29.01,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -6692,7 +6692,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.64,
+          "price": 28.99,
           "offer_url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp"
         }
       ],
@@ -8053,10 +8053,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8139,8 +8139,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 23,
-      "not_included_sources": 6,
+      "included_sources": 22,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -11173,10 +11173,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.98,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11459,8 +11459,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
