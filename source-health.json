@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-08T06:00:38.084182+00:00",
+  "generated_at": "2026-07-08T16:42:25.522668+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 784,
-    "not_included_sources": 449,
+    "included_sources": 785,
+    "not_included_sources": 448,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 784,
+    "included": 785,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 109,
+    "no_extracted_offer": 108,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
@@ -3977,7 +3977,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 62.75,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.15,
+          "price": 68.21,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4321,7 +4321,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.01,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -5332,7 +5332,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 228.48,
+          "price": 235.0,
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide"
         },
         {
@@ -5372,7 +5372,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 228.48,
+          "price": 235.0,
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
@@ -6386,7 +6386,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 40.49,
+          "price": 44.99,
           "offer_url": "https://yardmastery.com/products/24-0-6-flagship-granular-lawn-fertilizer-with-iron"
         }
       ],
@@ -6427,7 +6427,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 40.49,
+          "price": 44.99,
           "offer_url": "https://yardmastery.com/products/16-0-0-double-dark-with-6-iron-and-bio-nite%e2%84%a2"
         }
       ],
@@ -6478,7 +6478,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 40.49,
+          "price": 44.99,
           "offer_url": "https://yardmastery.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2"
         }
       ],
@@ -6519,7 +6519,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 40.49,
+          "price": 44.99,
           "offer_url": "https://yardmastery.com/products/freedom-granular-lawn-fertilizer"
         }
       ],
@@ -6540,7 +6540,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.24,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
@@ -6580,7 +6580,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 21.24,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer?variant=39522720251956"
         },
         {
@@ -6631,7 +6631,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.99,
+          "price": 39.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer"
         },
         {
@@ -6671,7 +6671,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 33.99,
+          "price": 39.99,
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
@@ -6754,7 +6754,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.24,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant"
         },
         {
@@ -6784,7 +6784,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 21.24,
+          "price": 24.99,
           "offer_url": "https://yardmastery.com/products/rgs-root-growth-liquid-biostimulant?variant=39523799760948"
         },
         {
@@ -8053,10 +8053,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8139,8 +8139,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 7,
+      "included_sources": 23,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -9291,7 +9291,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 22.25,
+          "price": 22.23,
           "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
         },
         {
