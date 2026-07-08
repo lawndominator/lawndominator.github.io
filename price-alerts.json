@@ -1,11 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-08T16:42:25.522668+00:00",
+  "generated_at": "2026-07-08T19:17:22.017474+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 5,
+  "current_alert_count": 1,
+  "alert_count": 4,
   "alerts": [
+    {
+      "id": "clearys-3336-f:major_price_drop:amazon:83.92:71.40",
+      "type": "major_price_drop",
+      "product_id": 55,
+      "product_slug": "clearys-3336-f",
+      "product_name": "Clearys 3336 F (Thiophanate-Methyl)",
+      "category": "fungicide",
+      "old_price": 83.92,
+      "new_price": 71.4,
+      "drop_percent": 14.9,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20",
+      "in_stock": true,
+      "created_at": "2026-07-08T19:17:22.017474+00:00"
+    },
     {
       "id": "speedzone-southern:best_price_drop:solutions:96.84:87.56",
       "type": "best_price_drop",
@@ -53,38 +69,6 @@
       "url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp",
       "in_stock": true,
       "created_at": "2026-07-01T20:03:12.184512+00:00"
-    },
-    {
-      "id": "spyker-p70-12010:best_price_drop:autoplicity:649.99:599.17",
-      "type": "best_price_drop",
-      "product_id": 314,
-      "product_slug": "spyker-p70-12010",
-      "product_name": "Spyker P70-12010 Commercial Drop Spreader (120 lb)",
-      "category": "spreader-push",
-      "old_price": 649.99,
-      "new_price": 599.17,
-      "drop_percent": 7.8,
-      "old_retailer": "Woodsplitterdirect",
-      "new_retailer": "Autoplicity",
-      "url": "https://autoplicity.com/16552791-spyker-spreaders-p70-12010",
-      "in_stock": true,
-      "created_at": "2026-07-01T17:15:52.801351+00:00"
-    },
-    {
-      "id": "spyker-p70-12010:new_lowest_retailer:autoplicity:649.99:599.17",
-      "type": "new_lowest_retailer",
-      "product_id": 314,
-      "product_slug": "spyker-p70-12010",
-      "product_name": "Spyker P70-12010 Commercial Drop Spreader (120 lb)",
-      "category": "spreader-push",
-      "old_price": 649.99,
-      "new_price": 599.17,
-      "drop_percent": 7.8,
-      "old_retailer": "Woodsplitterdirect",
-      "new_retailer": "Autoplicity",
-      "url": "https://autoplicity.com/16552791-spyker-spreaders-p70-12010",
-      "in_stock": true,
-      "created_at": "2026-07-01T17:15:52.801351+00:00"
     }
   ]
 }
