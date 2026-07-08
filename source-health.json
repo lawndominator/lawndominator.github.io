@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-07T22:14:26.840902+00:00",
+  "generated_at": "2026-07-08T00:41:44.042357+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1233,
     "manual_verified_sources": 555,
-    "included_sources": 786,
-    "not_included_sources": 447,
+    "included_sources": 785,
+    "not_included_sources": 448,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 786,
+    "included": 785,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 107,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 106,
+    "below $10.00 minimum for this category": 13,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -1476,7 +1476,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.05,
+          "price": 55.99,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5209,9 +5209,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -8053,10 +8053,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8139,8 +8139,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 23,
-      "not_included_sources": 6,
+      "included_sources": 22,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
