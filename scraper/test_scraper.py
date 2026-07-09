@@ -280,6 +280,46 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(offer["url"], "https://www.solutionsstores.com/prodiamine-65-wdg")
         self.assertEqual(offer["source"], "google_shopping_store")
 
+    def test_manual_package_sizes_cover_current_price_feed_curation_list(self):
+        cases = [
+            (131, "Andersons Lawn PGF Balanced™ 10-10-10 - Shop", "https://shop.app/products/8913192157430/pgf-balanced-10-10-10", 18.0, "lb"),
+            (135, "Biomend DG Black Gypsum", "https://customhydronutrients.com/products/biomend-dg-black-gypsum", 50.0, "lb"),
+            (137, "The Andersons Dirt Booster Plus Compost Starter and Soil Amendment | eBay", "https://www.ebay.com/itm/236362202521", 20.0, "lb"),
+            (138, "The Anderson's Humic DG CharX", "https://www.domyown.com/andersons-humic-dg-charx-p-24597.html", 40.0, "lb"),
+            (156, "7-0-0 GreeNe Effect | N-Ext", "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer", 128.0, "fl oz"),
+            (156, "Nitrogen Fertilizer + High Iron (6%) 7-0-0 Greene Effect", "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20", 256.0, "fl oz"),
+            (195, "Skip to content", "https://www.acehardware.com/departments/lawn-and-garden/lawn-care/soil-conditioners/7693005", 15.0, "lb"),
+            (199, "CarbonizPN-G™ Granular Soil Compost & Biochar", "https://golfcourselawn.store/products/essential-g%e2%84%a2-granular-carbon-free-shipping", 40.0, "lb"),
+            (206, "TurfGrassPro Blade Iron 15 - 0 - 0", "https://www.domyown.com/turfgrasspro-blade-iron-15-p-17267.html", 320.0, "fl oz"),
+            (207, "Turf Nectar AC", "https://www.solutionsstores.com/turf-nectar-ac", 320.0, "fl oz"),
+            (208, "Southern Ag Chelated Liquid Iron", "https://www.solutionsstores.com/southern-ag-chelated-liquid-iron", 16.0, "fl oz"),
+            (208, "Southern Ag Chelated Liquid Iron", "https://diypestcontrol.com/southern-ag-chelated-liquid-iron", 128.0, "fl oz"),
+            (210, "Quest Products", "https://www.grandarborsupply.com/brands/quest-products", 3.0, "lb"),
+            (215, "Sulfate of Potash 0-0-50 Granular Fertilizer 50# Bag", "https://www.agcareproducts.com/products/4925-sulfate-of-potash-0050-gr-fer", 50.0, "lb"),
+            (221, "LESCO Carbon Pro G - Biochar Lawn Soil Enhancer", "https://lawnsynergy.com/products/lesco-carbonpro-g", 40.0, "lb"),
+            (223, "LESCO 24-0-11 Lawn Fertilizer - Slow-Release Nitrogen with Potassium", "https://lawnsynergy.com/products/lesco-24-0-11-fertilizer", 50.0, "lb"),
+            (224, "LESCO 46-0-0 Sprayable Urea - High Nitrogen Liquid Fertilizer", "https://lawnsynergy.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer", 50.0, "lb"),
+            (225, "LESCO 0-0-7 Stonewall Pre-Emergent Fertilizer - Crabgrass Preventer", "https://lawnsynergy.com/products/lesco-0-0-7-pre-emergent-fertlizer", 50.0, "lb"),
+            (226, "Buy Lesco 19-0-6 Dimension Pre-Emergent Fertilizer | Lawn Synergy", "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-19-0-6-dimension-pre-emergent-fertilizer", 50.0, "lb"),
+            (229, "LESCO Moisture Manager | Prevent Dry Spots in Lawn - PlantingTree", "https://www.plantingtree.com/products/lesco-moisture-manager", 32.0, "fl oz"),
+        ]
+
+        for product_id, title, url, quantity, unit in cases:
+            with self.subTest(product_id=product_id, title=title):
+                package = scraper.manual_package_size(
+                    {"id": product_id},
+                    {
+                        "title": title,
+                        "url": url,
+                        "retailer": scraper.retailer_key(url),
+                        "price": 20,
+                    },
+                )
+
+                self.assertIsNotNone(package)
+                self.assertEqual(package["package_quantity"], quantity)
+                self.assertEqual(package["package_unit"], unit)
+
     def test_rejects_google_intermediary_store_links(self):
         product = {
             "name": "Prodiamine 65WDG",
@@ -674,6 +714,20 @@ class ScraperExtractionTests(unittest.TestCase):
                 116,
                 "https://yardmastery.com/products/hydr8-liquicuretm-soil-surfactant-wetting-agent",
                 "Hydr8 Liquicure",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                210,
+                "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros",
+                "Main Event Dry Iron – EDDHA Chelated Iron for High pH Soils",
+            )
+        )
+        self.assertFalse(
+            scraper.is_known_wrong_product_source(
+                210,
+                "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros-3",
+                "Main Event Dry Iron – EDDHA Chelated Iron for High pH Soils 3 lbs",
             )
         )
         self.assertTrue(

@@ -714,6 +714,72 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     if product_id == 118 and "feature" in text:
         return _package(2.5, "lb")
 
+    if product_id == 131 and ("pgf-balanced" in text or "pgf balanced" in text):
+        return _package(18.0, "lb")
+
+    if product_id == 135 and ("black-gypsum" in text or "black gypsum" in text):
+        return _package(50.0, "lb")
+
+    if product_id == 137 and ("dirt-booster" in text or "dirt booster" in text):
+        return _package(20.0, "lb")
+
+    if product_id == 138 and ("humic-dg-charx" in text or "humic dg charx" in text or "charx" in text):
+        return _package(40.0, "lb")
+
+    if product_id == 156 and ("greene-effect" in text or "greene effect" in text or "green effect" in text):
+        if "b098zr65hx" in url or "2 gallon" in text or "2-gallon" in text:
+            return _package(256.0, "fl oz")
+        if "5 gallon" in text or "5-gallon" in text:
+            return _package(640.0, "fl oz")
+        return _package(128.0, "fl oz")
+
+    if product_id == 195 and ("hydretain" in text or "acehardware.com" in url):
+        if "15" in text and ("lb" in text or "lbs" in text or "pound" in text):
+            return _package(15.0, "lb")
+        if "6000 sq ft" in text or "6,000 sq ft" in text or "acehardware.com" in url:
+            return _package(15.0, "lb")
+        return _package(3.0, "lb")
+
+    if product_id == 199 and ("carbonizpn" in text or "essential-g" in text):
+        return _package(40.0, "lb")
+
+    if product_id == 206 and ("blade-iron" in text or "blade iron" in text):
+        return _package(320.0, "fl oz")
+
+    if product_id == 207 and ("turf-nectar" in text or "turf nectar" in text or "elemax" in text or "ele-max" in text):
+        return _package(320.0, "fl oz")
+
+    if product_id == 208 and ("chelated-liquid-iron" in text or "chelated liquid iron" in text):
+        if "1 gallon" in text or "1-gallon" in text or "diypestcontrol.com" in url:
+            return _package(128.0, "fl oz")
+        return _package(16.0, "fl oz")
+
+    if product_id == 210 and ("main-event-dry-iron" in text or "main event dry iron" in text or "quest products" in text):
+        return _package(3.0, "lb")
+
+    if product_id == 215 and ("sulfate-of-potash" in text or "sulfate of potash" in text):
+        if "50#" in text or "50-lb" in text or "50 lb" in text:
+            return _package(50.0, "lb")
+        return _package(20.0, "lb")
+
+    if product_id == 221 and ("carbonpro-g" in text or "carbon pro g" in text):
+        return _package(40.0, "lb")
+
+    if product_id == 224 and ("46-0-0" in text or "urea" in text):
+        return _package(50.0, "lb")
+
+    if product_id in {223, 225, 226} and "lesco" in text:
+        return _package(50.0, "lb")
+
+    if product_id == 229 and ("moisture-manager" in text or "moisture manager" in text):
+        if "32 oz" in text or "32-oz" in text or "32 ounce" in text:
+            return _package(32.0, "fl oz")
+        if "1 gallon" in text or "1-gallon" in text:
+            return _package(128.0, "fl oz")
+        if "2.5 gallon" in text or "2-5 gallon" in text or "2-5-gal" in text:
+            return _package(320.0, "fl oz")
+        return _package(32.0, "fl oz")
+
     return None
 
 
@@ -790,6 +856,8 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
     if product_id == 71 and ("acelepryn-sc" in text or "acelepryn sc" in text):
         return True
     if product_id == 116 and "hydr8" in text:
+        return True
+    if product_id == 210 and "sunspotsupply.com/products/main-event-dry-iron-10-micros" in text and "main-event-dry-iron-10-micros-3" not in text:
         return True
     if product_id == 71 and "acelepryn-4oz" in text:
         return True
@@ -904,6 +972,8 @@ def sanitize_equipment_results(results: list[dict]) -> None:
             clean_offers.append(offer)
         product["offers"] = clean_offers
         product["best_price"] = select_best_offer(product, clean_offers)
+        product.pop("has_multiple_sizes", None)
+        product.pop("needs_size_review", None)
 
 
 def sanitize_equipment_sources(source_map: dict, catalog_products: list[dict]) -> None:
