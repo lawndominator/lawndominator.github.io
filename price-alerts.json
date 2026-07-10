@@ -1,11 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-10T19:17:45.008231+00:00",
+  "generated_at": "2026-07-10T22:03:01.563276+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
+  "current_alert_count": 1,
   "alert_count": 13,
   "alerts": [
+    {
+      "id": "scotts-edgeguard-dlx:best_price_drop:amazon:99.97:94.97",
+      "type": "best_price_drop",
+      "product_id": 319,
+      "product_slug": "scotts-edgeguard-dlx",
+      "product_name": "Scotts Turf Builder EdgeGuard DLX Spreader",
+      "category": "spreader-push",
+      "old_price": 99.97,
+      "new_price": 94.97,
+      "drop_percent": 5.0,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20",
+      "in_stock": true,
+      "created_at": "2026-07-10T22:03:01.563276+00:00"
+    },
     {
       "id": "turfgrasspro-blade-iron:major_price_drop:domyown:75.95:61.46",
       "type": "major_price_drop",
@@ -165,22 +181,6 @@
       "url": "https://www.plantingtree.com/products/lesco-moisture-manager",
       "in_stock": true,
       "created_at": "2026-07-09T20:24:45.942885+00:00"
-    },
-    {
-      "id": "clearys-3336-f:major_price_drop:amazon:83.92:71.40",
-      "type": "major_price_drop",
-      "product_id": 55,
-      "product_slug": "clearys-3336-f",
-      "product_name": "Clearys 3336 F (Thiophanate-Methyl)",
-      "category": "fungicide",
-      "old_price": 83.92,
-      "new_price": 71.4,
-      "drop_percent": 14.9,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-07-08T19:17:22.017474+00:00"
     },
     {
       "id": "speedzone-southern:best_price_drop:solutions:96.84:87.56",
