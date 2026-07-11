@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-10T22:03:01.563276+00:00",
+  "generated_at": "2026-07-11T00:43:01.065910+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 784,
-    "not_included_sources": 448,
+    "included_sources": 783,
+    "not_included_sources": 449,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 784,
+    "included": 783,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 108,
+    "no_extracted_offer": 109,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.45,
+          "price": 31.55,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3977,7 +3977,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 62.75,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4847,7 +4847,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 141.63,
+          "price": 204.69,
           "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-gallon"
         },
         {
@@ -4947,7 +4947,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 56.46,
+          "price": 73.13,
           "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-quart"
         },
         {
@@ -8043,10 +8043,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8129,8 +8129,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 6,
+      "included_sources": 21,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
