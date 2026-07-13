@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-12T21:41:57.647053+00:00",
+  "generated_at": "2026-07-13T00:44:00.728916+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 783,
-    "not_included_sources": 449,
+    "included_sources": 784,
+    "not_included_sources": 448,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 783,
-    "not_checked_saved_source_limit": 327,
+    "included": 784,
+    "not_checked_saved_source_limit": 326,
     "no_extracted_offer": 108,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 105.72,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1476,7 +1476,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.63,
+          "price": 59.95,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -11765,10 +11765,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 169.99,
+          "offer_url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20"
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902",
@@ -11921,8 +11921,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 10,
+      "included_sources": 7,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
