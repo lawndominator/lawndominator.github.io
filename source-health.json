@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-14T18:51:33.720400+00:00",
+  "generated_at": "2026-07-14T21:51:10.066542+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 785,
-    "not_included_sources": 447,
+    "included_sources": 787,
+    "not_included_sources": 445,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 785,
-    "not_checked_saved_source_limit": 326,
+    "included": 787,
+    "not_checked_saved_source_limit": 325,
     "no_extracted_offer": 106,
-    "below $10.00 minimum for this category": 12,
+    "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.06,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -8043,10 +8043,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8129,8 +8129,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 7,
+      "included_sources": 22,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.98,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
@@ -11536,7 +11536,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 94.97,
+          "price": 108.44,
           "offer_url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20"
         },
         {
