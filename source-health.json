@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-14T13:12:39.858930+00:00",
+  "generated_at": "2026-07-14T16:23:26.422782+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 786,
-    "not_included_sources": 446,
+    "included_sources": 785,
+    "not_included_sources": 447,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 786,
+    "included": 785,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 106,
+    "no_extracted_offer": 107,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.17,
+          "price": 35.09,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4472,7 +4472,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.26,
+          "price": 45.98,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -5188,10 +5188,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5224,8 +5224,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -5524,7 +5524,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.98,
+          "price": 34.97,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -7403,7 +7403,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.81,
+          "price": 27.15,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -8043,10 +8043,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8129,8 +8129,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 6,
+      "included_sources": 21,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -9281,7 +9281,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.14,
+          "price": 22.99,
           "offer_url": "https://www.amazon.com/dp/B07CRNTR7G?tag=lawndominator-20"
         },
         {
@@ -12692,10 +12692,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 371.24,
+          "offer_url": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer"
         },
         {
           "url": "https://veseris.com/default/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3",
@@ -12818,8 +12818,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 9,
+      "included_sources": 9,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
