@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-15T00:39:05.125775+00:00",
+  "generated_at": "2026-07-15T05:41:27.726232+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 787,
-    "not_included_sources": 445,
+    "included_sources": 786,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 787,
-    "not_checked_saved_source_limit": 325,
+    "included": 786,
+    "not_checked_saved_source_limit": 326,
     "no_extracted_offer": 106,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
@@ -3997,7 +3997,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1350.0,
+          "price": 95.0,
           "offer_url": "https://chemicalwarehouse.com/products/acelepryn"
         },
         {
@@ -7403,7 +7403,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.15,
+          "price": 28.23,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -8043,10 +8043,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8129,8 +8129,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 7,
+      "included_sources": 22,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -10067,7 +10067,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 944.51,
+          "price": 950.96,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10178,7 +10178,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 664.08,
+          "price": 668.61,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -10751,10 +10751,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 181.71,
-          "offer_url": "https://www.ebay.com/itm/405151435247"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://factorypure.com/products/earthway-2050p-commercial-broadcast-spreader-80-lbs-hopper-with-pneumatic-tires-new",
@@ -10917,8 +10917,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 11,
+      "included_sources": 9,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 40.93,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
@@ -11536,7 +11536,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 99.97,
+          "price": 94.97,
           "offer_url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20"
         },
         {
@@ -13873,7 +13873,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 512.54,
+          "price": 469.99,
           "offer_url": "https://cannavista.com/grow-equipment-supplies/growing-accessories/sprayers-and-hoses/jacto-pjb16-battery-backpack-sprayer-4gal-lithium-ion"
         },
         {
