@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-14T21:51:10.066542+00:00",
+  "generated_at": "2026-07-15T00:39:05.125775+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 105.72,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -8043,10 +8043,10 @@
           "retailer": "nocoastturf",
           "retailer_name": "Nocoastturf",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/humic-acid/main-event-high-carbon-huma-k-0-0-10"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/main-dry-event-manganese",
@@ -8129,8 +8129,8 @@
           "offer_url": "https://nocoastturf.com/lawn-and-turf-products/lawn/micronutrients/soil-fusion/main-event-soil-fusion-0-0-5-3-lb"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 6,
+      "included_sources": 21,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -10751,10 +10751,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 181.71,
+          "offer_url": "https://www.ebay.com/itm/405151435247"
         },
         {
           "url": "https://factorypure.com/products/earthway-2050p-commercial-broadcast-spreader-80-lbs-hopper-with-pneumatic-tires-new",
@@ -10917,8 +10917,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 12,
+      "included_sources": 10,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -11165,7 +11165,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 44.98,
+          "price": 40.93,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
@@ -11536,7 +11536,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 108.44,
+          "price": 99.97,
           "offer_url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20"
         },
         {
