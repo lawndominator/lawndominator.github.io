@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-16T00:41:33.873944+00:00",
+  "generated_at": "2026-07-16T05:53:04.875545+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 14,
+  "alert_count": 13,
   "alerts": [
     {
       "id": "scotts-edgeguard-dlx:best_price_drop:amazon:99.97:94.97",
@@ -21,22 +21,6 @@
       "url": "https://www.amazon.com/dp/B001H1EQO2?tag=lawndominator-20",
       "in_stock": true,
       "created_at": "2026-07-15T05:41:27.726232+00:00"
-    },
-    {
-      "id": "ryobi-p2860:major_price_drop:directtoolsoutlet:179.99:122.99",
-      "type": "major_price_drop",
-      "product_id": 349,
-      "product_slug": "ryobi-p2860",
-      "product_name": "RYOBI P2860 18V ONE+ 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "old_price": 179.99,
-      "new_price": 122.99,
-      "drop_percent": 31.7,
-      "old_retailer": "Directtoolsoutlet",
-      "new_retailer": "Directtoolsoutlet",
-      "url": "https://www.directtoolsoutlet.com/products/p2860",
-      "in_stock": true,
-      "created_at": "2026-07-14T05:41:18.662264+00:00"
     },
     {
       "id": "scotts-handygreen-ii:major_price_drop:homedepot:21.58:18.39",
