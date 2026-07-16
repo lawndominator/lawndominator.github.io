@@ -412,6 +412,40 @@ class ScraperExtractionTests(unittest.TestCase):
             )
         )
 
+    def test_price_tracker_urls_are_not_purchase_pages(self):
+        self.assertTrue(
+            scraper.is_bad_product_url(
+                "https://camelcamelcamel.com/product/B076TFPB1Z"
+            )
+        )
+        self.assertTrue(
+            scraper.is_bad_product_url(
+                "https://keepa.com/#!product/1-B076TFPB1Z"
+            )
+        )
+        self.assertFalse(
+            scraper.is_bad_product_url(
+                "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20"
+            )
+        )
+
+    def test_add_offer_rejects_price_tracker(self):
+        offers = []
+
+        added = scraper.add_offer(
+            offers,
+            {
+                "retailer": "camelcamelcamel",
+                "retailer_name": "CamelCamelCamel",
+                "price": 19.99,
+                "url": "https://camelcamelcamel.com/product/B076TFPB1Z",
+                "in_stock": True,
+            },
+        )
+
+        self.assertFalse(added)
+        self.assertEqual(offers, [])
+
     def test_best_offer_ignores_out_of_stock_product_page(self):
         product = {"id": 1, "category": "soil-amendment"}
         offers = [
