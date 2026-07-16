@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-16T13:24:58.667885+00:00",
+  "generated_at": "2026-07-16T16:20:47.517250+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 787,
-    "not_included_sources": 445,
+    "included_sources": 786,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 787,
-    "not_checked_saved_source_limit": 326,
+    "included": 786,
+    "not_checked_saved_source_limit": 327,
     "no_extracted_offer": 105,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.88,
+          "price": 55.71,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -5524,7 +5524,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.99,
+          "price": 34.95,
           "offer_url": "https://www.amazon.com/dp/B009KS5ZF8?tag=lawndominator-20"
         },
         {
@@ -6315,7 +6315,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 78.72,
+          "price": 79.95,
           "offer_url": "https://www.gardenersedge.com/humichar-trade/p/HUMCHAR"
         },
         {
@@ -6325,7 +6325,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 78.72,
+          "price": 79.95,
           "offer_url": "https://www.amleo.com/humichar-trade/p/HUMCHAR"
         },
         {
@@ -7363,7 +7363,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 6.67,
+          "price": 7.57,
           "offer_url": "https://www.solutionsstores.com/southern-ag-chelated-liquid-iron"
         },
         {
@@ -11765,10 +11765,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 169.99,
-          "offer_url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/scotts-scotts-elite-spreader-75902",
@@ -11921,8 +11921,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 9,
+      "included_sources": 6,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
