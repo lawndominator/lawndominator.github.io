@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-17T00:39:32.147113+00:00",
+  "generated_at": "2026-07-17T05:53:43.578121+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 787,
-    "not_included_sources": 445,
+    "included_sources": 785,
+    "not_included_sources": 447,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 787,
+    "included": 785,
     "not_checked_saved_source_limit": 328,
-    "no_extracted_offer": 103,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 104,
+    "below $10.00 minimum for this category": 12,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -5188,9 +5188,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
           "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
@@ -5208,10 +5208,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5224,8 +5224,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -10067,7 +10067,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 952.12,
+          "price": 952.05,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10178,7 +10178,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 669.42,
+          "price": 669.37,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
