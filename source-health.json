@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-18T12:33:39.597463+00:00",
+  "generated_at": "2026-07-18T15:48:58.396895+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 788,
-    "not_included_sources": 444,
+    "included_sources": 786,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 788,
+    "included": 786,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 103,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 104,
+    "below $10.00 minimum for this category": 12,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.49,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4168,7 +4168,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 228.0,
+          "price": 155.99,
           "offer_url": "https://golfcourselawn.store/products/acelepryn-g-insecticide-grub-and-armyworm-control?variant=42408172781817"
         }
       ],
@@ -5188,10 +5188,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 320.65,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
           "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
@@ -5224,8 +5224,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -7403,7 +7403,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.15,
+          "price": 28.44,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -8166,7 +8166,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.0,
+          "price": 47.77,
           "offer_url": "https://seedbarn.com/products/sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs"
         },
         {
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 39.13,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
@@ -12157,10 +12157,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 246.44,
+          "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B002U0KDHI?tag=lawndominator-20",
@@ -12213,8 +12213,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 10,
+      "included_sources": 3,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
