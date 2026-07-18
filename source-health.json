@@ -1,19 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-18T05:31:00.082522+00:00",
+  "generated_at": "2026-07-18T12:33:39.597463+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 785,
-    "not_included_sources": 447,
+    "included_sources": 788,
+    "not_included_sources": 444,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 785,
+    "included": 788,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 110,
-    "below $10.00 minimum for this category": 9,
+    "no_extracted_offer": 103,
+    "below $10.00 minimum for this category": 11,
+    "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
   "products": [
@@ -1050,7 +1051,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 214.0,
+          "price": 139.99,
           "offer_url": "https://golfcourselawn.store/products/certainty-herbicide-1-25-oz-sedge-and-poa-annua-control"
         },
         {
@@ -1151,7 +1152,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 129.0,
+          "price": 84.99,
           "offer_url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer"
         },
         {
@@ -1211,7 +1212,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 129.0,
+          "price": 84.99,
           "offer_url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer?variant=46526175543545"
         }
       ],
@@ -2041,7 +2042,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 262.0,
+          "price": 183.95,
           "offer_url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons"
         },
         {
@@ -2061,7 +2062,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 262.0,
+          "price": 183.95,
           "offer_url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons?variant=47621611094234"
         }
       ],
@@ -2305,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.35,
+          "price": 28.49,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2325,7 +2326,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 79.0,
+          "price": 49.99,
           "offer_url": "https://golfcourselawn.store/products/primo-maxx-plant-growth-regulator-4-oz"
         },
         {
@@ -2373,10 +2374,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 399.95,
+          "offer_url": "https://seedbarn.com/products/primo-maxx-plant-growth-regulator-1-gallon"
         },
         {
           "url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator?variant=42990895628426",
@@ -2409,8 +2410,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 6,
+      "included_sources": 8,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -3223,10 +3224,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 159.95,
+          "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs"
         },
         {
           "url": "https://lawnsynergy.com/products/armada-50-wdg-fungicide?variant=46431100403850",
@@ -3249,8 +3250,8 @@
           "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -3812,7 +3813,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1125.0,
+          "price": 789.95,
           "offer_url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon"
         },
         {
@@ -3822,7 +3823,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1125.0,
+          "price": 789.95,
           "offer_url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon?variant=47651436888282"
         }
       ],
@@ -4671,10 +4672,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 127.77,
+          "offer_url": "https://seedbarn.com/products/arena-0-25g-insecticide-30-lbs?variant=12530110759012"
         },
         {
           "url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs?variant=43994456490170",
@@ -4687,8 +4688,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs?variant=43994456490170"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 1,
+      "included_sources": 6,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -4934,10 +4935,10 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 245.96,
+          "offer_url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-gallon"
         },
         {
           "url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-quart",
@@ -5020,8 +5021,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 10,
+      "included_sources": 10,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
@@ -5402,7 +5403,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 926.0,
+          "price": 649.95,
           "offer_url": "https://seedbarn.com/products/tristar-8-5-sl-insecticide-1-gallon"
         },
         {
@@ -5442,7 +5443,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 926.0,
+          "price": 649.95,
           "offer_url": "https://seedbarn.com/products/tristar-8-5-sl-insecticide-1-gallon?variant=47621438406874"
         },
         {
@@ -5755,9 +5756,9 @@
           "retailer": "target",
           "retailer_name": "Target",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 69.88,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 4.89,
           "offer_url": "https://www.target.com/p/the-andersons-pgf-complete-16-4-8/-/A-1004907707"
         },
         {
@@ -5811,8 +5812,8 @@
           "offer_url": "https://andersonslawn.com/products/pgf-complete-16-4-8?variant=47528654012662"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -5827,9 +5828,9 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 4.84,
+          "offer_url": "https://www.target.com/p/the-andersons-pgf-balanced-10-10-10/-/A-1004907715"
         },
         {
           "url": "https://shop.app/products/8913192157430/pgf-balanced-10-10-10",
@@ -6019,9 +6020,9 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $5.00 minimum for this category",
+          "price": 4.94,
+          "offer_url": "https://www.target.com/p/the-andersons-humic-dg/-/A-1004907708"
         },
         {
           "url": "https://www.walmart.com/ip/259000166",
@@ -6070,9 +6071,9 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $5.00 minimum for this category",
+          "price": 4.84,
+          "offer_url": "https://www.target.com/p/the-andersons-humichar/-/A-1004907714"
         },
         {
           "url": "https://www.amazon.com/dp/B0843NQR9J",
@@ -6743,7 +6744,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.0,
+          "price": 24.99,
           "offer_url": "https://ncgrassplugs.com/products/0-0-1-rgs-root-growth-bio-stimulant-sea-kelp-n-ext"
         },
         {
@@ -7159,7 +7160,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.0,
+          "price": 59.0,
           "offer_url": "https://shop.mirimichigreen.com/products/carbonizpn%e2%84%a2-soil-enhancer"
         }
       ],
@@ -8235,7 +8236,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 68.0,
+          "price": 47.77,
           "offer_url": "https://seedbarn.com/products/sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs?variant=47651332358362"
         },
         {
@@ -8924,7 +8925,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 62.0,
+          "price": 42.95,
           "offer_url": "https://seedbarn.com/products/lesco-moisture-manager-liquid"
         },
         {
@@ -8944,7 +8945,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 62.0,
+          "price": 42.95,
           "offer_url": "https://seedbarn.com/products/lesco-moisture-manager-liquid?variant=42022911672538"
         }
       ],
@@ -11164,7 +11165,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 44.98,
+          "price": 39.13,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
