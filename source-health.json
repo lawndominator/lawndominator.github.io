@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-20T06:20:46.833378+00:00",
+  "generated_at": "2026-07-20T13:45:11.736615+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.7,
+          "price": 68.21,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -6478,7 +6478,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 38.24,
           "offer_url": "https://yardmastery.com/products/7-0-20-stress-blend-with-bio-nite%e2%84%a2"
         }
       ],
@@ -6519,7 +6519,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.99,
+          "price": 38.24,
           "offer_url": "https://yardmastery.com/products/freedom-granular-lawn-fertilizer"
         }
       ],
@@ -6540,7 +6540,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer"
         },
         {
@@ -6580,7 +6580,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 21.24,
           "offer_url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer?variant=39522720251956"
         },
         {
@@ -6692,7 +6692,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.99,
+          "price": 24.64,
           "offer_url": "https://yardmastery.com/products/spoon-juice-5-0-1-liquid-fertilizer-and-bio-stimulant-with-humic-acid-and-kelp"
         }
       ],
@@ -7403,7 +7403,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.15,
+          "price": 28.99,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.98,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
@@ -12157,10 +12157,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 246.44,
+          "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B002U0KDHI?tag=lawndominator-20",
@@ -12213,8 +12213,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 10,
+      "included_sources": 3,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
@@ -13651,7 +13651,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 199.99,
+          "price": 189.99,
           "offer_url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20"
         },
         {
