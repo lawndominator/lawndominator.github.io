@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-20T19:41:58.060805+00:00",
+  "generated_at": "2026-07-20T21:59:22.802665+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 786,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 104,
-    "below $10.00 minimum for this category": 12,
+    "no_extracted_offer": 105,
+    "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 15.99,
+          "price": 16.25,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -3408,7 +3408,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 78.7,
+          "price": 78.6,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 63.56,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -13681,7 +13681,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 439.99,
+          "price": 369.99,
           "offer_url": "https://www.ebay.com/itm/397985687597"
         },
         {
