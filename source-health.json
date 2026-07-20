@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-20T16:43:24.836664+00:00",
+  "generated_at": "2026-07-20T19:41:58.060805+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 787,
-    "not_included_sources": 445,
+    "included_sources": 786,
+    "not_included_sources": 446,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 787,
+    "included": 786,
     "not_checked_saved_source_limit": 327,
     "no_extracted_offer": 104,
-    "below $10.00 minimum for this category": 11,
+    "below $10.00 minimum for this category": 12,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.25,
+          "price": 15.99,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1476,7 +1476,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.92,
+          "price": 59.95,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -1919,10 +1919,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1985,8 +1985,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -3408,7 +3408,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 78.78,
+          "price": 78.7,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 41.77,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
@@ -12157,10 +12157,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 246.44,
+          "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B002U0KDHI?tag=lawndominator-20",
@@ -12213,8 +12213,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 10,
+      "included_sources": 3,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
