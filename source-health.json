@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-25T06:05:53.173986+00:00",
+  "generated_at": "2026-07-25T12:36:55.896291+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 784,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 106,
-    "below $10.00 minimum for this category": 11,
+    "no_extracted_offer": 107,
+    "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
   },
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1344,7 +1344,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 104.95,
+          "price": 102.48,
           "offer_url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20"
         },
         {
@@ -1919,10 +1919,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1985,8 +1985,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.01,
+          "price": 30.52,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.15,
+          "price": 66.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -5756,9 +5756,9 @@
           "retailer": "target",
           "retailer_name": "Target",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 4.88,
+          "status": "included",
+          "reason": "included",
+          "price": 69.88,
           "offer_url": "https://www.target.com/p/the-andersons-pgf-complete-16-4-8/-/A-1004907707"
         },
         {
@@ -5812,8 +5812,8 @@
           "offer_url": "https://andersonslawn.com/products/pgf-complete-16-4-8?variant=47528654012662"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 2,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -7403,7 +7403,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.99,
+          "price": 29.87,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
