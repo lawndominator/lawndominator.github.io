@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T19:16:15.179569+00:00",
+  "generated_at": "2026-07-27T21:59:29.649174+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 784,
-    "not_included_sources": 448,
+    "included_sources": 783,
+    "not_included_sources": 449,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 784,
+    "included": 783,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 107,
+    "no_extracted_offer": 108,
     "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 32.85,
+          "price": 30.09,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3408,7 +3408,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 78.31,
+          "price": 78.25,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.89,
+          "price": 68.14,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -10489,10 +10489,10 @@
           "retailer": "autoplicity",
           "retailer_name": "Autoplicity",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 599.17,
-          "offer_url": "https://autoplicity.com/16552791-spyker-spreaders-p70-12010"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.woodsplitterdirect.com/products/spyker%e2%84%a2-commercial-drop-spreader-120-lb-capacity-p70-12010",
@@ -10575,8 +10575,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 7,
+      "included_sources": 4,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
