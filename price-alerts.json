@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T06:28:40.888681+00:00",
+  "generated_at": "2026-07-27T14:11:54.325923+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 5,
+  "current_alert_count": 0,
+  "alert_count": 3,
   "alerts": [
     {
       "id": "flowzone-zephyr:major_price_drop:fzspray:214.99:193.49",
@@ -53,38 +53,6 @@
       "url": "https://ryanknorrlawncare.com/product/groworr",
       "in_stock": true,
       "created_at": "2026-07-23T16:45:04.510575+00:00"
-    },
-    {
-      "id": "n-ext-microgreene:major_price_drop:yardmastery:24.99:21.24",
-      "type": "major_price_drop",
-      "product_id": 155,
-      "product_slug": "n-ext-microgreene",
-      "product_name": "N-Ext MicroGreene 0-0-2",
-      "category": "micronutrient",
-      "old_price": 24.99,
-      "new_price": 21.24,
-      "drop_percent": 15.0,
-      "old_retailer": "Yardmastery",
-      "new_retailer": "Yardmastery",
-      "url": "https://yardmastery.com/products/0-0-2-microgreene-liquid-fertilizer",
-      "in_stock": true,
-      "created_at": "2026-07-20T13:45:11.736615+00:00"
-    },
-    {
-      "id": "petratools-hd4000:best_price_drop:amazon:199.99:189.99",
-      "type": "best_price_drop",
-      "product_id": 348,
-      "product_slug": "petratools-hd4000",
-      "product_name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "old_price": 199.99,
-      "new_price": 189.99,
-      "drop_percent": 5.0,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-07-20T13:45:11.736615+00:00"
     }
   ]
 }
