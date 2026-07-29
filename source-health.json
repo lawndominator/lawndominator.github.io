@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T00:45:08.165291+00:00",
+  "generated_at": "2026-07-29T05:59:48.798074+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 783,
-    "not_included_sources": 449,
+    "included_sources": 784,
+    "not_included_sources": 448,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 783,
+    "included": 784,
     "not_checked_saved_source_limit": 327,
     "no_extracted_offer": 107,
-    "below $10.00 minimum for this category": 11,
+    "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
   },
@@ -81,7 +81,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 109.99,
+          "price": 69.0,
           "offer_url": "https://yardmastery.com/products/prodiamine-65-wdg"
         },
         {
@@ -132,7 +132,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 156.96,
+          "price": 155.8,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -2225,7 +2225,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 433.0,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.94,
+          "price": 34.47,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2993,7 +2993,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 102.49,
+          "price": 87.5,
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide"
         },
         {
@@ -3023,7 +3023,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 40.49,
+          "price": 33.99,
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide?variant=33097543843892"
         }
       ],
@@ -3064,7 +3064,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 65.49,
+          "price": 120.0,
           "offer_url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex"
         },
         {
@@ -3094,7 +3094,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 65.49,
+          "price": 120.0,
           "offer_url": "https://yardmastery.com/products/azoxystrobin-azoxy-2sc-fungicide-liquid-alternative-to-scotts-diseaseex?variant=33101565231156"
         }
       ],
@@ -3408,7 +3408,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 77.96,
+          "price": 77.82,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 65.7,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4371,7 +4371,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 65.99,
+          "price": 62.99,
           "offer_url": "https://yardmastery.com/products/bifenthrin-7-9f-select"
         },
         {
@@ -5209,9 +5209,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -10067,7 +10067,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 946.52,
+          "price": 947.73,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10178,7 +10178,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 665.49,
+          "price": 666.34,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -11956,10 +11956,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12082,8 +12082,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
