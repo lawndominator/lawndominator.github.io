@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-30T05:43:45.984415+00:00",
+  "generated_at": "2026-07-30T13:29:47.384870+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
@@ -11,8 +11,8 @@
   },
   "reason_counts": {
     "included": 784,
-    "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 107,
+    "not_checked_saved_source_limit": 326,
+    "no_extracted_offer": 108,
     "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.25,
+          "price": 15.99,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 105.72,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1476,7 +1476,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.5,
+          "price": 61.25,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.78,
+          "price": 35.17,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4321,7 +4321,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.01,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -9321,7 +9321,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 13.93,
+          "price": 14.01,
           "offer_url": "https://www.dkhardware.com/hi-yield-32340-iron-sulfate-1000-sq-ft-4-lb-product-5655636.html"
         },
         {
@@ -11163,10 +11163,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 40.93,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11449,8 +11449,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
@@ -11956,10 +11956,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12082,8 +12082,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 11,
+      "included_sources": 3,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
