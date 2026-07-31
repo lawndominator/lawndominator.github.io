@@ -1,11 +1,43 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-31T16:42:45.269101+00:00",
+  "generated_at": "2026-07-31T19:13:53.014625+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
+  "current_alert_count": 2,
   "alert_count": 4,
   "alerts": [
+    {
+      "id": "flowzone-zephyr:major_price_drop:diypestcontrol:193.49:171.99",
+      "type": "major_price_drop",
+      "product_id": 333,
+      "product_slug": "flowzone-zephyr",
+      "product_name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
+      "category": "sprayer-backpack",
+      "old_price": 193.49,
+      "new_price": 171.99,
+      "drop_percent": 11.1,
+      "old_retailer": "Fzspray",
+      "new_retailer": "Diypestcontrol",
+      "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
+      "in_stock": true,
+      "created_at": "2026-07-31T19:13:53.014625+00:00"
+    },
+    {
+      "id": "flowzone-zephyr:new_lowest_retailer:diypestcontrol:193.49:171.99",
+      "type": "new_lowest_retailer",
+      "product_id": 333,
+      "product_slug": "flowzone-zephyr",
+      "product_name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
+      "category": "sprayer-backpack",
+      "old_price": 193.49,
+      "new_price": 171.99,
+      "drop_percent": 11.1,
+      "old_retailer": "Fzspray",
+      "new_retailer": "Diypestcontrol",
+      "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
+      "in_stock": true,
+      "created_at": "2026-07-31T19:13:53.014625+00:00"
+    },
     {
       "id": "prodiamine-65wdg:best_price_drop:yardmastery:73.39:69.00",
       "type": "best_price_drop",
@@ -37,38 +69,6 @@
       "url": "https://yardmastery.com/products/prodiamine-65-wdg",
       "in_stock": true,
       "created_at": "2026-07-29T05:59:48.798074+00:00"
-    },
-    {
-      "id": "flowzone-zephyr:major_price_drop:fzspray:214.99:193.49",
-      "type": "major_price_drop",
-      "product_id": 333,
-      "product_slug": "flowzone-zephyr",
-      "product_name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
-      "category": "sprayer-backpack",
-      "old_price": 214.99,
-      "new_price": 193.49,
-      "drop_percent": 10.0,
-      "old_retailer": "Diypestcontrol",
-      "new_retailer": "Fzspray",
-      "url": "https://fzspray.com/products/tool-only-zephyr-battery-powered-backpack-sprayer-4-gallon",
-      "in_stock": true,
-      "created_at": "2026-07-27T06:28:40.888681+00:00"
-    },
-    {
-      "id": "flowzone-zephyr:new_lowest_retailer:fzspray:214.99:193.49",
-      "type": "new_lowest_retailer",
-      "product_id": 333,
-      "product_slug": "flowzone-zephyr",
-      "product_name": "FlowZone Zephyr Battery Backpack Sprayer (4 gal)",
-      "category": "sprayer-backpack",
-      "old_price": 214.99,
-      "new_price": 193.49,
-      "drop_percent": 10.0,
-      "old_retailer": "Diypestcontrol",
-      "new_retailer": "Fzspray",
-      "url": "https://fzspray.com/products/tool-only-zephyr-battery-powered-backpack-sprayer-4-gallon",
-      "in_stock": true,
-      "created_at": "2026-07-27T06:28:40.888681+00:00"
     }
   ]
 }
