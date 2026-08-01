@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-01T06:03:21.830911+00:00",
+  "generated_at": "2026-08-01T12:54:16.391352+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 783,
-    "not_included_sources": 449,
+    "included_sources": 782,
+    "not_included_sources": 450,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 783,
+    "included": 782,
     "not_checked_saved_source_limit": 327,
     "no_extracted_offer": 108,
-    "below $10.00 minimum for this category": 10,
+    "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
   },
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.45,
+          "price": 56.31,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1919,10 +1919,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1985,8 +1985,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.22,
+          "price": 35.17,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3977,7 +3977,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 56.02,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 68.88,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4321,7 +4321,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.01,
+          "price": 30.99,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -4472,7 +4472,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.26,
+          "price": 45.71,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -5340,9 +5340,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 240.9,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/kontos-greenhouse-and-nursery-insecticide-miticide"
         },
         {
@@ -5376,8 +5376,8 @@
           "offer_url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide?variant=45346684043402"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 0,
+      "included_sources": 5,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -11956,10 +11956,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12082,8 +12082,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 11,
+      "included_sources": 3,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
