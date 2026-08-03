@@ -1,21 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-03T19:22:47.548242+00:00",
+  "generated_at": "2026-08-03T21:55:23.262454+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 783,
-    "not_included_sources": 449,
+    "included_sources": 782,
+    "not_included_sources": 450,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 783,
+    "included": 782,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 108,
+    "no_extracted_offer": 110,
     "below $10.00 minimum for this category": 10,
-    "below $5.00 minimum for this category": 3,
-    "no_price": 1
+    "below $5.00 minimum for this category": 3
   },
   "products": [
     {
@@ -1011,7 +1010,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 105.72,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -2306,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 32.27,
+          "price": 33.35,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3408,7 +3407,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 76.79,
+          "price": 76.74,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 66.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4907,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.87,
+          "price": 81.95,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -8335,9 +8334,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 99.95,
           "offer_url": "https://www.amazon.com/dp/B08Z6NLYL7?tag=lawndominator-20"
         },
         {
@@ -8371,8 +8370,8 @@
           "offer_url": "https://lawnsynergy.com/products/lesco-carbonpro-g?variant=42501778800778"
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 3,
+      "included_sources": 9,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -11956,10 +11955,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 50.0,
-          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12082,8 +12081,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 11,
+      "included_sources": 3,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
@@ -12692,10 +12691,10 @@
           "retailer": "fzspray",
           "retailer_name": "Fzspray",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 371.24,
-          "offer_url": "https://fzspray.com/products/typhoon-3-battery-powered-backpack-sprayer"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://veseris.com/default/flowzone-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3",
@@ -12818,8 +12817,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 8,
+      "included_sources": 8,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
