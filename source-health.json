@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-04T06:05:30.741565+00:00",
+  "generated_at": "2026-08-04T13:36:28.825881+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 784,
-    "not_included_sources": 448,
+    "included_sources": 785,
+    "not_included_sources": 447,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 784,
+    "included": 785,
     "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 109,
+    "no_extracted_offer": 108,
     "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3
   },
@@ -1333,7 +1333,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 87.69,
+          "price": 87.26,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -2224,7 +2224,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 433.0,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.9,
+          "price": 81.95,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -8458,7 +8458,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1124.93,
+          "price": 1080.75,
           "offer_url": "https://www.siteone.com/en/511538b-lesco-24-0-11-50-polyplus-opti45-1-fe-04-mn-turfgrass-granular-fertilizer/p/1061053"
         },
         {
@@ -8549,7 +8549,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.27,
+          "price": 57.43,
           "offer_url": "https://www.siteone.com/en/510053-lesco-46-0-0-am-urea-nitrogen-turf-soluble-fertilizer-50-lb-bag/p/339142"
         },
         {
@@ -8781,7 +8781,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 58.34,
+          "price": 58.43,
           "offer_url": "https://www.siteone.com/en/702631-lesco-dimension-019-19-0-6-30opti45-pre-emergent-plus-fertilizer-50-lb/p/716155"
         },
         {
@@ -8791,7 +8791,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 61.68,
+          "price": 61.48,
           "offer_url": "https://www.siteone.com/en/702024-lesco-dimension-015-19-0-6-30-polyplus-opti45-45cl-mop-pre-emergent-granular-herbicide-plus-fertilizer-50-lb-bag/p/356323"
         },
         {
@@ -9320,7 +9320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 13.93,
+          "price": 14.01,
           "offer_url": "https://www.dkhardware.com/hi-yield-32340-iron-sulfate-1000-sq-ft-4-lb-product-5655636.html"
         },
         {
@@ -11164,7 +11164,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 41.12,
+          "price": 56.99,
           "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
@@ -11955,10 +11955,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12081,8 +12081,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -13650,7 +13650,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 189.99,
+          "price": 199.99,
           "offer_url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20"
         },
         {
@@ -13769,10 +13769,10 @@
           "retailer": "directtoolsoutlet",
           "retailer_name": "Directtoolsoutlet",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 179.99,
+          "offer_url": "https://www.directtoolsoutlet.com/products/p2860"
         },
         {
           "url": "https://www.amazon.com/dp/B092TNS4TN?tag=lawndominator-20",
@@ -13815,8 +13815,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 6,
+      "included_sources": 2,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
