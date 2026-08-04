@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-04T00:41:27.688711+00:00",
+  "generated_at": "2026-08-04T06:05:30.741565+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1232,
     "manual_verified_sources": 554,
-    "included_sources": 782,
-    "not_included_sources": 450,
+    "included_sources": 784,
+    "not_included_sources": 448,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 782,
-    "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 110,
+    "included": 784,
+    "not_checked_saved_source_limit": 326,
+    "no_extracted_offer": 109,
     "below $10.00 minimum for this category": 10,
     "below $5.00 minimum for this category": 3
   },
@@ -30,7 +30,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 73.39,
+          "price": 69.38,
           "offer_url": "https://www.solutionsstores.com/prodiamine-65-wdg-barricade-herbicide"
         },
         {
@@ -1010,7 +1010,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1918,10 +1918,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 44.95,
+          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -1984,8 +1984,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 7,
+      "included_sources": 2,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.28,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -3407,7 +3407,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 76.68,
+          "price": 76.54,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56.02,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4006,7 +4006,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.15,
+          "price": 68.14,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 81.95,
+          "price": 68.9,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -10066,7 +10066,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 953.54,
+          "price": 951.84,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10177,7 +10177,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 670.42,
+          "price": 669.23,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -11162,10 +11162,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 41.12,
+          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11448,8 +11448,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 30,
+      "included_sources": 8,
+      "not_included_sources": 29,
       "invalid_sources": 0
     },
     {
