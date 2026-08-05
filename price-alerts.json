@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-05T05:57:26.602064+00:00",
+  "generated_at": "2026-08-05T13:35:59.114164+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 9,
+  "alert_count": 7,
   "alerts": [
     {
       "id": "ryobi-p2860:major_price_drop:directtoolsoutlet:209.95:179.99",
@@ -117,38 +117,6 @@
       "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
       "in_stock": true,
       "created_at": "2026-07-31T19:13:53.014625+00:00"
-    },
-    {
-      "id": "prodiamine-65wdg:best_price_drop:yardmastery:73.39:69.00",
-      "type": "best_price_drop",
-      "product_id": 1,
-      "product_slug": "prodiamine-65wdg",
-      "product_name": "Prodiamine 65WDG",
-      "category": "pre-emergent",
-      "old_price": 73.39,
-      "new_price": 69.0,
-      "drop_percent": 6.0,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Yardmastery",
-      "url": "https://yardmastery.com/products/prodiamine-65-wdg",
-      "in_stock": true,
-      "created_at": "2026-07-29T05:59:48.798074+00:00"
-    },
-    {
-      "id": "prodiamine-65wdg:new_lowest_retailer:yardmastery:73.39:69.00",
-      "type": "new_lowest_retailer",
-      "product_id": 1,
-      "product_slug": "prodiamine-65wdg",
-      "product_name": "Prodiamine 65WDG",
-      "category": "pre-emergent",
-      "old_price": 73.39,
-      "new_price": 69.0,
-      "drop_percent": 6.0,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Yardmastery",
-      "url": "https://yardmastery.com/products/prodiamine-65-wdg",
-      "in_stock": true,
-      "created_at": "2026-07-29T05:59:48.798074+00:00"
     }
   ]
 }
