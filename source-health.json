@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-06T13:34:02.385197+00:00",
+  "generated_at": "2026-08-07T01:27:10.837129+00:00",
   "saved_source_limit": 8,
   "totals": {
-    "sources": 1232,
-    "manual_verified_sources": 554,
-    "included_sources": 784,
-    "not_included_sources": 448,
+    "sources": 1226,
+    "manual_verified_sources": 548,
+    "included_sources": 779,
+    "not_included_sources": 447,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 784,
+    "included": 779,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 107,
+    "no_extracted_offer": 106,
     "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 3
   },
@@ -383,7 +383,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2151.5,
+          "price": 2247.32,
           "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon"
         },
         {
@@ -413,7 +413,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2151.5,
+          "price": 2247.32,
           "offer_url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon?variant=43994447610042"
         }
       ],
@@ -2305,7 +2305,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.47,
+          "price": 34.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2698,7 +2698,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1308.15,
+          "price": 1320.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons"
         },
         {
@@ -2708,7 +2708,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 572.22,
+          "price": 578.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon"
         },
         {
@@ -2728,7 +2728,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1308.15,
+          "price": 1320.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons?variant=43994303627450"
         },
         {
@@ -2738,7 +2738,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 572.22,
+          "price": 578.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon?variant=43994303594682"
         }
       ],
@@ -3407,7 +3407,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 74.4,
+          "price": 73.95,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -3976,7 +3976,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 86.0,
+          "price": 56.02,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -4906,7 +4906,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 81.95,
+          "price": 67.77,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5188,9 +5188,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5208,9 +5208,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -6159,7 +6159,7 @@
           "url": "https://russopower.com/products/the-andersons-black-gypsum-dg",
           "retailer": "russopower",
           "retailer_name": "Russopower",
-          "manual_verified": true,
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
           "price": 39.99,
@@ -6184,19 +6184,9 @@
           "reason": "included",
           "price": 68.57,
           "offer_url": "https://customhydronutrients.com/products/biomend-dg-black-gypsum?variant=42225634574420"
-        },
-        {
-          "url": "https://www.facebook.com/sharer.php?u=https://russopower.com/products/the-andersons-black-gypsum-dg",
-          "retailer": "russopower",
-          "retailer_name": "Russopower",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 39.99,
-          "offer_url": "https://www.facebook.com/sharer.php?u=https://russopower.com/products/the-andersons-black-gypsum-dg"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 5,
       "not_included_sources": 1,
       "invalid_sources": 0
     },
@@ -7004,24 +6994,14 @@
           "url": "https://gsplantfoods.com/products/organic-liquid-humic-acid",
           "retailer": "gsplantfoods",
           "retailer_name": "Gsplantfoods",
-          "manual_verified": true,
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
           "price": 41.95,
           "offer_url": "https://gsplantfoods.com/products/organic-liquid-humic-acid"
-        },
-        {
-          "url": "https://www.facebook.com/sharer.php?u=https://gsplantfoods.com/products/organic-liquid-humic-acid",
-          "retailer": "gsplantfoods",
-          "retailer_name": "Gsplantfoods",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 40.95,
-          "offer_url": "https://www.facebook.com/sharer.php?u=https://gsplantfoods.com/products/organic-liquid-humic-acid"
         }
       ],
-      "included_sources": 2,
+      "included_sources": 1,
       "not_included_sources": 2,
       "invalid_sources": 0
     },
@@ -8142,7 +8122,7 @@
           "url": "https://www.agcareproducts.com/products/4925-sulfate-of-potash-0050-gr-fer",
           "retailer": "agcareproducts",
           "retailer_name": "Agcareproducts",
-          "manual_verified": true,
+          "manual_verified": false,
           "status": "included",
           "reason": "included",
           "price": 32.0,
@@ -8209,16 +8189,6 @@
           "offer_url": "https://www.amazon.com/dp/B0BL7XQ18Q?tag=lawndominator-20"
         },
         {
-          "url": "https://www.facebook.com/sharer.php?u=https://www.agcareproducts.com/products/4925-sulfate-of-potash-0050-gr-fer",
-          "retailer": "agcareproducts",
-          "retailer_name": "Agcareproducts",
-          "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 32.0,
-          "offer_url": "https://www.facebook.com/sharer.php?u=https://www.agcareproducts.com/products/4925-sulfate-of-potash-0050-gr-fer"
-        },
-        {
           "url": "https://www.bizrate.com/ratings_guide/merchant_detail__mid--283453.html?rf=sur",
           "retailer": "seedranch",
           "retailer_name": "Seedranch",
@@ -8249,7 +8219,7 @@
           "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer?variant=47974179111151"
         }
       ],
-      "included_sources": 11,
+      "included_sources": 10,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -11846,7 +11816,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 207.99,
+          "price": 187.19,
           "offer_url": "https://enjoytool.com/product/30-lbs-Cap-Elite-Spreader-Scotts-Mfr-75902-GRG9454756"
         },
         {
@@ -11955,10 +11925,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12081,8 +12051,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -12657,16 +12627,6 @@
           "offer_url": null
         },
         {
-          "url": "https://www.solutionsstores.com/flowzone-typhoon-backpack-sprayer",
-          "retailer": "solutions",
-          "retailer_name": "Solutions Pest & Lawn",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 328.79,
-          "offer_url": "https://www.solutionsstores.com/flowzone-typhoon-backpack-sprayer"
-        },
-        {
           "url": "https://barndoorag.com/flowzone-tool-only-typhoon-3-battery-powered-backpack-sprayer-4-gal-fzvaak-3to",
           "retailer": "barndoorag",
           "retailer_name": "Barndoorag",
@@ -12817,7 +12777,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
+      "included_sources": 7,
       "not_included_sources": 9,
       "invalid_sources": 0
     },
@@ -12866,16 +12826,6 @@
           "reason": "included",
           "price": 275.61,
           "offer_url": "https://fzspray.com/products/tool-only-cyclone-3-battery-powered-backpack-sprayer-4-gallon"
-        },
-        {
-          "url": "https://www.solutionsstores.com/flowzone-cyclone-backpack-sprayer",
-          "retailer": "solutions",
-          "retailer_name": "Solutions Pest & Lawn",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 258.89,
-          "offer_url": "https://www.solutionsstores.com/flowzone-cyclone-backpack-sprayer"
         },
         {
           "url": "https://fzspray.com/products/cyclone-3-battery-powered-backpack-sprayer",
@@ -13018,7 +12968,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
+      "included_sources": 7,
       "not_included_sources": 11,
       "invalid_sources": 0
     },
@@ -13067,16 +13017,6 @@
           "reason": "included",
           "price": 280.0,
           "offer_url": "https://bugsaway.com/flowzone-storm-2-5-gallon-fzvaag-2-5"
-        },
-        {
-          "url": "https://www.solutionsstores.com/flowzone-storm-2v-variable-pressure-backpack-sprayer",
-          "retailer": "solutions",
-          "retailer_name": "Solutions Pest & Lawn",
-          "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 228.89,
-          "offer_url": "https://www.solutionsstores.com/flowzone-storm-2v-variable-pressure-backpack-sprayer"
         },
         {
           "url": "https://veseris.com/default/flowzone-storm-dripless-swaptank-backpack-sprayer-2-gallon",
@@ -13219,7 +13159,7 @@
           "offer_url": "https://www.amazon.com/dp/B08VJL8RW1?tag=lawndominator-20"
         }
       ],
-      "included_sources": 9,
+      "included_sources": 8,
       "not_included_sources": 10,
       "invalid_sources": 0
     },
