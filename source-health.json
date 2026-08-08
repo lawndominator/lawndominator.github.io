@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T12:18:36.230988+00:00",
+  "generated_at": "2026-08-08T15:21:02.573388+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1226,
     "manual_verified_sources": 548,
-    "included_sources": 775,
-    "not_included_sources": 451,
+    "included_sources": 774,
+    "not_included_sources": 452,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 775,
-    "not_checked_saved_source_limit": 326,
-    "no_extracted_offer": 111,
-    "below $10.00 minimum for this category": 10,
+    "included": 774,
+    "not_checked_saved_source_limit": 327,
+    "no_extracted_offer": 110,
+    "below $10.00 minimum for this category": 11,
     "below $5.00 minimum for this category": 3,
     "no_price": 1
   },
@@ -132,7 +132,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 156.96,
+          "price": 157.05,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 15.52,
+          "price": 16.24,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1011,7 +1011,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105.72,
+          "price": 86.0,
           "offer_url": "https://www.solutionsstores.com/certainty-turf-herbicide"
         },
         {
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.8,
+          "price": 58.0,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 29.99,
+          "price": 30.75,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 69.15,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4907,7 +4907,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 67.77,
+          "price": 69.18,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -8844,7 +8844,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 73.63,
+          "price": 73.77,
           "offer_url": "https://www.siteone.com/en/2759162-lesco-30-0-10-nos-polyplus-2fe-1mn-mop-turfgrass-granular-fertilizer-50-lb-bag/p/704777"
         }
       ],
@@ -11133,10 +11133,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.62,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11419,8 +11419,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
