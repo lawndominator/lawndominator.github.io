@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T21:27:17.416391+00:00",
+  "generated_at": "2026-08-09T00:17:51.187232+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1226,
@@ -12,9 +12,9 @@
   "reason_counts": {
     "included": 775,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 111,
+    "no_extracted_offer": 110,
     "below $10.00 minimum for this category": 10,
-    "below $5.00 minimum for this category": 2,
+    "below $5.00 minimum for this category": 3,
     "no_price": 1
   },
   "products": [
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.89,
+          "price": 58.02,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.99,
+          "price": 32.26,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 68.21,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -8386,9 +8386,9 @@
           "retailer": "siteone",
           "retailer_name": "Siteone",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 331.25,
+          "status": "not_included",
+          "reason": "below $5.00 minimum for this category",
+          "price": 0.75,
           "offer_url": "https://www.siteone.com/en/510894b-lesco-carbonpro-l-w-mobilex-biostimulant-liquid-soil-amendment/p/1061272"
         },
         {
@@ -8402,8 +8402,8 @@
           "offer_url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon?variant=47135745573082"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -11926,10 +11926,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -12052,8 +12052,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
