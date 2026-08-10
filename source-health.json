@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-10T15:51:01.132188+00:00",
+  "generated_at": "2026-08-10T18:40:58.217294+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1226,
@@ -81,7 +81,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.0,
+          "price": 109.99,
           "offer_url": "https://yardmastery.com/products/prodiamine-65-wdg"
         },
         {
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.24,
+          "price": 16.3,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 58.1,
+          "price": 57.8,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1344,7 +1344,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 100.13,
+          "price": 100.32,
           "offer_url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20"
         },
         {
@@ -2993,7 +2993,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 87.5,
+          "price": 102.49,
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide"
         },
         {
@@ -3023,7 +3023,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 33.99,
+          "price": 40.49,
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide?variant=33097543843892"
         }
       ],
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 67.66,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4371,7 +4371,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 32.99,
+          "price": 35.49,
           "offer_url": "https://yardmastery.com/products/bifenthrin-7-9f-select"
         },
         {
@@ -4907,7 +4907,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.86,
+          "price": 67.77,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5189,9 +5189,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5209,9 +5209,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -7383,7 +7383,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.31,
+          "price": 31.22,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
