@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-11T00:25:12.324379+00:00",
+  "generated_at": "2026-08-11T04:30:53.094418+00:00",
   "saved_source_limit": 8,
   "totals": {
-    "sources": 1226,
-    "manual_verified_sources": 548,
-    "included_sources": 773,
+    "sources": 1246,
+    "manual_verified_sources": 568,
+    "included_sources": 793,
     "not_included_sources": 453,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 773,
-    "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 118,
+    "included": 793,
+    "not_checked_saved_source_limit": 329,
+    "no_extracted_offer": 116,
     "below $10.00 minimum for this category": 3,
     "below $5.00 minimum for this category": 3,
     "no_price": 2
@@ -113,9 +113,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/prodiamine-65-wdg",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 99.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/prodiamine-65-wdg/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 1,
       "invalid_sources": 0
     },
@@ -264,9 +274,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/golf/dithiopyr-2ew",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 514.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/golf/dithiopyr-2ew/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 6,
       "invalid_sources": 0
     },
@@ -880,7 +900,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.24,
+          "price": 16.3,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -929,7 +949,7 @@
           "retailer_name": "Agri Supply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -982,9 +1002,29 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/golf/celsius-wg",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 189.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/golf/celsius-wg/"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/celsius-wg-0-226-oz-single-pack",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 18.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/celsius-wg-0-226-oz-single-pack/"
         }
       ],
-      "included_sources": 7,
+      "included_sources": 9,
       "not_included_sources": 7,
       "invalid_sources": 0
     },
@@ -1122,7 +1162,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 58.31,
+          "price": 57.93,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1214,9 +1254,19 @@
           "reason": "included",
           "price": 84.99,
           "offer_url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer?variant=46526175543545"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/golf/drive-xlr8",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/golf/drive-xlr8/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 5,
       "invalid_sources": 0
     },
@@ -1538,9 +1588,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/mesotrione-4sc-2",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 79.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/mesotrione-4sc-2/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 2,
       "invalid_sources": 0
     },
@@ -1983,9 +2043,19 @@
           "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/q4-plus-turf-herbicide",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 59.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/q4-plus-turf-herbicide/"
         }
       ],
-      "included_sources": 1,
+      "included_sources": 2,
       "not_included_sources": 7,
       "invalid_sources": 0
     },
@@ -2064,9 +2134,19 @@
           "reason": "included",
           "price": 183.95,
           "offer_url": "https://seedbarn.com/products/trimec-classic-broadleaf-herbicide-2-5-gallons?variant=47621611094234"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/trimec-southern-broadleaf-herbicide",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 43.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/trimec-southern-broadleaf-herbicide/"
         }
       ],
-      "included_sources": 7,
+      "included_sources": 8,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -2306,7 +2386,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 32.27,
+          "price": 32.36,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2408,9 +2488,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/primo-maxx-plant-growth-regulator",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 49.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/primo-maxx-plant-growth-regulator/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 5,
       "invalid_sources": 0
     },
@@ -3025,9 +3115,29 @@
           "reason": "included",
           "price": 40.49,
           "offer_url": "https://yardmastery.com/products/lawn-disease-control-propiconazole-14-3-select-fungicide?variant=33097543843892"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/ecopro-14-3-propiconazole",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/ecopro-14-3-propiconazole/"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/agriculture/propiconazole-14-3-select",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 29.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/agriculture/propiconazole-14-3-select/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 8,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -3167,9 +3277,19 @@
           "reason": "included",
           "price": 78.95,
           "offer_url": "https://lawnsynergy.com/products/headway-g-fungicide?variant=46295278420106"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/headway-g",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/headway-g/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 7,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -3248,9 +3368,19 @@
           "reason": "included",
           "price": 159.95,
           "offer_url": "https://seedbarn.com/products/armada-50-wdg-fungicide-trifloxystrobin-2-lbs?variant=12530148212836"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/golf/armada-50-wdg",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 159.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/golf/armada-50-wdg/"
         }
       ],
-      "included_sources": 7,
+      "included_sources": 8,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -3571,9 +3701,19 @@
           "reason": "included",
           "price": 45.77,
           "offer_url": "https://www.sunspotsupply.com/products/eagle-20ew-fungicide-pint?variant=43994299728058"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/agriculture/eagle-20ew",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 42.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/agriculture/eagle-20ew/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -4007,7 +4147,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 68.35,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4069,9 +4209,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/acelepryn",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 94.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/acelepryn/"
         }
       ],
-      "included_sources": 8,
+      "included_sources": 9,
       "not_included_sources": 3,
       "invalid_sources": 0
     },
@@ -4251,9 +4401,19 @@
           "reason": "included",
           "price": 70.43,
           "offer_url": "https://www.sunspotsupply.com/products/merit-0-5g-insecticide?variant=43994286522554"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/lawn-care-operators/mallet-0-5-g-imidacloprid",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 64.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/lawn-care-operators/mallet-0-5-g-imidacloprid/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 7,
       "not_included_sources": 1,
       "invalid_sources": 0
     },
@@ -4282,9 +4442,19 @@
           "reason": "included",
           "price": 99.95,
           "offer_url": "https://pestrong.com/product/dylox-6-2g-granular-insecticide-30-lbs"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/agriculture/dylox-6-2",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 94.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/agriculture/dylox-6-2/"
         }
       ],
-      "included_sources": 2,
+      "included_sources": 3,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -4340,7 +4510,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -4433,9 +4603,19 @@
           "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/agrisel-bifenthrin-7-9",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 32.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/agrisel-bifenthrin-7-9/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 7,
       "not_included_sources": 8,
       "invalid_sources": 0
     },
@@ -4686,9 +4866,19 @@
           "reason": "included",
           "price": 109.45,
           "offer_url": "https://www.sunspotsupply.com/products/arena-25-granules-bag-30-lbs?variant=43994456490170"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/agriculture/arena",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 103.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/agriculture/arena/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 7,
       "not_included_sources": 0,
       "invalid_sources": 0
     },
@@ -4767,9 +4957,19 @@
           "reason": "included",
           "price": 87.77,
           "offer_url": "https://seedbarn.com/products/warrior-ii-lambda-cyhalothrin-insecticide-demand-cs-1-gal?variant=31258736590983"
+        },
+        {
+          "url": "https://www.counciloxford.com/product/industries/homeowners/demand-cs-2",
+          "retailer": "counciloxford",
+          "retailer_name": "Council-Oxford",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 72.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/demand-cs-2/"
         }
       ],
-      "included_sources": 6,
+      "included_sources": 7,
       "not_included_sources": 1,
       "invalid_sources": 0
     },
@@ -5189,9 +5389,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -5209,9 +5409,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
