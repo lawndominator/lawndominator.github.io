@@ -5,7 +5,13 @@ on:
     # Every 45 minutes. API-only (Amazon Creators API / Keepa), no browser --
     # this is a handful of HTTP calls, not a full Playwright sweep, so it can
     # run far more often than the 3-hour full scrape in price-scraper.yml.
-    - cron: "*/45 * * * *"
+    # Four expressions are required because 45 does not divide evenly into
+    # an hour; `*/45` would run at :00 and :45 every hour, alternating 45- and
+    # 15-minute gaps instead of maintaining a true 45-minute cadence.
+    - cron: "0 */3 * * *"
+    - cron: "45 0-23/3 * * *"
+    - cron: "30 1-23/3 * * *"
+    - cron: "15 2-23/3 * * *"
   workflow_dispatch:
 
 permissions:
