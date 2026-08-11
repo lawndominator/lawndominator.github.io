@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-10T21:40:14.390336+00:00",
+  "generated_at": "2026-08-11T00:25:12.324379+00:00",
   "saved_source_limit": 8,
   "totals": {
     "sources": 1226,
@@ -12,8 +12,8 @@
   "reason_counts": {
     "included": 773,
     "not_checked_saved_source_limit": 327,
-    "no_extracted_offer": 109,
-    "below $10.00 minimum for this category": 12,
+    "no_extracted_offer": 118,
+    "below $10.00 minimum for this category": 3,
     "below $5.00 minimum for this category": 3,
     "no_price": 2
   },
@@ -880,7 +880,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.3,
+          "price": 16.24,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1122,7 +1122,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.89,
+          "price": 58.31,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -2306,7 +2306,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35.17,
+          "price": 32.27,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -2718,9 +2718,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons?variant=43994303627450",
@@ -2789,9 +2789,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/cutless-mec-turf-growth-regulator-gallon-128-oz",
@@ -3286,9 +3286,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/insignia-sc-intrinsic-brand-fungicide-25",
@@ -4007,7 +4007,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 68.21,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4228,9 +4228,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/imidacloprid-0-5g"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://seedbarn.com/products/quali-pro-imidacloprid-insecticide-0-5g-30-lb?variant=47315381518554",
@@ -4744,9 +4744,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/ludo-cs-insecticide-lambda-cyhalothrin"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://seedbarn.com/products/demand-cs-insecticide-8-oz?variant=12532598210660",
@@ -4805,9 +4805,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-quart?variant=43994286293178",
@@ -4956,9 +4956,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://seedbarn.com/products/abamectin-0-15-ec-miticide-insecticide-avid-alternative-1-gallon?variant=12529372397668",
@@ -5209,9 +5209,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -5412,9 +5412,9 @@
           "retailer_name": "Sunspot Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 5.55,
-          "offer_url": "https://www.sunspotsupply.com/products/tristar-8-5sl"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/tristar-8-5-sl-insecticide-gallon",
@@ -7383,7 +7383,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 31.21,
+          "price": 31.22,
           "offer_url": "https://www.amazon.com/dp/B0053NDZJW?tag=lawndominator-20"
         },
         {
