@@ -73,6 +73,11 @@ MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
 MIN_ALERT_DROP_PERCENT = float(os.getenv("MIN_ALERT_DROP_PERCENT", "5"))
 PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
+# The old absolute MIN_PRICED_PRODUCTS=1 floor passed as long as a single
+# product got a price, so a run that broke extraction for 95% of the catalog
+# would still commit a gutted prices.json without failing CI. This adds a
+# percentage-of-catalog floor alongside it; the run must clear both.
+MIN_PRICED_PRODUCTS_PERCENT = float(os.getenv("MIN_PRICED_PRODUCTS_PERCENT", "50"))
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -1067,7 +1072,32 @@ def _trusted_extreme_drop(old_offer: Optional[dict], new_offer: dict) -> bool:
     return _same_offer_source(old_offer, new_offer) and _same_offer_package(old_offer, new_offer)
 
 
+def _confirmed_package_mismatch(old_offer: Optional[dict], new_offer: Optional[dict]) -> bool:
+    """True only when both offers report package data and it disagrees --
+    never for missing/unconfirmed data, which the percent-tiered checks below
+    already handle. Runs at every drop size so a package downgrade (e.g. a
+    128 fl oz jug swapped for a 32 fl oz bottle) can't pass as a discount just
+    because the resulting percent drop is under the 40% tier."""
+    if not old_offer or not new_offer:
+        return False
+    has_package_data = all(
+        offer.get("package_unit") and offer.get("package_quantity")
+        for offer in (old_offer, new_offer)
+    )
+    return has_package_data and not _same_offer_package(old_offer, new_offer)
+
+
+def _min_priced_products_floor(total_products: int, min_absolute: int, min_percent: float) -> int:
+    """The run must produce at least this many priced products. Combines an
+    absolute floor (catches an empty/near-empty catalog) with a
+    percentage-of-catalog floor (catches a partial extraction collapse that
+    an absolute floor of 1 would silently let through)."""
+    return max(min_absolute, int(total_products * min_percent / 100))
+
+
 def _is_suspicious_drop(old_offer: Optional[dict], new_offer: dict, drop_percent: float) -> bool:
+    if _confirmed_package_mismatch(old_offer, new_offer):
+        return True
     if drop_percent < 40:
         return False
     if not _same_offer_package(old_offer, new_offer):
@@ -2755,9 +2785,16 @@ def run():
     log.info(f"Written to {health_path}")
     log.info(f"Written to {sources_path}")
 
-    min_priced = int(os.getenv("MIN_PRICED_PRODUCTS", "1"))
+    min_priced_absolute = int(os.getenv("MIN_PRICED_PRODUCTS", "1"))
+    min_priced = _min_priced_products_floor(
+        len(results), min_priced_absolute, MIN_PRICED_PRODUCTS_PERCENT
+    )
     if found < min_priced:
-        log.error(f"Only {found}/{len(results)} products have prices; expected at least {min_priced}.")
+        log.error(
+            f"Only {found}/{len(results)} products have prices; expected at least "
+            f"{min_priced} ({MIN_PRICED_PRODUCTS_PERCENT:.0f}% of {len(results)}, "
+            f"or {min_priced_absolute} absolute -- whichever is higher)."
+        )
         sys.exit(1)
 
 

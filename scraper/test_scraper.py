@@ -1735,6 +1735,22 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertIsNone(result["price"])
         self.assertIn("amazon.com", result["url"])
 
+    # ── Priced-product floor ────────────────────────────────────────────────
+
+    def test_min_priced_products_floor_uses_percentage_for_a_large_catalog(self):
+        # 155 products, 50% default -> 77 (int() truncates 77.5), well above
+        # the old MIN_PRICED_PRODUCTS=1 floor that a near-total collapse
+        # would have silently passed.
+        self.assertEqual(scraper._min_priced_products_floor(155, 1, 50.0), 77)
+
+    def test_min_priced_products_floor_uses_absolute_for_a_tiny_catalog(self):
+        # A 4-product catalog at 50% only requires 2; the absolute floor of 5
+        # is the binding constraint instead.
+        self.assertEqual(scraper._min_priced_products_floor(4, 5, 50.0), 5)
+
+    def test_min_priced_products_floor_falls_back_to_absolute_when_catalog_is_empty(self):
+        self.assertEqual(scraper._min_priced_products_floor(0, 1, 50.0), 1)
+
     # ── Extreme drop sanity checks ────────────────────────────────────────────
 
     def test_is_suspicious_drop_passes_for_small_drop(self):
@@ -1768,6 +1784,23 @@ class ScraperExtractionTests(unittest.TestCase):
         new = {"retailer": "store", "price": 33.0,  "url": "https://store.example/product-b",
                "package_quantity": 128.0, "package_unit": "fl oz"}
         self.assertTrue(scraper._is_suspicious_drop(old, new, 67.0))
+
+    def test_is_suspicious_drop_catches_confirmed_package_switch_under_40_percent(self):
+        # A 20% "drop" that's actually a jug -> bottle downgrade must be caught
+        # even though it's well under the 40% tier that package-checks used to
+        # start at. Both offers report package data and it genuinely differs.
+        old = {"retailer": "store", "price": 50.0, "url": "https://store.example/product",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        new = {"retailer": "store", "price": 40.0, "url": "https://store.example/product",
+               "package_quantity": 32.0, "package_unit": "fl oz"}
+        self.assertTrue(scraper._is_suspicious_drop(old, new, 20.0))
+
+    def test_is_suspicious_drop_passes_small_drop_with_confirmed_matching_package(self):
+        old = {"retailer": "store", "price": 50.0, "url": "https://store.example/product",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        new = {"retailer": "store", "price": 46.0, "url": "https://store.example/product",
+               "package_quantity": 128.0, "package_unit": "fl oz"}
+        self.assertFalse(scraper._is_suspicious_drop(old, new, 8.0))
 
     def test_build_price_alerts_suppresses_feature_false_drop(self):
         # Regression: Feature 6-0-0 false drop from $30 to $10 (67%) via wrong Amazon HTML scrape
