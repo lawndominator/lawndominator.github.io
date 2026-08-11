@@ -4,6 +4,11 @@ on:
   schedule:
     # Every 3 hours from morning through evening Central time, offset to reduce GitHub schedule drops.
     - cron: "17 11,14,17,20,23,2 * * *"
+    # Weekly SerpApi source discovery, Sunday early morning Central. Was
+    # manual-only (workflow_dispatch enable_discovery); a schedule trigger
+    # can't carry workflow_dispatch inputs, so the discovery/send_alerts
+    # steps below key off this specific cron string instead.
+    - cron: "0 9 * * 0"
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
     inputs:
@@ -26,6 +31,13 @@ on:
 
 permissions:
   contents: write  # needed to commit prices.json back to the repo
+
+# Serialized with the fast-lane workflow (same group) so a full sweep and a
+# fast-lane tick can never run their git-reset/commit/push steps
+# concurrently and race on the same files.
+concurrency:
+  group: price-feed-write
+  cancel-in-progress: false
 
 jobs:
   scrape-prices:
@@ -70,14 +82,15 @@ jobs:
           KEEPA_API_KEY:        ${{ secrets.KEEPA_API_KEY }}
           DOMYOWN_AFFILIATE_ID: ${{ secrets.DOMYOWN_AFFILIATE_ID }}
           MIN_PRICED_PRODUCTS:  "1"
+          MIN_PRICED_PRODUCTS_PERCENT: "50"
           REQUIRE_WEB_DISCOVERY: "0"
-          ENABLE_SERPAPI_DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '1' || '0' }}
+          ENABLE_SERPAPI_DISCOVERY: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true') || github.event.schedule == '0 9 * * 0') && '1' || '0' }}
           ENABLE_KNOWN_RETAILER_SEARCH: "0"
           KNOWN_RETAILER_LIMIT: "8"
           ENABLE_DIRECT_RETAILER_SEARCH: "0"
           ENABLE_ORGANIC_DISCOVERY: "0"
           SHOPPING_RESULT_LIMIT: "10"
-          SHOPPING_DETAIL_RESULT_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true' && '3' || '0' }}
+          SHOPPING_DETAIL_RESULT_LIMIT: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true') || github.event.schedule == '0 9 * * 0') && '3' || '0' }}
           ORGANIC_RESULT_LIMIT:  "1"
           ORGANIC_FETCH_TIMEOUT: "9000"
           SAVED_SOURCE_LIMIT: "8"

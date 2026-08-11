@@ -2623,7 +2623,110 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
         return None
 
 
+def _merge_fast_lane_product(
+    product: dict, baseline: Optional[dict], fresh_amazon: Optional[dict]
+) -> Optional[dict]:
+    """Patches only the amazon offer into an existing product entry, leaving
+    every other retailer's last-full-sweep offer untouched -- the fast lane
+    never runs Playwright, so it has nothing fresh to say about them.
+    Returns None when there's nothing to report yet (no prior full-sweep
+    entry and no fresh Amazon offer): a brand-new catalog product the next
+    full sweep will pick up, not something the fast lane should fabricate."""
+    offers = list(baseline.get("offers", [])) if baseline else []
+    if fresh_amazon:
+        offers = [offer for offer in offers if offer.get("retailer") != "amazon"]
+        offers.append(fresh_amazon)
+
+    if not offers:
+        return baseline
+
+    return {
+        "id": product["id"],
+        "slug": product["slug"],
+        "name": product["name"],
+        "category": product["category"],
+        "active_ingredient": product.get("active_ingredient", ""),
+        "alt_names": product.get("alt_names", []),
+        "offers": offers,
+        "best_price": select_best_offer(product, offers),
+        "updated_at": now_iso() if fresh_amazon else (baseline or {}).get("updated_at", now_iso()),
+    }
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
+
+def run_fast_lane():
+    """API-only refresh (Amazon Creators API / Keepa, via amazon_result) for
+    every catalog product, run on a tighter schedule than the full Playwright
+    sweep since it makes a handful of HTTP calls instead of loading and
+    scraping every saved source URL in a real browser. Existing offers from
+    the last full sweep are preserved for every retailer this lane doesn't
+    touch -- see _merge_fast_lane_product."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(script_dir)
+    products_path = os.path.join(repo_root, "products.json")
+    prices_path = os.path.join(repo_root, "prices.json")
+    alerts_path = os.path.join(repo_root, "price-alerts.json")
+    health_path = os.path.join(repo_root, "source-health.json")
+    sources_path = os.path.join(repo_root, "product_sources.json")
+
+    with open(products_path) as f:
+        catalog = json.load(f)
+    source_map = load_product_sources(sources_path)
+
+    try:
+        with open(prices_path) as f:
+            existing_data = json.load(f)
+        stale_map = {p["id"]: p for p in existing_data.get("products", [])}
+    except FileNotFoundError:
+        existing_data = {"products": []}
+        stale_map = {}
+
+    try:
+        with open(alerts_path) as f:
+            existing_alerts = json.load(f).get("alerts", [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_alerts = []
+
+    results = []
+    updated = 0
+    for product in catalog["products"]:
+        baseline = stale_map.get(product["id"])
+        fresh_amazon = amazon_result(product, source_map)
+        if fresh_amazon:
+            updated += 1
+        entry = _merge_fast_lane_product(product, baseline, fresh_amazon)
+        if entry:
+            results.append(entry)
+
+    apply_offer_package_metadata(results)
+    apply_offer_quality_filters(results)
+    sanitize_equipment_results(results)
+
+    generated_at = now_iso()
+    output = {
+        "schema_version": "1.0",
+        "generated_at": generated_at,
+        "product_count": len(results),
+        "products": results,
+    }
+    alerts_output = build_price_alerts(stale_map, results, generated_at, existing_alerts)
+    health_output = build_source_health(catalog["products"], source_map, results, generated_at)
+
+    with open(prices_path, "w") as f:
+        json.dump(output, f, indent=2)
+    with open(alerts_path, "w") as f:
+        json.dump(alerts_output, f, indent=2)
+    with open(health_path, "w") as f:
+        json.dump(health_output, f, indent=2)
+
+    log.info(
+        f"Fast lane done. Refreshed Amazon pricing for {updated}/{len(catalog['products'])} products."
+    )
+    log.info(f"Written to {prices_path}")
+    log.info(f"Written to {alerts_path} ({alerts_output['alert_count']} alerts)")
+    log.info(f"Written to {health_path}")
+
 
 def run():
     global _browser
@@ -2799,4 +2902,7 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    if "--fast-lane" in sys.argv:
+        run_fast_lane()
+    else:
+        run()
