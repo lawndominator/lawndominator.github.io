@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-12T10:41:37.016625+00:00",
+  "generated_at": "2026-08-12T11:15:28.797632+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 5,
+  "alert_count": 4,
   "alerts": [
     {
       "id": "trimec:major_price_drop:counciloxford:49.99:43.99",
@@ -69,22 +69,6 @@
       "url": "https://www.counciloxford.com/product/industries/homeowners/headway-g/",
       "in_stock": true,
       "created_at": "2026-08-11T04:30:53.094418+00:00"
-    },
-    {
-      "id": "clearys-3336-f:major_price_drop:amazon:82.38:71.40",
-      "type": "major_price_drop",
-      "product_id": 55,
-      "product_slug": "clearys-3336-f",
-      "product_name": "Clearys 3336 F (Thiophanate-Methyl)",
-      "category": "fungicide",
-      "old_price": 82.38,
-      "new_price": 71.4,
-      "drop_percent": 13.3,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-08-09T21:25:30.198296+00:00"
     }
   ]
 }
