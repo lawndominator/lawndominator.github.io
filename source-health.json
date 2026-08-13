@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T12:53:26.351399+00:00",
+  "generated_at": "2026-08-13T14:06:56.421870+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 1246,
     "manual_verified_sources": 568,
-    "included_sources": 798,
-    "not_included_sources": 448,
+    "included_sources": 797,
+    "not_included_sources": 449,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 798,
-    "not_checked_saved_source_limit": 274,
+    "included": 797,
+    "not_checked_saved_source_limit": 275,
     "no_extracted_offer": 169,
     "below $10.00 minimum for this category": 2,
     "below $5.00 minimum for this category": 2,
@@ -900,7 +900,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.24,
+          "price": 16.3,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -1162,7 +1162,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.85,
+          "price": 58.52,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4652,7 +4652,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.31,
+          "price": 45.26,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -5107,7 +5107,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 87.02,
+          "price": 85.56,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -11333,10 +11333,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.05,
-          "offer_url": "https://www.amazon.com/dp/B002YPS1KK?tag=lawndominator-20"
+          "status": "not_included",
+          "reason": "not_checked_saved_source_limit",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -11619,8 +11619,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 29,
+      "included_sources": 7,
+      "not_included_sources": 30,
       "invalid_sources": 0
     },
     {
