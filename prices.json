@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T14:29:40.447885+00:00",
+  "generated_at": "2026-08-14T15:06:50.248437+00:00",
   "product_count": 155,
   "products": [
     {
@@ -142,7 +142,7 @@
           "in_stock": true,
           "title": "Prodiamine 65 Wdg 5lbs Pre-emergent Grass Broadleaf Weeds ( Generic Barricade )",
           "image": "https://m.media-amazon.com/images/I/41YJyZ6Jo5L._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:20.905130+00:00",
+          "last_checked": "2026-08-14T15:06:30.966241+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 5.0,
           "package_unit": "lb",
@@ -165,7 +165,7 @@
         "package_label": "5 lb",
         "price_per_unit": 13.88
       },
-      "updated_at": "2026-08-14T14:29:20.905951+00:00",
+      "updated_at": "2026-08-14T15:06:30.967272+00:00",
       "needs_size_review": true
     },
     {
@@ -867,7 +867,7 @@
           "in_stock": true,
           "title": "Gallery 75 DF Specialty Herbicide",
           "image": "https://m.media-amazon.com/images/I/31tjv7V2XwL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:46:38.732533+00:00",
+          "last_checked": "2026-08-14T15:06:32.343716+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 1.0,
           "package_unit": "lb",
@@ -890,7 +890,7 @@
         "package_label": "1 lb",
         "price_per_unit": 153.95
       },
-      "updated_at": "2026-08-14T12:46:38.733651+00:00"
+      "updated_at": "2026-08-14T15:06:32.344904+00:00"
     },
     {
       "id": 7,
@@ -1210,7 +1210,7 @@
           "in_stock": true,
           "title": "BASF Pendulum Aqua Cap 2.5 gal Pre-Emergent Herbicide",
           "image": "https://m.media-amazon.com/images/I/41Mq5n9HQoL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:22.539390+00:00",
+          "last_checked": "2026-08-14T15:06:32.808455+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 320.0,
           "package_unit": "fl oz",
@@ -1233,7 +1233,7 @@
         "package_label": "2.5 gal",
         "price_per_unit": 0.39
       },
-      "updated_at": "2026-08-14T14:29:22.540313+00:00",
+      "updated_at": "2026-08-14T15:06:32.809457+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -1370,17 +1370,17 @@
         {
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "price": 16.3,
+          "price": 16.24,
           "url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20",
           "in_stock": true,
           "title": "Prime Source Celsius WG - 0.226 oz Easy Mix Packet-Post Emerge Weed Control",
           "image": "https://m.media-amazon.com/images/I/417ZdPB54iL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:01:41.684884+00:00",
+          "last_checked": "2026-08-14T15:06:33.470999+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 0.226,
           "package_unit": "fl oz",
           "package_label": "0.226 fl oz",
-          "price_per_unit": 72.12
+          "price_per_unit": 71.86
         }
       ],
       "best_price": {
@@ -1398,7 +1398,7 @@
         "package_label": "0.226 fl oz",
         "price_per_unit": 47.39
       },
-      "updated_at": "2026-08-14T14:01:41.685838+00:00",
+      "updated_at": "2026-08-14T15:06:33.472148+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -1795,7 +1795,7 @@
           "in_stock": true,
           "title": "Sedgehammer Plus Turf Solution, 13.5 Grams, Nutsedge Control",
           "image": "https://m.media-amazon.com/images/I/51w5G6PEFFL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:23.870064+00:00",
+          "last_checked": "2026-08-14T15:06:34.114172+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 13.5,
           "package_unit": "g",
@@ -1811,14 +1811,14 @@
         "in_stock": true,
         "title": "Sedgehammer Plus Turf Solution, 13.5 Grams, Nutsedge Control",
         "image": "https://m.media-amazon.com/images/I/51w5G6PEFFL._SL500_.jpg",
-        "last_checked": "2026-08-14T14:29:23.870064+00:00",
+        "last_checked": "2026-08-14T15:06:34.114172+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 13.5,
         "package_unit": "g",
         "package_label": "13.5 g",
         "price_per_unit": 1.04
       },
-      "updated_at": "2026-08-14T14:29:23.870983+00:00"
+      "updated_at": "2026-08-14T15:06:34.115195+00:00"
     },
     {
       "id": 19,
@@ -1929,7 +1929,7 @@
           "in_stock": true,
           "title": "PBI Gordon SpeedZone Southern EW Herbicide -128oz",
           "image": "https://m.media-amazon.com/images/I/410xRm9ZjCL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:24.267716+00:00",
+          "last_checked": "2026-08-14T15:06:34.549142+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 128.0,
           "package_unit": "fl oz",
@@ -1952,7 +1952,7 @@
         "package_label": "1 gal",
         "price_per_unit": 0.68
       },
-      "updated_at": "2026-08-14T14:29:24.268619+00:00",
+      "updated_at": "2026-08-14T15:06:34.550144+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -2410,7 +2410,7 @@
           "in_stock": true,
           "title": "Dismiss Herbicide (Sulfentrazone 39.6%) Yellow Nutsedge Control - 64 fl. oz.",
           "image": "https://m.media-amazon.com/images/I/41QGD-CK1YL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:24.948957+00:00",
+          "last_checked": "2026-08-14T15:06:35.288214+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 64.0,
           "package_unit": "fl oz",
@@ -2426,14 +2426,14 @@
         "in_stock": true,
         "title": "Dismiss Herbicide (Sulfentrazone 39.6%) Yellow Nutsedge Control - 64 fl. oz.",
         "image": "https://m.media-amazon.com/images/I/41QGD-CK1YL._SL500_.jpg",
-        "last_checked": "2026-08-14T14:29:24.948957+00:00",
+        "last_checked": "2026-08-14T15:06:35.288214+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 64.0,
         "package_unit": "fl oz",
         "package_label": "64 fl oz",
         "price_per_unit": 2.83
       },
-      "updated_at": "2026-08-14T14:29:24.949667+00:00",
+      "updated_at": "2026-08-14T15:06:35.289336+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -4879,7 +4879,7 @@
           "in_stock": true,
           "title": "Cleary 3336F Fungicide - qt",
           "image": "https://m.media-amazon.com/images/I/31iDPCQprlL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:01:46.405225+00:00",
+          "last_checked": "2026-08-14T15:06:36.413103+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 32.0,
           "package_unit": "fl oz",
@@ -4895,14 +4895,14 @@
         "in_stock": true,
         "title": "Cleary 3336F Fungicide - qt",
         "image": "https://m.media-amazon.com/images/I/31iDPCQprlL._SL500_.jpg",
-        "last_checked": "2026-08-14T14:01:46.405225+00:00",
+        "last_checked": "2026-08-14T15:06:36.413103+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 32.0,
         "package_unit": "fl oz",
         "package_label": "32 fl oz",
         "price_per_unit": 2.23
       },
-      "updated_at": "2026-08-14T14:01:46.406208+00:00",
+      "updated_at": "2026-08-14T15:06:36.414150+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -8098,7 +8098,7 @@
           "in_stock": true,
           "title": "Feature, 1 Bag",
           "image": "https://m.media-amazon.com/images/I/416ds+bA+zL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:46:49.136771+00:00",
+          "last_checked": "2026-08-14T15:06:38.709976+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 2.5,
           "package_unit": "lb",
@@ -8114,14 +8114,14 @@
         "in_stock": true,
         "title": "Feature, 1 Bag",
         "image": "https://m.media-amazon.com/images/I/416ds+bA+zL._SL500_.jpg",
-        "last_checked": "2026-08-14T12:46:49.136771+00:00",
+        "last_checked": "2026-08-14T15:06:38.709976+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 2.5,
         "package_unit": "lb",
         "package_label": "2.5 lb",
         "price_per_unit": 12.0
       },
-      "updated_at": "2026-08-14T12:46:49.137637+00:00"
+      "updated_at": "2026-08-14T15:06:38.710870+00:00"
     },
     {
       "id": 130,
@@ -8676,7 +8676,7 @@
           "in_stock": true,
           "title": "The Andersons HumiChar Organic Soil Amendment with Humic Acid and Biochar (40 lb)",
           "image": "https://m.media-amazon.com/images/I/41lDT4Elm1L._SL500_.jpg",
-          "last_checked": "2026-08-14T12:18:07.083708+00:00",
+          "last_checked": "2026-08-14T15:06:39.986483+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 40.0,
           "package_unit": "lb",
@@ -8699,7 +8699,7 @@
         "package_label": "40 lb",
         "price_per_unit": 2.0
       },
-      "updated_at": "2026-08-14T12:18:07.085031+00:00",
+      "updated_at": "2026-08-14T15:06:39.987456+00:00",
       "has_multiple_sizes": true,
       "needs_size_review": true
     },
@@ -8918,7 +8918,7 @@
           "in_stock": true,
           "title": "The Andersons Dirt Booster Plus All-Natural Super Compost Starter and Soil Amendment - 20 lb.",
           "image": "https://m.media-amazon.com/images/I/41lVTLW93EL._SL500_.jpg",
-          "last_checked": "2026-08-14T14:01:51.042532+00:00",
+          "last_checked": "2026-08-14T15:06:40.291028+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 20.0,
           "package_unit": "lb",
@@ -8941,7 +8941,7 @@
         "package_label": "20 lb",
         "price_per_unit": 3.24
       },
-      "updated_at": "2026-08-14T14:01:51.043416+00:00"
+      "updated_at": "2026-08-14T15:06:40.291951+00:00"
     },
     {
       "id": 138,
@@ -9459,7 +9459,7 @@
           "in_stock": true,
           "title": "Nitrogen Fertilizer + High Iron (6%) 7-0-0 Greene Effect by Greene County Fertilizer Deep Blue Green Color Lawn",
           "image": "https://m.media-amazon.com/images/I/51qJF537iRS._SL500_.jpg",
-          "last_checked": "2026-08-14T14:29:29.625342+00:00",
+          "last_checked": "2026-08-14T15:06:40.845293+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 256.0,
           "package_unit": "fl oz",
@@ -9482,7 +9482,7 @@
         "package_label": "5 gal",
         "price_per_unit": 0.11
       },
-      "updated_at": "2026-08-14T14:29:29.626311+00:00",
+      "updated_at": "2026-08-14T15:06:40.846297+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -13399,7 +13399,7 @@
           "in_stock": true,
           "title": "Hi-Yield (32340) Iron sulfate, 4 lbs",
           "image": "https://m.media-amazon.com/images/I/41FlhIsE2yL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:46:57.359121+00:00",
+          "last_checked": "2026-08-14T15:06:42.995078+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 4.0,
           "package_unit": "lb",
@@ -13422,7 +13422,7 @@
         "package_label": "4 lb",
         "price_per_unit": 2.0
       },
-      "updated_at": "2026-08-14T12:46:57.360021+00:00",
+      "updated_at": "2026-08-14T15:06:42.996063+00:00",
       "needs_size_review": true
     },
     {
@@ -13590,7 +13590,7 @@
         "last_checked": "2026-06-02T20:15:45.324340+00:00",
         "source": "saved_product_source"
       },
-      "updated_at": "2026-08-14T14:29:34.605686+00:00"
+      "updated_at": "2026-08-14T15:06:44.078497+00:00"
     },
     {
       "id": 305,
@@ -13752,7 +13752,7 @@
           "in_stock": true,
           "title": "Lesco 50Lb Push Spreader",
           "image": "https://m.media-amazon.com/images/I/41tLkhieqEL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:28:04.811842+00:00",
+          "last_checked": "2026-08-14T15:06:45.125085+00:00",
           "source": "amazon_creators_api"
         }
       ],
@@ -13764,10 +13764,10 @@
         "in_stock": true,
         "title": "Lesco 50Lb Push Spreader",
         "image": "https://m.media-amazon.com/images/I/41tLkhieqEL._SL500_.jpg",
-        "last_checked": "2026-08-14T12:28:04.811842+00:00",
+        "last_checked": "2026-08-14T15:06:45.125085+00:00",
         "source": "amazon_creators_api"
       },
-      "updated_at": "2026-08-14T12:28:04.813056+00:00"
+      "updated_at": "2026-08-14T15:06:45.126041+00:00"
     },
     {
       "id": 312,
@@ -14179,7 +14179,7 @@
           "in_stock": true,
           "title": "EarthWay 2030P-Plus 65 LB (29 KG) Capacity Commercial Walk-Behind Broadcast Spreader for Grass, Fertilizer, Seeds \u2014 Includes Side Spread Control, Even Spread, Pneumatic Tires",
           "image": "https://m.media-amazon.com/images/I/41Bhsa45xFL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:47:02.747040+00:00",
+          "last_checked": "2026-08-14T15:06:45.884434+00:00",
           "source": "amazon_creators_api"
         }
       ],
@@ -14194,7 +14194,7 @@
         "source": "saved_product_source",
         "title": "Earthway Residential Broadcast Spreader"
       },
-      "updated_at": "2026-08-14T12:47:02.747916+00:00"
+      "updated_at": "2026-08-14T15:06:45.885547+00:00"
     },
     {
       "id": 318,
@@ -14296,7 +14296,7 @@
         "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-08-14T12:29:23.355086+00:00"
+      "updated_at": "2026-08-14T15:06:46.070677+00:00"
     },
     {
       "id": 319,
@@ -14372,7 +14372,7 @@
           "in_stock": true,
           "title": "Scotts Turf Builder EdgeGuard DLX Broadcast Spreader for Seed, Fertilizer, Salt, Ice Melt, Holds up to 15,000 sq.ft. Product, Green",
           "image": "https://m.media-amazon.com/images/I/31ksUhTEIUL._SL500_.jpg",
-          "last_checked": "2026-08-14T12:47:03.806690+00:00",
+          "last_checked": "2026-08-14T15:06:46.415945+00:00",
           "source": "amazon_creators_api"
         }
       ],
@@ -14384,10 +14384,10 @@
         "in_stock": true,
         "title": "Scotts Turf Builder EdgeGuard DLX Broadcast Spreader for Seed, Fertilizer, Salt, Ice Melt, Holds up to 15,000 sq.ft. Product, Green",
         "image": "https://m.media-amazon.com/images/I/31ksUhTEIUL._SL500_.jpg",
-        "last_checked": "2026-08-14T12:47:03.806690+00:00",
+        "last_checked": "2026-08-14T15:06:46.415945+00:00",
         "source": "amazon_creators_api"
       },
-      "updated_at": "2026-08-14T12:47:03.807663+00:00"
+      "updated_at": "2026-08-14T15:06:46.416910+00:00"
     },
     {
       "id": 320,
@@ -14926,7 +14926,7 @@
         "source": "manual_verified_source",
         "image": null
       },
-      "updated_at": "2026-08-14T14:29:38.248190+00:00"
+      "updated_at": "2026-08-14T15:06:47.987275+00:00"
     },
     {
       "id": 330,
@@ -15406,7 +15406,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-08-14T14:29:39.506873+00:00"
+      "updated_at": "2026-08-14T15:06:49.446068+00:00"
     },
     {
       "id": 348,
@@ -15460,7 +15460,7 @@
           "in_stock": true,
           "title": "PetraTools HD4000 Battery Powered Backpack Sprayer, 6 Hr Runtime, 6 Nozzles",
           "image": "https://m.media-amazon.com/images/I/51A2bAwdo5L._SL500_.jpg",
-          "last_checked": "2026-08-14T12:47:10.857827+00:00",
+          "last_checked": "2026-08-14T15:06:49.694280+00:00",
           "source": "amazon_creators_api"
         }
       ],
@@ -15472,10 +15472,10 @@
         "in_stock": true,
         "title": "PetraTools HD4000 Battery Powered Backpack Sprayer, 6 Hr Runtime, 6 Nozzles",
         "image": "https://m.media-amazon.com/images/I/51A2bAwdo5L._SL500_.jpg",
-        "last_checked": "2026-08-14T12:47:10.857827+00:00",
+        "last_checked": "2026-08-14T15:06:49.694280+00:00",
         "source": "amazon_creators_api"
       },
-      "updated_at": "2026-08-14T12:47:10.858852+00:00"
+      "updated_at": "2026-08-14T15:06:49.695244+00:00"
     },
     {
       "id": 349,
