@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-15T03:44:44.521857+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-08-15T03:45:52.450240+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 1246,
     "manual_verified_sources": 568,
@@ -11,10 +11,10 @@
   },
   "reason_counts": {
     "included": 795,
-    "not_checked_saved_source_limit": 330,
-    "no_extracted_offer": 116,
+    "not_checked_saved_source_limit": 276,
+    "no_extracted_offer": 169,
+    "below $5.00 minimum for this category": 3,
     "below $10.00 minimum for this category": 2,
-    "below $5.00 minimum for this category": 2,
     "no_price": 1
   },
   "products": [
@@ -110,7 +110,7 @@
           "retailer_name": "Yardmastery",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -211,7 +211,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -221,7 +221,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -231,7 +231,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -625,7 +625,7 @@
           "retailer_name": "Pedchem",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -838,7 +838,7 @@
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -848,7 +848,7 @@
           "retailer_name": "Intermountainturf",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -900,7 +900,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 15.38,
+          "price": 15.36,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -949,7 +949,7 @@
           "retailer_name": "Agri Supply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -959,7 +959,7 @@
           "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -969,7 +969,7 @@
           "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1152,7 +1152,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 80261.28,
+          "price": 87.77,
           "offer_url": "https://www.ebay.com/itm/325471149174"
         },
         {
@@ -1162,7 +1162,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.59,
+          "price": 57.49,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -1201,7 +1201,7 @@
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1211,7 +1211,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1221,7 +1221,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1445,7 +1445,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 26052.68,
+          "price": 28.49,
           "offer_url": "https://www.ebay.com/itm/134845221641"
         },
         {
@@ -1506,7 +1506,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 56750.77,
+          "price": 62.06,
           "offer_url": "https://www.ebay.com/itm/334689338039"
         },
         {
@@ -1575,7 +1575,7 @@
           "retailer_name": "Homeandgardensupply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1585,7 +1585,7 @@
           "retailer_name": "Golfcourselawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1757,7 +1757,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1767,7 +1767,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1777,7 +1777,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1787,7 +1787,7 @@
           "retailer_name": "Ourprosolutions",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -1899,7 +1899,7 @@
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1919,7 +1919,7 @@
           "retailer_name": "Steveregan",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1939,7 +1939,7 @@
           "retailer_name": "Steveregan",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -1949,7 +1949,7 @@
           "retailer_name": "Steveregan",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -2376,7 +2376,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 35471.52,
+          "price": 38.79,
           "offer_url": "https://www.ebay.com/itm/335925853779"
         },
         {
@@ -2425,7 +2425,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2445,7 +2445,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2465,7 +2465,7 @@
           "retailer_name": "Lawnsynergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2537,7 +2537,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 162634.93,
+          "price": 177.85,
           "offer_url": "https://www.ebay.com/itm/232322660324"
         },
         {
@@ -2566,7 +2566,7 @@
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2576,7 +2576,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2586,7 +2586,7 @@
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -2626,7 +2626,7 @@
           "retailer_name": "Sunspotsupply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -3002,7 +3002,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 48566.44,
+          "price": 53.11,
           "offer_url": "https://www.ebay.com/itm/335925853866"
         },
         {
@@ -4127,7 +4127,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 92761.81,
+          "price": 101.44,
           "offer_url": "https://www.ebay.com/itm/334772691433"
         },
         {
@@ -4147,7 +4147,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 70.9,
+          "price": 68.14,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -4186,7 +4186,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4196,7 +4196,7 @@
           "retailer_name": "Sunspotsupply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4206,7 +4206,7 @@
           "retailer_name": "Golfcourselawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4277,7 +4277,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4510,7 +4510,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4530,7 +4530,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4550,7 +4550,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -4600,7 +4600,7 @@
           "retailer_name": "Chemicalwarehouse",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -5066,7 +5066,7 @@
           "retailer_name": "Seedbarn",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -5107,7 +5107,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 84.4,
+          "price": 82.99,
           "offer_url": "https://www.amazon.com/dp/B004CZ866E?tag=lawndominator-20"
         },
         {
@@ -5522,7 +5522,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 251428.03,
+          "price": 274.95,
           "offer_url": "https://www.ebay.com/itm/335754982770"
         },
         {
@@ -5552,7 +5552,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 629297.06,
+          "price": 688.17,
           "offer_url": "https://www.ebay.com/itm/336502144793"
         },
         {
@@ -5703,7 +5703,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -5793,7 +5793,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -5803,7 +5803,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -6444,7 +6444,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59329.52,
+          "price": 64.88,
           "offer_url": "https://www.ebay.com/itm/236362202521"
         },
         {
@@ -8456,7 +8456,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8466,7 +8466,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8586,9 +8586,9 @@
           "retailer": "siteone",
           "retailer_name": "Siteone",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 228.33,
+          "status": "not_included",
+          "reason": "below $5.00 minimum for this category",
+          "price": 0.75,
           "offer_url": "https://www.siteone.com/en/510894b-lesco-carbonpro-l-w-mobilex-biostimulant-liquid-soil-amendment/p/1061272"
         },
         {
@@ -8602,8 +8602,8 @@
           "offer_url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon?variant=47135745573082"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -8729,7 +8729,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8750,7 +8750,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 80014.38,
+          "price": 87.5,
           "offer_url": "https://www.ebay.com/itm/397119847822"
         },
         {
@@ -8789,7 +8789,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8890,7 +8890,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -10237,7 +10237,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 877598.93,
+          "price": 959.01,
           "offer_url": "https://www.ebay.com/itm/146196657161"
         },
         {
@@ -10348,7 +10348,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 617028.93,
+          "price": 674.75,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -10368,7 +10368,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 529466.55,
+          "price": 579.0,
           "offer_url": "https://www.ebay.com/itm/127045509898"
         },
         {
@@ -10962,7 +10962,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -10982,7 +10982,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -11666,7 +11666,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 105152.61,
+          "price": 114.99,
           "offer_url": "https://www.ebay.com/itm/384679645892"
         },
         {
@@ -11966,7 +11966,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -11997,7 +11997,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 177339.29,
+          "price": 193.93,
           "offer_url": "https://www.ebay.com/itm/277950443175"
         },
         {
@@ -12601,7 +12601,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12630,10 +12630,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 175.0,
+          "offer_url": "https://www.ebay.com/itm/306868754155"
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/chapin-80-lb-residential-salt-spreader-8201a-1584574",
@@ -12641,7 +12641,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12686,8 +12686,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 5,
+      "included_sources": 7,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -12762,7 +12762,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12994,7 +12994,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -13256,7 +13256,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 255131.55,
+          "price": 279.0,
           "offer_url": "https://www.ebay.com/itm/127186986711"
         },
         {
@@ -13397,7 +13397,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 264276.05,
+          "price": 289.0,
           "offer_url": "https://www.ebay.com/itm/127186986700"
         },
         {
@@ -13771,7 +13771,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 239238.41,
+          "price": 261.62,
           "offer_url": "https://www.ebay.com/itm/357669756452"
         },
         {
@@ -13821,7 +13821,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 402348.86,
+          "price": 439.99,
           "offer_url": "https://www.ebay.com/itm/397985687597"
         },
         {
@@ -13902,7 +13902,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 191988.78,
+          "price": 209.95,
           "offer_url": "https://www.ebay.com/itm/306445297507"
         },
         {
@@ -14023,7 +14023,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 192025.36,
+          "price": 209.99,
           "offer_url": "https://www.ebay.com/itm/124823780245"
         },
         {
