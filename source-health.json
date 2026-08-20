@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T09:26:27.999787+00:00",
+  "generated_at": "2026-08-20T10:05:14.775991+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2344,
     "manual_verified_sources": 568,
-    "included_sources": 795,
-    "not_included_sources": 1549,
+    "included_sources": 794,
+    "not_included_sources": 1550,
     "invalid_sources": 0
   },
   "reason_counts": {
     "no_extracted_offer": 1222,
-    "included": 795,
+    "included": 794,
     "not_checked_saved_source_limit": 322,
     "below $10.00 minimum for this category": 2,
     "below $5.00 minimum for this category": 2,
-    "no_price": 1
+    "no_price": 2
   },
   "products": [
     {
@@ -3402,7 +3402,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.59,
+          "price": 57.4,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -12027,7 +12027,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.21,
+          "price": 68.14,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -17809,9 +17809,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 76.99,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20"
         },
         {
@@ -17845,8 +17845,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 0,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
