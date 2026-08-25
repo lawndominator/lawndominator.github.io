@@ -272,6 +272,19 @@ def is_bad_product_url(url: str) -> bool:
     )
     if any(part in path for part in bad_path_parts):
         return True
+    # Retailer Q&A and support articles carry a price in their markup but are
+    # not a page you can buy from, and they report no stock. DoMyOwn's
+    # "/does-this-specticle-flo-have-distinct-smell-and-color-..." answer page
+    # was saved as a Specticle FLO source and won best price at $340.02 on a
+    # bottle that is actually out of stock.
+    question_starts = (
+        "/does-", "/do-", "/is-", "/are-", "/can-", "/will-", "/what-",
+        "/how-", "/why-", "/when-", "/where-", "/should-", "/which-",
+    )
+    if any(path.startswith(part) for part in question_starts):
+        return True
+    if any(part in path for part in ("/questions", "/question/", "/faq", "/answers", "/blog/", "/articles/")):
+        return True
     if ("amazon.com" in host or host.endswith("amzn.to")) and path.rstrip("/") == "/s":
         return True
     if "search" in query or query.startswith("k="):
@@ -506,6 +519,14 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(50.0, "lb")
 
     if product_id == 4 and ("specticle-flo" in url or "specticle flo" in title or "spectacle flo" in title):
+        # Some retailers sell both sizes from one URL, e.g. Pestrong's
+        # ".../specticle-flo-pre-emergent-herbicide-18-oz-gallon". Matching on
+        # "gallon" alone stamped that page 128 fl oz while the price scraped
+        # off it was the 18 oz one, so it advertised $379.95 at $2.97/oz and
+        # won best price against a real field of $18-$25/oz. An explicit 18 oz
+        # in the text beats the word "gallon" appearing elsewhere in it.
+        if re.search(r"\b18\s*[-_]?\s*(?:fl\.?\s*)?(?:oz|ounce)", text):
+            return _package(18.0, "fl oz")
         if "gallon" in text or "1-gal" in url:
             return _package(128.0, "fl oz")
         return _package(18.0, "fl oz")

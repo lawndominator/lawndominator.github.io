@@ -88,3 +88,56 @@ class CeilingExcludesFromTheFeed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class JunkUrlsAreNotProductPages(unittest.TestCase):
+    """Retailer Q&A pages carry a price in their markup but sell nothing.
+
+    Both of these were live sources feeding phantom best prices on 2026-08-25:
+    a Specticle FLO answer page priced at $340.02, and a Turflon Ester question
+    page priced at $49.98 while claiming a 128 fl oz gallon that really costs
+    about $170.
+    """
+
+    def test_domyown_answer_pages_are_rejected(self):
+        from scraper import is_bad_product_url
+        self.assertTrue(is_bad_product_url(
+            "https://www.domyown.com/does-this-specticle-flo-have-distinct-smell-and-color-a-1.html"
+        ))
+        self.assertTrue(is_bad_product_url(
+            "https://www.domyown.com/can-monterey-turflon-ester-herbicide-be-applied-qa-79253.html"
+        ))
+
+    def test_real_product_pages_still_pass(self):
+        from scraper import is_bad_product_url
+        for url in (
+            "https://www.domyown.com/specticle-flo-p-2797.html",
+            "https://pestrong.com/product/specticle-flo-pre-emergent-herbicide-18-oz-gallon/",
+            "https://www.sunspotsupply.com/products/specticle-flo-18oz",
+            "https://seedbarn.com/products/specticle-flo-herbicide-18-ounces",
+        ):
+            self.assertFalse(is_bad_product_url(url), url)
+
+    def test_a_product_slug_beginning_with_how_is_not_treated_as_an_article(self):
+        from scraper import is_bad_product_url
+        self.assertFalse(is_bad_product_url("https://shop.example.com/products/how-to-kit"))
+
+
+class CombinedSizeUrls(unittest.TestCase):
+    def test_an_explicit_18_oz_beats_the_word_gallon_in_the_same_url(self):
+        from scraper import infer_package_size
+        product = {"id": 4, "category": "pre-emergent"}
+        got = infer_package_size(product, {
+            "url": "https://pestrong.com/product/specticle-flo-pre-emergent-herbicide-18-oz-gallon/",
+            "title": None,
+        })
+        self.assertEqual(got["package_quantity"], 18.0)
+
+    def test_a_genuine_gallon_url_is_still_a_gallon(self):
+        from scraper import infer_package_size
+        product = {"id": 4, "category": "pre-emergent"}
+        got = infer_package_size(product, {
+            "url": "https://www.sunspotsupply.com/products/specticle-flo-herbicide-gallon",
+            "title": None,
+        })
+        self.assertEqual(got["package_quantity"], 128.0)
