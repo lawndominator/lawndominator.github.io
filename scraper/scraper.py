@@ -1513,9 +1513,11 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
             if not is_product:
                 continue
 
-            offers = obj.get("offers")
-            if isinstance(offers, list):
-                offers = offers[0] if offers else None
+            offers = select_jsonld_offer(
+                obj.get("offers"),
+                page_url=base_url,
+                product_name=str(obj.get("name") or ""),
+            )
             if not isinstance(offers, dict):
                 continue
 
@@ -1528,9 +1530,23 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
             if not product_url:
                 continue
             image = _jsonld_image_url(obj, base_url)
-            in_stock = "outofstock" not in str(offers.get("availability", "")).lower()
-            if _page_indicates_out_of_stock(soup):
-                in_stock = False
+
+            # Availability: the page-text heuristic reads the whole document,
+            # so it cannot be attributed to one variant. On a multi-variant page
+            # (DoMyOwn lists an 18 oz and a gallon) it would mark every size out
+            # of stock as soon as any one of them sold out. Trust the chosen
+            # variant's own availability there.
+            #
+            # On a single-variant page the page text IS about that variant, and
+            # merchants do leave stale InStock in JSON-LD while the page says
+            # Sold Out, so the override still applies.
+            in_stock = _offer_availability_in_stock(offers)
+            single_variant = len(priced_jsonld_offers(obj.get("offers"))) <= 1
+            if in_stock is None or single_variant:
+                if _page_indicates_out_of_stock(soup):
+                    in_stock = False
+                elif in_stock is None:
+                    in_stock = True
             return {
                 "retailer": retailer,
                 "retailer_name": retailer_name,
@@ -1541,6 +1557,82 @@ def _jsonld_product_offer(soup: BeautifulSoup, base_url: str, retailer: str, ret
                 "last_checked": now_iso(),
             }
     return None
+
+
+def _offer_availability_in_stock(offer: dict) -> Optional[bool]:
+    """True/False from an offer's own schema.org availability, None if absent."""
+    raw = offer.get("availability")
+    if raw is None:
+        return None
+    text = str(raw).lower()
+    if not text.strip():
+        return None
+    if "outofstock" in text or "soldout" in text or "discontinued" in text:
+        return False
+    if "instock" in text or "onlineonly" in text or "limitedavailability" in text or "presale" in text or "backorder" in text:
+        return True
+    return None
+
+
+def priced_jsonld_offers(offers) -> list:
+    """Every variant on the page that carries a parseable price."""
+    if isinstance(offers, dict):
+        offers = [offers]
+    if not isinstance(offers, list):
+        return []
+    return [
+        offer
+        for offer in offers
+        if isinstance(offer, dict)
+        and parse_price(str(offer.get("price") or offer.get("lowPrice") or "")) is not None
+    ]
+
+
+def select_jsonld_offer(
+    offers,
+    page_url: str = "",
+    product_name: str = "",
+) -> Optional[dict]:
+    """Choose which variant on a multi-variant product page to price.
+
+    Merchant pages routinely list several sizes in one JSON-LD block. DoMyOwn's
+    Specticle FLO page carries the 18 oz at $340.02 (out of stock) and a gallon
+    at $2,143.03 (in stock). The catalog product IS the 18 oz, so we must
+    publish the 18 oz and report it honestly as out of stock. Picking whatever
+    happens to be in stock would quote a $2,143 gallon as the price of an 18 oz
+    bottle, and picking the cheapest would break the moment a page lists a
+    smaller trial size.
+
+    So: identify the page's PRIMARY variant. The SKU embedded in the page URL is
+    the strongest signal, then an exact name match against the product, then
+    the merchant's own first-listed offer, which is what this used to take
+    unconditionally.
+    """
+    priced = priced_jsonld_offers(offers)
+    if not priced:
+        return None
+    if len(priced) == 1:
+        return priced[0]
+
+    # 1. SKU that appears in the page URL. DoMyOwn's 18 oz is sku 2797 and its
+    #    page is .../specticle-flo-p-2797.html, which names the variant exactly.
+    url_text = (page_url or "").lower()
+    if url_text:
+        for offer in priced:
+            sku = str(offer.get("sku") or "").strip().lower()
+            if sku and len(sku) >= 3 and sku in url_text:
+                return offer
+
+    # 2. Exact name match. Size variants nearly always append a qualifier
+    #    ("... - Gallon"), so the bare product name is the primary listing.
+    target = (product_name or "").strip().lower()
+    if target:
+        for offer in priced:
+            if str(offer.get("name") or "").strip().lower() == target:
+                return offer
+
+    # 3. The merchant's first-listed offer, the long-standing behaviour.
+    return priced[0]
 
 
 def _page_indicates_out_of_stock(soup: BeautifulSoup) -> bool:
