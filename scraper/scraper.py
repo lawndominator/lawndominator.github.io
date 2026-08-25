@@ -63,6 +63,15 @@ ENABLE_SERPAPI_DISCOVERY = os.getenv("ENABLE_SERPAPI_DISCOVERY", "0") == "1"
 ENABLE_ORGANIC_DISCOVERY = os.getenv("ENABLE_ORGANIC_DISCOVERY", "1") != "0"
 REQUIRE_WEB_DISCOVERY = os.getenv("REQUIRE_WEB_DISCOVERY", "0") == "1"
 ENABLE_DIRECT_RETAILER_SEARCH = os.getenv("ENABLE_DIRECT_RETAILER_SEARCH", "0") == "1"
+
+# Stop the sweep cleanly before the CI job timeout kills it. A killed job wrote
+# nothing at all; a budgeted one commits everything it managed to refresh.
+# Keep this comfortably under `timeout-minutes` in price-scraper.yml.
+SWEEP_TIME_BUDGET_SECONDS = int(os.getenv("SWEEP_TIME_BUDGET_SECONDS", "4200"))
+# Flush the feed to disk this often, so a hard kill still leaves fresh prices.
+CHECKPOINT_EVERY = int(os.getenv("CHECKPOINT_EVERY", "10"))
+# Loudly flag a feed whose oldest merchant price has rotted past this age.
+MAX_OFFER_AGE_HOURS = float(os.getenv("MAX_OFFER_AGE_HOURS", "48"))
 ENABLE_KNOWN_RETAILER_SEARCH = os.getenv("ENABLE_KNOWN_RETAILER_SEARCH", "0") == "1"
 ORGANIC_FETCH_TIMEOUT = int(os.getenv("ORGANIC_FETCH_TIMEOUT", "12000"))
 KNOWN_RETAILER_LIMIT = int(os.getenv("KNOWN_RETAILER_LIMIT", "8"))
@@ -1006,6 +1015,162 @@ def sanitize_equipment_sources(source_map: dict, catalog_products: list[dict]) -
                 source.pop(key, None)
             kept.append(source)
         source_map["products"][product_id] = kept
+
+
+# ---------------------------------------------------------------------------
+# Sweep scheduling: staleness ordering, checkpointing, and completeness.
+#
+# The full Playwright sweep used to run the catalog in fixed order and write
+# prices.json only after the very last product. Once the catalog outgrew the
+# job timeout the run was killed mid-pass and wrote NOTHING, so every
+# non-Amazon price froze while the Amazon fast lane kept refreshing
+# generated_at. The feed advertised today's date over ten-day-old merchant
+# prices and nothing failed loudly.
+#
+# Three changes make the sweep degrade gracefully instead of catastrophically:
+#   * least-recently-checked products go first, so whatever a run misses is
+#     exactly what the next run starts with;
+#   * the feed is written at checkpoints, so a kill costs the tail, not the run;
+#   * unprocessed products are carried forward, so a partial write is still a
+#     COMPLETE feed rather than a truncated one.
+# ---------------------------------------------------------------------------
+
+def _product_checked_at(entry: Optional[dict]) -> float:
+    """Epoch seconds this product's data was last refreshed. 0.0 if never."""
+    if not entry:
+        return 0.0
+    stamps = []
+    for value in (entry.get("updated_at"),):
+        parsed = _parse_alert_time(value) if value else None
+        if parsed:
+            stamps.append(parsed.timestamp())
+    for offer in entry.get("offers") or []:
+        parsed = _parse_alert_time(offer.get("last_checked")) if offer.get("last_checked") else None
+        if parsed:
+            stamps.append(parsed.timestamp())
+    return max(stamps) if stamps else 0.0
+
+
+def _publish_feed(
+    results: list[dict],
+    stale_map: dict,
+    source_map: dict,
+    catalog: dict,
+    existing_alerts: list,
+    prices_path,
+    alerts_path,
+    health_path,
+    sources_path,
+    emit_alerts: bool,
+):
+    """Write a COMPLETE feed from however much of the sweep has finished.
+
+    Safe to call mid-sweep. Products this run has not reached are carried
+    forward from the previous feed and marked stale, so a checkpoint never
+    publishes a truncated catalog.
+    """
+    results = list(results)
+    apply_offer_package_metadata(results)
+    apply_offer_quality_filters(results)
+    results = preserve_last_good_products(results, stale_map)
+    results = merge_unprocessed_products(results, stale_map, catalog["products"])
+    apply_offer_quality_filters(results)
+    sanitize_equipment_results(results)
+    source_map = update_product_sources(source_map, results)
+    sanitize_equipment_sources(source_map, catalog["products"])
+
+    generated_at = now_iso()
+    output = {
+        "schema_version": "1.0",
+        "generated_at":   generated_at,
+        "product_count":  len(results),
+        "products":       results,
+    }
+    health_output = build_source_health(catalog["products"], source_map, results, generated_at)
+
+    with open(prices_path, "w") as f:
+        json.dump(output, f, indent=2)
+    with open(health_path, "w") as f:
+        json.dump(health_output, f, indent=2)
+    with open(sources_path, "w") as f:
+        json.dump(source_map, f, indent=2)
+
+    # Alerts compare this feed against the previous one, so they are computed
+    # once at the end of the sweep. Emitting them at every checkpoint would
+    # diff a partial feed against a full one and invent drops.
+    if emit_alerts:
+        alerts_output = build_price_alerts(stale_map, results, generated_at, existing_alerts)
+        with open(alerts_path, "w") as f:
+            json.dump(alerts_output, f, indent=2)
+        log.info(f"Written to {alerts_path} ({alerts_output['alert_count']} alerts)")
+
+    found = sum(1 for p in results if p.get("best_price"))
+    return results, source_map, found
+
+
+def order_products_by_staleness(products: list[dict], previous: dict) -> list[dict]:
+    """Least-recently-checked first, so a short run refreshes what is oldest.
+
+    This is what makes the sweep self-healing: a run that only gets halfway
+    through still fixes the half that was most out of date, and the next run
+    picks up exactly where the data is now stalest. No shard index to keep in
+    sync with a catalog that changes.
+    """
+    return sorted(
+        products,
+        key=lambda product: (
+            _product_checked_at(previous.get(product["id"])),
+            product["id"],
+        ),
+    )
+
+
+def merge_unprocessed_products(
+    results: list[dict],
+    previous: dict,
+    catalog_products: list[dict],
+) -> list[dict]:
+    """Return a feed covering the whole catalog, not just what this run reached.
+
+    preserve_last_good_products only walks entries already in `results`, so on
+    its own a checkpoint or an interrupted sweep would publish a feed missing
+    every product the run had not got to yet. Those would vanish from the app.
+    """
+    seen = {entry["id"] for entry in results}
+    merged = list(results)
+    for product in catalog_products:
+        pid = product["id"]
+        if pid in seen:
+            continue
+        carried = previous.get(pid)
+        if not carried:
+            continue
+        entry = carried.copy()
+        entry["stale"] = True
+        entry["stale_reason"] = "not reached in latest sweep"
+        merged.append(entry)
+    merged.sort(key=lambda entry: entry["id"])
+    return merged
+
+
+def offer_age_summary(products: list[dict], now: Optional[float] = None) -> dict:
+    """Oldest and median offer age in hours, for the staleness alarm."""
+    reference = now if now is not None else datetime.now(timezone.utc).timestamp()
+    ages = []
+    for entry in products:
+        checked = _product_checked_at(entry)
+        if checked:
+            ages.append(max(0.0, (reference - checked) / 3600.0))
+    if not ages:
+        return {"count": 0, "oldest_hours": None, "median_hours": None}
+    ages.sort()
+    mid = len(ages) // 2
+    median = ages[mid] if len(ages) % 2 else (ages[mid - 1] + ages[mid]) / 2
+    return {
+        "count": len(ages),
+        "oldest_hours": round(ages[-1], 1),
+        "median_hours": round(median, 1),
+    }
 
 
 def preserve_last_good_products(results: list[dict], previous_products: dict) -> list[dict]:
@@ -2764,6 +2929,18 @@ def run():
     results = []
     total   = len(catalog["products"])
 
+    # Refresh the stalest products first. A run that cannot finish the catalog
+    # then fixes the worst data rather than redoing the same head every time.
+    sweep_order = order_products_by_staleness(catalog["products"], stale_map)
+    entering = offer_age_summary(list(stale_map.values()))
+    log.info(
+        f"Sweep order: stalest first. Feed on entry: oldest "
+        f"{entering['oldest_hours']}h, median {entering['median_hours']}h "
+        f"across {entering['count']} products."
+    )
+    sweep_started = time.monotonic()
+    budget_exhausted = False
+
     with sync_playwright() as pw:
         _browser = pw.chromium.launch(
             headless=True,
@@ -2771,7 +2948,25 @@ def run():
         )
         log.info("Playwright browser launched")
 
-        for i, product in enumerate(catalog["products"], 1):
+        for i, product in enumerate(sweep_order, 1):
+            elapsed = time.monotonic() - sweep_started
+            if elapsed > SWEEP_TIME_BUDGET_SECONDS:
+                budget_exhausted = True
+                log.warning(
+                    f"Time budget reached after {elapsed / 60:.1f} min at "
+                    f"{i - 1}/{total} products. Publishing what is refreshed; "
+                    f"the next run resumes with the stalest remaining."
+                )
+                break
+
+            if i > 1 and (i - 1) % CHECKPOINT_EVERY == 0:
+                _publish_feed(
+                    results, stale_map, source_map, catalog, existing_alerts,
+                    prices_path, alerts_path, health_path, sources_path,
+                    emit_alerts=False,
+                )
+                log.info(f"  Checkpoint written at {i - 1}/{total}")
+
             pid  = product["id"]
             name = product["name"]
             cat  = product["category"]
@@ -2854,37 +3049,44 @@ def run():
 
         _browser.close()
 
-    apply_offer_package_metadata(results)
-    apply_offer_quality_filters(results)
-    results = preserve_last_good_products(results, stale_map)
-    apply_offer_quality_filters(results)
-    sanitize_equipment_results(results)
-    source_map = update_product_sources(source_map, results)
-    sanitize_equipment_sources(source_map, catalog["products"])
+    results, source_map, found = _publish_feed(
+        results,
+        stale_map,
+        source_map,
+        catalog,
+        existing_alerts,
+        prices_path,
+        alerts_path,
+        health_path,
+        sources_path,
+        emit_alerts=True,
+    )
+    leaving = offer_age_summary(results)
+    log.info(
+        f"Feed on exit: oldest {leaving['oldest_hours']}h, median "
+        f"{leaving['median_hours']}h across {leaving['count']} products."
+    )
+    if budget_exhausted:
+        log.warning(
+            "Sweep was cut short by its time budget. Expected when the catalog "
+            "outgrows one run; the next run continues from the stalest."
+        )
+    # The failure this guards against is silent: the Amazon fast lane keeps
+    # generated_at looking current while merchant prices quietly rot, which is
+    # exactly how the feed reached ten days stale without anyone noticing.
+    if (
+        leaving["oldest_hours"] is not None
+        and leaving["oldest_hours"] > MAX_OFFER_AGE_HOURS
+    ):
+        log.error(
+            f"STALE FEED: oldest product data is {leaving['oldest_hours']}h old, "
+            f"past the {MAX_OFFER_AGE_HOURS}h limit. The sweep is not keeping up "
+            f"with the catalog. Raise timeout-minutes and SWEEP_TIME_BUDGET_SECONDS, "
+            f"or split the sweep across more runs."
+        )
 
-    generated_at = now_iso()
-    output = {
-        "schema_version": "1.0",
-        "generated_at":   generated_at,
-        "product_count":  len(results),
-        "products":       results,
-    }
-    alerts_output = build_price_alerts(stale_map, results, generated_at, existing_alerts)
-    health_output = build_source_health(catalog["products"], source_map, results, generated_at)
-
-    with open(prices_path, "w") as f:
-        json.dump(output, f, indent=2)
-    with open(alerts_path, "w") as f:
-        json.dump(alerts_output, f, indent=2)
-    with open(health_path, "w") as f:
-        json.dump(health_output, f, indent=2)
-    with open(sources_path, "w") as f:
-        json.dump(source_map, f, indent=2)
-
-    found = sum(1 for p in results if p.get("best_price"))
     log.info(f"\nDone. {found}/{len(results)} products have a best price.")
     log.info(f"Written to {prices_path}")
-    log.info(f"Written to {alerts_path} ({alerts_output['alert_count']} alerts)")
     log.info(f"Written to {health_path}")
     log.info(f"Written to {sources_path}")
 

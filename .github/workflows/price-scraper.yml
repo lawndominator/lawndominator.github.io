@@ -42,7 +42,13 @@ concurrency:
 jobs:
   scrape-prices:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # A full sweep of the catalog takes roughly two hours of Playwright page
+    # loads. At 60 minutes the job was killed mid-pass every single time and,
+    # because the feed was only written at the end, it published nothing for
+    # ten days straight. The scraper now stops itself at
+    # SWEEP_TIME_BUDGET_SECONDS and publishes; this is the hard backstop above
+    # that, and must stay comfortably larger than it.
+    timeout-minutes: 90
 
     steps:
       - name: Checkout repo
@@ -88,6 +94,10 @@ jobs:
           ENABLE_KNOWN_RETAILER_SEARCH: "0"
           KNOWN_RETAILER_LIMIT: "8"
           ENABLE_DIRECT_RETAILER_SEARCH: "0"
+          # Stop and publish at 70 minutes, inside the 90 minute job timeout.
+          SWEEP_TIME_BUDGET_SECONDS: "4200"
+          CHECKPOINT_EVERY: "10"
+          MAX_OFFER_AGE_HOURS: "48"
           ENABLE_ORGANIC_DISCOVERY: "0"
           SHOPPING_RESULT_LIMIT: "10"
           SHOPPING_DETAIL_RESULT_LIMIT: ${{ ((github.event_name == 'workflow_dispatch' && inputs.enable_discovery == 'true') || github.event.schedule == '0 9 * * 0') && '3' || '0' }}
