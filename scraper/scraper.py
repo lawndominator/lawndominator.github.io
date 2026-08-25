@@ -345,6 +345,36 @@ def min_price_for_product(product: dict) -> float:
     return MIN_CHEMICAL_PRICE
 
 
+def max_price_for_product(product: dict) -> Optional[float]:
+    """Ceiling above which an offer is not a real consumer purchase.
+
+    Some product pages list a homeowner size alongside a commercial drum, and
+    the bulk listing can win best-price on unit cost: Specticle FLO published a
+    $2,247.32 128 fl oz gallon as the best price of an 18 fl oz bottle, because
+    $17.56/oz beats the bottle's $18.89/oz. Nobody using this app is buying the
+    gallon.
+
+    Per product rather than global, because the right ceiling is a fact about
+    the product. Equipment is legitimately expensive (a LESCO high wheel is
+    $700), so a blanket cap would delete real prices. Add an entry here when a
+    product's page carries a bulk size the app should ignore.
+    """
+    product_maximums = {
+        4: 500,  # Spectacle Flo: 18 fl oz bottle, not the $2,247 gallon
+    }
+    return product_maximums.get(int(product.get("id", 0)))
+
+
+def _exceeds_max_price(product: dict, offer: dict) -> bool:
+    ceiling = max_price_for_product(product)
+    if ceiling is None:
+        return False
+    try:
+        return float(offer["price"]) > ceiling
+    except (TypeError, ValueError, KeyError):
+        return False
+
+
 def _valid_price(offer: dict) -> Optional[float]:
     try:
         return float(offer["price"])
@@ -372,6 +402,7 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         and not is_google_url(o.get("url", ""))
         and not is_bad_product_url(o.get("url", ""))
         and float(o["price"]) >= min_price_for_product(product)
+        and not _exceeds_max_price(product, o)
     ]
     comparable_by_unit: dict[str, list[dict]] = {}
     for offer in priced:
@@ -934,6 +965,7 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
 
     for product in results:
         floor = min_price_for_product(product)
+        ceiling = max_price_for_product(product)
         for offer in product.get("offers", []):
             if offer.get("price") is None:
                 continue
@@ -952,6 +984,11 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
             elif price < floor:
                 offer["excluded"] = True
                 offer["exclude_reason"] = f"below ${floor:.2f} minimum for this category"
+            elif ceiling is not None and price > ceiling:
+                # Bulk sizes nobody using this app is buying. Excluded outright
+                # so the offer never renders, not merely skipped for best price.
+                offer["excluded"] = True
+                offer["exclude_reason"] = f"above ${ceiling:.2f} maximum for this product"
             elif key in repeated_bad:
                 offer["excluded"] = True
                 offer["exclude_reason"] = "same retailer/price repeated across many unrelated products"
