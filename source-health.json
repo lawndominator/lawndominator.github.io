@@ -1,19 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-25T22:04:58.932199+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-08-25T22:05:37.809865+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2344,
     "manual_verified_sources": 568,
-    "included_sources": 1778,
-    "not_included_sources": 566,
-    "invalid_sources": 0
+    "included_sources": 1755,
+    "not_included_sources": 564,
+    "invalid_sources": 25
   },
   "reason_counts": {
-    "included": 1778,
-    "not_checked_saved_source_limit": 339,
-    "no_extracted_offer": 167,
-    "below $10.00 minimum for this category": 21,
+    "included": 1755,
+    "not_checked_saved_source_limit": 323,
+    "no_extracted_offer": 182,
+    "not_product_purchase_page": 25,
+    "below $10.00 minimum for this category": 20,
     "above $400.00 maximum for this product": 13,
     "above $500.00 maximum for this product": 12,
     "above $300.00 maximum for this product": 7,
@@ -684,10 +685,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 139.5,
-          "offer_url": "https://www.domyown.com/can-you-please-recommend-both-pre-and-postemergent-liquid-herbicide-for-residential-lawn-in-philadelphia-qa-33914.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Dimension-2EW-Herbicide-Controls-Broadleaf-and-Grassy-Weeds-64-fl-oz-Bottle-by-Corteva/2700338722?wmlspartner=wlpa&selectedSellerId=13656&selectedOfferId=52DD515A69A633FC8D0C3224C6BF7CD6&conditionGroupCode=1&veh=seo_fpl&cn=google",
@@ -840,9 +841,9 @@
           "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
-      "included_sources": 30,
+      "included_sources": 29,
       "not_included_sources": 15,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 3,
@@ -1116,10 +1117,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 340.02,
-          "offer_url": "https://www.domyown.com/does-this-specticle-flo-have-distinct-smell-and-color-qa-23600.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Specticle-FLO-Herbicide-18-Ounces/654848027?wmlspartner=wlpa&selectedSellerId=16695&selectedOfferId=6F6B5DCEF36A4CD28EBF4AE258E215F2&conditionGroupCode=1&veh=seo_fpl&cn=google",
@@ -1192,9 +1193,9 @@
           "offer_url": "https://www.domyown.com/specticle-flo-p-2797.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2797&srsltid=AfmBOory6aX0KoNA1OdaErcWG6bRfuvjjjgaivgXJs1vplsJcklEeYTL2gg"
         }
       ],
-      "included_sources": 14,
+      "included_sources": 13,
       "not_included_sources": 5,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 5,
@@ -1299,7 +1300,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 64.83,
+          "price": 102.24,
           "offer_url": "https://www.domyown.com/pendulum-2g-20-lb-p-21266.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=21266&srsltid=AfmBOorcjf9JXmYMMEPuYBGaWB4yDWrMlvQwoH9ek13gvNYlzk54AdNx8fc"
         },
         {
@@ -1419,7 +1420,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 151.12,
+          "price": 123.77,
           "offer_url": "https://www.domyown.com/pendulum-aquacap-herbicide-25-gallon-p-1497.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1497&srsltid=AfmBOoqlGMZy0Iy_r1nDS-NTfBPUBxVbw6L1z36D79suSXkOVMu6v_SnJkY"
         },
         {
@@ -1799,19 +1800,19 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/gallery-75-df-herbicide-1-lb?currency=USD&country=US&variant=12534748545124&stkn=fe2774b158dd&srsltid=AfmBOooRLlzLi-R9Jgb8zleZUQ8EoZElDInKWX-e__JZRuThc_8Zv_zo0EU"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.domyown.com/does-gallery-control-poa-annua-qa-16931.html",
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 143.5,
-          "offer_url": "https://www.domyown.com/does-gallery-control-poa-annua-qa-16931.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Gallery-75-DF-Herbicide-1-Lb-p/gallery-75df-1.htm?srsltid=AfmBOoobmyD1ZmvCroPijDOkw9UjtatMOZZA1pFDG-g4LYacnFaU2sA_8hc",
@@ -1868,10 +1869,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 143.5,
-          "offer_url": "https://www.domyown.com/what-is-the-max-single-application-rate-of-gallery-75-df-specialty-herbicide-per-1000-sqft-qa-69963.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google",
@@ -1884,9 +1885,9 @@
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 29,
+      "included_sources": 27,
       "not_included_sources": 4,
-      "invalid_sources": 0
+      "invalid_sources": 2
     },
     {
       "id": 7,
@@ -2511,10 +2512,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 151.12,
-          "offer_url": "https://www.domyown.com/how-do-you-remove-stained-area-on-flagstone-drops-of-pendulum-aqua-cap-product-got-on-my-customers-walk-way-qa-19594.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://diypestcontrol.com/pendulum-aqua-cap?srsltid=AfmBOoouqxFjNEs3lyGavOh3Q0J40740qUyUvBnQ9NHlQfWqbjS-JICia6g",
@@ -2657,9 +2658,9 @@
           "offer_url": "https://www.ebay.com/itm/116004392567?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq4wVhq3YxOXUC18Mv3ixDvHz1l68ZGdxNY0bBD1K3jQxIZcgpRN9w"
         }
       ],
-      "included_sources": 24,
+      "included_sources": 23,
       "not_included_sources": 2,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 15,
@@ -3323,10 +3324,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 127.61,
-          "offer_url": "https://www.domyown.com/can-you-spray-certainty-herbicide-over-certain-plant-materials-qa-63060.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.ebay.com/itm/145199762991?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item",
@@ -3359,9 +3360,9 @@
           "offer_url": "https://www.walmart.com/ip/Sertay-Herbicide-1-25-oz-by-Atticus-Compare-to-Certainty-Sulfosulfuron-Weed-Killer-for-Southern-Lawns-Post-Emergent-Weed-Control/1436015228?wmlspartner=wlpa&selectedSellerId=101464992&selectedOfferId=18833FE34F62371CA07499B013F19B26&conditionGroupCode=1&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 23,
+      "included_sources": 22,
       "not_included_sources": 1,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 17,
@@ -3406,7 +3407,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.02,
+          "price": 56.83,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4580,7 +4581,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 53.52,
+          "price": 53.54,
           "offer_url": "https://www.solutionsstores.com/tenacity-herbicide?sku=SYNG31&srsltid=AfmBOor-st_lUTt2wmxGZNxSs5tjA1krlaov-Q33lQM1H0JTjMsL8U-EYMI"
         },
         {
@@ -4791,7 +4792,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 24.4,
+          "price": 29.99,
           "offer_url": "https://www.solutionsstores.com/hi-yield-triclopyr-ester?sku=VPG31&srsltid=AfmBOopDmgO69OAo5SbS-uJ37ZwIFFsjtT3ETcBK7urGKeL5KXdZ5WjtVv8"
         },
         {
@@ -4849,10 +4850,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 29.07,
-          "offer_url": "https://www.domyown.com/what-hiyield-postemergence-grass-herbicide-should-use-with-triclopyr-ester-to-improve-its-effectiveness-qa-38809.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Hi-Yield-Triclopyr-Ester-Herbicide-Liquid-Concentrate-8-fl-oz-Bottle-by-VPG/656723346?wmlspartner=wlpa&selectedSellerId=17649&selectedOfferId=7C3001AA7ECE456DB9390E3896BBD03C&conditionGroupCode=1&veh=seo_fpl&cn=google",
@@ -4979,10 +4980,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 49.98,
-          "offer_url": "https://www.domyown.com/can-monterey-turflon-ester-herbicide-be-applied-using-hose-end-sprayer-am-not-able-to-life-gallon-hand-pump-sprayer-qa-79253.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Monterey-P-Turflon-Ester-Concentrate-8-oz/19276690?wmlspartner=wlpa&selectedSellerId=6895&selectedOfferId=EF2AA1740FD8419898AC39341F0B0268&conditionGroupCode=1&veh=seo_fpl&cn=google",
@@ -5065,9 +5066,9 @@
           "offer_url": "https://www.ebay.com/itm/257164611738?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqmWDn7jJo_qBM2GrKQKCal9Q8q1L1vrdIsYMdb9yCOffFVytl5Sg8"
         }
       ],
-      "included_sources": 33,
+      "included_sources": 31,
       "not_included_sources": 1,
-      "invalid_sources": 0
+      "invalid_sources": 2
     },
     {
       "id": 23,
@@ -5360,20 +5361,20 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 89.98,
-          "offer_url": "https://www.domyown.com/can-dismiss-turf-herbicide-be-used-with-preemergent-qa-25802.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.domyown.com/how-long-after-treatment-can-replant-grass-and-garden-when-using-dismiss-turf-qa-46671.html",
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 89.98,
-          "offer_url": "https://www.domyown.com/how-long-after-treatment-can-replant-grass-and-garden-when-using-dismiss-turf-qa-46671.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://diypestcontrol.com/prime-source-sulfentrazone%20-4sc-select?srsltid=AfmBOoqPq4WhSwJUsuE-zHxfP5Jl0tbtfYZObW2TfCGETE6U_6QZ4OxDsNc",
@@ -5382,7 +5383,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 60.46,
+          "price": 32.1,
           "offer_url": "https://diypestcontrol.com/prime-source-sulfentrazone%20-4sc-select?srsltid=AfmBOoqPq4WhSwJUsuE-zHxfP5Jl0tbtfYZObW2TfCGETE6U_6QZ4OxDsNc"
         },
         {
@@ -5490,15 +5491,15 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 60.48,
-          "offer_url": "https://www.domyown.com/how-do-mix-sulfentrazone-4sc-select-have-1gallon-sprayer-qa-42454.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 36,
+      "included_sources": 33,
       "not_included_sources": 6,
-      "invalid_sources": 0
+      "invalid_sources": 3
     },
     {
       "id": 24,
@@ -5601,20 +5602,20 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 424.32,
-          "offer_url": "https://www.domyown.com/will-pylex-herbicide-kill-poa-in-tall-fescue-qa-56447.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.domyown.com/can-pylex-herbicide-be-applied-as-broadcast-spray-in-residential-lawns-qa-92965.html",
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 424.32,
-          "offer_url": "https://www.domyown.com/can-pylex-herbicide-be-applied-as-broadcast-spray-in-residential-lawns-qa-92965.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.reinders.com/products/basf-pylex-post-emergent-herbicide-4-oz-btl",
@@ -5701,15 +5702,15 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 424.32,
-          "offer_url": "https://www.domyown.com/why-is-pylex-labeled-for-spot-spray-applications-only-on-athletic-fields-qa-39090.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 20,
+      "included_sources": 17,
       "not_included_sources": 0,
-      "invalid_sources": 0
+      "invalid_sources": 3
     },
     {
       "id": 25,
@@ -5733,7 +5734,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -6126,7 +6127,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 332.21,
+          "price": 88.3,
           "offer_url": "https://www.domyown.com/gordons-trimec-classic-broadleaf-herbicide-p-10321.html"
         },
         {
@@ -6216,7 +6217,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 332.21,
+          "price": 88.3,
           "offer_url": "https://www.domyown.com/gordons-trimec-classic-broadleaf-herbicide-p-10321.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=10321&srsltid=AfmBOortJAtSOmVQ1UQWeIq8BcPh4TCQqXYYCcsT3uM5YlertUc5qdDyUQE"
         },
         {
@@ -6346,7 +6347,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 332.21,
+          "price": 190.5,
           "offer_url": "https://www.domyown.com/gordons-trimec-classic-broadleaf-herbicide-25-gal-p-10322.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=10322&srsltid=AfmBOoonnYLQqNjwFGL7Z8lpY8soQVHxeSn3lf66qC2bSanjRXAENFhLgRo"
         },
         {
@@ -6847,7 +6848,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 832.59,
+          "price": 418.98,
           "offer_url": "https://www.domyown.com/revolver-selective-herbicide-87-oz-bottle-p-1891.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1891&srsltid=AfmBOoo5_cHQBIGp2A1iCC2EN1cRXsXlSQwBnIHxW80-Ya2GllX6id00pcI"
         },
         {
@@ -6877,7 +6878,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 838.42,
+          "price": 418.98,
           "offer_url": "https://www.domyown.com/revolver-selective-herbicide-87-oz-bottle-washington-p-25705.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25705&srsltid=AfmBOopG0hPlbXr3oxnO3Yr5dkddGz8U8CYzIdd4VwEikOBVFDiTuVpmXHo"
         },
         {
@@ -6897,7 +6898,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 857.36,
+          "price": 418.98,
           "offer_url": "https://www.domyown.com/revolver-selective-herbicide-87-oz-bottle-california-p-25703.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25703&srsltid=AfmBOorpuaKwtYwjcjJGlTIXCc6pzIbHXdPopwODnR_uvC6CJllw6NCXPOQ"
         },
         {
@@ -6978,7 +6979,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 250.21,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/katana-herbicide?sku=GORD7&srsltid=AfmBOoobFyqqonVzb1HGWm5oaSRWbdp5kP0pLfNMBPP7DrLmr_2hkxXYcRk"
         },
         {
@@ -7199,7 +7200,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 448.92,
+          "price": 445.8,
           "offer_url": "https://www.domyown.com/bayer-tribute-total-p-13537.html"
         },
         {
@@ -7209,7 +7210,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 433.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
         },
         {
@@ -7389,7 +7390,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 448.92,
+          "price": 445.8,
           "offer_url": "https://www.domyown.com/bayer-tribute-total-p-13537.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=13537&srsltid=AfmBOoozSrNxcrOx27GKxR_q1PL05I8P_ARr0u_okZQSRBY8uDFedaQd6Zg"
         },
         {
@@ -7399,7 +7400,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 433.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide?sku=BAYE10&srsltid=AfmBOopQ7wjgglnw3kJW1y31e8kwv4RHyevbbdPES7KDyevGnkAH-wwC7A0"
         },
         {
@@ -8213,7 +8214,7 @@
           "manual_verified": true,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 1337.48,
+          "price": 596.0,
           "offer_url": "https://www.domyown.com/trimmit-2sc-plant-growth-regulator-p-23967.html"
         },
         {
@@ -9517,10 +9518,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 88.87,
-          "offer_url": "https://www.domyown.com/can-you-apply-headway-fungicide-granules-to-floratam-or-palmetto-st-augustine-grass-qa-50945.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://pestcontrolsuperstore.com/products/headway-g-fungicide?variant=41628546891866&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopxBWkcQZs7hXz0-vZdhdUf2F6Cj5lGGyF5-ykDJanzt_VZjG6GQGE",
@@ -9537,10 +9538,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 88.87,
-          "offer_url": "https://www.domyown.com/how-long-does-it-take-to-headway-fungicide-granules-work-qa-58717.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Headway-G-Fungicide-Stops-and-Prevents-Turf-Diseases-30-lb-Bag-by-Syngenta/5045657950?wmlspartner=wlpa&selectedSellerId=101444091&veh=seo_fpl&cn=google",
@@ -9567,10 +9568,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 88.87,
-          "offer_url": "https://www.domyown.com/how-long-do-have-to-wait-to-apply-pre-emergent-after-applying-the-headway-fungicide-qa-112164.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://seedbarn.com/products/headway-g-fungicide-30-lbs?currency=USD&country=US&variant=12535249895524&stkn=fe2774b158dd&srsltid=AfmBOorA9n8exDAhwd7zcJEksk5mJ4OJXcAn5K__eNor72uBrigXgbaLyCY",
@@ -9663,9 +9664,9 @@
           "offer_url": "https://ohhmygoodness.com/products/syngenta-headway-g-fungicide-granules-30-lbs?variant=48941376962848&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorxAqZnCFcFIK3O9MCOpFPee5lRxPu2V2Sz7jMUb1ZasrwTSZ4yidU"
         }
       ],
-      "included_sources": 32,
+      "included_sources": 29,
       "not_included_sources": 0,
-      "invalid_sources": 0
+      "invalid_sources": 3
     },
     {
       "id": 53,
@@ -9898,10 +9899,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 177.78,
-          "offer_url": "https://www.domyown.com/how-to-treat-an-autumn-blaze-maple-with-armada-as-slurry-that-is-poured-into-the-soil-how-do-mix-qa-61463.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.ebay.com/itm/335924059505?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorAhKspX5yODcjUFGiHTCwZHL6BUMyT1AVU7WQIRBwy-JPZIrvT6Nw",
@@ -9938,10 +9939,10 @@
           "retailer": "siteone-landscape-supply",
           "retailer_name": "SiteOne Landscape Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 236.51,
+          "offer_url": "https://www.siteone.com/d00000898-armada-50-wdg-fungicide-2-lb/p/956066?store=460"
         },
         {
           "url": "https://gciturfacademy.com/products/armada-50-wdg-fungicide-1-jug-2-lb?srsltid=AfmBOorMS-TlEXs3t3a4smrf9BCj5Mqxqi6Ehc8RZ4Up5dK30PZh7D3wgSI",
@@ -9975,8 +9976,8 @@
         }
       ],
       "included_sources": 29,
-      "not_included_sources": 1,
-      "invalid_sources": 0
+      "not_included_sources": 0,
+      "invalid_sources": 1
     },
     {
       "id": 54,
@@ -9991,7 +9992,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 700.15,
+          "price": 259.6,
           "offer_url": "https://www.domyown.com/pillar-sc-fungicide-p-24751.html"
         },
         {
@@ -10091,7 +10092,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 700.15,
+          "price": 259.6,
           "offer_url": "https://www.domyown.com/pillar-sc-fungicide-p-24751.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=24751&srsltid=AfmBOoqRlqO6l4Ij0SHF2Gz1OZ3V5MLQoH-9-qb7yOcZRBzGD-6mgg7r_Qk"
         },
         {
@@ -10561,10 +10562,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.2,
-          "offer_url": "https://www.domyown.com/will-eagle-20ew-specialty-fungicide-treat-shot-hole-disease-on-plum-and-flowering-cherry-trees-qa-49712.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://homeandgardensupply.com/products/eagle-20-ew-specialty-herbicide?variant=40416194691159&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoobH4XF3Gfeu8noDIJRfcEF41dRBTT2AEKE91qYkq6EeVKToJLHVL8",
@@ -10701,10 +10702,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 52.2,
-          "offer_url": "https://www.domyown.com/is-eagle-20ew-safe-to-use-on-hedges-like-indian-hawthorn-and-boxwoods-qa-34272.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://arbsession.com/dow-20-ew-t-o-eagle-gallon-jug.html?srsltid=AfmBOooWE4wIIvHl-0pAWVWAby2-BolRwGxaue8tS54NdX14TabltYbadaw",
@@ -10807,9 +10808,9 @@
           "offer_url": "https://homeandgardensupply.com/products/eagle-20-ew-specialty-herbicide?variant=40416194723927&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorWlHPs1GmXm6-e_guk8vhf8KtvRUDVZ6qku2jCLx3XCCA6-n8vYJ8"
         }
       ],
-      "included_sources": 34,
+      "included_sources": 32,
       "not_included_sources": 2,
-      "invalid_sources": 0
+      "invalid_sources": 2
     },
     {
       "id": 57,
@@ -11928,9 +11929,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 752.6,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 1.0,
           "offer_url": "https://www.solutionsstores.com/densicor-fungicide?sku=ENVU1&srsltid=AfmBOopAq3VpJb2DMirC4Pmd-yBmpDwnVYRl1XEUIC94DfEhvLpCOmCkM1A"
         },
         {
@@ -11974,8 +11975,8 @@
           "offer_url": "https://www.intermountainturf.com/products/daconil-action-jug-2-5-gal?currency=USD&country=US&variant=45347184181386&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOorDNaF3_Sgjrb4QWtagJ2UbvJneMKavEmt4LU10iX4VgtPoa_u0ZpU"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 0,
+      "included_sources": 6,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -12001,7 +12002,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 58.82,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide"
         },
         {
@@ -12362,7 +12363,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 58.82,
+          "price": 52.31,
           "offer_url": "https://www.solutionsstores.com/acelepryn-insecticide?sku=SYNG62&srsltid=AfmBOooxrURL15Qtd8opUwqxss-HqvZhbIUZRcitvJOsyfO69WZfnC3_On0"
         },
         {
@@ -12513,7 +12514,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 40.96,
+          "price": 40.98,
           "offer_url": "https://www.solutionsstores.com/merit-granules-turf-insecticide?sku=BAYE6&srsltid=AfmBOoo3hwAh6SRdeU53Ou20fprbIyo4GGtNgqFJF2U-_Hi59ySL8A02PbA"
         },
         {
@@ -13175,7 +13176,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.12,
+          "price": 29.01,
           "offer_url": "https://www.solutionsstores.com/bifen-7-9-home-yard-insecticide-concentrate"
         },
         {
@@ -13345,7 +13346,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 40.98,
+          "price": 29.97,
           "offer_url": "https://www.domyown.com/bifen-it-quart-p-552.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=552&srsltid=AfmBOopNeb2fCps58PyYsc22Apbopl53OCCIHehpcStEZpkZO09p-cT5QUU"
         },
         {
@@ -13463,10 +13464,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 29.97,
-          "offer_url": "https://www.domyown.com/which-product-recommended-to-kill-mosquito-qa-17828.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.forestrydistributing.com/bifen-it-79-bifenthrin-insecticide-1-pt-control-solutions?srsltid=AfmBOopQk34QjQGafQr7V7YvEw57EOuu8Os681i6aR3bDoqVAVZjzGon2BA",
@@ -13585,7 +13586,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 54.98,
+          "price": 29.97,
           "offer_url": "https://www.domyown.com/bifen-it-gallon-p-11662.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=11662&srsltid=AfmBOopsQ_IAedomULY09_OxNxQxTIg0bw5iIrjcvwWJfFcz0_Ywr5gkfo0"
         },
         {
@@ -13649,9 +13650,9 @@
           "offer_url": "https://www.intermountainturf.com/products/bifen-it-insecticide-gallon?currency=USD&country=US&variant=45346769633418&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopsju_2L9MdrlHeWiEQRrRHIxPsk-CZoQSFlMn6HU1KsX1v9h9m3h4"
         }
       ],
-      "included_sources": 34,
+      "included_sources": 33,
       "not_included_sources": 16,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 75,
@@ -14526,15 +14527,15 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 142.17,
-          "offer_url": "https://www.domyown.com/what-spreader-setting-would-arena-025-insecticide-granules-be-set-if-using-scotts-turf-builder-spreader-am-treating-9k-to-10k-sq-ft-and-will-make-applications-over-month-period-qa-80467.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 27,
+      "included_sources": 26,
       "not_included_sources": 1,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 78,
@@ -14549,7 +14550,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 15.82,
+          "price": 42.4,
           "offer_url": "https://www.domyown.com/demand-cs-p-46.html"
         },
         {
@@ -14759,7 +14760,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 15.82,
+          "price": 42.4,
           "offer_url": "https://www.domyown.com/demand-cs-p-46.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=46&srsltid=AfmBOopFalUWZJtKaxEKPbN2r_tC8z1To1cmlWGvYRURisCsuNHF-XS1c20"
         },
         {
@@ -14910,7 +14911,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 863.63,
+          "price": 196.4,
           "offer_url": "https://www.domyown.com/zylam-liquid-systemic-insecticide-p-3868.html"
         },
         {
@@ -14958,10 +14959,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 196.4,
-          "offer_url": "https://www.domyown.com/will-zylam-liquid-systemic-kill-little-leaf-notcher-weevils-qa-35381.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.walmart.com/ip/Zylam-Liquid-Systemic-Insecticide-1-Quart/604378760?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=F7C1BC534D773FFEA1A19BD58769AE8D&conditionGroupCode=1&veh=seo_fpl&cn=google",
@@ -15048,9 +15049,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
+          "status": "included",
+          "reason": "included",
+          "price": 179.9,
           "offer_url": "https://seedbarn.com/products/zylam-liquid-systemic-insecticide-1-quart?currency=USD&country=US&variant=12547609985124&stkn=fe2774b158dd&srsltid=AfmBOoropU3eqmz_62PykcDk-A2MvuIw44CBRJFDlg7wv1XMNCvcsNKbUDU"
         },
         {
@@ -15078,10 +15079,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 196.4,
-          "offer_url": "https://www.domyown.com/how-much-zylam-liquid-systemic-insecticide-would-use-to-treat-about-100-boxwoods-that-are-18-inches-high-with-leafminers-qa-44035.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/zylam-liquid-insecticide-gallon?currency=USD&country=US&variant=43994463207610&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=bdfd13ec1dea&srsltid=AfmBOoo_6d61sAMEwD0KWup2JMyWm6LazybBduYfOc2IADpcJITRAXXP1So",
@@ -15144,9 +15145,9 @@
           "offer_url": "https://homeandgardensupply.com/products/zylam-liquid-systemic-insecticide?variant=41650803507287&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorYpN5rnOFurCLKZPFac-oCiRjWJQ1lS0kMhlVhShzn2bVQs1Rha3M"
         }
       ],
-      "included_sources": 20,
-      "not_included_sources": 4,
-      "invalid_sources": 0
+      "included_sources": 19,
+      "not_included_sources": 3,
+      "invalid_sources": 2
     },
     {
       "id": 80,
@@ -15773,7 +15774,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2964.16,
+          "price": 390.67,
           "offer_url": "https://www.domyown.com/mainspring-gnl-insecticide-pint-case-p-27084.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=27084&srsltid=AfmBOorbOmcsm_FX9bbdKOi0gtxzFEnus9aU39JnQ0mXKObTARwdMvVR6M8"
         },
         {
@@ -15882,10 +15883,10 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 339.98,
-          "offer_url": "https://www.domyown.com/how-much-forbid-4f-do-add-to-gallon-of-water-for-application-qa-12002.html"
+          "status": "invalid",
+          "reason": "not_product_purchase_page",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://hydrobuilder.com/products/bayer-forbid-4f-ornamental-insecticide-miticide-8-ounces?variant=49777810702614&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooHoo0kJe10v3YP_qa68lTwnfFD-AamlwI6dRxaeQmL84kt-UuqOEc",
@@ -16118,9 +16119,9 @@
           "offer_url": "https://www.industrialvm.com/forbid-4f-spiromesifen-miticide-ovicide-insecticide-bayer-8-oz?srsltid=AfmBOoptLv1WDeHy-szOb860ZfRb1k-eGytU0iYgjKG4XJGu3iu9oSkzzHQ"
         }
       ],
-      "included_sources": 26,
+      "included_sources": 25,
       "not_included_sources": 6,
-      "invalid_sources": 0
+      "invalid_sources": 1
     },
     {
       "id": 84,
@@ -16496,7 +16497,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 230.08,
+          "price": 228.48,
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-washington-p-25701.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25701&srsltid=AfmBOoqdXf_OaBKEE8NNM91B1q3wzMwBMJoVnshvHd6qIO77AJrwXzGx5s0"
         },
         {
@@ -16506,7 +16507,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 241.99,
+          "price": 228.48,
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-california-p-25699.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25699&srsltid=AfmBOoqwia9nKaeSzAMcY2bxgzCThIg0wuC9QYMwKYicw4pwFeyHCrlA94s"
         }
       ],
@@ -16627,7 +16628,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 271.78,
+          "price": 50.43,
           "offer_url": "https://www.domyown.com/tristar-85-sl-quart-p-2703.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2703&srsltid=AfmBOoo-m2ArxSVlJB3yFGjfbICYXMfqrhSeYHzjz0iTHr93MYY8_lUO1cA"
         },
         {
@@ -16687,7 +16688,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16777,7 +16778,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16787,7 +16788,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19039,7 +19040,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.85,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/main-event-dry-iron"
         },
         {
@@ -19440,7 +19441,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19450,7 +19451,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19713,7 +19714,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19773,7 +19774,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19874,7 +19875,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -20485,7 +20486,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 13.24,
+          "price": 14.28,
           "offer_url": "https://www.siteone.com/en/32340-p-hi-yield-iron-sulfate-all-purpose-granular-soil-amendment-4-lb-bag/p/942039"
         }
       ],
@@ -21946,7 +21947,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -21966,7 +21967,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22950,7 +22951,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23001,7 +23002,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 186.99,
+          "price": 187.19,
           "offer_url": "https://enjoytool.com/product/30-lbs-Cap-Elite-Spreader-Scotts-Mfr-75902-GRG9454756"
         },
         {
@@ -23585,7 +23586,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23625,7 +23626,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23746,7 +23747,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23978,7 +23979,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -24371,7 +24372,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 176.29,
+          "price": 171.99,
           "offer_url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer"
         },
         {
@@ -24753,10 +24754,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 261.62,
+          "offer_url": "https://www.ebay.com/itm/357669756452"
         },
         {
           "url": "https://thelawnlife.com/products/petratools-hd4000-battery-powered-backpack-sprayer",
@@ -24859,8 +24860,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 8,
+      "included_sources": 4,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
