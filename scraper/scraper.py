@@ -359,8 +359,19 @@ def max_price_for_product(product: dict) -> Optional[float]:
     $700), so a blanket cap would delete real prices. Add an entry here when a
     product's page carries a bulk size the app should ignore.
     """
+    # Each ceiling sits above the consumer size's dearest listing and below the
+    # bulk size's cheapest, read off the live feed on 2026-08-25. Products sold
+    # in one size only are deliberately absent: Densicor is 51 fl oz at $754.60
+    # and nothing else, so a ceiling there would delete its only price.
     product_maximums = {
-        4: 500,  # Spectacle Flo: 18 fl oz bottle, not the $2,247 gallon
+        4: 500,    # Spectacle Flo: 18 fl oz $340-$388, not the $2,247 gallon
+        2: 400,    # Dimension 2EW: up to 128 oz $235, not the 320 oz $510+
+        30: 500,   # Tribute Total: 6 oz $433-$446, not the $630 outlier
+        38: 400,   # Trimmit 2SC: 128 oz $240, not the 320 oz $578+
+        39: 450,   # Cutless: 40 lb $215-$368, not the 128 fl oz $535+
+        70: 300,   # Acelepryn SC: 4 oz $56-$125, not the gallon $922+
+        85: 400,   # Kontos SC: 8 oz $228-$275, not the 32 oz $688
+        86: 300,   # TriStar 8.5SL: 8 oz $50, 32 oz $187, not the gallon $625+
     }
     return product_maximums.get(int(product.get("id", 0)))
 
