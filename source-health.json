@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-29T15:38:06.706696+00:00",
-  "saved_source_limit": 12,
+  "generated_at": "2026-08-29T16:49:41.268669+00:00",
+  "saved_source_limit": 8,
   "totals": {
     "sources": 2319,
     "manual_verified_sources": 568,
-    "included_sources": 1749,
-    "not_included_sources": 570,
+    "included_sources": 1757,
+    "not_included_sources": 562,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 1749,
-    "not_checked_saved_source_limit": 321,
-    "no_extracted_offer": 181,
-    "below $10.00 minimum for this category": 25,
-    "above $400.00 maximum for this product": 16,
+    "included": 1757,
+    "not_checked_saved_source_limit": 337,
+    "no_extracted_offer": 167,
+    "below $10.00 minimum for this category": 20,
+    "above $400.00 maximum for this product": 13,
     "above $500.00 maximum for this product": 12,
-    "above $300.00 maximum for this product": 9,
+    "above $300.00 maximum for this product": 7,
     "above $450.00 maximum for this product": 3,
     "below $5.00 minimum for this category": 2,
     "no_price": 1
@@ -235,7 +235,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2508.68,
+          "price": 147.77,
           "offer_url": "https://www.ebay.com/itm/325467603293?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorg-EdyGHHvSp9W5WdwmF2kzRQzBcS22kJWx4u6cj-s-rEr6W8be3E"
         },
         {
@@ -546,7 +546,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.97,
+          "price": 137.5,
           "offer_url": "https://www.solutionsstores.com/dimension-herbicide?sku=DOW22&srsltid=AfmBOoomMUv96tSA1Jfgii0jU7RcLKhJKIuBv93RrSTLHbwuZnl_UcD7TNk"
         },
         {
@@ -594,9 +594,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - solutionspestandlawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 2801.19,
+          "status": "included",
+          "reason": "included",
+          "price": 165.0,
           "offer_url": "https://www.ebay.com/itm/134845222206?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqQTtSKKF7LndMc8TeCTsmVrkCNIOCAkVB_t-yTlAhTukQ2nC0brn4"
         },
         {
@@ -804,9 +804,9 @@
           "retailer": "ebay-chemical-warehouse",
           "retailer_name": "eBay - chemical.warehouse",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 4586.99,
+          "status": "included",
+          "reason": "included",
+          "price": 270.19,
           "offer_url": "https://www.ebay.com/itm/115685660647?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor-HRRq5DtMYLwX5I-mfBqJn7Uv4vvROqOV95b0xohukdXKX9DyLg8"
         },
         {
@@ -824,14 +824,14 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 4837.23,
+          "status": "included",
+          "reason": "included",
+          "price": 284.93,
           "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
-      "included_sources": 26,
-      "not_included_sources": 18,
+      "included_sources": 29,
+      "not_included_sources": 15,
       "invalid_sources": 0
     },
     {
@@ -1779,9 +1779,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/gallery-75-df-herbicide-1-lb?currency=USD&country=US&variant=12534748545124&stkn=fe2774b158dd&srsltid=AfmBOooRLlzLi-R9Jgb8zleZUQ8EoZElDInKWX-e__JZRuThc_8Zv_zo0EU"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Gallery-75-DF-Herbicide-1-Lb-p/gallery-75df-1.htm?srsltid=AfmBOoobmyD1ZmvCroPijDOkw9UjtatMOZZA1pFDG-g4LYacnFaU2sA_8hc",
@@ -1820,7 +1820,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 3041.92,
+          "price": 179.18,
           "offer_url": "https://www.ebay.com/itm/234894526483?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopWRG6C3cNUD19HD9Ke4JZKyeUDSoNaAiLXLZn-GNojkbZMaQK-Z60"
         },
         {
@@ -2180,9 +2180,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
+          "status": "included",
+          "reason": "included",
+          "price": 72.5,
           "offer_url": "https://seedbarn.com/products/atrazine-4l-herbicide-2-5-gallons?currency=USD&country=US&variant=12530185273444&stkn=fe2774b158dd&srsltid=AfmBOoozT3elgbEnvwlZWGgt2DaHfNSMRq9029YIVpYsq0y5-LnZvfUzvUA"
         },
         {
@@ -2346,8 +2346,8 @@
           "offer_url": "https://burgaw-milling-company-inc.square.site/product/southern-ag-atrazine/OGO6IELYO66INW27BVORNR35?cfa=gpl&channel=CH_uGC7Nz7ka6MdSR5624Z8MVya1BRTbRUQHb7g5vJe9945o"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 2,
+      "included_sources": 22,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -2503,7 +2503,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 3037.85,
+          "price": 178.94,
           "offer_url": "https://www.ebay.com/itm/134845222127?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopmJyEKSdSJ-WkgdrxIPZydx3A9q2zxe8ntgSTsd7zAbVXx0PQ2Al8"
         },
         {
@@ -2603,7 +2603,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2042.15,
+          "price": 120.29,
           "offer_url": "https://www.ebay.com/itm/116004392567?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq4wVhq3YxOXUC18Mv3ixDvHz1l68ZGdxNY0bBD1K3jQxIZcgpRN9w"
         }
       ],
@@ -3336,7 +3336,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1490.06,
+          "price": 87.77,
           "offer_url": "https://www.ebay.com/itm/325471149174"
         },
         {
@@ -3466,7 +3466,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1099.08,
+          "price": 64.74,
           "offer_url": "https://www.ebay.com/itm/155937028212?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorRxzXiGDKpgHbBTnzRkImisLjHn1wLOu8vAXQ72rSfONo9w3lD7JI"
         },
         {
@@ -3496,7 +3496,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1490.06,
+          "price": 87.77,
           "offer_url": "https://www.ebay.com/itm/225305409591?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopTWjhg9hTzdteHLQIZyBnJ2A8_ZTQUbwNX2nSSQO3zB-GYG6iMMhs"
         },
         {
@@ -3506,7 +3506,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1338.12,
+          "price": 78.82,
           "offer_url": "https://www.ebay.com/itm/236653968427?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopkZ3eZ2nFxiAWXmRCHZQbyDukEJgzszS1uMzY2NPyKaJdyz-vXKDs"
         },
         {
@@ -3556,7 +3556,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 2260.13,
+          "price": 133.13,
           "offer_url": "https://www.ebay.com/itm/236585650701?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorUdjWNGsUsWEZF14PdMTwneb9CCu1_1QFphhGY_q3U-nUW_sTk-Fo"
         },
         {
@@ -3716,7 +3716,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1490.06,
+          "price": 87.77,
           "offer_url": "https://www.ebay.com/itm/325471149174?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorlBKKkb-Oc_ubOvBJnl8hO2GwjA1SyyrZ6fwo2oH0og_ZDorxAMFc"
         },
         {
@@ -3917,7 +3917,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 215.95,
+          "price": 12.72,
           "offer_url": "https://www.ebay.com/itm/116094600658?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooyMSH8Uty0JPujmF_zU7NF88r-yq4pIZgodo_xbfG4ew2KVp18pDI"
         },
         {
@@ -4198,7 +4198,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1956.93,
+          "price": 115.27,
           "offer_url": "https://www.ebay.com/itm/116111308602?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqhkezBWLfx4Xk_qnCQ9ir2zjwkZ5r_IUhlO7fEZmsS-r_A4ytxFKI"
         },
         {
@@ -4268,7 +4268,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 5465.54,
+          "price": 321.94,
           "offer_url": "https://www.ebay.com/itm/127240087970?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOookHHsPre0WvgXhseIIWcCVxjiX8WEOL6wOUNTDtN86QVXmfUa8Lc4"
         },
         {
@@ -4318,7 +4318,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 4949.45,
+          "price": 291.54,
           "offer_url": "https://www.ebay.com/itm/134845221945?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopv2PnD747fzkpF30GTEfTOUkQABuSZKB0mH9lRX_9fyTy_PRgOdQw"
         }
       ],
@@ -4440,7 +4440,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 63.99,
+          "price": 61.25,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -4731,7 +4731,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/hi-yield-triclopyr-ester?sku=VPG31&srsltid=AfmBOopDmgO69OAo5SbS-uJ37ZwIFFsjtT3ETcBK7urGKeL5KXdZ5WjtVv8"
         },
         {
@@ -5152,7 +5152,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1792.42,
+          "price": 105.58,
           "offer_url": "https://www.ebay.com/itm/134845221314?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo3526gHkLexMqOgMky6APofGnH9qhwg70wdYAkqGbJR1qU-8jw7hc"
         },
         {
@@ -5192,7 +5192,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1866.61,
+          "price": 109.95,
           "offer_url": "https://www.ebay.com/itm/167093290266?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -5202,7 +5202,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1827.05,
+          "price": 107.62,
           "offer_url": "https://www.ebay.com/itm/235902400487?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorRH0VeH7tf-ExGebMmrzsKmIdE7VLfYhCs5t300tE6m-8nm94vGPE"
         },
         {
@@ -5342,7 +5342,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 1365.62,
+          "price": 80.44,
           "offer_url": "https://www.ebay.com/itm/116695634751?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq3CknsE7SNHWTNCM9LhudliimHCRGAgTYK7lOdR5C287scCJ447Wc"
         },
         {
@@ -5593,7 +5593,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -5704,7 +5704,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/msma-target-6-plus-herbicide?sku=MSMA1&srsltid=AfmBOoqDLUTmUznEOg-9DINHw05rj_BzEtePGF-IjHPFUPMu_YJypUTbY_A"
         },
         {
@@ -5763,10 +5763,10 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 44.95,
-          "offer_url": "https://pestrong.com/product/surge-herbicide-fast-broadleaf-weed-killer-1-2-5-gal"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.amazon.com/dp/B0072289CA?tag=lawndominator-20",
@@ -5969,8 +5969,8 @@
           "offer_url": "https://homeandgardensupply.com/products/q4-plus-turf-herbicide?variant=42041272598615&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqZJ4iYBFNrOgOS1hyLIj8dfXnMEGp7yAauptjNZbua4UvZUaQTwOc"
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 7,
+      "included_sources": 14,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -7320,7 +7320,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 658.53,
+          "price": 38.79,
           "offer_url": "https://www.ebay.com/itm/335925853779"
         },
         {
@@ -7500,7 +7500,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 657.85,
+          "price": 38.75,
           "offer_url": "https://www.ebay.com/itm/255969215299?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqg9E4ThuBES4OMDB24LB_YXDjMyg68X5xgW8Tj9i-AUk3omRTXxL4"
         },
         {
@@ -8262,9 +8262,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 29.99,
           "offer_url": "https://www.solutionsstores.com/cutless-0-33g-lgr?sku=SEPR23&srsltid=AfmBOopzsRjHRePATs1vrAjOu-vGjj4U7OanAzYttQffQbjbsd8I6Bh4H8c"
         },
         {
@@ -8288,8 +8288,8 @@
           "offer_url": "https://www.intermountainturf.com/products/cutless-quickstop-landscape-growth-regulator-25?currency=USD&country=US&variant=45347880304778&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOoqWvDNv9i-rAFm_EO2LZUdDQP3eZzt4-Fwvn9OVjdt01PDdOfwddUs"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 6,
+      "included_sources": 5,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -8386,7 +8386,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 901.64,
+          "price": 53.11,
           "offer_url": "https://www.ebay.com/itm/335925853866"
         },
         {
@@ -8526,7 +8526,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 3216.44,
+          "price": 189.46,
           "offer_url": "https://www.ebay.com/itm/236067748954?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopkfztYatc0h4l0C_VsY549SPuYppLHAYJJD-gVvxqGQ-wuREFEG50"
         },
         {
@@ -11357,7 +11357,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 10.99,
           "offer_url": "https://www.solutionsstores.com/mefenoxam-2aq-fungicide?sku=QUAL8&srsltid=AfmBOopTxo6PlfenEg7nm6n_8pgQG_Rbjy6cOoPvmSlMJc2ApUSIVirfBh8"
         },
         {
@@ -11488,7 +11488,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 85.97,
           "offer_url": "https://www.solutionsstores.com/velista-fungicide?sku=SYNG72&srsltid=AfmBOor-Ya1chbKmvYyouM-scmsCesNzrS1Zq2c5ixUxL9sdJzFvKiw3T9U"
         },
         {
@@ -11637,9 +11637,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 355.1,
           "offer_url": "https://www.solutionsstores.com/encartis-fungicide?sku=BASF113&srsltid=AfmBOop-1Cv0kJydmKvH-STHbMfTU39WWg9u4oFbY2bAga97WLgIP91SDJc"
         },
         {
@@ -11693,8 +11693,8 @@
           "offer_url": "https://www.intermountainturf.com/products/insignia-sc-intrinsic-brand-fungicide-2?currency=USD&country=US&variant=45347903340682&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOoq4nqRdFQAZ9wbSfnqpLHO0Zz2AR9PajsM3g5_gUF6apGgS0QV88RY"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -11728,9 +11728,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 752.6,
           "offer_url": "https://www.solutionsstores.com/densicor-fungicide?sku=ENVU1&srsltid=AfmBOopAq3VpJb2DMirC4Pmd-yBmpDwnVYRl1XEUIC94DfEhvLpCOmCkM1A"
         },
         {
@@ -11774,8 +11774,8 @@
           "offer_url": "https://www.intermountainturf.com/products/daconil-action-jug-2-5-gal?currency=USD&country=US&variant=45347184181386&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOorDNaF3_Sgjrb4QWtagJ2UbvJneMKavEmt4LU10iX4VgtPoa_u0ZpU"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -11809,9 +11809,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "above $300.00 maximum for this product",
-          "price": 1722.14,
+          "status": "included",
+          "reason": "included",
+          "price": 101.44,
           "offer_url": "https://www.ebay.com/itm/334772691433"
         },
         {
@@ -11979,9 +11979,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $300.00 maximum for this product",
-          "price": 1722.14,
+          "status": "included",
+          "reason": "included",
+          "price": 101.44,
           "offer_url": "https://www.ebay.com/itm/334772691433?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoojt109zPfg8CK5SszkD8oGU7O5NG49yFpxSNqYum2lz3TwD45w2Ow"
         },
         {
@@ -12005,8 +12005,8 @@
           "offer_url": "https://www.walmart.com/ip/Acelepryn-Insecticide-For-Turf-Lawn-Landscape-Pests-4-fl-oz-Bottle-by-Syngenta/2667143658?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=630148BD3E7345D5808867105D2815EA&conditionGroupCode=1&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 13,
-      "not_included_sources": 9,
+      "included_sources": 15,
+      "not_included_sources": 7,
       "invalid_sources": 0
     },
     {
@@ -12893,9 +12893,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/dylox-6-2-insecticide-30-lbs?currency=USD&country=US&variant=12533440708708&stkn=fe2774b158dd&srsltid=AfmBOoriCkQxG4YNCHERcPXPHslXGhAj03BT4L5wJ7mCHngWPmK-UHGplHQ"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.nexles.com/us/bayer-insecticide-crop-dylox-6-2-30-lb.html",
@@ -13616,7 +13616,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 812.85,
+          "price": 47.88,
           "offer_url": "https://www.ebay.com/itm/134983710950?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqYya0YZ1axgLuWxnaG7gu9Kes1sGaZTvGsLCTWuTbLcunCOSZDyic"
         },
         {
@@ -14818,9 +14818,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 179.9,
+          "status": "not_included",
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
           "offer_url": "https://seedbarn.com/products/zylam-liquid-systemic-insecticide-1-quart?currency=USD&country=US&variant=12547609985124&stkn=fe2774b158dd&srsltid=AfmBOoropU3eqmz_62PykcDk-A2MvuIw44CBRJFDlg7wv1XMNCvcsNKbUDU"
         },
         {
@@ -14904,8 +14904,8 @@
           "offer_url": "https://homeandgardensupply.com/products/zylam-liquid-systemic-insecticide?variant=41650803507287&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorYpN5rnOFurCLKZPFac-oCiRjWJQ1lS0kMhlVhShzn2bVQs1Rha3M"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 3,
+      "included_sources": 18,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -15583,9 +15583,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -15833,9 +15833,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?currency=USD&country=US&variant=12533998649444&stkn=fe2774b158dd&srsltid=AfmBOopX0GS0l4g9eSFOZ5PpCiNY4xtYcr3Cn3SqXm5u2cdKTgT7snwI7ug"
         },
         {
           "url": "https://atlantishydroponics.com/products/forbid-4f-miticide?variant=39506747818164&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqQL_tLrEEjQSPZYPsDl1dC22bE6J-DLqUXN_7dj_I5oJFlpd2rH2w",
@@ -16437,7 +16437,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16527,7 +16527,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16537,7 +16537,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -17178,7 +17178,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1101.46,
+          "price": 64.88,
           "offer_url": "https://www.ebay.com/itm/236362202521"
         },
         {
@@ -19190,7 +19190,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19200,7 +19200,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19463,7 +19463,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19523,7 +19523,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19624,7 +19624,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -20235,7 +20235,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 14.28,
+          "price": 13.24,
           "offer_url": "https://www.siteone.com/en/32340-p-hi-yield-iron-sulfate-all-purpose-granular-soil-amendment-4-lb-bag/p/942039"
         }
       ],
@@ -21082,7 +21082,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 11518.07,
+          "price": 676.02,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -21696,7 +21696,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -21716,7 +21716,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -22400,7 +22400,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1952.17,
+          "price": 114.99,
           "offer_url": "https://www.ebay.com/itm/384679645892"
         },
         {
@@ -22700,7 +22700,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -22860,10 +22860,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -22986,8 +22986,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -23335,7 +23335,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23375,7 +23375,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23496,7 +23496,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23728,7 +23728,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -24555,7 +24555,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 7469.67,
+          "price": 439.99,
           "offer_url": "https://www.ebay.com/itm/397985687597"
         },
         {
