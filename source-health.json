@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-30T02:50:01.367402+00:00",
+  "generated_at": "2026-08-30T05:48:51.368075+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2319,
     "manual_verified_sources": 568,
-    "included_sources": 1755,
-    "not_included_sources": 564,
+    "included_sources": 1754,
+    "not_included_sources": 565,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 1755,
+    "included": 1754,
     "not_checked_saved_source_limit": 321,
     "no_extracted_offer": 180,
     "below $10.00 minimum for this category": 25,
@@ -19,7 +19,7 @@
     "above $300.00 maximum for this product": 7,
     "above $450.00 maximum for this product": 3,
     "below $5.00 minimum for this category": 2,
-    "no_price": 1
+    "no_price": 2
   },
   "products": [
     {
@@ -19118,9 +19118,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 19.79,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B0BL7XQ18Q?tag=lawndominator-20"
         },
         {
@@ -19154,8 +19154,8 @@
           "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer?variant=47974179111151"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 0,
+      "included_sources": 9,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -23063,7 +23063,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 249.87,
+          "price": 249.85,
           "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
