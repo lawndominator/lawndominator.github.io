@@ -222,6 +222,15 @@ def is_google_url(url: str) -> bool:
     return host == "google.com" or host.endswith(".google.com")
 
 
+PRICE_TRACKER_HOSTS = ("camelcamelcamel.com", "keepa.com")
+
+
+def is_price_tracker_url(url: str) -> bool:
+    """Return True for price-history pages that cannot complete a purchase."""
+    host = urllib.parse.urlparse(url).netloc.lower().removeprefix("www.")
+    return any(host == domain or host.endswith(f".{domain}") for domain in PRICE_TRACKER_HOSTS)
+
+
 def canonical_product_url(url: str) -> str:
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
@@ -266,6 +275,8 @@ def is_bad_product_url(url: str) -> bool:
     host = parsed.netloc.lower()
     path = parsed.path.lower()
     query = parsed.query.lower()
+    if is_price_tracker_url(url):
+        return True
     bad_path_parts = (
         "/cart", "/checkout", "/account", "/login", "/search", "/collections/",
         "/category/", "/categories/", "/catalogsearch/", "/wishlist", "/write-review",
@@ -309,6 +320,8 @@ def offer_key(offer: dict) -> tuple:
 
 def add_offer(offers: list[dict], offer: Optional[dict]) -> bool:
     if not offer:
+        return False
+    if is_price_tracker_url(offer.get("url", "")):
         return False
     if any(offer_key(existing) == offer_key(offer) for existing in offers):
         return False
