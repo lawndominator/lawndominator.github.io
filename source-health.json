@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-31T08:38:14.139671+00:00",
-  "saved_source_limit": 12,
+  "generated_at": "2026-08-31T09:50:00.206861+00:00",
+  "saved_source_limit": 8,
   "totals": {
     "sources": 2319,
     "manual_verified_sources": 568,
-    "included_sources": 1753,
-    "not_included_sources": 566,
+    "included_sources": 1757,
+    "not_included_sources": 562,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 1753,
-    "not_checked_saved_source_limit": 321,
-    "no_extracted_offer": 182,
-    "below $10.00 minimum for this category": 23,
+    "included": 1757,
+    "not_checked_saved_source_limit": 337,
+    "no_extracted_offer": 165,
+    "below $10.00 minimum for this category": 21,
     "above $400.00 maximum for this product": 13,
     "above $500.00 maximum for this product": 12,
     "above $300.00 maximum for this product": 7,
     "above $450.00 maximum for this product": 3,
-    "no_price": 3,
-    "below $5.00 minimum for this category": 2
+    "below $5.00 minimum for this category": 2,
+    "no_price": 2
   },
   "products": [
     {
@@ -265,7 +265,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 213.0,
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/prodiamine-4l-2-5gal?sku=QUAL33&srsltid=AfmBOoqLGfowxqAv3tqwsqaEf5W1CZV4vZKKtlzk7SoWD0xQ04FmyEstzWI"
         },
         {
@@ -546,7 +546,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 137.5,
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/dimension-herbicide?sku=DOW22&srsltid=AfmBOoomMUv96tSA1Jfgii0jU7RcLKhJKIuBv93RrSTLHbwuZnl_UcD7TNk"
         },
         {
@@ -574,10 +574,10 @@
           "retailer": "sod-solutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 164.95,
+          "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOoqvKvy3TlQDKjao92F5F_Rx7UKFOEgMprxUbovv8MxWrLQ4D7BUD4o"
         },
         {
           "url": "https://www.forestrydistributing.com/dimension-2ew-pre-emergent-herbicide-64-oz-corteva?srsltid=AfmBOooqU9vVw6ZQxXDm_XHrxvYqAplX8L-VFnHX91urFVlSYa_LaEWjMp0",
@@ -830,8 +830,8 @@
           "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
-      "included_sources": 29,
-      "not_included_sources": 15,
+      "included_sources": 30,
+      "not_included_sources": 14,
       "invalid_sources": 0
     },
     {
@@ -2654,7 +2654,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 16.2,
+          "price": 15.33,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -4731,7 +4731,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 24.4,
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/hi-yield-triclopyr-ester?sku=VPG31&srsltid=AfmBOopDmgO69OAo5SbS-uJ37ZwIFFsjtT3ETcBK7urGKeL5KXdZ5WjtVv8"
         },
         {
@@ -4771,7 +4771,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 59.17,
+          "price": 59.63,
           "offer_url": "https://www.ebay.com/itm/198447920514?chn=ps&mkevt=1&mkcid=28&var=497488988457&google_free_listing_action=view_item"
         },
         {
@@ -5593,7 +5593,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -7259,7 +7259,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 433.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide?sku=BAYE10&srsltid=AfmBOopQ7wjgglnw3kJW1y31e8kwv4RHyevbbdPES7KDyevGnkAH-wwC7A0"
         },
         {
@@ -7330,7 +7330,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 34.12,
+          "price": 33.99,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -8262,9 +8262,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 29.99,
           "offer_url": "https://www.solutionsstores.com/cutless-0-33g-lgr?sku=SEPR23&srsltid=AfmBOopzsRjHRePATs1vrAjOu-vGjj4U7OanAzYttQffQbjbsd8I6Bh4H8c"
         },
         {
@@ -8288,8 +8288,8 @@
           "offer_url": "https://www.intermountainturf.com/products/cutless-quickstop-landscape-growth-regulator-25?currency=USD&country=US&variant=45347880304778&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOoqWvDNv9i-rAFm_EO2LZUdDQP3eZzt4-Fwvn9OVjdt01PDdOfwddUs"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 6,
+      "included_sources": 5,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -11637,9 +11637,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "status": "included",
+          "reason": "included",
+          "price": 29.99,
           "offer_url": "https://www.solutionsstores.com/encartis-fungicide?sku=BASF113&srsltid=AfmBOop-1Cv0kJydmKvH-STHbMfTU39WWg9u4oFbY2bAga97WLgIP91SDJc"
         },
         {
@@ -11693,8 +11693,8 @@
           "offer_url": "https://www.intermountainturf.com/products/insignia-sc-intrinsic-brand-fungicide-2?currency=USD&country=US&variant=45347903340682&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOoq4nqRdFQAZ9wbSfnqpLHO0Zz2AR9PajsM3g5_gUF6apGgS0QV88RY"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -11730,7 +11730,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "below $10.00 minimum for this category",
-          "price": 9.99,
+          "price": 1.0,
           "offer_url": "https://www.solutionsstores.com/densicor-fungicide?sku=ENVU1&srsltid=AfmBOopAq3VpJb2DMirC4Pmd-yBmpDwnVYRl1XEUIC94DfEhvLpCOmCkM1A"
         },
         {
@@ -11831,7 +11831,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 70.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -12492,9 +12492,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/merit-0-5g-insecticide-30-lbs?currency=USD&country=US&variant=12538028490852&stkn=fe2774b158dd&srsltid=AfmBOoqVN9jECf0cPe8MkVStU3OX0-GXbwQJsCiFQzMrju2QvwIlUlv3KVs"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Merit-0-5G-Insecticide-30-Lbs-p/merit-0.5g-30.htm?srsltid=AfmBOorC5z7W_9E-_QHbhO8mcWjv6SzJVS3Lyoyn6Qt3dD7yIK6MdHGnW08",
@@ -13115,7 +13115,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 27.99,
+          "price": 18.6,
           "offer_url": "https://www.solutionsstores.com/bifen-it-insecticide?sku=CSI62&srsltid=AfmBOors3O9BId0KTh2mx2vdSKigeLojmO7fWF9G4CQy2xb0_Cij9qcr1_I"
         },
         {
@@ -15583,9 +15583,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "below $10.00 minimum for this category",
+          "price": 0.0,
+          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -16437,7 +16437,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16527,7 +16527,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16537,7 +16537,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19118,9 +19118,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 24.99,
           "offer_url": "https://www.amazon.com/dp/B0BL7XQ18Q?tag=lawndominator-20"
         },
         {
@@ -19154,8 +19154,8 @@
           "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer?variant=47974179111151"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 1,
+      "included_sources": 10,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -19190,7 +19190,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19200,7 +19200,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19463,7 +19463,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19523,7 +19523,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19624,7 +19624,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -21696,7 +21696,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -21716,7 +21716,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -22700,7 +22700,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23063,7 +23063,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 249.78,
+          "price": 249.76,
           "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
@@ -23335,7 +23335,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23375,7 +23375,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23496,7 +23496,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23728,7 +23728,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
