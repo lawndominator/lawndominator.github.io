@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-31T07:11:59.951538+00:00",
+  "generated_at": "2026-08-31T08:38:14.139671+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 58,
+  "alert_count": 57,
   "alerts": [
     {
       "id": "subdue-maxx:major_price_drop:solutions-pest-lawn:126.50:54.99",
@@ -917,22 +917,6 @@
       "url": "https://www.solutionsstores.com/mainspring-gnl-insecticide?sku=SYNG89&srsltid=AfmBOoroB4fk_uHqfpQhqJjsQScvHtMmR-d54yROT4I4K8scSw56fXBJOZs",
       "in_stock": true,
       "created_at": "2026-08-25T20:56:52.794605+00:00"
-    },
-    {
-      "id": "petratools-hd4000:best_price_drop:amazon:199.99:189.99",
-      "type": "best_price_drop",
-      "product_id": 348,
-      "product_slug": "petratools-hd4000",
-      "product_name": "PetraTools HD4000 4-Gallon Battery Backpack Sprayer",
-      "category": "sprayer-backpack",
-      "old_price": 199.99,
-      "new_price": 189.99,
-      "drop_percent": 5.0,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B07ZQT4TVV?tag=lawndominator-20",
-      "in_stock": true,
-      "created_at": "2026-08-24T07:44:06.867300+00:00"
     }
   ]
 }
