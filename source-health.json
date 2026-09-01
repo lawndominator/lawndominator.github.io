@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T07:49:22.459244+00:00",
-  "saved_source_limit": 12,
+  "generated_at": "2026-09-01T09:01:59.703518+00:00",
+  "saved_source_limit": 8,
   "totals": {
     "sources": 2319,
     "manual_verified_sources": 568,
-    "included_sources": 1754,
-    "not_included_sources": 565,
+    "included_sources": 1757,
+    "not_included_sources": 562,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 1754,
-    "not_checked_saved_source_limit": 321,
-    "no_extracted_offer": 182,
-    "below $10.00 minimum for this category": 23,
+    "included": 1757,
+    "not_checked_saved_source_limit": 337,
+    "no_extracted_offer": 165,
+    "below $10.00 minimum for this category": 21,
     "above $400.00 maximum for this product": 13,
     "above $500.00 maximum for this product": 12,
     "above $300.00 maximum for this product": 7,
@@ -536,7 +536,7 @@
           "manual_verified": true,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 514.99,
+          "price": 494.99,
           "offer_url": "https://www.counciloxford.com/product/industries/golf/dithiopyr-2ew"
         },
         {
@@ -574,10 +574,10 @@
           "retailer": "sod-solutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 164.95,
+          "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOoqvKvy3TlQDKjao92F5F_Rx7UKFOEgMprxUbovv8MxWrLQ4D7BUD4o"
         },
         {
           "url": "https://www.forestrydistributing.com/dimension-2ew-pre-emergent-herbicide-64-oz-corteva?srsltid=AfmBOooqU9vVw6ZQxXDm_XHrxvYqAplX8L-VFnHX91urFVlSYa_LaEWjMp0",
@@ -830,8 +830,8 @@
           "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
-      "included_sources": 29,
-      "not_included_sources": 15,
+      "included_sources": 30,
+      "not_included_sources": 14,
       "invalid_sources": 0
     },
     {
@@ -3945,10 +3945,10 @@
           "retailer": "hicks-nurseries",
           "retailer_name": "Hicks Nurseries",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 19.99,
+          "offer_url": "https://shop.hicksnurseries.com/products/sedgehammer-13-5g?variant=38025664528576&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor6BwnmB4ImbUhw8iBLIWz2LBR40kaeP630l7UGo2kIvcnNXomJoSE"
         },
         {
           "url": "https://marisgardens.com/products/sedgehammer-plus?variant=44160232653024&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor4Mdb6XZHE2bBy-IjfJN_RuK82ZO1frSKSUjv3ZEmQb0Uv23hvp48",
@@ -4101,8 +4101,8 @@
           "offer_url": "https://www.seedranch.com/Sedgehammer-1-3-Oz-p/sedgehammer-1-3.htm?srsltid=AfmBOoruDQoAXmFHhjcfoKg5YJ6Z2AU_6T7g8Mtk5H3r_Ul-jUjEiXnw_Gw"
         }
       ],
-      "included_sources": 29,
-      "not_included_sources": 4,
+      "included_sources": 30,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -4138,7 +4138,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 87.06,
+          "price": 87.24,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide"
         },
         {
@@ -4188,7 +4188,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 87.06,
+          "price": 87.24,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide?sku=GORD4&srsltid=AfmBOopB2QpW4w8j_UFqBoljT6SDFTfb8qcEG_nERSqMS7bhK9-VQL_c_-0"
         },
         {
@@ -4771,7 +4771,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 59.17,
+          "price": 59.63,
           "offer_url": "https://www.ebay.com/itm/198447920514?chn=ps&mkevt=1&mkcid=28&var=497488988457&google_free_listing_action=view_item"
         },
         {
@@ -5052,7 +5052,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.48,
+          "price": 64.73,
           "offer_url": "https://www.domyown.com/sulfentrazone-4l-select-p-17100.html"
         },
         {
@@ -5292,7 +5292,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 60.48,
+          "price": 64.73,
           "offer_url": "https://www.domyown.com/sulfentrazone-4l-select-p-17100.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=17100&srsltid=AfmBOop1q87yvYFehl_g5MwCV_JDVZBHmO24yiRuKxW04fksPNBzVg_8_ms"
         },
         {
@@ -5593,7 +5593,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -6066,7 +6066,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 70.64,
+          "price": 66.24,
           "offer_url": "https://www.solutionsstores.com/trimec-classic-broadleaf-herbicide?sku=GORD15&srsltid=AfmBOor6XbSOpdjIQE6PZwsTAaB9wTuRqThN7Xs4vPdIs9YzHvqSwUMSU0E"
         },
         {
@@ -6234,10 +6234,10 @@
           "retailer": "veseris",
           "retailer_name": "Veseris",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 196.9,
+          "offer_url": "https://veseris.com/trimec-classic-broadleaf-herbicide-2-5-gal?srsltid=AfmBOoprxlGVlehVn0AHWyAax75sesdedyYmzfwIqpCo-SP_niWYflpOiko"
         },
         {
           "url": "https://www.ebay.com/itm/156111501276?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor9dAHNcZZgv9h_Ml42DHKblZ-eOqkCL4B5venzaLY_rwu2nNw92G8",
@@ -6376,7 +6376,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 49.0,
+          "price": 99.0,
           "offer_url": "https://www.coastalcountry.com/products/lawn-garden/lawn-garden-care/weed-control-herbicides/selective-weed-killers/gordons-trimec-lawn-weed-killer-concentrate--1-gal-02751792000?srsltid=AfmBOop396Y3udqWiYMz84ZbQSGEgmcyUcStC1q1Sm0TMG0A5zu5iBm85G8"
         },
         {
@@ -6440,8 +6440,8 @@
           "offer_url": "https://woodardmercantile.com/products/gordons-trimec-lawn-weed-killer-1-gal?variant=42332706275406&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopV-EnxPuOtR5rJHvRqUMAqMU2AjgT6SIueUOSVqQOKC2Nh837xUxs"
         }
       ],
-      "included_sources": 43,
-      "not_included_sources": 3,
+      "included_sources": 44,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -7069,7 +7069,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 433.0,
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
         },
         {
@@ -7330,7 +7330,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.99,
+          "price": 34.25,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -8406,7 +8406,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 44.0,
+          "price": 48.89,
           "offer_url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-p-23245.html"
         },
         {
@@ -8436,7 +8436,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 129.4,
+          "price": 143.78,
           "offer_url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-gallon-p-25477.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25477&srsltid=AfmBOopY-cHwV7BgDLpEGaVjSNUPDbBev_orjnwi39My_H97fh-3uZP0k40"
         },
         {
@@ -8506,7 +8506,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 44.0,
+          "price": 48.89,
           "offer_url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-p-23245.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23245&srsltid=AfmBOorUiKxqqPpUYtSU655J-YB8ztfmg8t55IhOg6CuLrCgbfOJlfer6C4"
         },
         {
@@ -11357,7 +11357,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 54.99,
+          "price": 126.5,
           "offer_url": "https://www.solutionsstores.com/mefenoxam-2aq-fungicide?sku=QUAL8&srsltid=AfmBOopTxo6PlfenEg7nm6n_8pgQG_Rbjy6cOoPvmSlMJc2ApUSIVirfBh8"
         },
         {
@@ -11831,7 +11831,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 68.81,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -12132,7 +12132,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 106.81,
+          "price": 31.98,
           "offer_url": "https://www.solutionsstores.com/acelepryn-g-insecticide?sku=SYNG34&srsltid=AfmBOooEgFkiz_g0m0wJnVYe8N3pnXJ4v9NQakgrj9I56PWEYn9PY8Yp7pA"
         },
         {
@@ -12492,9 +12492,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/merit-0-5g-insecticide-30-lbs?currency=USD&country=US&variant=12538028490852&stkn=fe2774b158dd&srsltid=AfmBOoqVN9jECf0cPe8MkVStU3OX0-GXbwQJsCiFQzMrju2QvwIlUlv3KVs"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Merit-0-5G-Insecticide-30-Lbs-p/merit-0.5g-30.htm?srsltid=AfmBOorC5z7W_9E-_QHbhO8mcWjv6SzJVS3Lyoyn6Qt3dD7yIK6MdHGnW08",
@@ -15603,9 +15603,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -16437,7 +16437,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16527,7 +16527,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16537,7 +16537,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -17932,7 +17932,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 41.95,
+          "price": 42.95,
           "offer_url": "https://gsplantfoods.com/products/organic-liquid-humic-acid"
         }
       ],
@@ -19190,7 +19190,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19200,7 +19200,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19463,7 +19463,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19523,7 +19523,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19624,7 +19624,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -21696,7 +21696,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -21716,7 +21716,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -22700,7 +22700,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23335,7 +23335,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23375,7 +23375,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23496,7 +23496,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -23728,7 +23728,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
