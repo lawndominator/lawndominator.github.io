@@ -1,27 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-02T13:08:11.284213+00:00",
+  "generated_at": "2026-09-02T16:18:02.911045+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 12,
+  "alert_count": 11,
   "alerts": [
-    {
-      "id": "subdue-maxx:major_price_drop:solutions-pest-lawn:54.99:10.99",
-      "type": "major_price_drop",
-      "product_id": 60,
-      "product_slug": "subdue-maxx",
-      "product_name": "Subdue Maxx (Mefenoxam)",
-      "category": "fungicide",
-      "old_price": 54.99,
-      "new_price": 10.99,
-      "drop_percent": 80.0,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/mefenoxam-2aq-fungicide?sku=QUAL8&srsltid=AfmBOopTxo6PlfenEg7nm6n_8pgQG_Rbjy6cOoPvmSlMJc2ApUSIVirfBh8",
-      "in_stock": true,
-      "created_at": "2026-09-02T02:04:59.249255+00:00"
-    },
     {
       "id": "n-ext-microgreene:major_price_drop:yardmastery:24.99:19.99",
       "type": "major_price_drop",
