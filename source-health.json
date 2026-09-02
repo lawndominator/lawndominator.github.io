@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-02T23:51:18.868522+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-09-02T23:52:12.704816+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2319,
     "manual_verified_sources": 568,
-    "included_sources": 1755,
-    "not_included_sources": 564,
+    "included_sources": 1757,
+    "not_included_sources": 562,
     "invalid_sources": 0
   },
   "reason_counts": {
-    "included": 1755,
-    "not_checked_saved_source_limit": 338,
-    "no_extracted_offer": 163,
-    "below $10.00 minimum for this category": 23,
+    "included": 1757,
+    "not_checked_saved_source_limit": 322,
+    "no_extracted_offer": 181,
+    "below $10.00 minimum for this category": 19,
     "above $400.00 maximum for this product": 13,
     "above $500.00 maximum for this product": 12,
     "above $300.00 maximum for this product": 7,
@@ -2180,9 +2180,9 @@
           "retailer": "seed-barn",
           "retailer_name": "Seed Barn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
+          "status": "included",
+          "reason": "included",
+          "price": 72.5,
           "offer_url": "https://seedbarn.com/products/atrazine-4l-herbicide-2-5-gallons?currency=USD&country=US&variant=12530185273444&stkn=fe2774b158dd&srsltid=AfmBOoozT3elgbEnvwlZWGgt2DaHfNSMRq9029YIVpYsq0y5-LnZvfUzvUA"
         },
         {
@@ -2346,8 +2346,8 @@
           "offer_url": "https://burgaw-milling-company-inc.square.site/product/southern-ag-atrazine/OGO6IELYO66INW27BVORNR35?cfa=gpl&channel=CH_uGC7Nz7ka6MdSR5624Z8MVya1BRTbRUQHb7g5vJe9945o"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 2,
+      "included_sources": 22,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -5593,7 +5593,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8093,7 +8093,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 1350.0,
+          "price": 1320.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons"
         },
         {
@@ -8103,7 +8103,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 593.0,
+          "price": 578.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon"
         },
         {
@@ -8123,7 +8123,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 1350.0,
+          "price": 1320.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-2-5-gallons?variant=43994303627450"
         },
         {
@@ -8133,7 +8133,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 593.0,
+          "price": 578.0,
           "offer_url": "https://www.sunspotsupply.com/products/trimmit-2sc-growth-regulator-gallon?variant=43994303594682"
         },
         {
@@ -15583,9 +15583,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle",
@@ -15603,9 +15603,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -15833,9 +15833,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?currency=USD&country=US&variant=12533998649444&stkn=fe2774b158dd&srsltid=AfmBOopX0GS0l4g9eSFOZ5PpCiNY4xtYcr3Cn3SqXm5u2cdKTgT7snwI7ug"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://atlantishydroponics.com/products/forbid-4f-miticide?variant=39506747818164&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqQL_tLrEEjQSPZYPsDl1dC22bE6J-DLqUXN_7dj_I5oJFlpd2rH2w",
@@ -16437,7 +16437,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16527,7 +16527,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16537,7 +16537,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -17087,7 +17087,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 57.07,
+          "price": 55.95,
           "offer_url": "https://www.amleo.com/soil-amendment-21-black-gypsum-50lb/p/A11006"
         },
         {
@@ -18809,7 +18809,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.35,
+          "price": 19.95,
           "offer_url": "https://www.amleo.com/main-event-dry-iron-complex-6-0-0-10-fe-2-mn-quest/p/Q26001"
         },
         {
@@ -19190,7 +19190,7 @@
           "retailer_name": "Mirimichigreen",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19200,7 +19200,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19463,7 +19463,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19523,7 +19523,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19624,7 +19624,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -21696,7 +21696,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -21716,7 +21716,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22700,7 +22700,7 @@
           "retailer_name": "Lowe's",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22860,10 +22860,10 @@
           "retailer": "runnings",
           "retailer_name": "Runnings",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 50.0,
+          "offer_url": "https://www.runnings.com/scottsr-turf-builderr-classic-drop-spreader.html"
         },
         {
           "url": "https://surrygeneralstore.com/products/scotts-76565-drop-spreader-10-000-sqft-capacity.html",
@@ -22986,8 +22986,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 12,
+      "included_sources": 4,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -23335,7 +23335,7 @@
           "retailer_name": "Bigbigmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23375,7 +23375,7 @@
           "retailer_name": "Tractorsupply",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23496,7 +23496,7 @@
           "retailer_name": "Globalindustrial",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -23728,7 +23728,7 @@
           "retailer_name": "eBay",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
