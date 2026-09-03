@@ -844,11 +844,19 @@
       }
 
       function productVariants(product) {
+        const productOffers = product.offers || [];
+        const hasQualitySignals = productOffers.some(offer => (
+          offer.price != null && typeof offer.quality_verified === "boolean"
+        ));
+        const hasDisplayableQuality = offer => (
+          offer.price == null || !hasQualitySignals || offer.quality_verified === true
+        );
         if (isEquipmentCategory(product.category)) {
-          const offers = (product.offers || []).filter(offer => (
+          const offers = productOffers.filter(offer => (
             !offer.excluded
             && offer.in_stock !== false
             && !isExcludedOffer(offer)
+            && hasDisplayableQuality(offer)
             && offer.url
             && validEquipmentPrice(product, offer.price)
           ));
@@ -856,8 +864,9 @@
         }
 
         const groups = {};
-        for (const offer of product.offers || []) {
+        for (const offer of productOffers) {
           if (offer.excluded || offer.in_stock === false || isExcludedOffer(offer)) continue;
+          if (!hasDisplayableQuality(offer)) continue;
           if (offer.price == null && !isEquipmentCategory(product.category)) continue;
           if (offer.price == null && !offer.url) continue;
           const quantity = offer.package_quantity ?? offer.quantity ?? null;

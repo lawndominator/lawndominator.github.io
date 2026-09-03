@@ -14,7 +14,12 @@ from scraper import (
     select_best_offer,
 )
 
-SPECTICLE = {"id": 4, "slug": "spectacle-flo", "category": "pre-emergent"}
+SPECTICLE = {
+    "id": 4,
+    "slug": "spectacle-flo",
+    "name": "Specticle FLO",
+    "category": "pre-emergent",
+}
 SPREADER = {"id": 310, "slug": "lesco-high-wheel-80", "category": "spreader-push"}
 
 
@@ -23,7 +28,7 @@ def offer(price, qty, retailer, unit="fl oz"):
         "retailer": retailer,
         "retailer_name": retailer,
         "price": price,
-        "url": f"https://{retailer}.example.com/p/specticle",
+        "url": f"https://{retailer}.example.com/p/specticle-flo",
         "in_stock": True,
         "package_quantity": qty,
         "package_unit": unit,
@@ -54,12 +59,12 @@ class BestOfferRespectsCeiling(unittest.TestCase):
         best = select_best_offer(SPECTICLE, offers)
         self.assertEqual(best["price"], 354.68)
 
-    def test_an_uncapped_product_still_prefers_bulk_value(self):
-        # The existing unit-price behaviour is deliberate for products where
-        # the bigger size is a real consumer purchase.
+    def test_an_uncapped_product_uses_lowest_checkout_price(self):
+        # Unit value is useful metadata, but "best price" and alerts mean the
+        # lowest amount the customer pays, not the cheapest cost per ounce.
         product = {"id": 9999, "category": "pre-emergent"}
         offers = [offer(100.00, 10, "small"), offer(150.00, 20, "large")]
-        self.assertEqual(select_best_offer(product, offers)["retailer"], "large")
+        self.assertEqual(select_best_offer(product, offers)["retailer"], "small")
 
 
 class CeilingExcludesFromTheFeed(unittest.TestCase):
@@ -69,6 +74,7 @@ class CeilingExcludesFromTheFeed(unittest.TestCase):
             offer(354.68, 18, "sunspot"),
             offer(2247.32, 128, "sunspot-gallon"),
         ]
+        product["offers"][0]["manual_verified"] = True
         apply_offer_quality_filters([product])
         gallon = next(o for o in product["offers"] if o["price"] == 2247.32)
         bottle = next(o for o in product["offers"] if o["price"] == 354.68)
@@ -82,6 +88,7 @@ class CeilingExcludesFromTheFeed(unittest.TestCase):
             offer(354.68, 18, "sunspot"),
             offer(2247.32, 128, "sunspot-gallon"),
         ]
+        product["offers"][0]["manual_verified"] = True
         apply_offer_quality_filters([product])
         self.assertEqual(product["best_price"]["price"], 354.68)
 

@@ -6,6 +6,330 @@ import scraper
 
 
 class ScraperExtractionTests(unittest.TestCase):
+    # ── Price-feed integrity regressions (September 2026 audit) ──────────
+
+    def test_explicit_package_size_beats_product_default(self):
+        cases = [
+            (
+                {"id": 60},
+                {
+                    "title": "Subdue MAXX Fungicide - 1 Quart (32 fl oz)",
+                    "url": "https://retailer.example/subdue-maxx-quart",
+                },
+                "32 fl oz",
+            ),
+            (
+                {"id": 62},
+                {
+                    "title": "Encartis Fungicide - 2.5 Gallon",
+                    "url": "https://retailer.example/encartis-fungicide-2-5-gallon",
+                },
+                "2.5 gal",
+            ),
+            (
+                {"id": 35},
+                {
+                    "title": "Primo Maxx Plant Growth Regulator - 128 fl oz",
+                    "url": "https://retailer.example/primo-maxx",
+                },
+                "1 gal",
+            ),
+            (
+                {"id": 17},
+                {
+                    "title": "Drive XLR8 Herbicide - 32 fl oz",
+                    "url": "https://retailer.example/drive-xlr8",
+                },
+                "32 fl oz",
+            ),
+        ]
+
+        for product, offer, expected in cases:
+            with self.subTest(product_id=product["id"], expected=expected):
+                self.assertEqual(
+                    scraper.infer_package_size(product, offer)["package_label"],
+                    expected,
+                )
+
+    def test_matcher_rejects_related_formulations_and_lab_standards(self):
+        cases = [
+            (
+                {"id": 5, "name": "Pendulum 2G (Pendimethalin)", "active_ingredient": "pendimethalin", "alt_names": ["Pendulum 2 G"]},
+                "Pendulum AquaCap Herbicide - 2.5 Gallon",
+                False,
+            ),
+            (
+                {"id": 9, "name": "Pendulum AquaCap (Pendimethalin 38.7%)", "active_ingredient": "pendimethalin", "alt_names": ["Pendulum Aqua Cap"]},
+                "Pendulum 2G Granular Herbicide - 40 lb",
+                False,
+            ),
+            (
+                {"id": 51, "name": "Heritage G (Azoxystrobin)", "active_ingredient": "azoxystrobin", "alt_names": ["Heritage G Granule"]},
+                "Heritage SC Fungicide - 4 oz",
+                False,
+            ),
+            (
+                {"id": 60, "name": "Subdue Maxx (Mefenoxam)", "active_ingredient": "mefenoxam", "alt_names": ["Subdue MAXX"]},
+                "Mefenoxam 2 AQ Fungicide, 1 Qt.",
+                False,
+            ),
+            (
+                {"id": 35, "name": "Primo Maxx (Trinexapac-ethyl)", "active_ingredient": "trinexapac-ethyl", "alt_names": ["Primo MAXX"]},
+                "Trinexapac-ethyl PESTANAL analytical standard 100 mg",
+                False,
+            ),
+            (
+                {"id": 304, "name": "Spyker HHS100 Handheld Spreader", "active_ingredient": "", "alt_names": ["Spyker HHS-100"]},
+                "Spyker PRO-SERIES P20-5010 50 lb Broadcast Spreader",
+                False,
+            ),
+            (
+                {"id": 320, "name": "Scotts Elite Spreader", "active_ingredient": "", "alt_names": ["Scotts 75902"]},
+                "WESTWARD 30 lb Manual Walk-Behind Spreader",
+                False,
+            ),
+            (
+                {"id": 17, "name": "Drive XLR8", "active_ingredient": "quinclorac", "alt_names": ["Drive XLR8"]},
+                "Generic Quinclorac 1.5L - Compare to Drive XLR8",
+                False,
+            ),
+            (
+                {"id": 39, "name": "Cutless 50W", "active_ingredient": "flurprimidol", "alt_names": ["Cutless 50W"]},
+                "Cutless 0.33G Granule PGR",
+                False,
+            ),
+            (
+                {"id": 40, "name": "Proxy Plant Growth Regulator", "active_ingredient": "ethephon", "alt_names": ["Proxy PGR"]},
+                "Proxy / Embark Mefluidide Growth Regulator",
+                False,
+            ),
+            (
+                {"id": 55, "name": "Cleary 3336 F", "active_ingredient": "thiophanate-methyl", "alt_names": ["Cleary 3336F"]},
+                "Talaris 50 WSP (Compare to Cleary 3336)",
+                False,
+            ),
+            (
+                {"id": 72, "name": "Merit 0.5G", "active_ingredient": "imidacloprid", "alt_names": ["Merit 0.5 G"]},
+                "Grubs Away Generic Merit 0.5G",
+                False,
+            ),
+            (
+                {"id": 38, "name": "Trimmit 2SC", "active_ingredient": "paclobutrazol", "alt_names": ["Trimmit 2 SC"]},
+                "PBZ 2SC Turf Growth Regulator - Trimmit 2SC - 1 Gallon",
+                False,
+            ),
+            (
+                {"id": 38, "name": "Trimmit 2SC", "active_ingredient": "paclobutrazol", "alt_names": ["Trimmit 2 SC"]},
+                "Tide Paclo 2SC PGR Generic Trimmit 2SC",
+                False,
+            ),
+        ]
+
+        for product, title, expected in cases:
+            with self.subTest(product_id=product["id"], title=title):
+                self.assertEqual(scraper._matches_product(product, title), expected)
+
+    def test_comparison_reference_does_not_prove_product_identity(self):
+        certainty = {
+            "id": 16,
+            "name": "Certainty WDG (Sulfosulfuron)",
+            "search_query": "Certainty WDG sulfosulfuron",
+            "active_ingredient": "sulfosulfuron",
+            "alt_names": ["Certainty Turf Herbicide"],
+        }
+        prodiamine = {
+            "id": 1,
+            "name": "Prodiamine 65WDG",
+            "search_query": "Prodiamine 65WDG",
+            "active_ingredient": "prodiamine",
+            "alt_names": [],
+        }
+
+        self.assertFalse(
+            scraper._matches_product(
+                certainty,
+                "Sertay Herbicide by Atticus (Compare to Certainty)",
+            )
+        )
+        self.assertTrue(
+            scraper._matches_product(
+                prodiamine,
+                "Quali-Pro Prodiamine 65 WDG (Generic Barricade)",
+            )
+        )
+
+    def test_matcher_accepts_exact_product_variants(self):
+        cases = [
+            (
+                {"id": 5, "name": "Pendulum 2G (Pendimethalin)", "active_ingredient": "pendimethalin", "alt_names": ["Pendulum 2 G"]},
+                "BASF Pendulum 2G Granular Herbicide - 40 lb",
+            ),
+            (
+                {"id": 51, "name": "Heritage G (Azoxystrobin)", "active_ingredient": "azoxystrobin", "alt_names": ["Heritage G Granule"]},
+                "Syngenta Heritage G Fungicide - 30 lb",
+            ),
+            (
+                {"id": 60, "name": "Subdue Maxx (Mefenoxam)", "active_ingredient": "mefenoxam", "alt_names": ["Subdue MAXX"]},
+                "Syngenta Subdue MAXX Fungicide - 1 Quart",
+            ),
+            (
+                {"id": 304, "name": "Spyker HHS100 Handheld Spreader", "active_ingredient": "", "alt_names": ["Spyker HHS-100"]},
+                "Spyker HHS-100 5 lb Handheld Spreader",
+            ),
+        ]
+
+        for product, title in cases:
+            with self.subTest(product_id=product["id"], title=title):
+                self.assertTrue(scraper._matches_product(product, title))
+
+    def test_quality_filter_rejects_untrusted_and_insecure_domains(self):
+        results = [{
+            "id": 19,
+            "slug": "speedzone",
+            "name": "SpeedZone Broadleaf Herbicide",
+            "category": "post-emergent",
+            "offers": [
+                {
+                    "retailer": "unknown",
+                    "price": 49.99,
+                    "url": "https://karikatuur.ee/products/speedzone",
+                    "title": "SpeedZone Broadleaf Herbicide",
+                },
+                {
+                    "retailer": "familyfarmandhome",
+                    "price": 49.99,
+                    "url": "http://www.familyfarmandhome.com/gordons-speedzone.html",
+                    "title": "Gordon's SpeedZone Broadleaf Herbicide",
+                },
+            ],
+        }]
+
+        scraper.apply_offer_quality_filters(results)
+
+        self.assertEqual(
+            [offer.get("exclude_reason") for offer in results[0]["offers"]],
+            ["untrusted retailer domain", "insecure retailer URL"],
+        )
+        self.assertIsNone(results[0]["best_price"])
+
+    def test_quality_filter_rejects_same_package_price_outlier(self):
+        results = [{
+            "id": 62,
+            "slug": "encartis",
+            "name": "Encartis Fungicide",
+            "category": "fungicide",
+            "offers": [
+                {"retailer": "solutions", "price": 29.99, "url": "https://www.solutionsstores.com/encartis-fungicide", "title": "Encartis Fungicide - 2.5 Gallon", "package_quantity": 320.0, "package_unit": "fl oz"},
+                {"retailer": "sunspot", "price": 370.00, "url": "https://www.sunspotsupply.com/products/encartis-fungicide", "title": "Encartis Fungicide - 2.5 Gallon", "package_quantity": 320.0, "package_unit": "fl oz"},
+                {"retailer": "store", "price": 355.10, "url": "https://www.domyown.com/encartis-fungicide-p-999.html", "title": "Encartis Fungicide - 2.5 Gallon", "package_quantity": 320.0, "package_unit": "fl oz"},
+            ],
+        }]
+
+        scraper.apply_offer_quality_filters(results)
+
+        self.assertTrue(results[0]["offers"][0]["excluded"])
+        self.assertEqual(results[0]["offers"][0]["exclude_reason"], "implausible same-package price outlier")
+        self.assertEqual(results[0]["best_price"]["price"], 355.10)
+
+    def test_quality_filter_rejects_high_same_package_price_outlier(self):
+        results = [{
+            "id": 210,
+            "slug": "main-event-dry-iron",
+            "name": "Main Event Dry Iron",
+            "category": "fertilizer",
+            "offers": [
+                {"retailer": "amleo", "price": 19.95, "url": "https://www.amleo.com/main-event-dry-iron", "title": "Main Event Dry Iron 3 lb", "package_quantity": 3.0, "package_unit": "lb"},
+                {"retailer": "solutions", "price": 20.85, "url": "https://www.solutionsstores.com/main-event-dry-iron", "title": "Main Event Dry Iron 3 lb", "package_quantity": 3.0, "package_unit": "lb"},
+                {"retailer": "bad", "price": 250.00, "url": "https://example.com/main-event-dry-iron", "title": "Main Event Dry Iron 3 lb", "package_quantity": 3.0, "package_unit": "lb"},
+            ],
+        }]
+
+        scraper.apply_offer_quality_filters(results)
+
+        self.assertTrue(results[0]["offers"][2]["excluded"])
+        self.assertEqual(results[0]["offers"][2]["exclude_reason"], "implausible same-package price outlier")
+        self.assertEqual(results[0]["best_price"]["price"], 19.95)
+
+    def test_quality_filter_hides_an_uncorroborated_price(self):
+        product = {
+            "id": 999,
+            "slug": "uncorroborated",
+            "name": "Uncorroborated Product",
+            "category": "fertilizer",
+            "offers": [{
+                "retailer": "single-store",
+                "price": 49.99,
+                "url": "https://single-store.example/uncorroborated",
+                "title": "Uncorroborated Product",
+            }],
+        }
+
+        scraper.apply_offer_quality_filters([product])
+
+        offer = product["offers"][0]
+        self.assertFalse(offer["quality_verified"])
+        self.assertTrue(offer["excluded"])
+        self.assertEqual(offer["exclude_reason"], scraper.UNVERIFIED_OFFER_REASON)
+        self.assertIsNone(product["best_price"])
+
+    def test_quality_filter_rechecks_after_removing_a_high_outlier(self):
+        prices = [87.0, 99.0, 115.0, 284.0, 299.0]
+        results = [{
+            "id": 19,
+            "slug": "speedzone-southern",
+            "name": "SpeedZone Southern EW",
+            "category": "herbicide",
+            "offers": [
+                {
+                    "retailer": f"store-{index}",
+                    "price": price,
+                    "url": f"https://store-{index}.example/speedzone-southern",
+                    "title": "SpeedZone Southern EW - 1 gallon",
+                    "package_quantity": 128.0,
+                    "package_unit": "fl oz",
+                }
+                for index, price in enumerate(prices)
+            ],
+        }]
+
+        scraper.apply_offer_quality_filters(results)
+
+        self.assertEqual(
+            [offer["price"] for offer in results[0]["offers"] if not offer.get("excluded")],
+            [87.0, 99.0, 115.0],
+        )
+
+    def test_unverified_extreme_drop_does_not_emit_alert(self):
+        old_offer = {
+            "retailer": "solutions",
+            "price": 250.0,
+            "url": "https://www.solutionsstores.com/product",
+            "package_quantity": 128.0,
+            "package_unit": "fl oz",
+        }
+        new_offer = {
+            "retailer": "solutions",
+            "price": 25.0,
+            "url": "https://www.solutionsstores.com/product",
+            "package_quantity": 128.0,
+            "package_unit": "fl oz",
+        }
+
+        self.assertFalse(scraper._should_emit_price_drop_alert(old_offer, new_offer, 90.0))
+
+    def test_stale_saved_price_is_not_reused_as_current(self):
+        source = {
+            "retailer": "solutions",
+            "retailer_name": "Solutions Pest & Lawn",
+            "url": "https://www.solutionsstores.com/example-product",
+            "title": "Example Product",
+            "price_verified": 99.99,
+            "last_seen": "2026-01-01T00:00:00+00:00",
+            "manual_verified": True,
+        }
+
+        self.assertIsNone(scraper._offer_from_verified_source(source))
+
     def test_append_affiliate_replaces_existing_amazon_tag(self):
         self.assertEqual(
             scraper.append_affiliate("https://www.amazon.com/dp/B0BTN1DPMD?tag=wrong-20&psc=1", "amazon"),
@@ -472,7 +796,7 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(scraper.min_price_for_product(product), scraper.MIN_SOIL_AMENDMENT_PRICE)
 
-    def test_select_best_uses_unit_price_for_comparable_sizes(self):
+    def test_select_best_uses_lowest_checkout_price_for_comparable_sizes(self):
         product = {"id": 1, "category": "post-emergent"}
         offers = [
             {
@@ -497,7 +821,38 @@ class ScraperExtractionTests(unittest.TestCase):
 
         best = scraper.select_best_offer(product, offers)
 
-        self.assertEqual(best["retailer"], "large")
+        self.assertEqual(best["retailer"], "small")
+
+    def test_verified_best_offer_rejects_uncorroborated_cheapest_price(self):
+        product = {"id": 17, "category": "post-emergent"}
+        offers = [
+            {"retailer": "unverified", "price": 21.99, "url": "https://store.example/cheap"},
+            {
+                "retailer": "verified",
+                "price": 49.99,
+                "url": "https://store.example/verified",
+                "quality_verified": True,
+            },
+        ]
+
+        best = scraper.select_best_offer(
+            product,
+            offers,
+            require_quality_verified=True,
+        )
+
+        self.assertEqual(best["retailer"], "verified")
+
+    def test_verified_best_offer_fails_closed_without_verified_offer(self):
+        product = {"id": 17, "category": "post-emergent"}
+
+        self.assertIsNone(
+            scraper.select_best_offer(
+                product,
+                [{"retailer": "only", "price": 21.99, "url": "https://store.example/only"}],
+                require_quality_verified=True,
+            )
+        )
 
     def test_select_best_falls_back_to_flat_price_when_sizes_are_not_comparable(self):
         product = {"id": 1, "category": "post-emergent"}
@@ -552,6 +907,109 @@ class ScraperExtractionTests(unittest.TestCase):
 
         self.assertEqual(package["package_label"], "2.5 gal")
         self.assertEqual(package["package_quantity"], 320.0)
+
+    def test_infers_shopify_decimal_ounces_without_dropping_the_integer(self):
+        package = scraper.infer_package_size({}, {
+            "url": "https://seedbarn.com/products/pillar-sc-fungicide-43-5-fl-oz",
+            "price": 247.77,
+        })
+
+        self.assertEqual(package["package_label"], "43.5 fl oz")
+        self.assertEqual(package["package_quantity"], 43.5)
+
+    def test_infers_fractional_gallons_before_reading_the_denominator(self):
+        package = scraper.infer_package_size({}, {
+            "title": "Bifen I/T 3/4 Gallon",
+            "price": 79.95,
+        })
+
+        self.assertEqual(package["package_label"], "96 fl oz")
+        self.assertEqual(package["package_quantity"], 96.0)
+
+    def test_infers_hash_notation_as_pounds(self):
+        package = scraper.infer_package_size({"id": 51}, {
+            "title": "Heritage G Fungicide 10# Bag",
+            "price": 89.95,
+        })
+
+        self.assertEqual(package["package_label"], "10 lb")
+        self.assertEqual(package["package_quantity"], 10.0)
+
+    def test_infers_hash_notation_before_a_slug_separator(self):
+        package = scraper.infer_package_size({"id": 1}, {
+            "title": "Prodiamine 65 WDG 5#- Pre-Emergent Herbicide",
+            "price": 69.38,
+        })
+
+        self.assertEqual(package["package_label"], "5 lb")
+
+    def test_infers_total_quantity_for_multipacks_and_cases(self):
+        cases = [
+            (
+                "Main Event Dry Iron - Case of 10 - 3 lb Bags",
+                "https://example.com/main-event-dry-iron-case-of-10-3-lb-bags",
+                30.0,
+                "lb",
+            ),
+            (
+                "Headway G Fungicide 40 x 30 lb Bags",
+                "https://example.com/headway-g-full-pallet",
+                1200.0,
+                "lb",
+            ),
+            (
+                "Eagle 20EW Case (8 x 16 fl oz bottles)",
+                "https://example.com/eagle-20ew-case",
+                128.0,
+                "fl oz",
+            ),
+            (
+                "Triclopyr Ester Weed Killer 8 oz pack of 12",
+                "https://example.com/triclopyr-pack-of-12",
+                96.0,
+                "fl oz",
+            ),
+        ]
+
+        for title, url, quantity, unit in cases:
+            with self.subTest(title=title):
+                package = scraper.infer_package_size({}, {
+                    "title": title,
+                    "url": url,
+                    "price": 250,
+                })
+                self.assertEqual(package["package_quantity"], quantity)
+                self.assertEqual(package["package_unit"], unit)
+
+    def test_size_sensitive_product_excludes_unknown_package(self):
+        product = {
+            "id": 999,
+            "slug": "sized-product",
+            "category": "fertilizer",
+            "needs_size_review": True,
+            "offers": [
+                {
+                    "retailer": "unknown",
+                    "price": 20.0,
+                    "url": "https://store.example/unknown",
+                },
+                {
+                    "retailer": "known",
+                    "price": 30.0,
+                    "url": "https://store.example/known",
+                    "package_quantity": 20.0,
+                    "package_unit": "lb",
+                    "price_per_unit": 1.5,
+                    "manual_verified": True,
+                },
+            ],
+        }
+
+        scraper.apply_offer_quality_filters([product])
+
+        self.assertTrue(product["offers"][0]["excluded"])
+        self.assertIn("package size", product["offers"][0]["exclude_reason"])
+        self.assertEqual(product["best_price"]["retailer"], "known")
 
     def test_infers_single_gallon_package_size_without_number(self):
         package = scraper.infer_package_size({}, {
@@ -609,6 +1067,22 @@ class ScraperExtractionTests(unittest.TestCase):
                 8,
                 "https://www.seedworldusa.com/products/alyce-clover-seed",
                 "Alyce Clover",
+            )
+        )
+
+    def test_unreachable_or_homepage_redirecting_best_sources_are_rejected(self):
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                2,
+                "https://www.gardenfountainshop.com/product/dimension-2ew-herbicide",
+                "Dimension 2EW Herbicide",
+            )
+        )
+        self.assertTrue(
+            scraper.is_known_wrong_product_source(
+                222,
+                "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-carbonpro-l-mobilex-liquid-biostimulant-1-gal",
+                "LESCO CarbonPro-L",
             )
         )
 
@@ -833,7 +1307,12 @@ class ScraperExtractionTests(unittest.TestCase):
                 "category": "fungicide",
                 "offers": [
                     {"retailer": "flat-price-store", "retailer_name": "Flat Price Store", "price": 12.34},
-                    {"retailer": "real-store", "retailer_name": "Real Store", "price": 50 + i},
+                    {
+                        "retailer": "real-store",
+                        "retailer_name": "Real Store",
+                        "price": 50 + i,
+                        "manual_verified": True,
+                    },
                 ],
                 "best_price": None,
             })
@@ -1005,7 +1484,7 @@ class ScraperExtractionTests(unittest.TestCase):
             "retailer_name": "Example Store",
             "title": "Celsius WG",
             "price_verified": 13.79,
-            "last_seen": "2026-05-16T01:52:11+00:00",
+            "last_seen": "2099-05-16T01:52:11+00:00",
         })
 
         self.assertIsNotNone(offer)
@@ -1021,6 +1500,7 @@ class ScraperExtractionTests(unittest.TestCase):
             "title": "Celsius WG",
             "price_verified": 13.79,
             "image": "https://store.example/placeholder/default/missing-image-base.png",
+            "last_seen": "2099-05-16T01:52:11+00:00",
         })
 
         self.assertIsNone(offer["image"])
@@ -1050,13 +1530,13 @@ class ScraperExtractionTests(unittest.TestCase):
                 "products": {
                     "1": [
                         {
-                            "url": "https://merchant.example/prodiamine",
+                            "url": "https://merchant.example/prodiamine-65-wdg",
                             "retailer": "merchant",
                             "retailer_name": "Merchant",
                             "manual_verified": True,
                         },
                         {
-                            "url": "https://other.example/prodiamine",
+                            "url": "https://other.example/prodiamine-65-wdg",
                             "retailer": "other",
                             "retailer_name": "Other",
                         },
@@ -1066,7 +1546,7 @@ class ScraperExtractionTests(unittest.TestCase):
             results = [{
                 "id": 1,
                 "offers": [{
-                    "url": "https://merchant.example/prodiamine",
+                    "url": "https://merchant.example/prodiamine-65-wdg",
                     "retailer": "merchant",
                     "retailer_name": "Merchant",
                     "price": 64.99,
@@ -1293,6 +1773,7 @@ class ScraperExtractionTests(unittest.TestCase):
                             "retailer_name": "Example Store",
                             "title": "Celsius WG",
                             "price_verified": 13.79,
+                            "last_seen": "2099-05-16T01:52:11+00:00",
                             "in_stock": True,
                             "manual_verified": True,
                             "package_quantity": 10.0,
@@ -1329,6 +1810,7 @@ class ScraperExtractionTests(unittest.TestCase):
                             "retailer_name": "Example Store",
                             "title": "Celsius WG",
                             "price_verified": 22.99,
+                            "last_seen": "2099-05-16T01:52:11+00:00",
                             "manual_verified": True,
                         }]
                     }
@@ -1405,6 +1887,7 @@ class ScraperExtractionTests(unittest.TestCase):
                 "price": 89.0,
                 "url": "https://new.example/product",
                 "in_stock": True,
+                "quality_verified": True,
             },
         }]
 
@@ -1529,6 +2012,7 @@ class ScraperExtractionTests(unittest.TestCase):
                 "in_stock": True,
                 "package_quantity": 128.0,
                 "package_unit": "fl oz",
+                "quality_verified": True,
             },
         }]
 
@@ -1606,15 +2090,25 @@ class ScraperExtractionTests(unittest.TestCase):
             "slug": "prodiamine-65wdg",
             "name": "Prodiamine 65WDG",
             "category": "pre-emergent",
-            "best_price": {"retailer": "store", "retailer_name": "Store", "price": 100.0},
+            "best_price": {
+                "retailer": "store",
+                "retailer_name": "Store",
+                "price": 100.0,
+                "url": "https://store.example/product",
+                "quality_verified": True,
+            },
         }]
         previous_alerts = [{
             "id": "old-but-recent",
             "type": "best_price_drop",
             "product_id": 1,
             "product_slug": "prodiamine-65wdg",
+            "product_name": "Prodiamine 65WDG",
+            "old_price": 110.0,
             "new_price": 100.0,
+            "drop_percent": 9.1,
             "new_retailer": "Store",
+            "url": "https://store.example/product",
             "created_at": "2026-05-13T16:00:00+00:00",
         }]
 
@@ -1824,7 +2318,7 @@ class ScraperExtractionTests(unittest.TestCase):
         old = {"retailer": "store", "price": 100.0, "url": "https://store.example/product",
                "package_quantity": 128.0, "package_unit": "fl oz"}
         new = {"retailer": "store", "price": 55.0,  "url": "https://store.example/product",
-               "package_quantity": 128.0, "package_unit": "fl oz"}
+               "package_quantity": 128.0, "package_unit": "fl oz", "quality_verified": True}
         self.assertFalse(scraper._is_suspicious_drop(old, new, 45.0))
 
     def test_is_suspicious_drop_suppresses_67_percent_different_url(self):

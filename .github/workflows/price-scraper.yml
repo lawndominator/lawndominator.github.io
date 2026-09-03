@@ -111,6 +111,9 @@ jobs:
           MIN_ALERT_DROP_PERCENT: "5"
         run: python scraper/scraper.py
 
+      - name: Audit every published price and alert
+        run: python scraper/audit_price_feed.py
+
       - name: Validate rendered price board
         run: python scraper/validate_price_board.py
 
