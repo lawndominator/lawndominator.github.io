@@ -143,6 +143,10 @@ PRODUCT_IDENTITY_RULES = {
             r"\bquali[\s_-]*pro\b", r"\bprogro\b", r"/quinclorac[\s_-]*1[\s_.-]*5[\s_-]*l\b",
         ),
     },
+    18: {
+        "required": (r"\bsedge[\s_-]*hammer(?:[\s_-]*plus|\+)?\b",),
+        "forbidden": (r"\bempero\b", r"\bprosedge\b"),
+    },
     16: {
         "required": (r"\bcertainty(?:[\s_-]*(?:wdg|turf))?\b",),
         "forbidden": (r"\bsertay\b",),
