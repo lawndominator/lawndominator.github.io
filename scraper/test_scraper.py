@@ -2492,3 +2492,94 @@ class ScraperExtractionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PublicationAuditAgreementTest(unittest.TestCase):
+    """The publish gate aborts the whole feed when it disagrees with the
+    scraper, so verification must guarantee exactly what the audit re-checks:
+    two independent retailers among the *verified* offers, not merely among the
+    surviving ones."""
+
+    def _product(self):
+        return {
+            "id": 58,
+            "slug": "emerald",
+            "name": "Emerald Fungicide",
+            "category": "fungicide",
+            "offers": [
+                # Two offers from one retailer entity sit inside the median band.
+                {
+                    "retailer": "domyown",
+                    "price": 100.0,
+                    "url": "https://www.domyown.com/emerald-fungicide-p-1.html",
+                    "title": "Emerald Fungicide 49 WG",
+                    "package_quantity": 8.0,
+                    "package_unit": "oz",
+                    "price_per_unit": 12.5,
+                },
+                {
+                    "retailer": "domyown",
+                    "price": 110.0,
+                    "url": "https://www.domyown.com/emerald-fungicide-p-2.html",
+                    "title": "Emerald Fungicide 49 WG",
+                    "package_quantity": 8.0,
+                    "package_unit": "oz",
+                    "price_per_unit": 13.75,
+                },
+                # The only second retailer is priced outside the band, so it
+                # corroborates nothing.
+                {
+                    "retailer": "solutionsstores",
+                    "price": 260.0,
+                    "url": "https://www.solutionsstores.com/emerald-fungicide",
+                    "title": "Emerald Fungicide 49 WG",
+                    "package_quantity": 8.0,
+                    "package_unit": "oz",
+                    "price_per_unit": 32.5,
+                },
+            ],
+        }
+
+    def test_verification_requires_two_entities_among_verified_offers(self):
+        results = [self._product()]
+
+        scraper.apply_offer_quality_filters(results)
+
+        verified = [
+            offer
+            for offer in results[0]["offers"]
+            if offer.get("quality_verified") is True and not offer.get("excluded")
+        ]
+        entities = {scraper._retailer_entity(offer) for offer in verified}
+        self.assertTrue(
+            len(entities) >= 2 or not verified,
+            f"verified {len(verified)} offer(s) across {len(entities)} retailer entity(ies); "
+            "the publication audit rejects anything under two",
+        )
+
+    def test_audit_passes_on_the_scrapers_own_verification_output(self):
+        results = [self._product()]
+        scraper.apply_offer_quality_filters(results)
+
+        import audit_price_feed
+
+        offers = results[0]["offers"]
+        for index, offer in enumerate(offers):
+            if offer.get("quality_verified") is not True or offer.get("manual_verified"):
+                continue
+            peers = [
+                peer
+                for peer in offers
+                if not peer.get("excluded")
+                and peer.get("quality_verified") is True
+                and peer.get("package_quantity") == offer.get("package_quantity")
+                and peer.get("package_unit") == offer.get("package_unit")
+            ]
+            entities = {scraper._retailer_entity(peer) for peer in peers}
+            self.assertGreaterEqual(
+                len(entities),
+                2,
+                f"offer[{index}] would fail the publication audit: "
+                "price is not independently corroborated",
+            )
+        self.assertTrue(audit_price_feed is not None)

@@ -1613,9 +1613,18 @@ def _exclude_duplicate_and_outlier_offers(product: dict) -> None:
                 if len(surviving_prices) % 2
                 else (surviving_prices[midpoint - 1] + surviving_prices[midpoint]) / 2
             )
-            for offer in surviving:
-                price = _valid_price(offer)
-                if median * 0.5 <= price <= median * 2:
+            corroborated = [
+                offer
+                for offer in surviving
+                if median * 0.5 <= _valid_price(offer) <= median * 2
+            ]
+            # audit_price_feed.py re-derives corroboration from the verified
+            # offers alone. Counting entities across every surviving offer can
+            # verify a band holding just one retailer, which the audit then
+            # rejects, and a single rejected offer fails the entire publish.
+            # Verify only what the gate will accept.
+            if len({_retailer_entity(offer) for offer in corroborated}) >= 2:
+                for offer in corroborated:
                     offer["quality_verified"] = True
 
     for offer in product.get("offers", []):
