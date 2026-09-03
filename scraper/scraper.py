@@ -175,6 +175,13 @@ PRODUCT_IDENTITY_RULES = {
         "required": (r"\bt[\s_-]*nex(?:[\s_-]*1as)?\b",),
         "forbidden": NON_RETAIL_OFFER_TERMS,
     },
+    37: {
+        "required": (r"\banuew\b",),
+        # Anuew is the original dry 27.5% prohexadione-calcium product in the
+        # app catalog. Anuew EZ is a separate liquid formulation and cannot
+        # share its prices or package units.
+        "forbidden": (r"\banuew[\s_-]*ez\b",),
+    },
     38: {
         "required": (r"\btrimmit[\s_-]*(?:2[\s_-]*sc|sc)\b",),
         "forbidden": (r"\btravek\b", r"\bpbz[\s_-]*2[\s_-]*sc\b", r"\btide[\s_-]*paclo\b"),
@@ -204,6 +211,12 @@ PRODUCT_IDENTITY_RULES = {
         "forbidden": (
             r"\b(?:wsp|wsb|wp|dg|eg)\b", r"\btalaris\b", r"\btransom\b", r"\bohp[\s_-]*6672\b",
         ),
+    },
+    61: {
+        "required": (r"\bvelista\b",),
+        # Retailer metadata has occasionally copied Ascernity's liquid active
+        # ingredients onto a Velista URL. Do not publish that ambiguous row.
+        "forbidden": (r"\bfluopyram\b", r"\btrifloxystrobin\b", r"\bascernity\b"),
     },
     57: {
         "required": (r"\bdaconil[\s_-]*ultrex\b",),
@@ -743,6 +756,57 @@ def _multiply_package(package: dict, count: Optional[int]) -> dict:
     return _package(float(package["package_quantity"]) * count, package["package_unit"])
 
 
+def _is_dry_formulation(product: dict) -> bool:
+    """Whether an unqualified `oz` package means weight, not fluid ounces."""
+    name = str(product.get("name") or "")
+    return bool(
+        product.get("id") in {18, 29, 30, 37, 39, 51, 57, 61}
+        or
+        re.search(
+            r"(?:^|[^a-z0-9])(?:\d+(?:\.\d+)?)?(?:wdg|wg|df|wsg|wsp|wp|sp)(?:$|[^a-z])",
+            name,
+            re.I,
+        )
+        or re.search(r"\b\d+(?:\.\d+)?\s*g\b", name, re.I)
+    )
+
+
+def _dry_ounce_package(quantity: float) -> dict:
+    # Normalize full-pound multipacks so 8 × 2 oz and an explicitly stated
+    # 1 lb package participate in the same comparison cohort.
+    pounds = quantity / 16
+    if quantity >= 16 and abs(pounds - round(pounds)) < 1e-9:
+        return _package(pounds, "lb")
+    return _package(quantity, "oz")
+
+
+def _multipack_component_package(product: dict, text: str) -> Optional[dict]:
+    """Read `8 x 2 oz` as a 16 oz package, not eight 1 lb packages."""
+    match = re.search(
+        r"\b(\d+)\s*(?:packets?|bags?|bottles?)?\s*[x×]\s*"
+        r"((?:\d+(?:\.\d+)?|\.\d+))\s*[-_]?\s*"
+        r"((?:fl\.?\s*)?oz|ounces?|gal(?:lon)?s?|qt|quarts?|lbs?|pounds?|g|grams?)\b",
+        text,
+        re.I,
+    )
+    if not match:
+        return None
+    count = int(match.group(1))
+    quantity = float(match.group(2)) * count
+    unit = re.sub(r"[.\s]", "", match.group(3).lower())
+    if unit.startswith("gal"):
+        return _package(quantity * 128, "fl oz")
+    if unit.startswith("qt") or unit.startswith("quart"):
+        return _package(quantity * 32, "fl oz")
+    if unit.startswith("lb") or unit.startswith("pound"):
+        return _package(quantity, "lb")
+    if unit in {"g", "gram", "grams"}:
+        return _package(quantity, "g")
+    if _is_dry_formulation(product):
+        return _dry_ounce_package(quantity)
+    return _package(quantity, "fl oz")
+
+
 def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     url = str(offer.get("url") or "").lower()
     title = str(offer.get("title") or "").lower()
@@ -812,16 +876,16 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
 
     if product_id == 15 and "celsius" in text:
         if "10oz" in text or "10 oz" in text or "10 ounce" in text:
-            return _package(10.0, "fl oz")
+            return _package(10.0, "oz")
         if retailer == "domyown" and (offer.get("price") or 0) and float(offer["price"]) > 100:
-            return _package(10.0, "fl oz")
-        return _package(0.226, "fl oz")
+            return _package(10.0, "oz")
+        return _package(0.226, "oz")
 
     if product_id == 17 and ("drive-xlr8" in url or "drive xlr8" in title):
         return _package(64.0, "fl oz")
 
     if product_id == 16 and ("certainty" in text or "sulfosulfuron" in text or "sertay" in text):
-        return _package(1.25, "fl oz")
+        return _package(1.25, "oz")
 
     if product_id == 18 and ("sedgehammer" in text or "halosulfuron" in text):
         return _package(13.5, "g")
@@ -838,7 +902,7 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         or "amtide-msm" in url
         or "b0cb96f141" in url
     ):
-        return _package(8.0, "fl oz")
+        return _package(8.0, "oz")
 
     if product_id == 21 and ("tenacity" in text or "mesotrione" in text):
         if "0-5-gallon" in url:
@@ -879,7 +943,10 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(32.0, "fl oz")
 
     if product_id == 29 and ("katana" in text or "flazasulfuron" in text):
-        return _package(5.0, "fl oz")
+        return _package(5.0, "oz")
+
+    if product_id == 30 and "tribute" in text:
+        return _package(6.0, "oz")
 
     if product_id == 35 and ("primo" in text or "trinexapac" in text):
         if "1-gallon" in url or "1 gallon" in title:
@@ -894,11 +961,7 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(128.0, "fl oz")
 
     if product_id == 37 and ("anuew" in text or "prohexadione" in text):
-        if "2.5" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
-            return _package(320.0, "fl oz")
-        if "1.5" in text or "seed-barn" in url:
-            return _package(1.5, "lb")
-        return _package(64.0, "fl oz")
+        return _package(1.5, "lb")
 
     if product_id == 38 and ("trimmit" in text or "paclobutrazol" in text):
         if "2.5" in text or (offer.get("price") is not None and float(offer["price"]) > 500):
@@ -906,9 +969,10 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(128.0, "fl oz")
 
     if product_id == 39 and ("cutless" in text or "flurprimidol" in text):
-        if "40 lb" in text or "40-lb" in url:
-            return _package(40.0, "lb")
-        return _package(128.0, "fl oz")
+        # Only exact Cutless 50W offers pass identity validation. Its package
+        # must be explicit in the offer instead of inheriting the old Cutless
+        # MEC liquid default that previously corrupted this catalog row.
+        return None
 
     if product_id == 40 and ("proxy" in text or "embark" in text or "mefluidide" in text):
         return _package(128.0, "fl oz")
@@ -929,10 +993,7 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(32.0, "fl oz")
 
     if product_id == 51 and ("heritage" in text or "azoxystrobin" in text or "azoxy" in text):
-        # Heritage G is sold in more than one dry package. An omitted size is
-        # genuinely unknown; borrowing the 4 fl oz Heritage SC default is a
-        # formulation collision and corrupts unit-price comparisons.
-        return None
+        return _package(30.0, "lb")
 
     if product_id == 52 and ("headway" in text):
         if "gal" in text:
@@ -962,15 +1023,15 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
             return _package(40.0, "lb")
         if "5-lb" in url or "5 lb" in title:
             return _package(5.0, "lb")
-        if "2-5" in url or "2.5" in text:
-            return _package(320.0, "fl oz")
-        return _package(16.0, "fl oz")
+        # The identity rule admits Daconil Ultrex only. Never borrow a liquid
+        # Daconil formulation's size when an Ultrex page omits package size.
+        return None
 
     if product_id == 58 and "emerald" in text:
         return _package(0.49, "lb")
 
     if product_id == 59 and ("medallion" in text or "fludioxonil" in text):
-        return _package(8.0, "fl oz")
+        return _package(8.0, "oz")
 
     if product_id == 60 and ("subdue" in text or "mefenoxam" in text):
         if "25 lb" in text or "25-lb" in url:
@@ -978,7 +1039,7 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(128.0, "fl oz")
 
     if product_id == 61 and ("velista" in text or "penthiopyrad" in text):
-        return _package(22.0, "fl oz")
+        return _package(22.0, "oz")
 
     if product_id == 70 and "acelepryn" in text:
         if offer.get("price") is not None and float(offer["price"]) > 500:
@@ -1130,16 +1191,24 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     return None
 
 
-def _explicit_package_size(offer: dict) -> Optional[dict]:
+def _explicit_package_size(product: dict, offer: dict) -> Optional[dict]:
     text = _offer_size_text(offer)
     if not text:
         return None
     multipack_count = _multipack_count(text)
+    multipack = _multipack_component_package(product, text)
+    if multipack:
+        return multipack
 
     # Shopify-style slugs commonly spell decimals with hyphens (2-5-gallon,
     # 0-49-lbs). Read that as 2.5/0.49 before the ordinary size expressions,
     # which would otherwise latch onto the trailing 5 or 49.
-    slug_decimal = re.search(
+    title_has_plain_size = re.search(
+        r"(?<![\d.])(?:\d+(?:\.\d+)?|\.\d+)\s*(?:fl\.?\s*)?"
+        r"(?:oz|ounces?|gal(?:lon)?s?|qt|quarts?|lbs?|pounds?|g|grams?)\b",
+        str(offer.get("title") or "").lower(),
+    )
+    slug_decimal = None if title_has_plain_size else re.search(
         r"\b(\d+)[-_](\d+)[-_]((?:fl[-_])?oz|ounce|ounces|gal|gallon|gallons|lb|lbs|pound|pounds)\b",
         text,
     )
@@ -1149,7 +1218,11 @@ def _explicit_package_size(offer: dict) -> Optional[dict]:
         if unit.startswith("gal"):
             return _package(value * 128, "fl oz")
         if "oz" in unit or unit.startswith("ounce"):
-            return _package(value, "fl oz")
+            return (
+                _dry_ounce_package(value)
+                if _is_dry_formulation(product)
+                else _package(value, "fl oz")
+            )
         return _package(value, "lb")
 
     gallon_fraction = re.search(
@@ -1165,7 +1238,7 @@ def _explicit_package_size(offer: dict) -> Optional[dict]:
         return _multiply_package(_package(gallons * 128, "fl oz"), multipack_count)
 
     liquid_match = re.search(
-        r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(?:fl\.?\s*)?(oz|ounce|ounces|gal|gallon|gallons|qt|quart|quarts)\b",
+        r"(?<![\d.])((?:\d+(?:\.\d+)?|\.\d+))\s*[-_]?\s*(?:fl\.?\s*)?(oz|ounce|ounces|gal|gallon|gallons|qt|quart|quarts)\b",
         text,
     )
     if liquid_match:
@@ -1177,24 +1250,39 @@ def _explicit_package_size(offer: dict) -> Optional[dict]:
             quantity = value * 32
         else:
             quantity = value
-        return _multiply_package(_package(quantity, "fl oz"), multipack_count)
+        package = (
+            _dry_ounce_package(quantity)
+            if unit.startswith(("oz", "ounce"))
+            and _is_dry_formulation(product)
+            else _package(quantity, "fl oz")
+        )
+        return _multiply_package(package, multipack_count)
 
     if re.search(r"\b(?:gal|gallon)\b", text):
         return _multiply_package(_package(128.0, "fl oz"), multipack_count)
 
-    dry_match = re.search(r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(lb|lbs|pound|pounds)\b", text)
+    dry_match = re.search(r"(?<![\d.])((?:\d+(?:\.\d+)?|\.\d+))\s*[-_]?\s*(lb|lbs|pound|pounds)\b", text)
     if dry_match:
         quantity = float(dry_match.group(1))
         return _multiply_package(_package(quantity, "lb"), multipack_count)
 
-    hash_pounds = re.search(r"\b(\d+(?:\.\d+)?)\s*#(?![a-z0-9])", text)
+    hash_pounds = re.search(r"(?<![\d.])((?:\d+(?:\.\d+)?|\.\d+))\s*#(?![a-z0-9])", text)
     if hash_pounds:
         return _multiply_package(_package(float(hash_pounds.group(1)), "lb"), multipack_count)
 
     # Require whitespace or punctuation before gram units so formulation names
     # such as Pendulum 2G are not interpreted as two grams of product.
-    gram_match = re.search(r"\b(\d+(?:\.\d+)?)(?:\s+|[-_]+)(g|gram|grams)\b", text)
+    gram_match = re.search(r"(?<![\d.])((?:\d+(?:\.\d+)?|\.\d+))(?:\s+|[-_]+)(g|gram|grams)\b", text)
     if gram_match:
+        formulation = re.search(
+            r"\b(\d+(?:\.\d+)?)\s*g\b", str(product.get("name") or ""), re.I
+        )
+        if (
+            gram_match.group(2).lower() == "g"
+            and formulation
+            and abs(float(gram_match.group(1)) - float(formulation.group(1))) < 1e-9
+        ):
+            return None
         return _multiply_package(_package(float(gram_match.group(1)), "g"), multipack_count)
 
     return None
@@ -1204,7 +1292,7 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
     # Retailer text is direct evidence. Product-specific defaults exist only
     # for pages that omit size, so they must not overwrite an explicit quart,
     # gallon, ounce, pound, or gram amount printed in the title/URL.
-    explicit = _explicit_package_size(offer)
+    explicit = _explicit_package_size(product, offer)
     if explicit:
         return explicit
 
