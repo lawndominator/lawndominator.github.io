@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T16:56:52.002530+00:00",
+  "generated_at": "2026-09-03T17:06:08.149716+00:00",
   "saved_source_limit": 12,
   "totals": {
-    "sources": 2319,
-    "manual_verified_sources": 568,
+    "sources": 2277,
+    "manual_verified_sources": 566,
     "included_sources": 1011,
     "not_included_sources": 659,
-    "invalid_sources": 649
+    "invalid_sources": 607
   },
   "reason_counts": {
     "included": 1011,
@@ -17,7 +17,6 @@
     "not_checked_saved_source_limit": 97,
     "price source is not independently quality-verified": 96,
     "implausible same-package price outlier": 40,
-    "not_product_purchase_page": 40,
     "package size is ambiguous for a size-sensitive product": 29,
     "below $10.00 minimum for this category": 22,
     "above $500.00 maximum for this product": 10,
@@ -30,7 +29,6 @@
     "no_price": 3,
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2,
-    "known_wrong_product": 2,
     "above $200.00 maximum for this product": 1
   },
   "products": [
@@ -53,7 +51,7 @@
         {
           "url": "https://www.pestmanagementsupply.com/csi83013356.html",
           "retailer": "pestmanagementsupply",
-          "retailer_name": "Pestmanagementsupply",
+          "retailer_name": "Pest Management Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -93,7 +91,7 @@
         {
           "url": "https://yardmastery.com/products/prodiamine-65-wdg",
           "retailer": "yardmastery",
-          "retailer_name": "Yardmastery",
+          "retailer_name": "Yard Mastery",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -414,7 +412,7 @@
         {
           "url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew",
           "retailer": "sodsolutions",
-          "retailer_name": "Sodsolutions",
+          "retailer_name": "Sod Solutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -434,7 +432,7 @@
         {
           "url": "https://www.seedworldusa.com/products/dimension-2ew-herbicide-64-oz",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -454,7 +452,7 @@
         {
           "url": "https://diypestcontrol.com/dimension-2ew-herbicide",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -564,7 +562,7 @@
         {
           "url": "https://www.domyown.com/dimension-2ew-herbicide-p-1494.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1494&srsltid=AfmBOoo8tVupXr1nUmPOc2QeODdNEXZwr3TEvelQuGnoVP9tBVsd4JLoiUA",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -604,7 +602,7 @@
         {
           "url": "https://www.ebay.com/itm/134845222206?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqQTtSKKF7LndMc8TeCTsmVrkCNIOCAkVB_t-yTlAhTukQ2nC0brn4",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -660,16 +658,6 @@
           "reason": "included",
           "price": 139.95,
           "offer_url": "https://www.industrialvm.com/dimension-2ew-pre-emergent-herbicide-64-oz-corteva?srsltid=AfmBOopE6WLvr2lfHoa6hi_MR4aW1ioNR75Fj25udq4jjwwhhBm0If46Zc0"
-        },
-        {
-          "url": "https://www.gardenfountainshop.com/product/dimension-2ew-herbicide",
-          "retailer": "gardenfountainshop-com",
-          "retailer_name": "gardenfountainshop.com",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "known_wrong_product",
-          "price": null,
-          "offer_url": null
         },
         {
           "url": "https://diypestcontrol.com/dimension-2ew-herbicide?srsltid=AfmBOoq16Idj7b-aillzX0-69WmvL9E4RzDQTf92dqAOdgPZUbqp53Dfz-Y",
@@ -784,7 +772,7 @@
         {
           "url": "https://homeandgardensupply.com/products/dimension-2ew-herbicide-controls-broadleaf-and-grassy-weeds-64-fl-oz-bottle-by-corteva-formerly-dow-agro-sciences?variant=41159000981591&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorN4tTewndyjqD99O7F9hnrEnKkbkavdYu-TdVXpbQuy1y39LTZ7ac",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -844,7 +832,7 @@
       ],
       "included_sources": 19,
       "not_included_sources": 15,
-      "invalid_sources": 10
+      "invalid_sources": 9
     },
     {
       "id": 3,
@@ -855,7 +843,7 @@
         {
           "url": "https://www.domyown.com/ronstar-herbicide-p-1496.html",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1176,7 +1164,7 @@
         {
           "url": "https://www.domyown.com/specticle-flo-p-2797.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2797&srsltid=AfmBOory6aX0KoNA1OdaErcWG6bRfuvjjjgaivgXJs1vplsJcklEeYTL2gg",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1287,7 +1275,7 @@
         {
           "url": "https://www.domyown.com/pendulum-2g-20-lb-p-21266.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=21266&srsltid=AfmBOorcjf9JXmYMMEPuYBGaWB4yDWrMlvQwoH9ek13gvNYlzk54AdNx8fc",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1337,7 +1325,7 @@
         {
           "url": "https://homeandgardensupply.com/products/pendulum-2g-granular-herbicide?variant=40237834174551&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopgyNwcjMhrc28Z4jwpuoA_r7wWvCxxI4kZxysi9RmPIDjb-54RP78",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1367,7 +1355,7 @@
         {
           "url": "https://www.ebay.com/itm/116004392567?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq5p06gLmnGjdmUgalhFSNn5Ir8tje6dys-AXV7tWCc9h9W_Ix84mk",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1568,7 +1556,7 @@
         {
           "url": "https://diypestcontrol.com/gallery-75df-herbicide",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -1668,7 +1656,7 @@
         {
           "url": "https://www.domyown.com/gallery-75-df-specialty-herbicide-p-1499.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1499&srsltid=AfmBOor12ZNu3mQmHbX-gxXhRTxftwG8Vod4fPtxu1EVPk1NeP0z2RO2ZpA",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1698,7 +1686,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/gallery-75-df-1-lb?variant=299173779&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopwz-6IYgJM1VW-5SpHnJOPQf8EN2in_-L07h_CLpw7RX11CLnjecY",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1818,7 +1806,7 @@
         {
           "url": "https://homeandgardensupply.com/products/gallery-75df-dry-flowable-herbicide-controls-broadleaf-weeds?variant=41159145390167&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooIh8ghPmFJfWnnPbu5_7J-zBEgs3fbu9iGjCdmCLxNbTKkL2Lj7dw",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1969,7 +1957,7 @@
         {
           "url": "https://www.ebay.com/itm/134845221569?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopOL89p7-MoGO-x5kv3xDyuVSdHiDLk0gTAPOaCsPsJvyFqsKKJA7s",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1979,7 +1967,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/specticle-g-herbicide?variant=36781028041&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqOR1TWFh6GOKAQfeTnlutECYCFMpcKpRhMzJQNHoDqrfdGoHJDYNg",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -1989,7 +1977,7 @@
         {
           "url": "https://lawnsynergy.com/products/specticle-g-herbicide?currency=USD&country=US&variant=45955595731082&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOorIRqt3oucCogzpK56ix_24TNbVzC04Di8PSqRjnBevc-1Q7aoKOB4",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -2381,7 +2369,7 @@
         {
           "url": "https://www.intermountainturf.com/products/pendulum-aquacap-herbicide-jug-15-gal",
           "retailer": "intermountainturf",
-          "retailer_name": "Intermountainturf",
+          "retailer_name": "Intermountain Turf Supply",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -2405,7 +2393,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 152.75,
+          "price": 152.71,
           "offer_url": "https://www.amazon.com/dp/B004HFT09Q?tag=lawndominator-20"
         },
         {
@@ -2421,7 +2409,7 @@
         {
           "url": "https://www.seedworldusa.com/products/pendulum-aquacap-herbicide-2-5-gallons",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -2511,7 +2499,7 @@
         {
           "url": "https://www.ebay.com/itm/134845222127?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopmJyEKSdSJ-WkgdrxIPZydx3A9q2zxe8ntgSTsd7zAbVXx0PQ2Al8",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -2571,7 +2559,7 @@
         {
           "url": "https://www.domyown.com/at-what-rate-do-apply-for-puncture-vine-and-field-sandbur-is-timing-important-qa-19688.html",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -2632,7 +2620,7 @@
         {
           "url": "https://thelawncarenut.com/products/celsius-wg",
           "retailer": "thelawncarenut",
-          "retailer_name": "Thelawncarenut",
+          "retailer_name": "The Lawn Care Nut",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -2642,7 +2630,7 @@
         {
           "url": "https://yardmastery.com/products/celsius%c2%ae-wg-broadleaf-and-grassy-weed-control-for-warm-season-turf",
           "retailer": "yardmastery",
-          "retailer_name": "Yardmastery",
+          "retailer_name": "Yard Mastery",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -2652,7 +2640,7 @@
         {
           "url": "https://lawnsynergy.com/products/celsius-wg-herbicide",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -2672,7 +2660,7 @@
         {
           "url": "https://sodsolutions.com/shop/weed-control/celsius-wg",
           "retailer": "sodsolutions",
-          "retailer_name": "Sodsolutions",
+          "retailer_name": "Sod Solutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -2812,7 +2800,7 @@
         {
           "url": "https://homeandgardensupply.com/products/celsius-wg-postemergence-herbicide?variant=40164186390615&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopn6-O9VDcmgTzOsNmtmcAMVyMPMup1LGBHU6mjZB7fuPeU4ZBjCnA",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -2872,7 +2860,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/celsius-wg-0-226-oz-easy-mix-packet?srsltid=AfmBOoo4w4dDjS65qyJuHTYZCwkLy-A4LZfpt_PnA5r_GIA0_DEmbHe9_XA",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -2992,7 +2980,7 @@
         {
           "url": "https://homeandgardensupply.com/products/celsius-wg-postemergence-herbicide?variant=40164186423383&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorw1_zEBA_a0-oYD0WJOvFktcrfgtIDj4bexf_bGLse4Jv68cgIBj8",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3002,7 +2990,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/celsius-wg-herbicide-10-oz?variant=297990665&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorfAiUo5m4G7bXl3jEwjxzf_U7JVVPvAAs8zq92XLTCWCFb3Gd5U4g",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3133,7 +3121,7 @@
         {
           "url": "https://golfcourselawn.store/products/certainty-herbicide-1-25-oz-sedge-and-poa-annua-control",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -3263,7 +3251,7 @@
         {
           "url": "https://www.ebay.com/itm/116101744133?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo6bXKUCXSPoLuqhH2_iQzJr9nMB81IvGDUJ2QtSIzf0uyaO0bxXBo",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3324,7 +3312,7 @@
         {
           "url": "https://www.intermountainturf.com/products/drive-xlr8-64-ounces",
           "retailer": "intermountainturf",
-          "retailer_name": "Intermountainturf",
+          "retailer_name": "Intermountain Turf Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -3334,7 +3322,7 @@
         {
           "url": "https://www.forestrydistributing.com/drive-xlr8-herbicide-basf",
           "retailer": "forestrydistributing",
-          "retailer_name": "Forestrydistributing",
+          "retailer_name": "Forestry Distributing",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -3374,7 +3362,7 @@
         {
           "url": "https://diypestcontrol.com/drive-xlr8-herbicide",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -3384,7 +3372,7 @@
         {
           "url": "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -3474,7 +3462,7 @@
         {
           "url": "https://www.ebay.com/itm/155937028212?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorRxzXiGDKpgHbBTnzRkImisLjHn1wLOu8vAXQ72rSfONo9w3lD7JI",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3644,7 +3632,7 @@
         {
           "url": "https://www.domyown.com/drive-xlr8-herbicide-crabgrass-killer-p-1520.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1520&srsltid=AfmBOooUCcAEkxEd-ZzWm1HLFN26Wk-fLdR4-Ury4Oi6XAE4W5QmQbNDy-Y",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3714,7 +3702,7 @@
         {
           "url": "https://homeandgardensupply.com/products/drive-xlr8-post-emergence-herbicide?variant=40129495334999&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoq9nlyr5We4GY2xbAj0hcw4o8fusmXxWgMqPfLfmqRNitkYdvnTK0M",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3875,7 +3863,7 @@
         {
           "url": "https://www.domyown.com/sedgehammer-herbicide-p-1348.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1348&srsltid=AfmBOooi1S3Dmlu1DD6jzOW-UdWNemotTiGK6-GU5PJBXdCnFzHwET1GIl8",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3895,7 +3883,7 @@
         {
           "url": "https://lawnsynergy.com/products/sedgehammer-plus-weed-control?currency=USD&country=US&variant=42981560909962&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOor4WXct6BQl6U-MBfavpHwcfYy1qO8IpCMy31YNRo-DnMNByppBeYw",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3915,7 +3903,7 @@
         {
           "url": "https://homeandgardensupply.com/products/sedgehammer-plus?variant=19571654623319&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoojw4rV9qP12qwZWHN-epD0H19ot5xmMD-tymxZ77tK0yDBf38Fu9Q",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -3925,7 +3913,7 @@
         {
           "url": "https://www.ebay.com/itm/116094600658?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooyMSH8Uty0JPujmF_zU7NF88r-yq4pIZgodo_xbfG4ew2KVp18pDI",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4005,7 +3993,7 @@
         {
           "url": "https://www.domyown.com/sedgehammer-herbicide-133-oz-bottle-p-1340.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1340&srsltid=AfmBOop86xoeZjo30s0egSXP_CzOqAO--0B_0zUp_PEn3hfp_7P_ih15FaM",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4055,7 +4043,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/sedgehammer-herbicide?srsltid=AfmBOoqEz9CIV3xQCCuaAjp-D9sAwwXmnFjKWm9haDhagLL4hvjW0gi5ev8",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4126,7 +4114,7 @@
         {
           "url": "https://www.agrisupply.com/speedzone-ew-southern-1gal/p/125384",
           "retailer": "agrisupply",
-          "retailer_name": "Agrisupply",
+          "retailer_name": "Agri Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -4136,7 +4124,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/speedzone-southern-herbicide-1",
           "retailer": "lawnandpestcontrolsupply",
-          "retailer_name": "Lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -4166,7 +4154,7 @@
         {
           "url": "https://diypestcontrol.com/speed-zone-red-herbicide",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -4206,7 +4194,7 @@
         {
           "url": "https://www.ebay.com/itm/116111308602?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqhkezBWLfx4Xk_qnCQ9ir2zjwkZ5r_IUhlO7fEZmsS-r_A4ytxFKI",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4236,7 +4224,7 @@
         {
           "url": "https://www.domyown.com/speedzone-southern-herbicide-ew-p-1915.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1915&srsltid=AfmBOopaVJ-bsNiBljzlNB8aoEauCqUHTGbS2ggZ9f8XKygzNMpUC6Yyhsg",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4326,7 +4314,7 @@
         {
           "url": "https://www.ebay.com/itm/134845221945?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopv2PnD747fzkpF30GTEfTOUkQABuSZKB0mH9lRX_9fyTy_PRgOdQw",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4418,7 +4406,7 @@
         {
           "url": "https://homeandgardensupply.com/products/tenacity-herbicide-broadleaf-weed-grass-control",
           "retailer": "homeandgardensupply",
-          "retailer_name": "Homeandgardensupply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -4438,7 +4426,7 @@
         {
           "url": "https://golfcourselawn.store/products/tenacity-herbicide",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -4452,7 +4440,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 60.33,
+          "price": 61.25,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -4538,7 +4526,7 @@
         {
           "url": "https://www.domyown.com/tenacity-herbicide-p-1877.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1877&srsltid=AfmBOoqcwfS4LVj0eZsm7HS4byiOtDGov3cQpaoLNtyLOYEQnBdcPXwxPE8",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4618,7 +4606,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/tenacity-herbicide?variant=300491315&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooPe48BH2LsiE4VB43pVhU-xgJaoKEQeYkBEHz2a0QDwTr0SKpjOiA",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -4699,7 +4687,7 @@
         {
           "url": "https://diypestcontrol.com/turflon-ester",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -4949,7 +4937,7 @@
         {
           "url": "https://homeandgardensupply.com/products/turflon-ester-herbicide?variant=41890148614231&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoo9BfxWZg2kFdGZiZrPlefHRm9PXZKVcAv3FEN3nfgFi8oP5XgQC30",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5020,7 +5008,7 @@
         {
           "url": "https://www.ourprosolutions.com/product/dismiss-turf-herbicide",
           "retailer": "ourprosolutions",
-          "retailer_name": "Ourprosolutions",
+          "retailer_name": "ProSolutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5030,7 +5018,7 @@
         {
           "url": "https://www.seedworldusa.com/products/dismiss-turf-herbicide-sulfentrazone-6-oz",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5070,7 +5058,7 @@
         {
           "url": "https://diypestcontrol.com/fmc-dismiss-herbicide",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5140,7 +5128,7 @@
         {
           "url": "https://www.domyown.com/dismiss-turf-herbicide-p-1517.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1517&srsltid=AfmBOoqaaZcw7pTO2xdrD4qs6jdf4JKct8jO_Zdu4ZRYmm5L98--E5cpULs",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5160,7 +5148,7 @@
         {
           "url": "https://www.ebay.com/itm/134845221314?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo3526gHkLexMqOgMky6APofGnH9qhwg70wdYAkqGbJR1qU-8jw7hc",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5230,7 +5218,7 @@
         {
           "url": "https://www.domyown.com/the-dismiss-turf-herbicide-doesnt-seem-to-be-working-on-star-of-bethlehem-any-idea-why-qa-44712.html",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5260,7 +5248,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/dismiss-herbicide-1?srsltid=AfmBOor46kgh50G03RjzjNDPskgcILYXpbvr3CiDshA7YtLlZYPr3l2CGiY",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5431,7 +5419,7 @@
         {
           "url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23029&srsltid=AfmBOoqozCxarxJ8lwPmsYIuqVBY8-VW_jOxbLr6kMJdjyNaZDUFjjvrAq0",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5461,7 +5449,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/pylex-herbicide?variant=328505519&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqiJzEgmSLC7k_ymFSoyshkQwGCMElECT3jzQzhWBXfwUCd9lRg2CI",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5531,7 +5519,7 @@
         {
           "url": "https://www.domyown.com/pylex-herbicide-california-oz-p-23030.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23030&srsltid=AfmBOorKK0uOVU3VvYbr2dFG240OaHWpDKWs4aMA8IO0jGcjqqJMC77yqOI",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5592,7 +5580,7 @@
         {
           "url": "https://www.ourprosolutions.com/product/target-6-plus-msma-2-5-gallon",
           "retailer": "ourprosolutions",
-          "retailer_name": "Ourprosolutions",
+          "retailer_name": "ProSolutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5612,7 +5600,7 @@
         {
           "url": "https://steveregan.com/products/7552500",
           "retailer": "steveregan",
-          "retailer_name": "Steveregan",
+          "retailer_name": "Steve Regan Company",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5642,7 +5630,7 @@
         {
           "url": "https://diypestcontrol.com/target-msma-6-plus",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -5873,7 +5861,7 @@
         {
           "url": "https://www.domyown.com/q4-plus-turf-herbicide-p-1930.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1930&srsltid=AfmBOoqmbCxeY1ZJ-Isfp8cB6oPhHAZ1FSobNdP9Nh_NbV-Wdk1TA7XY8Ig",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5883,7 +5871,7 @@
         {
           "url": "https://lawnsynergy.com/products/q4-plus-turf-herbicide-for-grassy-broadleaf-weeds?currency=USD&country=US&variant=42456740987018&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOopkYBrG90B1MTEVv6-Og-Wl4caIY-w-zWXd_NNODVchKrayPvb34aM",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5913,7 +5901,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/q-4-plus-herbicide?variant=289408796&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopOaFda8AXi01_Oo3bokDUp37m1rthYNs06ZMXaP3INXWYTDMaUdrY",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -5973,7 +5961,7 @@
         {
           "url": "https://homeandgardensupply.com/products/q4-plus-turf-herbicide?variant=42041272598615&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqZJ4iYBFNrOgOS1hyLIj8dfXnMEGp7yAauptjNZbua4UvZUaQTwOc",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6114,7 +6102,7 @@
         {
           "url": "https://www.ebay.com/itm/116094372467?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor4BVzFVRpP29sqWfcjv6C6YqN9NEIm5AoVHkZDuR6-fc0w4Una2Xg",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6124,7 +6112,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/trimec-classic-herbicide?variant=299346935&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqRvKMQxrEvLwIB7TOpDnc0qfQcTcSQLcoEd2Oyr1VA8Scvbpo1HNc",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6254,7 +6242,7 @@
         {
           "url": "https://www.ebay.com/itm/156111501276?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor9dAHNcZZgv9h_Ml42DHKblZ-eOqkCL4B5venzaLY_rwu2nNw92G8",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6585,7 +6573,7 @@
         {
           "url": "https://homeandgardensupply.com/products/revolver-post-emergence-herbicide?variant=40434358911063&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoo8ID8qAjhhPu9EdrqcvUkAU4aQURHJby7AeYNumyG2hG_HpjH-m0I",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6705,7 +6693,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/revolver-herbicide?variant=290516386&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor8pPJDbAoW4JXcnszBw7vCo_o0JYwmyIuxOHIQrAOb2eWflkheYYM",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6765,7 +6753,7 @@
         {
           "url": "https://www.domyown.com/revolver-selective-herbicide-87-oz-bottle-california-p-25703.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25703&srsltid=AfmBOorpuaKwtYwjcjJGlTIXCc6pzIbHXdPopwODnR_uvC6CJllw6NCXPOQ",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -6886,7 +6874,7 @@
         {
           "url": "https://www.ebay.com/itm/116119291432?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqB-qRGxNvy-OJePw0Slz1TXzFWGhGboixJDlJFhzWcxeTMPymXpio",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7127,7 +7115,7 @@
         {
           "url": "https://www.domyown.com/tribute-total-herbicide-california-p-25711.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25711&srsltid=AfmBOoqu1KcY0gYQ9tHIDlSIKWPZJG-sfUAhz_pUsx-kyM7FLGWXJP0PMEY",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7277,7 +7265,7 @@
         {
           "url": "https://www.domyown.com/tribute-total-herbicide-washington-p-25713.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25713&srsltid=AfmBOooS5qq_onKYFmstf7xIfWdpY_3OwZc7sxK0SrE17HxJK9Tw0YfntCM",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7318,7 +7306,7 @@
         {
           "url": "https://diypestcontrol.com/primo-maxx-plant-growth-regulator-4oz",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -7358,7 +7346,7 @@
         {
           "url": "https://golfcourselawn.store/products/primo-maxx-plant-growth-regulator-4-oz",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -7388,7 +7376,7 @@
         {
           "url": "https://lawnsynergy.com/products/primo-maxx-lawn-growth-regulator",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -7498,7 +7486,7 @@
         {
           "url": "https://homeandgardensupply.com/products/primo-maxx-plant-growth-regulator?variant=40241529126999&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop8HoxonHExljvNelK_EGeTPhUUy2q0lutZrXlvx2zyqh-1GaKZqD8",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7548,7 +7536,7 @@
         {
           "url": "https://homeandgardensupply.com/products/primo-maxx-plant-growth-regulator?variant=40241575198807&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorjUjXbdvJR7HENxm1Ro8EL4Jkr2mrAcAK8LmlTtTRdSPrNNFVpZxk",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7659,7 +7647,7 @@
         {
           "url": "https://diypestcontrol.com/t-nex-plant-growth-regulator",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -7719,7 +7707,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-gallon",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -7960,7 +7948,7 @@
         {
           "url": "https://homeandgardensupply.com/products/anuew-granulated-tgr?variant=40427115872343&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopQiFhilSMJk4TpquH9erS5HPggDMVEsScvsJjRwNuWDYgdU88jJok",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -7980,7 +7968,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/anuew-plant-growth-regulator-1-5-pound?srsltid=AfmBOopX_tlpH1-qixvld6RC6n3S6WW4aDUkxY8qusOJWLMhf8DiEeSbAac",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -8374,7 +8362,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -8384,7 +8372,7 @@
         {
           "url": "https://www.intermountainturf.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz",
           "retailer": "intermountainturf",
-          "retailer_name": "Intermountainturf",
+          "retailer_name": "Intermountain Turf Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -8444,7 +8432,7 @@
         {
           "url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-gallon-p-25477.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25477&srsltid=AfmBOopY-cHwV7BgDLpEGaVjSNUPDbBev_orjnwi39My_H97fh-3uZP0k40",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -8705,7 +8693,7 @@
         {
           "url": "https://homeandgardensupply.com/products/prime-source-propiconazole-14-3-select-16oz?variant=41777448517719&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorqYXA-Mi0oywVkb_wYoNEriNTZaqdSXLBHnRQBPQT_v-q8S0HAO-4",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -9297,7 +9285,7 @@
         {
           "url": "https://www.domyown.com/headway-fungicide-granules-p-2312.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2312&srsltid=AfmBOoqLM48FLU9CRzVx3CANXdh3Q6a4feR5Csm5gMPxUtQqKodPEHzmsXQ",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -9327,7 +9315,7 @@
         {
           "url": "https://www.ebay.com/itm/134845223878?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOop4gbI9QFNY4gw2F2fJR5ba8yJXQGQuZXhu5MNCrcUXQByB_c4CBws",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -9447,7 +9435,7 @@
         {
           "url": "https://homeandgardensupply.com/products/headway-g-fungicide-granules?variant=40221736534103&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorROm8uIYWO-ooeXwhTjbnYEy41Nun6TQwmthfCzqgRWqH5KUFHa8o",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -9628,7 +9616,7 @@
         {
           "url": "https://homeandgardensupply.com/products/armada-50-wdg-professional-fungicide-2-lbs?variant=40203021287511&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqts9FCBHRmpqn7AHGUa_VIYo1MmYuY_Xw3pWVB9FB18C_aknigy3g",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -9959,7 +9947,7 @@
         {
           "url": "https://www.domyown.com/pillar-sc-fungicide-gallon-p-26987.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=26987&srsltid=AfmBOooLKLqLtrVMxPfD2cW0R3hHR1CCaFXAOyyq3vqGmrBXlAQJOxUHagA",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -10391,7 +10379,7 @@
         {
           "url": "https://homeandgardensupply.com/products/eagle-20-ew-specialty-herbicide?variant=40416194691159&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoobH4XF3Gfeu8noDIJRfcEF41dRBTT2AEKE91qYkq6EeVKToJLHVL8",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -10431,7 +10419,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/eagle-20ew-fungicide?variant=815762717&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooQh9TArZWHDB7mmvsXdWNTYxyp_S7HF3HOA9b07VShX9Bdmd31pEs",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -10611,7 +10599,7 @@
         {
           "url": "https://homeandgardensupply.com/products/eagle-20-ew-specialty-herbicide?variant=40416194723927&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorWlHPs1GmXm6-e_guk8vhf8KtvRUDVZ6qku2jCLx3XCCA6-n8vYJ8",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11004,7 +10992,7 @@
         {
           "url": "https://www.domyown.com/medallion-wdg-fungicide-p-2316.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2316&srsltid=AfmBOoq55_jm1LIkMGa4OR2mnu80fWs98f7lbRhrQru0kLV1I-tuq5ovkRU",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11054,7 +11042,7 @@
         {
           "url": "https://live.pestrong.com/product/medallion-wdg-systemic-fungicide-8-oz/?srsltid=AfmBOopzxJhABNiT5EYCqFXN9ljdtIJRej1CdqHqNz9TAry0Bh_sYLN65EQ",
           "retailer": "pestrong-com",
-          "retailer_name": "Pestrong.com",
+          "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11104,7 +11092,7 @@
         {
           "url": "https://www.domyown.com/medallion-wdg-fungicide-case-p-27089.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=27089&srsltid=AfmBOoqt5bACS_EqNYkjuSDywGfioR7imKkEZm_aSPzsu0SkStT5ggU5tf0",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11144,7 +11132,7 @@
         {
           "url": "https://homeandgardensupply.com/products/medallion-wdg?variant=41075805356119&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqVIE7CeqbjoMeBF_lHrh6yH6x3zLxF53Gm5aErV4118arqYcYQtzg",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11154,7 +11142,7 @@
         {
           "url": "https://homeandgardensupply.com/products/medallion-wdg?variant=41075805388887&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop4CiRQb7PXFFyEsQN4WSv3rx5fZ4Bq1EFMX8KZO5sh7bJGDgQE3aI",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11295,7 +11283,7 @@
         {
           "url": "https://homeandgardensupply.com/products/subdue-max-fungicide?variant=40191833112663&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooqGawS7oUxImh5-Dr7TNVzF4aomv8u9MHHhURFKMnwAK1paPz_Ous",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11799,7 +11787,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/acelepryn-insecticide-4-oz-bottle",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -11849,7 +11837,7 @@
         {
           "url": "https://golfcourselawn.store/products/acelepryn-sc-insecticide-liquid-grub-and-army-worm-control",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -11969,7 +11957,7 @@
         {
           "url": "https://lawnsynergy.com/products/acelepryn-insecticide-liquid-grub-and-armyworm-control?currency=USD&country=US&variant=42990892974218&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOorpTwCM88SXf_shMoUU-CXIBsgbcIUCdZch8unRhn4Z8eg5gvT86TI",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -11979,7 +11967,7 @@
         {
           "url": "https://homeandgardensupply.com/products/acelepryn-insecticide-4-fl-oz-foliar-systemic-control?variant=40180415692887&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqFxM-3FdSrDRLcrrdjQ4MYT5YQna95lC3wzzlvXMT3kMNcFsGKqf8",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12030,7 +12018,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/acelepryn-granular-insecticide",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -12050,7 +12038,7 @@
         {
           "url": "https://golfcourselawn.store/products/acelepryn-g-insecticide-grub-and-armyworm-control",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -12080,7 +12068,7 @@
         {
           "url": "https://lawnsynergy.com/products/acelepryn-g-insecticide",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -12150,7 +12138,7 @@
         {
           "url": "https://www.ebay.com/itm/134970476247?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq8uCgp0rHIGViaadxFJsAZpYcNxtG973aqBDxBBGqNn_gsL0T8dow",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12351,7 +12339,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/merit-0-5g-granular-30-lb?srsltid=AfmBOorb-KXqfW1kZ6fj4AEoicr0ZF6KVe6ussxAr11LDRBXcOjfbCJ7Vns",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12451,7 +12439,7 @@
         {
           "url": "https://homeandgardensupply.com/products/merit-0-5-g-granular-insecticide?variant=40180437123159&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooE2KxGQF1QzVOLcRDQfoudv1twvDh6uySClNwNu3SwyflH_JkY1GU",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12722,7 +12710,7 @@
         {
           "url": "https://www.domyown.com/dylox-62-granules-p-1454.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1454&srsltid=AfmBOopFWS1Wig_yhkJaGTl4apAnXnvFV7CqdAJB2Qb7wC8yhyACAGdiBDs",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12732,7 +12720,7 @@
         {
           "url": "https://www.ebay.com/itm/134983714517?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqo6af3iXpobV33AVPdW3YbFFbV6f7rbDDrb9USH1f296bcyDEWQ8U",
           "retailer": "ebay-solutionspestandlawn",
-          "retailer_name": "eBay - solutionspestandlawn",
+          "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12762,7 +12750,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/dylox-6-2-granular-insecticide?variant=281465898&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorKWxunqdRC_88IXxEnnlSsio7V8_6otXfdNgn61_0qkuv11hC8TuE",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -12812,7 +12800,7 @@
         {
           "url": "https://lawnsynergy.com/products/dylox-6-2-insecticide-grub?currency=USD&country=US&variant=45457550213258&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOopFdh9IpuB578cq-AnGvxTNoirHXlYL_YE4VpTN63_8wizCfx1Ndms",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13153,7 +13141,7 @@
         {
           "url": "https://www.domyown.com/bifen-it-quart-p-552.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=552&srsltid=AfmBOopNeb2fCps58PyYsc22Apbopl53OCCIHehpcStEZpkZO09p-cT5QUU",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13383,7 +13371,7 @@
         {
           "url": "https://www.domyown.com/bifen-it-gallon-p-11662.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=11662&srsltid=AfmBOopsQ_IAedomULY09_OxNxQxTIg0bw5iIrjcvwWJfFcz0_Ywr5gkfo0",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13634,7 +13622,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/talstar-pl-25-lb?srsltid=AfmBOoowhK0NQRCJ4TvCaB7uDZCbBvX-ZVV6KXaBg1mDhU04COgV5YTdSlo",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13714,7 +13702,7 @@
         {
           "url": "https://www.domyown.com/talstar-pl-granular-insecticide-p-47.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=47&srsltid=AfmBOopKzTEWhvxVsBgvh96DtPFYfrxWF_fLTA5JVyWJv299GMwTsdq6bqQ",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13724,7 +13712,7 @@
         {
           "url": "https://lawnsynergy.com/products/talstar-pl-granular-insecticide?currency=USD&country=US&variant=47138761474186&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=1f2000d86df6&srsltid=AfmBOopgSM-4p-lc_Mk0v4hJkCn4nBCjKawIyk86qyUUv3AslBKMSAdBL2Q",
           "retailer": "lawnsynergy-com",
-          "retailer_name": "LawnSynergy.com",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -13935,7 +13923,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/meridian-0-33g-granular-insecticide-40-pound-bag?srsltid=AfmBOoqNs5BU_RzZyvex4BFpwkgmUEo28LD2Lvwjr88QpOdtLf5Jh05xts0",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -14457,7 +14445,7 @@
         {
           "url": "https://homeandgardensupply.com/products/demand-cs?variant=39256441684055&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooAHsP74vnLn8l7JBHjEBq2vH7avxG4GH5GdwL74ov0ANU3VxbI3U0",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -14768,7 +14756,7 @@
         {
           "url": "https://live.pestrong.com/product/zylam-liquid-systemic-insecticide-safari-qt/?srsltid=AfmBOoriuV2j8E9qwMbEzxoLKgUw6mrNpbKCWLt_6ryd9dXx8Qwcj-XNkUQ",
           "retailer": "pestrong-com",
-          "retailer_name": "Pestrong.com",
+          "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -14788,7 +14776,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/zylam-liquid?variant=289452022&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqxohY-8HLHJhmUnMmYgXXc6eW5jKDBNtHOaaouXPAlG0ywWbnF8fs",
           "retailer": "lawn-and-pest-control-supply",
-          "retailer_name": "Lawn and Pest Control Supply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -14908,7 +14896,7 @@
         {
           "url": "https://homeandgardensupply.com/products/zylam-liquid-systemic-insecticide?variant=41650803507287&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorYpN5rnOFurCLKZPFac-oCiRjWJQ1lS0kMhlVhShzn2bVQs1Rha3M",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -14939,7 +14927,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/abamectin-0-15-ec-miticide-gallon",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -14979,7 +14967,7 @@
         {
           "url": "https://www.forestrydistributing.com/avid-015-ec-miticide-insecticide-syngenta",
           "retailer": "forestrydistributing",
-          "retailer_name": "Forestrydistributing",
+          "retailer_name": "Forestry Distributing",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -14989,7 +14977,7 @@
         {
           "url": "https://homeandgardensupply.com/products/avid-0-15ec",
           "retailer": "homeandgardensupply",
-          "retailer_name": "Homeandgardensupply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -15139,7 +15127,7 @@
         {
           "url": "https://www.domyown.com/avid-015-ec-miticide-insecticide-p-2330.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2330&srsltid=AfmBOopv_WHfCXGnU7XPzP4iP8TyDsS8Zwo5OSB61Z9AsCp2Ju8jtEnSQJ4",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -15260,7 +15248,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-quart",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -15772,7 +15760,7 @@
         {
           "url": "https://homeandgardensupply.com/products/forbid-4f?variant=40410380075095&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor0XIDt4KWrwRylz0YjKMhOKXOM4lj7yxGmGPnL5bB7p7jcn5UdgiI",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -15993,7 +15981,7 @@
         {
           "url": "https://homeandgardensupply.com/products/tetrasan-5-wdg?variant=42503297564759&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor7Ao7ZPoSd2V6WrLZrnGTsre1kIXkRcDEDoX7ywwfXgm1-UO5UDgg",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -16114,7 +16102,7 @@
         {
           "url": "https://www.intermountainturf.com/products/kontos-insecticide-miticide",
           "retailer": "intermountainturf",
-          "retailer_name": "Intermountainturf",
+          "retailer_name": "Intermountain Turf Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16254,7 +16242,7 @@
         {
           "url": "https://www.domyown.com/bayer-kontos-insecticide-washington-p-25701.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25701&srsltid=AfmBOoqdXf_OaBKEE8NNM91B1q3wzMwBMJoVnshvHd6qIO77AJrwXzGx5s0",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -16264,7 +16252,7 @@
         {
           "url": "https://www.domyown.com/bayer-kontos-insecticide-california-p-25699.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25699&srsltid=AfmBOoqwia9nKaeSzAMcY2bxgzCThIg0wuC9QYMwKYicw4pwFeyHCrlA94s",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -16385,7 +16373,7 @@
         {
           "url": "https://www.domyown.com/tristar-85-sl-quart-p-2703.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2703&srsltid=AfmBOoo-m2ArxSVlJB3yFGjfbICYXMfqrhSeYHzjz0iTHr93MYY8_lUO1cA",
           "retailer": "domyown-com",
-          "retailer_name": "DoMyOwn.com",
+          "retailer_name": "DoMyOwn",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -16405,7 +16393,7 @@
         {
           "url": "https://homeandgardensupply.com/products/tristar-8-5-sl-insecticide?variant=40427318575191&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopEqD8WwojQ4E0mFfCBT0Iu9KnuucEurbmVatPIRiS_u0-2RsslF44",
           "retailer": "home-and-garden-supply",
-          "retailer_name": "Home and Garden Supply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -16436,7 +16424,7 @@
         {
           "url": "https://www.greenthumbnurseryshop.com/products/hydretain-root-zone-moisture-manager-ready-to-spray-1-qt",
           "retailer": "greenthumbnurseryshop",
-          "retailer_name": "Greenthumbnurseryshop",
+          "retailer_name": "Green Thumb Nursery",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16476,7 +16464,7 @@
         {
           "url": "https://www.esbenshades.com/hydretain-root-zone-moisture-manager-hose-end-application-32-oz/lawn-garden/768103010325",
           "retailer": "esbenshades",
-          "retailer_name": "Esbenshades",
+          "retailer_name": "Esbenshade's Garden Center",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16628,7 +16616,7 @@
         {
           "url": "https://www.mycorrhizalonline.com/product-page/endo-4-species-granular",
           "retailer": "mycorrhizalonline",
-          "retailer_name": "Mycorrhizalonline",
+          "retailer_name": "Mycorrhizal Online",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -16781,7 +16769,7 @@
         {
           "url": "https://shop.app/products/8913192157430/pgf-balanced-10-10-10",
           "retailer": "shop",
-          "retailer_name": "Shop",
+          "retailer_name": "Shop App",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16913,7 +16901,7 @@
         {
           "url": "https://live.pestrong.com/product/andersons-humic-dg-40-lbs",
           "retailer": "live",
-          "retailer_name": "Live",
+          "retailer_name": "Pestrong",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16923,7 +16911,7 @@
         {
           "url": "https://www.seedworldusa.com/products/the-andersons-humic-dg-organic-soil-amendment-40lbs",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -16933,7 +16921,7 @@
         {
           "url": "https://www.amleo.com/the-andersons-humic-dg-granular-soil-conditioner-humic-acid-40lb-bag/p/HUMDG",
           "retailer": "amleo",
-          "retailer_name": "Amleo",
+          "retailer_name": "A.M. Leonard",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -16943,7 +16931,7 @@
         {
           "url": "https://www.7springsfarm.com/products/humic-dg-40-lb-bag",
           "retailer": "7springsfarm",
-          "retailer_name": "7Springsfarm",
+          "retailer_name": "7 Springs Farm",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17095,7 +17083,7 @@
         {
           "url": "https://www.amleo.com/soil-amendment-21-black-gypsum-50lb/p/A11006",
           "retailer": "amleo",
-          "retailer_name": "Amleo",
+          "retailer_name": "A.M. Leonard",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17105,7 +17093,7 @@
         {
           "url": "https://russopower.com/products/the-andersons-black-gypsum-dg",
           "retailer": "russopower",
-          "retailer_name": "Russopower",
+          "retailer_name": "Russo Power Equipment",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -17237,7 +17225,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/the-andersons-charx-organic-soil-amendment-with-humic-acid-and-biochar-40lb-bag",
           "retailer": "lawnandpestcontrolsupply",
-          "retailer_name": "Lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17247,7 +17235,7 @@
         {
           "url": "https://www.gardenersedge.com/humichar-trade/p/HUMCHAR",
           "retailer": "gardenersedge",
-          "retailer_name": "Gardenersedge",
+          "retailer_name": "Gardener's Edge",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -17257,7 +17245,7 @@
         {
           "url": "https://www.amleo.com/humichar-trade/p/HUMCHAR",
           "retailer": "amleo",
-          "retailer_name": "Amleo",
+          "retailer_name": "A.M. Leonard",
           "manual_verified": true,
           "status": "not_included",
           "reason": "ambiguous product URL shared across catalog products",
@@ -17267,7 +17255,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/the-andersons-charx-organic-soil-amendment-with-humic-acid-and-biochar-40lb-bag?variant=40979194380399",
           "retailer": "lawnandpestcontrolsupply",
-          "retailer_name": "Lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -17543,7 +17531,7 @@
         {
           "url": "https://thelawncarenut.com/products/7-0-0-greene-effect-liquid-fertilizer",
           "retailer": "thelawncarenut",
-          "retailer_name": "Thelawncarenut",
+          "retailer_name": "The Lawn Care Nut",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17553,7 +17541,7 @@
         {
           "url": "https://gciturfacademy.com/products/7-0-0-greene-effect%e2%84%a2-two-2-5-gallon-jugs-5-gallons-total",
           "retailer": "gciturfacademy",
-          "retailer_name": "Gciturfacademy",
+          "retailer_name": "GCI Turf Academy",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -17563,7 +17551,7 @@
         {
           "url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer",
           "retailer": "yardmastery",
-          "retailer_name": "Yardmastery",
+          "retailer_name": "Yard Mastery",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17757,7 +17745,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-16-4-8-complete-balanced-npk-1-quart",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17808,7 +17796,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-2-5-gallon",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -17818,7 +17806,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/28-0-0",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -17828,7 +17816,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/lawn-food-28-0-0-high-nitrogen-1-quart",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -17889,7 +17877,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -17899,7 +17887,7 @@
         {
           "url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon?variant=40586275455087",
           "retailer": "simplelawnsolutions",
-          "retailer_name": "Simplelawnsolutions",
+          "retailer_name": "Simple Lawn Solutions",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -18042,7 +18030,7 @@
         {
           "url": "https://www.ewingoutdoorsupply.com/54053520-pro-soil-enhancer-carbonizpn-fertilizer-40-lb-bag",
           "retailer": "ewingoutdoorsupply",
-          "retailer_name": "Ewingoutdoorsupply",
+          "retailer_name": "Ewing Outdoor Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18062,7 +18050,7 @@
         {
           "url": "https://golfcourselawn.store/products/essential-g%e2%84%a2-granular-carbon-free-shipping",
           "retailer": "golfcourselawn",
-          "retailer_name": "Golfcourselawn",
+          "retailer_name": "Golf Course Lawn Store",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18184,7 +18172,7 @@
         {
           "url": "https://diypestcontrol.com/elemax-turf-nectar-ac",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18194,7 +18182,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/turf-nectar-ac",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18245,7 +18233,7 @@
         {
           "url": "https://www.dkhardware.com/southern-ag-retail-01952-chelated-liquid-iron-product-7870126.html",
           "retailer": "dkhardware",
-          "retailer_name": "Dkhardware",
+          "retailer_name": "DK Hardware",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18261,16 +18249,6 @@
           "reason": "implausible same-package price outlier",
           "price": 32.99,
           "offer_url": "https://homeandgardensupply.com/products/chelated-liquid-iron"
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B00A528VOK",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": true,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
         },
         {
           "url": "https://www.seedworldusa.com/products/chelated-liquid-iron-fertilizer-1-gallon",
@@ -18295,7 +18273,7 @@
         {
           "url": "https://diypestcontrol.com/southern-ag-chelated-liquid-iron",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18335,22 +18313,12 @@
         {
           "url": "https://homeandgardensupply.com/products/chelated-liquid-iron?variant=39624940453975",
           "retailer": "homeandgardensupply",
-          "retailer_name": "Homeandgardensupply",
+          "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
           "price": 14.99,
           "offer_url": "https://homeandgardensupply.com/products/chelated-liquid-iron?variant=39624940453975"
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0D1N82LTB?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
         },
         {
           "url": "https://tierrasupplyco.com/products/2-5-gal-12-0-0-chelated-southern-ag?variant=45034788258099",
@@ -18361,391 +18329,11 @@
           "reason": "included",
           "price": 35.0,
           "offer_url": "https://tierrasupplyco.com/products/2-5-gal-12-0-0-chelated-southern-ag?variant=45034788258099"
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DRYR9K3V?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DBVKXGLD?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0BZ584DH9?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FM8653F1?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FFSLG3WZ?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B00O1EVJJC?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GKG9YZMK?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GGBLSC6Q?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GZNDNFDZ?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0F21VGRG8?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GQF6TSN9?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0F4KDQ1LF?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FMX99ZBC?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DFGLG35L?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DBH9677Z?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0B9H561YS?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B09SD23Y6V?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FNK64GF4?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GQ2L78JD?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FMXCPWBN?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GRFNYR7K?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0BHB9VXH1?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B09KS846TW?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GTZTH6JH?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DYDVZWJM?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B08MX4FC78?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B001U5IFQU?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0BKZS2VFW?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FJ21NG3Z?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FJFHV4JF?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0D78XFMD3?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0B3F7VMDB?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DYDWLZDK?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FGW3M3Y7?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B00APVGP7Q?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0DBHQK9DD?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0GVSXH6LH?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
-        },
-        {
-          "url": "https://camelcamelcamel.com/product/B0FFSDCNR4?active=price_amazon&context=sp",
-          "retailer": "camelcamelcamel",
-          "retailer_name": "Camelcamelcamel",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "not_product_purchase_page",
-          "price": null,
-          "offer_url": null
         }
       ],
       "included_sources": 8,
       "not_included_sources": 2,
-      "invalid_sources": 40
+      "invalid_sources": 0
     },
     {
       "id": 209,
@@ -18807,7 +18395,7 @@
         {
           "url": "https://www.grandarborsupply.com/brands/quest/quest-main-event-dry-fe-6-0-0-3lb",
           "retailer": "grandarborsupply",
-          "retailer_name": "Grandarborsupply",
+          "retailer_name": "Grand Arbor Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18817,7 +18405,7 @@
         {
           "url": "https://www.amleo.com/main-event-dry-iron-complex-6-0-0-10-fe-2-mn-quest/p/Q26001",
           "retailer": "amleo",
-          "retailer_name": "Amleo",
+          "retailer_name": "A.M. Leonard",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -18837,7 +18425,7 @@
         {
           "url": "https://www.sunspotsupply.com/products/main-event-dry-iron-10-micros-3",
           "retailer": "sunspotsupply",
-          "retailer_name": "Sunspotsupply",
+          "retailer_name": "Sunspot Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19078,7 +18666,7 @@
         {
           "url": "https://www.seedranch.com/Sulfate-of-Potash-0-0-50-Fertilizer-20-Lbs-p/sulfate-of-potash-20.htm",
           "retailer": "seedranch",
-          "retailer_name": "Seedranch",
+          "retailer_name": "Seed Ranch",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19088,7 +18676,7 @@
         {
           "url": "https://seedbarn.com/products/sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19098,7 +18686,7 @@
         {
           "url": "https://www.seedworldusa.com/products/copy-of-sulfate-of-potash-0-0-50-granular-fertilizer-20-lbs",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -19118,7 +18706,7 @@
         {
           "url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer",
           "retailer": "themillstores",
-          "retailer_name": "Themillstores",
+          "retailer_name": "The Mill",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19138,7 +18726,7 @@
         {
           "url": "https://www.bizrate.com/ratings_guide/merchant_detail__mid--283453.html?rf=sur",
           "retailer": "seedranch",
-          "retailer_name": "Seedranch",
+          "retailer_name": "Seed Ranch",
           "manual_verified": false,
           "status": "included",
           "reason": "included",
@@ -19179,7 +18767,7 @@
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/lesco-carbonpro-g",
           "retailer": "lawnandpestcontrolsupply",
-          "retailer_name": "Lawnandpestcontrolsupply",
+          "retailer_name": "Lawn & Pest Control Supply",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19239,7 +18827,7 @@
         {
           "url": "https://www.bes-tex.com/catalogItems/view/carbonpro-g-soil-optimizer-with-47-4-compost-47-4-biochar-12-humic-acid-40-lbs",
           "retailer": "bes-tex",
-          "retailer_name": "Bes Tex",
+          "retailer_name": "BES-TEX",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -19259,7 +18847,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-carbonpro-g",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19300,7 +18888,7 @@
         {
           "url": "https://www.seedworldusa.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19308,19 +18896,9 @@
           "offer_url": "https://www.seedworldusa.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon"
         },
         {
-          "url": "https://growcycle.com/lawn-synergy-en/crop-protection/lesco-carbonpro-l-mobilex-liquid-biostimulant-1-gal",
-          "retailer": "growcycle",
-          "retailer_name": "Growcycle",
-          "manual_verified": true,
-          "status": "invalid",
-          "reason": "known_wrong_product",
-          "price": null,
-          "offer_url": null
-        },
-        {
           "url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19350,7 +18928,7 @@
       ],
       "included_sources": 2,
       "not_included_sources": 2,
-      "invalid_sources": 1
+      "invalid_sources": 0
     },
     {
       "id": 223,
@@ -19381,7 +18959,7 @@
         {
           "url": "https://seedbarn.com/products/lesco-fertilizer-24-0-11-56-polyplus-as-3-fe-1-mn-50-lbs",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19391,7 +18969,7 @@
         {
           "url": "https://www.seedworldusa.com/products/fertilizer-24-0-11-75-polyplus-as-3-fe-1-mn-50-lb",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19401,7 +18979,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-24-0-11-fertilizer",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19482,7 +19060,7 @@
         {
           "url": "https://antegowheels.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer",
           "retailer": "antegowheels",
-          "retailer_name": "Antegowheels",
+          "retailer_name": "Antego Tire & Wheel",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19512,7 +19090,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-46-0-0-sprayable-urea-high-nitrogen-turf-fertilizer",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19573,7 +19151,7 @@
         {
           "url": "https://antegowheels.com/products/lesco-0-0-7-pre-emergent-fertilizer-stonewall-0-37-50-lb",
           "retailer": "antegowheels",
-          "retailer_name": "Antegowheels",
+          "retailer_name": "Antego Tire & Wheel",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -19623,7 +19201,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-0-0-7-pre-emergent-fertlizer",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19684,7 +19262,7 @@
         {
           "url": "https://antegowheels.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer",
           "retailer": "antegowheels",
-          "retailer_name": "Antegowheels",
+          "retailer_name": "Antego Tire & Wheel",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19724,7 +19302,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-19-0-6-dimension-pre-emergent-fertilizer",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19755,7 +19333,7 @@
         {
           "url": "https://www.jerzeylawns.com/product/18395793/lesco-25-0-6-50-polyplus-opti-5-fe-granular-fertilizer-50-lb-bag",
           "retailer": "jerzeylawns",
-          "retailer_name": "Jerzeylawns",
+          "retailer_name": "Jerzey Lawns",
           "manual_verified": true,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
@@ -19807,7 +19385,7 @@
         {
           "url": "https://www.plantingtree.com/products/lesco-moisture-manager",
           "retailer": "plantingtree",
-          "retailer_name": "Plantingtree",
+          "retailer_name": "PlantingTree",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19827,7 +19405,7 @@
         {
           "url": "https://lawnsynergy.com/products/lesco-moisture-manager",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -19837,7 +19415,7 @@
         {
           "url": "https://seedbarn.com/products/lesco-moisture-manager-liquid",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -20515,7 +20093,7 @@
         {
           "url": "https://www.homedepot.com/p/Scotts-Handy-Green-II-2-lb-1-500-sq-ft-Hand-Held-Broadcast-Spreader-71133/100066212",
           "retailer": "homedepot",
-          "retailer_name": "Homedepot",
+          "retailer_name": "The Home Depot",
           "manual_verified": true,
           "status": "not_included",
           "reason": "no_extracted_offer",
@@ -20969,7 +20547,7 @@
         {
           "url": "https://seedbarn.com/products/lesco-high-wheel-fertilizer-spreader-w-manual-deflector-80-lb-hopper-101186",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -20989,7 +20567,7 @@
         {
           "url": "https://www.seedworldusa.com/products/lesco-high-wheel-fertilizer-spreader-with-manual-deflector-80-lbs-hopper",
           "retailer": "seedworldusa",
-          "retailer_name": "Seedworldusa",
+          "retailer_name": "Seed World",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21120,7 +20698,7 @@
         {
           "url": "https://seedbarn.com/products/lesco-broadcast-spreader-w-50-lb-capacity-092807",
           "retailer": "seedbarn",
-          "retailer_name": "Seedbarn",
+          "retailer_name": "Seed Barn",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21413,7 +20991,7 @@
         {
           "url": "https://www.woodsplitterdirect.com/products/spyker%e2%84%a2-commercial-drop-spreader-120-lb-capacity-p70-12010",
           "retailer": "woodsplitterdirect",
-          "retailer_name": "Woodsplitterdirect",
+          "retailer_name": "Wood Splitters Direct",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21534,7 +21112,7 @@
         {
           "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy80-1s-80-broadcast-spreader",
           "retailer": "gciturfacademy",
-          "retailer_name": "Gciturfacademy",
+          "retailer_name": "GCI Turf Academy",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21554,7 +21132,7 @@
         {
           "url": "https://www.woodsplitterdirect.com/products/spyker%e2%84%a2-ergo-pro-walk-behind-broadcast-spreader-80-lb-spy80-1s",
           "retailer": "woodsplitterdirect",
-          "retailer_name": "Woodsplitterdirect",
+          "retailer_name": "Wood Splitters Direct",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21625,7 +21203,7 @@
         {
           "url": "https://www.homedepot.com/p/80-lbs-Estate-Grade-Spreader-with-Pneumatic-Wheels-2050P/300296107",
           "retailer": "homedepot",
-          "retailer_name": "Homedepot",
+          "retailer_name": "The Home Depot",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21675,7 +21253,7 @@
         {
           "url": "https://factorypure.com/products/earthway-2050p-commercial-broadcast-spreader-80-lbs-hopper-with-pneumatic-tires-new",
           "retailer": "factorypure",
-          "retailer_name": "Factorypure",
+          "retailer_name": "FactoryPure",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21846,7 +21424,7 @@
         {
           "url": "https://www.homedepot.com/p/EARTHWAY-65-lbs-Capacity-Estate-Grade-Broadcast-Spreader-2030P-PLUS/300314008",
           "retailer": "homedepot",
-          "retailer_name": "Homedepot",
+          "retailer_name": "The Home Depot",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -21856,7 +21434,7 @@
         {
           "url": "https://factorypure.com/products/earthway-broadcast-spreader-65-lbs-hopper-with-pneumatic-tires-2030p-plus-new",
           "retailer": "factorypure",
-          "retailer_name": "Factorypure",
+          "retailer_name": "FactoryPure",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -22027,7 +21605,7 @@
         {
           "url": "https://mrosupreme.com/products/vorg8384687-scotts-turf-builder-76121-mini-broadcast-spreader-5000-sq-ft-coverage-area-60-in-w-spread-23-lb-capacity-76121",
           "retailer": "mrosupreme",
-          "retailer_name": "Mrosupreme",
+          "retailer_name": "MRO Supreme",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -22749,7 +22327,7 @@
         {
           "url": "https://shop.app/products/7884019400874",
           "retailer": "shop",
-          "retailer_name": "Shop",
+          "retailer_name": "Shop App",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -22769,7 +22347,7 @@
         {
           "url": "https://mrosupreme.com/products/vorg8384679-scotts-75902-elite-spreader-30-lb-capacity-20-000-sq-ft-coverage-area-6-ft-w-spread-plastic-75902",
           "retailer": "mrosupreme",
-          "retailer_name": "Mrosupreme",
+          "retailer_name": "MRO Supreme",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23223,7 +22801,7 @@
         {
           "url": "https://www.northerntool.com/products/brinly-hardy-broadcast-spreader-175-lb-capacity-model-bs-36bh-365344",
           "retailer": "northerntool",
-          "retailer_name": "Northerntool",
+          "retailer_name": "Northern Tool",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23263,7 +22841,7 @@
         {
           "url": "https://www.homedepot.com/p/Brinly-Hardy-175-lb-3-5-cu-ft-Tow-Behind-Broadcast-Spreader-for-Lawn-Tractors-and-Zero-Turn-Mowers-BS36BH/202819024",
           "retailer": "homedepot",
-          "retailer_name": "Homedepot",
+          "retailer_name": "The Home Depot",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23404,7 +22982,7 @@
         {
           "url": "https://www.dkhardware.com/chapin-international-8201a-80-lbs-residential-salt-spreader-product-3917236.html",
           "retailer": "dkhardware",
-          "retailer_name": "Dkhardware",
+          "retailer_name": "DK Hardware",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23485,7 +23063,7 @@
         {
           "url": "https://steveregan.com/products/3158301c",
           "retailer": "steveregan",
-          "retailer_name": "Steveregan",
+          "retailer_name": "Steve Regan Company",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23636,7 +23214,7 @@
         {
           "url": "https://howtopest.com/product/flowzone-typhoon-3-backpack-sprayer-4-gallon",
           "retailer": "howtopest",
-          "retailer_name": "Howtopest",
+          "retailer_name": "HowToPest.com",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23807,7 +23385,7 @@
         {
           "url": "https://lawnsynergy.com/products/flowzone-backpack-sprayer-cyclone",
           "retailer": "lawnsynergy",
-          "retailer_name": "Lawnsynergy",
+          "retailer_name": "Lawn Synergy",
           "manual_verified": true,
           "status": "not_included",
           "reason": "no_extracted_offer",
@@ -23827,7 +23405,7 @@
         {
           "url": "https://diypestcontrol.com/cyclone-3-variable-pressure-5-position-battery-backpack-sprayer-4-gallon",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -23988,7 +23566,7 @@
         {
           "url": "https://diypestcontrol.com/flowzone storm 2.5-2.5 gallon sprayer",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -24129,7 +23707,7 @@
         {
           "url": "https://diypestcontrol.com/zephyr-battery-powered-backpack-sprayer",
           "retailer": "diypestcontrol",
-          "retailer_name": "Diypestcontrol",
+          "retailer_name": "DIY Pest Control",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -24715,7 +24293,7 @@
         {
           "url": "https://www.ourprosolutions.com/product/jacto-pjb-16u-4-gallon-battery-powered-pest-control-sprayer",
           "retailer": "ourprosolutions",
-          "retailer_name": "Ourprosolutions",
+          "retailer_name": "ProSolutions",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
@@ -24906,7 +24484,7 @@
         {
           "url": "https://www.northerntool.com/products/milwaukee-m18-switch-tank-m18-4-gallon-backpack-sprayer-w-switch-tank-tank-size-4-gal-flow-0-52-gpm-pressure-140-psi-model-3019-21ps-6583032",
           "retailer": "northerntool",
-          "retailer_name": "Northerntool",
+          "retailer_name": "Northern Tool",
           "manual_verified": true,
           "status": "included",
           "reason": "included",
