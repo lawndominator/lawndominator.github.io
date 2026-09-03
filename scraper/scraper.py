@@ -454,6 +454,65 @@ def retailer_name_from_url(url: str) -> str:
     return host.split(".")[0].replace("-", " ").title()
 
 
+RETAILER_DISPLAY_ALIASES = {
+    "7springsfarm": "7 Springs Farm",
+    "amleo": "A.M. Leonard",
+    "agrisupply": "Agri Supply",
+    "antegowheels": "Antego Tire & Wheel",
+    "bestex": "BES-TEX",
+    "diypestcontrol": "DIY Pest Control",
+    "dkhardware": "DK Hardware",
+    "domyowncom": "DoMyOwn",
+    "esbenshades": "Esbenshade's Garden Center",
+    "ewingoutdoorsupply": "Ewing Outdoor Supply",
+    "factorypure": "FactoryPure",
+    "forestrydistributing": "Forestry Distributing",
+    "gardenersedge": "Gardener's Edge",
+    "gciturfacademy": "GCI Turf Academy",
+    "golfcourselawn": "Golf Course Lawn Store",
+    "grandarborsupply": "Grand Arbor Supply",
+    "greenthumbnurseryshop": "Green Thumb Nursery",
+    "homeandgardensupply": "Home & Garden Supply",
+    "homedepot": "The Home Depot",
+    "howtopest": "HowToPest.com",
+    "intermountainturf": "Intermountain Turf Supply",
+    "jerzeylawns": "Jerzey Lawns",
+    "lawnandpestcontrolsupply": "Lawn & Pest Control Supply",
+    "lawnsynergy": "Lawn Synergy",
+    "lawnsynergycom": "Lawn Synergy",
+    "mrosupreme": "MRO Supreme",
+    "mycorrhizalonline": "Mycorrhizal Online",
+    "northerntool": "Northern Tool",
+    "ourprosolutions": "ProSolutions",
+    "pestmanagementsupply": "Pest Management Supply",
+    "plantingtree": "PlantingTree",
+    "russopower": "Russo Power Equipment",
+    "seedbarn": "Seed Barn",
+    "seedranch": "Seed Ranch",
+    "seedworldusa": "Seed World",
+    "simplelawnsolutions": "Simple Lawn Solutions",
+    "sodsolutions": "Sod Solutions",
+    "steveregan": "Steve Regan Company",
+    "sunspotsupply": "Sunspot Supply",
+    "thelawncarenut": "The Lawn Care Nut",
+    "themillstores": "The Mill",
+    "woodsplitterdirect": "Wood Splitters Direct",
+    "yardmastery": "Yard Mastery",
+    "ebaysolutionspestandlawn": "eBay - Solutions Pest & Lawn",
+}
+
+
+def normalize_retailer_name(name: str, url: str = "") -> str:
+    host = _url_host(url)
+    if host == "live.pestrong.com":
+        return "Pestrong"
+    if host == "shop.app":
+        return "Shop App"
+    raw = str(name or "").strip() or retailer_name_from_url(url)
+    key = re.sub(r"[^a-z0-9]+", "", raw.lower())
+    return RETAILER_DISPLAY_ALIASES.get(key, raw)
+
+
 def is_google_url(url: str) -> bool:
     host = urllib.parse.urlparse(url).netloc.lower()
     return host == "google.com" or host.endswith(".google.com")
@@ -1374,6 +1433,9 @@ def apply_offer_package_metadata(results: list[dict]) -> None:
         priced_offer_count = 0
         priced_without_package = 0
         for offer in product.get("offers", []):
+            offer["retailer_name"] = normalize_retailer_name(
+                offer.get("retailer_name", ""), offer.get("url", "")
+            )
             if offer.get("price") is not None:
                 priced_offer_count += 1
             package = infer_package_size(product, offer)
@@ -1448,6 +1510,16 @@ def _eligible_priced_offer(product: dict, offer: dict) -> bool:
         and price >= min_price_for_product(product)
         and not _exceeds_max_price(product, offer)
     )
+
+
+def _retailer_entity(offer: dict) -> str:
+    """Return the independent merchant entity behind an offer."""
+    host = _url_host(str(offer.get("url") or ""))
+    retailer = retailer_key(str(offer.get("retailer") or host or "retailer"))
+    # Marketplace sellers own their offers even though checkout shares a host.
+    if host in {"walmart.com", "ebay.com"}:
+        return f"{host}:{retailer}"
+    return host or retailer
 
 
 def _exclude_cross_product_url_conflicts(results: list[dict]) -> None:
@@ -1532,7 +1604,8 @@ def _exclude_duplicate_and_outlier_offers(product: dict) -> None:
                 offer["exclude_reason"] = "implausible same-package price outlier"
 
         surviving = [offer for offer in group if _eligible_priced_offer(product, offer)]
-        if len(surviving) >= 2:
+        corroborating_entities = {_retailer_entity(offer) for offer in surviving}
+        if len(corroborating_entities) >= 2:
             surviving_prices = sorted(_valid_price(offer) for offer in surviving)
             midpoint = len(surviving_prices) // 2
             median = (

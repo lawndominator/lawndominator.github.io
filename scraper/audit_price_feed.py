@@ -147,6 +147,20 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
                 issues.append(
                     f"{offer_label}: dry formulation is incorrectly measured in fluid ounces"
                 )
+            if offer.get("quality_verified") is True and not offer.get("manual_verified"):
+                peers = [
+                    peer
+                    for peer in offers
+                    if not peer.get("excluded")
+                    and peer.get("quality_verified") is True
+                    and peer.get("package_quantity") == offer.get("package_quantity")
+                    and peer.get("package_unit") == offer.get("package_unit")
+                ]
+                entities = {scraper._retailer_entity(peer) for peer in peers}
+                if len(entities) < 2:
+                    issues.append(
+                        f"{offer_label}: price is not independently corroborated"
+                    )
             if quantity is not None or unit_price is not None:
                 try:
                     expected = price / float(quantity)
