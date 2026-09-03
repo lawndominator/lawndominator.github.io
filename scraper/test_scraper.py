@@ -79,6 +79,11 @@ class ScraperExtractionTests(unittest.TestCase):
                 False,
             ),
             (
+                {"id": 61, "name": "Velista (Penthiopyrad)", "active_ingredient": "penthiopyrad", "alt_names": ["Velista 50WG"]},
+                "Velista 22 oz - Fluopyram 16.6% + Trifloxystrobin 16.6%",
+                False,
+            ),
+            (
                 {"id": 304, "name": "Spyker HHS100 Handheld Spreader", "active_ingredient": "", "alt_names": ["Spyker HHS-100"]},
                 "Spyker PRO-SERIES P20-5010 50 lb Broadcast Spreader",
                 False,
@@ -101,6 +106,11 @@ class ScraperExtractionTests(unittest.TestCase):
             (
                 {"id": 39, "name": "Cutless 50W", "active_ingredient": "flurprimidol", "alt_names": ["Cutless 50W"]},
                 "Cutless 0.33G Granule PGR",
+                False,
+            ),
+            (
+                {"id": 37, "name": "Anuew", "active_ingredient": "prohexadione calcium", "alt_names": ["Anuew PGR"]},
+                "Anuew EZ Plant Growth Regulator - 64 oz",
                 False,
             ),
             (
@@ -1136,13 +1146,13 @@ class ScraperExtractionTests(unittest.TestCase):
 
     def test_manual_post_emergent_sizes_are_sized(self):
         cases = [
-            (15, "lawnsynergy", "Celsius WG Herbicide", "https://lawnsynergy.com/products/celsius-wg-herbicide", 14.86, "0.226 fl oz"),
+            (15, "lawnsynergy", "Celsius WG Herbicide", "https://lawnsynergy.com/products/celsius-wg-herbicide", 14.86, "0.226 oz"),
             (17, "golfcourselawn", "Drive XLR8 Herbicide", "https://golfcourselawn.store/products/drive-xlr8-herbicide-crabgrass-weed-killer", 84.99, "64 fl oz"),
-            (20, "amazon", "0 Cart", "https://www.amazon.com/dp/B0CB96F141", 37.70, "8 fl oz"),
+            (20, "amazon", "0 Cart", "https://www.amazon.com/dp/B0CB96F141", 37.70, "8 oz"),
             (21, "domyown", "Tenacity Turf Herbicide", "https://www.domyown.com/tenacity-herbicide-p-1877.html", 66.64, "8 fl oz"),
             (23, "domyown", "Sulfentrazone 4L Select", "https://www.domyown.com/sulfentrazone-4l-select-p-17100.html", 60.48, "6 fl oz"),
             (24, "domyown", "Pylex Herbicide", "https://www.domyown.com/pylex-herbicide-oz-p-23029.html", 416.00, "4 fl oz"),
-            (29, "domyown", "Katana Turf Herbicide", "https://www.domyown.com/katana-turf-herbicide-p-10316.html", 300.89, "5 fl oz"),
+            (29, "domyown", "Katana Turf Herbicide", "https://www.domyown.com/katana-turf-herbicide-p-10316.html", 300.89, "5 oz"),
         ]
 
         for product_id, retailer, title, url, price, expected in cases:
@@ -1157,7 +1167,7 @@ class ScraperExtractionTests(unittest.TestCase):
         cases = [
             (35, "chemicalwarehouse", "Primo Maxx", "https://chemicalwarehouse.com/products/primo-maxx", 32.00, "4 fl oz"),
             (36, "sunspot-supply", "T-Nex Plant Growth Regulator", "https://www.sunspotsupply.com/products/t-nex-plant-growth-regulator-2-5-gallons", 362.00, "2.5 gal"),
-            (37, "sunspot-supply", "Anuew EZ", "https://www.sunspotsupply.com/products/anuew-ez-plant-growth-regulator-for-turf-25", 813.96, "2.5 gal"),
+            (37, "domyown", "Anuew Plant Growth Regulator", "https://www.domyown.com/anuew-plant-growth-regulator-p-23007.html", 176.42, "1.5 lb"),
         ]
 
         for product_id, retailer, title, url, price, expected in cases:
@@ -1248,7 +1258,7 @@ class ScraperExtractionTests(unittest.TestCase):
     def test_manual_remaining_product_sizes_are_sized(self):
         cases = [
             (8, "domyown", "Hi-Yield Atrazine Weed Killer", "https://www.domyown.com/hiyield-atrazine-weed-killer-p-2023.html", 24.48, "32 fl oz"),
-            (16, "solutions", "Certainty WDG (Sulfosulfuron)", "https://www.solutionsstores.com/certainty-turf-herbicide", 110.77, "1.25 fl oz"),
+            (16, "solutions", "Certainty WDG (Sulfosulfuron)", "https://www.solutionsstores.com/certainty-turf-herbicide", 110.77, "1.25 oz"),
             (18, "amazon", "Sedgehammer Plus Turf Herbicide - 1 Pack of 13.5 Gram", "https://www.amazon.com/dp/B007PHMAYK", 13.99, "13.5 g"),
             (27, "pestrong", "Trimec Classic Broadleaf Herbicide", "https://pestrong.com/product/trimec-classic-broadleaf-herbicide-2-5", 204.95, "2.5 gal"),
             (52, "lawn-synergy", "Headway G Granular Fungicide", "https://lawnsynergy.com/products/headway-g-fungicide", 79.99, "30 lb"),
@@ -1264,6 +1274,73 @@ class ScraperExtractionTests(unittest.TestCase):
                 package = scraper.infer_package_size(
                     {"id": product_id},
                     {"retailer": retailer, "title": title, "url": url, "price": price},
+                )
+                self.assertEqual(package["package_label"], expected)
+
+    def test_dry_formulations_and_multipacks_use_physical_package_units(self):
+        cases = [
+            (
+                {"id": 10, "name": "Celsius WG"},
+                "Celsius WG .226 fl oz Single Pack",
+                "0.226 oz",
+            ),
+            (
+                {"id": 16, "name": "Certainty WDG"},
+                "Certainty Herbicide 1.25 oz",
+                "1.25 oz",
+            ),
+            (
+                {"id": 53, "name": "Medallion WDG"},
+                "Medallion WDG Fungicide 8 Oz",
+                "8 oz",
+            ),
+            (
+                {"id": 66, "name": "TetraSan 5WDG"},
+                "TetraSan 5 WDG - 1 Lb. (8X2 Oz.)",
+                "1 lb",
+            ),
+            (
+                {"id": 56, "name": "Eagle 20EW"},
+                "Eagle 20EW Case (8 x 16 fl oz bottles)",
+                "1 gal",
+            ),
+            (
+                {"id": 77, "name": "Arena 0.25G"},
+                "Arena 0.25 G Granular Insecticide",
+                "30 lb",
+            ),
+            (
+                {"id": 30, "name": "Tribute Total Herbicide"},
+                "Tribute Total Herbicide - 6 oz",
+                "6 oz",
+            ),
+            (
+                {"id": 51, "name": "Heritage G (Azoxystrobin)"},
+                "Heritage G Granular Fungicide",
+                "30 lb",
+            ),
+            (
+                {"id": 61, "name": "Velista (Penthiopyrad)"},
+                "Velista Fungicide - 22 oz",
+                "22 oz",
+            ),
+            (
+                {"id": 221, "name": "LESCO CarbonPro-G Soil Optimizer"},
+                "Lesco CarbonPro-G Soil Optimizer w/Mirimichi Green SGN 100 40 lb. (QGCY)",
+                "40 lb",
+            ),
+        ]
+
+        for product, title, expected in cases:
+            with self.subTest(product=product["name"]):
+                package = scraper.infer_package_size(
+                    product,
+                    {
+                        "retailer": "retailer",
+                        "title": title,
+                        "url": "https://retailer.example/product",
+                        "price": 100,
+                    },
                 )
                 self.assertEqual(package["package_label"], expected)
 

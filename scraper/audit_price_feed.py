@@ -125,6 +125,28 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
 
             quantity = offer.get("package_quantity")
             unit_price = offer.get("price_per_unit")
+            inferred_package = scraper.infer_package_size(catalog_product, offer)
+            if inferred_package and quantity is not None and offer.get("package_unit"):
+                try:
+                    package_disagrees = (
+                        abs(float(quantity) - float(inferred_package["package_quantity"])) > 0.001
+                        or str(offer["package_unit"]).lower()
+                        != str(inferred_package["package_unit"]).lower()
+                    )
+                except (TypeError, ValueError):
+                    package_disagrees = True
+                if package_disagrees:
+                    issues.append(
+                        f"{offer_label}: published package {offer.get('package_label')} "
+                        f"disagrees with retailer text ({inferred_package['package_label']})"
+                    )
+            if (
+                scraper._is_dry_formulation(catalog_product)
+                and str(offer.get("package_unit") or "").lower() == "fl oz"
+            ):
+                issues.append(
+                    f"{offer_label}: dry formulation is incorrectly measured in fluid ounces"
+                )
             if quantity is not None or unit_price is not None:
                 try:
                     expected = price / float(quantity)
