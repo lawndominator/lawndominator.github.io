@@ -287,6 +287,37 @@ class ScraperExtractionTests(unittest.TestCase):
         self.assertEqual(offer["exclude_reason"], scraper.UNVERIFIED_OFFER_REASON)
         self.assertIsNone(product["best_price"])
 
+    def test_quality_filter_does_not_treat_same_store_aliases_as_corroboration(self):
+        product = {
+            "id": 999,
+            "slug": "same-store-aliases",
+            "name": "Same Store Aliases",
+            "category": "fertilizer",
+            "offers": [
+                {
+                    "retailer": "store",
+                    "price": 49.99,
+                    "url": "https://store.example/products/item-a",
+                    "title": "Same Store Aliases 20 lb",
+                    "package_quantity": 20.0,
+                    "package_unit": "lb",
+                },
+                {
+                    "retailer": "store-com",
+                    "price": 51.99,
+                    "url": "https://store.example/products/item-b",
+                    "title": "Same Store Aliases 20 lb",
+                    "package_quantity": 20.0,
+                    "package_unit": "lb",
+                },
+            ],
+        }
+
+        scraper.apply_offer_quality_filters([product])
+
+        self.assertTrue(all(offer["excluded"] for offer in product["offers"]))
+        self.assertIsNone(product["best_price"])
+
     def test_quality_filter_rechecks_after_removing_a_high_outlier(self):
         prices = [87.0, 99.0, 115.0, 284.0, 299.0]
         results = [{
@@ -357,6 +388,16 @@ class ScraperExtractionTests(unittest.TestCase):
                 "https://www.amazon.com/Feature-6-0-0-1-Bag/dp/B076TFPB1Z/ref=sr_1_1?sr=8-1&tag=wrong"
             ),
             "https://www.amazon.com/dp/B076TFPB1Z",
+        )
+
+    def test_retailer_display_names_are_consistent_across_sources(self):
+        self.assertEqual(
+            scraper.normalize_retailer_name("Lawnsynergy.com", "https://lawnsynergy.com/item"),
+            "Lawn Synergy",
+        )
+        self.assertEqual(
+            scraper.normalize_retailer_name("Live", "https://live.pestrong.com/product/item"),
+            "Pestrong",
         )
 
     def test_amazon_asin_from_url(self):
