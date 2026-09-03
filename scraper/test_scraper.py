@@ -1296,7 +1296,7 @@ class ScraperExtractionTests(unittest.TestCase):
             ),
             (
                 {"id": 66, "name": "TetraSan 5WDG"},
-                "TetraSan 5 WDG - 1 Lb. (8X2 Oz.)",
+                "TetraSan 5 WDG - 1 Lb. (8-x-2 Oz.)",
                 "1 lb",
             ),
             (

@@ -783,7 +783,7 @@ def _dry_ounce_package(quantity: float) -> dict:
 def _multipack_component_package(product: dict, text: str) -> Optional[dict]:
     """Read `8 x 2 oz` as a 16 oz package, not eight 1 lb packages."""
     match = re.search(
-        r"\b(\d+)\s*(?:packets?|bags?|bottles?)?\s*[x×]\s*"
+        r"\b(\d+)\s*(?:packets?|bags?|bottles?)?\s*[-_]*[x×][-_]*\s*"
         r"((?:\d+(?:\.\d+)?|\.\d+))\s*[-_]?\s*"
         r"((?:fl\.?\s*)?oz|ounces?|gal(?:lon)?s?|qt|quarts?|lbs?|pounds?|g|grams?)\b",
         text,
