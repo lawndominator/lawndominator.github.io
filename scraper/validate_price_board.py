@@ -224,8 +224,14 @@ def validate_rendered_board(expected_equipment_count):
             raise AssertionError("equipment offers should not render unit prices: " + "; ".join(equipment_view["unitPrices"]))
         if equipment_view["links"] < expected_equipment_count:
             raise AssertionError(f"expected at least one link per equipment card, found {equipment_view['links']} links")
-        if equipment_view["amazonLinks"] < 5:
-            raise AssertionError(f"expected at least 5 priced Amazon equipment links, found {equipment_view['amazonLinks']}")
+        # Only independently verified prices render now. Keep an end-to-end
+        # Amazon assertion without forcing unsafe, uncorroborated offers onto
+        # the board merely to satisfy a coverage quota.
+        if equipment_view["amazonLinks"] < 1:
+            raise AssertionError(
+                "expected at least one verified Amazon equipment link, "
+                f"found {equipment_view['amazonLinks']}"
+            )
         if "pre-emergent" in equipment_view["categoryOptions"]:
             raise AssertionError("Equipment tab contains product category options")
         for text in BAD_VISIBLE_TEXT:

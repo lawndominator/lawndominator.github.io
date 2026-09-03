@@ -80,6 +80,7 @@ MAX_SAVED_SOURCES_PER_PRODUCT = int(os.getenv("MAX_SAVED_SOURCES_PER_PRODUCT", "
 MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
+UNVERIFIED_OFFER_REASON = "price source is not independently quality-verified"
 MIN_ALERT_DROP_PERCENT = float(os.getenv("MIN_ALERT_DROP_PERCENT", "5"))
 PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
 # The old absolute MIN_PRICED_PRODUCTS=1 floor passed as long as a single
@@ -87,6 +88,225 @@ PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
 # would still commit a gutted prices.json without failing CI. This adds a
 # percentage-of-catalog floor alongside it; the run must clear both.
 MIN_PRICED_PRODUCTS_PERCENT = float(os.getenv("MIN_PRICED_PRODUCTS_PERCENT", "50"))
+
+# These hosts entered the feed through broad web discovery despite not being
+# credible US lawn-product retailers. A syntactically valid product-looking
+# URL is not sufficient provenance for a price we show to a homeowner.
+UNTRUSTED_RETAILER_HOSTS = {
+    "karikatuur.ee",
+    "kreistag-augsburg-land.de",
+    "meagd.shop",
+    "ravir.de",
+    "serigrafia.eus",
+}
+
+# Laboratory reference materials can share an active ingredient with a turf
+# product and often carry a plausible-looking price. They are not retail turf
+# products and must never participate in product matching or price selection.
+NON_RETAIL_OFFER_TERMS = (
+    "analytical standard",
+    "certified reference material",
+    "pestanal",
+    "reference standard",
+    "research use only",
+)
+
+# Formulation/model guardrails for names that belong to a wider product family.
+# Matching only an active ingredient (or two words from a long title) caused
+# liquids, granules, generic formulations, lab standards, and other equipment
+# models to be priced as the catalog product named in the app.
+PRODUCT_IDENTITY_RULES = {
+    1: {
+        "required": (r"\bprodiamine\b[^\n]{0,80}\b(?:65\s*wdg|wdg)\b",),
+        "forbidden": (r"\b4\s*l\b", r"\b4l\b"),
+    },
+    4: {
+        "required": (r"\bspecticle[\s_-]*flo\b",),
+        "forbidden": (r"\bspecticle[\s_-]*g\b",),
+    },
+    5: {
+        "required": (r"\bpendulum[\s_-]*2[\s_-]*g\b", r"\bpendimethalin[\s_-]*2[\s_-]*g\b"),
+        "forbidden": (r"aqua[\s_-]*cap",),
+    },
+    8: {
+        "required": (r"\batrazine[\s_-]*4[\s_-]*l\b",),
+        "forbidden": (r"\batrazine[\s_-]*4\s*%", r"st[\s_.-]*augustine[\s_-]*weed[\s_-]*killer"),
+    },
+    9: {
+        "required": (r"\bpendulum[\s_-]*aqua[\s_-]*cap\b",),
+        "forbidden": (r"\bpendulum[\s_-]*2[\s_-]*g\b", r"\bgranular\b"),
+    },
+    17: {
+        "required": (r"\bdrive[\s_-]*xlr[\s_-]*8\b",),
+        "forbidden": (
+            r"\bgeneric(?:\s+for)?\b", r"\bcompare(?:d)?\s+to\b",
+            r"\bquali[\s_-]*pro\b", r"\bprogro\b", r"/quinclorac[\s_-]*1[\s_.-]*5[\s_-]*l\b",
+        ),
+    },
+    16: {
+        "required": (r"\bcertainty(?:[\s_-]*(?:wdg|turf))?\b",),
+        "forbidden": (r"\bsertay\b",),
+    },
+    20: {
+        "required": (r"\bmanor[\s_-]*60[\s_-]*df\b",),
+        "forbidden": (r"\bmsm[\s_-]*turf\b", r"\bamtide\b", r"\brometsol\b"),
+    },
+    21: {
+        "required": (r"\btenacity\b",),
+        "forbidden": (r"\btorocity\b", r"\btopramezone\b", r"\bmeso[\s_-]*4[\s_-]*sc\b"),
+    },
+    22: {
+        "required": (r"\bturflon[\s_-]*ester(?:[\s_-]*ultra)?\b",),
+        "forbidden": (r"\bhi[\s_-]*yield\b",),
+    },
+    23: {
+        "required": (r"\bdismiss(?:[\s_-]*(?:south|turf))?\b",),
+        "forbidden": (r"\bsul(?:fentrazone)?[\s_-]*4[\s_-]*(?:sc|l)[\s_-]*select\b", r"\bprime[\s_-]*source\b"),
+    },
+    35: {
+        "required": (r"\bprimo[\s_-]*maxx\b",),
+        "forbidden": NON_RETAIL_OFFER_TERMS,
+    },
+    36: {
+        "required": (r"\bt[\s_-]*nex(?:[\s_-]*1as)?\b",),
+        "forbidden": NON_RETAIL_OFFER_TERMS,
+    },
+    38: {
+        "required": (r"\btrimmit[\s_-]*(?:2[\s_-]*sc|sc)\b",),
+        "forbidden": (r"\btravek\b", r"\bpbz[\s_-]*2[\s_-]*sc\b", r"\btide[\s_-]*paclo\b"),
+    },
+    39: {
+        "required": (r"\bcutless[\s_-]*50[\s_-]*w\b",),
+        "forbidden": (r"\b0[\s_.-]*33[\s_-]*g\b", r"\bmec\b", r"\bquick[\s_-]*stop\b"),
+    },
+    40: {
+        "required": (r"\bproxy\b",),
+        "forbidden": (r"\bembark\b", r"\bmefluidide\b", r"\btrin[\s_-]*pac\b"),
+    },
+    41: {
+        "required": (r"\bpramaxis(?:[\s_-]*mec)?\b",),
+        "forbidden": NON_RETAIL_OFFER_TERMS,
+    },
+    51: {
+        "required": (r"\bheritage[\s_-]*(?:g|granule|granular)\b",),
+        "forbidden": (r"\bheritage[\s_-]*(?:sc|action)\b", r"\bmural\b", r"\b2sc\b", r"\bliquid\b"),
+    },
+    54: {
+        "required": (r"\bpillar[\s_-]*sc\b",),
+        "forbidden": (r"\bpillar[\s_-]*g\b", r"\binsignia\b"),
+    },
+    55: {
+        "required": (r"\b(?:cleary'?s?[\s_-]*)?3336[\s_-]*(?:f|flowable)\b",),
+        "forbidden": (
+            r"\b(?:wsp|wsb|wp|dg|eg)\b", r"\btalaris\b", r"\btransom\b", r"\bohp[\s_-]*6672\b",
+        ),
+    },
+    57: {
+        "required": (r"\bdaconil[\s_-]*ultrex\b",),
+        "forbidden": (
+            r"\bready[\s_-]*to[\s_-]*use\b", r"\bconcentrate\b", r"\b2787\b",
+            r"\becho\b", r"\bdocket\b", r"\bchlorothalonil[\s_-]*720\b",
+        ),
+    },
+    60: {
+        "required": (r"\bsubdue[\s_-]*maxx\b",),
+        "forbidden": (r"\bsubdue[\s_-]*(?:g|gr|granular)\b", r"\bmefenoxam[\s_-]*2[\s_-]*aq\b"),
+    },
+    62: {
+        "required": (r"\bencartis\b",),
+        "forbidden": (r"\binsignia\b",),
+    },
+    63: {
+        "required": (r"\bdensicor\b",),
+        "forbidden": (r"\bdaconil\b",),
+    },
+    70: {
+        "required": (r"\bacelepryn\b",),
+        "forbidden": (r"\bacelepryn[\s_-]*(?:g|gr|granule|granular)\b", r"\b25[\s_-]*(?:lb|lbs|pound)\b"),
+    },
+    71: {
+        "required": (r"\bacelepryn[\s_-]*(?:g|gr|granule|granular)\b",),
+        "forbidden": (r"\bacelepryn[\s_-]*(?:sc|liquid)\b", r"\b4[\s_-]*(?:fl[\s_-]*)?oz\b"),
+    },
+    72: {
+        "required": (r"\bmerit[\s_-]*(?:0?[\s_.-]*5[\s_-]*g|granules?)\b",),
+        "forbidden": (
+            r"\bgeneric\b", r"\bcompare(?:d)?\s+to\b", r"\bquali[\s_-]*pro\b",
+            r"\bgrubs?[\s_-]*away\b", r"\bzenith\b", r"/imidacloprid[\s_-]*0?[\s_.-]*5[\s_-]*g\b",
+        ),
+    },
+    74: {
+        "required": (r"\bbifen[\s_-]*i[\s_/-]*t\b",),
+        "forbidden": (),
+    },
+    79: {
+        "required": (r"\bzylam\b",),
+        "forbidden": (),
+    },
+    117: {
+        "required": (r"\bmycoapply\b",),
+        "forbidden": (),
+    },
+    115: {
+        "required": (r"\bhydretain\b",),
+        "forbidden": (r"\bgranular\b", r"\bgranules\b", r"\b3[\s_-]*lbs?\b"),
+    },
+    138: {
+        "required": (r"\bcharx\b", r"\bhumic[\s_-]*dg[\s_-]*charx\b"),
+        "forbidden": (),
+    },
+    195: {
+        "required": (r"\bhydretain[\s_-]*(?:granular|granules)\b",),
+        "forbidden": (r"\bready[\s_-]*to[\s_-]*spray\b", r"\brts\b", r"\bhose[\s_-]*end\b"),
+    },
+    206: {
+        "required": (r"\bturf[\s_-]*grass[\s_-]*pro[\s_-]*blade[\s_-]*iron\b",),
+        "forbidden": (r"\bturf[\s_-]*fuel\b",),
+    },
+    210: {
+        "required": (r"\bmain[\s_-]*event[\s_-]*dry[\s_-]*(?:iron|fe)\b",),
+        "forbidden": (
+            r"\bmanganese\b", r"\bbundle\b", r"\bmolasses\b", r"\bhuma[\s_-]*k\b",
+            r"\bsoil[\s_-]*fusion\b", r"/brands/quest-products/?(?:\?|$)",
+        ),
+    },
+    232: {
+        "required": (r"\bammonium[\s_-]*sulfate\b",),
+        "forbidden": (),
+    },
+    300: {
+        "required": (r"\bscotts?[\s_-]*wizz\b",),
+        "forbidden": (),
+    },
+    304: {
+        "required": (r"\bspyker[\s_-]*hhs[\s_-]*100\b",),
+        "forbidden": (r"\bp20[\s_-]*5010\b", r"\bspy80[\s_-]*1s\b", r"\bspy50l[\s_-]*1p\b"),
+    },
+    311: {
+        "required": (r"\blesco\b[^\n]{0,80}\b50[\s_-]*(?:lb|pound)\b",),
+        "forbidden": (r"\b80[\s_-]*(?:lb|pound)\b", r"\bstainless\b"),
+    },
+    315: {
+        "required": (r"\bspy(?:ker)?[\s_-]*80[\s_-]*1s\b",),
+        "forbidden": (r"\bspy(?:ker)?[\s_-]*80[\s_-]*1p\b",),
+    },
+    320: {
+        "required": (r"\bscotts?[\s_-]*elite\b", r"\bscotts?[\s_-]*75902\b"),
+        "forbidden": (r"\bwestward\b",),
+    },
+    330: {
+        "required": (r"\btyphoon[\s_-]*3\b",),
+        "forbidden": (r"\btool[\s_-]*only\b",),
+    },
+    331: {
+        "required": (r"\bcyclone[\s_-]*3\b",),
+        "forbidden": (r"\btool[\s_-]*only\b",),
+    },
+    349: {
+        "required": (r"\bryobi\b[^\n]{0,100}\bp2860\b",),
+        "forbidden": (r"\b2[\s_-]*(?:gal|gallon)\b",),
+    },
+}
 
 # Global browser instance — shared across all scrape calls
 _browser: Optional[Browser] = None
@@ -222,6 +442,33 @@ def is_google_url(url: str) -> bool:
     return host == "google.com" or host.endswith(".google.com")
 
 
+def _url_host(url: str) -> str:
+    return urllib.parse.urlparse(url).netloc.lower().removeprefix("www.")
+
+
+def is_untrusted_retailer_url(url: str) -> bool:
+    host = _url_host(url)
+    return any(host == blocked or host.endswith(f".{blocked}") for blocked in UNTRUSTED_RETAILER_HOSTS)
+
+
+def is_insecure_retailer_url(url: str) -> bool:
+    parsed = urllib.parse.urlparse(url)
+    return bool(parsed.netloc) and parsed.scheme.lower() != "https"
+
+
+def is_non_retail_offer(title: str = "", url: str = "") -> bool:
+    text = f"{title} {urllib.parse.unquote(url)}".lower()
+    return any(term in text for term in NON_RETAIL_OFFER_TERMS)
+
+
+def _product_page_key(url: str) -> str:
+    """Stable merchant product-page identity, excluding tracking/variant query strings."""
+    parsed = urllib.parse.urlparse(canonical_product_url(url))
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = urllib.parse.unquote(parsed.path).rstrip("/").lower()
+    return f"{host}{path}" if host and path else ""
+
+
 def canonical_product_url(url: str) -> str:
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
@@ -290,6 +537,8 @@ def is_bad_product_url(url: str) -> bool:
     if "search" in query or query.startswith("k="):
         return True
     if "ebay." in host and path.startswith("/sch"):
+        return True
+    if "camelcamelcamel.com" in host or "keepa.com" in host:
         return True
     if "mkrittenhouse.com" in host:
         return True
@@ -385,6 +634,8 @@ def max_price_for_product(product: dict) -> Optional[float]:
         70: 300,   # Acelepryn SC: 4 oz $56-$125, not the gallon $922+
         85: 400,   # Kontos SC: 8 oz $228-$275, not the 32 oz $688
         86: 300,   # TriStar 8.5SL: 8 oz $50, 32 oz $187, not the gallon $625+
+        227: 200,  # LESCO 25-0-6: consumer 50 lb bags, not pallet/case pricing
+        311: 1000, # LESCO 50 lb spreader: real units are ~$445-$700, not $9,829
     }
     return product_maximums.get(int(product.get("id", 0)))
 
@@ -417,7 +668,12 @@ def _valid_unit_price(offer: dict) -> Optional[float]:
     return unit_price
 
 
-def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
+def select_best_offer(
+    product: dict,
+    offers: list[dict],
+    *,
+    require_quality_verified: bool = False,
+) -> Optional[dict]:
     priced = [
         o for o in offers
         if o.get("price") is not None
@@ -427,22 +683,11 @@ def select_best_offer(product: dict, offers: list[dict]) -> Optional[dict]:
         and not is_bad_product_url(o.get("url", ""))
         and float(o["price"]) >= min_price_for_product(product)
         and not _exceeds_max_price(product, o)
+        and (not require_quality_verified or o.get("quality_verified") is True)
     ]
-    comparable_by_unit: dict[str, list[dict]] = {}
-    for offer in priced:
-        if _valid_unit_price(offer) is None:
-            continue
-        comparable_by_unit.setdefault(str(offer.get("package_unit")), []).append(offer)
-
-    comparable_groups = [
-        group for group in comparable_by_unit.values()
-        if len(group) >= 2
-    ]
-    if comparable_groups:
-        largest_group = max(comparable_groups, key=len)
-        largest_group.sort(key=lambda o: (_valid_unit_price(o), _valid_price(o)))
-        return largest_group[0]
-
+    # `best_price` is the lowest amount a homeowner pays at checkout. Package
+    # value remains available through price_per_unit, but must not make a
+    # commercial-size container the headline deal or drive a price-drop alert.
     priced.sort(key=lambda o: _valid_price(o))
     return priced[0] if priced else None
 
@@ -470,6 +715,28 @@ def _package(quantity: float, unit: str) -> dict:
         "package_unit": unit,
         "package_label": label,
     }
+
+
+def _multipack_count(text: str) -> Optional[int]:
+    """Return the retail unit count when a title/URL describes a multipack."""
+    patterns = (
+        r"\b(?:case|pack)[\s_-]+of[\s_-]+(\d+)(?![\d.])\b",
+        r"\b(\d+)\s*[x×]\s*(?=\d)",
+        r"\b(\d+)[\s_-]*(?:pack|pk|count|ct)\b",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            count = int(match.group(1))
+            if count > 1:
+                return count
+    return None
+
+
+def _multiply_package(package: dict, count: Optional[int]) -> dict:
+    if not count:
+        return package
+    return _package(float(package["package_quantity"]) * count, package["package_unit"])
 
 
 def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
@@ -658,11 +925,10 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
         return _package(32.0, "fl oz")
 
     if product_id == 51 and ("heritage" in text or "azoxystrobin" in text or "azoxy" in text):
-        if "lb" in text or "heritage-action" in url:
-            return _package(1.0, "lb")
-        if "32" in text or "2sc" in text:
-            return _package(32.0, "fl oz")
-        return _package(4.0, "fl oz")
+        # Heritage G is sold in more than one dry package. An omitted size is
+        # genuinely unknown; borrowing the 4 fl oz Heritage SC default is a
+        # formulation collision and corrupts unit-price comparisons.
+        return None
 
     if product_id == 52 and ("headway" in text):
         if "gal" in text:
@@ -860,17 +1126,39 @@ def manual_package_size(product: dict, offer: dict) -> Optional[dict]:
     return None
 
 
-def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
-    manual = manual_package_size(product, offer)
-    if manual:
-        return manual
-
+def _explicit_package_size(offer: dict) -> Optional[dict]:
     text = _offer_size_text(offer)
     if not text:
         return None
+    multipack_count = _multipack_count(text)
 
-    if re.search(r"\b(?:half|1/2)\s*-?\s*(?:gal|gallon)\b", text):
-        return _package(64.0, "fl oz")
+    # Shopify-style slugs commonly spell decimals with hyphens (2-5-gallon,
+    # 0-49-lbs). Read that as 2.5/0.49 before the ordinary size expressions,
+    # which would otherwise latch onto the trailing 5 or 49.
+    slug_decimal = re.search(
+        r"\b(\d+)[-_](\d+)[-_]((?:fl[-_])?oz|ounce|ounces|gal|gallon|gallons|lb|lbs|pound|pounds)\b",
+        text,
+    )
+    if slug_decimal and not multipack_count:
+        value = float(f"{slug_decimal.group(1)}.{slug_decimal.group(2)}")
+        unit = slug_decimal.group(3)
+        if unit.startswith("gal"):
+            return _package(value * 128, "fl oz")
+        if "oz" in unit or unit.startswith("ounce"):
+            return _package(value, "fl oz")
+        return _package(value, "lb")
+
+    gallon_fraction = re.search(
+        r"\b(?:half|([123])\s*/\s*([24]))\s*-?\s*(?:gal|gallon)\b",
+        text,
+    )
+    if gallon_fraction:
+        gallons = (
+            0.5
+            if gallon_fraction.group(1) is None
+            else float(gallon_fraction.group(1)) / float(gallon_fraction.group(2))
+        )
+        return _multiply_package(_package(gallons * 128, "fl oz"), multipack_count)
 
     liquid_match = re.search(
         r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(?:fl\.?\s*)?(oz|ounce|ounces|gal|gallon|gallons|qt|quart|quarts)\b",
@@ -885,15 +1173,40 @@ def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
             quantity = value * 32
         else:
             quantity = value
-        return _package(quantity, "fl oz")
+        return _multiply_package(_package(quantity, "fl oz"), multipack_count)
 
     if re.search(r"\b(?:gal|gallon)\b", text):
-        return _package(128.0, "fl oz")
+        return _multiply_package(_package(128.0, "fl oz"), multipack_count)
 
     dry_match = re.search(r"\b(\d+(?:\.\d+)?)\s*[-_]?\s*(lb|lbs|pound|pounds)\b", text)
     if dry_match:
         quantity = float(dry_match.group(1))
-        return _package(quantity, "lb")
+        return _multiply_package(_package(quantity, "lb"), multipack_count)
+
+    hash_pounds = re.search(r"\b(\d+(?:\.\d+)?)\s*#(?![a-z0-9])", text)
+    if hash_pounds:
+        return _multiply_package(_package(float(hash_pounds.group(1)), "lb"), multipack_count)
+
+    # Require whitespace or punctuation before gram units so formulation names
+    # such as Pendulum 2G are not interpreted as two grams of product.
+    gram_match = re.search(r"\b(\d+(?:\.\d+)?)(?:\s+|[-_]+)(g|gram|grams)\b", text)
+    if gram_match:
+        return _multiply_package(_package(float(gram_match.group(1)), "g"), multipack_count)
+
+    return None
+
+
+def infer_package_size(product: dict, offer: dict) -> Optional[dict]:
+    # Retailer text is direct evidence. Product-specific defaults exist only
+    # for pages that omit size, so they must not overwrite an explicit quart,
+    # gallon, ounce, pound, or gram amount printed in the title/URL.
+    explicit = _explicit_package_size(offer)
+    if explicit:
+        return explicit
+
+    manual = manual_package_size(product, offer)
+    if manual:
+        return _multiply_package(manual, _multipack_count(_offer_size_text(offer)))
 
     return None
 
@@ -944,6 +1257,10 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
         return True
     if product_id == 2 and "crabgrass-control-plus" in text:
         return True
+    if product_id == 2 and "gardenfountainshop.com/product/dimension-2ew-herbicide" in text:
+        return True
+    if product_id == 222 and "growcycle.com/lawn-synergy-en/crop-protection/lesco-carbonpro-l" in text:
+        return True
     if product_id == 23 and "ourprosolutions.com/product/" in text and "dismiss" not in text:
         return True
     if product_id == 25 and "ourprosolutions.com/product/" in text and not any(term in text for term in ("msma", "target-6", "target 6")):
@@ -959,6 +1276,8 @@ def is_known_wrong_product_source(product_id: int, url: str, title: str = "") ->
 
 def apply_offer_package_metadata(results: list[dict]) -> None:
     for product in results:
+        product.pop("has_multiple_sizes", None)
+        product.pop("needs_size_review", None)
         package_keys = set()
         priced_offer_count = 0
         priced_without_package = 0
@@ -966,6 +1285,18 @@ def apply_offer_package_metadata(results: list[dict]) -> None:
             if offer.get("price") is not None:
                 priced_offer_count += 1
             package = infer_package_size(product, offer)
+            if not package:
+                try:
+                    existing_quantity = float(offer.get("package_quantity"))
+                except (TypeError, ValueError):
+                    existing_quantity = 0
+                existing_unit = str(offer.get("package_unit") or "").strip()
+                if existing_quantity > 0 and existing_unit:
+                    package = {
+                        "package_quantity": existing_quantity,
+                        "package_unit": existing_unit,
+                        "package_label": offer.get("package_label") or f"{existing_quantity:g} {existing_unit}",
+                    }
             if not package:
                 if offer.get("price") is not None:
                     priced_without_package += 1
@@ -981,7 +1312,162 @@ def apply_offer_package_metadata(results: list[dict]) -> None:
             product["needs_size_review"] = True
 
 
+def _timestamp_is_stale(value: str, max_age_hours: float = MAX_OFFER_AGE_HOURS) -> bool:
+    parsed = _parse_alert_time(value) if value else None
+    if not parsed:
+        return False
+    now = datetime.now(timezone.utc)
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return now - parsed > timedelta(hours=max_age_hours)
+
+
+def _offer_identity_reason(product: dict, offer: dict) -> Optional[str]:
+    url = str(offer.get("url") or "")
+    title = str(offer.get("title") or "")
+    if url and is_insecure_retailer_url(url):
+        return "insecure retailer URL"
+    if url and is_untrusted_retailer_url(url):
+        return "untrusted retailer domain"
+    if is_non_retail_offer(title, url):
+        return "non-retail or laboratory product"
+    has_identity_definition = bool(
+        PRODUCT_IDENTITY_RULES.get(int(product.get("id", 0)))
+        or product.get("name")
+        or product.get("search_query")
+        or product.get("alt_names")
+    )
+    if has_identity_definition and (title or url):
+        if not _matches_product(product, title, url):
+            return "offer does not match catalog product/formulation"
+    if offer.get("last_checked") and _timestamp_is_stale(str(offer["last_checked"])):
+        return f"price older than {MAX_OFFER_AGE_HOURS:g} hours"
+    return None
+
+
+def _eligible_priced_offer(product: dict, offer: dict) -> bool:
+    price = _valid_price(offer)
+    return bool(
+        price is not None
+        and not offer.get("excluded")
+        and offer.get("in_stock") is not False
+        and not is_google_url(offer.get("url", ""))
+        and not is_bad_product_url(offer.get("url", ""))
+        and price >= min_price_for_product(product)
+        and not _exceeds_max_price(product, offer)
+    )
+
+
+def _exclude_cross_product_url_conflicts(results: list[dict]) -> None:
+    by_page: dict[str, list[tuple[dict, dict]]] = {}
+    for product in results:
+        for offer in product.get("offers", []):
+            if offer.get("excluded") or offer.get("price") is None:
+                continue
+            page_key = _product_page_key(offer.get("url", ""))
+            if page_key:
+                by_page.setdefault(page_key, []).append((product, offer))
+
+    for assignments in by_page.values():
+        product_ids = {product.get("id") for product, _ in assignments}
+        if len(product_ids) < 2:
+            continue
+        matching = [
+            (product, offer) for product, offer in assignments
+            if _matches_product(product, offer.get("title", ""), offer.get("url", ""))
+        ]
+        matching_ids = {product.get("id") for product, _ in matching}
+        if len(matching_ids) == 1:
+            keep_id = next(iter(matching_ids))
+            rejected = [(product, offer) for product, offer in assignments if product.get("id") != keep_id]
+        else:
+            rejected = assignments
+        for _, offer in rejected:
+            offer["excluded"] = True
+            offer["exclude_reason"] = "ambiguous product URL shared across catalog products"
+
+
+def _exclude_duplicate_and_outlier_offers(product: dict) -> None:
+    eligible = [offer for offer in product.get("offers", []) if _eligible_priced_offer(product, offer)]
+
+    # Collapse the same merchant product page when tracking/variant parameters
+    # produced duplicate rows for the same inferred package and price.
+    seen = set()
+    for offer in sorted(eligible, key=lambda item: (_valid_price(item), item.get("last_checked", ""))):
+        page_key = _product_page_key(offer.get("url", ""))
+        key = (
+            page_key,
+            offer.get("package_quantity"),
+            offer.get("package_unit"),
+            round(_valid_price(offer), 2),
+        )
+        if not page_key or key not in seen:
+            seen.add(key)
+            continue
+        offer["excluded"] = True
+        offer["exclude_reason"] = "duplicate retailer product-page offer"
+
+    groups: dict[tuple, list[dict]] = {}
+    for offer in product.get("offers", []):
+        if not _eligible_priced_offer(product, offer):
+            continue
+        quantity = offer.get("package_quantity")
+        unit = offer.get("package_unit")
+        try:
+            package_key = (round(float(quantity), 4), str(unit)) if quantity and unit else None
+        except (TypeError, ValueError):
+            package_key = None
+        if package_key:
+            groups.setdefault(package_key, []).append(offer)
+
+    for group in groups.values():
+        while True:
+            current = [offer for offer in group if _eligible_priced_offer(product, offer)]
+            prices = sorted(_valid_price(offer) for offer in current)
+            if len(prices) < 3:
+                break
+            midpoint = len(prices) // 2
+            median = prices[midpoint] if len(prices) % 2 else (prices[midpoint - 1] + prices[midpoint]) / 2
+            newly_excluded = []
+            for offer in current:
+                price = _valid_price(offer)
+                if price < median * 0.45 or price > median * 2.5:
+                    newly_excluded.append(offer)
+            if not newly_excluded:
+                break
+            for offer in newly_excluded:
+                offer["excluded"] = True
+                offer["exclude_reason"] = "implausible same-package price outlier"
+
+        surviving = [offer for offer in group if _eligible_priced_offer(product, offer)]
+        if len(surviving) >= 2:
+            surviving_prices = sorted(_valid_price(offer) for offer in surviving)
+            midpoint = len(surviving_prices) // 2
+            median = (
+                surviving_prices[midpoint]
+                if len(surviving_prices) % 2
+                else (surviving_prices[midpoint - 1] + surviving_prices[midpoint]) / 2
+            )
+            for offer in surviving:
+                price = _valid_price(offer)
+                if median * 0.5 <= price <= median * 2:
+                    offer["quality_verified"] = True
+
+    for offer in product.get("offers", []):
+        if _eligible_priced_offer(product, offer) and offer.get("manual_verified"):
+            offer["quality_verified"] = True
+
+
 def apply_offer_quality_filters(results: list[dict]) -> None:
+    # Quality verification is recomputed on every pass. Clear only our own
+    # previous fail-closed exclusion so a newly corroborated/manual source can
+    # become eligible without reviving offers rejected for another reason.
+    for product in results:
+        for offer in product.get("offers", []):
+            if offer.get("exclude_reason") == UNVERIFIED_OFFER_REASON:
+                offer.pop("excluded", None)
+                offer.pop("exclude_reason", None)
+
     repeated_prices: dict[tuple, set] = {}
     for product in results:
         for offer in product.get("offers", []):
@@ -998,13 +1484,19 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
     for product in results:
         floor = min_price_for_product(product)
         ceiling = max_price_for_product(product)
+        size_review_required = bool(product.get("needs_size_review"))
         for offer in product.get("offers", []):
+            offer.pop("quality_verified", None)
             if offer.get("price") is None:
                 continue
 
             price = round(float(offer["price"]), 2)
             key = (offer.get("retailer"), price)
-            if is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", "")):
+            identity_reason = _offer_identity_reason(product, offer)
+            if identity_reason:
+                offer["excluded"] = True
+                offer["exclude_reason"] = identity_reason
+            elif is_known_wrong_product_source(product["id"], offer.get("url", ""), offer.get("title", "")):
                 offer["excluded"] = True
                 offer["exclude_reason"] = "known wrong product source for this product"
             elif is_google_url(offer.get("url", "")):
@@ -1021,11 +1513,35 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
                 # so the offer never renders, not merely skipped for best price.
                 offer["excluded"] = True
                 offer["exclude_reason"] = f"above ${ceiling:.2f} maximum for this product"
+            elif size_review_required and not (
+                offer.get("package_quantity") and offer.get("package_unit")
+            ):
+                offer["excluded"] = True
+                offer["exclude_reason"] = (
+                    "package size is ambiguous for a size-sensitive product"
+                )
             elif key in repeated_bad:
                 offer["excluded"] = True
                 offer["exclude_reason"] = "same retailer/price repeated across many unrelated products"
 
-        product["best_price"] = select_best_offer(product, product.get("offers", []))
+    _exclude_cross_product_url_conflicts(results)
+    for product in results:
+        for offer in product.get("offers", []):
+            if _eligible_priced_offer(product, offer):
+                offer["quality_verified"] = False
+        _exclude_duplicate_and_outlier_offers(product)
+        for offer in product.get("offers", []):
+            if (
+                _eligible_priced_offer(product, offer)
+                and offer.get("quality_verified") is not True
+            ):
+                offer["excluded"] = True
+                offer["exclude_reason"] = UNVERIFIED_OFFER_REASON
+        product["best_price"] = select_best_offer(
+            product,
+            product.get("offers", []),
+            require_quality_verified=True,
+        )
 
 
 def sanitize_equipment_results(results: list[dict]) -> None:
@@ -1054,7 +1570,11 @@ def sanitize_equipment_results(results: list[dict]) -> None:
                 offer.pop(key, None)
             clean_offers.append(offer)
         product["offers"] = clean_offers
-        product["best_price"] = select_best_offer(product, clean_offers)
+        product["best_price"] = select_best_offer(
+            product,
+            clean_offers,
+            require_quality_verified=True,
+        )
         product.pop("has_multiple_sizes", None)
         product.pop("needs_size_review", None)
 
@@ -1303,7 +1823,11 @@ def _same_offer_source(old_offer: Optional[dict], new_offer: Optional[dict]) -> 
 
 
 def _trusted_extreme_drop(old_offer: Optional[dict], new_offer: dict) -> bool:
-    return _same_offer_source(old_offer, new_offer) and _same_offer_package(old_offer, new_offer)
+    return bool(
+        new_offer.get("quality_verified")
+        and _same_offer_source(old_offer, new_offer)
+        and _same_offer_package(old_offer, new_offer)
+    )
 
 
 def _confirmed_package_mismatch(old_offer: Optional[dict], new_offer: Optional[dict]) -> bool:
@@ -1336,6 +1860,8 @@ def _is_suspicious_drop(old_offer: Optional[dict], new_offer: dict, drop_percent
         return False
     if not _same_offer_package(old_offer, new_offer):
         return True
+    if not _trusted_extreme_drop(old_offer, new_offer):
+        return True
     if drop_percent >= 60 and not _same_offer_source(old_offer, new_offer):
         return True
     return False
@@ -1343,6 +1869,11 @@ def _is_suspicious_drop(old_offer: Optional[dict], new_offer: dict, drop_percent
 
 def _should_emit_price_drop_alert(old_offer: Optional[dict], new_offer: dict, drop_percent: float) -> bool:
     if drop_percent < MIN_ALERT_DROP_PERCENT:
+        return False
+    # A price change is notification-worthy only after the current offer was
+    # independently corroborated or manually verified. Displaying a cautious
+    # single-source price is acceptable; interrupting a customer with it is not.
+    if not new_offer.get("quality_verified"):
         return False
     return not _is_suspicious_drop(old_offer, new_offer, drop_percent)
 
@@ -1384,6 +1915,7 @@ def _alert_payload(
         "new_retailer": new_offer.get("retailer_name"),
         "url": new_offer.get("url"),
         "in_stock": new_offer.get("in_stock"),
+        "quality_verified": bool(new_offer.get("quality_verified")),
         "created_at": generated_at,
     }
 
@@ -1432,6 +1964,11 @@ def _alert_matches_current_best(alert: dict, current_by_slug: dict) -> bool:
     alert_url = alert.get("url")
     best_url = best.get("url")
     if alert_url and best_url and not _offer_matches_source_url(alert_url, best_url):
+        return False
+
+    if alert.get("type") in {
+        "best_price_drop", "major_price_drop", "new_lowest_retailer"
+    } and not best.get("quality_verified"):
         return False
 
     return True
@@ -1486,10 +2023,14 @@ def build_price_alerts(
 
     current_alert_ids = {alert["id"] for alert in alerts}
     unique_alerts = {}
-    retained_previous_alerts = [
-        alert for alert in _recent_alerts(previous_alerts or [], generated_at)
-        if _alert_matches_current_best(alert, current_by_slug)
-    ]
+    retained_previous_alerts = []
+    for previous_alert in _recent_alerts(previous_alerts or [], generated_at):
+        alert = dict(previous_alert)
+        current = current_by_slug.get(alert.get("product_slug")) or {}
+        current_best = current.get("best_price") or {}
+        alert["quality_verified"] = bool(current_best.get("quality_verified"))
+        if _alert_matches_current_best(alert, current_by_slug):
+            retained_previous_alerts.append(alert)
     for alert in alerts + retained_previous_alerts:
         unique_alerts[alert["id"]] = alert
     retained_alerts = _recent_alerts(list(unique_alerts.values()), generated_at)
@@ -1916,18 +2457,57 @@ def _product_match_terms(product: dict) -> list[str]:
         cleaned = re.sub(r"\([^)]*\)", "", value).strip().lower()
         if cleaned:
             terms.append(cleaned)
-    if product.get("active_ingredient"):
-        terms.append(str(product["active_ingredient"]).split("+")[0].strip().lower())
     return terms
 
 
+IDENTITY_STOPWORDS = {
+    "and", "broadleaf", "control", "for", "fungicide", "fertilizer",
+    "herbicide", "insecticide", "lawn", "pre", "post", "product",
+    "regulator", "selective", "specialty", "the", "turf", "weed",
+}
+
+REFERENCE_ONLY_MARKER = re.compile(
+    r"\b(?:compare(?:d)?\s+to|generic(?:\s+for)?|alternative\s+to)\b",
+    re.I,
+)
+
+
+def _identity_tokens(value: str) -> list[str]:
+    value = re.sub(r"(?<=[a-z])(?=\d)|(?<=\d)(?=[a-z])", " ", value.lower())
+    return [
+        token for token in re.findall(r"[a-z0-9]+", value)
+        if len(token) > 1 and token not in IDENTITY_STOPWORDS
+    ]
+
+
 def _matches_product(product: dict, title: str, source: str = "") -> bool:
-    haystack = f"{title} {source}".lower()
+    haystack = urllib.parse.unquote(f"{title} {source}").lower()
+    if is_non_retail_offer(title, source):
+        return False
+
+    rule = PRODUCT_IDENTITY_RULES.get(int(product.get("id", 0)))
+    marker = REFERENCE_ONLY_MARKER.search(haystack)
+    # A competitor name after "compare to"/"generic for" describes the
+    # benchmark, not the product being sold. Only identity evidence before
+    # that marker may prove the catalog match. Exact products that themselves
+    # precede the marker (for example, "Bifen IT — generic Talstar") remain
+    # valid.
+    identity_haystack = haystack[:marker.start()] if marker else haystack
+    if rule:
+        if any(re.search(pattern, haystack, re.I) for pattern in rule.get("forbidden", ())):
+            return False
+        return any(re.search(pattern, identity_haystack, re.I) for pattern in rule.get("required", ()))
+
+    haystack_tokens = set(_identity_tokens(identity_haystack))
+    active_tokens = set(_identity_tokens(str(product.get("active_ingredient") or "")))
     for term in _product_match_terms(product):
-        tokens = [t for t in re.findall(r"[a-z0-9]+", term) if len(t) > 1]
-        if len(tokens) == 1 and tokens[0] in haystack:
-            return True
-        if len(tokens) > 1 and sum(1 for t in tokens if t in haystack) >= min(2, len(tokens)):
+        tokens = set(_identity_tokens(term))
+        # An active ingredient alone identifies a chemical, not its brand,
+        # concentration, formulation, or package. It is discovery context,
+        # never sufficient proof of product identity.
+        if not tokens or tokens.issubset(active_tokens):
+            continue
+        if tokens.issubset(haystack_tokens):
             return True
     return False
 
@@ -2209,15 +2789,8 @@ def is_equipment_category(category: str) -> bool:
 def _source_entries(source_map: dict, product_id: int, product: Optional[dict] = None) -> list[dict]:
     entries = []
     for source in source_map.get("products", {}).get(str(product_id), []):
-        url = source.get("url", "")
-        if not url or is_google_url(url) or is_bad_product_url(url):
-            continue
-        if is_known_wrong_product_source(product_id, url, source.get("title", "")):
-            continue
-        if source.get("verified") is False:
-            continue
-        source_type = source.get("source_type", "product")
-        if source_type != "product":
+        source_product = product or {"id": product_id}
+        if _valid_source_reason(source_product, source):
             continue
         if product and is_equipment_category(product.get("category", "")) and not source.get("manual_verified"):
             continue
@@ -2278,6 +2851,8 @@ def _apply_source_metadata(offer: dict, source: dict) -> dict:
     for key in ("package_quantity", "package_unit", "package_label", "price_per_unit"):
         if key not in offer and key in source:
             offer[key] = source[key]
+    if source.get("manual_verified"):
+        offer["manual_verified"] = True
     return offer
 
 
@@ -2353,7 +2928,12 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
     price = source.get("price_verified")
     if price is None:
         return None
+    last_seen = source.get("last_seen")
+    if not last_seen or _timestamp_is_stale(str(last_seen)):
+        return None
     if not url or is_google_url(url) or is_bad_product_url(url):
+        return None
+    if is_insecure_retailer_url(url) or is_untrusted_retailer_url(url):
         return None
     try:
         price = float(price)
@@ -2366,9 +2946,10 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
         "url": append_affiliate(url, retailer),
         "in_stock": source.get("in_stock", True),
         "title": source.get("title", ""),
-        "last_checked": source.get("last_seen") or now_iso(),
+        "last_checked": last_seen,
         "source": "manual_verified_source",
         "image": _stored_image_url(source.get("image")),
+        "manual_verified": bool(source.get("manual_verified")),
         **{
             key: source[key]
             for key in ("package_quantity", "package_unit", "package_label", "price_per_unit")
@@ -2434,12 +3015,26 @@ def _valid_source_reason(product: dict, source: dict) -> Optional[str]:
     url = source.get("url", "")
     if not url:
         return "missing_url"
+    if is_insecure_retailer_url(url):
+        return "insecure_retailer_url"
+    if is_untrusted_retailer_url(url):
+        return "untrusted_retailer_domain"
     if is_google_url(url):
         return "google_or_search_url"
     if is_bad_product_url(url):
         return "not_product_purchase_page"
+    if is_non_retail_offer(source.get("title", ""), url):
+        return "non_retail_or_laboratory_product"
     if is_known_wrong_product_source(product["id"], url, source.get("title", "")):
         return "known_wrong_product"
+    has_identity_definition = bool(
+        PRODUCT_IDENTITY_RULES.get(int(product.get("id", 0)))
+        or product.get("name")
+        or product.get("search_query")
+        or product.get("alt_names")
+    )
+    if has_identity_definition and not _matches_product(product, source.get("title", ""), url):
+        return "product_identity_mismatch"
     if source.get("verified") is False:
         return "source_marked_unverified"
     if source.get("source_type", "product") != "product":

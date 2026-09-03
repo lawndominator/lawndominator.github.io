@@ -60,6 +60,9 @@ jobs:
           MIN_ALERT_DROP_PERCENT: "5"
         run: python scraper/scraper.py --fast-lane
 
+      - name: Audit every published price and alert
+        run: python scraper/audit_price_feed.py
+
       - name: Commit updated prices.json
         run: |
           git config user.name  "price-bot[bot]"

@@ -49,14 +49,14 @@
     {
       "id": 4,
       "slug": "spectacle-flo",
-      "name": "Spectacle Flo (Indaziflam)",
+      "name": "Specticle FLO (Indaziflam)",
       "category": "pre-emergent",
-      "search_query": "Spectacle Flo herbicide",
-      "amazon_query": "Spectacle Flo indaziflam",
+      "search_query": "Specticle FLO herbicide",
+      "amazon_query": "Specticle FLO indaziflam",
       "active_ingredient": "indaziflam",
       "alt_names": [
-        "Spectacle Flo Herbicide",
-        "Bayer Spectacle Flo"
+        "Specticle FLO Herbicide",
+        "Envu Specticle FLO"
       ],
       "asin": null
     },
@@ -429,30 +429,30 @@
     {
       "id": 39,
       "slug": "cutless",
-      "name": "Cutless (Flurprimidol)",
+      "name": "Cutless 50W (Flurprimidol)",
       "category": "pgr",
-      "search_query": "Cutless flurprimidol PGR",
-      "amazon_query": "Cutless 0.33G plant growth regulator",
+      "search_query": "Cutless 50W flurprimidol PGR",
+      "amazon_query": "Cutless 50W turf growth regulator",
       "active_ingredient": "flurprimidol",
       "alt_names": [
-        "Cutless 0.33G",
-        "Cutless MEC",
-        "flurprimidol PGR"
+        "Cutless 50W",
+        "SePRO Cutless 50W",
+        "Cutless 50 W"
       ],
       "asin": null
     },
     {
       "id": 40,
       "slug": "proxy-embark",
-      "name": "Proxy / Embark (Mefluidide)",
+      "name": "Proxy Plant Growth Regulator (Ethephon)",
       "category": "pgr",
-      "search_query": "Proxy Embark mefluidide PGR",
-      "amazon_query": "Proxy PGR mefluidide lawn",
-      "active_ingredient": "mefluidide",
+      "search_query": "Proxy ethephon plant growth regulator",
+      "amazon_query": "Proxy ethephon growth regulator",
+      "active_ingredient": "ethephon 21.7%",
       "alt_names": [
         "Proxy PGR",
-        "Embark Turf Regulator",
-        "mefluidide turf"
+        "Envu Proxy",
+        "Proxy Growth Regulator"
       ],
       "asin": null
     },
@@ -650,28 +650,29 @@
     {
       "id": 62,
       "slug": "encartis",
-      "name": "Encartis (Lumiderm / Isoclast)",
+      "name": "Encartis Fungicide (Boscalid + Chlorothalonil)",
       "category": "fungicide",
       "search_query": "Encartis fungicide turf",
-      "amazon_query": "Encartis turf fungicide",
-      "active_ingredient": "isofetamid",
+      "amazon_query": "BASF Encartis fungicide",
+      "active_ingredient": "boscalid 2.20% + chlorothalonil 54.14%",
       "alt_names": [
         "Encartis Fungicide",
-        "Ishihara Sangyo Encartis"
+        "BASF Encartis"
       ],
       "asin": null
     },
     {
       "id": 63,
       "slug": "densicor",
-      "name": "Densicor Fungicide (Cyprodinil + Fludioxonil)",
+      "name": "Densicor Fungicide (Prothioconazole)",
       "category": "fungicide",
       "search_query": "Densicor fungicide turf",
-      "amazon_query": "Densicor fungicide lawn",
-      "active_ingredient": "cyprodinil + fludioxonil",
+      "amazon_query": "Envu Densicor fungicide golf",
+      "active_ingredient": "prothioconazole 41%",
       "alt_names": [
         "Densicor Turf Fungicide",
-        "Syngenta Densicor"
+        "Envu Densicor",
+        "Bayer Densicor"
       ],
       "asin": null
     },
