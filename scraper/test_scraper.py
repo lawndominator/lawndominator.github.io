@@ -94,6 +94,11 @@ class ScraperExtractionTests(unittest.TestCase):
                 False,
             ),
             (
+                {"id": 18, "name": "SedgeHammer+", "active_ingredient": "halosulfuron-methyl", "alt_names": ["SedgeHammer Plus"]},
+                "Atticus Empero Nutsedge Killer - Halosulfuron-Methyl Turf Herbicide",
+                False,
+            ),
+            (
                 {"id": 39, "name": "Cutless 50W", "active_ingredient": "flurprimidol", "alt_names": ["Cutless 50W"]},
                 "Cutless 0.33G Granule PGR",
                 False,
