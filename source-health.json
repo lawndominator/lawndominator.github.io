@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T15:48:38.734051+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-09-04T16:36:07.641560+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2277,
     "manual_verified_sources": 566,
-    "included_sources": 1052,
-    "not_included_sources": 618,
+    "included_sources": 1053,
+    "not_included_sources": 617,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 1052,
+    "included": 1053,
     "product_identity_mismatch": 594,
     "duplicate retailer product-page offer": 169,
-    "no_extracted_offer": 150,
-    "not_checked_saved_source_limit": 105,
+    "no_extracted_offer": 158,
+    "not_checked_saved_source_limit": 97,
     "price source is not independently quality-verified": 60,
     "implausible same-package price outlier": 44,
     "package size is ambiguous for a size-sensitive product": 29,
@@ -25,9 +25,9 @@
     "non_retail_or_laboratory_product": 6,
     "ambiguous product URL shared across catalog products": 5,
     "untrusted_retailer_domain": 5,
-    "no_price": 3,
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2,
+    "no_price": 2,
     "above $200.00 maximum for this product": 1
   },
   "products": [
@@ -5592,7 +5592,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12030,7 +12030,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12060,7 +12060,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16526,7 +16526,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16566,7 +16566,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16576,7 +16576,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -18717,9 +18717,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 18.1,
           "offer_url": "https://www.amazon.com/dp/B0BL7XQ18Q?tag=lawndominator-20"
         },
         {
@@ -18753,8 +18753,8 @@
           "offer_url": "https://www.themillstores.com/products/sulfate-of-potash-0-0-50-fertilizer?variant=47974179111151"
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 3,
+      "included_sources": 8,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -18799,7 +18799,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19213,7 +19213,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
