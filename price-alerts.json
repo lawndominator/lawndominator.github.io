@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T01:53:34.755809+00:00",
+  "generated_at": "2026-09-05T02:18:17.941866+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 8,
-  "alert_count": 14,
+  "current_alert_count": 0,
+  "alert_count": 12,
   "alerts": [
     {
       "id": "dimension-2ew:major_price_drop:solutions-pest-lawn:137.77:85.94",
@@ -209,40 +209,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-09-03T20:49:57.389765+00:00"
-    },
-    {
-      "id": "acelepryn-sc:major_price_drop:solutions:68.14:58.82",
-      "type": "major_price_drop",
-      "product_id": 70,
-      "product_slug": "acelepryn-sc",
-      "product_name": "Acelepryn SC (Chlorantraniliprole)",
-      "category": "insecticide",
-      "old_price": 68.14,
-      "new_price": 58.82,
-      "drop_percent": 13.7,
-      "old_retailer": "Amazon",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/acelepryn-insecticide",
-      "in_stock": true,
-      "created_at": "2026-08-29T02:12:33.115622+00:00",
-      "quality_verified": true
-    },
-    {
-      "id": "acelepryn-sc:new_lowest_retailer:solutions:68.14:58.82",
-      "type": "new_lowest_retailer",
-      "product_id": 70,
-      "product_slug": "acelepryn-sc",
-      "product_name": "Acelepryn SC (Chlorantraniliprole)",
-      "category": "insecticide",
-      "old_price": 68.14,
-      "new_price": 58.82,
-      "drop_percent": 13.7,
-      "old_retailer": "Amazon",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/acelepryn-insecticide",
-      "in_stock": true,
-      "created_at": "2026-08-29T02:12:33.115622+00:00",
-      "quality_verified": true
     }
   ]
 }
