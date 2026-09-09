@@ -1,33 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-09T22:33:19.910283+00:00",
-  "saved_source_limit": 12,
+  "generated_at": "2026-09-09T23:34:07.079272+00:00",
+  "saved_source_limit": 8,
   "totals": {
     "sources": 2277,
     "manual_verified_sources": 566,
-    "included_sources": 984,
-    "not_included_sources": 686,
+    "included_sources": 1052,
+    "not_included_sources": 618,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 984,
+    "included": 1052,
     "product_identity_mismatch": 594,
-    "no_extracted_offer": 194,
-    "duplicate retailer product-page offer": 168,
-    "implausible same-package price outlier": 100,
-    "not_checked_saved_source_limit": 97,
-    "price source is not independently quality-verified": 44,
-    "package size is ambiguous for a size-sensitive product": 20,
-    "below $10.00 minimum for this category": 18,
-    "above $500.00 maximum for this product": 13,
-    "above $400.00 maximum for this product": 12,
-    "above $300.00 maximum for this product": 9,
+    "no_extracted_offer": 188,
+    "duplicate retailer product-page offer": 171,
+    "not_checked_saved_source_limit": 105,
+    "price source is not independently quality-verified": 48,
+    "implausible same-package price outlier": 31,
+    "package size is ambiguous for a size-sensitive product": 21,
+    "below $10.00 minimum for this category": 17,
+    "above $500.00 maximum for this product": 10,
+    "above $400.00 maximum for this product": 8,
+    "above $300.00 maximum for this product": 7,
     "non_retail_or_laboratory_product": 6,
     "ambiguous product URL shared across catalog products": 5,
     "untrusted_retailer_domain": 5,
     "no_price": 4,
     "below $5.00 minimum for this category": 2,
-    "insecure_retailer_url": 2
+    "insecure_retailer_url": 2,
+    "above $200.00 maximum for this product": 1
   },
   "products": [
     {
@@ -241,9 +242,9 @@
           "retailer": "ebay-seedranch",
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2498.98,
+          "status": "included",
+          "reason": "included",
+          "price": 147.77,
           "offer_url": "https://www.ebay.com/itm/325467603293?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorg-EdyGHHvSp9W5WdwmF2kzRQzBcS22kJWx4u6cj-s-rEr6W8be3E"
         },
         {
@@ -387,8 +388,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 7,
+      "included_sources": 16,
+      "not_included_sources": 6,
       "invalid_sources": 13
     },
     {
@@ -412,8 +413,8 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 164.95,
           "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew"
         },
@@ -552,9 +553,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 13.47,
+          "status": "included",
+          "reason": "included",
+          "price": 137.5,
           "offer_url": "https://www.solutionsstores.com/dimension-herbicide?sku=DOW22&srsltid=AfmBOoomMUv96tSA1Jfgii0jU7RcLKhJKIuBv93RrSTLHbwuZnl_UcD7TNk"
         },
         {
@@ -582,8 +583,8 @@
           "retailer": "sod-solutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 164.95,
           "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOoqvKvy3TlQDKjao92F5F_Rx7UKFOEgMprxUbovv8MxWrLQ4D7BUD4o"
         },
@@ -602,9 +603,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 2790.36,
+          "status": "included",
+          "reason": "included",
+          "price": 165.0,
           "offer_url": "https://www.ebay.com/itm/134845222206?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqQTtSKKF7LndMc8TeCTsmVrkCNIOCAkVB_t-yTlAhTukQ2nC0brn4"
         },
         {
@@ -823,13 +824,13 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 4818.54,
+          "reason": "price source is not independently quality-verified",
+          "price": 284.93,
           "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 18,
+      "included_sources": 18,
+      "not_included_sources": 16,
       "invalid_sources": 9
     },
     {
@@ -1375,9 +1376,9 @@
           "retailer": "ebay-2000supplies",
           "retailer_name": "eBay - 2000supplies",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2113.07,
+          "status": "included",
+          "reason": "included",
+          "price": 124.95,
           "offer_url": "https://www.ebay.com/itm/186285564483?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooTmcRBLfNRPyxgJk5FnPfSHkTMD6VxvtpVQawxagtzQhQhgYF-2oo"
         },
         {
@@ -1385,9 +1386,9 @@
           "retailer": "ebay-2000supplies",
           "retailer_name": "eBay - 2000supplies",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1368.97,
+          "status": "included",
+          "reason": "included",
+          "price": 80.95,
           "offer_url": "https://www.ebay.com/itm/145593874065?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqiDkfNByvq1cTUDAt0YcPeHf5sV67Lk6j1aoU1WZKIF8KQffLSCZ0"
         },
         {
@@ -1521,8 +1522,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 7,
+      "included_sources": 17,
+      "not_included_sources": 5,
       "invalid_sources": 12
     },
     {
@@ -1546,9 +1547,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3097.98,
+          "status": "included",
+          "reason": "included",
+          "price": 183.19,
           "offer_url": "https://www.ebay.com/itm/335759919834"
         },
         {
@@ -1766,8 +1767,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 195.88,
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -1777,9 +1778,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/gallery-75-df-herbicide-1-lb?currency=USD&country=US&variant=12534748545124&stkn=fe2774b158dd&srsltid=AfmBOooRLlzLi-R9Jgb8zleZUQ8EoZElDInKWX-e__JZRuThc_8Zv_zo0EU"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Gallery-75-DF-Herbicide-1-Lb-p/gallery-75df-1.htm?srsltid=AfmBOoobmyD1ZmvCroPijDOkw9UjtatMOZZA1pFDG-g4LYacnFaU2sA_8hc",
@@ -1816,9 +1817,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3030.17,
+          "status": "included",
+          "reason": "included",
+          "price": 179.18,
           "offer_url": "https://www.ebay.com/itm/234894526483?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopWRG6C3cNUD19HD9Ke4JZKyeUDSoNaAiLXLZn-GNojkbZMaQK-Z60"
         },
         {
@@ -1836,14 +1837,14 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 195.88,
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 17,
-      "not_included_sources": 12,
+      "included_sources": 19,
+      "not_included_sources": 10,
       "invalid_sources": 2
     },
     {
@@ -1957,9 +1958,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3452.27,
+          "status": "included",
+          "reason": "included",
+          "price": 204.14,
           "offer_url": "https://www.ebay.com/itm/134845221569?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopOL89p7-MoGO-x5kv3xDyuVSdHiDLk0gTAPOaCsPsJvyFqsKKJA7s"
         },
         {
@@ -2103,8 +2104,8 @@
           "offer_url": "https://pestcontrolsuperstore.com/products/specticle-g-granular-pre-emergent-herbicide?variant=41625656787034&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooJIkJa-d-Z7-91U2qgyURXXnCt41yqijCLk_jbAeo6U52fdkDCPac"
         }
       ],
-      "included_sources": 18,
-      "not_included_sources": 7,
+      "included_sources": 19,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -2179,9 +2180,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/atrazine-4l-herbicide-2-5-gallons?currency=USD&country=US&variant=12530185273444&stkn=fe2774b158dd&srsltid=AfmBOoozT3elgbEnvwlZWGgt2DaHfNSMRq9029YIVpYsq0y5-LnZvfUzvUA"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.seedranch.com/Atrazine-4L-Herbicide-2-5-Gallons-p/atrazine-4l-2.5.htm?srsltid=AfmBOorRYirMBsjz39iSEJTVjz1sj5zcUrwQgR4Xl1TA3Q9lCYPVxdyvwKQ",
@@ -2499,9 +2500,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3026.11,
+          "status": "included",
+          "reason": "included",
+          "price": 178.94,
           "offer_url": "https://www.ebay.com/itm/134845222127?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopmJyEKSdSJ-WkgdrxIPZydx3A9q2zxe8ntgSTsd7zAbVXx0PQ2Al8"
         },
         {
@@ -2605,8 +2606,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 14,
-      "not_included_sources": 7,
+      "included_sources": 15,
+      "not_included_sources": 6,
       "invalid_sources": 4
     },
     {
@@ -2761,9 +2762,9 @@
           "retailer_name": "Council-Oxford",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "implausible same-package price outlier",
+          "price": 189.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/golf/celsius-wg"
         },
         {
           "url": "https://www.counciloxford.com/product/industries/homeowners/celsius-wg-0-226-oz-single-pack",
@@ -3030,8 +3031,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 178.0,
           "offer_url": "https://www.walmart.com/ip/Celsius-WG-Postemergence-Herbicide-10-oz-Bottle-by-Envu/606383788?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=1A1F0164AC9F348286E1C76DE9A693F1&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -3050,8 +3051,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 178.0,
           "offer_url": "https://www.walmart.com/ip/Celsius-WG-Postemergence-Herbicide-10-oz-Bottle-by-Envu/606383788?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
@@ -3201,9 +3202,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2318.88,
+          "status": "included",
+          "reason": "included",
+          "price": 137.12,
           "offer_url": "https://www.ebay.com/itm/235902399985?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooHyCY39ipZo79XMEeYs4Tj0ZI3X22mfOhRyB-TyUi0WoJwkR8hQ98"
         },
         {
@@ -3251,9 +3252,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2378.57,
+          "status": "included",
+          "reason": "included",
+          "price": 140.65,
           "offer_url": "https://www.ebay.com/itm/116101744133?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo6bXKUCXSPoLuqhH2_iQzJr9nMB81IvGDUJ2QtSIzf0uyaO0bxXBo"
         },
         {
@@ -3297,8 +3298,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 14,
-      "not_included_sources": 5,
+      "included_sources": 16,
+      "not_included_sources": 3,
       "invalid_sources": 4
     },
     {
@@ -3462,9 +3463,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1094.84,
+          "status": "included",
+          "reason": "included",
+          "price": 64.74,
           "offer_url": "https://www.ebay.com/itm/155937028212?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorRxzXiGDKpgHbBTnzRkImisLjHn1wLOu8vAXQ72rSfONo9w3lD7JI"
         },
         {
@@ -3502,9 +3503,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1332.95,
+          "status": "included",
+          "reason": "included",
+          "price": 78.82,
           "offer_url": "https://www.ebay.com/itm/236653968427?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopkZ3eZ2nFxiAWXmRCHZQbyDukEJgzszS1uMzY2NPyKaJdyz-vXKDs"
         },
         {
@@ -3713,9 +3714,9 @@
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "duplicate retailer product-page offer",
+          "price": 87.77,
+          "offer_url": "https://www.ebay.com/itm/325471149174?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorlBKKkb-Oc_ubOvBJnl8hO2GwjA1SyyrZ6fwo2oH0og_ZDorxAMFc"
         },
         {
           "url": "https://www.pedchem.com/products/drive-xlr8-herbicide-crabgrass-killer?currency=USD&country=US&variant=28159042821&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=d0019d867e37&srsltid=AfmBOorK_7pfwfyZ_DFZi5sgkSlsBv2MHm_LyOUAmhujPsk9HWzjG1baj5I",
@@ -3758,8 +3759,8 @@
           "offer_url": "https://www.seedworldusa.com/products/drive-xlr8-herbicide-broadleaf-and-grassy-weeds-control-1-2-gal-1?variant=625256905&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOootejDs0UZnET2MNk4dzYYpXmxMyVq2o91LMpOwf2hZpXHOvRDi0Io"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 13,
+      "included_sources": 21,
+      "not_included_sources": 11,
       "invalid_sources": 13
     },
     {
@@ -3913,9 +3914,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 215.11,
+          "status": "included",
+          "reason": "included",
+          "price": 12.72,
           "offer_url": "https://www.ebay.com/itm/116094600658?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooyMSH8Uty0JPujmF_zU7NF88r-yq4pIZgodo_xbfG4ew2KVp18pDI"
         },
         {
@@ -3943,10 +3944,10 @@
           "retailer": "hicks-nurseries",
           "retailer_name": "Hicks Nurseries",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 19.99,
-          "offer_url": "https://shop.hicksnurseries.com/products/sedgehammer-13-5g?variant=38025664528576&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor6BwnmB4ImbUhw8iBLIWz2LBR40kaeP630l7UGo2kIvcnNXomJoSE"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://marisgardens.com/products/sedgehammer-plus?variant=44160232653024&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOor4Mdb6XZHE2bBy-IjfJN_RuK82ZO1frSKSUjv3ZEmQb0Uv23hvp48",
@@ -4194,9 +4195,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1961.71,
+          "status": "included",
+          "reason": "included",
+          "price": 115.49,
           "offer_url": "https://www.ebay.com/itm/116111308602?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqhkezBWLfx4Xk_qnCQ9ir2zjwkZ5r_IUhlO7fEZmsS-r_A4ytxFKI"
         },
         {
@@ -4264,9 +4265,9 @@
           "retailer": "ebay-chemical-warehouse",
           "retailer_name": "eBay - chemical.warehouse",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 5444.42,
+          "status": "included",
+          "reason": "included",
+          "price": 321.94,
           "offer_url": "https://www.ebay.com/itm/127240087970?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOookHHsPre0WvgXhseIIWcCVxjiX8WEOL6wOUNTDtN86QVXmfUa8Lc4"
         },
         {
@@ -4275,7 +4276,7 @@
           "retailer_name": "Lawn and Pest Control Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
+          "reason": "price source is not independently quality-verified",
           "price": 284.0,
           "offer_url": "https://www.lawnandpestcontrolsupply.com/products/speedzone-southern-herbicide-1?variant=289431470&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopg61zbTkJm2ne9l7vLIKGYeTxFuab7cLbDBbNbHcf1JSS6JRQBYIk"
         },
@@ -4314,14 +4315,14 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 4930.32,
+          "status": "included",
+          "reason": "included",
+          "price": 291.54,
           "offer_url": "https://www.ebay.com/itm/134845221945?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopv2PnD747fzkpF30GTEfTOUkQABuSZKB0mH9lRX_9fyTy_PRgOdQw"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 9,
+      "included_sources": 14,
+      "not_included_sources": 6,
       "invalid_sources": 1
     },
     {
@@ -4416,9 +4417,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1049.52,
+          "status": "included",
+          "reason": "included",
+          "price": 62.06,
           "offer_url": "https://www.ebay.com/itm/334689338039"
         },
         {
@@ -4576,9 +4577,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1284.41,
+          "status": "included",
+          "reason": "included",
+          "price": 75.95,
           "offer_url": "https://www.ebay.com/itm/287256259380?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -4652,8 +4653,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 8,
+      "included_sources": 17,
+      "not_included_sources": 6,
       "invalid_sources": 2
     },
     {
@@ -4917,8 +4918,8 @@
           "retailer": "garden-goods-direct",
           "retailer_name": "Garden Goods Direct",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 81.95,
           "offer_url": "https://www.gardengoodsdirect.com/products/turflon-ester-specialty-herbicide-concentrate?variant=22675211092032&srsltid=AfmBOooutA2qVUWuYkCBkAdXkSdnxZxuCjmZdJKcbZAaxIcqiF1VXph1UZk"
         },
@@ -4977,14 +4978,14 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 743.93,
+          "status": "included",
+          "reason": "included",
+          "price": 43.99,
           "offer_url": "https://www.ebay.com/itm/257164611738?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqmWDn7jJo_qBM2GrKQKCal9Q8q1L1vrdIsYMdb9yCOffFVytl5Sg8"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 4,
+      "included_sources": 13,
+      "not_included_sources": 2,
       "invalid_sources": 17
     },
     {
@@ -5198,9 +5199,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1819.99,
+          "status": "included",
+          "reason": "included",
+          "price": 107.62,
           "offer_url": "https://www.ebay.com/itm/235902400487?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorRH0VeH7tf-ExGebMmrzsKmIdE7VLfYhCs5t300tE6m-8nm94vGPE"
         },
         {
@@ -5239,9 +5240,9 @@
           "retailer_name": "eBay",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
-          "price": 2858.01,
-          "offer_url": "https://www.ebay.com/itm/287500027838?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/dismiss-herbicide-1?srsltid=AfmBOor46kgh50G03RjzjNDPskgcILYXpbvr3CiDshA7YtLlZYPr3l2CGiY",
@@ -5384,8 +5385,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 18,
-      "not_included_sources": 7,
+      "included_sources": 19,
+      "not_included_sources": 6,
       "invalid_sources": 14
     },
     {
@@ -5591,7 +5592,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -5702,7 +5703,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 85.94,
+          "price": 109.0,
           "offer_url": "https://www.solutionsstores.com/msma-target-6-plus-herbicide?sku=MSMA1&srsltid=AfmBOoqDLUTmUznEOg-9DINHw05rj_BzEtePGF-IjHPFUPMu_YJypUTbY_A"
         },
         {
@@ -6053,9 +6054,9 @@
           "retailer_name": "Council-Oxford",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "implausible same-package price outlier",
+          "price": 35.99,
+          "offer_url": "https://www.counciloxford.com/product/industries/homeowners/trimec-southern-broadleaf-herbicide"
         },
         {
           "url": "https://www.solutionsstores.com/trimec-classic-broadleaf-herbicide?sku=GORD15&srsltid=AfmBOor6XbSOpdjIQE6PZwsTAaB9wTuRqThN7Xs4vPdIs9YzHvqSwUMSU0E",
@@ -6102,9 +6103,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1527.26,
+          "status": "included",
+          "reason": "included",
+          "price": 90.31,
           "offer_url": "https://www.ebay.com/itm/116094372467?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor4BVzFVRpP29sqWfcjv6C6YqN9NEIm5AoVHkZDuR6-fc0w4Una2Xg"
         },
         {
@@ -6242,9 +6243,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3621.72,
+          "status": "included",
+          "reason": "included",
+          "price": 214.16,
           "offer_url": "https://www.ebay.com/itm/156111501276?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor9dAHNcZZgv9h_Ml42DHKblZ-eOqkCL4B5venzaLY_rwu2nNw92G8"
         },
         {
@@ -6272,8 +6273,8 @@
           "retailer": "the-mill",
           "retailer_name": "The Mill",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 184.99,
           "offer_url": "https://www.themillstores.com/products/trimec-classic-broadleaf-herbicide?variant=32117559296036&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorbN7eACIxBkqiyl5PsLK8xJ78gIiBRRvZ_vRwE1QScQTLhqY2IPnI"
         },
@@ -6438,8 +6439,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 20,
-      "not_included_sources": 11,
+      "included_sources": 21,
+      "not_included_sources": 10,
       "invalid_sources": 15
     },
     {
@@ -6523,8 +6524,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 389.99,
           "offer_url": "https://www.walmart.com/ip/Revolver-Post-Emergence-Herbicide-For-Grassy-Weeds-32-fl-oz-Bottle-by-Envu/5372923943?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -6543,9 +6544,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 7531.28,
+          "status": "included",
+          "reason": "included",
+          "price": 445.34,
           "offer_url": "https://www.ebay.com/itm/235902399797?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor6ruchv-eXrWOVMfqismHXd6JCHbc36PcApmvJ2MgK89Ss3Wb79Dc"
         },
         {
@@ -6583,9 +6584,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 6629.06,
+          "status": "included",
+          "reason": "included",
+          "price": 391.99,
           "offer_url": "https://www.ebay.com/itm/335227012763?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOop_lKhwm7RLevoqGMD4u3m92T6hyZaxTr0nosxJ4ymLFojlkMwtrZ8"
         },
         {
@@ -6603,8 +6604,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 389.99,
           "offer_url": "https://www.walmart.com/ip/Revolver-Post-Emergence-Herbicide-For-Grassy-Weeds-32-fl-oz-Bottle-by-Envu/5372923943?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -6643,9 +6644,9 @@
           "retailer": "ebay-seedranch",
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 7271.01,
+          "status": "included",
+          "reason": "included",
+          "price": 429.95,
           "offer_url": "https://www.ebay.com/itm/235342801053?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoolev_5imoonfP35yRmb5UsLSO3pm8YP3dwOisHj8eNja3js84_ZMY"
         },
         {
@@ -6713,8 +6714,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 419.95,
           "offer_url": "https://www.walmart.com/ip/Revolver-Herbicide-1-Quart/776174897?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=0E0A182A57EC39F1939570EF6AA47ADE&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -6763,14 +6764,14 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 419.95,
           "offer_url": "https://www.walmart.com/ip/Revolver-Herbicide-1-Quart/776174897?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 17,
-      "not_included_sources": 15,
+      "included_sources": 20,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
@@ -6834,9 +6835,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 250.21,
+          "status": "not_included",
+          "reason": "implausible same-package price outlier",
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/katana-herbicide?sku=GORD7&srsltid=AfmBOoobFyqqonVzb1HGWm5oaSRWbdp5kP0pLfNMBPP7DrLmr_2hkxXYcRk"
         },
         {
@@ -6874,9 +6875,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 5077.62,
+          "status": "included",
+          "reason": "included",
+          "price": 300.25,
           "offer_url": "https://www.ebay.com/itm/116119291432?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqB-qRGxNvy-OJePw0Slz1TXzFWGhGboixJDlJFhzWcxeTMPymXpio"
         },
         {
@@ -6985,9 +6986,9 @@
           "retailer_name": "eBay",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 4354.66,
-          "offer_url": "https://www.ebay.com/itm/287256259025?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.ranchwholesale.com/katana-turf-herbicide-pbi-gordon-5-oz?srsltid=AfmBOoqV0SdWCZhzXHTztAR1bjK-byqtSn4uS8LmcBWrFmC0CYXkpZl0DNY",
@@ -7065,9 +7066,9 @@
           "retailer": "solutions",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 433.0,
+          "status": "not_included",
+          "reason": "implausible same-package price outlier",
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide"
         },
         {
@@ -7155,9 +7156,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $500.00 maximum for this product",
-          "price": 4988.83,
+          "status": "included",
+          "reason": "included",
+          "price": 295.0,
           "offer_url": "https://www.ebay.com/itm/366599140277?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -7205,9 +7206,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $500.00 maximum for this product",
-          "price": 5665.29,
+          "status": "included",
+          "reason": "included",
+          "price": 335.0,
           "offer_url": "https://www.ebay.com/itm/267679317357?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -7215,9 +7216,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "above $500.00 maximum for this product",
-          "price": 6747.61,
+          "status": "included",
+          "reason": "included",
+          "price": 435.0,
           "offer_url": "https://www.ebay.com/itm/406906191975?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -7227,7 +7228,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "above $500.00 maximum for this product",
-          "price": 8607.01,
+          "price": 508.95,
           "offer_url": "https://www.ebay.com/itm/335759920804?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooAunkI25LsiSkJYuuNv4j_WBykr3W-Flp4pMWfkQE_KdcSU5-n_9Y"
         },
         {
@@ -7255,8 +7256,8 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 433.0,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide?sku=BAYE10&srsltid=AfmBOopQ7wjgglnw3kJW1y31e8kwv4RHyevbbdPES7KDyevGnkAH-wwC7A0"
         },
@@ -7291,8 +7292,8 @@
           "offer_url": "https://diypestcontrol.com/tribute-total-herbicide?srsltid=AfmBOopQ_lf9LlyR4byH0RdQ8VyfjoZ7-MswB60BiYu0dEzn6kVmTbT8lH4"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 15,
+      "included_sources": 12,
+      "not_included_sources": 12,
       "invalid_sources": 0
     },
     {
@@ -7316,9 +7317,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 655.99,
+          "status": "included",
+          "reason": "included",
+          "price": 38.79,
           "offer_url": "https://www.ebay.com/itm/335925853779"
         },
         {
@@ -7496,9 +7497,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 655.31,
+          "status": "included",
+          "reason": "included",
+          "price": 38.75,
           "offer_url": "https://www.ebay.com/itm/255969215299?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqg9E4ThuBES4OMDB24LB_YXDjMyg68X5xgW8Tj9i-AUk3omRTXxL4"
         },
         {
@@ -7602,8 +7603,8 @@
           "offer_url": "https://www.intermountainturf.com/products/primo-maxx-10-gallons?currency=USD&country=US&variant=45346797355146&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOorSus3TY9_iWpCX_PStScsoIV4wryM0wOCIU-k8hTBywIVe-guUJfw"
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 13,
+      "included_sources": 17,
+      "not_included_sources": 11,
       "invalid_sources": 2
     },
     {
@@ -7637,9 +7638,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3007.67,
+          "status": "included",
+          "reason": "included",
+          "price": 177.85,
           "offer_url": "https://www.ebay.com/itm/232322660324"
         },
         {
@@ -7807,9 +7808,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3432.82,
+          "status": "included",
+          "reason": "included",
+          "price": 202.99,
           "offer_url": "https://www.ebay.com/itm/335376959280?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopBsRZXLAaW93BIblqkibAP5gP-cBuHrgHdm_3_0VswUog5vq732e0"
         },
         {
@@ -7833,8 +7834,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 11,
+      "included_sources": 10,
+      "not_included_sources": 9,
       "invalid_sources": 3
     },
     {
@@ -8382,9 +8383,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 898.16,
+          "status": "included",
+          "reason": "included",
+          "price": 53.11,
           "offer_url": "https://www.ebay.com/itm/335925853866"
         },
         {
@@ -8462,9 +8463,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2147.57,
+          "status": "included",
+          "reason": "included",
+          "price": 126.99,
           "offer_url": "https://www.ebay.com/itm/145199758825?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -8503,9 +8504,9 @@
           "retailer_name": "DoMyOwn.com",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "duplicate retailer product-page offer",
+          "price": 48.89,
+          "offer_url": "https://www.domyown.com/pramaxis-mec-plant-growth-regulator-p-23245.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23245&srsltid=AfmBOorUiKxqqPpUYtSU655J-YB8ztfmg8t55IhOg6CuLrCgbfOJlfer6C4"
         },
         {
           "url": "https://www.sunspotsupply.com/products/pramaxis-mec-plant-growth-regulator-bottle-8-oz?currency=USD&country=US&variant=43994417299642&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=bdfd13ec1dea&srsltid=AfmBOoo0ntZPlufwXTGxyGQe4WhyXKXLO99ZQRJz33QetqywITBnsXzWZuk",
@@ -8522,9 +8523,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3204.01,
+          "status": "included",
+          "reason": "included",
+          "price": 189.46,
           "offer_url": "https://www.ebay.com/itm/236067748954?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopkfztYatc0h4l0C_VsY549SPuYppLHAYJJD-gVvxqGQ-wuREFEG50"
         },
         {
@@ -8568,8 +8569,8 @@
           "offer_url": "https://vxb.com/products/pramaxis-mec-plant-growth-regulator-for-lawn-8-oz?variant=48610072985835&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop18nYma0xOfuAX1xT0sLhq2eINbpnNhZ2zae5H0MPjvBMMvIC3lf8"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 9,
+      "included_sources": 14,
+      "not_included_sources": 6,
       "invalid_sources": 2
     },
     {
@@ -8614,7 +8615,7 @@
           "retailer_name": "Pestrong",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
+          "reason": "price source is not independently quality-verified",
           "price": 34.95,
           "offer_url": "https://pestrong.com/product/propiconazole-14-3-fungicide-ppz-pt-qt-1-2-5-gallon"
         },
@@ -8703,9 +8704,9 @@
           "retailer": "ebay-chemical-warehouse",
           "retailer_name": "eBay - chemical.warehouse",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1652.06,
+          "status": "included",
+          "reason": "included",
+          "price": 97.69,
           "offer_url": "https://www.ebay.com/itm/125738834658?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooeUS_JRdIjVMCphisV_N3iR-Uy0AWW5pVQFXIVLI_6uH4J7tmQsRM"
         },
         {
@@ -8784,9 +8785,9 @@
           "retailer_name": "eBay - chemical.warehouse",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 4278.56,
-          "offer_url": "https://www.ebay.com/itm/125738883820?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqGTTCdZ5gONTb3j_P9dnG-W3qM_8XfHViYQT1s2PuBabztPu4kiuc"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/propiconazole?variant=496749949&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqlv_9rh37B9Ro-OVI3Wq_j5MT625r_8POEKPVpEoKgVDTgdkBGaxs",
@@ -8813,9 +8814,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 844.72,
+          "status": "included",
+          "reason": "included",
+          "price": 49.95,
           "offer_url": "https://www.ebay.com/itm/287374329299?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -8873,14 +8874,14 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 676.28,
+          "status": "included",
+          "reason": "included",
+          "price": 39.99,
           "offer_url": "https://www.ebay.com/itm/145466988696?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 8,
+      "included_sources": 22,
+      "not_included_sources": 5,
       "invalid_sources": 3
     },
     {
@@ -9114,9 +9115,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1745.75,
+          "status": "included",
+          "reason": "included",
+          "price": 103.23,
           "offer_url": "https://www.ebay.com/itm/235902401808?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooAdlvyQfNj8kZprIC3gOEKqil4vRiR522qhpAiNIvC-2_9Q6jepyM"
         },
         {
@@ -9190,8 +9191,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/heritage-g-fungicide-30-lb-bag"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 2,
+      "included_sources": 11,
+      "not_included_sources": 1,
       "invalid_sources": 18
     },
     {
@@ -9315,9 +9316,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1584.76,
+          "status": "included",
+          "reason": "included",
+          "price": 93.71,
           "offer_url": "https://www.ebay.com/itm/134845223878?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOop4gbI9QFNY4gw2F2fJR5ba8yJXQGQuZXhu5MNCrcUXQByB_c4CBws"
         },
         {
@@ -9325,8 +9326,8 @@
           "retailer": "pestrong-com",
           "retailer_name": "Pestrong.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 91.95,
           "offer_url": "https://pestrong.com/product/headway-g-broad-spectrum-fungicide-30-lbs/?srsltid=AfmBOop4Y13Ii9E1O4pxPqLS771NR0YyswkJdDebsHECqpzbeqK6zrQ1Qgw"
         },
@@ -9365,9 +9366,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1756.07,
+          "status": "included",
+          "reason": "included",
+          "price": 103.84,
           "offer_url": "https://www.ebay.com/itm/335759919373?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorZK7IUIRgoNiF-FdAqqKa4du7KSk3cro-hLKq7BHq1UGSC1yIjvFw"
         },
         {
@@ -9491,8 +9492,8 @@
           "offer_url": "https://ohhmygoodness.com/products/syngenta-headway-g-fungicide-granules-30-lbs?variant=48941376962848&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorxAqZnCFcFIK3O9MCOpFPee5lRxPu2V2Sz7jMUb1ZasrwTSZ4yidU"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 7,
+      "included_sources": 23,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -9596,8 +9597,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 173.58,
           "offer_url": "https://www.walmart.com/ip/Armada-50-WDG-Fungicide-2-lbs-Jug-by-Envu/1390282634?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -9626,9 +9627,9 @@
           "retailer": "ebay-seedranch",
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3043.19,
+          "status": "included",
+          "reason": "included",
+          "price": 179.95,
           "offer_url": "https://www.ebay.com/itm/225913831277?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqRJiXnmpfLuf5UCBo25rfJD1UjV7dq0l4aCrjTS3eHVp370DjEnyA"
         },
         {
@@ -9656,9 +9657,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2903.84,
+          "status": "included",
+          "reason": "included",
+          "price": 171.71,
           "offer_url": "https://www.ebay.com/itm/256049050838?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopxafMpPDAhwT-JWBDiww4vEOIxzGYZj58m90J6FqPKnwyddTp0NE8"
         },
         {
@@ -9696,8 +9697,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 173.58,
           "offer_url": "https://www.walmart.com/ip/Armada-50-WDG-Fungicide-2-lbs-Jug-by-Envu/1390282634?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -9726,9 +9727,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3114.89,
+          "status": "included",
+          "reason": "included",
+          "price": 184.19,
           "offer_url": "https://www.ebay.com/itm/335924059505?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorAhKspX5yODcjUFGiHTCwZHL6BUMyT1AVU7WQIRBwy-JPZIrvT6Nw"
         },
         {
@@ -9792,8 +9793,8 @@
           "offer_url": "https://thelandscaperstore.com/products/armada-50-wdg-fungicide-2-lb?variant=39439113977971&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooNFvEUz-lLOKnrLGrC6tO3TR_jhZUqqCFopxZGql1pF7QDGukBVFU"
         }
       ],
-      "included_sources": 17,
-      "not_included_sources": 11,
+      "included_sources": 20,
+      "not_included_sources": 8,
       "invalid_sources": 1
     },
     {
@@ -10391,7 +10392,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
-          "price": 1690.28,
+          "price": 99.95,
           "offer_url": "https://www.ebay.com/itm/234823405808?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqVMv0CnhrLVbDkex_4lvYqT9gUxmT31e0aMRc1-NzbD1r159oFfqA"
         },
         {
@@ -10449,9 +10450,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 864.84,
+          "status": "included",
+          "reason": "included",
+          "price": 51.14,
           "offer_url": "https://www.ebay.com/itm/335245025126?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopJE2H1vUV0fQBTCb7fNVug4qkMAtr_QDPzdryjJMLWyELzYNQ4-cY"
         },
         {
@@ -10489,8 +10490,8 @@
           "retailer": "pestrong-com",
           "retailer_name": "Pestrong.com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 49.95,
           "offer_url": "https://pestrong.com/product/eagle-20ew-fungicide-pt-gallon/?attribute_pa_sort=pt&srsltid=AfmBOop9UUf-dg3afT0x5s5nLFbBV_BPeckZSuwi5XOPaXCWHah4fJWar7g"
         },
@@ -10605,8 +10606,8 @@
           "offer_url": "https://homeandgardensupply.com/products/eagle-20-ew-specialty-herbicide?variant=40416194723927&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorWlHPs1GmXm6-e_guk8vhf8KtvRUDVZ6qku2jCLx3XCCA6-n8vYJ8"
         }
       ],
-      "included_sources": 22,
-      "not_included_sources": 12,
+      "included_sources": 24,
+      "not_included_sources": 10,
       "invalid_sources": 0
     },
     {
@@ -11032,9 +11033,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 4056.18,
+          "status": "included",
+          "reason": "included",
+          "price": 239.85,
           "offer_url": "https://www.ebay.com/itm/335759918283?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopINwBHP4N7bSfw1_aS2w71FtnuBK2CXl2RL2GcPJ4Tl3-d0o8YvH4"
         },
         {
@@ -11148,8 +11149,8 @@
           "offer_url": "https://homeandgardensupply.com/products/medallion-wdg?variant=41075805388887&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop4CiRQb7PXFFyEsQN4WSv3rx5fZ4Bq1EFMX8KZO5sh7bJGDgQE3aI"
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 5,
+      "included_sources": 16,
+      "not_included_sources": 4,
       "invalid_sources": 1
     },
     {
@@ -11305,7 +11306,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "implausible same-package price outlier",
-          "price": 3882.67,
+          "price": 229.59,
           "offer_url": "https://www.ebay.com/itm/235902400376?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq03pA9w3EJ-98HTxpRo7GzluUrSj9ML9JATNYfkw_ddPh9c-jb5HM"
         },
         {
@@ -11343,9 +11344,9 @@
           "retailer": "cannavista",
           "retailer_name": "Cannavista",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 418.61,
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
+          "price": 428.13,
           "offer_url": "https://cannavista.com/grow-equipment-supplies/bugs-pests-and-mold/fungicides/subdue-maxx-fungicide-1qt/?srsltid=AfmBOooUYo5I22g7_pB6rX80K5AS5s07IrAiCe-f3EKM7VKhCINEGfPPRcc"
         },
         {
@@ -11419,8 +11420,8 @@
           "offer_url": "https://www.walmart.com/ip/Subdue-Maxx-Fungicide-Controls-Plant-Diseases-128-fl-oz-Jug-by-Syngenta/5075637062?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 9,
+      "included_sources": 10,
+      "not_included_sources": 10,
       "invalid_sources": 6
     },
     {
@@ -11636,8 +11637,8 @@
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 29.99,
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/encartis-fungicide?sku=BASF113&srsltid=AfmBOop-1Cv0kJydmKvH-STHbMfTU39WWg9u4oFbY2bAga97WLgIP91SDJc"
         },
         {
@@ -11728,7 +11729,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "below $10.00 minimum for this category",
-          "price": 1.0,
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/densicor-fungicide?sku=ENVU1&srsltid=AfmBOopAq3VpJb2DMirC4Pmd-yBmpDwnVYRl1XEUIC94DfEhvLpCOmCkM1A"
         },
         {
@@ -11746,9 +11747,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 14930.65,
+          "status": "included",
+          "reason": "included",
+          "price": 882.88,
           "offer_url": "https://www.ebay.com/itm/335759918387?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorc5kwcDEmaDRV0qbhCxlWyV_V6jtmPHFkU52HUQJPHOYYd1vU1stg"
         },
         {
@@ -11772,8 +11773,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 3,
+      "included_sources": 4,
+      "not_included_sources": 2,
       "invalid_sources": 1
     },
     {
@@ -11807,9 +11808,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "above $300.00 maximum for this product",
-          "price": 1715.48,
+          "status": "included",
+          "reason": "included",
+          "price": 101.44,
           "offer_url": "https://www.ebay.com/itm/334772691433"
         },
         {
@@ -11917,8 +11918,8 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOorlcXh7iOOP0N1pkq3I0eG_IG9UGeTavZQ2MEXIY1WGntYmBQuszaI"
         },
@@ -11927,8 +11928,8 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOoo2bWaCSZXTbhp98Q7g3ahe1Cy4eWfEtHfd_ibiLNdaMLCVnA09610"
         },
@@ -11978,8 +11979,8 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "above $300.00 maximum for this product",
-          "price": 1715.48,
+          "reason": "duplicate retailer product-page offer",
+          "price": 101.44,
           "offer_url": "https://www.ebay.com/itm/334772691433?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoojt109zPfg8CK5SszkD8oGU7O5NG49yFpxSNqYum2lz3TwD45w2Ow"
         },
         {
@@ -12003,8 +12004,8 @@
           "offer_url": "https://www.walmart.com/ip/Acelepryn-Insecticide-For-Turf-Lawn-Landscape-Pests-4-fl-oz-Bottle-by-Syngenta/2667143658?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=630148BD3E7345D5808867105D2815EA&conditionGroupCode=1&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 11,
+      "included_sources": 11,
+      "not_included_sources": 10,
       "invalid_sources": 1
     },
     {
@@ -12029,7 +12030,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -12059,7 +12060,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -12118,9 +12119,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2969.96,
+          "status": "included",
+          "reason": "included",
+          "price": 175.62,
           "offer_url": "https://www.ebay.com/itm/287500027639?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -12129,8 +12130,8 @@
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 10.99,
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/acelepryn-g-insecticide?sku=SYNG34&srsltid=AfmBOooEgFkiz_g0m0wJnVYe8N3pnXJ4v9NQakgrj9I56PWEYn9PY8Yp7pA"
         },
         {
@@ -12138,9 +12139,9 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2546.84,
+          "status": "included",
+          "reason": "included",
+          "price": 148.57,
           "offer_url": "https://www.ebay.com/itm/134970476247?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq8uCgp0rHIGViaadxFJsAZpYcNxtG973aqBDxBBGqNn_gsL0T8dow"
         },
         {
@@ -12214,8 +12215,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 8,
+      "included_sources": 6,
+      "not_included_sources": 6,
       "invalid_sources": 8
     },
     {
@@ -12330,9 +12331,9 @@
           "retailer_name": "eBay",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1437.46,
-          "offer_url": "https://www.ebay.com/itm/287256259483?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.lawnandpestcontrolsupply.com/products/merit-0-5g-granular-30-lb?srsltid=AfmBOorb-KXqfW1kZ6fj4AEoicr0ZF6KVe6ussxAr11LDRBXcOjfbCJ7Vns",
@@ -12379,9 +12380,9 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1548.23,
+          "status": "included",
+          "reason": "included",
+          "price": 91.55,
           "offer_url": "https://www.ebay.com/itm/256047104636?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqsbzbCj_VYWugja5l5NV9aIvx5rxNgEQbHzyZ3Ey9jEj0GPplWuVI"
         },
         {
@@ -12449,9 +12450,9 @@
           "retailer": "ebay-2000supplies",
           "retailer_name": "eBay - 2000supplies",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1166.03,
+          "status": "included",
+          "reason": "included",
+          "price": 68.95,
           "offer_url": "https://www.ebay.com/itm/146525048290?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorbGDG2GH2bnbG-k5wmh0UWhSDGKuMpcZ4PKZczHBjpZViLocY2nVc"
         },
         {
@@ -12625,8 +12626,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 8,
+      "included_sources": 14,
+      "not_included_sources": 6,
       "invalid_sources": 20
     },
     {
@@ -12870,9 +12871,9 @@
           "retailer": "ebay-seedranch",
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2197.62,
+          "status": "included",
+          "reason": "included",
+          "price": 129.95,
           "offer_url": "https://www.ebay.com/itm/325470710167?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopJD-07bFNrlOzCUg3XyEq2pR9p8E0a1CpKj3I4AH7P11cxfY2WPQA"
         },
         {
@@ -12891,9 +12892,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/dylox-6-2-insecticide-30-lbs?currency=USD&country=US&variant=12533440708708&stkn=fe2774b158dd&srsltid=AfmBOoriCkQxG4YNCHERcPXPHslXGhAj03BT4L5wJ7mCHngWPmK-UHGplHQ"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.nexles.com/us/bayer-insecticide-crop-dylox-6-2-30-lb.html",
@@ -12920,9 +12921,9 @@
           "retailer": "ebay-rundsc",
           "retailer_name": "eBay - rundsc",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2282.69,
+          "status": "included",
+          "reason": "included",
+          "price": 134.98,
           "offer_url": "https://www.ebay.com/itm/116731111135?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopa5Bdukz9gmVFtXons8oP9mTyKxrpxqHI8tzokQU5rQey2Z2StiyA"
         },
         {
@@ -12936,8 +12937,8 @@
           "offer_url": "https://masterlandscapesupply.com/products/dylox-6-2-granules-30-lb?srsltid=AfmBOoqHYpP1AXFbufcEEpjPSrYWyaNq1HrYcOGJVFfCrwDT-1tA4_aTCP0"
         }
       ],
-      "included_sources": 24,
-      "not_included_sources": 6,
+      "included_sources": 26,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -13211,9 +13212,9 @@
           "retailer": "ebay-usa-supply",
           "retailer_name": "eBay - usa-supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 388.11,
+          "status": "included",
+          "reason": "included",
+          "price": 22.95,
           "offer_url": "https://www.ebay.com/itm/325270004552?chn=ps&mkevt=1&mkcid=28&var=514154055062&google_free_listing_action=view_item&srsltid=AfmBOopWkOvOhZjn9QYulkiL06r60HUpdI_zWAhOW2YFL0_XVp5IWeIEC1o"
         },
         {
@@ -13221,9 +13222,9 @@
           "retailer": "ebay-usa-supply",
           "retailer_name": "eBay - usa-supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 506.49,
+          "status": "included",
+          "reason": "included",
+          "price": 29.95,
           "offer_url": "https://www.ebay.com/itm/325270004552?chn=ps&mkevt=1&mkcid=28&var=514154055063&google_free_listing_action=view_item&srsltid=AfmBOorRZRQ5BftD2MPFzbTEtcTHGGjQR5lXL6CqAiQg38gSB9WY_s276FU"
         },
         {
@@ -13303,7 +13304,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 545.39,
+          "price": 32.25,
           "offer_url": "https://www.ebay.com/itm/356429454948?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -13352,7 +13353,7 @@
           "retailer_name": "DIY Pest Control",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
+          "reason": "price source is not independently quality-verified",
           "price": 26.96,
           "offer_url": "https://diypestcontrol.com/bifen-it?srsltid=AfmBOopgLd2YIBWKw4GX0iS0H9fusoUlCZEKqx3u4fvDVOCmzuBTO4XteX0"
         },
@@ -13437,8 +13438,8 @@
           "offer_url": "https://www.intermountainturf.com/products/bifen-it-insecticide-gallon?currency=USD&country=US&variant=45346769633418&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopsju_2L9MdrlHeWiEQRrRHIxPsk-CZoQSFlMn6HU1KsX1v9h9m3h4"
         }
       ],
-      "included_sources": 25,
-      "not_included_sources": 16,
+      "included_sources": 27,
+      "not_included_sources": 14,
       "invalid_sources": 8
     },
     {
@@ -13963,9 +13964,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2113.07,
+          "status": "included",
+          "reason": "included",
+          "price": 124.95,
           "offer_url": "https://www.ebay.com/itm/287500028002?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -14024,13 +14025,13 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3091.39,
-          "offer_url": "https://www.ebay.com/itm/335759918386?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqS4aDnef3CkS_2zMqT2zmxzjEONogDt0WNlNUzubUyo2GbxBl_f9Q"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 13,
-      "not_included_sources": 7,
+      "included_sources": 14,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -14234,9 +14235,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2417.47,
+          "status": "included",
+          "reason": "included",
+          "price": 142.95,
           "offer_url": "https://www.ebay.com/itm/356609193750?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
         {
@@ -14310,8 +14311,8 @@
           "offer_url": "https://pestrong.com/product/arena-0-25g-granular-insecticide-30-lbs/?srsltid=AfmBOooF5kzaaayhBxLJlZ8MJCtFlvUHZrlrC5eUNdPxpDD3EGykC7xg-go"
         }
       ],
-      "included_sources": 18,
-      "not_included_sources": 9,
+      "included_sources": 19,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -14526,9 +14527,9 @@
           "retailer_name": "Pest Management Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "price source is not independently quality-verified",
+          "price": 112.75,
+          "offer_url": "https://www.pestmanagementsupply.com/syn80081.html"
         },
         {
           "url": "https://www.domyown.com/demand-cs-p-46.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=46&srsltid=AfmBOopFalUWZJtKaxEKPbN2r_tC8z1To1cmlWGvYRURisCsuNHF-XS1c20",
@@ -14577,7 +14578,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 726.34,
+          "price": 42.95,
           "offer_url": "https://www.ebay.com/itm/325686745285?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorSa3qebbZ0OEOksaoR4mvBsi4TqV_86c-bL-SCkN5fYJgsMTPaF5A"
         },
         {
@@ -14625,9 +14626,9 @@
           "retailer": "ebay-2000supplies",
           "retailer_name": "eBay - 2000supplies",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 861.63,
+          "status": "included",
+          "reason": "included",
+          "price": 50.95,
           "offer_url": "https://www.ebay.com/itm/186389918898?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOop-hxWi4oHCN-xFNAnJufWrWmOk4GM13rFMpIxpcpTTSiZPdlUF-FY"
         },
         {
@@ -14635,9 +14636,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 916.93,
+          "status": "included",
+          "reason": "included",
+          "price": 54.22,
           "offer_url": "https://www.ebay.com/itm/334772690169?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo-8aGsv4ws4kvZ_neSvisYMMPdCACcKq6qXqrNA6Dx1pkJw7fcweQ"
         },
         {
@@ -14645,9 +14646,9 @@
           "retailer": "ebay-pestcontrolpros",
           "retailer_name": "eBay - pestcontrolpros",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1396.87,
+          "status": "included",
+          "reason": "included",
+          "price": 79.95,
           "offer_url": "https://www.ebay.com/itm/155308495541?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqFS9B55AK4VPbZnIDO7kFHd_Xj0JS1nOa5c4By94L3ZLuwTT8Kprw"
         },
         {
@@ -14671,8 +14672,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 23,
-      "not_included_sources": 11,
+      "included_sources": 26,
+      "not_included_sources": 8,
       "invalid_sources": 1
     },
     {
@@ -14857,9 +14858,9 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
-          "price": 11016.02,
-          "offer_url": "https://www.ebay.com/itm/234918368338?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqMOkUu5pDPfWqIxrthGlLRxXmjz_qHVQPnXZwkhyZwd_gUG0HXz7w"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://veseris.com/zylam-liquid-systemic-insecticide?srsltid=AfmBOoqyLupoArWaX7IbMDA82j1YqpgvrbBM4o0y6oK5kv2zscSIc9_eGTY",
@@ -14876,9 +14877,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2963.03,
+          "status": "included",
+          "reason": "included",
+          "price": 175.21,
           "offer_url": "https://www.ebay.com/itm/334772686744?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooy7vLU5oOpEMmk4wSt8q-yObHGpYj468pZweMpWoZWFE403jCxfxA"
         },
         {
@@ -14902,8 +14903,8 @@
           "offer_url": "https://homeandgardensupply.com/products/zylam-liquid-systemic-insecticide?variant=41650803507287&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorYpN5rnOFurCLKZPFac-oCiRjWJQ1lS0kMhlVhShzn2bVQs1Rha3M"
         }
       ],
-      "included_sources": 13,
-      "not_included_sources": 9,
+      "included_sources": 14,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -15108,8 +15109,8 @@
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 10.99,
+          "reason": "below $10.00 minimum for this category",
+          "price": 9.99,
           "offer_url": "https://www.solutionsstores.com/avid-0-15-ec-miticide?sku=SYNG42&srsltid=AfmBOoqNiGGIjZvvAlOB62Gay3n8M5wViC3u11AuN9oKIq8IMtBQQI9yTPI"
         },
         {
@@ -15338,9 +15339,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 6907.59,
+          "status": "included",
+          "reason": "included",
+          "price": 408.46,
           "offer_url": "https://www.ebay.com/itm/334772695632?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo0oVWLCrZJVh8AQqkVG0PgwTcDQdrgzCDX5DhjwhauGnthK-MowrE"
         },
         {
@@ -15364,8 +15365,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-gallon?currency=USD&country=US&variant=43994441515194&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=bdfd13ec1dea&srsltid=AfmBOoqiND5Ih2rL9nzJAtjKoFPEqhH4uHphfpEKAkskENosawwIvwciXDA"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 3,
+      "included_sources": 6,
+      "not_included_sources": 2,
       "invalid_sources": 4
     },
     {
@@ -15461,7 +15462,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
-          "price": 7569.33,
+          "price": 447.59,
           "offer_url": "https://www.ebay.com/itm/116724444198?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqwjYG-9X3YRZksZmBprutDzwZ8A_S4I2msqAWzoWM2OoDsM4dzk4s"
         },
         {
@@ -15601,9 +15602,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/forbid-4f-insecticide-miticide-8-oz?variant=12533998649444"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.sunspotsupply.com/products/forbid-4f-ornamental-insecticide-miticide-8-oz-bottle?variant=43994299138234",
@@ -16001,9 +16002,9 @@
           "retailer": "ebay-moohydroponics",
           "retailer_name": "eBay - moohydroponics",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 2874.08,
+          "status": "included",
+          "reason": "included",
+          "price": 169.95,
           "offer_url": "https://www.ebay.com/itm/256861533511?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOornmiNSiC-4CqbfMorT3BrZ3O4Mt9OZLPfmXsKYES6LpydT-4zwxpc"
         },
         {
@@ -16031,9 +16032,9 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 3126.05,
+          "status": "included",
+          "reason": "included",
+          "price": 184.85,
           "offer_url": "https://www.ebay.com/itm/231588875586?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqk30PPcjJYET4J3bweTIWBFUzrodEWVgVowqN23rPNO8q8BK4ica4"
         },
         {
@@ -16077,8 +16078,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 6,
+      "included_sources": 14,
+      "not_included_sources": 4,
       "invalid_sources": 2
     },
     {
@@ -16092,9 +16093,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 4649.76,
+          "status": "included",
+          "reason": "included",
+          "price": 274.95,
           "offer_url": "https://www.ebay.com/itm/335754982770"
         },
         {
@@ -16124,7 +16125,7 @@
           "manual_verified": true,
           "status": "not_included",
           "reason": "above $400.00 maximum for this product",
-          "price": 11637.85,
+          "price": 688.17,
           "offer_url": "https://www.ebay.com/itm/336502144793"
         },
         {
@@ -16193,8 +16194,8 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "above $400.00 maximum for this product",
-          "price": 4649.76,
+          "reason": "duplicate retailer product-page offer",
+          "price": 274.95,
           "offer_url": "https://www.ebay.com/itm/335754982770?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOorY3w66uWel_EkoeOM1SkIHK0Y_ROOOYysGnU1UR0zDRm6xZrwmwRQ"
         },
         {
@@ -16258,8 +16259,8 @@
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-california-p-25699.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25699&srsltid=AfmBOoqwia9nKaeSzAMcY2bxgzCThIg0wuC9QYMwKYicw4pwFeyHCrlA94s"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 6,
+      "included_sources": 12,
+      "not_included_sources": 5,
       "invalid_sources": 0
     },
     {
@@ -16525,7 +16526,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16565,7 +16566,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16575,7 +16576,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         }
@@ -17174,9 +17175,9 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
-          "price": 1097.21,
+          "status": "included",
+          "reason": "included",
+          "price": 64.88,
           "offer_url": "https://www.ebay.com/itm/236362202521"
         },
         {
@@ -17200,8 +17201,8 @@
           "offer_url": "https://andersonslawn.com/products/dirt-booster-plus?variant=48239409823990"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 1,
+      "included_sources": 7,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -18798,7 +18799,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -18809,7 +18810,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 1690.28,
+          "price": 99.95,
           "offer_url": "https://www.ebay.com/itm/285868654283"
         },
         {
@@ -18909,9 +18910,9 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "package size is ambiguous for a size-sensitive product",
+          "price": 331.25,
+          "offer_url": "https://www.siteone.com/en/510894b-lesco-carbonpro-l-w-mobilex-biostimulant-liquid-soil-amendment/p/1061272"
         },
         {
           "url": "https://seedbarn.com/products/lesco-carbonpro-l-mobilex-liquid-biological-soil-amendment-0-75cfe-kelp-humates-1-gallon?variant=47135745573082",
@@ -19212,7 +19213,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19344,9 +19345,9 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "above $200.00 maximum for this product",
+          "price": 1782.97,
+          "offer_url": "https://www.siteone.com/en/510112b-lesco-25-0-6-50-polyplus-opti-5-fe-mop-turfgrass-granular-fertilizer/p/1059877"
         }
       ],
       "included_sources": 1,
@@ -19395,8 +19396,8 @@
           "retailer": "coredepots",
           "retailer_name": "Coredepots",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 40.83,
           "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle"
         },
@@ -19425,8 +19426,8 @@
           "retailer": "coredepots",
           "retailer_name": "Coredepots",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 40.83,
           "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle?variant=50489188712612"
         },
@@ -20668,10 +20669,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 681.95,
+          "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
           "url": "https://www.comintec.com/listing/lesco-50lb-push-spreader",
@@ -20754,8 +20755,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 5,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 3
     },
     {
@@ -22952,10 +22953,10 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 175.0,
+          "offer_url": "https://www.ebay.com/itm/306868754155"
         },
         {
           "url": "https://www.tractorsupply.com/tsc/product/chapin-80-lb-residential-salt-spreader-8201a-1584574",
@@ -23008,8 +23009,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 2,
       "invalid_sources": 4
     },
     {
