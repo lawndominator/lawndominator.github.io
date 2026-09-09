@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-09T01:14:50.849847+00:00",
+  "generated_at": "2026-09-09T02:08:31.047625+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
+  "current_alert_count": 1,
   "alert_count": 11,
   "alerts": [
+    {
+      "id": "dimension-2ew:major_price_drop:solutions-pest-lawn:137.50:85.94",
+      "type": "major_price_drop",
+      "product_id": 2,
+      "product_slug": "dimension-2ew",
+      "product_name": "Dimension 2EW (Dithiopyr)",
+      "category": "pre-emergent",
+      "old_price": 137.5,
+      "new_price": 85.94,
+      "drop_percent": 37.5,
+      "old_retailer": "Solutions Pest & Lawn",
+      "new_retailer": "Solutions Pest & Lawn",
+      "url": "https://www.solutionsstores.com/dimension-herbicide?sku=DOW22&srsltid=AfmBOoomMUv96tSA1Jfgii0jU7RcLKhJKIuBv93RrSTLHbwuZnl_UcD7TNk",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-09-09T02:08:31.047625+00:00"
+    },
     {
       "id": "encartis:major_price_drop:solutions-pest-lawn:357.00:306.99",
       "type": "major_price_drop",
@@ -39,23 +56,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-09-07T21:33:40.518484+00:00"
-    },
-    {
-      "id": "msma-target-6:major_price_drop:solutions-pest-lawn:109.00:85.94",
-      "type": "major_price_drop",
-      "product_id": 25,
-      "product_slug": "msma-target-6",
-      "product_name": "MSMA Target 6 Plus",
-      "category": "post-emergent",
-      "old_price": 109.0,
-      "new_price": 85.94,
-      "drop_percent": 21.2,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/msma-target-6-plus-herbicide?sku=MSMA1&srsltid=AfmBOoqDLUTmUznEOg-9DINHw05rj_BzEtePGF-IjHPFUPMu_YJypUTbY_A",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-09-07T17:26:36.293155+00:00"
     },
     {
       "id": "lesco-carbonpro-l:best_price_drop:seedworldusa:203.77:192.14",
