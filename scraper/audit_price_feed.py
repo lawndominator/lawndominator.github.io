@@ -10,6 +10,7 @@ commit it.
 import argparse
 import copy
 import json
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
@@ -17,6 +18,71 @@ import scraper
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# How many times remediation may exclude offers and re-audit. Each pass can only
+# remove offers, so this terminates; the cap just stops a pathological loop.
+MAX_REMEDIATION_PASSES = 5
+
+REMEDIATED_OFFER_REASON = "failed the publication audit"
+
+
+@dataclass(frozen=True)
+class OfferFinding:
+    """An audit finding scoped to exactly one offer, so it can be excluded
+    without discarding the rest of the feed."""
+
+    message: str
+    product_position: int
+    offer_index: int
+
+
+def remediate_offer_findings(
+    catalog: dict, feed: dict, alert_feed: dict
+) -> tuple[list[str], list[str]]:
+    """Exclude offers the audit rejects, then re-audit what is left.
+
+    The publish gate used to fail the whole run over any single finding, and
+    because it runs before the commit step, one bad offer out of ~1,800 froze
+    the entire feed until someone noticed. A defect in one offer is a reason to
+    drop that offer, not to stop publishing prices for every product.
+
+    This can only ever remove offers, so a systemic break still trips the
+    coverage floor (MIN_PRICED_PRODUCTS_PERCENT) and fails the run. Returns the
+    issues that remain and a log of what was excluded.
+    """
+    removed: list[str] = []
+    for _ in range(MAX_REMEDIATION_PASSES):
+        findings: list[OfferFinding] = []
+        issues = audit_feed(catalog, feed, alert_feed, findings)
+        if not findings:
+            return issues, removed
+        products = feed.get("products") or []
+        touched: set[int] = set()
+        for finding in findings:
+            if not 0 <= finding.product_position < len(products):
+                continue
+            product = products[finding.product_position]
+            offers = product.get("offers") or []
+            if not 0 <= finding.offer_index < len(offers):
+                continue
+            offer = offers[finding.offer_index]
+            if not offer.get("excluded"):
+                offer["excluded"] = True
+                offer["exclude_reason"] = REMEDIATED_OFFER_REASON
+                offer.pop("quality_verified", None)
+                removed.append(finding.message)
+            touched.add(finding.product_position)
+        if not touched:
+            # Nothing actionable: report what is left rather than spin.
+            return issues, removed
+        for position in touched:
+            product = products[position]
+            product["best_price"] = scraper.select_best_offer(
+                product,
+                product.get("offers", []),
+                require_quality_verified=True,
+            )
+    return audit_feed(catalog, feed, alert_feed), removed
 
 
 def _load(name: str) -> dict:
@@ -38,8 +104,31 @@ def _same_offer(first: Optional[dict], second: Optional[dict]) -> bool:
     )
 
 
-def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
+def audit_feed(
+    catalog: dict,
+    feed: dict,
+    alert_feed: dict,
+    offer_findings: Optional[list["OfferFinding"]] = None,
+) -> list[str]:
+    """Every reason this artifact is not safe to publish.
+
+    Pass `offer_findings` to also collect the subset that is scoped to one
+    offer. Those can be remediated by excluding the offer and publishing the
+    rest; feed- and product-level problems mean the artifact itself is wrong
+    and must keep failing the run.
+    """
     issues: list[str] = []
+
+    def flag_offer(message: str, product_position: int, offer_index: int) -> None:
+        issues.append(message)
+        if offer_findings is not None:
+            offer_findings.append(
+                OfferFinding(
+                    message=message,
+                    product_position=product_position,
+                    offer_index=offer_index,
+                )
+            )
     catalog_products = catalog.get("products") if isinstance(catalog, dict) else None
     feed_products = feed.get("products") if isinstance(feed, dict) else None
     alerts = alert_feed.get("alerts") if isinstance(alert_feed, dict) else None
@@ -63,7 +152,7 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
     displayed_count = 0
     shared_pages: dict[str, set[int]] = {}
 
-    for product in feed_products:
+    for product_position, product in enumerate(feed_products):
         try:
             product_id = int(product["id"])
         except (KeyError, TypeError, ValueError):
@@ -96,32 +185,31 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
             offer_label = f"{label} offer[{index}]"
             price = scraper._valid_price(offer)
             if offer.get("price") is not None and price is None:
-                issues.append(f"{offer_label}: price is not numeric")
+                flag_offer(f"{offer_label}: price is not numeric", product_position, index)
                 continue
             if price is None or offer.get("excluded") or offer.get("in_stock") is False:
                 continue
 
             displayed_count += 1
             if offer.get("quality_verified") is not True:
-                issues.append(
-                    f"{offer_label}: displayed price is not independently quality-verified"
-                )
+                flag_offer(
+                    f"{offer_label}: displayed price is not independently quality-verified", product_position, index)
             url = str(offer.get("url") or "")
             if not url:
-                issues.append(f"{offer_label}: priced offer has no URL")
+                flag_offer(f"{offer_label}: priced offer has no URL", product_position, index)
                 continue
             if scraper.is_insecure_retailer_url(url):
-                issues.append(f"{offer_label}: priced offer URL is not HTTPS")
+                flag_offer(f"{offer_label}: priced offer URL is not HTTPS", product_position, index)
             if scraper.is_untrusted_retailer_url(url):
-                issues.append(f"{offer_label}: untrusted retailer domain")
+                flag_offer(f"{offer_label}: untrusted retailer domain", product_position, index)
             if scraper.is_google_url(url) or scraper.is_bad_product_url(url):
-                issues.append(f"{offer_label}: URL is not a direct purchase page")
+                flag_offer(f"{offer_label}: URL is not a direct purchase page", product_position, index)
             if scraper.is_non_retail_offer(offer.get("title", ""), url):
-                issues.append(f"{offer_label}: laboratory/non-retail product")
+                flag_offer(f"{offer_label}: laboratory/non-retail product", product_position, index)
             if not scraper._matches_product(catalog_product, offer.get("title", ""), url):
-                issues.append(f"{offer_label}: offer identity does not match catalog product")
+                flag_offer(f"{offer_label}: offer identity does not match catalog product", product_position, index)
             if offer.get("last_checked") and scraper._timestamp_is_stale(str(offer["last_checked"])):
-                issues.append(f"{offer_label}: price is older than {scraper.MAX_OFFER_AGE_HOURS:g} hours")
+                flag_offer(f"{offer_label}: price is older than {scraper.MAX_OFFER_AGE_HOURS:g} hours", product_position, index)
 
             quantity = offer.get("package_quantity")
             unit_price = offer.get("price_per_unit")
@@ -136,17 +224,15 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
                 except (TypeError, ValueError):
                     package_disagrees = True
                 if package_disagrees:
-                    issues.append(
+                    flag_offer(
                         f"{offer_label}: published package {offer.get('package_label')} "
-                        f"disagrees with retailer text ({inferred_package['package_label']})"
-                    )
+                        f"disagrees with retailer text ({inferred_package['package_label']})", product_position, index)
             if (
                 scraper._is_dry_formulation(catalog_product)
                 and str(offer.get("package_unit") or "").lower() == "fl oz"
             ):
-                issues.append(
-                    f"{offer_label}: dry formulation is incorrectly measured in fluid ounces"
-                )
+                flag_offer(
+                    f"{offer_label}: dry formulation is incorrectly measured in fluid ounces", product_position, index)
             if offer.get("quality_verified") is True and not offer.get("manual_verified"):
                 peers = [
                     peer
@@ -158,18 +244,17 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
                 ]
                 entities = {scraper._retailer_entity(peer) for peer in peers}
                 if len(entities) < 2:
-                    issues.append(
-                        f"{offer_label}: price is not independently corroborated"
-                    )
+                    flag_offer(
+                        f"{offer_label}: price is not independently corroborated", product_position, index)
             if quantity is not None or unit_price is not None:
                 try:
                     expected = price / float(quantity)
                     reported = float(unit_price)
                     tolerance = max(0.02, expected * 0.03)
                     if not offer.get("package_unit") or abs(expected - reported) > tolerance:
-                        issues.append(f"{offer_label}: package unit-price arithmetic is inconsistent")
+                        flag_offer(f"{offer_label}: package unit-price arithmetic is inconsistent", product_position, index)
                 except (TypeError, ValueError, ZeroDivisionError):
-                    issues.append(f"{offer_label}: package/unit-price metadata is incomplete")
+                    flag_offer(f"{offer_label}: package/unit-price metadata is incomplete", product_position, index)
 
             page = scraper._product_page_key(url)
             offer_key = (
@@ -179,7 +264,7 @@ def audit_feed(catalog: dict, feed: dict, alert_feed: dict) -> list[str]:
                 round(price, 2),
             )
             if page and offer.get("in_stock") is not False and offer_key in page_offer_keys:
-                issues.append(f"{offer_label}: duplicate product-page offer")
+                flag_offer(f"{offer_label}: duplicate product-page offer", product_position, index)
             if offer.get("in_stock") is not False:
                 page_offer_keys.add(offer_key)
             if page:
@@ -365,17 +450,46 @@ def main() -> int:
         action="store_true",
         help="Apply the same fail-closed filters to the checked-in feed before auditing it.",
     )
+    parser.add_argument(
+        "--remediate",
+        action="store_true",
+        help=(
+            "Exclude offers that fail the audit and publish the rest, instead of "
+            "failing the whole run over one bad offer. Feed- and product-level "
+            "problems, and the coverage floor, still fail."
+        ),
+    )
     args = parser.parse_args()
     if args.sanitize:
         sanitize_existing_feed()
 
-    issues = audit_feed(_load("products.json"), _load("prices.json"), _load("price-alerts.json"))
+    catalog = _load("products.json")
+    feed = _load("prices.json")
+    alert_feed = _load("price-alerts.json")
+
+    removed: list[str] = []
+    if args.remediate:
+        issues, removed = remediate_offer_findings(catalog, feed, alert_feed)
+        if removed:
+            # Print rather than swallow: these are real quality problems, and a
+            # silent drop is how a feed rots without anyone noticing.
+            print(f"excluded {len(removed)} offer(s) that failed the audit:")
+            for message in removed:
+                print(f"- {message}")
+            (ROOT / "prices.json").write_text(
+                json.dumps(feed, indent=2) + "\n", encoding="utf-8"
+            )
+    else:
+        issues = audit_feed(catalog, feed, alert_feed)
+
     if issues:
         print(f"price feed audit failed with {len(issues)} issue(s):")
         for issue in issues:
             print(f"- {issue}")
         return 1
-    print("price feed audit passed: every displayed price, source, package, best offer, and alert is safe")
+    print(
+        "price feed audit passed: every displayed price, source, package, best offer, and alert is safe"
+    )
     return 0
 
 
