@@ -1,28 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-15T18:38:55.486765+00:00",
+  "generated_at": "2026-09-15T21:10:37.661049+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 9,
+  "alert_count": 8,
   "alerts": [
-    {
-      "id": "dimension-2ew:major_price_drop:solutions-pest-lawn:137.50:81.24",
-      "type": "major_price_drop",
-      "product_id": 2,
-      "product_slug": "dimension-2ew",
-      "product_name": "Dimension 2EW (Dithiopyr)",
-      "category": "pre-emergent",
-      "old_price": 137.5,
-      "new_price": 81.24,
-      "drop_percent": 40.9,
-      "old_retailer": "Solutions Pest & Lawn",
-      "new_retailer": "Solutions Pest & Lawn",
-      "url": "https://www.solutionsstores.com/dimension-herbicide?sku=DOW22&srsltid=AfmBOoomMUv96tSA1Jfgii0jU7RcLKhJKIuBv93RrSTLHbwuZnl_UcD7TNk",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-09-15T16:35:51.097980+00:00"
-    },
     {
       "id": "msma-target-6:best_price_drop:solutions-pest-lawn:85.94:81.24",
       "type": "best_price_drop",
