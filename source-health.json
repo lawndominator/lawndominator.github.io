@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-21T18:03:08.000188+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-09-21T20:07:23.067323+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2277,
     "manual_verified_sources": 566,
-    "included_sources": 1055,
-    "not_included_sources": 615,
+    "included_sources": 1056,
+    "not_included_sources": 614,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 1055,
+    "included": 1056,
     "product_identity_mismatch": 594,
-    "no_extracted_offer": 186,
+    "no_extracted_offer": 194,
     "duplicate retailer product-page offer": 174,
-    "not_checked_saved_source_limit": 104,
+    "not_checked_saved_source_limit": 96,
     "price source is not independently quality-verified": 48,
     "implausible same-package price outlier": 27,
     "package size is ambiguous for a size-sensitive product": 22,
@@ -25,7 +25,7 @@
     "non_retail_or_laboratory_product": 6,
     "ambiguous product URL shared across catalog products": 5,
     "untrusted_retailer_domain": 5,
-    "no_price": 4,
+    "no_price": 3,
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2
   },
@@ -5591,7 +5591,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8392,9 +8392,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 52.99,
           "offer_url": "https://www.amazon.com/dp/B0BJ3662N7?tag=lawndominator-20"
         },
         {
@@ -8568,8 +8568,8 @@
           "offer_url": "https://vxb.com/products/pramaxis-mec-plant-growth-regulator-for-lawn-8-oz?variant=48610072985835&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop18nYma0xOfuAX1xT0sLhq2eINbpnNhZ2zae5H0MPjvBMMvIC3lf8"
         }
       ],
-      "included_sources": 13,
-      "not_included_sources": 7,
+      "included_sources": 14,
+      "not_included_sources": 6,
       "invalid_sources": 2
     },
     {
@@ -10140,7 +10140,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 87.04,
+          "price": 87.91,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -11829,7 +11829,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.14,
+          "price": 70.9,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -12029,7 +12029,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12059,7 +12059,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16525,7 +16525,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16565,7 +16565,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16575,7 +16575,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -18798,7 +18798,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19212,7 +19212,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
