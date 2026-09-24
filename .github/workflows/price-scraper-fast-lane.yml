@@ -61,7 +61,7 @@ jobs:
         run: python scraper/scraper.py --fast-lane
 
       - name: Audit every published price and alert
-        run: python scraper/audit_price_feed.py
+        run: python scraper/audit_price_feed.py --remediate
 
       - name: Commit updated prices.json
         run: |

@@ -1,0 +1,28 @@
+name: Published Feed Health
+
+# The scraper being green does not mean customers are getting prices. On
+# 2026-09-03 the publish gate failed on a single offer, nothing was committed
+# for 13 hours, and the website (which fails closed on unverified prices)
+# served 0 priced offers out of 1,814 available upstream. Nothing alerted; a
+# customer noticed. This watches the URL the app actually fetches.
+
+on:
+  schedule:
+    # Every 4 hours, offset off the hour to dodge GitHub's busiest minutes.
+    - cron: "43 1,5,9,13,17,21 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-published-feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check the feed the app receives
+        run: python scraper/check_published_feed.py
