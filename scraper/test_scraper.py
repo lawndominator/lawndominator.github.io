@@ -2500,6 +2500,52 @@ class PublicationAuditAgreementTest(unittest.TestCase):
     two independent retailers among the *verified* offers, not merely among the
     surviving ones."""
 
+    def test_publish_rechecks_outliers_after_unverified_offers_are_removed(self):
+        import copy
+        import json
+        import tempfile
+        from pathlib import Path
+
+        import audit_price_feed
+
+        product = {
+            "id": 19,
+            "slug": "speedzone-southern",
+            "name": "SpeedZone Southern EW",
+            "category": "herbicide",
+            "offers": [
+                {
+                    "retailer": f"store-{index}",
+                    "url": f"https://store-{index}.example/speedzone-southern",
+                    "title": "SpeedZone Southern EW - 1 gallon",
+                    "price": price,
+                    "manual_verified": price == 299.98,
+                }
+                for index, price in enumerate([99.0, 115.94, 119.99, 134.0, 284.0, 299.98])
+            ],
+        }
+        catalog = {"products": [product]}
+        with tempfile.TemporaryDirectory() as directory:
+            paths = [Path(directory) / name for name in (
+                "prices.json", "price-alerts.json", "source-health.json", "product_sources.json"
+            )]
+            # Exercise the real checkpoint/final publication path, including
+            # its repeated quality passes and generated alert feed.
+            scraper._publish_feed(
+                [copy.deepcopy(product)], {}, {"products": {}}, catalog, [],
+                *paths, emit_alerts=True,
+            )
+            feed, alerts = [json.loads(path.read_text()) for path in paths[:2]]
+
+        self.assertEqual(audit_price_feed.audit_feed(catalog, feed, alerts), [])
+        published = feed["products"][0]
+        self.assertEqual(
+            [offer["price"] for offer in published["offers"] if not offer.get("excluded")],
+            [99.0, 115.94, 119.99, 134.0],
+        )
+        self.assertEqual(published["best_price"]["price"], 99.0)
+
+
     def _product(self):
         return {
             "id": 58,

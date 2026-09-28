@@ -1700,17 +1700,28 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
 
     _exclude_cross_product_url_conflicts(results)
     for product in results:
-        for offer in product.get("offers", []):
-            if _eligible_priced_offer(product, offer):
+        # Removing unverified offers can change both the package median and
+        # the independent retailers left to corroborate a price. Recheck the
+        # final display cohort, as the publication audit does. Exclusions only
+        # accumulate inside this loop, so it stops after at most one pass per
+        # offer plus a final stable pass. Do not revive unverified offers here.
+        while True:
+            eligible = [
+                offer for offer in product.get("offers", [])
+                if _eligible_priced_offer(product, offer)
+            ]
+            for offer in eligible:
                 offer["quality_verified"] = False
-        _exclude_duplicate_and_outlier_offers(product)
-        for offer in product.get("offers", []):
-            if (
-                _eligible_priced_offer(product, offer)
-                and offer.get("quality_verified") is not True
-            ):
-                offer["excluded"] = True
-                offer["exclude_reason"] = UNVERIFIED_OFFER_REASON
+            _exclude_duplicate_and_outlier_offers(product)
+            for offer in eligible:
+                if (
+                    _eligible_priced_offer(product, offer)
+                    and offer.get("quality_verified") is not True
+                ):
+                    offer["excluded"] = True
+                    offer["exclude_reason"] = UNVERIFIED_OFFER_REASON
+            if all(_eligible_priced_offer(product, offer) for offer in eligible):
+                break
         product["best_price"] = select_best_offer(
             product,
             product.get("offers", []),
