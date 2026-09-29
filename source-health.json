@@ -1,26 +1,26 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-29T02:07:47.326054+00:00",
+  "generated_at": "2026-09-29T08:29:17.841424+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2277,
     "manual_verified_sources": 566,
-    "included_sources": 1047,
-    "not_included_sources": 623,
+    "included_sources": 1038,
+    "not_included_sources": 632,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 1047,
+    "included": 1038,
     "product_identity_mismatch": 594,
-    "no_extracted_offer": 202,
+    "no_extracted_offer": 203,
     "duplicate retailer product-page offer": 172,
     "not_checked_saved_source_limit": 96,
     "price source is not independently quality-verified": 45,
     "implausible same-package price outlier": 28,
     "package size is ambiguous for a size-sensitive product": 21,
     "below $10.00 minimum for this category": 16,
+    "price older than 48 hours": 16,
     "above $500.00 maximum for this product": 9,
-    "price older than 48 hours": 8,
     "above $300.00 maximum for this product": 7,
     "above $400.00 maximum for this product": 7,
     "non_retail_or_laboratory_product": 6,
@@ -10142,7 +10142,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 87.04,
+          "price": 87.91,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -11929,8 +11929,8 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOoo2bWaCSZXTbhp98Q7g3ahe1Cy4eWfEtHfd_ibiLNdaMLCVnA09610"
         },
@@ -12005,8 +12005,8 @@
           "offer_url": "https://www.walmart.com/ip/Acelepryn-Insecticide-For-Turf-Lawn-Landscape-Pests-4-fl-oz-Bottle-by-Syngenta/2667143658?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=630148BD3E7345D5808867105D2815EA&conditionGroupCode=1&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 10,
+      "included_sources": 10,
+      "not_included_sources": 11,
       "invalid_sources": 1
     },
     {
@@ -19479,14 +19479,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 30.0,
           "offer_url": "https://ryanknorrlawncare.com/product/greenorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19500,14 +19500,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 43.99,
           "offer_url": "https://ryanknorrlawncare.com/product/ammonium-sulfate"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19584,14 +19584,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 27.0,
           "offer_url": "https://ryanknorrlawncare.com/product/sloworr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19647,14 +19647,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 44.0,
           "offer_url": "https://ryanknorrlawncare.com/product/phiteorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19710,14 +19710,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.0,
           "offer_url": "https://ryanknorrlawncare.com/product/strongorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19731,14 +19731,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.0,
           "offer_url": "https://ryanknorrlawncare.com/product/soakorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -19752,14 +19752,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 79.0,
           "offer_url": "https://ryanknorrlawncare.com/product/phixorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -20932,14 +20932,14 @@
           "retailer": "andersons",
           "retailer_name": "The Andersons",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 419.88,
-          "offer_url": "https://andersonslawn.com/products/pacer-pro"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 1,
+      "included_sources": 0,
+      "not_included_sources": 2,
       "invalid_sources": 6
     },
     {
