@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-29T01:20:19.784708+00:00",
+  "generated_at": "2026-09-29T02:07:47.326054+00:00",
   "product_count": 155,
   "products": [
     {
@@ -332,7 +332,7 @@
           "in_stock": true,
           "title": "Prodiamine 65 Wdg 5lbs Pre-emergent Grass Broadleaf Weeds ( Generic Barricade )",
           "image": "https://m.media-amazon.com/images/I/41YJyZ6Jo5L._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:01.022919+00:00",
+          "last_checked": "2026-09-29T02:07:29.168440+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 5.0,
           "package_unit": "lb",
@@ -357,7 +357,7 @@
         "price_per_unit": 13.3,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:01.024092+00:00",
+      "updated_at": "2026-09-29T02:07:29.169526+00:00",
       "needs_size_review": true
     },
     {
@@ -387,7 +387,8 @@
           "package_unit": "fl oz",
           "package_label": "64 fl oz",
           "price_per_unit": 2.58,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "seedworldusa",
@@ -780,7 +781,7 @@
           "in_stock": true,
           "title": "Dimension 2EW Herbicide - 0.5 Half Gallon (64 ounces)",
           "image": "https://m.media-amazon.com/images/I/41Tp97DV1QL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:01.462321+00:00",
+          "last_checked": "2026-09-29T02:07:29.698610+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 64.0,
           "package_unit": "fl oz",
@@ -805,7 +806,7 @@
         "price_per_unit": 2.15,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:01.463480+00:00",
+      "updated_at": "2026-09-29T02:07:29.699690+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -2049,7 +2050,8 @@
           "package_unit": "lb",
           "package_label": "1 lb",
           "price_per_unit": 195.88,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "seed-barn",
@@ -2161,7 +2163,7 @@
           "in_stock": true,
           "title": "Gallery 75 DF Specialty Herbicide",
           "image": "https://m.media-amazon.com/images/I/31tjv7V2XwL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:01.830287+00:00",
+          "last_checked": "2026-09-29T02:07:30.050652+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 1.0,
           "package_unit": "lb",
@@ -2187,7 +2189,7 @@
         "price_per_unit": 143.85,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:01.831586+00:00"
+      "updated_at": "2026-09-29T02:07:30.051871+00:00"
     },
     {
       "id": 7,
@@ -3096,7 +3098,7 @@
           "in_stock": true,
           "title": "BASF Pendulum Aqua Cap 2.5 gal Pre-Emergent Herbicide",
           "image": "https://m.media-amazon.com/images/I/41Mq5n9HQoL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:02.271060+00:00",
+          "last_checked": "2026-09-29T02:07:30.696011+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 320.0,
           "package_unit": "fl oz",
@@ -3122,7 +3124,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:02.272353+00:00",
+      "updated_at": "2026-09-29T02:07:30.697192+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -3684,7 +3686,8 @@
           "package_unit": "oz",
           "package_label": "10 oz",
           "price_per_unit": 17.8,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "walmart-dibbs-farms",
@@ -3729,7 +3732,7 @@
           "in_stock": true,
           "title": "Prime Source Celsius WG - 0.226 oz Easy Mix Packet-Post Emerge Weed Control",
           "image": "https://m.media-amazon.com/images/I/417ZdPB54iL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:02.765851+00:00",
+          "last_checked": "2026-09-29T02:07:31.219937+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 0.226,
           "package_unit": "oz",
@@ -3755,7 +3758,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:02.767242+00:00",
+      "updated_at": "2026-09-29T02:07:31.221292+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -4508,7 +4511,7 @@
           "in_stock": true,
           "title": "BASF Drive XLR8 Crabgrass Killer for Lawn & Turf, Post Emergent Grassy & Broadleaf Weed Control, Active Ingredient Quinclorac, 30 Day Residual, Herbicide, Concentrate 64 Ounce",
           "image": "https://m.media-amazon.com/images/I/41sfNjwp+0L._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:03.244731+00:00",
+          "last_checked": "2026-09-29T02:07:31.789749+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 64.0,
           "package_unit": "fl oz",
@@ -4533,7 +4536,7 @@
         "price_per_unit": 0.72,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:03.246198+00:00"
+      "updated_at": "2026-09-29T02:07:31.791120+00:00"
     },
     {
       "id": 18,
@@ -4933,7 +4936,7 @@
           "in_stock": true,
           "title": "Sedgehammer Plus Turf Solution, 13.5 Grams, Nutsedge Control",
           "image": "https://m.media-amazon.com/images/I/51w5G6PEFFL._SL500_.jpg",
-          "last_checked": "2026-09-29T00:21:34.561306+00:00",
+          "last_checked": "2026-09-29T02:07:32.125394+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 13.5,
           "package_unit": "g",
@@ -4959,7 +4962,7 @@
         "price_per_unit": 0.94,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T00:21:34.562343+00:00",
+      "updated_at": "2026-09-29T02:07:32.126550+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -5283,7 +5286,7 @@
           "in_stock": true,
           "title": "PBI Gordon SpeedZone Southern EW Herbicide -128oz",
           "image": "https://m.media-amazon.com/images/I/410xRm9ZjCL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:04.200009+00:00",
+          "last_checked": "2026-09-29T02:07:32.467200+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 128.0,
           "package_unit": "fl oz",
@@ -5309,7 +5312,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:04.201156+00:00",
+      "updated_at": "2026-09-29T02:07:32.468222+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -5678,7 +5681,7 @@
           "in_stock": true,
           "title": "Tenacity Turf Herbicide - 8 ounces (Packaging may vary)",
           "image": "https://m.media-amazon.com/images/I/317yLa2eqXL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:04.421470+00:00",
+          "last_checked": "2026-09-29T02:07:32.905564+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 8.0,
           "package_unit": "fl oz",
@@ -5703,7 +5706,7 @@
         "price_per_unit": 6.31,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:04.422623+00:00",
+      "updated_at": "2026-09-29T02:07:32.906682+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -7801,7 +7804,8 @@
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
           "price_per_unit": 12.19,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "veseris",
@@ -8102,7 +8106,8 @@
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
           "price_per_unit": 13.12,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "master-landscape-supply",
@@ -9330,7 +9335,7 @@
           "in_stock": true,
           "title": "Primo Maxx Plant Growth Regulator",
           "image": "https://m.media-amazon.com/images/I/41CDlacKWbL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:05.166606+00:00",
+          "last_checked": "2026-09-29T02:07:34.145194+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 4.0,
           "package_unit": "fl oz",
@@ -9355,7 +9360,7 @@
         "price_per_unit": 8.25,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:05.167980+00:00",
+      "updated_at": "2026-09-29T02:07:34.146460+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -10263,7 +10268,7 @@
           "in_stock": true,
           "title": "Atticus Pramaxis MEC Plant Growth Regulator (8oz) - Trinexapac-Ethyl 11.3%",
           "image": "https://m.media-amazon.com/images/I/31LO0XxOhDL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:05.487785+00:00",
+          "last_checked": "2026-09-29T02:07:34.410007+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 8.0,
           "package_unit": "fl oz",
@@ -10289,7 +10294,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:05.488996+00:00",
+      "updated_at": "2026-09-29T02:07:34.411073+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -11655,7 +11660,8 @@
           "package_unit": "lb",
           "package_label": "2 lb",
           "price_per_unit": 86.79,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "forestry-distributing",
@@ -12260,7 +12266,7 @@
           "in_stock": true,
           "title": "Cleary 3336F Fungicide - qt",
           "image": "https://m.media-amazon.com/images/I/31iDPCQprlL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:05.948327+00:00",
+          "last_checked": "2026-09-29T02:07:34.946451+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 32.0,
           "package_unit": "fl oz",
@@ -12285,7 +12291,7 @@
         "price_per_unit": 1.38,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:05.949316+00:00",
+      "updated_at": "2026-09-29T02:07:34.948715+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -14527,17 +14533,17 @@
         {
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "price": 68.14,
+          "price": 70.9,
           "url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20",
           "in_stock": true,
           "title": "Acelepryn SC Insecticide - 4 Ounce",
           "image": "https://m.media-amazon.com/images/I/411wp9Vad4L._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:06.366868+00:00",
+          "last_checked": "2026-09-29T02:07:35.340079+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 4.0,
           "package_unit": "fl oz",
           "package_label": "4 fl oz",
-          "price_per_unit": 17.04,
+          "price_per_unit": 17.73,
           "quality_verified": true
         }
       ],
@@ -14558,7 +14564,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:06.367985+00:00",
+      "updated_at": "2026-09-29T02:07:35.341116+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -16497,7 +16503,7 @@
           "in_stock": true,
           "title": "Talstar PL Granules Insecticide",
           "image": "https://m.media-amazon.com/images/I/41+Dba3f-uL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:06.798330+00:00",
+          "last_checked": "2026-09-29T02:07:35.660789+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 25.0,
           "package_unit": "lb",
@@ -16522,7 +16528,7 @@
         "price_per_unit": 1.13,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:06.799695+00:00"
+      "updated_at": "2026-09-29T02:07:35.661991+00:00"
     },
     {
       "id": 76,
@@ -18533,7 +18539,7 @@
           "in_stock": true,
           "title": "Syngenta - 25837 - Avid 0.15EC - Miticide/Insecticide - 8 oz",
           "image": "https://m.media-amazon.com/images/I/41pLhyacFkL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:07.037198+00:00",
+          "last_checked": "2026-09-29T02:07:36.006438+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 8.0,
           "package_unit": "fl oz",
@@ -18550,7 +18556,7 @@
         "in_stock": true,
         "title": "Syngenta - 25837 - Avid 0.15EC - Miticide/Insecticide - 8 oz",
         "image": "https://m.media-amazon.com/images/I/41pLhyacFkL._SL500_.jpg",
-        "last_checked": "2026-09-29T01:20:07.037198+00:00",
+        "last_checked": "2026-09-29T02:07:36.006438+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 8.0,
         "package_unit": "fl oz",
@@ -18558,7 +18564,7 @@
         "price_per_unit": 8.8,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:07.038471+00:00",
+      "updated_at": "2026-09-29T02:07:36.007527+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -20503,7 +20509,7 @@
           "in_stock": true,
           "title": "Feature, 1 Bag",
           "image": "https://m.media-amazon.com/images/I/416ds+bA+zL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:07.670541+00:00",
+          "last_checked": "2026-09-29T02:07:36.457724+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 2.5,
           "package_unit": "lb",
@@ -20515,7 +20521,7 @@
         }
       ],
       "best_price": null,
-      "updated_at": "2026-09-29T01:20:07.671455+00:00"
+      "updated_at": "2026-09-29T02:07:36.458430+00:00"
     },
     {
       "id": 130,
@@ -20670,7 +20676,7 @@
           "in_stock": true,
           "title": "The Andersons PGF Balanced 10-10-10 Fertilizer with Micronutrients and 2% Iron (5,000 sq ft)",
           "image": "https://m.media-amazon.com/images/I/41WDCcdToGL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:08.006662+00:00",
+          "last_checked": "2026-09-29T02:07:36.728576+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 18.0,
           "package_unit": "lb",
@@ -20696,7 +20702,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:08.007731+00:00"
+      "updated_at": "2026-09-29T02:07:36.729537+00:00"
     },
     {
       "id": 132,
@@ -20735,7 +20741,7 @@
           "in_stock": true,
           "title": "The Andersons Green Shocker 7-1-2 Fertilizer with Humic DG 16 lb Bag",
           "image": "https://m.media-amazon.com/images/I/41ERN0jkvcL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:08.327700+00:00",
+          "last_checked": "2026-09-29T02:07:37.058417+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 16.0,
           "package_unit": "lb",
@@ -20763,7 +20769,7 @@
         "price_per_unit": 4.11,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:08.328765+00:00",
+      "updated_at": "2026-09-29T02:07:37.059254+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -20985,7 +20991,7 @@
           "in_stock": true,
           "title": "The Andersons HumiChar Organic Soil Amendment with Humic Acid and Biochar (40 lb)",
           "image": "https://m.media-amazon.com/images/I/41lDT4Elm1L._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:08.676264+00:00",
+          "last_checked": "2026-09-29T02:07:37.690295+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 40.0,
           "package_unit": "lb",
@@ -21013,7 +21019,7 @@
         "price_per_unit": 4.99,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:08.677212+00:00",
+      "updated_at": "2026-09-29T02:07:37.691066+00:00",
       "has_multiple_sizes": true,
       "needs_size_review": true
     },
@@ -21249,7 +21255,7 @@
           "in_stock": true,
           "title": "The Andersons Dirt Booster Plus All-Natural Super Compost Starter and Soil Amendment - 20 lb.",
           "image": "https://m.media-amazon.com/images/I/41lVTLW93EL._SL500_.jpg",
-          "last_checked": "2026-09-29T00:21:39.890621+00:00",
+          "last_checked": "2026-09-29T02:07:37.969300+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 20.0,
           "package_unit": "lb",
@@ -21275,7 +21281,7 @@
         "price_per_unit": 3.24,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T00:21:39.891711+00:00"
+      "updated_at": "2026-09-29T02:07:37.970188+00:00"
     },
     {
       "id": 138,
@@ -21488,12 +21494,12 @@
           "in_stock": null,
           "title": "16-0-0 Double Dark Granular Lawn Fertilizer with 6% Iron and Bio-Nite\u2122",
           "image": "https://m.media-amazon.com/images/I/41BnZHwsQhL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:09.192280+00:00",
+          "last_checked": "2026-09-29T02:07:38.202419+00:00",
           "source": "amazon_creators_api"
         }
       ],
       "best_price": null,
-      "updated_at": "2026-09-29T01:20:09.193203+00:00",
+      "updated_at": "2026-09-29T02:07:38.203042+00:00",
       "needs_size_review": true
     },
     {
@@ -22269,7 +22275,7 @@
           "in_stock": true,
           "title": "Simple Lawn Solutions - Liquid Iron Fertilizer Darker Green - Chelated Micronutrients - Concentrated Green Booster for Turf Grass, Indoor Plants and Outdoor Garden (32 Ounce)",
           "image": "https://m.media-amazon.com/images/I/51OgZKkTOPL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:09.672381+00:00",
+          "last_checked": "2026-09-29T02:07:38.737842+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 32.0,
           "package_unit": "fl oz",
@@ -22297,7 +22303,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:09.673487+00:00",
+      "updated_at": "2026-09-29T02:07:38.738675+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -22483,7 +22489,7 @@
           "in_stock": false,
           "title": "Mirimichi Green CarbonizPN Soil Enhancer 40LB",
           "image": "https://m.media-amazon.com/images/I/41git-h21ML._SL500_.jpg",
-          "last_checked": "2026-09-29T00:21:40.899972+00:00",
+          "last_checked": "2026-09-29T02:07:38.976837+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 40.0,
           "package_unit": "lb",
@@ -22507,7 +22513,7 @@
         "price_per_unit": 0.95,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T00:21:40.900960+00:00"
+      "updated_at": "2026-09-29T02:07:38.977542+00:00"
     },
     {
       "id": 206,
@@ -22862,7 +22868,7 @@
           "in_stock": true,
           "title": "Southern Ag Chelated Liquid Iron, 1 Gallon",
           "image": "https://m.media-amazon.com/images/I/51iUWaunsXL._SL500_.jpg",
-          "last_checked": "2026-09-28T22:11:45.332263+00:00",
+          "last_checked": "2026-09-29T02:07:39.299930+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 128.0,
           "package_unit": "fl oz",
@@ -22888,7 +22894,7 @@
         "price_per_unit": 0.45,
         "quality_verified": true
       },
-      "updated_at": "2026-09-28T22:11:45.333159+00:00",
+      "updated_at": "2026-09-29T02:07:39.300828+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -23247,7 +23253,7 @@
           "in_stock": true,
           "title": "Southern Ag Sulfate of Potash 0-0-50, 5 LB",
           "image": "https://m.media-amazon.com/images/I/5188ys5WebL._SL500_.jpg",
-          "last_checked": "2026-09-29T01:20:10.873969+00:00",
+          "last_checked": "2026-09-29T02:07:39.607291+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 5.0,
           "package_unit": "lb",
@@ -23264,7 +23270,7 @@
         "in_stock": true,
         "title": "Southern Ag Sulfate of Potash 0-0-50, 5 LB",
         "image": "https://m.media-amazon.com/images/I/5188ys5WebL._SL500_.jpg",
-        "last_checked": "2026-09-29T01:20:10.873969+00:00",
+        "last_checked": "2026-09-29T02:07:39.607291+00:00",
         "source": "amazon_creators_api",
         "package_quantity": 5.0,
         "package_unit": "lb",
@@ -23272,7 +23278,7 @@
         "price_per_unit": 3.62,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:10.875003+00:00",
+      "updated_at": "2026-09-29T02:07:39.608181+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -23414,7 +23420,7 @@
           "in_stock": false,
           "title": "Lesco CarbonPro-G Soil Optimizer w/Mirimichi Green SGN 100 40 lb. (QGCY)",
           "image": "https://m.media-amazon.com/images/I/41+7N1yeGoL._SL500_.jpg",
-          "last_checked": "2026-09-29T00:21:41.801456+00:00",
+          "last_checked": "2026-09-29T02:07:39.896521+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 40.0,
           "package_unit": "lb",
@@ -23438,7 +23444,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T00:21:41.802177+00:00"
+      "updated_at": "2026-09-29T02:07:39.897279+00:00"
     },
     {
       "id": 222,
@@ -24216,7 +24222,8 @@
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
           "price_per_unit": 1.28,
-          "quality_verified": true
+          "excluded": true,
+          "exclude_reason": "price older than 48 hours"
         },
         {
           "retailer": "lawnsynergy",
@@ -25012,7 +25019,7 @@
           "in_stock": true,
           "title": "Hi-Yield (32340) Iron sulfate, 4 lbs",
           "image": "https://m.media-amazon.com/images/I/41FlhIsE2yL._SL500_.jpg",
-          "last_checked": "2026-09-29T00:21:42.377316+00:00",
+          "last_checked": "2026-09-29T02:07:40.400694+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 4.0,
           "package_unit": "lb",
@@ -25038,7 +25045,7 @@
         "price_per_unit": 2.0,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T00:21:42.378368+00:00"
+      "updated_at": "2026-09-29T02:07:40.401545+00:00"
     },
     {
       "id": 300,
@@ -25053,7 +25060,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-09-28T22:11:46.705549+00:00"
+      "updated_at": "2026-09-29T02:07:40.650033+00:00"
     },
     {
       "id": 301,
@@ -25093,7 +25100,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:12.257852+00:00"
+      "updated_at": "2026-09-29T02:07:40.822881+00:00"
     },
     {
       "id": 303,
@@ -25107,7 +25114,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-09-28T18:36:03.998249+00:00"
+      "updated_at": "2026-09-29T02:07:41.031280+00:00"
     },
     {
       "id": 304,
@@ -25121,7 +25128,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-09-29T01:20:12.785883+00:00"
+      "updated_at": "2026-09-29T02:07:41.273173+00:00"
     },
     {
       "id": 305,
@@ -25652,7 +25659,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:14.748441+00:00"
+      "updated_at": "2026-09-29T02:07:43.105013+00:00"
     },
     {
       "id": 319,
@@ -25692,7 +25699,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-28T22:11:49.574515+00:00"
+      "updated_at": "2026-09-29T02:07:43.465730+00:00"
     },
     {
       "id": 320,
@@ -25745,7 +25752,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-28T22:11:49.953933+00:00"
+      "updated_at": "2026-09-29T02:07:43.729431+00:00"
     },
     {
       "id": 321,
@@ -25759,7 +25766,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-09-29T01:20:15.609957+00:00"
+      "updated_at": "2026-09-29T02:07:43.992224+00:00"
     },
     {
       "id": 322,
@@ -25773,7 +25780,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-09-29T01:20:15.898029+00:00"
+      "updated_at": "2026-09-29T02:07:44.174924+00:00"
     },
     {
       "id": 323,
@@ -26157,7 +26164,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:16.938343+00:00"
+      "updated_at": "2026-09-29T02:07:45.044211+00:00"
     },
     {
       "id": 331,
@@ -26316,7 +26323,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-28T22:11:51.794578+00:00"
+      "updated_at": "2026-09-29T02:07:45.509795+00:00"
     },
     {
       "id": 333,
@@ -26396,7 +26403,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-29T01:20:17.808919+00:00"
+      "updated_at": "2026-09-29T02:07:45.772701+00:00"
     },
     {
       "id": 335,
@@ -26494,7 +26501,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-09-28T19:32:40.989400+00:00"
+      "updated_at": "2026-09-29T02:07:46.345067+00:00"
     },
     {
       "id": 349,
