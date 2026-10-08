@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-08T01:18:37.442054+00:00",
+  "generated_at": "2026-10-08T02:08:19.412521+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2277,
@@ -15,7 +15,7 @@
     "no_extracted_offer": 218,
     "duplicate retailer product-page offer": 171,
     "not_checked_saved_source_limit": 97,
-    "price source is not independently quality-verified": 46,
+    "price source is not independently quality-verified": 45,
     "implausible same-package price outlier": 27,
     "package size is ambiguous for a size-sensitive product": 21,
     "below $10.00 minimum for this category": 13,
@@ -28,7 +28,8 @@
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2,
     "no_price": 2,
-    "above $200.00 maximum for this product": 1
+    "above $200.00 maximum for this product": 1,
+    "price older than 48 hours": 1
   },
   "products": [
     {
@@ -3345,7 +3346,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.07,
+          "price": 54.57,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -11830,7 +11831,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.17,
+          "price": 68.33,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -13163,7 +13164,7 @@
           "retailer_name": "Chewy.com",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "reason": "price older than 48 hours",
           "price": 54.2,
           "offer_url": "https://www.chewy.com/csi-bifen-it-79-bifenthrin-farm/dp/371689?utm_source=google-product&utm_medium=organic&utm_content=CSI&srsltid=AfmBOorqi8b_McGQWCqI0hQtiMRRtIfDJY094sbD-zbbpmCjGome3VPZUYA"
         },
