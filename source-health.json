@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T09:45:13.198755+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-10-10T11:41:16.785168+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2277,
     "manual_verified_sources": 566,
-    "included_sources": 1044,
-    "not_included_sources": 626,
+    "included_sources": 1045,
+    "not_included_sources": 625,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 1044,
+    "included": 1045,
     "product_identity_mismatch": 594,
-    "no_extracted_offer": 241,
+    "no_extracted_offer": 249,
     "duplicate retailer product-page offer": 153,
-    "not_checked_saved_source_limit": 106,
+    "not_checked_saved_source_limit": 97,
     "price source is not independently quality-verified": 38,
     "package size is ambiguous for a size-sensitive product": 21,
     "below $10.00 minimum for this category": 20,
@@ -3345,7 +3345,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.67,
+          "price": 53.99,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4147,7 +4147,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 96.52,
+          "price": 102.82,
           "offer_url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20"
         },
         {
@@ -4439,7 +4439,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 63.99,
+          "price": 63.98,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -5592,7 +5592,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -7329,7 +7329,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 33.99,
+          "price": 36.48,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -10141,7 +10141,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 82.2,
+          "price": 83.02,
           "offer_url": "https://www.amazon.com/dp/B004RVNT3I?tag=lawndominator-20"
         },
         {
@@ -11830,7 +11830,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.11,
+          "price": 66.38,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -12030,7 +12030,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -12060,7 +12060,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -13475,7 +13475,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.96,
+          "price": 46.0,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -16526,7 +16526,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16566,7 +16566,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -16576,7 +16576,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -18799,7 +18799,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19213,7 +19213,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -21515,10 +21515,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 164.99,
+          "offer_url": "https://www.amazon.com/dp/B000XS3EFW?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B0FTHLK5LJ?tag=lawndominator-20",
@@ -21561,8 +21561,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 2,
-      "not_included_sources": 5,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 7
     },
     {
