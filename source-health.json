@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T19:24:35.022250+00:00",
+  "generated_at": "2026-10-12T19:27:51.338627+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2316,
     "manual_verified_sources": 610,
-    "included_sources": 1051,
-    "not_included_sources": 663,
+    "included_sources": 1055,
+    "not_included_sources": 659,
     "invalid_sources": 602
   },
   "reason_counts": {
-    "included": 1051,
+    "included": 1055,
     "product_identity_mismatch": 589,
-    "no_extracted_offer": 263,
+    "no_extracted_offer": 259,
     "duplicate retailer product-page offer": 172,
     "not_checked_saved_source_limit": 93,
     "price source is not independently quality-verified": 37,
@@ -10671,10 +10671,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 128.99,
+          "offer_url": "https://www.amazon.com/dp/B008O813R4?tag=lawndominator-20"
         },
         {
           "url": "https://www.domyown.com/daconil-ultrex-turf-care-fungicide-p-2309.html",
@@ -10917,8 +10917,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 5,
       "invalid_sources": 19
     },
     {
@@ -16829,10 +16829,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 99.88,
+          "offer_url": "https://www.amazon.com/dp/B0822WM7YH?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B07SYLCKRH",
@@ -16935,8 +16935,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 8,
+      "included_sources": 1,
+      "not_included_sources": 7,
       "invalid_sources": 3
     },
     {
@@ -20777,10 +20777,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 74.99,
+          "offer_url": "https://www.amazon.com/dp/B000BWZD0O?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B0FTHSRJ16?tag=lawndominator-20",
@@ -20863,8 +20863,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 4,
+      "included_sources": 1,
+      "not_included_sources": 3,
       "invalid_sources": 7
     },
     {
@@ -23020,10 +23020,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 250.33,
+          "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B002U0KDHI?tag=lawndominator-20",
@@ -23076,8 +23076,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 6,
+      "included_sources": 1,
+      "not_included_sources": 5,
       "invalid_sources": 7
     },
     {
