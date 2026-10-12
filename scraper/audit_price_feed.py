@@ -320,19 +320,10 @@ def sanitize_existing_feed() -> None:
             if key in catalog_product:
                 product[key] = copy.deepcopy(catalog_product[key])
 
-        # Older published offers predate the explicit manual_verified field.
-        # Recover it from the authoritative source registry by canonical page,
-        # rather than trusting the offer's descriptive `source` string.
-        source_entries = source_map.get("products", {}).get(str(product["id"]), [])
-        manually_verified_pages = {
-            scraper._product_page_key(str(source.get("url") or ""))
-            for source in source_entries
-            if source.get("manual_verified")
-        }
-        for offer in product.get("offers", []):
-            if scraper._product_page_key(str(offer.get("url") or "")) in manually_verified_pages:
-                offer["manual_verified"] = True
-
+    # Older published offers predate the explicit manual_verified field.
+    # Recover it from the authoritative source registry by canonical page,
+    # with the scraper's own function so the two can never disagree.
+    scraper.apply_manual_verified_sources(products, source_map)
     scraper.apply_offer_package_metadata(products)
     scraper.apply_offer_quality_filters(products)
     scraper.sanitize_equipment_results(products)

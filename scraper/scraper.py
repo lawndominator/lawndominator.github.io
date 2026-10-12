@@ -152,8 +152,16 @@ PRODUCT_IDENTITY_RULES = {
         "forbidden": (r"\bsertay\b",),
     },
     20: {
-        "required": (r"\bmanor[\s_-]*60[\s_-]*df\b",),
-        "forbidden": (r"\bmsm[\s_-]*turf\b", r"\bamtide\b", r"\brometsol\b"),
+        # Nufarm's own retail pages say "Manor Herbicide" / "Manor Selective
+        # Herbicide" without "60DF"; generics stay out via the forbidden list
+        # and the compare-to/generic-for marker in _matches_product.
+        "required": (
+            r"\bmanor[\s_-]*60[\s_-]*df\b",
+            r"\bmanor[\s_-]*(?:selective[\s_-]*)?herbicide\b",
+        ),
+        "forbidden": (
+            r"\bmsm\b", r"\bamtide\b", r"\brometsol\b", r"\bgeneric\b",
+        ),
     },
     21: {
         "required": (r"\btenacity\b",),
@@ -273,8 +281,14 @@ PRODUCT_IDENTITY_RULES = {
         "forbidden": (),
     },
     195: {
-        "required": (r"\bhydretain[\s_-]*(?:granular|granules)\b",),
-        "forbidden": (r"\bready[\s_-]*to[\s_-]*spray\b", r"\brts\b", r"\bhose[\s_-]*end\b"),
+        # Retail titles put words between the brand and the form ("Hydretain
+        # ES Plus Granular OC", "Hydretain Root Zone Moisture Manager
+        # Granular"); a short gap is allowed, liquids stay forbidden below.
+        "required": (r"\bhydretain\b[^|]{0,60}?\b(?:granular|granules)\b",),
+        "forbidden": (
+            r"\bready[\s_-]*to[\s_-]*spray\b", r"\brts\b", r"\bhose[\s_-]*end\b",
+            r"\bliquid\b", r"\bconcentrate\b", r"\bfl\.?[\s_-]*oz\b",
+        ),
     },
     206: {
         "required": (r"\bturf[\s_-]*grass[\s_-]*pro[\s_-]*blade[\s_-]*iron\b",),
@@ -1632,6 +1646,30 @@ def _exclude_duplicate_and_outlier_offers(product: dict) -> None:
             offer["quality_verified"] = True
 
 
+def apply_manual_verified_sources(results: list[dict], source_map: dict) -> None:
+    """Mark offers whose product page a person verified in product_sources.json.
+
+    Saved-page offers already inherit the flag while scraping, but Amazon API
+    offers are built from the ASIN alone and never did, so a hand-checked
+    Amazon listing could not publish for equipment (no package size, so no
+    two-retailer corroboration). The publish audit applies this same function,
+    so the scraper and the gate share one definition of "manually verified".
+    """
+    for product in results:
+        entries = source_map.get("products", {}).get(str(product.get("id")), [])
+        verified_pages = {
+            _product_page_key(str(entry.get("url") or ""))
+            for entry in entries
+            if entry.get("manual_verified")
+        }
+        verified_pages.discard("")
+        if not verified_pages:
+            continue
+        for offer in product.get("offers", []):
+            if _product_page_key(str(offer.get("url") or "")) in verified_pages:
+                offer["manual_verified"] = True
+
+
 def apply_offer_quality_filters(results: list[dict]) -> None:
     # Quality verification is recomputed on every pass. Clear only our own
     # previous fail-closed exclusion so a newly corroborated/manual source can
@@ -1844,10 +1882,12 @@ def _publish_feed(
     publishes a truncated catalog.
     """
     results = list(results)
+    apply_manual_verified_sources(results, source_map)
     apply_offer_package_metadata(results)
     apply_offer_quality_filters(results)
     results = preserve_last_good_products(results, stale_map)
     results = merge_unprocessed_products(results, stale_map, catalog["products"])
+    apply_manual_verified_sources(results, source_map)
     apply_offer_quality_filters(results)
     sanitize_equipment_results(results)
     source_map = update_product_sources(source_map, results)
@@ -3805,6 +3845,7 @@ def run_fast_lane():
         if entry:
             results.append(entry)
 
+    apply_manual_verified_sources(results, source_map)
     apply_offer_package_metadata(results)
     apply_offer_quality_filters(results)
     sanitize_equipment_results(results)
