@@ -2629,3 +2629,153 @@ class PublicationAuditAgreementTest(unittest.TestCase):
                 "price is not independently corroborated",
             )
         self.assertTrue(audit_price_feed is not None)
+
+
+class ManualVerifiedAmazonListingTest(unittest.TestCase):
+    """An Amazon API price is trusted when its listing is one a person checked.
+
+    Equipment has no package size, so two retailers can never corroborate it,
+    and the Amazon API offer never carried the manual flag. Every Amazon
+    equipment price was therefore discarded, even for hand-picked ASINs.
+    """
+
+    def _publish(self, sources):
+        import copy
+        import json
+        import tempfile
+        from pathlib import Path
+
+        import audit_price_feed
+
+        product = {
+            "id": 300,
+            "slug": "scotts-wizz",
+            "name": "Scotts Wizz Handheld Spreader",
+            "category": "spreader-handheld",
+            "alt_names": ["Scotts Wizz 71131"],
+            "offers": [
+                {
+                    "retailer": "amazon",
+                    "retailer_name": "Amazon",
+                    "price": 39.98,
+                    "url": "https://www.amazon.com/dp/B011HY5Q1K?tag=lawndominator-20",
+                    "in_stock": True,
+                    "title": "Scotts Wizz Hand-Held Spreader",
+                    "source": "amazon_creators_api",
+                }
+            ],
+        }
+        catalog = {"products": [{k: v for k, v in product.items() if k != "offers"}]}
+        with tempfile.TemporaryDirectory() as directory:
+            paths = [Path(directory) / name for name in (
+                "prices.json", "price-alerts.json", "source-health.json", "product_sources.json"
+            )]
+            scraper._publish_feed(
+                [copy.deepcopy(product)], {}, {"products": {"300": sources}}, catalog, [],
+                *paths, emit_alerts=True,
+            )
+            feed, alerts = [json.loads(path.read_text()) for path in paths[:2]]
+        return feed["products"][0], audit_price_feed.audit_feed(catalog, feed, alerts)
+
+    def test_hand_checked_listing_publishes_the_amazon_price(self):
+        published, issues = self._publish([
+            {
+                "url": "https://www.amazon.com/dp/B011HY5Q1K",
+                "retailer": "amazon",
+                "title": "Scotts Wizz Hand-Held Spreader",
+                "manual_verified": True,
+            }
+        ])
+        self.assertEqual(issues, [])
+        shown = [offer for offer in published["offers"] if not offer.get("excluded")]
+        self.assertEqual([offer["price"] for offer in shown], [39.98])
+        self.assertTrue(shown[0]["quality_verified"])
+        self.assertEqual(published["best_price"]["price"], 39.98)
+
+    def test_unchecked_listing_stays_hidden(self):
+        published, issues = self._publish([
+            {
+                "url": "https://www.amazon.com/dp/B011HY5Q1K",
+                "retailer": "amazon",
+                "title": "Scotts Wizz Hand-Held Spreader",
+            }
+        ])
+        # The audit's catalog-coverage floor trips on this one-product catalog
+        # with nothing shown; that is the point of the test, not a defect.
+        self.assertEqual(
+            [offer for offer in published["offers"] if not offer.get("excluded")], []
+        )
+
+    def test_a_different_listing_is_not_vouched_for(self):
+        published, _ = self._publish([
+            {
+                "url": "https://www.amazon.com/dp/B0DV9W259K",
+                "retailer": "amazon",
+                "title": "Scotts Whirl Hand-Powered Spreader",
+                "manual_verified": True,
+            }
+        ])
+        self.assertEqual(
+            [offer for offer in published["offers"] if not offer.get("excluded")], []
+        )
+
+    def test_fast_lane_and_audit_use_the_same_rule(self):
+        import inspect
+
+        import audit_price_feed
+
+        self.assertIn(
+            "apply_manual_verified_sources(", inspect.getsource(scraper.run_fast_lane)
+        )
+        self.assertIn(
+            "apply_manual_verified_sources(",
+            inspect.getsource(audit_price_feed.sanitize_existing_feed),
+        )
+
+
+class ManorIdentityTest(unittest.TestCase):
+    def setUp(self):
+        self.manor = {"id": 20, "name": "Manor 60DF (Metsulfuron-Methyl)", "category": "post-emergent"}
+
+    def test_nufarm_retail_titles_match(self):
+        for title in (
+            "Manor Selective Herbicide",
+            "Manor Herbicide - 2 Oz.",
+            "Manor Herbicide Blade MetSulfuron Methyl – 2 oz",
+            "Manor 60DF",
+        ):
+            self.assertTrue(scraper._matches_product(self.manor, title), title)
+
+    def test_generics_stay_out(self):
+        for title in (
+            "MSM 60 DF (8 oz.) - Compare to Manor/Blade/Escort, Metsulfuron Methyl 60%",
+            "MSM Turf 60DF 2oz- Metsulfuron Methyl 60% Herbicide Manor DF",
+            "MSM60WDG SELECT Herbicide (generic Manor or Blade)",
+            "Quali-Pro MSM Turf Herbicide 2oz (Gen Manor/Blade) Weed Killer",
+            "Rometsol Herbicide compare to Manor Herbicide",
+            "Generic Manor Herbicide 2 oz",
+        ):
+            self.assertFalse(scraper._matches_product(self.manor, title), title)
+
+
+class HydretainGranularIdentityTest(unittest.TestCase):
+    def setUp(self):
+        self.granular = {"id": 195, "name": "Hydretain Granular Moisture Manager", "category": "moisture-manager"}
+
+    def test_retail_granular_titles_match(self):
+        for title in (
+            "Hydretain ES Plus Granular OC Moisture Manager- 15 Lbs.",
+            "Hydretain Root Zone Moisture Manager Granular - Natural Lawn Root Moisturizer - 15 lbs",
+            "Hydretain Root Zone Moisture Manager Granules 3 lb",
+            "Hydretain Granular 15 lb",
+        ):
+            self.assertTrue(scraper._matches_product(self.granular, title), title)
+
+    def test_liquids_stay_out(self):
+        for title in (
+            "Hydretain Moisture Manager - Fall Overseeding, 5,000 Sq Ft (32 oz RTS)",
+            "Hydretain Liquid Concentrate 1 gal - not granular",
+            "Hydretain Root Zone Moisture Manager 32 fl oz ready to spray",
+            "Hydretain Root Zone Moisture Manager - Drought Protection",
+        ):
+            self.assertFalse(scraper._matches_product(self.granular, title), title)
