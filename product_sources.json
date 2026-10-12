@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-12T03:21:02.648568+00:00",
+  "updated_at": "2026-10-12T19:23:11.429933+00:00",
   "products": {
     "1": [
       {
@@ -5866,6 +5866,26 @@
     ],
     "20": [
       {
+        "url": "https://www.seedworldusa.com/products/manor-herbicide-2-oz",
+        "retailer": "seedworldusa-com",
+        "retailer_name": "Seedworldusa",
+        "title": "Manor Herbicide - 2 Oz.",
+        "last_seen": "2026-10-12T19:15:29.080425+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.solutionsstores.com/manor-selective-herbicide",
+        "retailer": "solutionsstores-com",
+        "retailer_name": "Solutionsstores",
+        "title": "Manor Selective Herbicide 2 oz",
+        "last_seen": "2026-10-12T19:15:29.080143+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.ebay.com/itm/134845221641",
         "retailer": "ebay",
         "retailer_name": "eBay",
@@ -5910,9 +5930,10 @@
         "package_unit": "fl oz",
         "package_label": "8 fl oz",
         "price_per_unit": 4.71,
-        "verified": true,
-        "manual_verified": true,
-        "source_type": "product"
+        "verified": false,
+        "manual_verified": false,
+        "source_type": "product",
+        "review_note": "2026-10-12: generic Tide MSM 60 DF, not Nufarm Manor"
       },
       {
         "url": "https://www.domyown.com/amtide-msm-60-df-herbicide-p-2262.html",
@@ -5946,15 +5967,12 @@
         "url": "https://pestrong.com/product/manor-herbicide-blade-metsulfuron-methyl-2-oz/?srsltid=AfmBOorBqaERY9KdvzZlg3B3WqBFm9oUj3w_dOlDh7UWac35G2DP061rLSo",
         "retailer": "pestrong-com",
         "retailer_name": "Pestrong.com",
-        "title": "Manor Herbicide Blade MetSulfuron Methyl - 2 oz",
+        "title": "Manor Herbicide Blade MetSulfuron Methyl \u2013 2 oz",
         "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRMI6Dwpwp1pjWL17uHSvlEUbz77-xuQNVWk_ZZy0p6Eqxf5KmnvzMGMVktK9nGMcOF06bD8iaz5SeYHqRrWmco12-4cg51Gnlhe9bwGUAkbOcnORisnK5N",
         "last_seen": "2026-09-03T02:16:34.954726+00:00",
-        "price_verified": 44.95,
         "in_stock": true,
-        "package_quantity": 8.0,
-        "package_unit": "fl oz",
-        "package_label": "8 fl oz",
-        "price_per_unit": 5.62
+        "manual_verified": true,
+        "verified": true
       }
     ],
     "21": [
@@ -11232,18 +11250,45 @@
     ],
     "40": [
       {
+        "url": "https://pestcontrolsuperstore.com/products/proxy-growth-regulator",
+        "retailer": "pestcontrolsuperstore-com",
+        "retailer_name": "Pestcontrolsuperstore",
+        "title": "Proxy Growth Regulator 2.5 gal",
+        "last_seen": "2026-10-12T19:15:29.080735+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.sunspotsupply.com/products/proxy-growth-regulator-jug-2-5-gallon",
+        "retailer": "sunspotsupply-com",
+        "retailer_name": "Sunspotsupply",
+        "title": "Proxy Growth Regulator jug (2.5 gallon)",
+        "last_seen": "2026-10-12T19:15:29.080678+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.solutionsstores.com/proxy-growth-regulator",
+        "retailer": "solutionsstores-com",
+        "retailer_name": "Solutionsstores",
+        "title": "Proxy Growth Regulator 2.5 gal",
+        "last_seen": "2026-10-12T19:15:29.080493+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.domyown.com/proxy-growth-regulator-p-22835.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Proxy / Embark (Mefluidide)",
+        "title": "Proxy Growth Regulator 2.5 gal",
         "image": "https://www.domyown.com/proxy-growth-regulator-p-22835.html/22835.jpg",
         "last_seen": "2026-09-03T02:16:34.970837+00:00",
-        "price_verified": 142.86,
         "in_stock": true,
-        "package_quantity": 128.0,
-        "package_unit": "fl oz",
-        "package_label": "1 gal",
-        "price_per_unit": 1.12
+        "manual_verified": true,
+        "verified": true
       },
       {
         "url": "https://seedbarn.com/products/trin-pac-select-pgr-plant-growth-regulator-1-gal",
@@ -11278,15 +11323,12 @@
         "url": "https://www.intermountainturf.com/products/proxy-growth-regulator-jug-2-5-gallon?currency=USD&country=US&variant=45347673309322&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopYJdmC9RWudoZl8gEnRqP2oQ0S0uWr_a488w_gOPW-u0dsGHc8FXE",
         "retailer": "intermountain-turf-supply",
         "retailer_name": "Intermountain Turf Supply",
-        "title": "Proxy Professional Plant Growth Regulator 2.5 Gallon - Advanced PGR Formula - Optimized Growth & Maintenance for Turf & Ornamentals",
+        "title": "Proxy Growth Regulator jug (2.5 gallon)",
         "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRELFK1-tjkHuNbmOQEUDCRranzfNENcFKyF1AtIQoK6_4iPjyafL_Pq-0QePMddfbAKoGSa65lVPfd7yfoQ0BGK7rV7iRdazuR5BrKZYBxyhMAMZEoCiUx",
         "last_seen": "2026-09-03T02:16:34.970912+00:00",
-        "price_verified": 149.82,
         "in_stock": true,
-        "package_quantity": 128.0,
-        "package_unit": "fl oz",
-        "package_label": "1 gal",
-        "price_per_unit": 1.17
+        "manual_verified": true,
+        "verified": true
       }
     ],
     "41": [
@@ -14380,6 +14422,66 @@
       }
     ],
     "57": [
+      {
+        "url": "https://www.amazon.com/dp/B008O813R4",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Daconil Ultrex Turf Care Fungicide",
+        "last_seen": "2026-10-12T19:15:29.079957+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.domyown.com/daconil-ultrex-turf-care-fungicide-p-2309.html",
+        "retailer": "domyown-com",
+        "retailer_name": "Domyown",
+        "title": "Daconil Ultrex Turf Care Fungicide 5 lb",
+        "last_seen": "2026-10-12T19:15:29.079776+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.lawnandpestcontrolsupply.com/products/daconil-ultrex-fungicide-5-pound",
+        "retailer": "lawnandpestcontrolsupply-com",
+        "retailer_name": "Lawnandpestcontrolsupply",
+        "title": "Daconil ULTREX Fungicide (Chlorothalonil) - 5 Pound",
+        "last_seen": "2026-10-12T19:15:29.079596+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://pestrong.com/product/daconil-ultrex-turf-care-fungicide-5-lb",
+        "retailer": "pestrong-com",
+        "retailer_name": "Pestrong",
+        "title": "Daconil Ultrex Turf Care Fungicide \u2013 5 Lb",
+        "last_seen": "2026-10-12T19:15:29.079420+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.intermountainturf.com/products/daconil-ultrex-fungicide-5-lb-bag",
+        "retailer": "intermountainturf-com",
+        "retailer_name": "Intermountainturf",
+        "title": "Daconil Ultrex Fungicide bag (5 lbs)",
+        "last_seen": "2026-10-12T19:15:29.079248+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.sunspotsupply.com/products/daconil-ultrex-fungicide-5-lb-bag",
+        "retailer": "sunspotsupply-com",
+        "retailer_name": "Sunspotsupply",
+        "title": "Daconil Ultrex Fungicide bag (5 lbs)",
+        "last_seen": "2026-10-12T19:15:29.077895+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
       {
         "url": "https://www.domyown.com/garden-tech-daconil-fungicide-concentrate-p-8930.html",
         "retailer": "domyown",
@@ -22448,23 +22550,58 @@
     ],
     "116": [
       {
+        "url": "https://www.amazon.com/dp/B08GCV347N",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Aquatrols Revolution | World's Leading Soil Surfactant (2.5 Gallons)",
+        "last_seen": "2026-10-12T19:15:29.081116+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.lawnandpestcontrolsupply.com/products/aquatrols-revolution-the-worlds-leading-soil-surfactant-2-5-gallons",
+        "retailer": "lawnandpestcontrolsupply-com",
+        "retailer_name": "Lawnandpestcontrolsupply",
+        "title": "Aquatrols Revolution | The World's Leading Soil Surfactant (2.5 Gallons)",
+        "last_seen": "2026-10-12T19:15:29.080994+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.solutionsstores.com/aquatrols-revolution-soil-surfactant",
+        "retailer": "solutionsstores-com",
+        "retailer_name": "Solutionsstores",
+        "title": "Aquatrols Revolution Soil Surfactant 2.5 gal",
+        "last_seen": "2026-10-12T19:15:29.080860+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.domyown.com/aquatrols-revolution-soil-surfactant-p-10332.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Email Me When in Stock",
+        "title": "Aquatrols Revolution Soil Surfactant 2.5 gal",
         "image": "https://cdn.domyown.com/images/thumbnails/10332/10332.jpg.thumb_500x500.jpg",
         "last_seen": "2026-10-12T03:21:02.625593+00:00",
-        "price_verified": 457.5,
         "in_stock": false,
-        "package_quantity": 320.0,
-        "package_unit": "fl oz",
-        "package_label": "2.5 gal",
-        "price_per_unit": 1.43,
         "verified": true,
         "manual_verified": true
       }
     ],
     "117": [
+      {
+        "url": "https://www.amazon.com/dp/B0GJG5D1Z7",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "MycoApply Ultrafine Endo Mycorrhizal inoculant- 1lb Bag",
+        "last_seen": "2026-10-12T19:15:29.083009+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
       {
         "url": "https://www.mycorrhizalonline.com/product-page/endo-4-species-granular",
         "retailer": "mycorrhizalonline",
@@ -22521,20 +22658,55 @@
         "url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "Email Me When in Stock",
+        "title": "FeATURE 6-0-0 Water Soluble Micronutrients Fertilizer 3 lb",
         "image": "https://cdn.domyown.com/images/thumbnails/26683/26683.jpg.thumb_499x500.jpg",
         "last_seen": "2026-10-12T03:21:02.625773+00:00",
-        "price_verified": 26.17,
         "in_stock": false,
-        "package_quantity": 2.5,
-        "package_unit": "lb",
-        "package_label": "2.5 lb",
-        "price_per_unit": 10.47,
         "verified": true,
         "manual_verified": true
       }
     ],
     "130": [
+      {
+        "url": "https://www.amazon.com/dp/B0822WM7YH",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "The Andersons Professional PGF Complete 16-4-8 Fertilizer with Humic (40lb)",
+        "last_seen": "2026-10-12T19:15:29.081691+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B07SYLCKRH",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "The Andersons Professional PGF Complete 16-4-8 Fertilizer with 7% Humic DG 5,000 sq ft 18 lb",
+        "last_seen": "2026-10-12T19:15:29.081598+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.walmart.com/ip/Professional-PGF-Complete-16-4-8-Fertilizer-with-7-Humic-DG-5-000-sq-ft/15414113618",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "Professional PGF Complete 16-4-8 Fertilizer with 7% Humic DG 18 lb (5,000 sq ft)",
+        "last_seen": "2026-10-12T19:15:29.081413+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.walmart.com/ip/The-Andersons-Professional-PGF-Complete-16-4-8-Fertilizer-with-7-Humic-DG-10-000-sq-ft/1468689449",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "The Andersons Professional PGF Complete 16-4-8 Fertilizer with 7% Humic DG 40lbs. (10,000 sq ft)",
+        "last_seen": "2026-10-12T19:15:29.081232+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
       {
         "url": "https://www.domyown.com/turf-fertilizer-1648-with-fe-40-ns54-sgn135-50-lb-p-21458.html",
         "retailer": "domyown",
@@ -22607,10 +22779,9 @@
         "url": "https://andersonslawn.com/products/pgf-complete-16-4-8",
         "retailer": "andersonslawn",
         "retailer_name": "Andersonslawn",
-        "title": "PGF Complete\u2122 16-4-8\n\u2013 Andersons Lawn",
+        "title": "PGF Complete 16-4-8 18 lb",
         "image": "https://andersonslawn.com/cdn/shop/files/pgf-complete-studio_1024x1024.png?v=1746192806",
         "last_seen": "2026-09-03T02:16:35.005825+00:00",
-        "price_verified": 59.88,
         "in_stock": true,
         "verified": true,
         "manual_verified": true,
@@ -22758,6 +22929,26 @@
     ],
     "132": [
       {
+        "url": "https://www.walmart.com/ip/The-Andersons-Green-Shocker-7-1-2-Fertilizer-with-Humic-DG-16-lb-Bag/13826613918",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "The Andersons Green Shocker 7-1-2 Fertilizer with Humic DG 16 lb Bag",
+        "last_seen": "2026-10-12T19:15:29.082119+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.walmart.com/ip/The-Andersons-Green-Shocker-7-1-2-Fertilizer-with-Humic-DG-17-lb-Bag/497767014",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "The Andersons Lawn Fertilizer with Iron, Green Shocker 7-1-2, Humic DG, 17 lb Bag",
+        "last_seen": "2026-10-12T19:15:29.082031+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.walmart.com/ip/497767014",
         "retailer": "walmart",
         "retailer_name": "Walmart",
@@ -22778,10 +22969,9 @@
         "url": "https://andersonslawn.com/products/green-shocker-7-1-2",
         "retailer": "andersonslawn",
         "retailer_name": "Andersonslawn",
-        "title": "GreenShocker\u2122 7-1-2\n\u2013 Andersons Lawn",
+        "title": "The Andersons GreenShocker 7-1-2 16 lb",
         "image": "https://andersonslawn.com/cdn/shop/files/greenshocker-lawn-fertilizer-bag_1024x1024.jpg?v=1747768700",
         "last_seen": "2026-09-03T02:16:35.006356+00:00",
-        "price_verified": 59.88,
         "in_stock": false,
         "verified": true,
         "manual_verified": true,
@@ -22943,6 +23133,16 @@
     ],
     "134": [
       {
+        "url": "https://www.walmart.com/ip/The-Andersons-HumiChar-Organic-Soil-Amendment-with-Humic-Acid-and-Biochar-Covers-up-to-40-000-sq-ft-40-lb/819892152",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "The Andersons HumiChar Organic Soil Amendment with Humic Acid and Biochar - Covers up to 40,000 sq ft (40 lb)",
+        "last_seen": "2026-10-12T19:15:29.082280+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.amleo.com/humichar-trade/p/HUMCHAR",
         "retailer": "amleo",
         "retailer_name": "Amleo",
@@ -23008,10 +23208,9 @@
         "url": "https://andersonslawn.com/products/humichar",
         "retailer": "andersonslawn",
         "retailer_name": "Andersonslawn",
-        "title": "HumiChar\u2122\n\u2013 Andersons Lawn",
+        "title": "The Andersons HumiChar 12 lb",
         "image": "https://andersonslawn.com/cdn/shop/files/humichar-soil-amendment-bag_1024x1024.png?v=1747849883",
         "last_seen": "2026-09-03T02:16:35.006948+00:00",
-        "price_verified": 49.88,
         "in_stock": true,
         "verified": true,
         "manual_verified": true,
@@ -24079,6 +24278,56 @@
     ],
     "195": [
       {
+        "url": "https://www.amazon.com/dp/B07BQ93T7Y",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Hydretain Root Zone Moisture Manager Granules 3 lb",
+        "last_seen": "2026-10-12T19:15:47.103964+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.domyown.com/hydretain-es-plus-granular-oc-p-23463.html",
+        "retailer": "domyown-com",
+        "retailer_name": "Domyown",
+        "title": "Hydretain ES Plus Granular OC 15 lb",
+        "last_seen": "2026-10-12T19:15:47.103784+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://seedbarn.com/products/hydretain-moisture-manager-granules-15-lbs",
+        "retailer": "seedbarn-com",
+        "retailer_name": "Seedbarn",
+        "title": "Hydretain ES Plus Granular OC Moisture Manager- 15 Lbs.",
+        "last_seen": "2026-10-12T19:15:47.103691+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.walmart.com/ip/Hydretain-Root-Zone-Moisture-Manager-Granular-OC-15-lb/2592572424",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "Hydretain Root Zone Moisture Manager Granular - Natural Lawn Root Moisturizer - 15 lbs",
+        "last_seen": "2026-10-12T19:15:47.103131+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B01IWRI8GK",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Hydretain Granular 15 lb (HYDRETAIN GRANLR CA 15LB)",
+        "last_seen": "2026-10-12T19:15:29.082602+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.acehardware.com/departments/lawn-and-garden/lawn-care/soil-conditioners/7693005",
         "retailer": "acehardware",
         "retailer_name": "Acehardware",
@@ -24175,9 +24424,10 @@
         "package_unit": "lb",
         "package_label": "15 lb",
         "price_per_unit": 4.2,
-        "verified": true,
-        "manual_verified": true,
-        "source_type": "product"
+        "verified": false,
+        "manual_verified": false,
+        "source_type": "product",
+        "review_note": "2026-10-12: listing is the 32 fl oz liquid RTS, not the granular"
       },
       {
         "url": "https://mother-earth-gardens-webstore.myshopify.com/products/hydretain-granular-root-zone-moisture-manager-3lb?variant=45336509514030",
@@ -24379,15 +24629,10 @@
         "url": "https://www.domyown.com/turfgrasspro-blade-iron-15-p-17267.html",
         "retailer": "domyown",
         "retailer_name": "DoMyOwn",
-        "title": "TurfGrassPro Blade Iron 15 - 0 - 0",
+        "title": "TurfGrassPro Blade Iron 15-0-0 2.5 gal",
         "image": "https://www.domyown.com/turfgrasspro-blade-iron-15-p-17267.html/17267.jpg",
         "last_seen": "2026-10-12T03:21:02.630432+00:00",
-        "price_verified": 61.46,
         "in_stock": false,
-        "package_quantity": 320.0,
-        "package_unit": "fl oz",
-        "package_label": "2.5 gal",
-        "price_per_unit": 0.19,
         "verified": true,
         "manual_verified": true,
         "source_type": "product"
@@ -26106,6 +26351,16 @@
     ],
     "227": [
       {
+        "url": "https://www.siteone.com/en/510112-lesco-fertilizer-25-0-6-50-polyplus-opti45-5fe-50-lb/p/355359",
+        "retailer": "siteone-com",
+        "retailer_name": "Siteone",
+        "title": "LESCO 25-0-6 50% PolyPlus OPTI 5% Fe MOP Turfgrass Granular Fertilizer 50 lb. Bag",
+        "last_seen": "2026-10-12T19:15:29.082862+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.jerzeylawns.com/product/18395793/lesco-25-0-6-50-polyplus-opti-5-fe-granular-fertilizer-50-lb-bag",
         "retailer": "jerzeylawns",
         "retailer_name": "Jerzey Lawns",
@@ -26141,15 +26396,10 @@
         "url": "https://www.siteone.com/en/2759162-lesco-30-0-10-nos-polyplus-2fe-1mn-mop-turfgrass-granular-fertilizer-50-lb-bag/p/704777",
         "retailer": "siteone",
         "retailer_name": "Siteone",
-        "title": "LESCO 30-0-10 NOS PolyPlus 2%Fe 1%Mn MOP Turfgrass Granular Fertilizer 50 lb. Bag | SiteOne US",
+        "title": "LESCO 30-0-10 NOS PolyPlus 2%Fe 1%Mn MOP Turfgrass Granular Fertilizer 50 lb. Bag",
         "image": "https://www.siteone.com/medias/sys_master/PimProductImages/assets/ProductAssets/US/LESCO/itemImage/242629/image-thumb__242629__pdpIcon/704777-1.0c0ecaf3/704777-1.0c0ecaf3.jpg",
         "last_seen": "2026-10-12T03:21:02.634838+00:00",
-        "price_verified": 73.77,
         "in_stock": false,
-        "package_quantity": 50.0,
-        "package_unit": "lb",
-        "package_label": "50 lb",
-        "price_per_unit": 1.48,
         "verified": true,
         "manual_verified": true,
         "source_type": "product"
@@ -26583,6 +26833,16 @@
     ],
     "300": [
       {
+        "url": "https://www.walmart.com/ip/16839921025",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "Scotts Wizz Spreader for Seed, Fertilizer, Salt and Ice Melt, Holds up to 2,500 sq. ft. of Product",
+        "last_seen": "2026-10-12T19:22:32.739500+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.amazon.com/dp/B07NLR222X",
         "retailer": "amazon",
         "retailer_name": "Amazon",
@@ -26798,10 +27058,12 @@
         "url": "https://www.amazon.com/dp/B011HY5Q1K",
         "retailer": "amazon",
         "retailer_name": "Amazon",
-        "title": "Scotts Wizz Hand-Held Spreader with EdgeGuard Technology - Apply Grass Seed, Fertilizer or Weed Control Products, Battery Powered, Holds up to 2,500 sq ft of Scotts Lawn Products",
+        "title": "Scotts Wizz Hand-Held Spreader with EdgeGuard Technology, model 71131",
         "image": "https://m.media-amazon.com/images/I/41bhunjqweL._SL500_.jpg",
         "last_seen": "2026-06-30T19:46:50.597058+00:00",
-        "in_stock": true
+        "in_stock": true,
+        "manual_verified": true,
+        "verified": true
       }
     ],
     "301": [
@@ -27050,6 +27312,16 @@
     ],
     "304": [
       {
+        "url": "https://www.amazon.com/dp/B00LFWNUAO",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "Spyker HHS100 Handheld Spreader, Blue",
+        "last_seen": "2026-10-12T19:22:32.739672+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://gciturfacademy.com/products/spyker-pro-series-p20-5010-50lb-light-duty-broadcast-spreader",
         "retailer": "gci-turf",
         "retailer_name": "GCI Turf Academy",
@@ -27184,6 +27456,36 @@
       }
     ],
     "305": [
+      {
+        "url": "https://us.solo.global/product/421-s-multi-purpose-chest-mount-spreader",
+        "retailer": "us-solo-global",
+        "retailer_name": "Us",
+        "title": "Solo 421-S Multi-purpose Chest-mount Spreader",
+        "last_seen": "2026-10-12T19:22:32.740197+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.zoro.com/solo-20-lb-portable-chest-mount-spreader-421-s/i/G3958145",
+        "retailer": "zoro-com",
+        "retailer_name": "Zoro",
+        "title": "Solo 421-S 20 lb Portable Chest-Mount Spreader",
+        "last_seen": "2026-10-12T19:22:32.740086+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B000BWZD0O",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "title": "SOLO 421-S 20-Pound Capacity Portable Chest-Mount Spreader",
+        "last_seen": "2026-10-12T19:22:32.739897+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
       {
         "url": "https://www.amazon.com/dp/B0FTHSRJ16?tag=lawndominator-20",
         "retailer": "amazon",
@@ -27501,6 +27803,16 @@
     ],
     "312": [
       {
+        "url": "https://www.domyown.com/the-andersons-rotary-spreader-model-2000-sr-p-21452.html",
+        "retailer": "domyown-com",
+        "retailer_name": "Domyown",
+        "title": "The Andersons Rotary Spreader Model 2000 SR",
+        "last_seen": "2026-10-12T19:22:32.740312+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
         "retailer": "amazon",
         "retailer_name": "Amazon",
@@ -27583,14 +27895,24 @@
     ],
     "313": [
       {
+        "url": "https://www.walmart.com/ip/16711163900",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "The Andersons Pacer Pro Walk-Behind Broadcast Spreader - 80 lb Hopper Capacity",
+        "last_seen": "2026-10-12T19:22:32.740597+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
         "retailer": "amazon",
         "retailer_name": "Amazon",
-        "title": "Amazon.com : The Andersons Pacer Pro Walk-Behind Broadcast Spreader for Fertilizer, Grass Seed and Salt - 80 lb Hopper Capacity : Patio, Lawn & Garden",
-        "price_verified": 419.88,
+        "title": "The Andersons Pacer Pro Walk-Behind Broadcast Spreader - 80 lb Hopper Capacity",
         "verified": true,
         "image": null,
-        "last_seen": "2026-06-02T03:31:36.413246+00:00"
+        "last_seen": "2026-06-02T03:31:36.413246+00:00",
+        "manual_verified": true
       },
       {
         "url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20",
@@ -27656,10 +27978,9 @@
         "url": "https://andersonslawn.com/products/pacer-pro",
         "retailer": "andersons",
         "retailer_name": "The Andersons",
-        "title": "Andersons Pacer Pro Spreader",
+        "title": "The Andersons Pacer Pro Spreader 10010322",
         "image": "https://andersonslawn.com/cdn/shop/files/pacer-pro-spreader_1024x1024.png?v=1748016597",
         "last_seen": "2026-10-12T03:21:02.638806+00:00",
-        "price_verified": 419.88,
         "in_stock": true,
         "verified": true,
         "manual_verified": true,
@@ -28736,6 +29057,16 @@
     ],
     "319": [
       {
+        "url": "https://www.walmart.com/ip/21801435",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "Scotts Turf Builder EdgeGuard DLX Broadcast Spreader for Grass Seed, Fertilizer, Salt and Ice Melt",
+        "last_seen": "2026-10-12T19:22:32.740905+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.farmandfleet.com/products/710626-scotts-turf-builder-edgeguard-dlx-broadcast-spreader.html",
         "retailer": "farmandfleet",
         "retailer_name": "Farmandfleet",
@@ -28828,11 +29159,12 @@
         "url": "https://www.amazon.com/dp/B001H1EQO2",
         "retailer": "amazon",
         "retailer_name": "Amazon",
-        "title": "Scotts Turf Builder EdgeGuard DLX Broadcast Spreader for Seed, Fertilizer, Salt, Ice Melt, Holds up to 15,000 sq.ft. Product, Green",
+        "title": "Scotts Turf Builder EdgeGuard DLX Broadcast Spreader, model 76232",
         "image": "https://m.media-amazon.com/images/I/31ksUhTEIUL._SL500_.jpg",
         "last_seen": "2026-09-03T02:16:35.025028+00:00",
         "in_stock": true,
-        "verified": true
+        "verified": true,
+        "manual_verified": true
       },
       {
         "url": "https://gciturfacademy.com/products/spyker-ergo-pro-spy50l-1p-50-broadcast-spreader",
@@ -29402,6 +29734,16 @@
     ],
     "322": [
       {
+        "url": "https://www.walmart.com/ip/130-lb-Push-Spreader/22260138",
+        "retailer": "walmart-com",
+        "retailer_name": "Walmart",
+        "title": "Agri-Fab 45-0462 130 lb Push Spreader, Poly Hopper Steel Frame",
+        "last_seen": "2026-10-12T19:22:32.741252+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://www.ebay.com/p/19030320652",
         "retailer": "ebay",
         "retailer_name": "eBay",
@@ -29479,11 +29821,12 @@
         "url": "https://www.amazon.com/dp/B002U0KDH8",
         "retailer": "amazon",
         "retailer_name": "Amazon",
-        "title": "Agri-Fab 45-0462 Push Broadcast Spreader,Orange & Black,130-lb Capacity",
+        "title": "Agri-Fab 45-0462 Push Broadcast Spreader, 130-lb Capacity",
         "image": "https://m.media-amazon.com/images/I/41agrimNAuL._SL500_.jpg",
         "last_seen": "2026-09-03T02:16:35.026236+00:00",
         "in_stock": true,
-        "verified": true
+        "verified": true,
+        "manual_verified": true
       },
       {
         "url": "https://www.amazon.com/dp/B002U0KDHI?tag=lawndominator-20",
@@ -30834,6 +31177,16 @@
     "335": [],
     "344": [
       {
+        "url": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-200-1027067",
+        "retailer": "stihlusa-com",
+        "retailer_name": "Stihlusa",
+        "title": "STIHL SR 200 Gasoline Backpack Sprayer 4241-011-2602-US",
+        "last_seen": "2026-10-12T19:22:32.741354+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
+      {
         "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
         "retailer": "yard-mastery",
         "retailer_name": "Yard Mastery",
@@ -30885,6 +31238,16 @@
       }
     ],
     "345": [
+      {
+        "url": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-450-gasoline-backpack-sprayer-1027378",
+        "retailer": "stihlusa-com",
+        "retailer_name": "Stihlusa",
+        "title": "STIHL SR 450 Gasoline Backpack Sprayer",
+        "last_seen": "2026-10-12T19:22:32.741429+00:00",
+        "verified": true,
+        "manual_verified": true,
+        "source_type": "product"
+      },
       {
         "url": "https://www.sprayerdepot.com/products/solo-451-motorized-mist-blower-backpack",
         "retailer": "sprayer-depot",
