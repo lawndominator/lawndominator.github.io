@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T16:05:52.083623+00:00",
+  "generated_at": "2026-10-12T19:24:35.022250+00:00",
   "product_count": 155,
   "products": [
     {
@@ -174,7 +174,8 @@
           "package_label": "5 lb",
           "price_per_unit": 12.47,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-do-it-yourself-pest-control",
@@ -332,8 +333,9 @@
           "in_stock": true,
           "title": "Prodiamine 65 Wdg 5lbs Pre-emergent Grass Broadleaf Weeds ( Generic Barricade )",
           "image": "https://m.media-amazon.com/images/I/41YJyZ6Jo5L._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:32.152864+00:00",
+          "last_checked": "2026-10-12T19:24:15.959215+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 5.0,
           "package_unit": "lb",
           "package_label": "5 lb",
@@ -358,7 +360,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:32.153843+00:00",
+      "updated_at": "2026-10-12T19:24:15.961188+00:00",
       "needs_size_review": true
     },
     {
@@ -487,7 +489,8 @@
           "package_quantity": 64.0,
           "package_unit": "fl oz",
           "package_label": "64 fl oz",
-          "price_per_unit": 2.18
+          "price_per_unit": 2.18,
+          "manual_verified": true
         },
         {
           "retailer": "pestrong-com",
@@ -515,7 +518,7 @@
           "last_checked": "2026-10-11T21:51:59.883743+00:00",
           "source": "manual_verified_source",
           "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcROb0af3akttWguvOkurIN5cyb7goj8JzTqCG_xyq_EJfAQpq4MVKeujsD_fJ7rAQTFC2K53kVLuqk3EtYACOXqYUG0m555",
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 64.0,
           "package_unit": "fl oz",
           "package_label": "64 fl oz",
@@ -655,7 +658,8 @@
           "package_label": "64 fl oz",
           "price_per_unit": 2.55,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "seed-world",
@@ -672,7 +676,8 @@
           "package_label": "64 fl oz",
           "price_per_unit": 2.15,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-do-it-yourself-pest-control",
@@ -782,8 +787,9 @@
           "in_stock": true,
           "title": "Dimension 2EW Herbicide - 0.5 Half Gallon (64 ounces)",
           "image": "https://m.media-amazon.com/images/I/41Tp97DV1QL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:32.525429+00:00",
+          "last_checked": "2026-10-12T19:24:16.422583+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 64.0,
           "package_unit": "fl oz",
           "package_label": "64 fl oz",
@@ -808,7 +814,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:32.526282+00:00",
+      "updated_at": "2026-10-12T19:24:16.424548+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -1902,7 +1908,8 @@
           "package_label": "1 lb",
           "price_per_unit": 195.0,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawn-and-pest-control-supply",
@@ -2019,7 +2026,8 @@
           "package_label": "1 lb",
           "price_per_unit": 153.95,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "seed-world",
@@ -2147,8 +2155,9 @@
           "in_stock": true,
           "title": "Gallery 75 DF Specialty Herbicide",
           "image": "https://m.media-amazon.com/images/I/31tjv7V2XwL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:32.796619+00:00",
+          "last_checked": "2026-10-12T19:24:16.831474+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 1.0,
           "package_unit": "lb",
           "package_label": "1 lb",
@@ -2173,7 +2182,7 @@
         "price_per_unit": 143.85,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:32.797448+00:00"
+      "updated_at": "2026-10-12T19:24:16.833147+00:00"
     },
     {
       "id": 7,
@@ -2918,7 +2927,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.41,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "diy-pest-control",
@@ -3020,7 +3030,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.43,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "seed-barn",
@@ -3098,8 +3109,9 @@
           "in_stock": true,
           "title": "BASF Pendulum Aqua Cap 2.5 gal Pre-Emergent Herbicide",
           "image": "https://m.media-amazon.com/images/I/41Mq5n9HQoL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:33.225337+00:00",
+          "last_checked": "2026-10-12T19:24:17.263547+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 320.0,
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
@@ -3124,7 +3136,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:33.226310+00:00",
+      "updated_at": "2026-10-12T19:24:17.265566+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -3289,7 +3301,8 @@
           "package_label": "0.226 oz",
           "price_per_unit": 47.39,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "yard-mastery",
@@ -3306,7 +3319,8 @@
           "package_label": "0.226 oz",
           "price_per_unit": 101.73,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "home-and-garden-supply",
@@ -3355,7 +3369,8 @@
           "package_label": "0.226 oz",
           "price_per_unit": 101.73,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-boon-sales",
@@ -3389,7 +3404,8 @@
           "package_label": "0.226 oz",
           "price_per_unit": 79.42,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "golf-course-lawn-store",
@@ -3401,7 +3417,7 @@
           "last_checked": "2026-10-12T03:03:49.521316+00:00",
           "source": "manual_verified_source",
           "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQx2AfAPWizdmlM6g0XfgBIrg0kom3v7ia-dDqjv9XFO0tAyGAfOqUQF4_jBcw2bLsByidytPb5IgVr7BTPiD-TZ0NGntIO0eLP86AJLFtxJ8JUHrtBu0cVoQ",
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 0.226,
           "package_unit": "oz",
           "package_label": "0.226 oz",
@@ -3537,6 +3553,7 @@
           "package_unit": "oz",
           "package_label": "10 oz",
           "price_per_unit": 12.63,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -3549,7 +3566,7 @@
           "last_checked": "2026-10-12T03:03:49.521540+00:00",
           "source": "manual_verified_source",
           "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSFWd0NfZCfT49N2hNRPcpBTxudi7yjZFLSx3glMD5b2gJnLRS6gkwJaizYRAc9qIw-WAy__MS_swt6xIh6-Cv6Nvi06Zy3oC1Y0L4SyL_CdZl0vqcxcdS54A",
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 10.0,
           "package_unit": "oz",
           "package_label": "10 oz",
@@ -3588,7 +3605,8 @@
           "package_label": "10 oz",
           "price_per_unit": 2.0,
           "excluded": true,
-          "exclude_reason": "implausible same-package price outlier"
+          "exclude_reason": "implausible same-package price outlier",
+          "manual_verified": true
         },
         {
           "retailer": "home-and-garden-supply",
@@ -3731,8 +3749,9 @@
           "in_stock": true,
           "title": "Prime Source Celsius WG - 0.226 oz Easy Mix Packet-Post Emerge Weed Control",
           "image": "https://m.media-amazon.com/images/I/417ZdPB54iL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:33.732784+00:00",
+          "last_checked": "2026-10-12T19:24:17.644108+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 0.226,
           "package_unit": "oz",
           "package_label": "0.226 oz",
@@ -3757,7 +3776,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:33.733996+00:00",
+      "updated_at": "2026-10-12T19:24:17.646449+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -3870,7 +3889,8 @@
           "package_label": "1.25 oz",
           "price_per_unit": 111.99,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "big-irrigation",
@@ -3953,7 +3973,8 @@
           "package_label": "1.25 oz",
           "price_per_unit": 90.87,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay-its-supply",
@@ -4218,7 +4239,8 @@
           "package_label": "64 fl oz",
           "price_per_unit": 1.33,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "counciloxford",
@@ -4301,7 +4323,8 @@
           "package_label": "64 fl oz",
           "price_per_unit": 0.9,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay-seedranch",
@@ -4402,7 +4425,8 @@
           "package_label": "64 fl oz",
           "price_per_unit": 0.87,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "southern-states-cooperative",
@@ -4489,17 +4513,18 @@
         {
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "price": 54.27,
+          "price": 55.37,
           "url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20",
           "in_stock": true,
           "title": "BASF Drive XLR8 Crabgrass Killer for Lawn & Turf, Post Emergent Grassy & Broadleaf Weed Control, Active Ingredient Quinclorac, 30 Day Residual, Herbicide, Concentrate 64 Ounce",
           "image": "https://m.media-amazon.com/images/I/41sfNjwp+0L._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:34.593646+00:00",
+          "last_checked": "2026-10-12T19:24:18.020010+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 64.0,
           "package_unit": "fl oz",
           "package_label": "64 fl oz",
-          "price_per_unit": 0.85,
+          "price_per_unit": 0.87,
           "quality_verified": true
         }
       ],
@@ -4519,7 +4544,7 @@
         "price_per_unit": 0.72,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:34.594827+00:00"
+      "updated_at": "2026-10-12T19:24:18.022428+00:00"
     },
     {
       "id": 18,
@@ -4582,7 +4607,8 @@
           "package_label": "13.5 g",
           "price_per_unit": 5.93,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "solutions-pest-lawn",
@@ -4613,7 +4639,8 @@
           "package_quantity": 13.5,
           "package_unit": "g",
           "package_label": "13.5 g",
-          "price_per_unit": 1.4
+          "price_per_unit": 1.4,
+          "manual_verified": true
         },
         {
           "retailer": "diy-pest-control",
@@ -4874,6 +4901,7 @@
           "package_unit": "oz",
           "package_label": "1.33 oz",
           "price_per_unit": 60.14,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -4901,7 +4929,7 @@
           "in_stock": true,
           "title": "Sedgehammer Plus Turf Herbicide, Nutsedge Killer for Lawns, 1 Pack, 13.5g",
           "image": "https://m.media-amazon.com/images/I/51w5G6PEFFL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:34.929238+00:00",
+          "last_checked": "2026-10-12T19:24:18.420532+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 13.5,
           "package_unit": "g",
@@ -4927,7 +4955,7 @@
         "price_per_unit": 0.94,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:34.930089+00:00",
+      "updated_at": "2026-10-12T19:24:18.422362+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -5058,6 +5086,7 @@
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
           "price_per_unit": 1.72,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -5091,6 +5120,7 @@
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
           "price_per_unit": 0.71,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -5107,6 +5137,7 @@
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
           "price_per_unit": 0.94,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -5172,9 +5203,8 @@
           "package_unit": "fl oz",
           "package_label": "1 gal",
           "price_per_unit": 2.22,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "manual_verified": true,
+          "quality_verified": true
         },
         {
           "retailer": "dk-hardware",
@@ -5251,8 +5281,9 @@
           "in_stock": true,
           "title": "PBI Gordon SpeedZone Southern EW Herbicide -128oz",
           "image": "https://m.media-amazon.com/images/I/410xRm9ZjCL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:35.719139+00:00",
+          "last_checked": "2026-10-12T19:24:18.795484+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 128.0,
           "package_unit": "fl oz",
           "package_label": "1 gal",
@@ -5277,7 +5308,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:35.720093+00:00",
+      "updated_at": "2026-10-12T19:24:18.797713+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -5454,7 +5485,8 @@
           "package_quantity": 8.0,
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
-          "price_per_unit": 7.5
+          "price_per_unit": 7.5,
+          "manual_verified": true
         },
         {
           "retailer": "walmart-home-garden-supply",
@@ -5488,7 +5520,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 10.62,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "diy-pest-control",
@@ -5521,7 +5554,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 7.75,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay",
@@ -5630,8 +5664,9 @@
           "in_stock": true,
           "title": "Tenacity Turf Herbicide - 8 ounces (Packaging may vary)",
           "image": "https://m.media-amazon.com/images/I/41tEE7n3sRL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:36.113196+00:00",
+          "last_checked": "2026-10-12T19:24:19.141177+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 8.0,
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
@@ -5655,7 +5690,7 @@
         "price_per_unit": 6.31,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:36.114027+00:00",
+      "updated_at": "2026-10-12T19:24:19.143085+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -5736,7 +5771,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 6.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "solutions-pest-lawn",
@@ -6048,6 +6084,7 @@
           "package_unit": "fl oz",
           "package_label": "6 fl oz",
           "price_per_unit": 13.92,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -6063,7 +6100,8 @@
           "package_quantity": 6.0,
           "package_unit": "fl oz",
           "package_label": "6 fl oz",
-          "price_per_unit": 15.0
+          "price_per_unit": 15.0,
+          "manual_verified": true
         },
         {
           "retailer": "walmart-dibbs-farms",
@@ -6114,7 +6152,8 @@
           "package_label": "6 fl oz",
           "price_per_unit": 13.99,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "seed-barn",
@@ -6232,7 +6271,8 @@
           "package_label": "6 fl oz",
           "price_per_unit": 17.41,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawn-and-pest-control-supply",
@@ -6297,6 +6337,7 @@
         "package_unit": "fl oz",
         "package_label": "6 fl oz",
         "price_per_unit": 13.92,
+        "manual_verified": true,
         "quality_verified": true
       },
       "updated_at": "2026-10-12T03:02:19.596330+00:00",
@@ -6359,7 +6400,8 @@
           "package_quantity": 4.0,
           "package_unit": "fl oz",
           "package_label": "4 fl oz",
-          "price_per_unit": 106.08
+          "price_per_unit": 106.08,
+          "manual_verified": true
         },
         {
           "retailer": "gci-turf-academy",
@@ -6718,7 +6760,8 @@
           "package_quantity": 320.0,
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
-          "price_per_unit": 0.4
+          "price_per_unit": 0.4,
+          "manual_verified": true
         },
         {
           "retailer": "solutions-pest-lawn",
@@ -6768,7 +6811,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.39,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -7192,7 +7236,8 @@
           "package_label": "1 gal",
           "price_per_unit": 2.6,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-do-it-yourself-pest-control",
@@ -8691,7 +8736,8 @@
           "package_label": "6 oz",
           "price_per_unit": 105.0,
           "excluded": true,
-          "exclude_reason": "above $500.00 maximum for this product"
+          "exclude_reason": "above $500.00 maximum for this product",
+          "manual_verified": true
         },
         {
           "retailer": "pestrong-com",
@@ -8741,7 +8787,8 @@
           "package_label": "6 oz",
           "price_per_unit": 105.0,
           "excluded": true,
-          "exclude_reason": "above $500.00 maximum for this product"
+          "exclude_reason": "above $500.00 maximum for this product",
+          "manual_verified": true
         },
         {
           "retailer": "sunspot-supply",
@@ -8825,7 +8872,8 @@
           "package_label": "6 oz",
           "price_per_unit": 74.82,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "solutions-pest-lawn",
@@ -8842,7 +8890,8 @@
           "package_label": "6 oz",
           "price_per_unit": 72.17,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "domyown-com",
@@ -9073,7 +9122,8 @@
           "package_label": "4 fl oz",
           "price_per_unit": 8.49,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-home-garden-supply",
@@ -9107,7 +9157,8 @@
           "package_label": "4 fl oz",
           "price_per_unit": 9.99,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "home-and-garden-supply",
@@ -9251,8 +9302,9 @@
           "in_stock": true,
           "title": "Primo Maxx Plant Growth Regulator",
           "image": "https://m.media-amazon.com/images/I/41CDlacKWbL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:36.907882+00:00",
+          "last_checked": "2026-10-12T19:24:20.113408+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 4.0,
           "package_unit": "fl oz",
           "package_label": "4 fl oz",
@@ -9276,7 +9328,7 @@
         "price_per_unit": 8.25,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:36.909083+00:00",
+      "updated_at": "2026-10-12T19:24:20.115505+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -9423,7 +9475,8 @@
           "package_label": "1 gal",
           "price_per_unit": 1.07,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "pestrong-com",
@@ -9837,12 +9890,27 @@
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
           "price_per_unit": 0.47,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "manual_verified": true,
+          "quality_verified": true
         }
       ],
-      "best_price": null,
+      "best_price": {
+        "retailer": "intermountain-turf-supply",
+        "retailer_name": "Intermountain Turf Supply",
+        "price": 149.82,
+        "url": "https://www.intermountainturf.com/products/proxy-growth-regulator-jug-2-5-gallon?currency=USD&country=US&variant=45347673309322&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopYJdmC9RWudoZl8gEnRqP2oQ0S0uWr_a488w_gOPW-u0dsGHc8FXE",
+        "in_stock": true,
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRELFK1-tjkHuNbmOQEUDCRranzfNENcFKyF1AtIQoK6_4iPjyafL_Pq-0QePMddfbAKoGSa65lVPfd7yfoQ0BGK7rV7iRdazuR5BrKZYBxyhMAMZEoCiUx",
+        "last_checked": "2026-10-12T02:38:28.079087+00:00",
+        "source": "saved_product_source",
+        "title": "Proxy Professional Plant Growth Regulator 2.5 Gallon - Advanced PGR Formula - Optimized Growth & Maintenance for Turf & Ornamentals",
+        "package_quantity": 320.0,
+        "package_unit": "fl oz",
+        "package_label": "2.5 gal",
+        "price_per_unit": 0.47,
+        "manual_verified": true,
+        "quality_verified": true
+      },
       "updated_at": "2026-10-12T02:38:30.580011+00:00"
     },
     {
@@ -9956,7 +10024,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 5.67,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "intermountainturf",
@@ -9973,7 +10042,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 5.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "domyown-com",
@@ -10105,7 +10175,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 6.11,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "sunspot-supply",
@@ -10122,7 +10193,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 5.67,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay-its-supply",
@@ -10156,7 +10228,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 5.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "vxb-com-bearings",
@@ -10184,8 +10257,9 @@
           "in_stock": true,
           "title": "Atticus Pramaxis MEC Plant Growth Regulator (8oz) - Trinexapac-Ethyl 11.3%",
           "image": "https://m.media-amazon.com/images/I/31LO0XxOhDL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:37.220686+00:00",
+          "last_checked": "2026-10-12T19:24:20.401151+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 8.0,
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
@@ -10210,7 +10284,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:37.221570+00:00",
+      "updated_at": "2026-10-12T19:24:20.402814+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -11049,7 +11123,8 @@
           "package_quantity": 30.0,
           "package_unit": "lb",
           "package_label": "30 lb",
-          "price_per_unit": 2.96
+          "price_per_unit": 2.96,
+          "manual_verified": true
         },
         {
           "retailer": "golf-course-lawn-store",
@@ -12180,7 +12255,7 @@
           "in_stock": true,
           "title": "Cleary 3336F Fungicide - qt",
           "image": "https://m.media-amazon.com/images/I/31iDPCQprlL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:37.550898+00:00",
+          "last_checked": "2026-10-12T19:24:20.757364+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 32.0,
           "package_unit": "fl oz",
@@ -12205,7 +12280,7 @@
         "price_per_unit": 1.38,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:37.551797+00:00",
+      "updated_at": "2026-10-12T19:24:20.759044+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -13068,7 +13143,8 @@
           "package_quantity": 8.0,
           "package_unit": "oz",
           "package_label": "8 oz",
-          "price_per_unit": 26.9
+          "price_per_unit": 26.9,
+          "manual_verified": true
         },
         {
           "retailer": "seed-barn",
@@ -13744,7 +13820,8 @@
           "package_label": "22 oz",
           "price_per_unit": 16.34,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "forestry-distributing",
@@ -13859,7 +13936,8 @@
           "package_label": "22 oz",
           "price_per_unit": 16.34,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "seed-world",
@@ -14304,7 +14382,8 @@
           "package_label": "4 fl oz",
           "price_per_unit": 21.68,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "growcycle",
@@ -14372,7 +14451,8 @@
           "package_label": "4 fl oz",
           "price_per_unit": 31.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawnsynergy-com",
@@ -14448,8 +14528,9 @@
           "in_stock": true,
           "title": "Acelepryn SC Insecticide - 4 Ounce",
           "image": "https://m.media-amazon.com/images/I/411wp9Vad4L._SL500_.jpg",
-          "last_checked": "2026-10-12T14:02:51.888879+00:00",
+          "last_checked": "2026-10-12T19:24:21.511722+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 4.0,
           "package_unit": "fl oz",
           "package_label": "4 fl oz",
@@ -14474,7 +14555,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T14:02:51.889876+00:00",
+      "updated_at": "2026-10-12T19:24:21.513679+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -14571,7 +14652,8 @@
           "package_label": "25 lb",
           "price_per_unit": 5.1,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "golfcourselawn",
@@ -14588,7 +14670,8 @@
           "package_label": "25 lb",
           "price_per_unit": 6.24,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawnsynergy-com",
@@ -14605,7 +14688,8 @@
           "package_label": "25 lb",
           "price_per_unit": 5.2,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay",
@@ -15112,7 +15196,8 @@
           "package_quantity": 30.0,
           "package_unit": "lb",
           "package_label": "30 lb",
-          "price_per_unit": 3.23
+          "price_per_unit": 3.23,
+          "manual_verified": true
         },
         {
           "retailer": "ebay-solutionspestandlawn",
@@ -15552,7 +15637,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 0.75,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "diy-pest-control",
@@ -15647,7 +15733,8 @@
           "package_quantity": 32.0,
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
-          "price_per_unit": 1.22
+          "price_per_unit": 1.22,
+          "manual_verified": true
         },
         {
           "retailer": "ebay-usa-supply",
@@ -15873,7 +15960,8 @@
           "package_quantity": 128.0,
           "package_unit": "fl oz",
           "package_label": "1 gal",
-          "price_per_unit": 0.41
+          "price_per_unit": 0.41,
+          "manual_verified": true
         },
         {
           "retailer": "southern-states-cooperative",
@@ -16353,7 +16441,7 @@
           "in_stock": true,
           "title": "Talstar PL Granules Insecticide",
           "image": "https://m.media-amazon.com/images/I/41+Dba3f-uL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:38.129615+00:00",
+          "last_checked": "2026-10-12T19:24:21.858373+00:00",
           "source": "amazon_creators_api",
           "package_quantity": 25.0,
           "package_unit": "lb",
@@ -16378,7 +16466,7 @@
         "price_per_unit": 1.13,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:38.130944+00:00"
+      "updated_at": "2026-10-12T19:24:21.860479+00:00"
     },
     {
       "id": 76,
@@ -17520,7 +17608,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 1.98,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "walmart-do-it-yourself-pest-control",
@@ -18179,6 +18268,7 @@
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
           "price_per_unit": 8.96,
+          "manual_verified": true,
           "quality_verified": true
         },
         {
@@ -18210,7 +18300,8 @@
           "package_quantity": 8.0,
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
-          "price_per_unit": 11.63
+          "price_per_unit": 11.63,
+          "manual_verified": true
         },
         {
           "retailer": "home-and-garden-supply",
@@ -18227,7 +18318,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 12.0,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "hydrobuilder-com",
@@ -18326,6 +18418,7 @@
           "package_unit": "fl oz",
           "package_label": "8 fl oz",
           "price_per_unit": 8.8,
+          "manual_verified": true,
           "quality_verified": true
         }
       ],
@@ -18343,6 +18436,7 @@
         "package_unit": "fl oz",
         "package_label": "8 fl oz",
         "price_per_unit": 8.8,
+        "manual_verified": true,
         "quality_verified": true
       },
       "updated_at": "2026-10-12T16:05:38.515771+00:00",
@@ -18409,7 +18503,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 10.91,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "intermountain-turf-supply",
@@ -18442,7 +18537,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 10.91,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "ebay-its-supply",
@@ -19139,7 +19235,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 42.5,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "forestry-distributing",
@@ -19613,7 +19710,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 29.38,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "forestry-distributing",
@@ -19647,7 +19745,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 28.56,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "cannavista",
@@ -19697,7 +19796,8 @@
           "package_label": "8 fl oz",
           "price_per_unit": 29.38,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "martin-s-produce-supplies",
@@ -20113,8 +20213,9 @@
           "in_stock": true,
           "title": "Hydretain Moisture Manager - Fall Overseeding, 5,000 Sq Ft (32 oz RTS)",
           "image": "https://m.media-amazon.com/images/I/41-UxaYLReL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:39.477018+00:00",
+          "last_checked": "2026-10-12T19:24:22.548798+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 32.0,
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
@@ -20139,7 +20240,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:39.478012+00:00"
+      "updated_at": "2026-10-12T19:24:22.550687+00:00"
     },
     {
       "id": 116,
@@ -20274,19 +20375,34 @@
           "in_stock": true,
           "title": "Feature, 1 Bag",
           "image": "https://m.media-amazon.com/images/I/416ds+bA+zL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:39.949064+00:00",
+          "last_checked": "2026-10-12T19:24:22.879330+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 2.5,
           "package_unit": "lb",
           "package_label": "2.5 lb",
           "price_per_unit": 12.0,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "quality_verified": true
         }
       ],
-      "best_price": null,
-      "updated_at": "2026-10-12T16:05:39.949625+00:00"
+      "best_price": {
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "price": 30.0,
+        "url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20",
+        "in_stock": true,
+        "title": "Feature, 1 Bag",
+        "image": "https://m.media-amazon.com/images/I/416ds+bA+zL._SL500_.jpg",
+        "last_checked": "2026-10-12T19:24:22.879330+00:00",
+        "source": "amazon_creators_api",
+        "manual_verified": true,
+        "package_quantity": 2.5,
+        "package_unit": "lb",
+        "package_label": "2.5 lb",
+        "price_per_unit": 12.0,
+        "quality_verified": true
+      },
+      "updated_at": "2026-10-12T19:24:22.881412+00:00"
     },
     {
       "id": 130,
@@ -20427,7 +20543,7 @@
           "last_checked": "2026-10-12T03:16:14.563997+00:00",
           "source": "manual_verified_source",
           "image": "https://andersonslawn.com/cdn/shop/files/pgf-balanced-studio_1024x1024.png?v=1746215108",
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 18.0,
           "package_unit": "lb",
           "package_label": "18 lb",
@@ -20441,8 +20557,9 @@
           "in_stock": true,
           "title": "The Andersons PGF Balanced 10-10-10 Fertilizer with Micronutrients and 2% Iron (5,000 sq ft)",
           "image": "https://m.media-amazon.com/images/I/41WDCcdToGL._SL500_.jpg",
-          "last_checked": "2026-10-12T14:02:53.776338+00:00",
+          "last_checked": "2026-10-12T19:24:23.674503+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 18.0,
           "package_unit": "lb",
           "package_label": "18 lb",
@@ -20467,7 +20584,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T14:02:53.777047+00:00"
+      "updated_at": "2026-10-12T19:24:23.676030+00:00"
     },
     {
       "id": 132,
@@ -20506,35 +20623,34 @@
           "in_stock": true,
           "title": "The Andersons Green Shocker 7-1-2 Fertilizer with Humic DG 16 lb Bag",
           "image": "https://m.media-amazon.com/images/I/41ERN0jkvcL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:40.865494+00:00",
+          "last_checked": "2026-10-12T19:24:24.090489+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 16.0,
           "package_unit": "lb",
           "package_label": "16 lb",
           "price_per_unit": 3.74,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "quality_verified": true
         }
       ],
       "best_price": {
-        "retailer": "walmart",
-        "retailer_name": "Walmart",
-        "price": 69.88,
-        "url": "https://www.walmart.com/ip/497767014",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "price": 59.88,
+        "url": "https://www.amazon.com/dp/B09B2LTT3K?tag=lawndominator-20",
         "in_stock": true,
-        "title": "The Andersons Lawn Fertilizer with Iron, Green Shocker 7-1-2, Humic DG, 17 lb Bag for Yard - Walmart.com",
-        "last_checked": "2026-10-12T03:16:14.564164+00:00",
-        "source": "manual_verified_source",
-        "image": null,
+        "title": "The Andersons Green Shocker 7-1-2 Fertilizer with Humic DG 16 lb Bag",
+        "image": "https://m.media-amazon.com/images/I/41ERN0jkvcL._SL500_.jpg",
+        "last_checked": "2026-10-12T19:24:24.090489+00:00",
+        "source": "amazon_creators_api",
         "manual_verified": true,
-        "package_quantity": 17.0,
+        "package_quantity": 16.0,
         "package_unit": "lb",
-        "package_label": "17 lb",
-        "price_per_unit": 4.11,
+        "package_label": "16 lb",
+        "price_per_unit": 3.74,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:40.866394+00:00",
+      "updated_at": "2026-10-12T19:24:24.092113+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -20756,15 +20872,14 @@
           "in_stock": true,
           "title": "The Andersons HumiChar Organic Soil Amendment with Humic Acid and Biochar (40 lb)",
           "image": "https://m.media-amazon.com/images/I/41lDT4Elm1L._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:41.360343+00:00",
+          "last_checked": "2026-10-12T19:24:24.430813+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 40.0,
           "package_unit": "lb",
           "package_label": "40 lb",
           "price_per_unit": 2.62,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "quality_verified": true
         }
       ],
       "best_price": {
@@ -20784,7 +20899,7 @@
         "price_per_unit": 4.99,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:41.361038+00:00",
+      "updated_at": "2026-10-12T19:24:24.432469+00:00",
       "has_multiple_sizes": true,
       "needs_size_review": true
     },
@@ -20882,7 +20997,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.37,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -20994,7 +21110,8 @@
           "package_quantity": 20.0,
           "package_unit": "lb",
           "package_label": "20 lb",
-          "price_per_unit": 4.95
+          "price_per_unit": 4.95,
+          "manual_verified": true
         },
         {
           "retailer": "andersonslawn",
@@ -21006,7 +21123,7 @@
           "last_checked": "2026-10-12T03:16:14.565376+00:00",
           "source": "manual_verified_source",
           "image": "https://andersonslawn.com/cdn/shop/files/dirt-booster-plus-soil-amendment-bag_1024x1024.png?v=1747233543",
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 20.0,
           "package_unit": "lb",
           "package_label": "20 lb",
@@ -21020,8 +21137,9 @@
           "in_stock": true,
           "title": "The Andersons Dirt Booster Plus All-Natural Super Compost Starter and Soil Amendment - 20 lb.",
           "image": "https://m.media-amazon.com/images/I/41lVTLW93EL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:41.654387+00:00",
+          "last_checked": "2026-10-12T19:24:24.764752+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 20.0,
           "package_unit": "lb",
           "package_label": "20 lb",
@@ -21046,7 +21164,7 @@
         "price_per_unit": 3.24,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:41.654926+00:00"
+      "updated_at": "2026-10-12T19:24:24.766466+00:00"
     },
     {
       "id": 138,
@@ -21144,7 +21262,8 @@
           "package_label": "40 lb",
           "price_per_unit": 2.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -21262,7 +21381,8 @@
           "last_checked": "2026-10-12T16:05:41.892696+00:00",
           "source": "amazon_creators_api",
           "excluded": true,
-          "exclude_reason": "package size is ambiguous for a size-sensitive product"
+          "exclude_reason": "package size is ambiguous for a size-sensitive product",
+          "manual_verified": true
         }
       ],
       "best_price": null,
@@ -21438,7 +21558,8 @@
           "source": "saved_product_source",
           "title": "N-Ext 0-0-2 MicroGreene\u2122 | Micronutrient Fertilizer for Lawn Health\n \u2013 Yard Mastery",
           "excluded": true,
-          "exclude_reason": "package size is ambiguous for a size-sensitive product"
+          "exclude_reason": "package size is ambiguous for a size-sensitive product",
+          "manual_verified": true
         },
         {
           "retailer": "thelawncarenut",
@@ -21451,7 +21572,8 @@
           "source": "saved_product_source",
           "title": "[N-Ext] MicroGreene\u2122 0-0-2 - Micronutrient Biostimulant | The Lawn Care Nut\n \u2013 LawnCareNut",
           "excluded": true,
-          "exclude_reason": "package size is ambiguous for a size-sensitive product"
+          "exclude_reason": "package size is ambiguous for a size-sensitive product",
+          "manual_verified": true
         }
       ],
       "best_price": null,
@@ -21536,7 +21658,8 @@
           "package_label": "1 gal",
           "price_per_unit": 0.31,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "gciturfacademy",
@@ -21553,7 +21676,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.23,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "yardmastery",
@@ -21570,7 +21694,8 @@
           "package_label": "1 gal",
           "price_per_unit": 0.31,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -21580,15 +21705,14 @@
           "in_stock": true,
           "title": "Nitrogen Fertilizer + High Iron (6%) 7-0-0 Greene Effect by Greene County Fertilizer Deep Blue Green Color Lawn",
           "image": "https://m.media-amazon.com/images/I/51qJF537iRS._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:42.151024+00:00",
+          "last_checked": "2026-10-12T19:24:25.335928+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 256.0,
           "package_unit": "fl oz",
           "package_label": "2 gal",
           "price_per_unit": 0.3,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "quality_verified": true
         }
       ],
       "best_price": {
@@ -21608,7 +21732,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:42.151620+00:00",
+      "updated_at": "2026-10-12T19:24:25.337761+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -21754,7 +21878,8 @@
           "source": "saved_product_source",
           "title": "N-Ext RGS\u2122 | Root Growth Stimulant with Humic Acid & Sea Kelp\n \u2013 Yard Mastery",
           "excluded": true,
-          "exclude_reason": "package size is ambiguous for a size-sensitive product"
+          "exclude_reason": "package size is ambiguous for a size-sensitive product",
+          "manual_verified": true
         },
         {
           "retailer": "thelawncarenut",
@@ -21767,7 +21892,8 @@
           "source": "saved_product_source",
           "title": "[N-Ext] RGS - Root Growth Bio-Stimulant with Sea Kelp | The Lawn Care Nut\n \u2013 LawnCareNut",
           "excluded": true,
-          "exclude_reason": "package size is ambiguous for a size-sensitive product"
+          "exclude_reason": "package size is ambiguous for a size-sensitive product",
+          "manual_verified": true
         }
       ],
       "best_price": null,
@@ -21835,7 +21961,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 0.75,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -21935,7 +22062,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.31,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "simplelawnsolutions",
@@ -21952,7 +22080,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 0.78,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "simplelawnsolutions",
@@ -21969,7 +22098,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 0.75,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -22036,7 +22166,8 @@
           "package_label": "1 gal",
           "price_per_unit": 0.39,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -22046,35 +22177,34 @@
           "in_stock": true,
           "title": "Simple Lawn Solutions - Liquid Iron Fertilizer Darker Green - Chelated Micronutrients - Concentrated Green Booster for Turf Grass, Indoor Plants and Outdoor Garden (32 Ounce)",
           "image": "https://m.media-amazon.com/images/I/51OgZKkTOPL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:42.447779+00:00",
+          "last_checked": "2026-10-12T19:24:25.623619+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 32.0,
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
           "price_per_unit": 0.75,
-          "quality_verified": false,
-          "excluded": true,
-          "exclude_reason": "price source is not independently quality-verified"
+          "quality_verified": true
         }
       ],
       "best_price": {
-        "retailer": "simplelawnsolutions",
-        "retailer_name": "Simple Lawn Solutions",
-        "price": 49.99,
-        "url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
+        "price": 23.99,
+        "url": "https://www.amazon.com/dp/B08Z4DTTJR?tag=lawndominator-20",
         "in_stock": true,
-        "image": "https://simplelawnsolutions.com/cdn/shop/files/Darker_Green-1GAL-reflection.jpg?v=1756142820",
-        "last_checked": "2026-10-12T03:17:07.492169+00:00",
-        "source": "saved_product_source",
-        "title": "Darker Green Liquid Iron Micronutrient Fertilizer (1 Gallon)\n \u2013 Simple Lawn Solutions",
-        "package_quantity": 128.0,
-        "package_unit": "fl oz",
-        "package_label": "1 gal",
-        "price_per_unit": 0.39,
+        "title": "Simple Lawn Solutions - Liquid Iron Fertilizer Darker Green - Chelated Micronutrients - Concentrated Green Booster for Turf Grass, Indoor Plants and Outdoor Garden (32 Ounce)",
+        "image": "https://m.media-amazon.com/images/I/51OgZKkTOPL._SL500_.jpg",
+        "last_checked": "2026-10-12T19:24:25.623619+00:00",
+        "source": "amazon_creators_api",
         "manual_verified": true,
+        "package_quantity": 32.0,
+        "package_unit": "fl oz",
+        "package_label": "32 fl oz",
+        "price_per_unit": 0.75,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:42.448592+00:00",
+      "updated_at": "2026-10-12T19:24:25.625320+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -22151,7 +22281,23 @@
           "package_label": "3 lb",
           "price_per_unit": 7.33,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
+        },
+        {
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "price": null,
+          "url": "https://www.amazon.com/dp/B01IWRI8GK?tag=lawndominator-20",
+          "in_stock": false,
+          "title": "HYDRETAIN GRANLR CA 15LB",
+          "image": "https://m.media-amazon.com/images/I/51kCiDb+LyL._SL500_.jpg",
+          "last_checked": "2026-10-12T19:24:26.124546+00:00",
+          "source": "amazon_creators_api",
+          "manual_verified": true,
+          "package_quantity": 15.0,
+          "package_unit": "lb",
+          "package_label": "15 lb"
         }
       ],
       "best_price": {
@@ -22171,7 +22317,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T02:27:42.123176+00:00"
+      "updated_at": "2026-10-12T19:24:26.125869+00:00"
     },
     {
       "id": 199,
@@ -22266,6 +22412,7 @@
           "package_unit": "lb",
           "package_label": "40 lb",
           "price_per_unit": 2.17,
+          "manual_verified": true,
           "quality_verified": true
         }
       ],
@@ -22449,7 +22596,8 @@
           "package_label": "2.5 gal",
           "price_per_unit": 0.32,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -22617,7 +22765,8 @@
           "package_label": "16 fl oz",
           "price_per_unit": 0.94,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "tierrasupplyco",
@@ -22632,7 +22781,8 @@
           "package_quantity": 320.0,
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
-          "price_per_unit": 0.11
+          "price_per_unit": 0.11,
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -22642,8 +22792,9 @@
           "in_stock": true,
           "title": "Southern Ag Chelated Liquid Iron, 1 Gallon",
           "image": "https://m.media-amazon.com/images/I/51iUWaunsXL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:43.107984+00:00",
+          "last_checked": "2026-10-12T19:24:26.721004+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 128.0,
           "package_unit": "fl oz",
           "package_label": "1 gal",
@@ -22668,7 +22819,7 @@
         "price_per_unit": 0.45,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:43.108853+00:00",
+      "updated_at": "2026-10-12T19:24:26.722855+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -22815,7 +22966,8 @@
           "package_label": "3 lb",
           "price_per_unit": 10.12,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "nocoastturf",
@@ -23000,7 +23152,8 @@
           "package_label": "20 lb",
           "price_per_unit": 2.39,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "themillstores",
@@ -23017,7 +23170,8 @@
           "package_label": "20 lb",
           "price_per_unit": 2.1,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -23027,8 +23181,9 @@
           "in_stock": true,
           "title": "Southern Ag Sulfate of Potash 0-0-50, 5 LB",
           "image": "https://m.media-amazon.com/images/I/5188ys5WebL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:43.398612+00:00",
+          "last_checked": "2026-10-12T19:24:27.077281+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 5.0,
           "package_unit": "lb",
           "package_label": "5 lb",
@@ -23044,15 +23199,16 @@
         "in_stock": true,
         "title": "Southern Ag Sulfate of Potash 0-0-50, 5 LB",
         "image": "https://m.media-amazon.com/images/I/5188ys5WebL._SL500_.jpg",
-        "last_checked": "2026-10-12T16:05:43.398612+00:00",
+        "last_checked": "2026-10-12T19:24:27.077281+00:00",
         "source": "amazon_creators_api",
+        "manual_verified": true,
         "package_quantity": 5.0,
         "package_unit": "lb",
         "package_label": "5 lb",
         "price_per_unit": 3.62,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:43.399335+00:00",
+      "updated_at": "2026-10-12T19:24:27.079433+00:00",
       "has_multiple_sizes": true
     },
     {
@@ -23167,7 +23323,8 @@
           "package_label": "40 lb",
           "price_per_unit": 2.25,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawnsynergy",
@@ -23184,7 +23341,8 @@
           "package_label": "40 lb",
           "price_per_unit": 1.95,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -23198,7 +23356,8 @@
           "source": "amazon_creators_api",
           "package_quantity": 40.0,
           "package_unit": "lb",
-          "package_label": "40 lb"
+          "package_label": "40 lb",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -23296,7 +23455,8 @@
           "package_label": "1 gal",
           "price_per_unit": 1.59,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -23414,7 +23574,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.6,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "lawnsynergy",
@@ -23431,7 +23592,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.66,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -23547,7 +23709,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.78,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -23681,7 +23844,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.4,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -23815,7 +23979,8 @@
           "package_label": "50 lb",
           "price_per_unit": 1.8,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         },
         {
           "retailer": "amazon",
@@ -23831,6 +23996,7 @@
           "package_unit": "lb",
           "package_label": "50 lb",
           "price_per_unit": 1.82,
+          "manual_verified": true,
           "quality_verified": true
         }
       ],
@@ -24043,7 +24209,7 @@
           "last_checked": "2026-10-11T21:51:59.955831+00:00",
           "source": "manual_verified_source",
           "image": null,
-          "manual_verified": false,
+          "manual_verified": true,
           "package_quantity": 32.0,
           "package_unit": "fl oz",
           "package_label": "32 fl oz",
@@ -24065,7 +24231,8 @@
           "package_label": "32 fl oz",
           "price_per_unit": 1.34,
           "excluded": true,
-          "exclude_reason": "duplicate retailer product-page offer"
+          "exclude_reason": "duplicate retailer product-page offer",
+          "manual_verified": true
         }
       ],
       "best_price": {
@@ -24792,8 +24959,9 @@
           "in_stock": true,
           "title": "Hi-Yield (32340) Iron sulfate, 4 lbs",
           "image": "https://m.media-amazon.com/images/I/41FlhIsE2yL._SL500_.jpg",
-          "last_checked": "2026-10-12T16:05:44.408876+00:00",
+          "last_checked": "2026-10-12T19:24:28.044490+00:00",
           "source": "amazon_creators_api",
+          "manual_verified": true,
           "package_quantity": 4.0,
           "package_unit": "lb",
           "package_label": "4 lb",
@@ -24818,7 +24986,7 @@
         "price_per_unit": 2.0,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:44.409741+00:00"
+      "updated_at": "2026-10-12T19:24:28.045806+00:00"
     },
     {
       "id": 300,
@@ -24833,7 +25001,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-10-12T14:02:58.487853+00:00"
+      "updated_at": "2026-10-12T19:24:28.320179+00:00"
     },
     {
       "id": 301,
@@ -24873,7 +25041,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:44.899724+00:00"
+      "updated_at": "2026-10-12T19:24:28.604188+00:00"
     },
     {
       "id": 303,
@@ -24887,7 +25055,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-10-12T16:05:45.133469+00:00"
+      "updated_at": "2026-10-12T19:24:28.827625+00:00"
     },
     {
       "id": 304,
@@ -24901,7 +25069,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-10-12T16:05:45.445243+00:00"
+      "updated_at": "2026-10-12T19:24:29.112719+00:00"
     },
     {
       "id": 305,
@@ -24970,7 +25138,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:46.164280+00:00"
+      "updated_at": "2026-10-12T19:24:29.560859+00:00"
     },
     {
       "id": 311,
@@ -25018,7 +25186,7 @@
           "in_stock": true,
           "title": "Lesco 50Lb Push Spreader",
           "image": "https://m.media-amazon.com/images/I/41tLkhieqEL._SL500_.jpg",
-          "last_checked": "2026-10-12T14:03:00.506904+00:00",
+          "last_checked": "2026-10-12T19:24:29.833417+00:00",
           "source": "amazon_creators_api",
           "quality_verified": true
         }
@@ -25031,11 +25199,11 @@
         "in_stock": true,
         "title": "Lesco 50Lb Push Spreader",
         "image": "https://m.media-amazon.com/images/I/41tLkhieqEL._SL500_.jpg",
-        "last_checked": "2026-10-12T14:03:00.506904+00:00",
+        "last_checked": "2026-10-12T19:24:29.833417+00:00",
         "source": "amazon_creators_api",
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T14:03:00.507817+00:00"
+      "updated_at": "2026-10-12T19:24:29.835366+00:00"
     },
     {
       "id": 312,
@@ -25065,33 +25233,33 @@
       ],
       "offers": [
         {
-          "retailer": "andersons",
-          "retailer_name": "The Andersons",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
           "price": 419.88,
-          "url": "https://andersonslawn.com/products/pacer-pro",
+          "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
           "in_stock": true,
-          "title": "Andersons Pacer Pro Spreader",
-          "last_checked": "2026-10-11T21:51:59.959606+00:00",
-          "source": "manual_verified_source",
-          "image": "https://andersonslawn.com/cdn/shop/files/pacer-pro-spreader_1024x1024.png?v=1748016597",
+          "title": "The Andersons Pacer Pro Walk-Behind Broadcast Spreader for Fertilizer, Grass Seed and Salt - 80 lb Hopper Capacity",
+          "image": "https://m.media-amazon.com/images/I/41oUu8bjvZL._SL500_.jpg",
+          "last_checked": "2026-10-12T19:24:30.088743+00:00",
+          "source": "amazon_creators_api",
           "manual_verified": true,
           "quality_verified": true
         }
       ],
       "best_price": {
-        "retailer": "andersons",
-        "retailer_name": "The Andersons",
+        "retailer": "amazon",
+        "retailer_name": "Amazon",
         "price": 419.88,
-        "url": "https://andersonslawn.com/products/pacer-pro",
+        "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
         "in_stock": true,
-        "title": "Andersons Pacer Pro Spreader",
-        "last_checked": "2026-10-11T21:51:59.959606+00:00",
-        "source": "manual_verified_source",
-        "image": "https://andersonslawn.com/cdn/shop/files/pacer-pro-spreader_1024x1024.png?v=1748016597",
+        "title": "The Andersons Pacer Pro Walk-Behind Broadcast Spreader for Fertilizer, Grass Seed and Salt - 80 lb Hopper Capacity",
+        "image": "https://m.media-amazon.com/images/I/41oUu8bjvZL._SL500_.jpg",
+        "last_checked": "2026-10-12T19:24:30.088743+00:00",
+        "source": "amazon_creators_api",
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T02:27:56.219832+00:00"
+      "updated_at": "2026-10-12T19:24:30.090587+00:00"
     },
     {
       "id": 314,
@@ -25144,7 +25312,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T14:03:00.808326+00:00"
+      "updated_at": "2026-10-12T19:24:30.352374+00:00"
     },
     {
       "id": 315,
@@ -25361,7 +25529,7 @@
           "in_stock": true,
           "title": "EarthWay 2030P-Plus 65 LB (29 KG) Capacity Commercial Walk-Behind Broadcast Spreader for Grass, Fertilizer, Seeds \u2014 Includes Side Spread Control, Even Spread, Pneumatic Tires",
           "image": "https://m.media-amazon.com/images/I/41Bhsa45xFL._SL500_.jpg",
-          "last_checked": "2026-10-12T13:09:23.893267+00:00",
+          "last_checked": "2026-10-12T19:24:30.852317+00:00",
           "source": "amazon_creators_api",
           "quality_verified": true
         }
@@ -25379,7 +25547,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T13:09:23.894292+00:00"
+      "updated_at": "2026-10-12T19:24:30.854377+00:00"
     },
     {
       "id": 318,
@@ -25432,7 +25600,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:47.863553+00:00"
+      "updated_at": "2026-10-12T19:24:31.022584+00:00"
     },
     {
       "id": 319,
@@ -25539,7 +25707,7 @@
       ],
       "offers": [],
       "best_price": null,
-      "updated_at": "2026-10-12T14:03:02.765043+00:00"
+      "updated_at": "2026-10-12T19:24:31.605238+00:00"
     },
     {
       "id": 322,
@@ -25870,7 +26038,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:49.549793+00:00"
+      "updated_at": "2026-10-12T19:24:32.478737+00:00"
     },
     {
       "id": 330,
@@ -25924,7 +26092,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T16:05:49.791580+00:00"
+      "updated_at": "2026-10-12T19:24:32.700112+00:00"
     },
     {
       "id": 331,
@@ -26083,7 +26251,7 @@
         "manual_verified": true,
         "quality_verified": true
       },
-      "updated_at": "2026-10-12T14:03:05.176011+00:00"
+      "updated_at": "2026-10-12T19:24:33.286372+00:00"
     },
     {
       "id": 333,

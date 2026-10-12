@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T16:05:52.083623+00:00",
+  "generated_at": "2026-10-12T19:24:35.022250+00:00",
   "saved_source_limit": 12,
   "totals": {
-    "sources": 2277,
-    "manual_verified_sources": 566,
-    "included_sources": 1044,
-    "not_included_sources": 626,
-    "invalid_sources": 607
+    "sources": 2316,
+    "manual_verified_sources": 610,
+    "included_sources": 1051,
+    "not_included_sources": 663,
+    "invalid_sources": 602
   },
   "reason_counts": {
-    "included": 1044,
-    "product_identity_mismatch": 594,
-    "no_extracted_offer": 216,
+    "included": 1051,
+    "product_identity_mismatch": 589,
+    "no_extracted_offer": 263,
     "duplicate retailer product-page offer": 172,
-    "not_checked_saved_source_limit": 97,
-    "price source is not independently quality-verified": 44,
+    "not_checked_saved_source_limit": 93,
+    "price source is not independently quality-verified": 37,
     "implausible same-package price outlier": 26,
     "package size is ambiguous for a size-sensitive product": 22,
     "below $10.00 minimum for this category": 17,
@@ -27,8 +27,8 @@
     "untrusted_retailer_domain": 5,
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2,
-    "above $200.00 maximum for this product": 1,
-    "no_price": 1
+    "no_price": 2,
+    "above $200.00 maximum for this product": 1
   },
   "products": [
     {
@@ -3345,7 +3345,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.27,
+          "price": 55.37,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4275,8 +4275,8 @@
           "retailer": "lawn-and-pest-control-supply",
           "retailer_name": "Lawn and Pest Control Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 284.0,
           "offer_url": "https://www.lawnandpestcontrolsupply.com/products/speedzone-southern-herbicide-1?variant=289431470&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopg61zbTkJm2ne9l7vLIKGYeTxFuab7cLbDBbNbHcf1JSS6JRQBYIk"
         },
@@ -4321,8 +4321,8 @@
           "offer_url": "https://www.ebay.com/itm/134845221945?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopv2PnD747fzkpF30GTEfTOUkQABuSZKB0mH9lRX_9fyTy_PRgOdQw"
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 5,
+      "included_sources": 16,
+      "not_included_sources": 4,
       "invalid_sources": 1
     },
     {
@@ -4331,6 +4331,26 @@
       "name": "Manor 60DF (Metsulfuron-Methyl)",
       "category": "post-emergent",
       "sources": [
+        {
+          "url": "https://www.seedworldusa.com/products/manor-herbicide-2-oz",
+          "retailer": "seedworldusa-com",
+          "retailer_name": "Seedworldusa",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.solutionsstores.com/manor-selective-herbicide",
+          "retailer": "solutionsstores-com",
+          "retailer_name": "Solutionsstores",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
         {
           "url": "https://www.ebay.com/itm/134845221641",
           "retailer": "ebay",
@@ -4355,7 +4375,7 @@
           "url": "https://www.amazon.com/dp/B0CB96F141",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": true,
+          "manual_verified": false,
           "status": "invalid",
           "reason": "product_identity_mismatch",
           "price": null,
@@ -4385,16 +4405,16 @@
           "url": "https://pestrong.com/product/manor-herbicide-blade-metsulfuron-methyl-2-oz/?srsltid=AfmBOorBqaERY9KdvzZlg3B3WqBFm9oUj3w_dOlDh7UWac35G2DP061rLSo",
           "retailer": "pestrong-com",
           "retailer_name": "Pestrong.com",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "product_identity_mismatch",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
-      "invalid_sources": 6
+      "not_included_sources": 3,
+      "invalid_sources": 5
     },
     {
       "id": 21,
@@ -8298,12 +8318,42 @@
       "category": "pgr",
       "sources": [
         {
+          "url": "https://pestcontrolsuperstore.com/products/proxy-growth-regulator",
+          "retailer": "pestcontrolsuperstore-com",
+          "retailer_name": "Pestcontrolsuperstore",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.sunspotsupply.com/products/proxy-growth-regulator-jug-2-5-gallon",
+          "retailer": "sunspotsupply-com",
+          "retailer_name": "Sunspotsupply",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.solutionsstores.com/proxy-growth-regulator",
+          "retailer": "solutionsstores-com",
+          "retailer_name": "Solutionsstores",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.domyown.com/proxy-growth-regulator-p-22835.html",
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
-          "manual_verified": false,
-          "status": "invalid",
-          "reason": "product_identity_mismatch",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -8331,16 +8381,16 @@
           "url": "https://www.intermountainturf.com/products/proxy-growth-regulator-jug-2-5-gallon?currency=USD&country=US&variant=45347673309322&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopYJdmC9RWudoZl8gEnRqP2oQ0S0uWr_a488w_gOPW-u0dsGHc8FXE",
           "retailer": "intermountain-turf-supply",
           "retailer_name": "Intermountain Turf Supply",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
           "price": 149.82,
           "offer_url": "https://www.intermountainturf.com/products/proxy-growth-regulator-jug-2-5-gallon?currency=USD&country=US&variant=45347673309322&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopYJdmC9RWudoZl8gEnRqP2oQ0S0uWr_a488w_gOPW-u0dsGHc8FXE"
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 1,
-      "invalid_sources": 3
+      "included_sources": 1,
+      "not_included_sources": 4,
+      "invalid_sources": 2
     },
     {
       "id": 41,
@@ -10617,6 +10667,66 @@
       "category": "fungicide",
       "sources": [
         {
+          "url": "https://www.amazon.com/dp/B008O813R4",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.domyown.com/daconil-ultrex-turf-care-fungicide-p-2309.html",
+          "retailer": "domyown-com",
+          "retailer_name": "Domyown",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.lawnandpestcontrolsupply.com/products/daconil-ultrex-fungicide-5-pound",
+          "retailer": "lawnandpestcontrolsupply-com",
+          "retailer_name": "Lawnandpestcontrolsupply",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://pestrong.com/product/daconil-ultrex-turf-care-fungicide-5-lb",
+          "retailer": "pestrong-com",
+          "retailer_name": "Pestrong",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.intermountainturf.com/products/daconil-ultrex-fungicide-5-lb-bag",
+          "retailer": "intermountainturf-com",
+          "retailer_name": "Intermountainturf",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.sunspotsupply.com/products/daconil-ultrex-fungicide-5-lb-bag",
+          "retailer": "sunspotsupply-com",
+          "retailer_name": "Sunspotsupply",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.domyown.com/garden-tech-daconil-fungicide-concentrate-p-8930.html",
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
@@ -10808,7 +10918,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
+      "not_included_sources": 6,
       "invalid_sources": 19
     },
     {
@@ -16592,6 +16702,36 @@
       "category": "soil-amendment",
       "sources": [
         {
+          "url": "https://www.amazon.com/dp/B08GCV347N",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.lawnandpestcontrolsupply.com/products/aquatrols-revolution-the-worlds-leading-soil-surfactant-2-5-gallons",
+          "retailer": "lawnandpestcontrolsupply-com",
+          "retailer_name": "Lawnandpestcontrolsupply",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.solutionsstores.com/aquatrols-revolution-soil-surfactant",
+          "retailer": "solutionsstores-com",
+          "retailer_name": "Solutionsstores",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.domyown.com/aquatrols-revolution-soil-surfactant-p-10332.html",
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
@@ -16603,7 +16743,7 @@
         }
       ],
       "included_sources": 1,
-      "not_included_sources": 0,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -16612,6 +16752,16 @@
       "name": "MycoApply Mycorrhizal Inoculant",
       "category": "soil-amendment",
       "sources": [
+        {
+          "url": "https://www.amazon.com/dp/B0GJG5D1Z7",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
         {
           "url": "https://www.mycorrhizalonline.com/product-page/endo-4-species-granular",
           "retailer": "mycorrhizalonline",
@@ -16634,7 +16784,7 @@
         }
       ],
       "included_sources": 2,
-      "not_included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -16648,8 +16798,8 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 30.0,
           "offer_url": "https://www.amazon.com/dp/B076TFPB1Z?tag=lawndominator-20"
         },
@@ -16664,8 +16814,8 @@
           "offer_url": "https://www.domyown.com/feature-water-soluble-micronutrients-p-26683.html"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -16674,6 +16824,46 @@
       "name": "The Andersons PGF Complete 16-4-8",
       "category": "fertilizer",
       "sources": [
+        {
+          "url": "https://www.amazon.com/dp/B0822WM7YH",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.amazon.com/dp/B07SYLCKRH",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.walmart.com/ip/Professional-PGF-Complete-16-4-8-Fertilizer-with-7-Humic-DG-5-000-sq-ft/15414113618",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.walmart.com/ip/The-Andersons-Professional-PGF-Complete-16-4-8-Fertilizer-with-7-Humic-DG-10-000-sq-ft/1468689449",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
         {
           "url": "https://www.domyown.com/turf-fertilizer-1648-with-fe-40-ns54-sgn135-50-lb-p-21458.html",
           "retailer": "domyown",
@@ -16746,7 +16936,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 4,
+      "not_included_sources": 8,
       "invalid_sources": 3
     },
     {
@@ -16847,6 +17037,26 @@
       "category": "fertilizer",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/The-Andersons-Green-Shocker-7-1-2-Fertilizer-with-Humic-DG-16-lb-Bag/13826613918",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.walmart.com/ip/The-Andersons-Green-Shocker-7-1-2-Fertilizer-with-Humic-DG-17-lb-Bag/497767014",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.walmart.com/ip/497767014",
           "retailer": "walmart",
           "retailer_name": "Walmart",
@@ -16871,8 +17081,8 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 59.88,
           "offer_url": "https://www.amazon.com/dp/B09B2LTT3K?tag=lawndominator-20"
         },
@@ -16887,8 +17097,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 3,
+      "included_sources": 2,
+      "not_included_sources": 4,
       "invalid_sources": 0
     },
     {
@@ -16989,6 +17199,16 @@
       "category": "soil-amendment",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/The-Andersons-HumiChar-Organic-Soil-Amendment-with-Humic-Acid-and-Biochar-Covers-up-to-40-000-sq-ft-40-lb/819892152",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.amleo.com/humichar-trade/p/HUMCHAR",
           "retailer": "amleo",
           "retailer_name": "Amleo",
@@ -17013,8 +17233,8 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 104.88,
           "offer_url": "https://www.amazon.com/dp/B0843NQR9J?tag=lawndominator-20"
         },
@@ -17049,7 +17269,7 @@
           "offer_url": null
         }
       ],
-      "included_sources": 1,
+      "included_sources": 2,
       "not_included_sources": 5,
       "invalid_sources": 0
     },
@@ -17562,8 +17782,8 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 76.99,
           "offer_url": "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20"
         },
@@ -17598,8 +17818,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -17868,8 +18088,8 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 23.99,
           "offer_url": "https://www.amazon.com/dp/B08Z4DTTJR?tag=lawndominator-20"
         },
@@ -17894,8 +18114,8 @@
           "offer_url": "https://simplelawnsolutions.com/products/darker-green-liquid-iron-1-gallon?variant=40586275455087"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 2,
+      "included_sources": 2,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -17946,6 +18166,56 @@
       "category": "moisture-manager",
       "sources": [
         {
+          "url": "https://www.amazon.com/dp/B07BQ93T7Y",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.domyown.com/hydretain-es-plus-granular-oc-p-23463.html",
+          "retailer": "domyown-com",
+          "retailer_name": "Domyown",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://seedbarn.com/products/hydretain-moisture-manager-granules-15-lbs",
+          "retailer": "seedbarn-com",
+          "retailer_name": "Seedbarn",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.walmart.com/ip/Hydretain-Root-Zone-Moisture-Manager-Granular-OC-15-lb/2592572424",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.amazon.com/dp/B01IWRI8GK",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
+          "offer_url": "https://www.amazon.com/dp/B01IWRI8GK?tag=lawndominator-20"
+        },
+        {
           "url": "https://www.acehardware.com/departments/lawn-and-garden/lawn-care/soil-conditioners/7693005",
           "retailer": "acehardware",
           "retailer_name": "Acehardware",
@@ -17960,8 +18230,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "invalid",
-          "reason": "product_identity_mismatch",
+          "status": "not_included",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -17970,8 +18240,8 @@
           "retailer": "shop",
           "retailer_name": "Shop",
           "manual_verified": true,
-          "status": "invalid",
-          "reason": "product_identity_mismatch",
+          "status": "not_included",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -17980,8 +18250,8 @@
           "retailer": "seedworldusa",
           "retailer_name": "Seedworldusa",
           "manual_verified": true,
-          "status": "invalid",
-          "reason": "product_identity_mismatch",
+          "status": "not_included",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -17999,7 +18269,7 @@
           "url": "https://www.amazon.com/dp/B07CP7QRPW",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": true,
+          "manual_verified": false,
           "status": "invalid",
           "reason": "product_identity_mismatch",
           "price": null,
@@ -18017,8 +18287,8 @@
         }
       ],
       "included_sources": 1,
-      "not_included_sources": 1,
-      "invalid_sources": 5
+      "not_included_sources": 9,
+      "invalid_sources": 2
     },
     {
       "id": 199,
@@ -19330,6 +19600,16 @@
       "category": "fertilizer",
       "sources": [
         {
+          "url": "https://www.siteone.com/en/510112-lesco-fertilizer-25-0-6-50-polyplus-opti45-5fe-50-lb/p/355359",
+          "retailer": "siteone-com",
+          "retailer_name": "Siteone",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.jerzeylawns.com/product/18395793/lesco-25-0-6-50-polyplus-opti-5-fe-granular-fertilizer-50-lb-bag",
           "retailer": "jerzeylawns",
           "retailer_name": "Jerzey Lawns",
@@ -19351,7 +19631,7 @@
         }
       ],
       "included_sources": 1,
-      "not_included_sources": 1,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -19839,6 +20119,16 @@
       "category": "spreader-handheld",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/16839921025",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.amazon.com/dp/B07NLR222X",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -20042,15 +20332,15 @@
           "url": "https://www.amazon.com/dp/B011HY5Q1K",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": false,
+          "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 5,
+      "not_included_sources": 6,
       "invalid_sources": 16
     },
     {
@@ -20312,6 +20602,16 @@
       "category": "spreader-handheld",
       "sources": [
         {
+          "url": "https://www.amazon.com/dp/B00LFWNUAO",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://gciturfacademy.com/products/spyker-pro-series-p20-5010-50lb-light-duty-broadcast-spreader",
           "retailer": "gci-turf",
           "retailer_name": "GCI Turf Academy",
@@ -20443,7 +20743,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 13
     },
     {
@@ -20452,6 +20752,36 @@
       "name": "Solo 421-S Chest-Mount Portable Spreader",
       "category": "spreader-handheld",
       "sources": [
+        {
+          "url": "https://us.solo.global/product/421-s-multi-purpose-chest-mount-spreader",
+          "retailer": "us-solo-global",
+          "retailer_name": "Us",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.zoro.com/solo-20-lb-portable-chest-mount-spreader-421-s/i/G3958145",
+          "retailer": "zoro-com",
+          "retailer_name": "Zoro",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
+          "url": "https://www.amazon.com/dp/B000BWZD0O",
+          "retailer": "amazon",
+          "retailer_name": "Amazon",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
         {
           "url": "https://www.amazon.com/dp/B0FTHSRJ16?tag=lawndominator-20",
           "retailer": "amazon",
@@ -20534,7 +20864,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 1,
+      "not_included_sources": 4,
       "invalid_sources": 7
     },
     {
@@ -20766,6 +21096,16 @@
       "category": "spreader-push",
       "sources": [
         {
+          "url": "https://www.domyown.com/the-andersons-rotary-spreader-model-2000-sr-p-21452.html",
+          "retailer": "domyown-com",
+          "retailer_name": "Domyown",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
@@ -20847,7 +21187,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 8
     },
     {
@@ -20857,14 +21197,24 @@
       "category": "spreader-push",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/16711163900",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": false,
-          "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
-          "price": null,
-          "offer_url": null
+          "manual_verified": true,
+          "status": "included",
+          "reason": "included",
+          "price": 419.88,
+          "offer_url": "https://www.amazon.com/dp/B0DWVDKD4M?tag=lawndominator-20"
         },
         {
           "url": "https://www.amazon.com/dp/B077JBGG4H?tag=lawndominator-20",
@@ -20931,14 +21281,14 @@
           "retailer": "andersons",
           "retailer_name": "The Andersons",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 419.88,
-          "offer_url": "https://andersonslawn.com/products/pacer-pro"
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         }
       ],
       "included_sources": 1,
-      "not_included_sources": 1,
+      "not_included_sources": 2,
       "invalid_sources": 6
     },
     {
@@ -21953,6 +22303,16 @@
       "category": "spreader-push",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/21801435",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.farmandfleet.com/products/710626-scotts-turf-builder-edgeguard-dlx-broadcast-spreader.html",
           "retailer": "farmandfleet",
           "retailer_name": "Farmandfleet",
@@ -22026,9 +22386,9 @@
           "url": "https://www.amazon.com/dp/B001H1EQO2",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": false,
+          "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22244,7 +22604,7 @@
         }
       ],
       "included_sources": 1,
-      "not_included_sources": 6,
+      "not_included_sources": 7,
       "invalid_sources": 22
     },
     {
@@ -22586,6 +22946,16 @@
       "category": "spreader-push",
       "sources": [
         {
+          "url": "https://www.walmart.com/ip/130-lb-Push-Spreader/22260138",
+          "retailer": "walmart-com",
+          "retailer_name": "Walmart",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://www.ebay.com/p/19030320652",
           "retailer": "ebay",
           "retailer_name": "eBay",
@@ -22649,9 +23019,9 @@
           "url": "https://www.amazon.com/dp/B002U0KDH8",
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "manual_verified": false,
+          "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22707,7 +23077,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 5,
+      "not_included_sources": 6,
       "invalid_sources": 7
     },
     {
@@ -23915,6 +24285,16 @@
       "category": "sprayer-backpack",
       "sources": [
         {
+          "url": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-200-1027067",
+          "retailer": "stihlusa-com",
+          "retailer_name": "Stihlusa",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
+        {
           "url": "https://yardmastery.com/products/4-gallon-backpack-sprayer",
           "retailer": "yard-mastery",
           "retailer_name": "Yard Mastery",
@@ -23966,7 +24346,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 5
     },
     {
@@ -23975,6 +24355,16 @@
       "name": "STIHL SR 450 Gas Backpack Mist Blower",
       "category": "sprayer-backpack",
       "sources": [
+        {
+          "url": "https://www.stihlusa.com/en/p/mistblowers-sprayers-sr-450-gasoline-backpack-sprayer-1027378",
+          "retailer": "stihlusa-com",
+          "retailer_name": "Stihlusa",
+          "manual_verified": true,
+          "status": "not_included",
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
+        },
         {
           "url": "https://www.sprayerdepot.com/products/solo-451-motorized-mist-blower-backpack",
           "retailer": "sprayer-depot",
@@ -23987,7 +24377,7 @@
         }
       ],
       "included_sources": 0,
-      "not_included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 1
     },
     {
