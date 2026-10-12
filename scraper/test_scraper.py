@@ -2779,3 +2779,79 @@ class HydretainGranularIdentityTest(unittest.TestCase):
             "Hydretain Root Zone Moisture Manager - Drought Protection",
         ):
             self.assertFalse(scraper._matches_product(self.granular, title), title)
+
+
+class AmazonCreatorsThrottleTest(unittest.TestCase):
+    """The SDK throttles per client instance. A new client per product never
+    waited between products, so most fast-lane calls hit Amazon's rate limit
+    (6 to 21 'Rate limit exceeded' per run, ~40 of 155 products refreshed)."""
+
+    def setUp(self):
+        import sys
+        import types
+
+        self.created = []
+        self.calls = []
+        test = self
+
+        class FakeClient:
+            def __init__(self, **kwargs):
+                test.created.append(kwargs)
+
+            def get_items(self, items, resources):
+                test.calls.append(list(items))
+                if test.fail_next:
+                    test.fail_next -= 1
+                    raise Exception("Rate limit exceeded, try increasing throttling")
+                return []
+
+        models = types.SimpleNamespace(
+            GetItemsResource=types.SimpleNamespace(
+                OFFERS_V2_DOT_LISTINGS_DOT_PRICE=1,
+                OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY=2,
+                ITEM_INFO_DOT_TITLE=3,
+                IMAGES_DOT_PRIMARY_DOT_LARGE=4,
+            ),
+            SearchItemsResource=types.SimpleNamespace(),
+        )
+        package = types.SimpleNamespace(AmazonCreatorsApi=FakeClient, Country=types.SimpleNamespace(US="US"))
+        self._saved = {name: sys.modules.get(name) for name in ("amazon_creatorsapi", "amazon_creatorsapi.models")}
+        sys.modules["amazon_creatorsapi"] = package
+        sys.modules["amazon_creatorsapi.models"] = models
+        self.fail_next = 0
+        self._sleep = scraper.time.sleep
+        self.slept = []
+        scraper.time.sleep = lambda seconds: self.slept.append(seconds)
+        scraper._amazon_creators_client = None
+        scraper._amazon_creators_disabled = False
+
+    def tearDown(self):
+        import sys
+
+        for name, module in self._saved.items():
+            if module is None:
+                sys.modules.pop(name, None)
+            else:
+                sys.modules[name] = module
+        scraper.time.sleep = self._sleep
+        scraper._amazon_creators_client = None
+
+    def _product(self, index):
+        return {"id": index, "name": f"Product {index}", "category": "fertilizer", "asin": f"B00000000{index}"}
+
+    def test_one_client_is_shared_across_products(self):
+        for index in range(3):
+            scraper._amazon_creators_api(self._product(index), {})
+        self.assertEqual(len(self.created), 1)
+        self.assertEqual(len(self.calls), 3)
+
+    def test_a_rate_limited_call_is_retried_once_after_a_pause(self):
+        self.fail_next = 1
+        scraper._amazon_creators_api(self._product(1), {})
+        self.assertEqual(len(self.calls), 2)
+        self.assertTrue(self.slept and self.slept[0] >= 2)
+
+    def test_a_persistent_rate_limit_gives_up(self):
+        self.fail_next = 5
+        self.assertIsNone(scraper._amazon_creators_api(self._product(1), {}))
+        self.assertEqual(len(self.calls), 2)

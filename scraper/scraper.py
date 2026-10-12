@@ -3708,6 +3708,10 @@ def _amazon_item_offer(item, product: dict) -> dict:
     }
 
 
+_amazon_creators_client = None
+AMAZON_RATE_LIMIT_RETRY_SECONDS = float(os.getenv("AMAZON_RATE_LIMIT_RETRY_SECONDS", "3"))
+
+
 def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> dict:
     global _amazon_creators_disabled
     if _amazon_creators_disabled:
@@ -3717,27 +3721,34 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
         from amazon_creatorsapi import AmazonCreatorsApi, Country
         from amazon_creatorsapi.models import GetItemsResource, SearchItemsResource
 
-        client = AmazonCreatorsApi(
-            credential_id=AMAZON_CREATOR_CREDENTIAL_ID,
-            credential_secret=AMAZON_CREATOR_SECRET,
-            version=AMAZON_CREATOR_VERSION,
-            tag=AMAZON_TAG,
-            country=Country.US,
-            throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING") or "1"),
-        )
+        # One client for the whole run. The SDK throttles per instance, so a
+        # new client per product never waited between products and most
+        # calls hit Amazon's rate limit.
+        global _amazon_creators_client
+        if _amazon_creators_client is None:
+            _amazon_creators_client = AmazonCreatorsApi(
+                credential_id=AMAZON_CREATOR_CREDENTIAL_ID,
+                credential_secret=AMAZON_CREATOR_SECRET,
+                version=AMAZON_CREATOR_VERSION,
+                tag=AMAZON_TAG,
+                country=Country.US,
+                throttling=float(os.getenv("AMAZON_CREATOR_THROTTLING") or "1"),
+            )
+        client = _amazon_creators_client
         asins = _amazon_asins_for_product(product, source_map or {})
         used_exact_asin = bool(asins)
-        if used_exact_asin:
-            items = client.get_items(
-                items=asins[:10],
-                resources=[
-                    GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
-                    GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
-                    GetItemsResource.ITEM_INFO_DOT_TITLE,
-                    GetItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
-                ],
-            )
-        else:
+
+        def fetch():
+            if used_exact_asin:
+                return client.get_items(
+                    items=asins[:10],
+                    resources=[
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                        GetItemsResource.ITEM_INFO_DOT_TITLE,
+                        GetItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
+                    ],
+                )
             query = product.get("amazon_query") or product["search_query"]
             response = client.search_items(
                 keywords=query,
@@ -3749,7 +3760,16 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                     SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
                 ],
             )
-            items = _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
+            return _attr_chain(response, "search_result", "items") or _attr_chain(response, "items") or []
+
+        try:
+            items = fetch()
+        except Exception as e:
+            if "Rate limit" not in str(e):
+                raise
+            # A burst from another caller can still trip the limit once.
+            time.sleep(AMAZON_RATE_LIMIT_RETRY_SECONDS)
+            items = fetch()
         if not items:
             return None
 
