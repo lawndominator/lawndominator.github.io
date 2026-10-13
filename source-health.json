@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-13T20:28:14.862035+00:00",
+  "generated_at": "2026-10-13T23:45:35.885706+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2316,
     "manual_verified_sources": 610,
-    "included_sources": 1076,
-    "not_included_sources": 637,
+    "included_sources": 1077,
+    "not_included_sources": 636,
     "invalid_sources": 603
   },
   "reason_counts": {
-    "included": 1076,
+    "included": 1077,
     "product_identity_mismatch": 590,
     "no_extracted_offer": 240,
     "duplicate retailer product-page offer": 172,
@@ -27,8 +27,8 @@
     "untrusted_retailer_domain": 5,
     "below $5.00 minimum for this category": 2,
     "insecure_retailer_url": 2,
-    "no_price": 2,
-    "above $200.00 maximum for this product": 1
+    "above $200.00 maximum for this product": 1,
+    "no_price": 1
   },
   "products": [
     {
@@ -3345,7 +3345,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.97,
+          "price": 53.99,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -11940,7 +11940,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.97,
+          "price": 68.16,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -17782,9 +17782,9 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 76.99,
           "offer_url": "https://www.amazon.com/dp/B098ZR65HX?tag=lawndominator-20"
         },
         {
@@ -17818,8 +17818,8 @@
           "offer_url": "https://yardmastery.com/products/7-0-0-greene-effect-liquid-fertilizer?variant=39323157299252"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 4,
+      "not_included_sources": 3,
       "invalid_sources": 0
     },
     {
@@ -23022,7 +23022,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 251.12,
+          "price": 250.33,
           "offer_url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20"
         },
         {
