@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-13T12:43:11.077035+00:00",
+  "generated_at": "2026-10-13T13:17:38.459604+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2316,
     "manual_verified_sources": 610,
-    "included_sources": 1078,
-    "not_included_sources": 635,
+    "included_sources": 1079,
+    "not_included_sources": 634,
     "invalid_sources": 603
   },
   "reason_counts": {
-    "included": 1078,
+    "included": 1079,
     "product_identity_mismatch": 590,
-    "no_extracted_offer": 238,
+    "no_extracted_offer": 237,
     "duplicate retailer product-page offer": 171,
     "not_checked_saved_source_limit": 93,
     "price source is not independently quality-verified": 38,
@@ -405,7 +405,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 158.0,
+          "price": 157.61,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -3345,7 +3345,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.07,
+          "price": 55.27,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -11940,7 +11940,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 66.76,
+          "price": 67.3,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -20606,10 +20606,10 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 46.81,
+          "offer_url": "https://www.amazon.com/dp/B00LFWNUAO?tag=lawndominator-20"
         },
         {
           "url": "https://gciturfacademy.com/products/spyker-pro-series-p20-5010-50lb-light-duty-broadcast-spreader",
@@ -20742,8 +20742,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 1,
+      "included_sources": 1,
+      "not_included_sources": 0,
       "invalid_sources": 13
     },
     {
