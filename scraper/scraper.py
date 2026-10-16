@@ -81,6 +81,7 @@ MIN_CHEMICAL_PRICE = float(os.getenv("MIN_CHEMICAL_PRICE", "10"))
 MIN_SOIL_AMENDMENT_PRICE = float(os.getenv("MIN_SOIL_AMENDMENT_PRICE", "5"))
 REPEATED_PRICE_PRODUCT_LIMIT = int(os.getenv("REPEATED_PRICE_PRODUCT_LIMIT", "8"))
 UNVERIFIED_OFFER_REASON = "price source is not independently quality-verified"
+DRY_FLUID_OUNCE_REASON = "dry formulation package parsed as fluid ounces"
 MIN_ALERT_DROP_PERCENT = float(os.getenv("MIN_ALERT_DROP_PERCENT", "5"))
 PRICE_ALERT_RETENTION_DAYS = int(os.getenv("PRICE_ALERT_RETENTION_DAYS", "7"))
 # The old absolute MIN_PRICED_PRODUCTS=1 floor passed as long as a single
@@ -834,6 +835,9 @@ def _is_dry_formulation(product: dict) -> bool:
     name = str(product.get("name") or "")
     return bool(
         product.get("id") in {18, 29, 30, 37, 39, 51, 57, 61}
+        # Dry products whose names omit the formulation code: Empero 75 WDG,
+        # Blindside WDG, MSM Turf 60 DF, Sertay 75 WDG, Milky Spore powder.
+        or product.get("id") in {407, 409, 414, 418, 441}
         or
         re.search(
             r"(?:^|[^a-z0-9])(?:\d+(?:\.\d+)?)?(?:wdg|wg|df|wsg|wsp|wp|sp)(?:$|[^a-z])",
@@ -858,7 +862,7 @@ def _multipack_component_package(product: dict, text: str) -> Optional[dict]:
     match = re.search(
         r"\b(\d+)\s*(?:packets?|bags?|bottles?)?\s*[-_]*[x×][-_]*\s*"
         r"((?:\d+(?:\.\d+)?|\.\d+))\s*[-_]?\s*"
-        r"((?:fl\.?\s*)?oz|ounces?|gal(?:lon)?s?|qt|quarts?|lbs?|pounds?|g|grams?)\b",
+        r"((?:fl\.?\s*)?oz|ounces?|gal(?:lon)?s?|qt|quarts?|lbs?|pounds?|gm|g|grams?)\b",
         text,
         re.I,
     )
@@ -873,7 +877,8 @@ def _multipack_component_package(product: dict, text: str) -> Optional[dict]:
         return _package(quantity * 32, "fl oz")
     if unit.startswith("lb") or unit.startswith("pound"):
         return _package(quantity, "lb")
-    if unit in {"g", "gram", "grams"}:
+    if unit in {"g", "gm", "gram", "grams"}:
+        # "5x5gm packets" is 25 g (Monument 75WG), not five 25 g boxes.
         return _package(quantity, "g")
     if _is_dry_formulation(product):
         return _dry_ounce_package(quantity)
@@ -1670,6 +1675,18 @@ def apply_manual_verified_sources(results: list[dict], source_map: dict) -> None
                 offer["manual_verified"] = True
 
 
+def _non_positive_package_quantity(offer: dict) -> bool:
+    """A package of zero (or junk) cannot carry a unit price, which the audit
+    requires of every displayed offer with package metadata."""
+    quantity = offer.get("package_quantity")
+    if quantity is None:
+        return False
+    try:
+        return float(quantity) <= 0
+    except (TypeError, ValueError):
+        return True
+
+
 def apply_offer_quality_filters(results: list[dict]) -> None:
     # Quality verification is recomputed on every pass. Clear only our own
     # previous fail-closed exclusion so a newly corroborated/manual source can
@@ -1717,6 +1734,15 @@ def apply_offer_quality_filters(results: list[dict]) -> None:
             elif is_bad_product_url(offer.get("url", "")):
                 offer["excluded"] = True
                 offer["exclude_reason"] = "cart/search/notify URL, not a product purchase page"
+            elif _is_dry_formulation(product) and str(offer.get("package_unit") or "").lower() == "fl oz":
+                # A dry product read as fluid ounces ("makes 100 gallons" in a
+                # WSG title) is a parse error, and the publish audit rejects
+                # it. Exclude the offer here so one title cannot freeze the feed.
+                offer["excluded"] = True
+                offer["exclude_reason"] = DRY_FLUID_OUNCE_REASON
+            elif _non_positive_package_quantity(offer):
+                offer["excluded"] = True
+                offer["exclude_reason"] = "package quantity is zero or invalid"
             elif price < floor:
                 offer["excluded"] = True
                 offer["exclude_reason"] = f"below ${floor:.2f} minimum for this category"
