@@ -1,26 +1,26 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T12:39:40.989366+00:00",
-  "saved_source_limit": 12,
+  "generated_at": "2026-10-17T15:10:07.554798+00:00",
+  "saved_source_limit": 8,
   "totals": {
     "sources": 2421,
     "manual_verified_sources": 706,
-    "included_sources": 1159,
-    "not_included_sources": 655,
+    "included_sources": 1158,
+    "not_included_sources": 656,
     "invalid_sources": 607
   },
   "reason_counts": {
-    "included": 1159,
+    "included": 1158,
     "product_identity_mismatch": 594,
-    "no_extracted_offer": 264,
-    "duplicate retailer product-page offer": 155,
-    "not_checked_saved_source_limit": 93,
+    "no_extracted_offer": 257,
+    "duplicate retailer product-page offer": 154,
+    "not_checked_saved_source_limit": 102,
     "price source is not independently quality-verified": 36,
     "package size is ambiguous for a size-sensitive product": 23,
-    "implausible same-package price outlier": 18,
+    "implausible same-package price outlier": 21,
     "no_price": 18,
-    "below $10.00 minimum for this category": 15,
-    "above $500.00 maximum for this product": 10,
+    "below $10.00 minimum for this category": 13,
+    "above $500.00 maximum for this product": 9,
     "above $300.00 maximum for this product": 6,
     "above $400.00 maximum for this product": 6,
     "non_retail_or_laboratory_product": 6,
@@ -266,7 +266,7 @@
           "manual_verified": false,
           "status": "not_included",
           "reason": "price source is not independently quality-verified",
-          "price": 213.51,
+          "price": 212.74,
           "offer_url": "https://www.ebay.com.au/itm/325467603293"
         },
         {
@@ -415,8 +415,8 @@
           "retailer": "sodsolutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 164.95,
           "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew"
         },
@@ -585,8 +585,8 @@
           "retailer": "sod-solutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 164.95,
           "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOoqvKvy3TlQDKjao92F5F_Rx7UKFOEgMprxUbovv8MxWrLQ4D7BUD4o"
         },
@@ -607,7 +607,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 165.0,
+          "price": 178.96,
           "offer_url": "https://www.ebay.com/itm/134845222206?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqQTtSKKF7LndMc8TeCTsmVrkCNIOCAkVB_t-yTlAhTukQ2nC0brn4"
         },
         {
@@ -826,9 +826,9 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "price source is not independently quality-verified",
+          "price": 279.34,
+          "offer_url": "https://www.ebay.com/itm/336369383441?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoofEaYHeZ3-O-w70pokvwDxDvUkjgX26pQpJLdpmfKhXIoByGED-XY"
         }
       ],
       "included_sources": 18,
@@ -1779,8 +1779,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 195.88,
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -1849,8 +1849,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 195.88,
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
@@ -3043,8 +3043,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 178.0,
           "offer_url": "https://www.walmart.com/ip/Celsius-WG-Postemergence-Herbicide-10-oz-Bottle-by-Envu/606383788?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=1A1F0164AC9F348286E1C76DE9A693F1&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -3063,8 +3063,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 178.0,
           "offer_url": "https://www.walmart.com/ip/Celsius-WG-Postemergence-Herbicide-10-oz-Bottle-by-Envu/606383788?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
@@ -3357,7 +3357,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.81,
+          "price": 53.99,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4177,8 +4177,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "implausible same-package price outlier",
+          "status": "included",
+          "reason": "included",
           "price": 299.98,
           "offer_url": "https://www.domyown.com/speedzone-southern-herbicide-ew-p-1915.html"
         },
@@ -4199,7 +4199,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 97.0,
+          "price": 54.99,
           "offer_url": "https://www.solutionsstores.com/speedzone-southern-broadleaf-herbicide?sku=GORD4&srsltid=AfmBOopB2QpW4w8j_UFqBoljT6SDFTfb8qcEG_nERSqMS7bhK9-VQL_c_-0"
         },
         {
@@ -4333,8 +4333,8 @@
           "offer_url": "https://www.ebay.com/itm/134845221945?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopv2PnD747fzkpF30GTEfTOUkQABuSZKB0mH9lRX_9fyTy_PRgOdQw"
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 4,
+      "included_sources": 17,
+      "not_included_sources": 3,
       "invalid_sources": 1
     },
     {
@@ -5624,7 +5624,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -6556,8 +6556,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 389.99,
           "offer_url": "https://www.walmart.com/ip/Revolver-Post-Emergence-Herbicide-For-Grassy-Weeds-32-fl-oz-Bottle-by-Envu/5372923943?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -6636,8 +6636,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 389.99,
           "offer_url": "https://www.walmart.com/ip/Revolver-Post-Emergence-Herbicide-For-Grassy-Weeds-32-fl-oz-Bottle-by-Envu/5372923943?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -6746,8 +6746,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 419.95,
           "offer_url": "https://www.walmart.com/ip/Revolver-Herbicide-1-Quart/776174897?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=0E0A182A57EC39F1939570EF6AA47ADE&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -6796,8 +6796,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 419.95,
           "offer_url": "https://www.walmart.com/ip/Revolver-Herbicide-1-Quart/776174897?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -6877,9 +6877,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 250.21,
+          "status": "not_included",
+          "reason": "implausible same-package price outlier",
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/katana-herbicide?sku=GORD7&srsltid=AfmBOoobFyqqonVzb1HGWm5oaSRWbdp5kP0pLfNMBPP7DrLmr_2hkxXYcRk"
         },
         {
@@ -7093,8 +7093,8 @@
           "offer_url": "https://www.amazon.com/dp/B083TDZY3R?tag=lawndominator-20"
         }
       ],
-      "included_sources": 20,
-      "not_included_sources": 7,
+      "included_sources": 19,
+      "not_included_sources": 8,
       "invalid_sources": 0
     },
     {
@@ -7279,9 +7279,9 @@
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "above $500.00 maximum for this product",
-          "price": 508.95,
-          "offer_url": "https://www.ebay.com/itm/335759920804?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooAunkI25LsiSkJYuuNv4j_WBykr3W-Flp4pMWfkQE_KdcSU5-n_9Y"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.ebay.com/itm/287443294718?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item",
@@ -7309,8 +7309,8 @@
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
-          "price": 433.0,
+          "reason": "implausible same-package price outlier",
+          "price": 85.94,
           "offer_url": "https://www.solutionsstores.com/tribute-total-herbicide?sku=BAYE10&srsltid=AfmBOopQ7wjgglnw3kJW1y31e8kwv4RHyevbbdPES7KDyevGnkAH-wwC7A0"
         },
         {
@@ -9689,8 +9689,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 173.58,
           "offer_url": "https://www.walmart.com/ip/Armada-50-WDG-Fungicide-2-lbs-Jug-by-Envu/1390282634?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -9789,8 +9789,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 173.58,
           "offer_url": "https://www.walmart.com/ip/Armada-50-WDG-Fungicide-2-lbs-Jug-by-Envu/1390282634?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -9891,7 +9891,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 173.58,
+          "price": 169.44,
           "offer_url": "https://www.amazon.com/dp/B082BB3R17?tag=lawndominator-20"
         }
       ],
@@ -10493,9 +10493,9 @@
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
-          "price": 99.95,
-          "offer_url": "https://www.ebay.com/itm/234823405808?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqVMv0CnhrLVbDkex_4lvYqT9gUxmT31e0aMRc1-NzbD1r159oFfqA"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://growgreenmi.com/eagle-20-commercial-fungicide-quart?srsltid=AfmBOoqjh6t8jyu3uPURxuJMluNcnTwmvtXGnPJStyDzx5_hrHKmV_ufgTA",
@@ -11398,7 +11398,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 179.87,
+          "price": 165.06,
           "offer_url": "https://www.solutionsstores.com/subdue-maxx-fungicide?sku=NITR16&srsltid=AfmBOoraZGBzDBgCCzKf91-7CgEoOnvnl4WL2G8zsVj3jNuvBFxeM3rLEuY"
         },
         {
@@ -11476,10 +11476,10 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "status": "included",
+          "reason": "included",
+          "price": 229.59,
+          "offer_url": "https://www.ebay.com/itm/235902400376?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq03pA9w3EJ-98HTxpRo7GzluUrSj9ML9JATNYfkw_ddPh9c-jb5HM"
         },
         {
           "url": "https://www.intermountainturf.com/products/subdue-maxx-fungicide-quart?currency=USD&country=US&variant=45346762686602&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopyd3xREB_UCT5YLKfXamuJOXTf1f36jTQumPhudguAE-t3vUfL66U",
@@ -11517,9 +11517,9 @@
           "retailer_name": "Cannavista",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
-          "price": 428.13,
-          "offer_url": "https://cannavista.com/grow-equipment-supplies/bugs-pests-and-mold/fungicides/subdue-maxx-fungicide-1qt/?srsltid=AfmBOooUYo5I22g7_pB6rX80K5AS5s07IrAiCe-f3EKM7VKhCINEGfPPRcc"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.solutionsstores.com/mefenoxam-2aq-fungicide?sku=QUAL8&srsltid=AfmBOopTxo6PlfenEg7nm6n_8pgQG_Rbjy6cOoPvmSlMJc2ApUSIVirfBh8",
@@ -11592,8 +11592,8 @@
           "offer_url": "https://www.walmart.com/ip/Subdue-Maxx-Fungicide-Controls-Plant-Diseases-128-fl-oz-Jug-by-Syngenta/5075637062?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 10,
+      "included_sources": 11,
+      "not_included_sources": 9,
       "invalid_sources": 6
     },
     {
@@ -11808,9 +11808,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 355.1,
+          "status": "not_included",
+          "reason": "implausible same-package price outlier",
+          "price": 29.99,
           "offer_url": "https://www.solutionsstores.com/encartis-fungicide?sku=BASF113&srsltid=AfmBOop-1Cv0kJydmKvH-STHbMfTU39WWg9u4oFbY2bAga97WLgIP91SDJc"
         },
         {
@@ -11864,8 +11864,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 3,
+      "included_sources": 3,
+      "not_included_sources": 4,
       "invalid_sources": 1
     },
     {
@@ -12002,7 +12002,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 67.95,
+          "price": 67.96,
           "offer_url": "https://www.amazon.com/dp/B096W9RJH2?tag=lawndominator-20"
         },
         {
@@ -12090,8 +12090,8 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOorlcXh7iOOP0N1pkq3I0eG_IG9UGeTavZQ2MEXIY1WGntYmBQuszaI"
         },
@@ -12100,8 +12100,8 @@
           "retailer": "growcycle",
           "retailer_name": "Growcycle",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOoo2bWaCSZXTbhp98Q7g3ahe1Cy4eWfEtHfd_ibiLNdaMLCVnA09610"
         },
@@ -12202,7 +12202,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -12232,7 +12232,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -12301,9 +12301,9 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
-          "price": 125.5,
+          "status": "not_included",
+          "reason": "implausible same-package price outlier",
+          "price": 31.98,
           "offer_url": "https://www.solutionsstores.com/acelepryn-g-insecticide?sku=SYNG34&srsltid=AfmBOooEgFkiz_g0m0wJnVYe8N3pnXJ4v9NQakgrj9I56PWEYn9PY8Yp7pA"
         },
         {
@@ -12387,8 +12387,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 5,
+      "included_sources": 6,
+      "not_included_sources": 6,
       "invalid_sources": 8
     },
     {
@@ -13064,9 +13064,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/dylox-6-2-insecticide-30-lbs?currency=USD&country=US&variant=12533440708708&stkn=fe2774b158dd&srsltid=AfmBOoriCkQxG4YNCHERcPXPHslXGhAj03BT4L5wJ7mCHngWPmK-UHGplHQ"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.nexles.com/us/bayer-insecticide-crop-dylox-6-2-30-lb.html",
@@ -14990,9 +14990,9 @@
           "retailer_name": "Seed Barn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "below $10.00 minimum for this category",
-          "price": 0.0,
-          "offer_url": "https://seedbarn.com/products/zylam-liquid-systemic-insecticide-1-quart?currency=USD&country=US&variant=12547609985124&stkn=fe2774b158dd&srsltid=AfmBOoropU3eqmz_62PykcDk-A2MvuIw44CBRJFDlg7wv1XMNCvcsNKbUDU"
+          "reason": "no_extracted_offer",
+          "price": null,
+          "offer_url": null
         },
         {
           "url": "https://www.dkhardware.com/pbi-gordon-7321186-pbi-qt-zylam-liquid-insecticide-product-4110571.html?srsltid=AfmBOopU1W-s20Mum1EG7vEP9ltY-y39DyPZes6cHbfMHeByAqhwPef4-SI",
@@ -15633,9 +15633,9 @@
           "retailer_name": "eBay - solutionspestandlawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
-          "price": null,
-          "offer_url": null
+          "reason": "price source is not independently quality-verified",
+          "price": 447.59,
+          "offer_url": "https://www.ebay.com/itm/116724444198?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqwjYG-9X3YRZksZmBprutDzwZ8A_S4I2msqAWzoWM2OoDsM4dzk4s"
         },
         {
           "url": "https://pestrong.com/product/mainspring-gnl-insecticide-cyantraniliprole-pt/?srsltid=AfmBOoqeWwQdMoOfShhbA5atIiVW1t6U88fyOzp0qPXRdiGjkclVxcb1Exw",
@@ -16045,7 +16045,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 365.99,
+          "price": 358.56,
           "offer_url": "https://www.amazon.com/dp/B005BYRVKW?tag=lawndominator-20"
         }
       ],
@@ -16728,7 +16728,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16768,7 +16768,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -16778,7 +16778,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         }
@@ -17044,7 +17044,7 @@
           "manual_verified": true,
           "status": "not_included",
           "reason": "below $10.00 minimum for this category",
-          "price": 4.84,
+          "price": 4.85,
           "offer_url": "https://www.target.com/p/the-andersons-pgf-balanced-10-10-10/-/A-1004907715"
         },
         {
@@ -18293,7 +18293,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19161,7 +19161,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19575,7 +19575,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "no_extracted_offer",
+          "reason": "not_checked_saved_source_limit",
           "price": null,
           "offer_url": null
         },
@@ -19768,8 +19768,8 @@
           "retailer": "coredepots",
           "retailer_name": "Coredepots",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "status": "included",
+          "reason": "included",
           "price": 40.83,
           "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle"
         },
@@ -19798,8 +19798,8 @@
           "retailer": "coredepots",
           "retailer_name": "Coredepots",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "duplicate retailer product-page offer",
           "price": 40.83,
           "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle?variant=50489188712612"
         },
@@ -21093,7 +21093,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 664.87,
+          "price": 664.73,
           "offer_url": "https://www.ebay.com/itm/146196423297"
         },
         {
@@ -25042,7 +25042,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 89.19,
+          "price": 69.99,
           "offer_url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20"
         }
       ],
@@ -25315,7 +25315,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.19,
+          "price": 53.99,
           "offer_url": "https://www.amazon.com/dp/B01IRWSIUG?tag=lawndominator-20"
         }
       ],
@@ -25672,7 +25672,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 28.33,
+          "price": 27.99,
           "offer_url": "https://www.amazon.com/dp/B08KSN2MMG?tag=lawndominator-20"
         }
       ],
@@ -25861,7 +25861,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 79.19,
+          "price": 87.11,
           "offer_url": "https://www.amazon.com/dp/B000BX4VHE?tag=lawndominator-20"
         }
       ],
@@ -25966,7 +25966,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.65,
+          "price": 24.99,
           "offer_url": "https://www.amazon.com/dp/B08C484NNJ?tag=lawndominator-20"
         }
       ],
@@ -26029,7 +26029,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.24,
+          "price": 36.6,
           "offer_url": "https://www.amazon.com/dp/B07YZPF9YP?tag=lawndominator-20"
         }
       ],
@@ -26155,7 +26155,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 45.49,
+          "price": 46.0,
           "offer_url": "https://www.amazon.com/dp/B001H1LR3A?tag=lawndominator-20"
         }
       ],
@@ -26197,7 +26197,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.93,
+          "price": 54.98,
           "offer_url": "https://www.amazon.com/dp/B0FTJ89P9W?tag=lawndominator-20"
         }
       ],
@@ -26239,7 +26239,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 36.65,
+          "price": 36.66,
           "offer_url": "https://www.amazon.com/dp/B005UJN4ZE?tag=lawndominator-20"
         }
       ],
@@ -26785,7 +26785,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.81,
+          "price": 19.99,
           "offer_url": "https://www.amazon.com/dp/B000COBUQC?tag=lawndominator-20"
         }
       ],
