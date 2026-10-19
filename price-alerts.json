@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-19T06:28:07.686253+00:00",
+  "generated_at": "2026-10-19T07:47:51.164694+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 30,
+  "current_alert_count": 1,
+  "alert_count": 31,
   "alerts": [
+    {
+      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
+      "type": "major_price_drop",
+      "product_id": 402,
+      "product_slug": "drexel-simazine-4l",
+      "product_name": "Simazine 4L Herbicide",
+      "category": "pre-emergent",
+      "old_price": 89.19,
+      "new_price": 69.99,
+      "drop_percent": 21.5,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-10-19T07:47:51.164694+00:00"
+    },
     {
       "id": "zoecon-extinguish-plus:best_price_drop:amazon:36.24:34.09",
       "type": "best_price_drop",
