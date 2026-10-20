@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-20T13:35:40.995547+00:00",
+  "generated_at": "2026-10-20T14:02:45.278835+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 28,
+  "current_alert_count": 0,
+  "alert_count": 26,
   "alerts": [
     {
       "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
@@ -19,23 +19,6 @@
       "old_retailer": "Amazon",
       "new_retailer": "Amazon",
       "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-20T13:35:40.995547+00:00"
-    },
-    {
-      "id": "hiyield-spreader-sticker:best_price_drop:amazon:18.38:16.82",
-      "type": "best_price_drop",
-      "product_id": 494,
-      "product_slug": "hiyield-spreader-sticker",
-      "product_name": "Hi-Yield Spreader Sticker",
-      "category": "surfactant",
-      "old_price": 18.38,
-      "new_price": 16.82,
-      "drop_percent": 8.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B007KYQ2FQ?tag=lawndominator-20",
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-20T13:35:40.995547+00:00"
@@ -189,23 +172,6 @@
       "old_retailer": "Reinders",
       "new_retailer": "Solutions Pest & Lawn",
       "url": "https://www.solutionsstores.com/encartis-fungicide?sku=BASF113&srsltid=AfmBOop-1Cv0kJydmKvH-STHbMfTU39WWg9u4oFbY2bAga97WLgIP91SDJc",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-19T18:35:33.008831+00:00"
-    },
-    {
-      "id": "agri-fab-45-0462:major_price_drop:amazon:250.33:210.56",
-      "type": "major_price_drop",
-      "product_id": 322,
-      "product_slug": "agri-fab-45-0462",
-      "product_name": "Agri-Fab 45-0462 Push Spreader (130 lb)",
-      "category": "spreader-push",
-      "old_price": 250.33,
-      "new_price": 210.56,
-      "drop_percent": 15.9,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B002U0KDH8?tag=lawndominator-20",
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-19T18:35:33.008831+00:00"
