@@ -1,27 +1,44 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-24T08:30:30.768292+00:00",
+  "generated_at": "2026-10-24T11:40:01.267339+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 3,
+  "current_alert_count": 2,
   "alert_count": 22,
   "alerts": [
     {
-      "id": "quali-pro-negate-37wg:major_price_drop:amazon:54.19:45.60",
+      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
       "type": "major_price_drop",
-      "product_id": 415,
-      "product_slug": "quali-pro-negate-37wg",
-      "product_name": "Negate 37WG",
-      "category": "post-emergent",
-      "old_price": 54.19,
-      "new_price": 45.6,
-      "drop_percent": 15.9,
+      "product_id": 402,
+      "product_slug": "drexel-simazine-4l",
+      "product_name": "Simazine 4L Herbicide",
+      "category": "pre-emergent",
+      "old_price": 89.19,
+      "new_price": 69.99,
+      "drop_percent": 21.5,
       "old_retailer": "Amazon",
       "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B01IRWSIUG?tag=lawndominator-20",
+      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
       "in_stock": true,
       "quality_verified": true,
-      "created_at": "2026-10-24T08:30:30.768292+00:00"
+      "created_at": "2026-10-24T11:40:01.267339+00:00"
+    },
+    {
+      "id": "bonide-revitalize-biofungicide:best_price_drop:amazon:21.14:20.05",
+      "type": "best_price_drop",
+      "product_id": 426,
+      "product_slug": "bonide-revitalize-biofungicide",
+      "product_name": "Revitalize Bio Fungicide Concentrate",
+      "category": "fungicide",
+      "old_price": 21.14,
+      "new_price": 20.05,
+      "drop_percent": 5.2,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B076HW6S9K?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-10-24T11:40:01.267339+00:00"
     },
     {
       "id": "milky-spore:major_price_drop:amazon:100.64:89.53",
@@ -362,23 +379,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-17T15:10:07.554798+00:00"
-    },
-    {
-      "id": "barricade-4fl:major_price_drop:amazon:35.22:31.50",
-      "type": "major_price_drop",
-      "product_id": 401,
-      "product_slug": "barricade-4fl",
-      "product_name": "Barricade 4FL Herbicide",
-      "category": "pre-emergent",
-      "old_price": 35.22,
-      "new_price": 31.5,
-      "drop_percent": 10.6,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B00OXD2CKG?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-17T11:12:45.688072+00:00"
     }
   ]
 }
