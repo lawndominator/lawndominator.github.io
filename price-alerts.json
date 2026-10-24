@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-24T15:37:27.293873+00:00",
+  "generated_at": "2026-10-24T16:17:09.340173+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 20,
+  "current_alert_count": 0,
+  "alert_count": 17,
   "alerts": [
     {
       "id": "dismiss-nxt-herbicide:major_price_drop:amazon:146.54:126.58",
@@ -24,40 +24,6 @@
       "created_at": "2026-10-24T15:37:27.293873+00:00"
     },
     {
-      "id": "zoecon-extinguish-plus:best_price_drop:amazon:46.62:42.96",
-      "type": "best_price_drop",
-      "product_id": 449,
-      "product_slug": "zoecon-extinguish-plus",
-      "product_name": "Extinguish Plus Fire Ant Bait",
-      "category": "insecticide",
-      "old_price": 46.62,
-      "new_price": 42.96,
-      "drop_percent": 7.9,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B07YZPF9YP?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-24T15:37:27.293873+00:00"
-    },
-    {
-      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
-      "type": "major_price_drop",
-      "product_id": 402,
-      "product_slug": "drexel-simazine-4l",
-      "product_name": "Simazine 4L Herbicide",
-      "category": "pre-emergent",
-      "old_price": 89.19,
-      "new_price": 69.99,
-      "drop_percent": 21.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-24T13:04:13.232263+00:00"
-    },
-    {
       "id": "syngenta-advion-insect-granular-bait:best_price_drop:amazon:26.66:25.19",
       "type": "best_price_drop",
       "product_id": 446,
@@ -73,23 +39,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-24T12:42:55.917302+00:00"
-    },
-    {
-      "id": "espoma-lawn-food-15-0-5:major_price_drop:amazon:47.84:41.10",
-      "type": "major_price_drop",
-      "product_id": 455,
-      "product_slug": "espoma-lawn-food-15-0-5",
-      "product_name": "Espoma Lawn Food 15-0-5",
-      "category": "fertilizer",
-      "old_price": 47.84,
-      "new_price": 41.1,
-      "drop_percent": 14.1,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B001H1LR3A?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-24T08:30:30.768292+00:00"
     },
     {
       "id": "gordons-triple-10-10-10:best_price_drop:amazon:61.10:56.21",
