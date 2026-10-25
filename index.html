@@ -6,10 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Lawn Dominator: Lawn Tracker App for Soil Temp, GDD & Spray Logs</title>
+    <title>Lawn Care App &amp; Lawn Care Schedule | Lawn Dominator</title>
     <meta
       name="description"
-      content="Lawn Dominator is a lawn tracker app for serious DIY lawn care. Track fertilizer and spray logs, monitor soil temperature and GDD, diagnose lawn problems, and plan tank mixes."
+      content="Lawn care app and lawn care schedule for warm-season and cool-season grass: Bermuda, zoysia, St. Augustine, fescue, and bluegrass."
     />
     <meta
       name="keywords"
@@ -22,8 +22,8 @@
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta property="og:title" content="Lawn Dominator: Lawn Tracker App for Soil Temp, GDD &amp; Spray Logs" />
-    <meta property="og:description" content="Lawn Dominator is a lawn tracker app for serious DIY lawn care. Track fertilizer and spray logs, monitor soil temperature and GDD, diagnose lawn problems, and plan tank mixes." />
+    <meta property="og:title" content="Lawn Care App &amp; Lawn Care Schedule | Lawn Dominator" />
+    <meta property="og:description" content="Lawn care app and lawn care schedule for warm-season and cool-season grass: Bermuda, zoysia, St. Augustine, fescue, and bluegrass." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lawndominators.com/" />
     <meta property="og:site_name" content="Lawn Dominator" />
@@ -35,14 +35,17 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Lawn Dominator lawn tracker app preview with soil temperature, GDD, spray logs, and treatment planning." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lawn Dominator: Lawn Tracker App for Soil Temp, GDD &amp; Spray Logs" />
-    <meta name="twitter:description" content="Lawn Dominator is a lawn tracker app for serious DIY lawn care. Track fertilizer and spray logs, monitor soil temperature and GDD, diagnose lawn problems, and plan tank mixes." />
+    <meta name="twitter:title" content="Lawn Care App &amp; Lawn Care Schedule | Lawn Dominator" />
+    <meta name="twitter:description" content="Lawn care app and lawn care schedule for warm-season and cool-season grass: Bermuda, zoysia, St. Augustine, fescue, and bluegrass." />
     <meta
       name="twitter:image"
       content="https://lawndominators.com/social-preview.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preload" as="image" href="./dashboard.webp?v=20260616" fetchpriority="high" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -69,9 +72,9 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "MobileApplication",
+        "@type": ["SoftwareApplication", "MobileApplication"],
         "@id": "https://lawndominators.com/#app",
-        "name": "Lawn Dominator: Lawn Tracker",
+        "name": "Lawn Dominator: Lawn Care App",
         "alternateName": [
           "Lawn Dominator",
           "Lawn Dominators"
@@ -81,7 +84,7 @@
         "operatingSystem": "iOS 13.4 or later, Android",
         "inLanguage": "en-US",
         "isAccessibleForFree": true,
-        "description": "Lawn tracker app for serious DIY lawn care with spray logs, fertilizer tracking, soil temperature, GDD, diagnostics, and tank mix planning.",
+        "description": "Lawn care app and lawn care schedule for warm-season and cool-season grass, with spray logs, fertilizer tracking, soil temperature, GDD, diagnostics, and tank mix planning.",
         "featureList": "Fertilizer tracker, Spray log, GDD tracking, Soil temperature monitoring, Tank mix calculator, Lawn diagnostics, 170+ product library, Photo journal, Pre-emergent timing, PGR reapplication tracking",
         "screenshot": [
           "https://lawndominators.com/dashboard.webp?v=20260616",
@@ -187,7 +190,7 @@
             <p class="topbar__sub">Seasonal control for serious lawns</p>
           </div>
         </div>
-        <nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a class="topbar__price-board" href="/price-board.html">Price Board</a><a href="/#free-tools">Free Tools</a><a href="/lawn-calculators.html">Calculators</a><a href="/resources.html">Resources</a><a href="/#download">Download</a></nav>
+        <nav class="topbar__nav" aria-label="Primary"><a href="/">Home</a><a href="#season">Season</a><a class="topbar__price-board" href="/price-board.html">Price Board</a><a href="/#free-tools">Free Tools</a><a href="/lawn-calculators.html">Calculators</a><a href="/resources.html">Resources</a><a href="/#download">Download</a></nav>
         <a class="pill-link" href="/#download">Get the app</a>
       </header>
 
@@ -202,13 +205,18 @@
           <div class="hero__copy reveal">
             <p class="section-label">Built for Bermuda, Zoysia, St. Augustine, and cool-season lawns</p>
             <h1>
-              Lawn Dominator is the lawn tracker app.
-              <span>Run your lawn like a season.</span>
+              The Lawn Care App That Builds Your Plan
+              <span>Warm-season and cool-season grass.</span>
             </h1>
+            <p class="hero__soil" id="dallas-soil">
+              The soil under Dallas is <strong id="dallas-soil-temp">…</strong> at about 2 inches.
+              <a href="./soil-temperature.html">Check your ZIP</a>.
+            </p>
             <p class="hero__lede">
+              A lawn care schedule for Bermuda, zoysia, St. Augustine, tall fescue, and bluegrass.
               Track fertilizer and spray logs, calculate tank mixes and fertilizer rates,
-              monitor soil temperature and GDD, follow grass-specific calendars, and
-              build a real treatment history without juggling Notes, spreadsheets, and labels.
+              monitor soil temperature and GDD, and build a real treatment history
+              without juggling Notes, spreadsheets, and labels.
             </p>
 
             <div class="hero__actions">
@@ -262,8 +270,11 @@
                   <img
                     class="app-shot"
                     src="./dashboard.webp?v=20260616"
+                    width="420"
+                    height="913"
                     alt="Lawn Dominator dashboard screen showing current weather, 7-day outlook, spray window, soil temperature, GDD, rainfall, and price drops."
                     fetchpriority="high"
+                    decoding="async"
                   />
                 </div>
               </article>
@@ -273,8 +284,11 @@
                   <img
                     class="app-shot"
                     src="./diagnostic.webp?v=20260616"
+                    width="420"
+                    height="913"
                     alt="Lawn Dominator spray window screen showing spray conditions, temperature, wind, rain, humidity, and weather source attribution."
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </article>
@@ -503,6 +517,23 @@
             <a href="./zoysia-lawn-care-calendar.html" class="free-tool-card"><h3>Zoysia Calendar</h3><p>Conservative zoysia timing with spring green-up and disease-aware checkpoints.</p><span class="free-tool-card__cta">Open zoysia calendar →</span></a>
             <a href="./st-augustine-lawn-care-calendar.html" class="free-tool-card"><h3>St. Augustine Calendar</h3><p>Timing notes for sensitive turf, pre-emergent, fertility, insects, and disease pressure.</p><span class="free-tool-card__cta">Open St. Augustine calendar →</span></a>
             <a href="./cool-season-lawn-care-calendar.html" class="free-tool-card"><h3>Cool-Season Calendar</h3><p>Spring and fall growth windows for tall fescue, bluegrass, and fine fescue lawns.</p><span class="free-tool-card__cta">Open cool-season calendar →</span></a>
+          </div>
+        </section>
+
+        <section class="section research-guides" id="season">
+          <div class="section__intro reveal">
+            <p class="section-label">This season</p>
+            <h2>Fall and winter lawn care, by the job.</h2>
+            <p style="color:var(--ink-soft);font-size:1rem;max-width:62ch;margin-top:var(--space-sm)">Cool-season lawns are in their main feeding and seeding window. Warm-season lawns are heading into dormancy, ryegrass overseeding, and winter weeds. Start with the guide that matches the grass you actually have.</p>
+          </div>
+          <div class="research-guides__grid reveal">
+            <a href="./fall-lawn-care-schedule.html" class="free-tool-card"><h3>Fall lawn care schedule</h3><p>What to do now for tall fescue and bluegrass, and what to stop doing on Bermuda and zoysia.</p><span class="free-tool-card__cta">Read the fall schedule →</span></a>
+            <a href="./cool-season-lawn-care-guide.html" class="free-tool-card"><h3>Cool-season lawn care guide</h3><p>Mowing, fertilizer, summer stress, and fall recovery for fescue, bluegrass, and ryegrass.</p><span class="free-tool-card__cta">Read the cool-season guide →</span></a>
+            <a href="./overseeding-guide.html" class="free-tool-card"><h3>Overseeding guide</h3><p>Cool-season overseeding, plus perennial ryegrass on dormant Bermuda.</p><span class="free-tool-card__cta">Read the overseeding guide →</span></a>
+            <a href="./when-to-apply-winterizer-fertilizer.html" class="free-tool-card"><h3>Winterizer fertilizer</h3><p>Late-fall nitrogen for cool-season turf, and why some states shut fertilizer off.</p><span class="free-tool-card__cta">Read the winterizer guide →</span></a>
+            <a href="./winterize-sprinkler-system.html" class="free-tool-card"><h3>Winterize sprinklers</h3><p>Shutoff, blowout, and backflow protection before the first hard freeze.</p><span class="free-tool-card__cta">Read the sprinkler guide →</span></a>
+            <a href="./winter-weeds.html" class="free-tool-card"><h3>Winter weeds</h3><p>Poa annua, henbit, and chickweed in dormant Bermuda and in cool-season lawns.</p><span class="free-tool-card__cta">Read the weed guide →</span></a>
+            <a href="./spring-pre-emergent-timing.html" class="free-tool-card"><h3>Spring pre-emergent by region</h3><p>When to start watching soil temperature in the South, the transition zone, and the North.</p><span class="free-tool-card__cta">Read the timing guide →</span></a>
           </div>
         </section>
 
@@ -741,6 +772,15 @@
           <a href="mailto:support@lawndominators.com">support@lawndominators.com</a>
           <a href="./app-ads.txt">app-ads.txt</a>
         </div>
+        <nav class="footer__guides" aria-label="Seasonal guides">
+          <a href="./fall-lawn-care-schedule.html">Fall schedule</a>
+          <a href="./cool-season-lawn-care-guide.html">Cool-season guide</a>
+          <a href="./overseeding-guide.html">Overseeding</a>
+          <a href="./when-to-apply-winterizer-fertilizer.html">Winterizer</a>
+          <a href="./winterize-sprinkler-system.html">Winterize sprinklers</a>
+          <a href="./winter-weeds.html">Winter weeds</a>
+          <a href="./spring-pre-emergent-timing.html">Spring pre-emergent</a>
+        </nav>
       </footer>
     </div>
 
