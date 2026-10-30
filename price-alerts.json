@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-30T09:44:41.994550+00:00",
+  "generated_at": "2026-10-30T13:35:46.796707+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 1,
   "alert_count": 7,
   "alerts": [
+    {
+      "id": "scotts-halts:major_price_drop:amazon:30.48:24.97",
+      "type": "major_price_drop",
+      "product_id": 406,
+      "product_slug": "scotts-halts",
+      "product_name": "Scotts Halts Crabgrass & Grassy Weed Preventer",
+      "category": "pre-emergent",
+      "old_price": 30.48,
+      "new_price": 24.97,
+      "drop_percent": 18.1,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B00DU7Z62W?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-10-30T13:35:46.796707+00:00"
+    },
     {
       "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
       "type": "major_price_drop",
@@ -87,23 +104,6 @@
       "old_retailer": "Green Thumb Nursery",
       "new_retailer": "Pestrong",
       "url": "https://pestrong.com/product/hydretain-rts-hose-end-sprayer-qt",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-29T18:32:40.515457+00:00"
-    },
-    {
-      "id": "syngenta-advion-insect-granular-bait:best_price_drop:amazon:26.92:25.56",
-      "type": "best_price_drop",
-      "product_id": 446,
-      "product_slug": "syngenta-advion-insect-granular-bait",
-      "product_name": "Advion Insect Granular Bait",
-      "category": "insecticide",
-      "old_price": 26.92,
-      "new_price": 25.56,
-      "drop_percent": 5.1,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B08C484NNJ?tag=lawndominator-20",
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-29T18:32:40.515457+00:00"
