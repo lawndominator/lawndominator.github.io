@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-31T15:52:50.532364+00:00",
+  "generated_at": "2026-10-31T16:08:05.240909+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 1,
   "alert_count": 12,
   "alerts": [
+    {
+      "id": "primo-maxx:best_price_drop:amazon:32.14:30.09",
+      "type": "best_price_drop",
+      "product_id": 35,
+      "product_slug": "primo-maxx",
+      "product_name": "Primo Maxx (Trinexapac-ethyl)",
+      "category": "pgr",
+      "old_price": 32.14,
+      "new_price": 30.09,
+      "drop_percent": 6.4,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-10-31T16:08:05.240909+00:00"
+    },
     {
       "id": "syngenta-advion-insect-granular-bait:best_price_drop:amazon:27.89:25.53",
       "type": "best_price_drop",
@@ -22,23 +39,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-31T15:52:50.532364+00:00"
-    },
-    {
-      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
-      "type": "major_price_drop",
-      "product_id": 402,
-      "product_slug": "drexel-simazine-4l",
-      "product_name": "Simazine 4L Herbicide",
-      "category": "pre-emergent",
-      "old_price": 89.19,
-      "new_price": 69.99,
-      "drop_percent": 21.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-31T11:32:04.228044+00:00"
     },
     {
       "id": "sedgehammer-plus:major_price_drop:solutions-pest-lawn:12.72:10.60",
