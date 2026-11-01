@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-01T01:21:33.354180+00:00",
+  "generated_at": "2026-11-01T02:15:47.124069+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 13,
+  "alert_count": 12,
   "alerts": [
     {
       "id": "tekko-pro:best_price_drop:amazon:69.93:64.51",
@@ -22,23 +22,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-10-31T23:56:02.648184+00:00"
-    },
-    {
-      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
-      "type": "major_price_drop",
-      "product_id": 402,
-      "product_slug": "drexel-simazine-4l",
-      "product_name": "Simazine 4L Herbicide",
-      "category": "pre-emergent",
-      "old_price": 89.19,
-      "new_price": 69.99,
-      "drop_percent": 21.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-10-31T21:35:54.132125+00:00"
     },
     {
       "id": "syngenta-advion-insect-granular-bait:best_price_drop:amazon:27.89:25.53",
