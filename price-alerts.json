@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-05T10:25:07.441225+00:00",
+  "generated_at": "2026-11-05T10:28:18.830486+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 6,
+  "alert_count": 8,
   "alerts": [
     {
       "id": "diatomaceous-earth:major_price_drop:amazon:29.99:26.99",
@@ -22,6 +22,40 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-11-04T10:25:43.620163+00:00"
+    },
+    {
+      "id": "andersons-pgf-balanced:major_price_drop:target:54.88:35.00",
+      "type": "major_price_drop",
+      "product_id": 131,
+      "product_slug": "andersons-pgf-balanced",
+      "product_name": "The Andersons PGF Balanced 10-10-10",
+      "category": "fertilizer",
+      "old_price": 54.88,
+      "new_price": 35.0,
+      "drop_percent": 36.2,
+      "old_retailer": "Shop App",
+      "new_retailer": "Target",
+      "url": "https://www.target.com/p/the-andersons-pgf-balanced-10-10-10/-/A-1004907715",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-11-03T19:34:07.461060+00:00"
+    },
+    {
+      "id": "andersons-pgf-balanced:new_lowest_retailer:target:54.88:35.00",
+      "type": "new_lowest_retailer",
+      "product_id": 131,
+      "product_slug": "andersons-pgf-balanced",
+      "product_name": "The Andersons PGF Balanced 10-10-10",
+      "category": "fertilizer",
+      "old_price": 54.88,
+      "new_price": 35.0,
+      "drop_percent": 36.2,
+      "old_retailer": "Shop App",
+      "new_retailer": "Target",
+      "url": "https://www.target.com/p/the-andersons-pgf-balanced-10-10-10/-/A-1004907715",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-11-03T19:34:07.461060+00:00"
     },
     {
       "id": "scotts-starter-fertilizer:best_price_drop:amazon:84.49:79.99",
