@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap');
+/* Fonts load from the document head so this stylesheet does not wait on a render-blocking @import. */
 
 :root {
   color-scheme: dark;
@@ -287,6 +287,21 @@ h2 {
 
 h3 {
   font-size: clamp(1.15rem, 2vw, 1.55rem);
+}
+
+.hero__soil {
+  margin: 1.15rem 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.hero__soil strong {
+  color: var(--ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .hero__lede,
@@ -728,9 +743,19 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: var(--space-lg);
   padding: 0 0 2rem;
   color: var(--ink-soft);
+}
+
+.footer__guides {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  padding-top: 0.35rem;
+  font-size: 0.88rem;
 }
 
 .footer__links {
@@ -2006,9 +2031,21 @@ input[type="date"].gdd-date-input::-webkit-calendar-picker-indicator {
   margin: 0;
 }
 
+.guide-card p + p,
+.guide-card p + ul,
+.guide-card ul + p,
+.guide-note p + .store-call,
+.guide-note .store-call + .store-call {
+  margin-top: 0.9rem;
+}
+
 .guide-card ul,
 .guide-source-list ol {
   padding-left: 1.25rem;
+}
+
+.guide-card li + li {
+  margin-top: 0.45rem;
 }
 
 .guide-source-list li + li {
