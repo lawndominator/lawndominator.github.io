@@ -1,28 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-07T09:52:59.600921+00:00",
+  "generated_at": "2026-11-07T10:43:48.067778+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2566,
     "manual_verified_sources": 706,
-    "included_sources": 1262,
-    "not_included_sources": 696,
+    "included_sources": 1059,
+    "not_included_sources": 899,
     "invalid_sources": 608
   },
   "reason_counts": {
-    "included": 1262,
+    "included": 1059,
     "product_identity_mismatch": 595,
     "no_extracted_offer": 281,
-    "duplicate retailer product-page offer": 159,
+    "price older than 48 hours": 214,
+    "duplicate retailer product-page offer": 152,
     "not_checked_saved_source_limit": 97,
-    "price source is not independently quality-verified": 35,
-    "no_price": 31,
+    "price source is not independently quality-verified": 38,
+    "no_price": 30,
     "package size is ambiguous for a size-sensitive product": 23,
-    "implausible same-package price outlier": 16,
+    "implausible same-package price outlier": 17,
     "below $10.00 minimum for this category": 15,
     "above $500.00 maximum for this product": 10,
     "above $400.00 maximum for this product": 7,
-    "price older than 48 hours": 7,
     "above $300.00 maximum for this product": 6,
     "non_retail_or_laboratory_product": 6,
     "ambiguous product URL shared across catalog products": 5,
@@ -407,7 +407,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 157.8,
+          "price": 158.6,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -586,7 +586,7 @@
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 164.95,
           "offer_url": "https://sodsolutions.com/shop/weed-control/pre-emergent-weed-control/dimension-2ew/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOoqvKvy3TlQDKjao92F5F_Rx7UKFOEgMprxUbovv8MxWrLQ4D7BUD4o"
         },
@@ -846,8 +846,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 139.67,
           "offer_url": "https://www.domyown.com/ronstar-herbicide-p-1496.html"
         },
@@ -896,8 +896,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 129.89,
           "offer_url": "https://www.seedranch.com/Ronstar-G-Herbicide-50-Lbs-p/ronstar-g-50.htm?srsltid=AfmBOoqaJvISZknLlVeDbQV-nA4AeB6ZnCjMjtiF7CTdqvwXLfPXNOBsNTQ"
         },
@@ -1022,8 +1022,8 @@
           "offer_url": "https://seedbarn.com/products/ronstar-g-herbicide-50-lbs?currency=USD&country=US&variant=12542096244836&stkn=fe2774b158dd&srsltid=AU7gw4UcyA7urhuUhHpDAEfto66ggXIWSHoSsqu2Lld_OaGSYL-hAh0ER60"
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 2,
+      "included_sources": 10,
+      "not_included_sources": 4,
       "invalid_sources": 4
     },
     {
@@ -1037,8 +1037,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 340.02,
           "offer_url": "https://www.domyown.com/specticle-flo-p-2797.html"
         },
@@ -1147,8 +1147,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 445.0,
           "offer_url": "https://www.walmart.com/ip/Specticle-FLO-Herbicide-18-Ounces/654848027?wmlspartner=wlpa&selectedSellerId=16695&selectedOfferId=6F6B5DCEF36A4CD28EBF4AE258E215F2&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -1167,8 +1167,8 @@
           "retailer": "seed-world",
           "retailer_name": "Seed World",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 377.7,
           "offer_url": "https://www.seedworldusa.com/products/specticle-flo-pre-emergent-herbicide-18-ounces?variant=30040542737&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorhQY3V8vHSGexRgUfsSh0J2gmPk0giwaCuxwn-MkztzaTukRVIIKw"
         },
@@ -1187,8 +1187,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 387.77,
           "offer_url": "https://www.seedranch.com/Specticle-FLO-Herbicide-18-Ounces-p/specticle-flo-18oz.htm?srsltid=AfmBOooPAcrZduPegAU5CBH2LmHskhAm_KN7KdYgbqJ0_DkshjI4eZ1AhEs"
         },
@@ -1213,8 +1213,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 11,
+      "included_sources": 3,
+      "not_included_sources": 15,
       "invalid_sources": 0
     },
     {
@@ -1890,7 +1890,7 @@
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 195.88,
           "offer_url": "https://www.walmart.com/ip/Gallery-75-DF-Herbicide-1-Lb/237857577?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         }
@@ -1910,8 +1910,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 139.0,
           "offer_url": "https://www.domyown.com/specticle-herbicide-p-4519.html"
         },
@@ -1990,8 +1990,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 225.6,
           "offer_url": "https://www.walmart.com/ip/Specticle-G-Granular-Pre-Emergent-Herbicide/17347556100?wmlspartner=wlpa&selectedSellerId=101444091&veh=seo_fpl&cn=google"
         },
@@ -2010,8 +2010,8 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 204.14,
           "offer_url": "https://www.ebay.com/itm/134845221569?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopOL89p7-MoGO-x5kv3xDyuVSdHiDLk0gTAPOaCsPsJvyFqsKKJA7s"
         },
@@ -2040,8 +2040,8 @@
           "retailer": "antego-tire-wheel",
           "retailer_name": "Antego Tire & Wheel",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 189.99,
           "offer_url": "https://antegowheels.com/products/specticle-g-pre-emergent-herbicide?variant=46964996276276&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoo1CoBH_bzFlSKSyhg7msnFGyvL6_TBYW1Prf_3gGNyl4cigEgCc80"
         },
@@ -2060,8 +2060,8 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 213.52,
           "offer_url": "https://www.ebay.com/itm/334689342097?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqrgIAdAtgjh6a2cIKqHbO-Svg6VvzZQqLi7j-b4x5-LEXdqLIxoAE"
         },
@@ -2100,8 +2100,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 197.77,
           "offer_url": "https://www.seedranch.com/Specticle-G-Herbicide-50-Lbs-p/specticle-g-50.htm?srsltid=AfmBOorET7w02DDBOacbjGbfnFF5ILoW2fCWWWUEiMuAV3aC_mgOljFX6M0"
         },
@@ -2120,8 +2120,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 144.95,
           "offer_url": "https://www.forestrydistributing.com/specticle-g-granular-pre-emergent-herbicide-50-lbs-bayer?srsltid=AfmBOoqKcjwu1-pWVs-r9Tsf7GHgtcHTFS4TdfEIJ-srbaQA4M8anhOVyqM"
         },
@@ -2140,8 +2140,8 @@
           "retailer": "ranch-wholesale",
           "retailer_name": "Ranch Wholesale",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 144.85,
           "offer_url": "https://www.ranchwholesale.com/specticle-g-pre-emergent-herbicide-bayer-50-lbs?srsltid=AfmBOooqh-ClFR-XuOVH_9Ejixy1lsC9HU5ilRhPSgK76StipNPImdmVM7k"
         },
@@ -2180,14 +2180,14 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 139.0,
           "offer_url": "https://shop.advancedturf.com/product/specticle-g-50-lb/01t2M00000IMEqRQAX?srsltid=AU7gw4W81QuX5MVatgTK8bCpBhD7z_XixfATVWtkPnRKH79YHDbgfp-wEvw"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 7,
+      "included_sources": 12,
+      "not_included_sources": 16,
       "invalid_sources": 0
     },
     {
@@ -2241,8 +2241,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 49.95,
           "offer_url": "https://www.forestrydistributing.com/atrazine-4l-herbicide-2pt5-gal-loveland-products?srsltid=AfmBOop2zKkSKeGVLwp43RZjBZXaGQGsGHPLKxNBvp6JFWWyo58jYikIa4s"
         },
@@ -2271,8 +2271,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 72.5,
           "offer_url": "https://www.seedranch.com/Atrazine-4L-Herbicide-2-5-Gallons-p/atrazine-4l-2.5.htm?srsltid=AfmBOorRYirMBsjz39iSEJTVjz1sj5zcUrwQgR4Xl1TA3Q9lCYPVxdyvwKQ"
         },
@@ -2312,7 +2312,7 @@
           "retailer_name": "Pest Control Superstore",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "reason": "implausible same-package price outlier",
           "price": 79.95,
           "offer_url": "https://pestcontrolsuperstore.com/products/atrazine-4l-herbicide-jug-rup?variant=41625794150490&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoowY8LoU2-RfKix8hiSY-PiicODw7VTL5YY2REj3w1H0wD8jnOKk4A"
         },
@@ -2431,14 +2431,14 @@
           "retailer": "koch-farm-service",
           "retailer_name": "Koch Farm Service",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 40.47,
           "offer_url": "https://kochfarmservice.com/products/atrazine-4l"
         }
       ],
-      "included_sources": 8,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 6,
       "invalid_sources": 13
     },
     {
@@ -3124,7 +3124,7 @@
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 178.0,
           "offer_url": "https://www.walmart.com/ip/Celsius-WG-Postemergence-Herbicide-10-oz-Bottle-by-Envu/606383788?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=1A1F0164AC9F348286E1C76DE9A693F1&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -3194,8 +3194,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 114.99,
           "offer_url": "https://www.walmart.com/ip/17860562650"
         },
@@ -3204,8 +3204,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 116.63,
           "offer_url": "https://www.walmart.com/ip/394118875"
         },
@@ -3254,8 +3254,8 @@
           "retailer": "the-landscaper-store",
           "retailer_name": "The Landscaper Store",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 119.99,
           "offer_url": "https://thelandscaperstore.com/products/certainty-turf-herbicide-1-25-oz?variant=40064422740083&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorb1oszeYm5QUMwtJ6SVZd0zcy4U2DFwtx6MT-GeeOjcIZInwFaxkk"
         },
@@ -3264,8 +3264,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 125.95,
           "offer_url": "https://www.seedranch.com/Certainty-Turf-Herbicide-1-25-Oz-p/certainty-herbicide-1.25.htm?srsltid=AfmBOopWoNHjygjsJ6TzoqTOvTYx16wYqeZ2BYxXO5qaVOc68xQkoxgrIAw"
         },
@@ -3294,8 +3294,8 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 137.12,
           "offer_url": "https://www.ebay.com/itm/235902399985?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOooHyCY39ipZo79XMEeYs4Tj0ZI3X22mfOhRyB-TyUi0WoJwkR8hQ98"
         },
@@ -3304,8 +3304,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 94.95,
           "offer_url": "https://www.forestrydistributing.com/certainty-turf-herbicide-1pt25-oz-monsanto?srsltid=AfmBOoog5H5CQb4_W4jPTWXJOKvL4CyPMemS8yugVetu9JKjfNSAET4Gpwo"
         },
@@ -3344,8 +3344,8 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 128.39,
           "offer_url": "https://www.ebay.com/itm/116101744133?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoo6bXKUCXSPoLuqhH2_iQzJr9nMB81IvGDUJ2QtSIzf0uyaO0bxXBo"
         },
@@ -3390,8 +3390,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 3,
+      "included_sources": 9,
+      "not_included_sources": 10,
       "invalid_sources": 4
     },
     {
@@ -3437,7 +3437,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 54.89,
+          "price": 54.39,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -4780,8 +4780,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 100.47,
           "offer_url": "https://www.walmart.com/ip/160081931"
         },
@@ -5000,8 +5000,8 @@
           "retailer": "target",
           "retailer_name": "Target",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 40.27,
           "offer_url": "https://www.target.com/p/monterey-turflon-ester-herbicide-liquid-concentrate-8-oz/-/A-1002563066?TCID=OGS&AFID=google&CPNG=Patio%2BGarden+-+Target+Plus&adgroup=84-16&srsltid=AfmBOoqdpBujqKdKHNp-Z3u9t7iHpR9hEdlu6n1gDV9aD3etrof_ulfFSdU"
         },
@@ -5010,8 +5010,8 @@
           "retailer": "stones-ace-of",
           "retailer_name": "Stones Ace of",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 41.99,
           "offer_url": "https://www.acehardware.com/departments/lawn-and-garden/gardening/seeds-and-bulbs/7162126"
         },
@@ -5020,8 +5020,8 @@
           "retailer": "walmart-esbenshades-garden-center",
           "retailer_name": "Walmart - Esbenshades Garden Center",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 40.27,
           "offer_url": "https://www.walmart.com/ip/Monterey-P-Turflon-Ester-Concentrate-8-oz/19276690?wmlspartner=wlpa&selectedSellerId=6895&selectedOfferId=EF2AA1740FD8419898AC39341F0B0268&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -5070,8 +5070,8 @@
           "retailer": "central-valley",
           "retailer_name": "Central Valley",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 42.99,
           "offer_url": "https://central-valley.com/p/monterey-lg-5512-turflon-ester-specialty-herbicide-liquid-concentrate-8oz/81063?utm_source=google&utm_campaign=organic&utm_medium=shopping&storeId=5dbca106-40a0-4ad6-a368-e9c12dd873dd&region_id=312998404616129329572223550315660561769"
         },
@@ -5096,8 +5096,8 @@
           "offer_url": "https://www.ebay.com/itm/257164611738?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqmWDn7jJo_qBM2GrKQKCal9Q8q1L1vrdIsYMdb9yCOffFVytl5Sg8"
         }
       ],
-      "included_sources": 13,
-      "not_included_sources": 2,
+      "included_sources": 8,
+      "not_included_sources": 7,
       "invalid_sources": 17
     },
     {
@@ -5512,8 +5512,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.32,
           "offer_url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html"
         },
@@ -5532,8 +5532,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.32,
           "offer_url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23029&srsltid=AfmBOoqozCxarxJ8lwPmsYIuqVBY8-VW_jOxbLr6kMJdjyNaZDUFjjvrAq0"
         },
@@ -5552,8 +5552,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 403.95,
           "offer_url": "https://www.forestrydistributing.com/pylex-herbicide-4-oz-basf?srsltid=AfmBOopGJKkKuj2araCUbx6DZeeEvZU-uLCmZObLW7C3mwGO80MHYAB81JY"
         },
@@ -5582,8 +5582,8 @@
           "retailer": "ranch-wholesale",
           "retailer_name": "Ranch Wholesale",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 403.95,
           "offer_url": "https://www.ranchwholesale.com/pylex-herbicide-basf-4-oz?srsltid=AfmBOoo-WRZvnUq-FUnOs_KTrQKhXnc7TxZ42GAz3K6T0AfpGsiap-6CJwo"
         },
@@ -5602,8 +5602,8 @@
           "retailer": "reinders",
           "retailer_name": "Reinders",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.32,
           "offer_url": "https://www.reinders.com/products/basf-pylex-post-emergent-herbicide-4-oz-btl"
         },
@@ -5612,8 +5612,8 @@
           "retailer": "industrial-vegetation-management",
           "retailer_name": "Industrial Vegetation Management",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 403.95,
           "offer_url": "https://www.industrialvm.com/pylex-herbicide-basf-4-oz?srsltid=AfmBOooL4OWszPh-SIgi25pAXMcJ4VCtpNm5Yzezsf2qVDUQgSWhJ1_VXs8"
         },
@@ -5632,8 +5632,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 436.94,
           "offer_url": "https://www.domyown.com/pylex-herbicide-california-oz-p-23030.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23030&srsltid=AfmBOorKK0uOVU3VvYbr2dFG240OaHWpDKWs4aMA8IO0jGcjqqJMC77yqOI"
         },
@@ -5682,8 +5682,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.32,
           "offer_url": "https://www.domyown.com/pylex-herbicide-oz-p-23029.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23029&srsltid=AU7gw4UucZ3FI77JRmHuVoQi3lpjg5b4eXO4JneOVA3mSi5DVeLCJg5dVWk"
         },
@@ -5692,8 +5692,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.95,
           "offer_url": "https://www.forestrydistributing.com/pylex-herbicide-4-oz-basf?srsltid=AU7gw4X554CX2LwdT-3RO8pPAG8xzl9t_FqmfC1AZHkBKmsNDtdASVw2az8"
         },
@@ -5712,8 +5712,8 @@
           "retailer": "ranch-wholesale",
           "retailer_name": "Ranch Wholesale",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 424.85,
           "offer_url": "https://www.ranchwholesale.com/pylex-herbicide-basf-4-oz?srsltid=AU7gw4X1G7_G8N15-KO_KhywkuRaIK1Cc7LRJqkpcGSBbtKpYcGgi2u2lBg"
         },
@@ -5722,8 +5722,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 469.0,
           "offer_url": "https://www.ebay.com/itm/198580607523?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -5732,8 +5732,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 436.94,
           "offer_url": "https://www.domyown.com/pylex-herbicide-california-oz-p-23030.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=23030&srsltid=AU7gw4Wy3lD1PvEXuO9R9-biCMjJuEa-bky9S5SAdbUX6x2v1J_s6jTWZl0"
         },
@@ -5742,14 +5742,14 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 475.0,
           "offer_url": "https://www.ebay.com/itm/287622164503?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 2,
+      "included_sources": 8,
+      "not_included_sources": 15,
       "invalid_sources": 1
     },
     {
@@ -5793,8 +5793,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 149.0,
           "offer_url": "https://www.ebay.com/itm/287256259347"
         },
@@ -5893,8 +5893,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 149.0,
           "offer_url": "https://www.walmart.com/ip/Target-6-Plus-MSMA-2-5-Gallon/17743921344?wmlspartner=wlpa&selectedSellerId=101444091&veh=seo_fpl&cn=google"
         },
@@ -5933,8 +5933,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 135.98,
           "offer_url": "https://www.domyown.com/drexel-msma-plus-p-21791.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=21791&srsltid=AU7gw4WrETbONTB2l4HM6lYl-ByiWH9KYDtn7gH3ykgCXp1s_eMtZwZ-NNg"
         },
@@ -5953,8 +5953,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 149.0,
           "offer_url": "https://www.ebay.com/itm/287374329372?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -5963,8 +5963,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 102.95,
           "offer_url": "https://www.forestrydistributing.com/msma-6-plus-herbicide-2pt5-gal-drexel?srsltid=AU7gw4UA_CfFc8c3_A4WjUYGgbjFJzvJDHpeF1BJLyhwRN5qeLTDSO-K9Uc"
         },
@@ -6003,8 +6003,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 194.33,
           "offer_url": "https://shop.advancedturf.com/product/drexel-msma-6-plus-2-5-gal/01t2M000005MF0NQAW?srsltid=AU7gw4UKpCYmTPrQN2Yt3Iyx4t40J3UX1DB8rfIXjQfQ4hfxY27WGBp24Ak"
         },
@@ -6029,8 +6029,8 @@
           "offer_url": "https://shop.dandlfarmandhome.com/products/msma-6-plus--2-5-gal-8489.html?srsltid=AU7gw4XnDRCT1JQslogkoZVknyPWviRsO26qnJPuoORuQROkDbC8B_GbIeQ"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 6,
+      "included_sources": 13,
+      "not_included_sources": 12,
       "invalid_sources": 2
     },
     {
@@ -6144,8 +6144,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 55.99,
           "offer_url": "https://www.walmart.com/ip/Q4-Plus-Herbicide-32oz-PBI-Gordon/437928301?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -6154,8 +6154,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 56.98,
           "offer_url": "https://www.domyown.com/q4-plus-turf-herbicide-p-1930.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1930&srsltid=AfmBOoqmbCxeY1ZJ-Isfp8cB6oPhHAZ1FSobNdP9Nh_NbV-Wdk1TA7XY8Ig"
         },
@@ -6264,8 +6264,8 @@
           "retailer": "the-andersons",
           "retailer_name": "The Andersons",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 49.88,
           "offer_url": "https://andersonslawn.com/products/q4-plus-herbicide?srsltid=AU7gw4U9hB80p6kpWYqyJxa2eEZg25wWqxENyL3oJoCyv5LNc0k5hQATS7Y"
         },
@@ -6274,8 +6274,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.95,
           "offer_url": "https://www.walmart.com/ip/Q4-Plus-Herbicide-32oz-PBI-Gordon/437928301?wmlspartner=wlpa&selectedSellerId=16695&selectedOfferId=C26054D57D0848F78F2A9C600AE57E6A&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -6284,8 +6284,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 44.95,
           "offer_url": "https://www.forestrydistributing.com/q4-plus-turf-herbicide-1-qt-pbi-gordon?srsltid=AU7gw4VsQgYIzw9hbI-XPOb4WXHRdS_cyHDl2QoMZfK1Kuevr1dpwTsHFZQ"
         },
@@ -6304,14 +6304,14 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 55.2,
           "offer_url": "https://www.ebay.com/itm/156104367965?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AU7gw4XnxwtKKfqXPi8gpBoBvpaTqIYitGU6KDdbdWLSvdAyTJ5kdqaQAV0"
         }
       ],
-      "included_sources": 18,
-      "not_included_sources": 2,
+      "included_sources": 12,
+      "not_included_sources": 8,
       "invalid_sources": 7
     },
     {
@@ -6425,8 +6425,8 @@
           "retailer": "walmart-do-it-yourself-pest-control",
           "retailer_name": "Walmart - Do-It-Yourself Pest Control",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 90.51,
           "offer_url": "https://www.walmart.com/ip/Trimec-Classic-Broadleaf-Herbicide-1-Gallon/561318586?wmlspartner=wlpa&selectedSellerId=13656&selectedOfferId=AB7408553F6E3F6390C883E95C10EF4C&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -6475,8 +6475,8 @@
           "retailer": "ranch-wholesale",
           "retailer_name": "Ranch Wholesale",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 72.85,
           "offer_url": "https://www.ranchwholesale.com/trimec-classic-brand-broadleaf-herbicide-1-gal?srsltid=AfmBOoofTM4mBd4mzqMWtWWUgxhV8S1pmeuCYeA_VpVPiCbPKBGBEYgN_S0"
         },
@@ -6495,8 +6495,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 84.5,
           "offer_url": "https://www.seedranch.com/Trimec-Classic-Broadleaf-Herbicide-1-Gallon-p/trimec-classic-broadleaf-1.htm?srsltid=AfmBOorPWSCax_kKYgViP93i0tOhPEHS4te4MsNnrwpwIpVbacdBY6QnKXQ"
         },
@@ -6555,8 +6555,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 205.0,
           "offer_url": "https://www.walmart.com/ip/Trimec-Classic-Broadleaf-Herbicide-2-5-Gallons/385881903?wmlspartner=wlpa&selectedSellerId=101444091&veh=seo_fpl&cn=google"
         },
@@ -6585,8 +6585,8 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 214.15,
           "offer_url": "https://www.ebay.com/itm/156111501276?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOor9dAHNcZZgv9h_Ml42DHKblZ-eOqkCL4B5venzaLY_rwu2nNw92G8"
         },
@@ -6785,8 +6785,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 119.95,
           "offer_url": "https://www.seedranch.com/Trimec-Southern-Broadleaf-Herbicide-1-Gallon-p/trimec-southern-gallon.htm?srsltid=AU7gw4VZP4P1Z_6YI_vHOK4M1iW0iYjZeit3wZvvmBvQa1F9dQmxQkbbHto"
         },
@@ -6805,8 +6805,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 125.45,
           "offer_url": "https://www.domyown.com/trimec-southern-broadleaf-herbicide-gallon-p-2612.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2612&srsltid=AU7gw4VHHCDAFaK8_FxhVb_UfhZ4sxvqGT5fN03nPMJA_-dwnt_VMEEMqIw"
         },
@@ -6821,8 +6821,8 @@
           "offer_url": "https://diypestcontrol.com/trimec-southern-herbicide?srsltid=AU7gw4VrOEQ1bVx5E26CYZkbnmFElpseZMz2jRYv7o-QYcF066_3AnGdcD8"
         }
       ],
-      "included_sources": 24,
-      "not_included_sources": 11,
+      "included_sources": 17,
+      "not_included_sources": 18,
       "invalid_sources": 15
     },
     {
@@ -6987,7 +6987,7 @@
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 389.99,
           "offer_url": "https://www.walmart.com/ip/Revolver-Post-Emergence-Herbicide-For-Grassy-Weeds-32-fl-oz-Bottle-by-Envu/5372923943?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -7458,8 +7458,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 448.92,
           "offer_url": "https://www.domyown.com/bayer-tribute-total-p-13537.html"
         },
@@ -7518,8 +7518,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 459.06,
           "offer_url": "https://www.domyown.com/tribute-total-herbicide-california-p-25711.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25711&srsltid=AfmBOoqu1KcY0gYQ9tHIDlSIKWPZJG-sfUAhz_pUsx-kyM7FLGWXJP0PMEY"
         },
@@ -7558,8 +7558,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 295.0,
           "offer_url": "https://www.ebay.com/itm/366599140277?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -7588,8 +7588,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 462.77,
           "offer_url": "https://www.seedranch.com/Tribute-Total-Herbicide-6-Ounces-p/tribute-tota-6oz.htm?srsltid=AfmBOooKJpdw1N6XcUOKUs4AxW-RxvhzaDDMlKFqLdpgAtvjI_cXJGvmGnY"
         },
@@ -7608,8 +7608,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 335.0,
           "offer_url": "https://www.ebay.com/itm/267679317357?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -7618,8 +7618,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 435.0,
           "offer_url": "https://www.ebay.com/itm/406906191975?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -7668,8 +7668,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 448.92,
           "offer_url": "https://www.domyown.com/tribute-total-herbicide-washington-p-25713.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25713&srsltid=AfmBOooS5qq_onKYFmstf7xIfWdpY_3OwZc7sxK0SrE17HxJK9Tw0YfntCM"
         },
@@ -7694,8 +7694,8 @@
           "offer_url": "https://diypestcontrol.com/tribute-total-herbicide?srsltid=AfmBOopQ_lf9LlyR4byH0RdQ8VyfjoZ7-MswB60BiYu0dEzn6kVmTbT8lH4"
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 12,
+      "included_sources": 5,
+      "not_included_sources": 19,
       "invalid_sources": 0
     },
     {
@@ -7731,7 +7731,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 30.94,
+          "price": 32.93,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -8030,8 +8030,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 127.13,
           "offer_url": "https://www.walmart.com/ip/5081584180"
         },
@@ -8040,8 +8040,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 177.85,
           "offer_url": "https://www.ebay.com/itm/232322660324"
         },
@@ -8060,8 +8060,8 @@
           "retailer": "arborchem",
           "retailer_name": "Arborchem",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 145.0,
           "offer_url": "https://www.arborchem.com/product/373/t-nex-1-gal-container"
         },
@@ -8210,8 +8210,8 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 202.99,
           "offer_url": "https://www.ebay.com/itm/335376959280?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopBsRZXLAaW93BIblqkibAP5gP-cBuHrgHdm_3_0VswUog5vq732e0"
         },
@@ -8250,8 +8250,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 150.98,
           "offer_url": "https://www.domyown.com/tnex-p-16595.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=16595&srsltid=AU7gw4VSuz-9RrzoL-XF7ElOPsNdmmeVuiS3Ym2HSXthLojEUfFL4VGDDB8"
         },
@@ -8310,8 +8310,8 @@
           "retailer": "ebay-globilla",
           "retailer_name": "eBay - globilla",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 239.0,
           "offer_url": "https://www.ebay.com/itm/396853953122?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AU7gw4UythnNKmRTJvw33KEqxiE9NfuyfTSD6tiyPtPyH_MCSsNjD0bst8Y"
         },
@@ -8326,8 +8326,8 @@
           "offer_url": "https://pestcontrolsuperstore.com/products/t-nex-plant-growth-regulator?variant=41628575105114&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AU7gw4WQNPQ3PSQWGJbXR2EoS-ofEgDQxucjDmBDGZOtT6kBuXm4YIOJ31w"
         }
       ],
-      "included_sources": 19,
-      "not_included_sources": 9,
+      "included_sources": 13,
+      "not_included_sources": 15,
       "invalid_sources": 3
     },
     {
@@ -8341,8 +8341,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 176.42,
           "offer_url": "https://www.domyown.com/anuew-plant-growth-regulator-p-23007.html"
         },
@@ -8431,8 +8431,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 182.99,
           "offer_url": "https://www.walmart.com/ip/Anuew-Granulated-TGR-Turf-Growth-Regulator-For-Turf-Management-1-5-lbs-Pouch-by-NuFarm/1844388078?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -8471,8 +8471,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 159.79,
           "offer_url": "https://www.walmart.com/ip/Anuew-Plant-Growth-Regulator-1-5-Pound/2062368290?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=45B804E0770C3F358D0C105625BC834C&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -8561,8 +8561,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 134.95,
           "offer_url": "https://www.forestrydistributing.com/anuew-plant-growth-regulator-pgr-1pt5-lbs-nufarm?srsltid=AU7gw4Wieo-ILdcc_6zOjUHchYPRRimbuIlywEZ-iH7CuyvoocOKdK81aVA"
         },
@@ -8571,14 +8571,14 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 228.71,
           "offer_url": "https://shop.advancedturf.com/product/anuew-1-5-lb/01t2M000005w9WYQAY?srsltid=AU7gw4Xplcibu8TzpiuPEBBCcsxTUNxKf4LN1V2geRjDua2-uKOh0osCQ74"
         }
       ],
-      "included_sources": 10,
-      "not_included_sources": 3,
+      "included_sources": 5,
+      "not_included_sources": 8,
       "invalid_sources": 11
     },
     {
@@ -8854,8 +8854,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 142.86,
           "offer_url": "https://www.domyown.com/proxy-growth-regulator-p-22835.html"
         },
@@ -8890,8 +8890,8 @@
           "offer_url": "https://www.intermountainturf.com/products/proxy-growth-regulator-jug-2-5-gallon?currency=USD&country=US&variant=45347673309322&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AfmBOopYJdmC9RWudoZl8gEnRqP2oQ0S0uWr_a488w_gOPW-u0dsGHc8FXE"
         }
       ],
-      "included_sources": 5,
-      "not_included_sources": 0,
+      "included_sources": 4,
+      "not_included_sources": 1,
       "invalid_sources": 2
     },
     {
@@ -9136,8 +9136,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 372.6,
           "offer_url": "https://www.domyown.com/banner-maxx-fungicide-p-1507.html"
         },
@@ -9176,8 +9176,8 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 189.95,
           "offer_url": "https://pestrong.com/product/dorado-fungicide-genric-banner-maxx-ii-ppz-2-gallon"
         },
@@ -9236,8 +9236,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 128.99,
           "offer_url": "https://www.walmart.com/ip/Propiconazole-14-3-Select-Fungicide-128-fl-oz-Jug-by-Prime-Source/20366609326?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -9316,8 +9316,8 @@
           "retailer": "walmart-prosolutions-llc",
           "retailer_name": "Walmart - ProSolutions, LLC",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 93.0,
           "offer_url": "https://www.walmart.com/ip/Propiconazole-14-3-Select-Fungicide-Banner-Maxx/954566653?wmlspartner=wlpa&selectedSellerId=101003442&selectedOfferId=B955F957063542B99A81608D8CD94955&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -9326,8 +9326,8 @@
           "retailer": "walmart-a-to-z-lawn-supply",
           "retailer_name": "Walmart - A to Z Lawn Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 89.65,
           "offer_url": "https://www.walmart.com/ip/Propiconazole-14-3-Select-Fungicide-Banner-Maxx/954566653?wmlspartner=wlpa&selectedSellerId=101548121&selectedOfferId=4FE1779411B63477849A516E375166FF&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -9356,8 +9356,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 69.99,
           "offer_url": "https://www.walmart.com/ip/QP-Propiconazole-PPZ-14-3-Fungicide-32-fl-oz-Bottle-by-Control-Solutions/6395408555?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -9366,8 +9366,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 49.95,
           "offer_url": "https://www.ebay.com/itm/287374329299?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -9386,8 +9386,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 56.31,
           "offer_url": "https://www.walmart.com/ip/Propiconazole-14-3-Liquid-Fungicide-Banner-Maxx-Quart/17335607736?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=745734129CC53379A34F296BE1EDCA44&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -9406,8 +9406,8 @@
           "retailer": "walmart-solutions-pest-lawn",
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 46.51,
           "offer_url": "https://www.walmart.com/ip/Propiconazole-83013365-14-3-32oz-Fungicide-White/5027551281?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -9416,8 +9416,8 @@
           "retailer": "walmart-prosentyx-llc",
           "retailer_name": "Walmart - Prosentyx LLC",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 39.99,
           "offer_url": "https://www.walmart.com/ip/Gunner-14-3-MEC-Propiconazole-Fungicide-1-Quart-Atticus-Compare-Banner-Maxx-Controls-Brown-Patch-Dollar-Spot-Blights-Powdery-Mildew-Rusts/5143212317?wmlspartner=wlpa&selectedSellerId=101464992&selectedOfferId=75CBA7A84E7D384F999AC7B2E606D695&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -9432,8 +9432,8 @@
           "offer_url": "https://www.ebay.com/itm/145466988696?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 6,
+      "included_sources": 11,
+      "not_included_sources": 16,
       "invalid_sources": 3
     },
     {
@@ -9627,8 +9627,8 @@
           "retailer": "sod-solutions",
           "retailer_name": "Sod Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 84.95,
           "offer_url": "https://sodsolutions.com/shop/disease-control/heritage-g-30lb/?utm_source=google&utm_medium=google-shopping&srsltid=AfmBOop-N2fTl6OY2DbmAnOloCvOa7ZD7twhlI8KSJGu0-Sm1Ap7Z0HkyuQ"
         },
@@ -9697,8 +9697,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 89.95,
           "offer_url": "https://www.seedranch.com/Heritage-G-Fungicide-p/heritage-g-30-lbs.htm?srsltid=AfmBOoqhzMOhUNygALOG0HDZo_Gcy_UfHaInwKuzJ8ZW3FUbMODXVTE7GQA"
         },
@@ -9753,8 +9753,8 @@
           "offer_url": "https://sodsolutions.com/products/heritage-g-granular-fungicide?variant=48040595488955&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AU7gw4XPdoIS3FqalURe-BJ2R62nWcJ8PBvqaEjA49kY8idmMPfK77utHUc"
         }
       ],
-      "included_sources": 12,
-      "not_included_sources": 1,
+      "included_sources": 10,
+      "not_included_sources": 3,
       "invalid_sources": 18
     },
     {
@@ -10270,7 +10270,7 @@
           "retailer_name": "Walmart - Solutions Pest & Lawn",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 173.58,
           "offer_url": "https://www.walmart.com/ip/Armada-50-WDG-Fungicide-2-lbs-Jug-by-Envu/1390282634?wmlspartner=wlpa&selectedSellerId=9396&veh=seo_fpl&cn=google"
         },
@@ -10500,8 +10500,8 @@
           "retailer": "veseris",
           "retailer_name": "Veseris",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 687.35,
           "offer_url": "https://veseris.com/default/pillar-sc-intrinsic-fungicide-128-oz?srsltid=AfmBOopIRPixvgPm6-9NTK4bp0tDaJQeC2jExGlWavLdamD6RF4kCNw9EAg"
         },
@@ -10530,8 +10530,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 700.15,
           "offer_url": "https://www.domyown.com/pillar-sc-fungicide-gallon-p-26987.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=26987&srsltid=AfmBOooLKLqLtrVMxPfD2cW0R3hHR1CCaFXAOyyq3vqGmrBXlAQJOxUHagA"
         },
@@ -10656,8 +10656,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 7,
+      "included_sources": 5,
+      "not_included_sources": 9,
       "invalid_sources": 13
     },
     {
@@ -11534,8 +11534,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 184.25,
           "offer_url": "https://www.walmart.com/ip/Emerald-Fungicide-0-49-Lb/619414180?wmlspartner=wlpa&selectedSellerId=16695&selectedOfferId=5F1FB7254B73487888B8B7A52203E117&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -11564,8 +11564,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 184.25,
           "offer_url": "https://www.seedranch.com/Emerald-Fungicide-0-49-Lb-p/emerald-fungicide-49.htm?srsltid=AfmBOoomcv9mnkSlS70nRpA6MtWJQdIB78lGzRJgH-To5u-YrrBRtsdVs7k"
         },
@@ -11580,8 +11580,8 @@
           "offer_url": "https://www.reinders.com/products/basf-emerald-fungicide-0-49-lb-bag"
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 6,
+      "included_sources": 2,
+      "not_included_sources": 8,
       "invalid_sources": 1
     },
     {
@@ -11595,8 +11595,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 215.2,
           "offer_url": "https://www.domyown.com/medallion-wdg-fungicide-p-2316.html"
         },
@@ -11645,8 +11645,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 215.2,
           "offer_url": "https://www.domyown.com/medallion-wdg-fungicide-p-2316.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=2316&srsltid=AfmBOoq55_jm1LIkMGa4OR2mnu80fWs98f7lbRhrQru0kLV1I-tuq5ovkRU"
         },
@@ -11675,8 +11675,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 239.85,
           "offer_url": "https://www.walmart.com/ip/Medallion-WDG-Fungicide-8-Oz/504729910?wmlspartner=wlpa&selectedSellerId=16695&selectedOfferId=9D95DE23CE514F0D9589DDA951E51C9B&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -11685,8 +11685,8 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 239.85,
           "offer_url": "https://www.ebay.com/itm/335759918283?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopINwBHP4N7bSfw1_aS2w71FtnuBK2CXl2RL2GcPJ4Tl3-d0o8YvH4"
         },
@@ -11725,8 +11725,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 217.77,
           "offer_url": "https://www.seedranch.com/Medallion-WDG-Fungicide-8-Oz-p/medallion-wdg-fungicide-8.htm?srsltid=AfmBOop5mIbCMwy0adkiRSIbiYbjM1wOMm5Ybct-kbSRviSkbIveaSfguko"
         },
@@ -11745,8 +11745,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 810.0,
           "offer_url": "https://www.domyown.com/medallion-wdg-fungicide-case-p-27089.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=27089&srsltid=AfmBOoqt5bACS_EqNYkjuSDywGfioR7imKkEZm_aSPzsu0SkStT5ggU5tf0"
         },
@@ -11765,8 +11765,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 212.51,
           "offer_url": "https://www.walmart.com/ip/Medallion-WDG-Fungicide-Easy-To-Use-Provides-Effective-Disease-Control-8-oz-Bottle-by-Syngenta/7780818331?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=DA84B50144E33BD08E067E3B98255547&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -11801,8 +11801,8 @@
           "offer_url": "https://homeandgardensupply.com/products/medallion-wdg?variant=41075805388887&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOop4CiRQb7PXFFyEsQN4WSv3rx5fZ4Bq1EFMX8KZO5sh7bJGDgQE3aI"
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 4,
+      "included_sources": 9,
+      "not_included_sources": 11,
       "invalid_sources": 1
     },
     {
@@ -11816,8 +11816,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 727.89,
           "offer_url": "https://www.domyown.com/subdue-maxx-fungicide-p-2321.html"
         },
@@ -11896,8 +11896,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 229.99,
           "offer_url": "https://www.walmart.com/ip/Subdue-Maxx-Turf-Fungicide-Mefenoxam-1-Quart/528965439?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -11986,8 +11986,8 @@
           "retailer": "the-landscaper-store",
           "retailer_name": "The Landscaper Store",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 209.99,
           "offer_url": "https://thelandscaperstore.com/products/subdue-maxx-fungicide-quart-32-oz-mefenoxam-22-syngenta?variant=21197009584192&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOopNvs1Pd3QzMQp6q3SLIaccExGMG_hwav3pXV8ojA_S7j2kj8DlKKM"
         },
@@ -12066,8 +12066,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 740.41,
           "offer_url": "https://www.walmart.com/ip/Subdue-Maxx-Fungicide-Controls-Plant-Diseases-128-fl-oz-Jug-by-Syngenta/5075637062?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -12076,8 +12076,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 210.0,
           "offer_url": "https://www.domyown.com/subdue-maxx-fungicide-quart-p-4173.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=4173&srsltid=AU7gw4XYOAT_29ebdR5BMCVEMrF9YDVE-JQhdaqNiDzYNbWhrxFTFPzFEPY"
         },
@@ -12086,8 +12086,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 207.95,
           "offer_url": "https://www.forestrydistributing.com/subdue-maxx-fungicide-1-qt-syngenta?srsltid=AU7gw4XIAC7rXaFNbMraJdFVigKcriDHxvAVK0XPwjKK13ZczCkTnkdMQF4"
         },
@@ -12142,8 +12142,8 @@
           "offer_url": "https://seedbarn.com/products/subdue-maxx-turf-fungicide-1-gallon?currency=USD&country=US&variant=47651436921050&stkn=fe2774b158dd&srsltid=AU7gw4XAgva3aCq_eDg3jnRmXGmOgjvX31QvY4qdt-lfWmkHPkBXt7yZWpc"
         }
       ],
-      "included_sources": 15,
-      "not_included_sources": 12,
+      "included_sources": 9,
+      "not_included_sources": 18,
       "invalid_sources": 6
     },
     {
@@ -12157,8 +12157,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 359.55,
           "offer_url": "https://www.domyown.com/velista-fungicide-p-16940.html"
         },
@@ -12227,8 +12227,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 329.95,
           "offer_url": "https://www.forestrydistributing.com/velista-wdg-turf-fungicide-syngenta?srsltid=AfmBOoqJipQTmi2C4QP61VhN_9gQxoaZ-OO5qrhnfMZRlwGgtVtKxDYf3lg"
         },
@@ -12267,8 +12267,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 365.85,
           "offer_url": "https://www.seedranch.com/Velista-Fungicide-22-Oz-p/sy55168.htm?srsltid=AfmBOopX0Et2GuiRE2PyrV9q-fgBoAAfWtuesHgv60BLRkeCEK76pf_yHWI"
         },
@@ -12307,8 +12307,8 @@
           "retailer": "seed-world",
           "retailer_name": "Seed World",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 350.0,
           "offer_url": "https://www.seedworldusa.com/products/velista-fungicide-22-oz?currency=USD&country=US&variant=39373943603298&stkn=26e0c506f652&srsltid=AfmBOorcSVxKYLYFpOOkV7L_WkbY4c2IQu5yzOrVgxmbOvwWf7zeFPnVlZY"
         },
@@ -12323,8 +12323,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 6,
+      "included_sources": 5,
+      "not_included_sources": 10,
       "invalid_sources": 2
     },
     {
@@ -12398,8 +12398,8 @@
           "retailer": "reinders",
           "retailer_name": "Reinders",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 357.0,
           "offer_url": "https://www.reinders.com/products/bayer-encartis-fungicide-2-5-gallon-jug"
         },
@@ -12414,8 +12414,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 4,
+      "included_sources": 2,
+      "not_included_sources": 5,
       "invalid_sources": 1
     },
     {
@@ -12479,8 +12479,8 @@
           "retailer": "reinders",
           "retailer_name": "Reinders",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 739.6,
           "offer_url": "https://www.reinders.com/products/bayer-densicor-fungicide-51-oz-btl"
         },
@@ -12495,8 +12495,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 4,
-      "not_included_sources": 2,
+      "included_sources": 3,
+      "not_included_sources": 3,
       "invalid_sources": 1
     },
     {
@@ -12651,7 +12651,7 @@
           "retailer_name": "Growcycle",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 119.95,
           "offer_url": "https://growcycle.com/lawn-synergy-en/crop-protection/acelepryn-insecticide-liquid-grub-and-armyworm-control?srsltid=AfmBOoo2bWaCSZXTbhp98Q7g3ahe1Cy4eWfEtHfd_ibiLNdaMLCVnA09610"
         },
@@ -12841,8 +12841,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 175.62,
           "offer_url": "https://www.ebay.com/itm/287500027639?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -12861,8 +12861,8 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 148.57,
           "offer_url": "https://www.ebay.com/itm/134970476247?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoq8uCgp0rHIGViaadxFJsAZpYcNxtG973aqBDxBBGqNn_gsL0T8dow"
         },
@@ -12937,8 +12937,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 7,
-      "not_included_sources": 5,
+      "included_sources": 5,
+      "not_included_sources": 7,
       "invalid_sources": 8
     },
     {
@@ -13363,8 +13363,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 96.8,
           "offer_url": "https://www.domyown.com/dylox-62-granules-p-1454.html"
         },
@@ -13413,8 +13413,8 @@
           "retailer": "walmart-lawn-pest-control-supply",
           "retailer_name": "Walmart - Lawn & Pest Control Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 85.95,
           "offer_url": "https://www.walmart.com/ip/Dylox-6-2-Granular-Insecticide/270764750?wmlspartner=wlpa&selectedSellerId=101444091&selectedOfferId=503324841C1A3556BB4FD11169599AB6&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -13433,8 +13433,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 96.8,
           "offer_url": "https://www.domyown.com/dylox-62-granules-p-1454.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1454&srsltid=AfmBOopFWS1Wig_yhkJaGTl4apAnXnvFV7CqdAJB2Qb7wC8yhyACAGdiBDs"
         },
@@ -13443,8 +13443,8 @@
           "retailer": "ebay-solutionspestandlawn",
           "retailer_name": "eBay - Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 91.14,
           "offer_url": "https://www.ebay.com/itm/134983714517?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOoqo6af3iXpobV33AVPdW3YbFFbV6f7rbDDrb9USH1f296bcyDEWQ8U"
         },
@@ -13483,8 +13483,8 @@
           "retailer": "american-seed",
           "retailer_name": "American Seed",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 87.5,
           "offer_url": "https://americanseedco.com/product/dylox-6-2-granular"
         },
@@ -13553,8 +13553,8 @@
           "retailer": "dne-supply-co",
           "retailer_name": "DNE Supply Co",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 77.99,
           "offer_url": "https://www.dnesupply.co/product/dylox-30lb-lda10-/3EN7VVYT433N7EDAFBSVODBQ?cs=true&cst=custom&srsltid=AfmBOoo6QI3isY778_zlBwIPxEHnlxR9DXkPa_P4U9WnK0vnxs9bdJQXeOA"
         },
@@ -13593,8 +13593,8 @@
           "retailer": "ebay-seedranch",
           "retailer_name": "eBay - seedranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 129.95,
           "offer_url": "https://www.ebay.com/itm/325470710167?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopJD-07bFNrlOzCUg3XyEq2pR9p8E0a1CpKj3I4AH7P11cxfY2WPQA"
         },
@@ -13633,8 +13633,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 107.0,
           "offer_url": "https://www.seedranch.com/Dylox-6-2-Insecticide-30-Lbs-p/dylox-6-2-30.htm?srsltid=AfmBOop3fLeuOVIFwmWZ0ZRNtGCS1NN6ao_ovLQ8G7WNpf1HJcdNPDPTtTg"
         },
@@ -13643,8 +13643,8 @@
           "retailer": "ebay-rundsc",
           "retailer_name": "eBay - rundsc",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 134.98,
           "offer_url": "https://www.ebay.com/itm/116731111135?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AfmBOopa5Bdukz9gmVFtXons8oP9mTyKxrpxqHI8tzokQU5rQey2Z2StiyA"
         },
@@ -13673,8 +13673,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 96.8,
           "offer_url": "https://www.domyown.com/dylox-62-granules-p-1454.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1454&srsltid=AU7gw4UpwGJjuPTVrWYT9ibyexD3qo4VShIUHsZcvSn62qJ8q8aJ9f3PoMc"
         },
@@ -13713,8 +13713,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 58.95,
           "offer_url": "https://www.forestrydistributing.com/dylox-6pt2-granular-insecticide-30-lbs-envu?srsltid=AU7gw4W7WsjF6q3bMFXzSK6Ok-4PfUEytf94osRFo1SV_bk9mPk4BV_f_Pc"
         },
@@ -13733,14 +13733,14 @@
           "retailer": "reinders",
           "retailer_name": "Reinders",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 105.42,
           "offer_url": "https://www.reinders.com/products/bayer-dylox-6-2g-insecticide-30-lb-bag"
         }
       ],
-      "included_sources": 28,
-      "not_included_sources": 10,
+      "included_sources": 16,
+      "not_included_sources": 22,
       "invalid_sources": 0
     },
     {
@@ -13804,8 +13804,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 29.97,
           "offer_url": "https://www.domyown.com/bifen-it-p-226.html"
         },
@@ -13944,8 +13944,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 40.98,
           "offer_url": "https://www.domyown.com/bifen-it-quart-p-552.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=552&srsltid=AfmBOopNeb2fCps58PyYsc22Apbopl53OCCIHehpcStEZpkZO09p-cT5QUU"
         },
@@ -13954,8 +13954,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 41.99,
           "offer_url": "https://www.walmart.com/ip/Control-Solutions-Bifen-I-T-Quart/198562007?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=7A5273F999CC44EABE2C447F4A925817&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -14054,8 +14054,8 @@
           "retailer": "walmart-usa-supply",
           "retailer_name": "Walmart - USA Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 28.95,
           "offer_url": "https://www.walmart.com/ip/CSI-Control-Solutions-Bifen-I-T-Pint/110795860?wmlspartner=wlpa&selectedSellerId=101014420&selectedOfferId=1F77DEC5BCD743988AE70D647D9E2522&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -14084,8 +14084,8 @@
           "retailer": "forestry-suppliers",
           "retailer_name": "Forestry Suppliers",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 27.95,
           "offer_url": "https://www.forestry-suppliers.com/product_pages/Viewitem.asp?item=17300&srsltid=AfmBOopLEK4wCpGcuMDCI2shoM-6H07R3w_RixVsS6ixpM8caAfJlxFCUH8"
         },
@@ -14104,8 +14104,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 32.25,
           "offer_url": "https://www.ebay.com/itm/356429454948?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -14174,8 +14174,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 56.98,
           "offer_url": "https://www.domyown.com/bifen-it-gallon-p-11662.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=11662&srsltid=AfmBOopsQ_IAedomULY09_OxNxQxTIg0bw5iIrjcvwWJfFcz0_Ywr5gkfo0"
         },
@@ -14194,8 +14194,8 @@
           "retailer": "southern-states-cooperative",
           "retailer_name": "Southern States Cooperative",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 84.99,
           "offer_url": "https://southernstates.com/products/control-solutions-bifen-i-t-insecticide-termiticide?variant=50118389465388&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqjIxdEFc4mFwwf6OhiLxBoJoywaszR-W6tLF0NbTfph5_w_7zyRzI"
         },
@@ -14214,8 +14214,8 @@
           "retailer": "pestrong-com",
           "retailer_name": "Pestrong.com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 67.95,
           "offer_url": "https://pestrong.com/product/bifen-it-insecticide-generic-talstar-qt-3-4-1-gallon/?attribute_pa_sort=gal&srsltid=AfmBOoqWwov0crfsnrCpw5liF5h3bDXXNcnQoVyHcDOqIomFhksXogAIXmM"
         },
@@ -14250,8 +14250,8 @@
           "offer_url": "https://www.solutionsstores.com/bifen-it-insecticide?sku=CSI63&srsltid=AU7gw4WoqX5xeFqH54ohXghAcHob4Pkq8UeEKOONiIEH0BfkFaup3KcNMpc"
         }
       ],
-      "included_sources": 27,
-      "not_included_sources": 15,
+      "included_sources": 18,
+      "not_included_sources": 24,
       "invalid_sources": 8
     },
     {
@@ -14646,8 +14646,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 134.66,
           "offer_url": "https://www.domyown.com/meridian-033-insecticide-p-10304.html"
         },
@@ -14756,8 +14756,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 142.83,
           "offer_url": "https://www.walmart.com/ip/Meridian-0-33G-Insecticide-40-Lbs/582473389?wmlspartner=wlpa&selectedSellerId=16695&veh=seo_fpl&cn=google"
         },
@@ -14776,8 +14776,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 124.95,
           "offer_url": "https://www.ebay.com/itm/287500028002?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -14816,8 +14816,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 119.45,
           "offer_url": "https://www.seedranch.com/Meridian-0-33G-Insecticide-40-Lbs-p/meridian-.33g-40.htm?srsltid=AfmBOooG1C_nzOqVKmZtyw-oifxdlBnB07spuOFB2VciznUwdK_3_Zmm1hM"
         },
@@ -14852,8 +14852,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 14,
-      "not_included_sources": 7,
+      "included_sources": 10,
+      "not_included_sources": 11,
       "invalid_sources": 0
     },
     {
@@ -14867,8 +14867,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 142.17,
           "offer_url": "https://www.domyown.com/arena-25-granules-p-1926.html"
         },
@@ -15027,8 +15027,8 @@
           "retailer": "walmart-dibbs-farms",
           "retailer_name": "Walmart - Dibbs Farms",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 155.0,
           "offer_url": "https://www.walmart.com/ip/Arena-0-25g-Insecticide-30-Lbs/972124119?wmlspartner=wlpa&selectedSellerId=16695&veh=seo_fpl&cn=google"
         },
@@ -15037,8 +15037,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 78.95,
           "offer_url": "https://www.forestrydistributing.com/arena-0pt25-insecticide-30-lbs-valent?srsltid=AfmBOopvlhU6is5cl9ABmAklJcLhMttKr3dWrfNOMiHQcmWLHKT0ABPvmnU"
         },
@@ -15057,8 +15057,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 142.95,
           "offer_url": "https://www.ebay.com/itm/356609193750?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -15097,8 +15097,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 135.5,
           "offer_url": "https://www.seedranch.com/Arena-0-25g-Insecticide-30-Lbs-p/arena-30-lbs.htm?srsltid=AfmBOor3uvSfsUhCyCqgWjJPAdKNvk7OEbGfdIZcsKRrdWDVqipeLo88bEE"
         },
@@ -15117,8 +15117,8 @@
           "retailer": "industrial-vegetation-management",
           "retailer_name": "Industrial Vegetation Management",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 78.95,
           "offer_url": "https://www.industrialvm.com/arena-025-g-clothianidin-insecticide-30-lbs-nufarm-valent?srsltid=AfmBOorKkEKhpOMMdkMNUqmgWNtZcCNiTUAtarftN5idu14OnTbR6YCPAes"
         },
@@ -15147,8 +15147,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 109.24,
           "offer_url": "https://shop.advancedturf.com/product/arena-0-25-g-insecticide-30-lb/01t2M000005oaBiQAI?srsltid=AU7gw4VvwCyXqGe9PMPKhCtOTCJoZMOqNYU-j3zosY582Q9wbJKOO825qYI"
         },
@@ -15167,8 +15167,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 142.17,
           "offer_url": "https://www.domyown.com/arena-25-granules-p-1926.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=1926&srsltid=AU7gw4XF25SRJevdwxHiFXrGO3xBvCfOrRpf7zUdMC5GoO4KsNw7WZZivaw"
         },
@@ -15187,8 +15187,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 217.05,
           "offer_url": "https://www.ebay.ca/itm/225309863309"
         },
@@ -15213,8 +15213,8 @@
           "offer_url": "https://www.intermountainturf.com/products/arica-wg-granular-insecticide-arena-25g-bag-30-lbs?currency=USD&country=US&variant=47219339427978&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AU7gw4VvWyC5OOUmhGnH-id2e19wrcvYea76Mnz991QErr0s17Co2yGGiT4"
         }
       ],
-      "included_sources": 23,
-      "not_included_sources": 12,
+      "included_sources": 14,
+      "not_included_sources": 21,
       "invalid_sources": 0
     },
     {
@@ -15238,8 +15238,8 @@
           "retailer": "pestrong",
           "retailer_name": "Pestrong",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 45.95,
           "offer_url": "https://pestrong.com/product/lambdastar-ultracap-9-7-insecticide-demand-cs-pt-qt"
         },
@@ -15318,8 +15318,8 @@
           "retailer": "walmart-usa-supply",
           "retailer_name": "Walmart - USA Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 116.72,
           "offer_url": "https://www.walmart.com/ip/Demand-CS-32oz-Insecticide/1919910486?wmlspartner=wlpa&selectedSellerId=101014420&selectedOfferId=2CE86B956D8D4EF88CB9251A71AC5467&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -15328,8 +15328,8 @@
           "retailer": "seed-world",
           "retailer_name": "Seed World",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 160.0,
           "offer_url": "https://www.seedworldusa.com/products/demand-cs-insecticide-1-qt?currency=USD&country=US&variant=36003067153&stkn=26e0c506f652&srsltid=AfmBOoohsq0QbI5yAmz2TMiPwcRB4m2Y3H9ql_7e_GPY1BRiki6HKHacem4"
         },
@@ -15338,8 +15338,8 @@
           "retailer": "diy-pest-control",
           "retailer_name": "DIY Pest Control",
           "manual_verified": false,
-          "status": "not_included",
-          "reason": "price source is not independently quality-verified",
+          "status": "included",
+          "reason": "included",
           "price": 54.03,
           "offer_url": "https://diypestcontrol.com/demand-cs?srsltid=AfmBOorRELOPf7SzphZaD99drKXqIn216rneTmnkTL9ftyNRwM5HV8uiIfk"
         },
@@ -15358,8 +15358,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 94.99,
           "offer_url": "https://www.ebay.com/itm/198451231015?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item"
         },
@@ -15448,8 +15448,8 @@
           "retailer": "walmart-do-it-yourself-pest-control",
           "retailer_name": "Walmart - Do-It-Yourself Pest Control",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 42.98,
           "offer_url": "https://www.walmart.com/ip/Demand-CS-8oz-Microencapsulated-Insecticide/485391647?wmlspartner=wlpa&selectedSellerId=13656&selectedOfferId=423B37C0293B4C86B3E157CD3F9D008A&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -15508,8 +15508,8 @@
           "retailer": "seed-ranch",
           "retailer_name": "Seed Ranch",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.95,
           "offer_url": "https://www.seedranch.com/Demand-CS-Insecticide-p/demand-cs-insecticide-8oz.htm?srsltid=AfmBOopcRkRhdN8ofRGZEJxB6xKOwedl6K7kUiOGWEsf2hxeIg0K0nK9tVU"
         },
@@ -15518,8 +15518,8 @@
           "retailer": "walmart-usa-supply",
           "retailer_name": "Walmart - USA Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 45.95,
           "offer_url": "https://www.walmart.com/ip/Demand-CS-8oz-Microencapsulated-Insecticide/485391647?wmlspartner=wlpa&selectedSellerId=101014420&veh=seo_fpl&cn=google"
         },
@@ -15558,8 +15558,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 42.99,
           "offer_url": "https://www.walmart.com/ip/Demand-CS-8oz-Microencapsulated-Insecticide/485391647?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=1F277A0A387447B1A7694B74991652B7&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -15584,8 +15584,8 @@
           "offer_url": "https://www.intermountainturf.com/products/cyzmic-cs-insecticide-quart?currency=USD&country=US&variant=45347835904138&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=15c1c764e142&srsltid=AU7gw4XiGJkCviARS_ODLFM_cbjsd2Z_dyUDAtzI1uq4KmT9KsOTURvWw_E"
         }
       ],
-      "included_sources": 26,
-      "not_included_sources": 9,
+      "included_sources": 19,
+      "not_included_sources": 16,
       "invalid_sources": 1
     },
     {
@@ -15599,8 +15599,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 863.63,
           "offer_url": "https://www.domyown.com/zylam-liquid-systemic-insecticide-p-3868.html"
         },
@@ -15709,8 +15709,8 @@
           "retailer": "seed-world",
           "retailer_name": "Seed World",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 159.9,
           "offer_url": "https://www.seedworldusa.com/products/zylam-liquid-insecticide-1-quart?currency=USD&country=US&variant=29788223569&stkn=26e0c506f652&srsltid=AfmBOopxwgWKfxOINqRLPI9EfJ4ZMYwrbBIpodbjvattC5J76-elBrStmpg"
         },
@@ -15739,8 +15739,8 @@
           "retailer": "dk-hardware",
           "retailer_name": "DK Hardware",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 302.28,
           "offer_url": "https://www.dkhardware.com/pbi-gordon-7321186-pbi-qt-zylam-liquid-insecticide-product-4110571.html?srsltid=AfmBOopU1W-s20Mum1EG7vEP9ltY-y39DyPZes6cHbfMHeByAqhwPef4-SI"
         },
@@ -15819,8 +15819,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 196.4,
           "offer_url": "https://www.domyown.com/zylam-liquid-systemic-insecticide-p-3868.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=3868&srsltid=AU7gw4W1atDOtm8Pxau_O0pEUpscG7mV_f1ZoRzqPB2dMjPqqdFPSeQ4gAY"
         },
@@ -15829,8 +15829,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 132.95,
           "offer_url": "https://www.forestrydistributing.com/zylam-liquid-dinotefuran-systemic-insecticide-1-qt-pbi-gordon?srsltid=AU7gw4XDtZPObzTzS1hnJFI-6jeeEZnt2kE2RS9rTVmSGblSjNGTuvFnvTA"
         },
@@ -15869,8 +15869,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 255.87,
           "offer_url": "https://shop.advancedturf.com/product/zylam-liquid-systemic-insecticide-1-qt/01t2M00000IMGnCQAX?srsltid=AU7gw4Vy-9mnxoin-07wtRBn6ii9VK99IvWmwygMlkgeJCjdPs6POEvxNF8"
         },
@@ -15899,8 +15899,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 975.2,
           "offer_url": "https://shop.advancedturf.com/product/zylam-liquid-systemic-insecticide-1-gal/01tVH000002eXwzYAE?srsltid=AU7gw4XD6hXWgkEr2MVtnbSV-VnXc6fRsx3k2FAfzAS_8mI1fIylJMQ081Q"
         },
@@ -15909,8 +15909,8 @@
           "retailer": "ebay-its-supply",
           "retailer_name": "eBay - its_supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 651.4,
           "offer_url": "https://www.ebay.com/itm/234918368338?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AU7gw4VYenWKsFMboC0_oH9Q2dfVK5M-Of-DMH3M6H-2ov5r2IlM2fqJYqc"
         },
@@ -15929,14 +15929,14 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 564.95,
           "offer_url": "https://www.forestrydistributing.com/zylam-liquid-dinotefuran-systemic-insecticide-1-gal-pbi-gordon?srsltid=AU7gw4WAa_J7UjDyx4vc7sWKooi2WzsOyJUQGcdZTP3Uduh-bbN_2cTgxTU"
         }
       ],
-      "included_sources": 21,
-      "not_included_sources": 13,
+      "included_sources": 12,
+      "not_included_sources": 22,
       "invalid_sources": 0
     },
     {
@@ -16291,8 +16291,8 @@
           "retailer": "maguires",
           "retailer_name": "Maguires",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 200.0,
           "offer_url": "https://maguires.co/products/chemicals/insecticides/movento-240sc-bayer"
         },
@@ -16397,8 +16397,8 @@
           "offer_url": "https://www.sunspotsupply.com/products/movento-sc-insecticide-gallon?currency=USD&country=US&variant=43994441515194&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=bdfd13ec1dea&srsltid=AfmBOoqiND5Ih2rL9nzJAtjKoFPEqhH4uHphfpEKAkskENosawwIvwciXDA"
         }
       ],
-      "included_sources": 6,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 3,
       "invalid_sources": 4
     },
     {
@@ -17145,8 +17145,8 @@
           "retailer": "ebay",
           "retailer_name": "eBay",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 274.95,
           "offer_url": "https://www.ebay.com/itm/335754982770"
         },
@@ -17185,8 +17185,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 228.48,
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-p-21398.html"
         },
@@ -17205,8 +17205,8 @@
           "retailer": "forestry-distributing",
           "retailer_name": "Forestry Distributing",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 228.95,
           "offer_url": "https://www.forestrydistributing.com/kontos-miticide-insecticide-250-ml-bayer?srsltid=AfmBOoo6tnhmKqaSH0HPz0gO6K2c66p9hF0VJTPnQQjndiPE6a4hvqkF2DY"
         },
@@ -17225,8 +17225,8 @@
           "retailer": "cannavista",
           "retailer_name": "Cannavista",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 317.25,
           "offer_url": "https://cannavista.com/grow-equipment-supplies/bugs-pests-and-mold/insecticides/kontos-insecticide-250ml/?srsltid=AfmBOopgjLvK2E9X1o_yRk-JLf7K0_vQ4esrrCR4mrQsHJdF0NWHqHg8kdY"
         },
@@ -17285,8 +17285,8 @@
           "retailer": "industrial-vegetation-management",
           "retailer_name": "Industrial Vegetation Management",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 228.95,
           "offer_url": "https://www.industrialvm.com/kontos-miticide-insecticide-bayer-250-ml?srsltid=AfmBOoqRGo8HDUpKq18EGAuIXmC_RVrnlmAOFiBBCZp380WbHWHbYkDQoxk"
         },
@@ -17295,8 +17295,8 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 230.08,
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-washington-p-25701.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25701&srsltid=AfmBOoqdXf_OaBKEE8NNM91B1q3wzMwBMJoVnshvHd6qIO77AJrwXzGx5s0"
         },
@@ -17305,14 +17305,14 @@
           "retailer": "domyown-com",
           "retailer_name": "DoMyOwn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 241.99,
           "offer_url": "https://www.domyown.com/bayer-kontos-insecticide-california-p-25699.html?utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=25699&srsltid=AfmBOoqwia9nKaeSzAMcY2bxgzCThIg0wuC9QYMwKYicw4pwFeyHCrlA94s"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 6,
+      "included_sources": 4,
+      "not_included_sources": 13,
       "invalid_sources": 0
     },
     {
@@ -17688,14 +17688,14 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 457.5,
           "offer_url": "https://www.domyown.com/aquatrols-revolution-soil-surfactant-p-10332.html"
         }
       ],
-      "included_sources": 3,
-      "not_included_sources": 1,
+      "included_sources": 2,
+      "not_included_sources": 2,
       "invalid_sources": 0
     },
     {
@@ -17719,8 +17719,8 @@
           "retailer": "mycorrhizalonline",
           "retailer_name": "Mycorrhizal Online",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 325.0,
           "offer_url": "https://www.mycorrhizalonline.com/product-page/endo-4-species-granular"
         },
@@ -17749,8 +17749,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 397.84,
           "offer_url": "https://www.walmart.com/ip/MycoApply-Ultrafine-Endo-Ecto-Mycorrhizal-Inoculant-20-lb-Bag-by-Mycorrhizal-Applications/20217611099?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -17759,8 +17759,8 @@
           "retailer": "home-and-garden-supply",
           "retailer_name": "Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price source is not independently quality-verified",
           "price": 354.99,
           "offer_url": "https://homeandgardensupply.com/products/mycoapply-ultrafine-endo-ecto-mycorrhizal-inoculant?variant=42775777640535&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AU7gw4XP-7XEYm25Qi66MADQchM55I_S7lhuMqN-JQs6DZ3LG_eokWEloIg"
         },
@@ -17769,8 +17769,8 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 412.64,
           "offer_url": "https://www.ebay.com/itm/236814845792?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AU7gw4WlZ5hwE7l_XvQ1h1zf-0jxxE_tSU1X3ohWbVv0kKnz2D4Ciu4f5tQ"
         },
@@ -17799,8 +17799,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 42.94,
           "offer_url": "https://www.walmart.com/ip/MycoApply-Ultrafine-Endo-Ecto-Mycorrhizal-Inoculant-1-lb-Bag-by-Mycorrhizal-Applications/20211465316?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -17849,8 +17849,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 53.07,
           "offer_url": "https://www.walmart.com/ip/MycoApply-Soluble-Maxx-Concentrated-Soil-Inoculant-OMRI-Listed-1-lb-Pouch-by-Mycorrhizal-Applications/5722092067?wmlspartner=wlpa&selectedSellerId=5972&selectedOfferId=784E861DC303301E95878B52BC9282BC&conditionGroupCode=1&veh=seo_fpl&cn=google"
         },
@@ -17869,8 +17869,8 @@
           "retailer": "walmart-home-garden-supply",
           "retailer_name": "Walmart - Home & Garden Supply",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 328.46,
           "offer_url": "https://www.walmart.com/ip/MycoApply-Ultrafine-Endo-Mycorrhizal-Inoculant-20-lb-Bag-by-Mycorrhizal-Applications/20217511187?wmlspartner=wlpa&selectedSellerId=5972&veh=seo_fpl&cn=google"
         },
@@ -17879,14 +17879,14 @@
           "retailer": "ebay-homeandgardensupply-com",
           "retailer_name": "eBay - homeandgardensupply_com",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 318.27,
           "offer_url": "https://www.ebay.com/itm/236814841118?chn=ps&mkevt=1&mkcid=28&google_free_listing_action=view_item&srsltid=AU7gw4WOG6zdF9Dp2CtuWYfCo5CeAVycS7dvH195LJ3MWGwl9ypWvlpiBCs"
         }
       ],
-      "included_sources": 17,
-      "not_included_sources": 1,
+      "included_sources": 9,
+      "not_included_sources": 9,
       "invalid_sources": 0
     },
     {
@@ -18224,8 +18224,8 @@
           "retailer": "seedworldusa",
           "retailer_name": "Seed World",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 77.7,
           "offer_url": "https://www.seedworldusa.com/products/the-andersons-humic-dg-organic-soil-amendment-40lbs"
         },
@@ -18254,8 +18254,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 54.87,
           "offer_url": "https://www.walmart.com/ip/18749200605"
         },
@@ -18274,8 +18274,8 @@
           "retailer": "walmart",
           "retailer_name": "Walmart",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 89.88,
           "offer_url": "https://www.walmart.com/ip/259000166"
         },
@@ -18304,8 +18304,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 99.69,
           "offer_url": "https://shop.advancedturf.com/product/humic-dg-greens-70-humic-40-lb/01t2M000006FLUnQAO?srsltid=AU7gw4US1jYVhyUbQvGX_yUwZ3Pnupp2HFSLrzOWET_nJYr6N5C1gSJJZZA"
         },
@@ -18324,8 +18324,8 @@
           "retailer": "lowe-s",
           "retailer_name": "Lowe's",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 54.88,
           "offer_url": "https://www.lowes.com/pd/The-Andersons-Humic-DG-Organic-Granular-Soil-Amendment-11-lbs-10000-sq-ft/5019676111?user=shopping&feed=yes&srsltid=AU7gw4U5EQtwQaf94XniBQT9O5pbKdZf5dqdzdaK8YSRNUuK7ZsiTFY03Rc"
         },
@@ -18334,14 +18334,14 @@
           "retailer": "lowe-s",
           "retailer_name": "Lowe's",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 89.88,
           "offer_url": "https://www.lowes.com/pd/The-Andersons-Humic-DG-Organic-Granular-Soil-Amendment-40-lbs-40000-sq-ft/5019674795?user=shopping&feed=yes&srsltid=AU7gw4X269LjUYkTlHoDFKKZcCS7-S_UBwm1tDm0qsmXeCVMdsdymP9_374"
         }
       ],
-      "included_sources": 11,
-      "not_included_sources": 1,
+      "included_sources": 5,
+      "not_included_sources": 7,
       "invalid_sources": 1
     },
     {
@@ -18476,8 +18476,8 @@
           "retailer": "domyown",
           "retailer_name": "DoMyOwn",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 84.25,
           "offer_url": "https://www.domyown.com/andersons-black-gypsum-dg-p-22186.html"
         },
@@ -18496,8 +18496,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 76.36,
           "offer_url": "https://shop.advancedturf.com/product/biomend-dg-black-gypsum-50-lb/01t2M000006F9HkQAK?srsltid=AU7gw4V1fsvLcGsyGtsg95K9dmyzdHrFEkJaNW7c5z1AF4IZFLTu0t7ErPw"
         },
@@ -18526,8 +18526,8 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 67.69,
           "offer_url": "https://shop.advancedturf.com/product/9-12-6-37-hcu-36-black-gypsum-dg-smartphos-dg-50-lb/01t2M000006SeN9QAK?srsltid=AU7gw4VpqXY2qVd5DUXJEphl6ne46P-_tHQ8AbjHyweDEB5xbBCgPcKtpG0"
         },
@@ -18536,14 +18536,14 @@
           "retailer": "advanced-turf-solutions",
           "retailer_name": "Advanced Turf Solutions",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.89,
           "offer_url": "https://shop.advancedturf.com/product/22-0-4-fertilizer-with-hcu-and-black-gypsum-dg-50-lb/01t2M000006Sc4lQAC?srsltid=AU7gw4Wp_2RtJRvCrjU7W1agXS-mL4qeqMfVEvjxuCM-2BpwKLYdbcO8guw"
         }
       ],
-      "included_sources": 9,
-      "not_included_sources": 2,
+      "included_sources": 5,
+      "not_included_sources": 6,
       "invalid_sources": 0
     },
     {
@@ -21249,7 +21249,7 @@
           "retailer_name": "Coredepots",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "duplicate retailer product-page offer",
+          "reason": "price older than 48 hours",
           "price": 40.83,
           "offer_url": "https://coredepots.com/products/lesco-moisture-manager-liquid-surfactant-32-oz-hose-end-spray-bottle?variant=50489188712612"
         },
@@ -21300,14 +21300,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 30.0,
           "offer_url": "https://ryanknorrlawncare.com/product/greenorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21321,14 +21321,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 43.99,
           "offer_url": "https://ryanknorrlawncare.com/product/ammonium-sulfate"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21405,14 +21405,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 27.0,
           "offer_url": "https://ryanknorrlawncare.com/product/sloworr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21426,14 +21426,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 33.0,
           "offer_url": "https://ryanknorrlawncare.com/product/vigorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21447,14 +21447,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 33.0,
           "offer_url": "https://ryanknorrlawncare.com/product/defendorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21468,14 +21468,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 44.0,
           "offer_url": "https://ryanknorrlawncare.com/product/phiteorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21531,14 +21531,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.0,
           "offer_url": "https://ryanknorrlawncare.com/product/strongorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21552,14 +21552,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 59.0,
           "offer_url": "https://ryanknorrlawncare.com/product/soakorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -21573,14 +21573,14 @@
           "retailer": "ryanknorr",
           "retailer_name": "Ryan Knorr Lawn Care",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 79.0,
           "offer_url": "https://ryanknorrlawncare.com/product/phixorr"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
@@ -26492,7 +26492,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.99,
+          "price": 89.19,
           "offer_url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20"
         }
       ],
@@ -26765,7 +26765,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.13,
+          "price": 55.06,
           "offer_url": "https://www.amazon.com/dp/B01IRWSIUG?tag=lawndominator-20"
         }
       ],
@@ -26996,7 +26996,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 21.08,
+          "price": 21.11,
           "offer_url": "https://www.amazon.com/dp/B076HW6S9K?tag=lawndominator-20"
         }
       ],
@@ -27458,7 +27458,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 68.86,
+          "price": 69.55,
           "offer_url": "https://www.amazon.com/dp/B015BSQH4I?tag=lawndominator-20"
         }
       ],
@@ -27477,14 +27477,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 52.5,
           "offer_url": "https://www.amazon.com/dp/B07YZPF9YP?tag=lawndominator-20"
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 1,
+      "included_sources": 1,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -27605,7 +27605,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 41.36,
+          "price": 45.29,
           "offer_url": "https://www.amazon.com/dp/B001H1LR3A?tag=lawndominator-20"
         }
       ],
