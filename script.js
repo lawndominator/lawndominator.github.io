@@ -55,3 +55,37 @@ if (parallaxStage && parallaxCards.length > 0 && !prefersReducedMotion) {
 
   parallaxStage.addEventListener('pointerleave', resetCards);
 }
+
+const dallasSoilTemp = document.getElementById('dallas-soil-temp');
+if (dallasSoilTemp) {
+  const soilUrl =
+    'https://api.open-meteo.com/v1/forecast?latitude=32.7767&longitude=-96.797' +
+    '&hourly=soil_temperature_6cm&temperature_unit=fahrenheit&timezone=America%2FChicago' +
+    '&forecast_days=1&past_days=1';
+
+  fetch(soilUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('soil');
+      return response.json();
+    })
+    .then(data => {
+      const times = data.hourly && data.hourly.time;
+      const values = data.hourly && data.hourly.soil_temperature_6cm;
+      if (!times || !values) throw new Error('soil');
+      const now = new Date();
+      const stamp = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, '0'),
+        String(now.getDate()).padStart(2, '0'),
+      ].join('-') + 'T' + String(now.getHours()).padStart(2, '0');
+      let latest = null;
+      for (let i = 0; i < times.length; i += 1) {
+        if (times[i].slice(0, 13) <= stamp && values[i] != null) latest = values[i];
+      }
+      if (latest == null) throw new Error('soil');
+      dallasSoilTemp.textContent = (Math.round(latest * 10) / 10) + '°F';
+    })
+    .catch(() => {
+      dallasSoilTemp.textContent = 'unavailable';
+    });
+}
