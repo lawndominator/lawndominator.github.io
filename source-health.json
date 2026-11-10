@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-10T21:11:22.088954+00:00",
+  "generated_at": "2026-11-10T23:46:11.076916+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2566,
@@ -2745,7 +2745,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 14.35,
+          "price": 13.99,
           "offer_url": "https://www.amazon.com/dp/B0BTKTVN76?tag=lawndominator-20"
         },
         {
@@ -3437,7 +3437,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 55.29,
+          "price": 53.99,
           "offer_url": "https://www.amazon.com/dp/B0058W42QS?tag=lawndominator-20"
         },
         {
@@ -7731,7 +7731,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 32.95,
+          "price": 32.46,
           "offer_url": "https://www.amazon.com/dp/B0B4VBN389?tag=lawndominator-20"
         },
         {
@@ -10371,7 +10371,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 150.44,
+          "price": 186.93,
           "offer_url": "https://www.amazon.com/dp/B082BB3R17?tag=lawndominator-20"
         }
       ],
@@ -26448,14 +26448,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "not_included",
-          "reason": "no_price",
-          "price": null,
+          "status": "included",
+          "reason": "included",
+          "price": 46.88,
           "offer_url": "https://www.amazon.com/dp/B07NZ2BMMK?tag=lawndominator-20"
         }
       ],
-      "included_sources": 0,
-      "not_included_sources": 1,
+      "included_sources": 1,
+      "not_included_sources": 0,
       "invalid_sources": 0
     },
     {
@@ -26660,7 +26660,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 139.96,
+          "price": 139.87,
           "offer_url": "https://www.amazon.com/dp/B079G3Z2FH?tag=lawndominator-20"
         }
       ],
@@ -26996,7 +26996,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.61,
+          "price": 20.56,
           "offer_url": "https://www.amazon.com/dp/B076HW6S9K?tag=lawndominator-20"
         }
       ],
@@ -27311,7 +27311,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 90.16,
+          "price": 90.3,
           "offer_url": "https://www.amazon.com/dp/B000BX4VHE?tag=lawndominator-20"
         }
       ],
@@ -27416,7 +27416,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 24.99,
+          "price": 24.82,
           "offer_url": "https://www.amazon.com/dp/B08C484NNJ?tag=lawndominator-20"
         }
       ],
@@ -27458,7 +27458,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 63.53,
+          "price": 64.18,
           "offer_url": "https://www.amazon.com/dp/B015BSQH4I?tag=lawndominator-20"
         }
       ],
@@ -27605,7 +27605,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 45.36,
+          "price": 41.36,
           "offer_url": "https://www.amazon.com/dp/B001H1LR3A?tag=lawndominator-20"
         }
       ],
@@ -28044,14 +28044,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 19.03,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B0BGMM1FZV?tag=lawndominator-20"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
