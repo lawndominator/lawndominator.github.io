@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-12T09:52:08.411202+00:00",
+  "generated_at": "2026-11-12T10:48:19.223030+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 1,
-  "alert_count": 12,
+  "current_alert_count": 0,
+  "alert_count": 11,
   "alerts": [
     {
       "id": "espoma-turf-tone-fall-winterizer-8-0-5:best_price_drop:amazon:71.42:65.04",
@@ -22,23 +22,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-11-12T09:52:08.411202+00:00"
-    },
-    {
-      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
-      "type": "major_price_drop",
-      "product_id": 402,
-      "product_slug": "drexel-simazine-4l",
-      "product_name": "Simazine 4L Herbicide",
-      "category": "pre-emergent",
-      "old_price": 89.19,
-      "new_price": 69.99,
-      "drop_percent": 21.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-11-12T03:13:53.865312+00:00"
     },
     {
       "id": "espoma-lawn-food-15-0-5:best_price_drop:amazon:45.52:41.36",
