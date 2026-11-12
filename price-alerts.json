@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-12T20:29:31.336884+00:00",
+  "generated_at": "2026-11-12T21:02:19.485254+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 11,
+  "current_alert_count": 1,
+  "alert_count": 12,
   "alerts": [
+    {
+      "id": "espoma-turf-tone-fall-winterizer-8-0-5:best_price_drop:amazon:75.69:71.01",
+      "type": "best_price_drop",
+      "product_id": 457,
+      "product_slug": "espoma-turf-tone-fall-winterizer-8-0-5",
+      "product_name": "Espoma Turf-tone Fall Winterizer 8-0-5",
+      "category": "fertilizer",
+      "old_price": 75.69,
+      "new_price": 71.01,
+      "drop_percent": 6.2,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B0FTJ89P9W?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-11-12T21:02:19.485254+00:00"
+    },
     {
       "id": "zoecon-extinguish-plus:best_price_drop:amazon:43.08:39.35",
       "type": "best_price_drop",
