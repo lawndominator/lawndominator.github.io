@@ -1,28 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-13T19:27:27.325145+00:00",
+  "generated_at": "2026-11-13T20:04:40.387799+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 2,
-  "alert_count": 15,
+  "current_alert_count": 0,
+  "alert_count": 13,
   "alerts": [
-    {
-      "id": "zoecon-extinguish-plus:major_price_drop:amazon:48.98:39.76",
-      "type": "major_price_drop",
-      "product_id": 449,
-      "product_slug": "zoecon-extinguish-plus",
-      "product_name": "Extinguish Plus Fire Ant Bait",
-      "category": "insecticide",
-      "old_price": 48.98,
-      "new_price": 39.76,
-      "drop_percent": 18.8,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B07YZPF9YP?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-11-13T19:27:27.325145+00:00"
-    },
     {
       "id": "espoma-lawn-food-15-0-5:best_price_drop:amazon:45.39:41.36",
       "type": "best_price_drop",
@@ -39,23 +22,6 @@
       "in_stock": true,
       "quality_verified": true,
       "created_at": "2026-11-13T19:27:27.325145+00:00"
-    },
-    {
-      "id": "drexel-simazine-4l:major_price_drop:amazon:89.19:69.99",
-      "type": "major_price_drop",
-      "product_id": 402,
-      "product_slug": "drexel-simazine-4l",
-      "product_name": "Simazine 4L Herbicide",
-      "category": "pre-emergent",
-      "old_price": 89.19,
-      "new_price": 69.99,
-      "drop_percent": 21.5,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-11-13T13:46:18.873097+00:00"
     },
     {
       "id": "sedgehammer-plus:major_price_drop:solutions-pest-lawn:12.72:10.60",
