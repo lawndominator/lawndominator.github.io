@@ -1,28 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-15T08:05:08.699235+00:00",
+  "generated_at": "2026-11-15T10:17:40.962880+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 0,
-  "alert_count": 7,
+  "alert_count": 6,
   "alerts": [
-    {
-      "id": "espoma-lawn-food-15-0-5:best_price_drop:amazon:45.40:41.36",
-      "type": "best_price_drop",
-      "product_id": 455,
-      "product_slug": "espoma-lawn-food-15-0-5",
-      "product_name": "Espoma Lawn Food 15-0-5",
-      "category": "fertilizer",
-      "old_price": 45.4,
-      "new_price": 41.36,
-      "drop_percent": 8.9,
-      "old_retailer": "Amazon",
-      "new_retailer": "Amazon",
-      "url": "https://www.amazon.com/dp/B001H1LR3A?tag=lawndominator-20",
-      "in_stock": true,
-      "quality_verified": true,
-      "created_at": "2026-11-15T03:42:27.502382+00:00"
-    },
     {
       "id": "zoecon-extinguish-plus:major_price_drop:amazon:48.63:39.35",
       "type": "major_price_drop",
