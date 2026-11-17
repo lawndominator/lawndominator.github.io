@@ -23,7 +23,10 @@ import json
 import copy
 import os
 import re
+import signal
+import subprocess
 import sys
+import threading
 import time
 import logging
 import urllib.parse
@@ -345,12 +348,96 @@ _browser: Optional[Browser] = None
 _amazon_creators_disabled = False
 
 
-def get_browser() -> Browser:
+# A browser call that has not returned after this long is treated as stuck.
+# Page loads carry their own timeout (30 s by default); this is the backstop
+# for the calls that have none (reading the page's HTML, closing it), which
+# is where a sweep sat for 70 minutes on 2026-11-17 and published nothing.
+BROWSER_HARD_DEADLINE_SECONDS = float(os.getenv("BROWSER_HARD_DEADLINE_SECONDS", "90"))
+BROWSER_LAUNCH_OPTIONS = {
+    "headless": True,
+    "args": ["--no-sandbox", "--disable-dev-shm-usage"],
+}
+
+_playwright = None
+_browser_needs_restart = False
+
+
+def launch_browser(pw) -> Browser:
+    """Start the sweep's browser and remember how, so it can be restarted."""
+    global _browser, _playwright, _browser_needs_restart
+    _playwright = pw
+    options = dict(BROWSER_LAUNCH_OPTIONS)
+    if os.getenv("PLAYWRIGHT_CHROMIUM_EXECUTABLE"):
+        options["executable_path"] = os.environ["PLAYWRIGHT_CHROMIUM_EXECUTABLE"]
+    _browser = pw.chromium.launch(**options)
+    _browser_needs_restart = False
     return _browser
+
+
+def get_browser() -> Browser:
+    """The sweep's browser, relaunched if the last one was killed or died."""
+    if _browser is not None and _playwright is not None:
+        if _browser_needs_restart or not _browser.is_connected():
+            log.warning("  Launching a fresh browser")
+            launch_browser(_playwright)
+    return _browser
+
+
+def _descendant_browser_pids(ps_output: str, root_pid: int) -> list:
+    """Browser processes started by this process, from `ps -Ao pid=,ppid=,comm=`.
+
+    Only descendants of `root_pid` count. Anyone else's browser on the same
+    machine is never in the list.
+    """
+    children: dict = {}
+    names: dict = {}
+    for line in ps_output.splitlines():
+        parts = line.split(None, 2)
+        if len(parts) < 3 or not parts[0].isdigit() or not parts[1].isdigit():
+            continue
+        pid, ppid = int(parts[0]), int(parts[1])
+        children.setdefault(ppid, []).append(pid)
+        names[pid] = parts[2].lower()
+    found = []
+    queue = list(children.get(root_pid, []))
+    while queue:
+        pid = queue.pop(0)
+        if "chrom" in names.get(pid, "") or "headless" in names.get(pid, ""):
+            found.append(pid)
+        queue.extend(children.get(pid, []))
+    return sorted(found)
+
+
+def _kill_stuck_browser() -> None:
+    """Kill this sweep's own browser. The call that was stuck on it fails at
+    once, the page is skipped, and get_browser() launches a new one."""
+    global _browser_needs_restart
+    _browser_needs_restart = True
+    try:
+        ps = subprocess.run(
+            ["ps", "-Ao", "pid=,ppid=,comm="], capture_output=True, text=True, timeout=10
+        ).stdout
+    except Exception:
+        return
+    for pid in _descendant_browser_pids(ps, os.getpid()):
+        try:
+            os.kill(pid, signal.SIGKILL)
+        except OSError:
+            pass
 
 
 def browser_fetch(url: str, wait: str = "networkidle", timeout: int = 30000) -> Optional[str]:
     """Load URL in headless Chromium, return rendered HTML. Handles JS challenges."""
+    def on_deadline():
+        log.warning(
+            f"  Browser call still running after {BROWSER_HARD_DEADLINE_SECONDS:g}s; "
+            f"killing the browser and skipping {url[:80]}"
+        )
+        _kill_stuck_browser()
+
+    deadline = threading.Timer(BROWSER_HARD_DEADLINE_SECONDS, on_deadline)
+    deadline.daemon = True
+    deadline.start()
     try:
         ctx = get_browser().new_context(
             user_agent=(
@@ -376,6 +463,8 @@ def browser_fetch(url: str, wait: str = "networkidle", timeout: int = 30000) -> 
     except Exception as e:
         log.info(f"  Browser fetch failed: {e.__class__.__name__}: {str(e)[:80]}")
         return None
+    finally:
+        deadline.cancel()
 
 
 def fetch_saved_source(url: str) -> Optional[str]:
@@ -4032,10 +4121,7 @@ def run():
     budget_exhausted = False
 
     with sync_playwright() as pw:
-        _browser = pw.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-dev-shm-usage"],
-        )
+        launch_browser(pw)
         log.info("Playwright browser launched")
 
         for i, product in enumerate(sweep_order, 1):
@@ -4137,7 +4223,10 @@ def run():
                 "updated_at":        now_iso(),
             })
 
-        _browser.close()
+        try:
+            _browser.close()
+        except Exception as e:
+            log.info(f"Browser close failed: {e.__class__.__name__}")
 
     results, source_map, found = _publish_feed(
         results,
