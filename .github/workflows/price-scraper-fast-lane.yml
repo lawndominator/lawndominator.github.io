@@ -32,6 +32,14 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          # Always start from the tip of main, never from the commit that
+          # triggered the run. A run can wait in the price-feed-write queue
+          # behind another writer; the default checkout would hand it the
+          # feed from before that writer committed, and its commit step would
+          # then publish that older feed over the newer one. That is how the
+          # fast lane erased 21 of 41 full sweeps in early November 2026.
+          ref: main
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -70,6 +78,14 @@ jobs:
           tmpdir="$(mktemp -d)"
           cp prices.json price-alerts.json source-health.json "$tmpdir"/
           git fetch origin main
+          # The fast lane only patches Amazon into the feed it checked out.
+          # If the feed on main changed since then, this copy is older than
+          # what is published: publish nothing and let the next tick start
+          # from the new feed.
+          if ! git diff --quiet HEAD origin/main -- prices.json; then
+            echo "::warning::prices.json changed on main during this run; skipping this fast-lane commit."
+            exit 0
+          fi
           git reset --hard origin/main
           cp "$tmpdir"/prices.json "$tmpdir"/price-alerts.json "$tmpdir"/source-health.json .
           python - <<'PY'
