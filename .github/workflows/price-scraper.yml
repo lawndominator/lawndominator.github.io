@@ -53,6 +53,14 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          # Always start from the tip of main, never from the commit that
+          # triggered the run. A run can wait in the price-feed-write queue
+          # behind another writer; the default checkout would hand it the
+          # feed from before that writer committed, and its commit step would
+          # then publish that older feed over the newer one. That is how the
+          # fast lane erased 21 of 41 full sweeps in early November 2026.
+          ref: main
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
