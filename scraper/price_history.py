@@ -30,6 +30,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 def _publishable(offer: dict) -> bool:
     price = offer.get("price")
+    # An Amazon API price counts only when Amazon marked it as the featured
+    # offer. Before 2026-11-17 the scraper recorded whichever listing came
+    # first, which could be a price nobody saw on the product page.
+    if offer.get("source") == "amazon_creators_api" and offer.get("featured_offer") is not True:
+        return False
     return (
         isinstance(price, (int, float))
         and price > 0

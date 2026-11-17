@@ -61,6 +61,14 @@ class HeadlineOfferTest(unittest.TestCase):
 
         self.assertEqual(best["price"], 60.0)
 
+    def test_an_amazon_price_counts_only_when_amazon_features_it(self):
+        unmarked = offer(price=69.99, retailer="amazon", source="amazon_creators_api")
+        featured = offer(price=89.19, retailer="amazon", source="amazon_creators_api", featured_offer=True)
+
+        self.assertIsNone(price_history.headline_offer(product(unmarked)))
+        self.assertEqual(price_history.headline_offer(product(unmarked, offer(price=95.0)))["price"], 95.0)
+        self.assertEqual(price_history.headline_offer(product(featured, offer(price=95.0)))["price"], 89.19)
+
     def test_no_headline_without_a_publishable_price(self):
         self.assertIsNone(price_history.headline_offer(product(offer(price=None))))
 
