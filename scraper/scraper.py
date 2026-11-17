@@ -3705,23 +3705,54 @@ def _amazon_item_title(item) -> str:
     )
 
 
-def _amazon_item_price(item) -> Optional[float]:
+def _amazon_listing_is_one_time_new(listing) -> bool:
+    """A new-condition, one-time-purchase listing whose price Amazon shows."""
+    condition = str(_attr_chain(listing, "condition", "value") or "").strip().lower()
+    if condition and condition != "new":
+        return False
+    offer_type = _attr_chain(listing, "type")
+    if "SUBSCRIBE" in str(getattr(offer_type, "value", offer_type) or "").upper():
+        return False
+    if _attr_chain(listing, "violates_map") is True:
+        return False
+    return True
+
+
+def _amazon_featured_listing(item):
+    """The offer Amazon features on the product page (the buy box winner).
+
+    OffersV2 can return several listings for one item. Only the featured one
+    is the price a shopper sees on the page; any other listing's price is one
+    they would have to dig for, and a Subscribe & Save listing's price is not
+    the one-time price at all. No featured offer means the page shows "See
+    All Buying Options" and no price, so nothing is published.
+    """
     listings = _attr_chain(item, "offers_v2", "listings") or []
-    for listing in listings:
-        amount = _attr_chain(listing, "price", "money", "amount")
-        if amount is not None:
-            return float(amount)
+    flagged = [l for l in listings if _attr_chain(l, "is_buy_box_winner") is not None]
+    if flagged:
+        candidates = [l for l in flagged if _attr_chain(l, "is_buy_box_winner") is True]
+    else:
+        # The flag was not returned for any listing. Do not blank every
+        # Amazon price over a missing field; the filters below still apply.
+        candidates = listings
+    for listing in candidates:
+        if _amazon_listing_is_one_time_new(listing):
+            return listing
     return None
 
 
+def _amazon_item_price(item) -> Optional[float]:
+    amount = _attr_chain(_amazon_featured_listing(item), "price", "money", "amount")
+    return float(amount) if amount is not None else None
+
+
 def _amazon_item_in_stock(item) -> Optional[bool]:
-    listings = _attr_chain(item, "offers_v2", "listings") or []
-    for listing in listings:
-        availability_type = str(_attr_chain(listing, "availability", "type") or "").lower()
-        availability_msg = str(_attr_chain(listing, "availability", "message") or "").lower()
-        if availability_type or availability_msg:
-            unavailable = ("out" in availability_type or "unavailable" in availability_type or "out of stock" in availability_msg)
-            return not unavailable
+    listing = _amazon_featured_listing(item)
+    availability_type = str(_attr_chain(listing, "availability", "type") or "").lower()
+    availability_msg = str(_attr_chain(listing, "availability", "message") or "").lower()
+    if availability_type or availability_msg:
+        unavailable = ("out" in availability_type or "unavailable" in availability_type or "out of stock" in availability_msg)
+        return not unavailable
     return None
 
 
@@ -3785,6 +3816,9 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                     resources=[
                         GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
                         GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER,
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_CONDITION,
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_TYPE,
                         GetItemsResource.ITEM_INFO_DOT_TITLE,
                         GetItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
                     ],
@@ -3796,6 +3830,9 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                 resources=[
                     SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_PRICE,
                     SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY,
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER,
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_CONDITION,
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_TYPE,
                     SearchItemsResource.ITEM_INFO_DOT_TITLE,
                     SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
                 ],

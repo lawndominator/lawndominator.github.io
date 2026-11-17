@@ -2809,6 +2809,9 @@ class AmazonCreatorsThrottleTest(unittest.TestCase):
             GetItemsResource=types.SimpleNamespace(
                 OFFERS_V2_DOT_LISTINGS_DOT_PRICE=1,
                 OFFERS_V2_DOT_LISTINGS_DOT_AVAILABILITY=2,
+                OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER=5,
+                OFFERS_V2_DOT_LISTINGS_DOT_CONDITION=6,
+                OFFERS_V2_DOT_LISTINGS_DOT_TYPE=7,
                 ITEM_INFO_DOT_TITLE=3,
                 IMAGES_DOT_PRIMARY_DOT_LARGE=4,
             ),
