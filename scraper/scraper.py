@@ -2770,8 +2770,14 @@ def _extract_from_soup(
 # ── DoMyOwn scraper ───────────────────────────────────────────────────────────
 # Broad web discovery
 
+# Set once SerpApi says the month's searches are used up. Every later call in
+# the run would fail the same way, so none is made.
+_serpapi_exhausted = False
+
+
 def _serpapi_search(params: dict) -> Optional[dict]:
-    if not SERPAPI_API_KEY:
+    global _serpapi_exhausted
+    if not SERPAPI_API_KEY or _serpapi_exhausted:
         return None
     try:
         r = _session.get(
@@ -2780,6 +2786,13 @@ def _serpapi_search(params: dict) -> Optional[dict]:
             timeout=30,
         )
         if r.status_code != 200:
+            if r.status_code == 429 and "run out of searches" in r.text:
+                _serpapi_exhausted = True
+                log.warning(
+                    "  SerpApi: the account has run out of searches. "
+                    "No more web-wide searches this run."
+                )
+                return None
             log.info(f"  SerpApi HTTP {r.status_code}: {r.text[:100]}")
             return None
         return r.json()
@@ -2999,6 +3012,25 @@ def scrape_discovered_web_pages(product: dict) -> list[dict]:
             offer["source"] = "google_organic"
             add_offer(offers, offer)
     return offers
+
+
+# A product needs a web-wide search when fewer than this many stores were
+# read off their own pages this run.
+WEB_DISCOVERY_MIN_LIVE_STORES = int(os.getenv("WEB_DISCOVERY_MIN_LIVE_STORES", "2"))
+
+
+def _needs_web_discovery(saved_offers: list) -> bool:
+    """Whether to spend web-wide searches on this product.
+
+    The search allowance is small, so it goes to products that have no real
+    comparison yet: fewer than two stores with a price read off the store's
+    own page this run. A price on file does not count.
+    """
+    read = [
+        o for o in saved_offers
+        if o.get("price") is not None and o.get("source") != STORED_PRICE_SOURCE
+    ]
+    return len(read) < WEB_DISCOVERY_MIN_LIVE_STORES
 
 
 def scrape_web_discovery(product: dict) -> list[dict]:
@@ -4183,7 +4215,11 @@ def run():
             log.info(f"  Known    {len(known_offers)} direct retailer offers")
 
             # Web discovery via Google Shopping/search API for broader price coverage.
-            web_offers = scrape_web_discovery(product)
+            if ENABLE_SERPAPI_DISCOVERY and not _needs_web_discovery(saved_offers):
+                log.info("  Web      not searched (already compared across stores)")
+                web_offers = []
+            else:
+                web_offers = scrape_web_discovery(product)
             for offer in web_offers:
                 add_offer(offers, offer)
             if ENABLE_SERPAPI_DISCOVERY and SERPAPI_API_KEY:
