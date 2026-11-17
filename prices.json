@@ -32353,7 +32353,7 @@
         {
           "retailer": "amazon",
           "retailer_name": "Amazon",
-          "price": 69.99,
+          "price": 89.19,
           "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
           "in_stock": true,
           "title": "Drexel Simazine 4L - 2.5gal",
@@ -32365,14 +32365,16 @@
           "package_quantity": 320.0,
           "package_unit": "fl oz",
           "package_label": "2.5 gal",
-          "price_per_unit": 0.22,
-          "quality_verified": true
+          "price_per_unit": 0.28,
+          "quality_verified": true,
+          "price_reading": 69.99,
+          "price_seen_at": "2026-11-17T08:04:00+00:00"
         }
       ],
       "best_price": {
         "retailer": "amazon",
         "retailer_name": "Amazon",
-        "price": 69.99,
+        "price": 89.19,
         "url": "https://www.amazon.com/dp/B0GJ6SLY12?tag=lawndominator-20",
         "in_stock": true,
         "title": "Drexel Simazine 4L - 2.5gal",
@@ -32384,8 +32386,10 @@
         "package_quantity": 320.0,
         "package_unit": "fl oz",
         "package_label": "2.5 gal",
-        "price_per_unit": 0.22,
-        "quality_verified": true
+        "price_per_unit": 0.28,
+        "quality_verified": true,
+        "price_reading": 69.99,
+        "price_seen_at": "2026-11-17T08:04:00+00:00"
       },
       "updated_at": "2026-11-17T07:56:32.344013+00:00"
     },

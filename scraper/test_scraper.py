@@ -2812,6 +2812,7 @@ class AmazonCreatorsThrottleTest(unittest.TestCase):
                 OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER=5,
                 OFFERS_V2_DOT_LISTINGS_DOT_CONDITION=6,
                 OFFERS_V2_DOT_LISTINGS_DOT_TYPE=7,
+                OFFERS_V2_DOT_LISTINGS_DOT_MERCHANT_INFO=8,
                 ITEM_INFO_DOT_TITLE=3,
                 IMAGES_DOT_PRIMARY_DOT_LARGE=4,
             ),
