@@ -3766,7 +3766,7 @@ def _amazon_item_image(item) -> Optional[str]:
 
 def _amazon_item_offer(item, product: dict) -> dict:
     url = _attr_chain(item, "detail_page_url") or _attr_chain(item, "detailPageURL") or _amazon_affiliate_link(product)["url"]
-    return {
+    offer = {
         "retailer":      "amazon",
         "retailer_name": "Amazon",
         "price":         _amazon_item_price(item),
@@ -3777,6 +3777,17 @@ def _amazon_item_offer(item, product: dict) -> dict:
         "last_checked":  now_iso(),
         "source":        "amazon_creators_api",
     }
+    if offer["price"] is not None:
+        # True only when Amazon itself marked this listing as the one on the
+        # product page. The website and the app feed publish an Amazon price
+        # only with this set, so a price from before this field existed, or
+        # from a response that carried no flag, is never shown as a price.
+        offer["featured_offer"] = (
+            _attr_chain(_amazon_featured_listing(item), "is_buy_box_winner") is True
+        )
+        if not offer["featured_offer"]:
+            log.warning(f"  Amazon price for {product.get('name', '')[:50]} came from a listing with no featured flag")
+    return offer
 
 
 _amazon_creators_client = None

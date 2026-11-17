@@ -82,6 +82,21 @@ class AmazonFeaturedOfferTest(unittest.TestCase):
 
         self.assertEqual(scraper._amazon_item_price(unflagged), 89.19)
 
+    def test_a_price_says_whether_it_is_the_featured_offer(self):
+        # Readers downstream publish an Amazon price only when Amazon itself
+        # marked the listing as the one on the product page.
+        product = {"id": 1, "slug": "x", "name": "X", "search_query": "x"}
+        featured = scraper._amazon_item_offer(item(listing(89.19, is_buy_box_winner=True)), product)
+        unflagged = scraper._amazon_item_offer(
+            item({"price": {"money": {"amount": 89.19}}, "condition": {"value": "New"}}), product
+        )
+        none = scraper._amazon_item_offer(item(listing(72.41)), product)
+
+        self.assertIs(featured["featured_offer"], True)
+        self.assertIs(unflagged["featured_offer"], False)
+        self.assertIsNone(none["price"])
+        self.assertNotIn("featured_offer", none)
+
     def test_the_api_is_asked_which_offer_is_featured(self):
         source = open(scraper.__file__).read()
         for resource in ("IS_BUY_BOX_WINNER", "CONDITION", "TYPE"):
