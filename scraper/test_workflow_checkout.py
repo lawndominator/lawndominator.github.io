@@ -34,6 +34,17 @@ class FeedWriterCheckoutTest(unittest.TestCase):
                 text = (WORKFLOWS / name).read_text()
                 self.assertRegex(text, r"(?m)^concurrency:\n\s+group: price-feed-write\n\s+cancel-in-progress: false$")
 
+    def test_feed_writers_record_and_commit_price_history(self):
+        for name in FEED_WRITERS:
+            with self.subTest(workflow=name):
+                text = (WORKFLOWS / name).read_text()
+                record = text.index("python scraper/price_history.py")
+                audit = text.index("python scraper/audit_price_feed.py")
+                commit = text.index("- name: Commit updated prices.json")
+                self.assertLess(audit, record)
+                self.assertLess(record, commit)
+                self.assertRegex(text, r"git add [^\n]*price-history\.json")
+
     def test_fast_lane_never_publishes_over_a_newer_feed(self):
         text = (WORKFLOWS / "price-scraper-fast-lane.yml").read_text()
         guard = text.index("git diff --quiet HEAD origin/main -- prices.json")
