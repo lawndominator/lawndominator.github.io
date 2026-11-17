@@ -8,10 +8,14 @@ on:
     # Four expressions are required because 45 does not divide evenly into
     # an hour; `*/45` would run at :00 and :45 every hour, alternating 45- and
     # 15-minute gaps instead of maintaining a true 45-minute cadence.
-    - cron: "0 */3 * * *"
-    - cron: "45 0-23/3 * * *"
-    - cron: "30 1-23/3 * * *"
-    - cron: "15 2-23/3 * * *"
+    # Minutes are offset from the top of the hour on purpose. GitHub delays
+    # and drops scheduled runs under load, and names the start of every hour
+    # as a high-load time (docs: events that trigger workflows, schedule).
+    # With the first tick at :00 only about 12 of the 32 daily ticks ran.
+    - cron: "7 */3 * * *"
+    - cron: "52 0-23/3 * * *"
+    - cron: "37 1-23/3 * * *"
+    - cron: "22 2-23/3 * * *"
   workflow_dispatch:
 
 permissions:

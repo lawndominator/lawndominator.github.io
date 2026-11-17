@@ -3170,6 +3170,11 @@ def scrape_saved_sources(product: dict, source_map: dict) -> list[dict]:
     return offers
 
 
+# Marks an offer whose price is the one on file, re-served because the
+# retailer page could not be read this run.
+STORED_PRICE_SOURCE = "manual_verified_source"
+
+
 def _offer_from_verified_source(source: dict) -> Optional[dict]:
     url = source.get("url", "")
     retailer = source.get("retailer") or retailer_key(url)
@@ -3198,7 +3203,7 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
         "in_stock": source.get("in_stock", True),
         "title": source.get("title", ""),
         "last_checked": last_seen,
-        "source": "manual_verified_source",
+        "source": STORED_PRICE_SOURCE,
         "image": _stored_image_url(source.get("image")),
         "manual_verified": bool(source.get("manual_verified")),
         **{
@@ -3206,6 +3211,10 @@ def _offer_from_verified_source(source: dict) -> Optional[dict]:
             for key in ("package_quantity", "package_unit", "package_label", "price_per_unit")
             if key in source
         },
+        # When this price last came off the retailer's page. last_checked
+        # above is last_seen, which every sweep rewrites, so it cannot say how
+        # old a stored price is. Left out when the read time is not on file.
+        **({"price_read_at": source["price_read_at"]} if source.get("price_read_at") else {}),
     }
 
 
@@ -3242,15 +3251,20 @@ def update_product_sources(source_map: dict, results: list[dict]) -> dict:
             }
             if offer.get("price") is not None and updated_source["retailer"] != "amazon":
                 updated_source["price_verified"] = round(float(offer["price"]), 2)
+                # A stored price re-served because the page could not be read
+                # was not read this run: keep its earlier read time (copied
+                # from previous_source below) instead of stamping a new one.
+                if offer.get("source") != STORED_PRICE_SOURCE:
+                    updated_source["price_read_at"] = offer.get("last_checked") or now_iso()
             if "in_stock" in offer:
                 updated_source["in_stock"] = offer.get("in_stock")
             for key in ("package_quantity", "package_unit", "package_label", "price_per_unit"):
                 if key in offer:
                     updated_source[key] = offer[key]
-            for key in ("verified", "manual_verified", "price_verified", "source_type"):
+            for key in ("verified", "manual_verified", "price_verified", "price_read_at", "source_type"):
                 if key == "price_verified" and updated_source["retailer"] == "amazon":
                     continue
-                if key == "price_verified" and key in updated_source:
+                if key in ("price_verified", "price_read_at") and key in updated_source:
                     continue
                 if key in previous_source:
                     updated_source[key] = previous_source[key]
