@@ -3908,6 +3908,11 @@ def _amazon_item_offer(item, product: dict) -> dict:
         )
         if not offer["featured_offer"]:
             log.warning(f"  Amazon price for {product.get('name', '')[:50]} came from a listing with no featured flag")
+        # Who the featured offer is from. When a price jumps between runs the
+        # seller usually changed with it, and this is the only trace of that.
+        seller = _attr_chain(_amazon_featured_listing(item), "merchant_info", "name")
+        if seller:
+            offer["seller"] = str(seller)
     return offer
 
 
@@ -3951,6 +3956,7 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                         GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER,
                         GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_CONDITION,
                         GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_TYPE,
+                        GetItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_MERCHANT_INFO,
                         GetItemsResource.ITEM_INFO_DOT_TITLE,
                         GetItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
                     ],
@@ -3965,6 +3971,7 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
                     SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_IS_BUY_BOX_WINNER,
                     SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_CONDITION,
                     SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_TYPE,
+                    SearchItemsResource.OFFERS_V2_DOT_LISTINGS_DOT_MERCHANT_INFO,
                     SearchItemsResource.ITEM_INFO_DOT_TITLE,
                     SearchItemsResource.IMAGES_DOT_PRIMARY_DOT_LARGE,
                 ],
@@ -3996,6 +4003,75 @@ def _amazon_creators_api(product: dict, source_map: Optional[dict] = None) -> di
             _amazon_creators_disabled = True
         log.warning(f"Amazon Creators API error: {e}")
         return None
+
+
+AMAZON_PRICE_HOLD_HOURS = float(os.getenv("AMAZON_PRICE_HOLD_HOURS", "24"))
+AMAZON_PRICE_HOLD_PERCENT = float(os.getenv("AMAZON_PRICE_HOLD_PERCENT", "5"))
+
+
+def previous_amazon_offer(previous_entry: Optional[dict]) -> Optional[dict]:
+    """The Amazon offer in a product's entry from the last published feed."""
+    for offer in (previous_entry or {}).get("offers", []):
+        if offer.get("retailer") == "amazon":
+            return offer
+    return None
+
+
+def _is_featured_amazon_price(offer: Optional[dict]) -> bool:
+    return bool(
+        offer
+        and offer.get("source") == "amazon_creators_api"
+        and offer.get("featured_offer") is True
+        and isinstance(offer.get("price"), (int, float))
+    )
+
+
+def settle_amazon_price(fresh: Optional[dict], previous: Optional[dict], now: Optional[datetime] = None) -> Optional[dict]:
+    """Hold back a sudden lower Amazon price until it has lasted a day.
+
+    The API reports the featured offer's item price and nothing about
+    shipping. When two sellers land at the same total, Amazon rotates the
+    featured offer between them and the API price jumps with it: Simazine 4L
+    read $89.19 and $69.99 by turns on 2026-11-16 and 17, while the product
+    page showed $89.19 shipped free and no offer under it. The lower reading
+    is a price the shopper pays shipping on top of.
+
+    So a featured price more than AMAZON_PRICE_HOLD_PERCENT under the one
+    already published is not published while the higher price has been read
+    in the last AMAZON_PRICE_HOLD_HOURS. A real cut shows up a day late; a
+    rise or a small move shows up at once. `price_seen_at` is when the
+    published price was last read, and `price_reading` is the reading that was
+    held back.
+    """
+    if not _is_featured_amazon_price(fresh) or fresh.get("in_stock") is False:
+        return fresh
+    now = now or datetime.now(timezone.utc)
+    settled = {**fresh, "price_seen_at": now.isoformat()}
+    if not _is_featured_amazon_price(previous) or previous.get("url") != fresh.get("url"):
+        return settled
+
+    reading = float(fresh["price"])
+    held_price = float(previous["price"])
+    # Strictly more: a drop of exactly the alert threshold is held too, so
+    # every Amazon drop big enough to notify about has lasted a day.
+    if reading > held_price * (1 - AMAZON_PRICE_HOLD_PERCENT / 100):
+        return settled
+
+    seen_at = _parse_alert_time(previous.get("price_seen_at") or previous.get("last_checked") or "")
+    if seen_at is None or now - seen_at >= timedelta(hours=AMAZON_PRICE_HOLD_HOURS):
+        return settled
+
+    log.warning(
+        f"  Amazon featured price read ${reading:.2f}"
+        f"{' from ' + fresh['seller'] if fresh.get('seller') else ''}; "
+        f"holding ${held_price:.2f} read {previous.get('price_seen_at') or previous.get('last_checked')}"
+    )
+    return {
+        **fresh,
+        "price": previous["price"],
+        "price_reading": fresh["price"],
+        "price_seen_at": seen_at.isoformat(),
+    }
 
 
 def _merge_fast_lane_product(
@@ -4067,7 +4143,9 @@ def run_fast_lane():
     updated = 0
     for product in catalog["products"]:
         baseline = stale_map.get(product["id"])
-        fresh_amazon = amazon_result(product, source_map)
+        fresh_amazon = settle_amazon_price(
+            amazon_result(product, source_map), previous_amazon_offer(baseline)
+        )
         if fresh_amazon:
             updated += 1
         entry = _merge_fast_lane_product(product, baseline, fresh_amazon)
@@ -4229,7 +4307,10 @@ def run():
 
             # Amazon — all products
             time.sleep(RATE_LIMIT)
-            r = amazon_result(product, source_map)
+            r = settle_amazon_price(
+                amazon_result(product, source_map),
+                previous_amazon_offer(stale_map.get(product["id"])),
+            )
             is_usable_amazon = r and (
                 r.get("price") is not None or not is_bad_product_url(r.get("url", ""))
             )

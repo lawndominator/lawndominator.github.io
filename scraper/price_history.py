@@ -11,6 +11,11 @@ the day's headline price per product. The website draws the trend from it.
 The headline rule here must stay the same as the website's (toBoardRows in
 lawndominator-website src/lib/prices.ts): verified, in stock, scrape errors
 removed, and a price read on the last sweep ahead of a price on file.
+
+Two differences, both because the record only holds prices somebody read: on
+a day when Amazon's price could not be confirmed the board shows the best store
+price, and when no store could be read it shows the price on file. The record
+keeps no point for either day.
 """
 
 import argparse
@@ -72,6 +77,18 @@ def headline_offer(product: dict) -> Optional[dict]:
     return min(read or offers, key=lambda o: o["price"])
 
 
+def _amazon_price_unconfirmed(product: dict) -> bool:
+    """Amazon had a price for this product that it did not mark as featured,
+    so what a shopper would have paid there that day is unknown."""
+    return any(
+        o.get("source") == "amazon_creators_api"
+        and isinstance(o.get("price"), (int, float))
+        and o.get("in_stock") is not False
+        and o.get("featured_offer") is not True
+        for o in product.get("offers", [])
+    )
+
+
 def record(history: dict, feed: dict, keep_days: int = KEEP_DAYS) -> dict:
     """Return `history` with the feed's day recorded. Idempotent per day, and
     safe to call with feeds out of order."""
@@ -82,6 +99,14 @@ def record(history: dict, feed: dict, keep_days: int = KEEP_DAYS) -> dict:
         slug = product.get("slug")
         best = headline_offer(product)
         if not slug or best is None:
+            continue
+        # The day is left as a gap rather than given the next store's price:
+        # that would make the first confirmed Amazon price look like a record
+        # low it may never have been.
+        if _amazon_price_unconfirmed(product):
+            continue
+        # A price on file was not read that day, so it is not that day's price.
+        if best.get("source") == STORED_PRICE_SOURCE:
             continue
         point = [day, round(float(best["price"]), 2), _size(best) or None]
         points = [p for p in products.get(slug, []) if p[0] != day]

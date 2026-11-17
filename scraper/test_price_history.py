@@ -109,6 +109,40 @@ class RecordTest(unittest.TestCase):
 
         self.assertEqual(history["products"]["prodiamine-65wdg"], [["2026-11-15", 63.33, "5 lb"]])
 
+    def test_a_day_amazon_could_not_be_confirmed_is_a_gap_not_the_store_price(self):
+        # Until 2026-11-17 no Amazon price carried the featured mark. Recording
+        # the next store's price for those days would make the first confirmed
+        # Amazon price look like a record low it may never have been.
+        store = offer(price=95.0)
+        unmarked = offer(price=69.99, retailer="amazon", source="amazon_creators_api")
+        featured = offer(price=89.19, retailer="amazon", source="amazon_creators_api", featured_offer=True)
+
+        history = price_history.record({}, feed("2026-11-15", product(unmarked, store)))
+        self.assertNotIn("prodiamine-65wdg", history["products"])
+
+        history = price_history.record(history, feed("2026-11-17", product(featured, store)))
+        self.assertEqual(history["products"]["prodiamine-65wdg"], [["2026-11-17", 89.19, "5 lb"]])
+
+    def test_an_amazon_listing_with_no_price_or_no_stock_does_not_blank_the_day(self):
+        store = offer(price=95.0)
+        link_only = offer(price=None, retailer="amazon", source="amazon_creators_api")
+        sold_out = offer(price=69.99, retailer="amazon", source="amazon_creators_api", in_stock=False)
+
+        history = price_history.record({}, feed("2026-11-15", product(link_only, sold_out, store)))
+
+        self.assertEqual(history["products"]["prodiamine-65wdg"], [["2026-11-15", 95.0, "5 lb"]])
+
+    def test_a_price_on_file_is_never_recorded_as_the_days_price(self):
+        # Nobody read that price that day. Drawn as a trend it would be a flat
+        # line of a number that may be months old.
+        stored = offer(price=40.0, retailer="walmart", source="manual_verified_source")
+
+        history = price_history.record({}, feed("2026-11-15", product(stored)))
+        self.assertNotIn("prodiamine-65wdg", history["products"])
+
+        history = price_history.record(history, feed("2026-11-16", product(stored, offer(price=48.0))))
+        self.assertEqual(history["products"]["prodiamine-65wdg"], [["2026-11-16", 48.0, "5 lb"]])
+
     def test_points_older_than_the_window_are_dropped(self):
         history = price_history.record({}, feed("2026-01-01", product(offer(price=70.0))))
         history = price_history.record(history, feed("2026-11-16", product(offer(price=59.06))), keep_days=120)
