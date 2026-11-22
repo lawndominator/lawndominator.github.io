@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-22T11:09:59.570790+00:00",
+  "generated_at": "2026-11-22T12:05:10.541085+00:00",
   "saved_source_limit": 12,
   "totals": {
     "sources": 2761,
     "manual_verified_sources": 706,
-    "included_sources": 1479,
-    "not_included_sources": 674,
+    "included_sources": 1478,
+    "not_included_sources": 675,
     "invalid_sources": 608
   },
   "reason_counts": {
-    "included": 1479,
+    "included": 1478,
     "product_identity_mismatch": 595,
     "no_extracted_offer": 281,
     "duplicate retailer product-page offer": 155,
     "not_checked_saved_source_limit": 100,
-    "no_price": 27,
+    "no_price": 28,
     "price source is not independently quality-verified": 27,
     "package size is ambiguous for a size-sensitive product": 23,
     "implausible same-package price outlier": 19,
@@ -407,7 +407,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 158.42,
+          "price": 157.8,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -2724,7 +2724,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 157.41,
+          "price": 157.28,
           "offer_url": "https://www.amazon.com/dp/B004HFT09Q?tag=lawndominator-20"
         },
         {
@@ -4679,7 +4679,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 104.8,
+          "price": 106.59,
           "offer_url": "https://www.amazon.com/dp/B006LBBHE0?tag=lawndominator-20"
         },
         {
@@ -4991,7 +4991,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 59.99,
+          "price": 62.06,
           "offer_url": "https://www.amazon.com/dp/B005DUTNF0?tag=lawndominator-20"
         },
         {
@@ -11311,7 +11311,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 170.65,
+          "price": 173.58,
           "offer_url": "https://www.amazon.com/dp/B082BB3R17?tag=lawndominator-20"
         }
       ],
@@ -15467,7 +15467,7 @@
           "manual_verified": false,
           "status": "included",
           "reason": "included",
-          "price": 45.26,
+          "price": 45.31,
           "offer_url": "https://www.amazon.com/dp/B006GHV9B0?tag=lawndominator-20"
         },
         {
@@ -28610,7 +28610,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 133.93,
+          "price": 129.94,
           "offer_url": "https://www.amazon.com/dp/B079G3Z2FH?tag=lawndominator-20"
         }
       ],
@@ -28946,7 +28946,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.64,
+          "price": 20.65,
           "offer_url": "https://www.amazon.com/dp/B076HW6S9K?tag=lawndominator-20"
         }
       ],
@@ -29135,7 +29135,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 27.54,
+          "price": 13.98,
           "offer_url": "https://www.amazon.com/dp/B000BPD60A?tag=lawndominator-20"
         }
       ],
@@ -29261,7 +29261,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 89.53,
+          "price": 91.07,
           "offer_url": "https://www.amazon.com/dp/B000BX4VHE?tag=lawndominator-20"
         }
       ],
@@ -29366,7 +29366,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 25.05,
+          "price": 24.95,
           "offer_url": "https://www.amazon.com/dp/B08C484NNJ?tag=lawndominator-20"
         }
       ],
@@ -29994,14 +29994,14 @@
           "retailer": "amazon",
           "retailer_name": "Amazon",
           "manual_verified": true,
-          "status": "included",
-          "reason": "included",
-          "price": 19.03,
+          "status": "not_included",
+          "reason": "no_price",
+          "price": null,
           "offer_url": "https://www.amazon.com/dp/B0BGMM1FZV?tag=lawndominator-20"
         }
       ],
-      "included_sources": 1,
-      "not_included_sources": 0,
+      "included_sources": 0,
+      "not_included_sources": 1,
       "invalid_sources": 0
     },
     {
