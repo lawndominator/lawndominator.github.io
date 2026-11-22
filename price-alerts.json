@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-22T19:31:39.456074+00:00",
+  "generated_at": "2026-11-22T20:03:15.131802+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
-  "current_alert_count": 0,
-  "alert_count": 19,
+  "current_alert_count": 1,
+  "alert_count": 20,
   "alerts": [
+    {
+      "id": "tekko-pro:best_price_drop:amazon:69.57:65.18",
+      "type": "best_price_drop",
+      "product_id": 448,
+      "product_slug": "tekko-pro",
+      "product_name": "Tekko Pro IGR",
+      "category": "insecticide",
+      "old_price": 69.57,
+      "new_price": 65.18,
+      "drop_percent": 6.3,
+      "old_retailer": "Amazon",
+      "new_retailer": "Amazon",
+      "url": "https://www.amazon.com/dp/B015BSQH4I?tag=lawndominator-20",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-11-22T20:03:15.131802+00:00"
+    },
     {
       "id": "bioadvanced-lawn-insect:major_price_drop:amazon:27.54:13.98",
       "type": "major_price_drop",
