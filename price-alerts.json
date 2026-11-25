@@ -1,11 +1,28 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-25T19:41:18.605207+00:00",
+  "generated_at": "2026-11-25T21:17:36.542188+00:00",
   "min_drop_percent": 5.0,
   "retention_days": 7,
   "current_alert_count": 1,
-  "alert_count": 14,
+  "alert_count": 15,
   "alerts": [
+    {
+      "id": "msma-target-6:best_price_drop:solutions-pest-lawn:92.00:85.91",
+      "type": "best_price_drop",
+      "product_id": 25,
+      "product_slug": "msma-target-6",
+      "product_name": "MSMA Target 6 Plus",
+      "category": "post-emergent",
+      "old_price": 92.0,
+      "new_price": 85.91,
+      "drop_percent": 6.6,
+      "old_retailer": "Solutions Pest & Lawn",
+      "new_retailer": "Solutions Pest & Lawn",
+      "url": "https://www.solutionsstores.com/msma-target-6-plus-herbicide?sku=MSMA1&srsltid=AU7gw4UZoJ_pisupoucyEoO8fMn9y1DTWVF2A0eSER19teMEUXMWAD5BGL4",
+      "in_stock": true,
+      "quality_verified": true,
+      "created_at": "2026-11-25T21:17:36.542188+00:00"
+    },
     {
       "id": "espoma-lawn-food-15-0-5:major_price_drop:amazon:49.30:41.36",
       "type": "major_price_drop",
