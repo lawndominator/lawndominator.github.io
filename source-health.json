@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-25T21:17:36.542188+00:00",
-  "saved_source_limit": 8,
+  "generated_at": "2026-11-26T00:40:59.867364+00:00",
+  "saved_source_limit": 12,
   "totals": {
     "sources": 2761,
     "manual_verified_sources": 706,
-    "included_sources": 1472,
-    "not_included_sources": 681,
+    "included_sources": 1471,
+    "not_included_sources": 682,
     "invalid_sources": 608
   },
   "reason_counts": {
-    "included": 1472,
+    "included": 1471,
     "product_identity_mismatch": 595,
-    "no_extracted_offer": 274,
+    "no_extracted_offer": 283,
     "duplicate retailer product-page offer": 153,
-    "not_checked_saved_source_limit": 109,
+    "not_checked_saved_source_limit": 100,
     "no_price": 29,
     "price source is not independently quality-verified": 27,
     "package size is ambiguous for a size-sensitive product": 23,
@@ -30,7 +30,8 @@
     "insecure_retailer_url": 2,
     "above $200.00 maximum for this product": 1,
     "below $5.00 minimum for this category": 1,
-    "offer does not match catalog product/formulation": 1
+    "offer does not match catalog product/formulation": 1,
+    "price older than 48 hours": 1
   },
   "products": [
     {
@@ -407,7 +408,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 157.8,
+          "price": 158.42,
           "offer_url": "https://www.amazon.com/dp/B0051GXXPW?tag=lawndominator-20"
         },
         {
@@ -2724,7 +2725,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 154.97,
+          "price": 154.53,
           "offer_url": "https://www.amazon.com/dp/B004HFT09Q?tag=lawndominator-20"
         },
         {
@@ -13036,8 +13037,8 @@
           "retailer": "solutions-pest-lawn",
           "retailer_name": "Solutions Pest & Lawn",
           "manual_verified": false,
-          "status": "included",
-          "reason": "included",
+          "status": "not_included",
+          "reason": "price older than 48 hours",
           "price": 174.8,
           "offer_url": "https://www.solutionsstores.com/subdue-maxx-fungicide?sku=NITR16&srsltid=AfmBOoraZGBzDBgCCzKf91-7CgEoOnvnl4WL2G8zsVj3jNuvBFxeM3rLEuY"
         },
@@ -13302,8 +13303,8 @@
           "offer_url": null
         }
       ],
-      "included_sources": 16,
-      "not_included_sources": 11,
+      "included_sources": 15,
+      "not_included_sources": 12,
       "invalid_sources": 6
     },
     {
@@ -13932,7 +13933,7 @@
           "retailer_name": "Amazon",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -13962,7 +13963,7 @@
           "retailer_name": "GCI Turf Academy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19048,7 +19049,7 @@
           "retailer_name": "Lawn Synergy",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19088,7 +19089,7 @@
           "retailer_name": "Arbico Organics",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -19098,7 +19099,7 @@
           "retailer_name": "Treehelp",
           "manual_verified": false,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         }
@@ -19725,7 +19726,7 @@
           "retailer_name": "Target",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -21163,7 +21164,7 @@
           "retailer_name": "Walmart",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22101,7 +22102,7 @@
           "retailer_name": "Siteone",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -22353,7 +22354,7 @@
           "retailer_name": "Homedepot",
           "manual_verified": true,
           "status": "not_included",
-          "reason": "not_checked_saved_source_limit",
+          "reason": "no_extracted_offer",
           "price": null,
           "offer_url": null
         },
@@ -28946,7 +28947,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.64,
+          "price": 20.05,
           "offer_url": "https://www.amazon.com/dp/B076HW6S9K?tag=lawndominator-20"
         }
       ],
@@ -29114,7 +29115,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 69.69,
+          "price": 68.8,
           "offer_url": "https://www.amazon.com/dp/B002HJ7YVU?tag=lawndominator-20"
         }
       ],
@@ -29177,7 +29178,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 88.17,
+          "price": 87.3,
           "offer_url": "https://www.amazon.com/dp/B00FNYAFI0?tag=lawndominator-20"
         }
       ],
@@ -29429,7 +29430,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 46.39,
+          "price": 46.36,
           "offer_url": "https://www.amazon.com/dp/B07YZPF9YP?tag=lawndominator-20"
         }
       ],
@@ -30185,7 +30186,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 20.26,
+          "price": 20.28,
           "offer_url": "https://www.amazon.com/dp/B000COBUQC?tag=lawndominator-20"
         }
       ],
@@ -30206,7 +30207,7 @@
           "manual_verified": true,
           "status": "included",
           "reason": "included",
-          "price": 53.9,
+          "price": 53.85,
           "offer_url": "https://www.amazon.com/dp/B000I1PKLK?tag=lawndominator-20"
         }
       ],
